@@ -26428,7 +26428,7 @@ Wizard
 STRING 5194
 // Gegenstände: I035 (Haldars Ring), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in einen Engel.
+Transforms the carrier into an angel.
 }
 
 STRING 5195
@@ -26518,7 +26518,7 @@ STRING 5209
 STRING 5212
 // Fähigkeiten: A14T (Haldars Ring), Name (Name (anam))
 {
-Haldars Ring
+Haldar's Ring
 }
 
 STRING 5213
@@ -26680,13 +26680,13 @@ Ranger
 STRING 5259
 // Einheiten: n03G (Anführer der Waldläufer), Name (Name (unam))
 {
-Anführer der Waldläufer
+Leader of the Rangers
 }
 
 STRING 5260
 // Einheiten: n03H (Bewaffneter Dorfbewohner), Name (Name (unam))
 {
-Bewaffneter Dorfbewohner
+Armed Villager
 }
 
 STRING 5261
@@ -26698,19 +26698,19 @@ Poisoned Arrows
 STRING 5263
 // Fähigkeiten: A0HX (Vergiftete Pfeile), EditorSuffix (Editor-Suffix (ansf))
 {
-(Waldläufer)
+(Ranger)
 }
 
 STRING 5264
 // Einheiten: n03I (Anführer der Dorfbewohner), Name (Name (unam))
 {
-Anführer der Dorfbewohner
+Leader of the Villagers
 }
 
 STRING 5265
 // Gegenstände: I03F (Dämonenasche), Name (Name (unam))
 {
-Dämonenasche
+Demon Ash
 }
 
 STRING 5266
@@ -26830,7 +26830,7 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 5290
 // Gegenstände: I04X (Wolle), Name (Name (unam))
 {
-Wolle
+Wool
 }
 
 STRING 5291
@@ -35343,7 +35343,7 @@ Ice Arrows
 STRING 8780
 // Fähigkeiten: A0YG (Adlerauge - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+Inflame [|cffffcc00Level 5|r]
 }
 
 STRING 8781
@@ -35355,7 +35355,7 @@ Eispfeile - Stufe 1
 STRING 8794
 // Fähigkeiten: A0MZ (Eispfeile - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+Inflame [|cffffcc00Level 5|r]
 }
 
 STRING 8795
@@ -35367,7 +35367,7 @@ Eispfeile - Stufe 2
 STRING 8808
 // Fähigkeiten: A17W (Mehrfachschuss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+Inflame [|cffffcc00Level 5|r]
 }
 
 STRING 8809
@@ -35379,7 +35379,7 @@ Eispfeile - Stufe 3
 STRING 8822
 // Fähigkeiten: A1NR (Schütze - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+Inflame [|cffffcc00Level 5|r]
 }
 
 STRING 8823
@@ -48619,7 +48619,7 @@ STRING 13260
 STRING 13261
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 9 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 9 Zauberpunkte
 }
 
 STRING 13262
@@ -48673,7 +48673,7 @@ Anstürmen - Stun - Caster
 STRING 13276
 // Fähigkeiten: A1NN (Anstürmen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, betäubt diesen 2 Sekunden lang und fügt ihm danach Schaden zu.|n|n|cffffcc00Stufe 1|r - Fügt 50 Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt 100 Punkte Schaden zu.|n|cffffcc00Stufe 3|r - Fügt 150 Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt 200 Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt 250 Punkte Schaden zu.
+The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seconds and deals damage to him afterwards.|n|n|cffffcc00Level 1|r - Deals 50 points of damage.|n|cffffcc00Level 2|r - Deals 100 points of damage.|n|cffffcc00Level 3|r - Deals 150 points of damage.|n|cffffcc00Level 4|r - Deals 200 points of damage.|n|cffffcc00Level 5|r - Deals 250 points of damage.
 }
 
 STRING 13277
@@ -48703,7 +48703,7 @@ Der Ritter stürmt auf einen Gegner mit um 80 % erhöhter Geschwindigkeit zu, be
 STRING 13281
 // Gegenstände: I05B (Todessense), Description (Beschreibung (ides))
 {
-Eine mächtige Sense.
+A powerful scythe.
 }
 
 STRING 13283
@@ -48715,7 +48715,7 @@ Nordic Warhammer
 STRING 13284
 // Gegenstände: I05C (Nordischer Kriegshammer), Description (Beschreibung (ides))
 {
-Der Kriegshammer eines Nordmanns.
+The warhammer of a Northman.
 }
 
 STRING 13286
@@ -48793,43 +48793,43 @@ STRING 13297
 STRING 13298
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 0 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 0 Zauberpunkte
 }
 
 STRING 13299
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 1 Zauberpunkt
+Learn Spell (|cffffcc00Z|r) - 1 Zauberpunkt
 }
 
 STRING 13300
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 2 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 2 Zauberpunkte
 }
 
 STRING 13301
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 3 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 3 Zauberpunkte
 }
 
 STRING 13302
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 4 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 4 Zauberpunkte
 }
 
 STRING 13303
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 5 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 5 Zauberpunkte
 }
 
 STRING 13304
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 6 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 6 Zauberpunkte
 }
 
 STRING 13305
@@ -50761,1201 +50761,1201 @@ STRING 13720
 STRING 13721
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 1
+Improved Architecture Level 1
 }
 
 STRING 13722
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 2
+Improved Architecture Level 2
 }
 
 STRING 13723
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 3
+Improved Architecture Level 3
 }
 
 STRING 13724
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 4
+Improved Architecture Level 4
 }
 
 STRING 13725
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 5
+Improved Architecture Level 5
 }
 
 STRING 13726
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 6
+Improved Architecture Level 6
 }
 
 STRING 13727
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 7
+Improved Architecture Level 7
 }
 
 STRING 13728
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 8
+Improved Architecture Level 8
 }
 
 STRING 13729
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 9
+Improved Architecture Level 9
 }
 
 STRING 13730
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 10
+Improved Architecture Level 10
 }
 
 STRING 13731
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 11
+Improved Architecture Level 11
 }
 
 STRING 13732
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 12
+Improved Architecture Level 12
 }
 
 STRING 13733
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 13
+Improved Architecture Level 13
 }
 
 STRING 13734
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 14
+Improved Architecture Level 14
 }
 
 STRING 13735
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 15
+Improved Architecture Level 15
 }
 
 STRING 13736
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 16
+Improved Architecture Level 16
 }
 
 STRING 13737
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 17
+Improved Architecture Level 17
 }
 
 STRING 13738
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 18
+Improved Architecture Level 18
 }
 
 STRING 13739
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 19
+Improved Architecture Level 19
 }
 
 STRING 13740
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 20
+Improved Architecture Level 20
 }
 
 STRING 13741
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 21
+Improved Architecture Level 21
 }
 
 STRING 13742
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 22
+Improved Architecture Level 22
 }
 
 STRING 13743
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 23
+Improved Architecture Level 23
 }
 
 STRING 13744
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 24
+Improved Architecture Level 24
 }
 
 STRING 13745
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 25
+Improved Architecture Level 25
 }
 
 STRING 13746
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 26
+Improved Architecture Level 26
 }
 
 STRING 13747
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 27
+Improved Architecture Level 27
 }
 
 STRING 13748
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 28
+Improved Architecture Level 28
 }
 
 STRING 13749
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 29
+Improved Architecture Level 29
 }
 
 STRING 13750
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 30
+Improved Architecture Level 30
 }
 
 STRING 13751
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 31
+Improved Architecture Level 31
 }
 
 STRING 13752
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 32
+Improved Architecture Level 32
 }
 
 STRING 13753
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 33
+Improved Architecture Level 33
 }
 
 STRING 13754
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 34
+Improved Architecture Level 34
 }
 
 STRING 13755
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 35
+Improved Architecture Level 35
 }
 
 STRING 13756
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 36
+Improved Architecture Level 36
 }
 
 STRING 13757
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 37
+Improved Architecture Level 37
 }
 
 STRING 13758
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 38
+Improved Architecture Level 38
 }
 
 STRING 13759
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 39
+Improved Architecture Level 39
 }
 
 STRING 13760
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 40
+Improved Architecture Level 40
 }
 
 STRING 13761
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 41
+Improved Architecture Level 41
 }
 
 STRING 13762
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 42
+Improved Architecture Level 42
 }
 
 STRING 13763
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 43
+Improved Architecture Level 43
 }
 
 STRING 13764
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 44
+Improved Architecture Level 44
 }
 
 STRING 13765
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 45
+Improved Architecture Level 45
 }
 
 STRING 13766
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 46
+Improved Architecture Level 46
 }
 
 STRING 13767
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 47
+Improved Architecture Level 47
 }
 
 STRING 13768
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 48
+Improved Architecture Level 48
 }
 
 STRING 13769
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 49
+Improved Architecture Level 49
 }
 
 STRING 13770
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 50
+Improved Architecture Level 50
 }
 
 STRING 13771
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 51
+Improved Architecture Level 51
 }
 
 STRING 13772
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 52
+Improved Architecture Level 52
 }
 
 STRING 13773
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 53
+Improved Architecture Level 53
 }
 
 STRING 13774
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 54
+Improved Architecture Level 54
 }
 
 STRING 13775
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 55
+Improved Architecture Level 55
 }
 
 STRING 13776
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 56
+Improved Architecture Level 56
 }
 
 STRING 13777
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 57
+Improved Architecture Level 57
 }
 
 STRING 13778
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 58
+Improved Architecture Level 58
 }
 
 STRING 13779
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 59
+Improved Architecture Level 59
 }
 
 STRING 13780
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 60
+Improved Architecture Level 60
 }
 
 STRING 13781
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 61
+Improved Architecture Level 61
 }
 
 STRING 13782
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 62
+Improved Architecture Level 62
 }
 
 STRING 13783
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 63
+Improved Architecture Level 63
 }
 
 STRING 13784
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 64
+Improved Architecture Level 64
 }
 
 STRING 13785
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 65
+Improved Architecture Level 65
 }
 
 STRING 13786
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 66
+Improved Architecture Level 66
 }
 
 STRING 13787
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 67
+Improved Architecture Level 67
 }
 
 STRING 13788
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 68
+Improved Architecture Level 68
 }
 
 STRING 13789
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 69
+Improved Architecture Level 69
 }
 
 STRING 13790
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 70
+Improved Architecture Level 70
 }
 
 STRING 13791
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 71
+Improved Architecture Level 71
 }
 
 STRING 13792
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 72
+Improved Architecture Level 72
 }
 
 STRING 13793
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 73
+Improved Architecture Level 73
 }
 
 STRING 13794
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 74
+Improved Architecture Level 74
 }
 
 STRING 13795
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 75
+Improved Architecture Level 75
 }
 
 STRING 13796
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 76
+Improved Architecture Level 76
 }
 
 STRING 13797
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 77
+Improved Architecture Level 77
 }
 
 STRING 13798
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 78
+Improved Architecture Level 78
 }
 
 STRING 13799
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 79
+Improved Architecture Level 79
 }
 
 STRING 13800
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 80
+Improved Architecture Level 80
 }
 
 STRING 13801
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 81
+Improved Architecture Level 81
 }
 
 STRING 13802
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 82
+Improved Architecture Level 82
 }
 
 STRING 13803
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 83
+Improved Architecture Level 83
 }
 
 STRING 13804
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 84
+Improved Architecture Level 84
 }
 
 STRING 13805
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 85
+Improved Architecture Level 85
 }
 
 STRING 13806
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 86
+Improved Architecture Level 86
 }
 
 STRING 13807
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 87
+Improved Architecture Level 87
 }
 
 STRING 13808
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 88
+Improved Architecture Level 88
 }
 
 STRING 13809
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 89
+Improved Architecture Level 89
 }
 
 STRING 13810
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 90
+Improved Architecture Level 90
 }
 
 STRING 13811
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 91
+Improved Architecture Level 91
 }
 
 STRING 13812
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 92
+Improved Architecture Level 92
 }
 
 STRING 13813
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 93
+Improved Architecture Level 93
 }
 
 STRING 13814
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 94
+Improved Architecture Level 94
 }
 
 STRING 13815
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 95
+Improved Architecture Level 95
 }
 
 STRING 13816
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 96
+Improved Architecture Level 96
 }
 
 STRING 13817
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 97
+Improved Architecture Level 97
 }
 
 STRING 13818
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 98
+Improved Architecture Level 98
 }
 
 STRING 13819
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 99
+Improved Architecture Level 99
 }
 
 STRING 13820
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 100
+Improved Architecture Level 100
 }
 
 STRING 13821
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 1
+Expansion to Improved Architecture Level 1
 }
 
 STRING 13822
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 2
+Expansion to Improved Architecture Level 2
 }
 
 STRING 13823
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 3
+Expansion to Improved Architecture Level 3
 }
 
 STRING 13824
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 4
+Expansion to Improved Architecture Level 4
 }
 
 STRING 13825
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 5
+Expansion to Improved Architecture Level 5
 }
 
 STRING 13826
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 6
+Expansion to Improved Architecture Level 6
 }
 
 STRING 13827
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 7
+Expansion to Improved Architecture Level 7
 }
 
 STRING 13828
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 8
+Expansion to Improved Architecture Level 8
 }
 
 STRING 13829
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 9
+Expansion to Improved Architecture Level 9
 }
 
 STRING 13830
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 10
+Expansion to Improved Architecture Level 10
 }
 
 STRING 13831
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 11
+Expansion to Improved Architecture Level 11
 }
 
 STRING 13832
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 12
+Expansion to Improved Architecture Level 12
 }
 
 STRING 13833
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 13
+Expansion to Improved Architecture Level 13
 }
 
 STRING 13834
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 14
+Expansion to Improved Architecture Level 14
 }
 
 STRING 13835
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 15
+Expansion to Improved Architecture Level 15
 }
 
 STRING 13836
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 16
+Expansion to Improved Architecture Level 16
 }
 
 STRING 13837
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 17
+Expansion to Improved Architecture Level 17
 }
 
 STRING 13838
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 18
+Expansion to Improved Architecture Level 18
 }
 
 STRING 13839
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 19
+Expansion to Improved Architecture Level 19
 }
 
 STRING 13840
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 20
+Expansion to Improved Architecture Level 20
 }
 
 STRING 13841
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 21
+Expansion to Improved Architecture Level 21
 }
 
 STRING 13842
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 22
+Expansion to Improved Architecture Level 22
 }
 
 STRING 13843
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 23
+Expansion to Improved Architecture Level 23
 }
 
 STRING 13844
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 24
+Expansion to Improved Architecture Level 24
 }
 
 STRING 13845
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 25
+Expansion to Improved Architecture Level 25
 }
 
 STRING 13846
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 26
+Expansion to Improved Architecture Level 26
 }
 
 STRING 13847
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 27
+Expansion to Improved Architecture Level 27
 }
 
 STRING 13848
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 28
+Expansion to Improved Architecture Level 28
 }
 
 STRING 13849
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 29
+Expansion to Improved Architecture Level 29
 }
 
 STRING 13850
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 30
+Expansion to Improved Architecture Level 30
 }
 
 STRING 13851
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 31
+Expansion to Improved Architecture Level 31
 }
 
 STRING 13852
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 32
+Expansion to Improved Architecture Level 32
 }
 
 STRING 13853
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 33
+Expansion to Improved Architecture Level 33
 }
 
 STRING 13854
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 34
+Expansion to Improved Architecture Level 34
 }
 
 STRING 13855
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 35
+Expansion to Improved Architecture Level 35
 }
 
 STRING 13856
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 36
+Expansion to Improved Architecture Level 36
 }
 
 STRING 13857
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 37
+Expansion to Improved Architecture Level 37
 }
 
 STRING 13858
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 38
+Expansion to Improved Architecture Level 38
 }
 
 STRING 13859
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 39
+Expansion to Improved Architecture Level 39
 }
 
 STRING 13860
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 40
+Expansion to Improved Architecture Level 40
 }
 
 STRING 13861
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 41
+Expansion to Improved Architecture Level 41
 }
 
 STRING 13862
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 42
+Expansion to Improved Architecture Level 42
 }
 
 STRING 13863
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 43
+Expansion to Improved Architecture Level 43
 }
 
 STRING 13864
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 44
+Expansion to Improved Architecture Level 44
 }
 
 STRING 13865
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 45
+Expansion to Improved Architecture Level 45
 }
 
 STRING 13866
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 46
+Expansion to Improved Architecture Level 46
 }
 
 STRING 13867
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 47
+Expansion to Improved Architecture Level 47
 }
 
 STRING 13868
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 48
+Expansion to Improved Architecture Level 48
 }
 
 STRING 13869
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 49
+Expansion to Improved Architecture Level 49
 }
 
 STRING 13870
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 50
+Expansion to Improved Architecture Level 50
 }
 
 STRING 13871
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 51
+Expansion to Improved Architecture Level 51
 }
 
 STRING 13872
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 52
+Expansion to Improved Architecture Level 52
 }
 
 STRING 13873
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 53
+Expansion to Improved Architecture Level 53
 }
 
 STRING 13874
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 54
+Expansion to Improved Architecture Level 54
 }
 
 STRING 13875
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 55
+Expansion to Improved Architecture Level 55
 }
 
 STRING 13876
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 56
+Expansion to Improved Architecture Level 56
 }
 
 STRING 13877
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 57
+Expansion to Improved Architecture Level 57
 }
 
 STRING 13878
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 58
+Expansion to Improved Architecture Level 58
 }
 
 STRING 13879
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 59
+Expansion to Improved Architecture Level 59
 }
 
 STRING 13880
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 60
+Expansion to Improved Architecture Level 60
 }
 
 STRING 13881
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 61
+Expansion to Improved Architecture Level 61
 }
 
 STRING 13882
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 62
+Expansion to Improved Architecture Level 62
 }
 
 STRING 13883
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 63
+Expansion to Improved Architecture Level 63
 }
 
 STRING 13884
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 64
+Expansion to Improved Architecture Level 64
 }
 
 STRING 13885
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 65
+Expansion to Improved Architecture Level 65
 }
 
 STRING 13886
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 66
+Expansion to Improved Architecture Level 66
 }
 
 STRING 13887
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 67
+Expansion to Improved Architecture Level 67
 }
 
 STRING 13888
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 68
+Expansion to Improved Architecture Level 68
 }
 
 STRING 13889
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 69
+Expansion to Improved Architecture Level 69
 }
 
 STRING 13890
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 70
+Expansion to Improved Architecture Level 70
 }
 
 STRING 13891
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 71
+Expansion to Improved Architecture Level 71
 }
 
 STRING 13892
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 72
+Expansion to Improved Architecture Level 72
 }
 
 STRING 13893
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 73
+Expansion to Improved Architecture Level 73
 }
 
 STRING 13894
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 74
+Expansion to Improved Architecture Level 74
 }
 
 STRING 13895
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 75
+Expansion to Improved Architecture Level 75
 }
 
 STRING 13896
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 76
+Expansion to Improved Architecture Level 76
 }
 
 STRING 13897
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 77
+Expansion to Improved Architecture Level 77
 }
 
 STRING 13898
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 78
+Expansion to Improved Architecture Level 78
 }
 
 STRING 13899
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 79
+Expansion to Improved Architecture Level 79
 }
 
 STRING 13900
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 80
+Expansion to Improved Architecture Level 80
 }
 
 STRING 13901
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 81
+Expansion to Improved Architecture Level 81
 }
 
 STRING 13902
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 82
+Expansion to Improved Architecture Level 82
 }
 
 STRING 13903
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 83
+Expansion to Improved Architecture Level 83
 }
 
 STRING 13904
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 84
+Expansion to Improved Architecture Level 84
 }
 
 STRING 13905
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 85
+Expansion to Improved Architecture Level 85
 }
 
 STRING 13906
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 86
+Expansion to Improved Architecture Level 86
 }
 
 STRING 13907
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 87
+Expansion to Improved Architecture Level 87
 }
 
 STRING 13908
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 88
+Expansion to Improved Architecture Level 88
 }
 
 STRING 13909
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 89
+Expansion to Improved Architecture Level 89
 }
 
 STRING 13910
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 90
+Expansion to Improved Architecture Level 90
 }
 
 STRING 13911
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 91
+Expansion to Improved Architecture Level 91
 }
 
 STRING 13912
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 92
+Expansion to Improved Architecture Level 92
 }
 
 STRING 13913
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 93
+Expansion to Improved Architecture Level 93
 }
 
 STRING 13914
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 94
+Expansion to Improved Architecture Level 94
 }
 
 STRING 13915
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 95
+Expansion to Improved Architecture Level 95
 }
 
 STRING 13916
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 96
+Expansion to Improved Architecture Level 96
 }
 
 STRING 13917
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 97
+Expansion to Improved Architecture Level 97
 }
 
 STRING 13918
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 98
+Expansion to Improved Architecture Level 98
 }
 
 STRING 13919
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 99
+Expansion to Improved Architecture Level 99
 }
 
 STRING 13920
 // Ausbaustufen: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 100
+Expansion to Improved Architecture Level 100
 }
 
 STRING 13921
@@ -56167,595 +56167,595 @@ Gesegnetes Haus
 STRING 14622
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 2
+Improved Architecture Level 2
 }
 
 STRING 14623
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 3
+Improved Architecture Level 3
 }
 
 STRING 14624
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 4
+Improved Architecture Level 4
 }
 
 STRING 14625
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 5
+Improved Architecture Level 5
 }
 
 STRING 14626
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 6
+Improved Architecture Level 6
 }
 
 STRING 14627
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 7
+Improved Architecture Level 7
 }
 
 STRING 14628
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 8
+Improved Architecture Level 8
 }
 
 STRING 14629
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 9
+Improved Architecture Level 9
 }
 
 STRING 14630
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 10
+Improved Architecture Level 10
 }
 
 STRING 14631
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 11
+Improved Architecture Level 11
 }
 
 STRING 14632
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 12
+Improved Architecture Level 12
 }
 
 STRING 14633
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 13
+Improved Architecture Level 13
 }
 
 STRING 14634
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 14
+Improved Architecture Level 14
 }
 
 STRING 14635
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 15
+Improved Architecture Level 15
 }
 
 STRING 14636
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 16
+Improved Architecture Level 16
 }
 
 STRING 14637
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 17
+Improved Architecture Level 17
 }
 
 STRING 14638
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 18
+Improved Architecture Level 18
 }
 
 STRING 14639
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 19
+Improved Architecture Level 19
 }
 
 STRING 14640
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 20
+Improved Architecture Level 20
 }
 
 STRING 14641
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 21
+Improved Architecture Level 21
 }
 
 STRING 14642
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 22
+Improved Architecture Level 22
 }
 
 STRING 14643
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 23
+Improved Architecture Level 23
 }
 
 STRING 14644
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 24
+Improved Architecture Level 24
 }
 
 STRING 14645
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 25
+Improved Architecture Level 25
 }
 
 STRING 14646
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 26
+Improved Architecture Level 26
 }
 
 STRING 14647
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 27
+Improved Architecture Level 27
 }
 
 STRING 14648
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 28
+Improved Architecture Level 28
 }
 
 STRING 14649
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 29
+Improved Architecture Level 29
 }
 
 STRING 14650
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 30
+Improved Architecture Level 30
 }
 
 STRING 14651
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 31
+Improved Architecture Level 31
 }
 
 STRING 14652
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 32
+Improved Architecture Level 32
 }
 
 STRING 14653
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 33
+Improved Architecture Level 33
 }
 
 STRING 14654
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 34
+Improved Architecture Level 34
 }
 
 STRING 14655
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 35
+Improved Architecture Level 35
 }
 
 STRING 14656
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 36
+Improved Architecture Level 36
 }
 
 STRING 14657
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 37
+Improved Architecture Level 37
 }
 
 STRING 14658
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 38
+Improved Architecture Level 38
 }
 
 STRING 14659
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 39
+Improved Architecture Level 39
 }
 
 STRING 14660
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 40
+Improved Architecture Level 40
 }
 
 STRING 14661
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 41
+Improved Architecture Level 41
 }
 
 STRING 14662
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 42
+Improved Architecture Level 42
 }
 
 STRING 14663
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 43
+Improved Architecture Level 43
 }
 
 STRING 14664
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 44
+Improved Architecture Level 44
 }
 
 STRING 14665
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 45
+Improved Architecture Level 45
 }
 
 STRING 14666
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 46
+Improved Architecture Level 46
 }
 
 STRING 14667
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 47
+Improved Architecture Level 47
 }
 
 STRING 14668
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 48
+Improved Architecture Level 48
 }
 
 STRING 14669
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 49
+Improved Architecture Level 49
 }
 
 STRING 14670
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 50
+Improved Architecture Level 50
 }
 
 STRING 14671
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 51
+Improved Architecture Level 51
 }
 
 STRING 14672
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 52
+Improved Architecture Level 52
 }
 
 STRING 14673
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 53
+Improved Architecture Level 53
 }
 
 STRING 14674
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 54
+Improved Architecture Level 54
 }
 
 STRING 14675
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 55
+Improved Architecture Level 55
 }
 
 STRING 14676
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 56
+Improved Architecture Level 56
 }
 
 STRING 14677
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 57
+Improved Architecture Level 57
 }
 
 STRING 14678
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 58
+Improved Architecture Level 58
 }
 
 STRING 14679
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 59
+Improved Architecture Level 59
 }
 
 STRING 14680
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 60
+Improved Architecture Level 60
 }
 
 STRING 14681
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 61
+Improved Architecture Level 61
 }
 
 STRING 14682
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 62
+Improved Architecture Level 62
 }
 
 STRING 14683
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 63
+Improved Architecture Level 63
 }
 
 STRING 14684
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 64
+Improved Architecture Level 64
 }
 
 STRING 14685
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 65
+Improved Architecture Level 65
 }
 
 STRING 14686
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 66
+Improved Architecture Level 66
 }
 
 STRING 14687
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 67
+Improved Architecture Level 67
 }
 
 STRING 14688
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 68
+Improved Architecture Level 68
 }
 
 STRING 14689
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 69
+Improved Architecture Level 69
 }
 
 STRING 14690
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 70
+Improved Architecture Level 70
 }
 
 STRING 14691
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 71
+Improved Architecture Level 71
 }
 
 STRING 14692
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 72
+Improved Architecture Level 72
 }
 
 STRING 14693
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 73
+Improved Architecture Level 73
 }
 
 STRING 14694
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 74
+Improved Architecture Level 74
 }
 
 STRING 14695
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 75
+Improved Architecture Level 75
 }
 
 STRING 14696
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 76
+Improved Architecture Level 76
 }
 
 STRING 14697
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 77
+Improved Architecture Level 77
 }
 
 STRING 14698
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 78
+Improved Architecture Level 78
 }
 
 STRING 14699
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 79
+Improved Architecture Level 79
 }
 
 STRING 14700
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 80
+Improved Architecture Level 80
 }
 
 STRING 14701
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 81
+Improved Architecture Level 81
 }
 
 STRING 14702
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 82
+Improved Architecture Level 82
 }
 
 STRING 14703
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 83
+Improved Architecture Level 83
 }
 
 STRING 14704
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 84
+Improved Architecture Level 84
 }
 
 STRING 14705
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 85
+Improved Architecture Level 85
 }
 
 STRING 14706
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 86
+Improved Architecture Level 86
 }
 
 STRING 14707
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 87
+Improved Architecture Level 87
 }
 
 STRING 14708
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 88
+Improved Architecture Level 88
 }
 
 STRING 14709
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 89
+Improved Architecture Level 89
 }
 
 STRING 14710
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 90
+Improved Architecture Level 90
 }
 
 STRING 14711
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 91
+Improved Architecture Level 91
 }
 
 STRING 14712
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 92
+Improved Architecture Level 92
 }
 
 STRING 14713
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 93
+Improved Architecture Level 93
 }
 
 STRING 14714
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 94
+Improved Architecture Level 94
 }
 
 STRING 14715
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 95
+Improved Architecture Level 95
 }
 
 STRING 14716
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 96
+Improved Architecture Level 96
 }
 
 STRING 14717
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 97
+Improved Architecture Level 97
 }
 
 STRING 14718
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 98
+Improved Architecture Level 98
 }
 
 STRING 14719
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 99
+Improved Architecture Level 99
 }
 
 STRING 14720
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name (gnam))
 {
-Verbesserte Baukunst Stufe 100
+Improved Architecture Level 100
 }
 
 STRING 14721
@@ -56767,595 +56767,595 @@ Ausbau zum gesegneten Haus
 STRING 14722
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 2
+Expansion to Improved Architecture Level 2
 }
 
 STRING 14723
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 3
+Expansion to Improved Architecture Level 3
 }
 
 STRING 14724
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 4
+Expansion to Improved Architecture Level 4
 }
 
 STRING 14725
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 5
+Expansion to Improved Architecture Level 5
 }
 
 STRING 14726
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 6
+Expansion to Improved Architecture Level 6
 }
 
 STRING 14727
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 7
+Expansion to Improved Architecture Level 7
 }
 
 STRING 14728
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 8
+Expansion to Improved Architecture Level 8
 }
 
 STRING 14729
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 9
+Expansion to Improved Architecture Level 9
 }
 
 STRING 14730
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 10
+Expansion to Improved Architecture Level 10
 }
 
 STRING 14731
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 11
+Expansion to Improved Architecture Level 11
 }
 
 STRING 14732
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 12
+Expansion to Improved Architecture Level 12
 }
 
 STRING 14733
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 13
+Expansion to Improved Architecture Level 13
 }
 
 STRING 14734
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 14
+Expansion to Improved Architecture Level 14
 }
 
 STRING 14735
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 15
+Expansion to Improved Architecture Level 15
 }
 
 STRING 14736
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 16
+Expansion to Improved Architecture Level 16
 }
 
 STRING 14737
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 17
+Expansion to Improved Architecture Level 17
 }
 
 STRING 14738
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 18
+Expansion to Improved Architecture Level 18
 }
 
 STRING 14739
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 19
+Expansion to Improved Architecture Level 19
 }
 
 STRING 14740
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 20
+Expansion to Improved Architecture Level 20
 }
 
 STRING 14741
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 21
+Expansion to Improved Architecture Level 21
 }
 
 STRING 14742
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 22
+Expansion to Improved Architecture Level 22
 }
 
 STRING 14743
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 23
+Expansion to Improved Architecture Level 23
 }
 
 STRING 14744
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 24
+Expansion to Improved Architecture Level 24
 }
 
 STRING 14745
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 25
+Expansion to Improved Architecture Level 25
 }
 
 STRING 14746
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 26
+Expansion to Improved Architecture Level 26
 }
 
 STRING 14747
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 27
+Expansion to Improved Architecture Level 27
 }
 
 STRING 14748
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 28
+Expansion to Improved Architecture Level 28
 }
 
 STRING 14749
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 29
+Expansion to Improved Architecture Level 29
 }
 
 STRING 14750
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 30
+Expansion to Improved Architecture Level 30
 }
 
 STRING 14751
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 31
+Expansion to Improved Architecture Level 31
 }
 
 STRING 14752
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 32
+Expansion to Improved Architecture Level 32
 }
 
 STRING 14753
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 33
+Expansion to Improved Architecture Level 33
 }
 
 STRING 14754
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 34
+Expansion to Improved Architecture Level 34
 }
 
 STRING 14755
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 35
+Expansion to Improved Architecture Level 35
 }
 
 STRING 14756
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 36
+Expansion to Improved Architecture Level 36
 }
 
 STRING 14757
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 37
+Expansion to Improved Architecture Level 37
 }
 
 STRING 14758
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 38
+Expansion to Improved Architecture Level 38
 }
 
 STRING 14759
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 39
+Expansion to Improved Architecture Level 39
 }
 
 STRING 14760
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 40
+Expansion to Improved Architecture Level 40
 }
 
 STRING 14761
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 41
+Expansion to Improved Architecture Level 41
 }
 
 STRING 14762
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 42
+Expansion to Improved Architecture Level 42
 }
 
 STRING 14763
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 43
+Expansion to Improved Architecture Level 43
 }
 
 STRING 14764
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 44
+Expansion to Improved Architecture Level 44
 }
 
 STRING 14765
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 45
+Expansion to Improved Architecture Level 45
 }
 
 STRING 14766
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 46
+Expansion to Improved Architecture Level 46
 }
 
 STRING 14767
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 47
+Expansion to Improved Architecture Level 47
 }
 
 STRING 14768
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 48
+Expansion to Improved Architecture Level 48
 }
 
 STRING 14769
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 49
+Expansion to Improved Architecture Level 49
 }
 
 STRING 14770
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 50
+Expansion to Improved Architecture Level 50
 }
 
 STRING 14771
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 51
+Expansion to Improved Architecture Level 51
 }
 
 STRING 14772
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 52
+Expansion to Improved Architecture Level 52
 }
 
 STRING 14773
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 53
+Expansion to Improved Architecture Level 53
 }
 
 STRING 14774
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 54
+Expansion to Improved Architecture Level 54
 }
 
 STRING 14775
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 55
+Expansion to Improved Architecture Level 55
 }
 
 STRING 14776
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 56
+Expansion to Improved Architecture Level 56
 }
 
 STRING 14777
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 57
+Expansion to Improved Architecture Level 57
 }
 
 STRING 14778
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 58
+Expansion to Improved Architecture Level 58
 }
 
 STRING 14779
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 59
+Expansion to Improved Architecture Level 59
 }
 
 STRING 14780
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 60
+Expansion to Improved Architecture Level 60
 }
 
 STRING 14781
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 61
+Expansion to Improved Architecture Level 61
 }
 
 STRING 14782
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 62
+Expansion to Improved Architecture Level 62
 }
 
 STRING 14783
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 63
+Expansion to Improved Architecture Level 63
 }
 
 STRING 14784
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 64
+Expansion to Improved Architecture Level 64
 }
 
 STRING 14785
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 65
+Expansion to Improved Architecture Level 65
 }
 
 STRING 14786
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 66
+Expansion to Improved Architecture Level 66
 }
 
 STRING 14787
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 67
+Expansion to Improved Architecture Level 67
 }
 
 STRING 14788
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 68
+Expansion to Improved Architecture Level 68
 }
 
 STRING 14789
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 69
+Expansion to Improved Architecture Level 69
 }
 
 STRING 14790
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 70
+Expansion to Improved Architecture Level 70
 }
 
 STRING 14791
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 71
+Expansion to Improved Architecture Level 71
 }
 
 STRING 14792
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 72
+Expansion to Improved Architecture Level 72
 }
 
 STRING 14793
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 73
+Expansion to Improved Architecture Level 73
 }
 
 STRING 14794
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 74
+Expansion to Improved Architecture Level 74
 }
 
 STRING 14795
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 75
+Expansion to Improved Architecture Level 75
 }
 
 STRING 14796
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 76
+Expansion to Improved Architecture Level 76
 }
 
 STRING 14797
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 77
+Expansion to Improved Architecture Level 77
 }
 
 STRING 14798
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 78
+Expansion to Improved Architecture Level 78
 }
 
 STRING 14799
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 79
+Expansion to Improved Architecture Level 79
 }
 
 STRING 14800
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 80
+Expansion to Improved Architecture Level 80
 }
 
 STRING 14801
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 81
+Expansion to Improved Architecture Level 81
 }
 
 STRING 14802
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 82
+Expansion to Improved Architecture Level 82
 }
 
 STRING 14803
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 83
+Expansion to Improved Architecture Level 83
 }
 
 STRING 14804
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 84
+Expansion to Improved Architecture Level 84
 }
 
 STRING 14805
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 85
+Expansion to Improved Architecture Level 85
 }
 
 STRING 14806
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 86
+Expansion to Improved Architecture Level 86
 }
 
 STRING 14807
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 87
+Expansion to Improved Architecture Level 87
 }
 
 STRING 14808
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 88
+Expansion to Improved Architecture Level 88
 }
 
 STRING 14809
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 89
+Expansion to Improved Architecture Level 89
 }
 
 STRING 14810
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 90
+Expansion to Improved Architecture Level 90
 }
 
 STRING 14811
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 91
+Expansion to Improved Architecture Level 91
 }
 
 STRING 14812
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 92
+Expansion to Improved Architecture Level 92
 }
 
 STRING 14813
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 93
+Expansion to Improved Architecture Level 93
 }
 
 STRING 14814
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 94
+Expansion to Improved Architecture Level 94
 }
 
 STRING 14815
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 95
+Expansion to Improved Architecture Level 95
 }
 
 STRING 14816
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 96
+Expansion to Improved Architecture Level 96
 }
 
 STRING 14817
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 97
+Expansion to Improved Architecture Level 97
 }
 
 STRING 14818
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 98
+Expansion to Improved Architecture Level 98
 }
 
 STRING 14819
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 99
+Expansion to Improved Architecture Level 99
 }
 
 STRING 14820
 // Ausbaustufen: R005 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltipp (gtp1))
 {
-Ausbau zur verbesserten Baukunst Stufe 100
+Expansion to Improved Architecture Level 100
 }
 
 STRING 14821
@@ -61459,7 +61459,7 @@ Hundezwinger
 STRING 15554
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 10 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 10 Zauberpunkte
 }
 
 STRING 15563
@@ -61483,7 +61483,7 @@ Hundezwinger - Stufe 1
 STRING 15568
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 11 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 11 Zauberpunkte
 }
 
 STRING 15578
@@ -61501,7 +61501,7 @@ Hundezwinger - Stufe 2
 STRING 15582
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 12 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 12 Zauberpunkte
 }
 
 STRING 15592
@@ -61519,7 +61519,7 @@ Hundezwinger - Stufe 3
 STRING 15596
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 13 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 13 Zauberpunkte
 }
 
 STRING 15606
@@ -61537,7 +61537,7 @@ Hundezwinger - Stufe 4
 STRING 15610
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 14 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 14 Zauberpunkte
 }
 
 STRING 15620
@@ -61705,511 +61705,511 @@ Wielands Stand
 STRING 15649
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 15 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 15 Skill Points
 }
 
 STRING 15650
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 16 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 16 Skill Points
 }
 
 STRING 15651
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 17 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 17 Skill Points
 }
 
 STRING 15652
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 18 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 18 Skill Points
 }
 
 STRING 15653
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 19 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 19 Skill Points
 }
 
 STRING 15654
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 20 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 20 Skill Points
 }
 
 STRING 15655
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 21 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 21 Skill Points
 }
 
 STRING 15656
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 22 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 22 Skill Points
 }
 
 STRING 15657
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 23 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 23 Skill Points
 }
 
 STRING 15658
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 24 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 24 Skill Points
 }
 
 STRING 15659
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 25 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 25 Skill Points
 }
 
 STRING 15660
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 26 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 26 Skill Points
 }
 
 STRING 15661
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 27 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 27 Skill Points
 }
 
 STRING 15662
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 28 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 28 Skill Points
 }
 
 STRING 15663
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 29 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 29 Skill Points
 }
 
 STRING 15664
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 30 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 30 Skill Points
 }
 
 STRING 15665
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 31 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 31 Skill Points
 }
 
 STRING 15666
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 32 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 32 Skill Points
 }
 
 STRING 15667
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 33 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 33 Skill Points
 }
 
 STRING 15668
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 34 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 34 Skill Points
 }
 
 STRING 15669
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 35 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 35 Skill Points
 }
 
 STRING 15670
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 36 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 36 Skill Points
 }
 
 STRING 15671
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 37 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 37 Skill Points
 }
 
 STRING 15672
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 38 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 38 Skill Points
 }
 
 STRING 15673
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 39 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 39 Skill Points
 }
 
 STRING 15674
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 40 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 40 Skill Points
 }
 
 STRING 15675
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 41 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 41 Skill Points
 }
 
 STRING 15676
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 42 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 42 Skill Points
 }
 
 STRING 15677
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 43 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 43 Skill Points
 }
 
 STRING 15678
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 44 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 44 Skill Points
 }
 
 STRING 15679
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 45 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 45 Skill Points
 }
 
 STRING 15680
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 46 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 46 Skill Points
 }
 
 STRING 15681
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 47 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 47 Skill Points
 }
 
 STRING 15682
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 48 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 48 Skill Points
 }
 
 STRING 15683
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 49 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 49 Skill Points
 }
 
 STRING 15684
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 50 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 50 Skill Points
 }
 
 STRING 15685
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 51 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 51 Skill Points
 }
 
 STRING 15686
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 52 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 52 Skill Points
 }
 
 STRING 15687
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 53 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 53 Skill Points
 }
 
 STRING 15688
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 54 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 54 Skill Points
 }
 
 STRING 15689
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 55 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 55 Skill Points
 }
 
 STRING 15690
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 56 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 56 Skill Points
 }
 
 STRING 15691
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 57 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 57 Skill Points
 }
 
 STRING 15692
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 58 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 58 Skill Points
 }
 
 STRING 15693
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 59 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 59 Skill Points
 }
 
 STRING 15694
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 60 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 60 Skill Points
 }
 
 STRING 15695
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 61 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 61 Skill Points
 }
 
 STRING 15696
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 62 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 62 Skill Points
 }
 
 STRING 15697
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 63 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 63 Skill Points
 }
 
 STRING 15698
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 64 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 64 Skill Points
 }
 
 STRING 15699
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 65 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 65 Skill Points
 }
 
 STRING 15700
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 66 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 66 Skill Points
 }
 
 STRING 15701
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 67 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 67 Skill Points
 }
 
 STRING 15702
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 68 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 68 Skill Points
 }
 
 STRING 15703
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 69 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 69 Skill Points
 }
 
 STRING 15704
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 70 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 70 Skill Points
 }
 
 STRING 15705
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 71 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 71 Skill Points
 }
 
 STRING 15706
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 72 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 72 Skill Points
 }
 
 STRING 15707
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 73 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 73 Skill Points
 }
 
 STRING 15708
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 74 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 74 Skill Points
 }
 
 STRING 15709
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 75 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 75 Skill Points
 }
 
 STRING 15710
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 76 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 76 Skill Points
 }
 
 STRING 15711
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 77 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 77 Skill Points
 }
 
 STRING 15712
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 78 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 78 Skill Points
 }
 
 STRING 15713
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 79 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 79 Skill Points
 }
 
 STRING 15714
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 80 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 80 Skill Points
 }
 
 STRING 15715
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 81 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 81 Skill Points
 }
 
 STRING 15716
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 82 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 82 Skill Points
 }
 
 STRING 15717
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 83 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 83 Skill Points
 }
 
 STRING 15718
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 84 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 84 Skill Points
 }
 
 STRING 15719
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 85 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 85 Skill Points
 }
 
 STRING 15720
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 86 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 86 Skill Points
 }
 
 STRING 15721
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 87 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 87 Skill Points
 }
 
 STRING 15722
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 88 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 88 Skill Points
 }
 
 STRING 15723
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 89 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 89 Skill Points
 }
 
 STRING 15724
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 90 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 90 Skill Points
 }
 
 STRING 15725
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 91 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 91 Skill Points
 }
 
 STRING 15726
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 92 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 92 Skill Points
 }
 
 STRING 15727
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 93 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 93 Skill Points
 }
 
 STRING 15728
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 94 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 94 Skill Points
 }
 
 STRING 15729
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 95 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 95 Skill Points
 }
 
 STRING 15730
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 96 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 96 Skill Points
 }
 
 STRING 15731
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 97 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 97 Skill Points
 }
 
 STRING 15732
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 98 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 98 Skill Points
 }
 
 STRING 15733
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00Z|rauber erlernen - 99 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 99 Skill Points
 }
 
 STRING 15740
@@ -62353,7 +62353,7 @@ Beutezug - Stufe 4
 STRING 15808
 // Fähigkeiten: A1N7 (Beutezug - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt für alle Spieler einen zufälligen verbrauchbaren Gegenstand. |n|n|cffffcc00Stufe 1|r - Erzeugt einen Gegenstand der maximalen Stufe 1.|n|cffffcc00Stufe 2|r - Erzeugt einen Gegenstand der maximalen Stufe 2.|n|cffffcc00Stufe 3|r - Erzeugt einen Gegenstand der Stufe 3.|n|cffffcc00Stufe 4|r - Erzeugt einen Gegenstand der maximalen Stufe 4.|n|cffffcc00Stufe 5|r - Erzeugt einen Gegenstand der maximalen Stufe 5.
+Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Creates an item with the maximum level of 1.|n|cffffcc00Level 2|r - Creates an item with the maximum level of 2.|n|cffffcc00Level 3|r - Creates an item with the maximum level of 3.|n|cffffcc00Level 4|r - Creates an item with the maximum level of 4.|n|cffffcc00Level 5|r - Creates an item with the maximum level of 5.
 }
 
 STRING 15817
@@ -62461,13 +62461,13 @@ Horn of Protection
 STRING 15836
 // Gegenstände: I000 (Zur nächsten Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
 {
-Wechselt bei Benutzung in die nächste Tasche des Rucksacks.Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die nächste Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+Changes to the next bag of the backpack when you are using it. Place an item from the backpack on this item to move it into the next back.|nThe backpack has 30 bags.
 }
 
 STRING 15837
 // Gegenstände: I001 (Zur vorherigen Tasche wechseln), Ubertip (Tooltipp - Erweitert (utub))
 {
-Wechselt bei Benutzung in die vorherige Tasche des Rucksacks.Legen Sie einen Gegenstand aus dem Rucksack auf diesem Gegenstand ab, um ihn in die vorherige Tasche zu verschieben.|nDer Rucksack hat 30 Taschen.
+Changes to the previous bag of the backpack when you are using it. Place an item from the backpack on this item to move it into the previous back.|nThe backpack has 30 bags.
 }
 
 STRING 15838
@@ -62545,7 +62545,7 @@ STRING 15849
 STRING 15850
 // Einheiten: H02I (Deranors Leibwache), Propernames (Eigennamen (upro))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+The ranger sprints and therefore increases his movement speed for some time by 80 %. |n|n|cffffcc00Level 1|r - Lasts 5 seconds.|n|cffffcc00Level 2|r - Lasts 8 seconds.|n|cffffcc00Level 3|r - Lasts 11 seconds.|n|cffffcc00Level 4|r - Lasts 14 seconds.|n|cffffcc00Level 5|r - Lasts 17 seconds.
 }
 
 STRING 15851
@@ -62857,13 +62857,13 @@ Grove
 STRING 15904
 // Fähigkeiten: A0J6 (Waldfeenzauber - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Feen des Waldes heilen bei nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area1> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng1> befinden muss.|nKann auf sich selbst verwendet werden. |n|n|cffffcc00Stufe 1|r - Heilt bei maximal <A0AL,DataB1> Einheiten maximal <A0AL,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt bei maximal <A0AL,DataB2> Einheiten maximal <A0AL,DataA2> Leben.|n|cffffcc00Stufe 3|r - Heilt bei maximal <A0AL,DataB3> Einheiten maximal <A0AL,DataA3> Leben.|n|cffffcc00Stufe 4|r - Heilt bei maximal <A0AL,DataB4> Einheiten maximal <A0AL,DataA4> Leben.|n|cffffcc00Stufe 5|r - Heilt bei maximal <A0AL,DataB5> Einheiten maximal <A0AL,DataA5> Leben.
+The fairies of the forest heal life of non-mechanical allies in an area of <A0AL,Area1> by jumping from one target to the next where the first target must be within a range of <A0AL,Rng1>.|nCan be used on oneself. |n|n|cffffcc00Level 1|r - Heals for <A0AL,DataB1> units maximum <A0AL,DataA1> life maximum. |n|cffffcc00Level 2|r - Heals for <A0AL,DataB2> units maximum <A0AL,DataA2> life maximum.|n|cffffcc00Level 3|r - Heals for <A0AL,DataB3> units maximum <A0AL,DataA3> life maximum.|n|cffffcc00Level 4|r - Heals for <A0AL,DataB4> units maximum <A0AL,DataA4> life maximum.|n|cffffcc00Level 5|r - Heals for <A0AL,DataB5> units maximum <A0AL,DataA5> life maximum.
 }
 
 STRING 15905
 // Fähigkeiten: A0D8 (Hain - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Verbündeten im Umkreis Mana pro Sekunde regeneriert.|n|n|cffffcc00Stufe 1|r - Regeneriert <A0CR,DataA1,%> % des Manas. |n|cffffcc00Stufe 2|r - Regeneriert <A1D4,DataA1,%> % des Manas. |n|cffffcc00Stufe 3|r - Regeneriert <A1D5,DataA1,%> % des Manas. |n|cffffcc00Stufe 4|r - Regeneriert <A1D6,DataA1,%> % des Manas.|n|cffffcc00Stufe 5|r - Regeneriert <A1D7,DataA1,%> % des Manas.
+Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana per second of allies around.|n|n|cffffcc00Level 1|r - Regenerates <A0CR,DataA1,%> % of the mana. |n|cffffcc00Level 2|r - Regenerates <A1D4,DataA1,%> % of the mana. |n|cffffcc00Level 3|r - Regenerates <A1D5,DataA1,%> % of the mana. |n|cffffcc00Level 4|r - Regenerates <A1D6,DataA1,%> % of the mana.|n|cffffcc00Level 5|r - Regenerates <A1D7,DataA1,%> % of the mana.
 }
 
 STRING 15906
@@ -62917,7 +62917,7 @@ Beschwört für <A0D4,Dur1> Sekunden einen Mana regenerierenden Hain, der bei Ve
 STRING 15914
 // Fähigkeiten: A0PZ (Bekehrung), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung [|cffffcc00Stufe 5|r] (|cffffcc00T|r)
+Conversion [|cffffcc00Level 5|r] (|cffffcc00T|r)
 }
 
 STRING 15915
