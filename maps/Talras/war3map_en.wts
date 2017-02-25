@@ -424,415 +424,415 @@ Shrine
 STRING 71
 // Doodads: D000 (Amboss (Grasland)), Name (Name (dnam))
 {
-Amboss (Grasland)
+Anvil (Grassland)
 }
 
 STRING 72
 // Doodads: D001 (Apfel 1 (Grasland)), Name (Name (dnam))
 {
-Apfel 1 (Grasland)
+Apple 1 (Grassland)
 }
 
 STRING 73
 // Doodads: D002 (Bank 1 (Grasland)), Name (Name (dnam))
 {
-Bank 1 (Grasland)
+Bench 1 (Grassland)
 }
 
 STRING 74
 // Doodads: D003 (Bank 2 (Grasland)), Name (Name (dnam))
 {
-Bank 2 (Grasland)
+Bench 2 (Grassland)
 }
 
 STRING 75
 // Doodads: D004 (Bauernhaus (Grasland)), Name (Name (dnam))
 {
-Bauernhaus (Grasland)
+Farm House (Grassland)
 }
 
 STRING 76
 // Doodads: D005 (Bauernhauswand 1 (Grasland)), Name (Name (dnam))
 {
-Bauernhauswand 1 (Grasland)
+Farm House Wall 1 (Grassland)
 }
 
 STRING 77
 // Doodads: D006 (Bauernhauswand 2 (Grasland)), Name (Name (dnam))
 {
-Bauernhauswand 2 (Grasland)
+Farm House Wall 2 (Grassland)
 }
 
 STRING 78
 // Doodads: D007 (Bauernhauswand 3 (Grasland)), Name (Name (dnam))
 {
-Bauernhauswand 3 (Grasland)
+Farm House Wall 3 (Grassland)
 }
 
 STRING 79
 // Doodads: D008 (Bauernhauswand 4 (Grasland)), Name (Name (dnam))
 {
-Bauernhauswand 4 (Grasland)
+Farm House Wall 4 (Grassland)
 }
 
 STRING 80
 // Doodads: D009 (Baumsaege (Grasland)), Name (Name (dnam))
 {
-Baumsaege (Grasland)
+Tree Saw (Grassland)
 }
 
 STRING 81
 // Doodads: D00A (Baumscheiben (Grasland)), Name (Name (dnam))
 {
-Baumscheiben (Grasland)
+Tree Slices (Grassland)
 }
 
 STRING 82
 // Doodads: D00B (Baumstamm (Grasland)), Name (Name (dnam))
 {
-Baumstamm (Grasland)
+Tree Trunk (Grassland)
 }
 
 STRING 83
 // Doodads: D00C (Baumstumpf 1 (Grasland)), Name (Name (dnam))
 {
-Baumstumpf 1 (Grasland)
+Tree Stump 1 (Grassland)
 }
 
 STRING 84
 // Doodads: D00D (Baumstumpf 2 (Grasland)), Name (Name (dnam))
 {
-Baumstumpf 2 (Grasland)
+Tree Stump 2 (Grassland)
 }
 
 STRING 85
 // Doodads: D00E (Becher (Grasland)), Name (Name (dnam))
 {
-Becher (Grasland)
+Cup (Grassland)
 }
 
 STRING 86
 // Doodads: D00F (Bergfried (Grasland)), Name (Name (dnam))
 {
-Bergfried (Grasland)
+Keep (Grassland)
 }
 
 STRING 87
 // Doodads: D00G (Besteck (Grasland)), Name (Name (dnam))
 {
-Besteck (Grasland)
+Cutlery (Grassland)
 }
 
 STRING 88
 // Doodads: D00H (Blume 1 (Grasland)), Name (Name (dnam))
 {
-Blume 1 (Grasland)
+Flower 1 (Grassland)
 }
 
 STRING 89
 // Doodads: D00I (Blume 2 (Grasland)), Name (Name (dnam))
 {
-Blume 2 (Grasland)
+Flower 2 (Grassland)
 }
 
 STRING 90
 // Doodads: D00J (Blume 3 (Grasland)), Name (Name (dnam))
 {
-Blume 3 (Grasland)
+Flower 3 (Grassland)
 }
 
 STRING 91
 // Doodads: D00K (Gras 7 (Grasland)), Name (Name (dnam))
 {
-Gras 7 (Grasland)
+Grass 7 (Grassland)
 }
 
 STRING 92
 // Doodads: D00L (Brunnen (Grasland)), Name (Name (dnam))
 {
-Brunnen (Grasland)
+Well (Grassland)
 }
 
 STRING 93
 // Doodads: D00M (Stadtunterkünfte (Grasland)), Name (Name (dnam))
 {
-Stadtunterkünfte (Grasland)
+Accommodation (Grassland)
 }
 
 STRING 94
 // Doodads: D00N (Stadtzitadelle (Grasland)), Name (Name (dnam))
 {
-Stadtzitadelle (Grasland)
+Town Hall (Grassland)
 }
 
 STRING 95
 // Doodads: D00O (Busch 1 (Grasland)), Name (Name (dnam))
 {
-Busch 1 (Grasland)
+Bush 1 (Grassland)
 }
 
 STRING 96
 // Doodads: D00P (Busch 2 (Grasland)), Name (Name (dnam))
 {
-Busch 2 (Grasland)
+Bush 2 (Grassland)
 }
 
 STRING 97
 // Doodads: D00Q (Busch 3 (Grasland)), Name (Name (dnam))
 {
-Busch 3 (Grasland)
+Bush 3 (Grassland)
 }
 
 STRING 98
 // Doodads: D00R (Busch 4 (Grasland)), Name (Name (dnam))
 {
-Busch 4 (Grasland)
+Bush 4 (Grassland)
 }
 
 STRING 99
 // Doodads: D00S (Busch 5 (Grasland)), Name (Name (dnam))
 {
-Busch 5 (Grasland)
+Bush 5 (Grassland)
 }
 
 STRING 100
 // Doodads: D00T (Busch 6 (Grasland)), Name (Name (dnam))
 {
-Busch 6 (Grasland)
+Bush 6 (Grassland)
 }
 
 STRING 101
 // Doodads: D00U (Busch 7 (Grasland)), Name (Name (dnam))
 {
-Busch 7 (Grasland)
+Bush 7 (Grassland)
 }
 
 STRING 102
 // Doodads: D00V (Busch 8 (Grasland)), Name (Name (dnam))
 {
-Busch 8 (Grasland)
+Bush 8 (Grassland)
 }
 
 STRING 103
 // Doodads: D00W (Busch 9 (Grasland)), Name (Name (dnam))
 {
-Busch 9 (Grasland)
+Bush 9 (Grassland)
 }
 
 STRING 104
 // Doodads: D00X (Busch 10 (Grasland)), Name (Name (dnam))
 {
-Busch 10 (Grasland)
+Bush 10 (Grassland)
 }
 
 STRING 105
 // Doodads: D00Y (Busch 11 (Grasland)), Name (Name (dnam))
 {
-Busch 11 (Grasland)
+Bush 11 (Grassland)
 }
 
 STRING 106
 // Doodads: D00Z (Eimer (Grasland)), Name (Name (dnam))
 {
-Eimer (Grasland)
+Bucket (Grassland)
 }
 
 STRING 107
 // Doodads: D011 (Fackel (Grasland)), Name (Name (dnam))
 {
-Fackel (Grasland)
+Torch (Grassland)
 }
 
 STRING 108
 // Doodads: D012 (Fass 1 (Grasland)), Name (Name (dnam))
 {
-Fass 1 (Grasland)
+Barrel 1 (Grassland)
 }
 
 STRING 109
 // Doodads: D013 (Fass 2 (Grasland)), Name (Name (dnam))
 {
-Fass 2 (Grasland)
+Barrel 2 (Grassland)
 }
 
 STRING 110
 // Doodads: D014 (Fass 3 (Grasland)), Name (Name (dnam))
 {
-Fass 3 (Grasland)
+Barrel 3 (Grassland)
 }
 
 STRING 111
 // Doodads: D015 (Felsbrocken 1 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 1 (Grasland)
+Lump of Rock 1 (Grassland)
 }
 
 STRING 112
 // Doodads: D016 (Felsbrocken 2 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 2 (Grasland)
+Lump of Rock 2 (Grassland)
 }
 
 STRING 113
 // Doodads: D017 (Felsbrocken 3 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 3 (Grasland)
+Lump of Rock 3 (Grassland)
 }
 
 STRING 114
 // Doodads: D018 (Felsbrocken 4 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 4 (Grasland)
+Lump of Rock 4 (Grassland)
 }
 
 STRING 115
 // Doodads: D019 (Felswand (Grasland)), Name (Name (dnam))
 {
-Felswand (Grasland)
+Rock Face (Grassland)
 }
 
 STRING 116
 // Doodads: D01A (Flasche (Grasland)), Name (Name (dnam))
 {
-Flasche (Grasland)
+Bottle (Grassland)
 }
 
 STRING 117
 // Doodads: D01B (Galgen (Grasland)), Name (Name (dnam))
 {
-Galgen (Grasland)
+Gallows (Grassland)
 }
 
 STRING 118
 // Doodads: D01C (Baumstammschafott (Grasland)), Name (Name (dnam))
 {
-Baumstammschafott (Grasland)
+Tree Trunk Scaffold (Grassland)
 }
 
 STRING 119
 // Doodads: D01D (Gras 1 (Grasland)), Name (Name (dnam))
 {
-Gras 1 (Grasland)
+Grass 1 (Grassland)
 }
 
 STRING 120
 // Doodads: D01E (Gras 2 (Grasland)), Name (Name (dnam))
 {
-Gras 2 (Grasland)
+Grass 2 (Grassland)
 }
 
 STRING 121
 // Doodads: D01F (Gras 3 (Grasland)), Name (Name (dnam))
 {
-Gras 3 (Grasland)
+Grass 3 (Grassland)
 }
 
 STRING 122
 // Doodads: D01G (Gras 4 (Grasland)), Name (Name (dnam))
 {
-Gras 4 (Grasland)
+Grass 4 (Grassland)
 }
 
 STRING 123
 // Doodads: D01H (Gras 5 (Grasland)), Name (Name (dnam))
 {
-Gras 5 (Grasland)
+Grass 5 (Grassland)
 }
 
 STRING 124
 // Doodads: D01I (Gras 6 (Grasland)), Name (Name (dnam))
 {
-Gras 6 (Grasland)
+Grass 6 (Grassland)
 }
 
 STRING 125
 // Doodads: D01J (Haus 1 (Grasland)), Name (Name (dnam))
 {
-Haus 1 (Grasland)
+House 1 (Grassland)
 }
 
 STRING 126
 // Doodads: D01K (Haus 2 (Grasland)), Name (Name (dnam))
 {
-Haus 2 (Grasland)
+House 2 (Grassland)
 }
 
 STRING 127
 // Doodads: D01L (Heuhaufen (Grasland)), Name (Name (dnam))
 {
-Heuhaufen (Grasland)
+Haystack (Grassland)
 }
 
 STRING 128
 // Doodads: D01M (Heukarren (Grasland)), Name (Name (dnam))
 {
-Heukarren (Grasland)
+Hearken (Grassland)
 }
 
 STRING 129
 // Doodads: D01N (Hocker (Grasland)), Name (Name (dnam))
 {
-Hocker (Grasland)
+Stool (Grassland)
 }
 
 STRING 130
 // Doodads: D01O (Holzboden (Grasland)), Name (Name (dnam))
 {
-Holzboden (Grasland)
+Wooden Floor (Grassland)
 }
 
 STRING 131
 // Doodads: D01P (Holzscheite (Grasland)), Name (Name (dnam))
 {
-Holzscheite (Grasland)
+Pieces of Firewood (Grassland)
 }
 
 STRING 132
 // Doodads: D01Q (Holzteller (Grasland)), Name (Name (dnam))
 {
-Holzteller (Grasland)
+Wooden Plate (Grassland)
 }
 
 STRING 133
 // Fähigkeiten: A0QG (Göttergunst - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+Selflessness [|cffffcc00Level 3|r]
 }
 
 STRING 134
 // Doodads: D01S (Holzzaun 1 (Grasland)), Name (Name (dnam))
 {
-Holzzaun 1 (Grasland)
+Wooden Fence 1 (Grassland)
 }
 
 STRING 135
 // Doodads: D01T (Holzzaun 2 (Grasland)), Name (Name (dnam))
 {
-Holzzaun 2 (Grasland)
+Wooden Fence 2 (Grassland)
 }
 
 STRING 136
 // Doodads: D01U (Kamin (Grasland)), Name (Name (dnam))
 {
-Kamin (Grasland)
+Chimney (Grassland)
 }
 
 STRING 137
 // Doodads: D01V (Karren (Grasland)), Name (Name (dnam))
 {
-Karren (Grasland)
+Cart (Grassland)
 }
 
 STRING 138
 // Doodads: D01W (Kerze 1 (Grasland)), Name (Name (dnam))
 {
-Kerze 1 (Grasland)
+Candle 1 (Grassland)
 }
 
 STRING 139
 // Doodads: D01X (Kerze 2 (Grasland)), Name (Name (dnam))
 {
-Kerze 2 (Grasland)
+Candle 2 (Grassland)
 }
 
 STRING 140
@@ -844,433 +844,433 @@ Gods Favor - Level 3
 STRING 141
 // Doodads: D025 (Lagerhaus (Grasland)), Name (Name (dnam))
 {
-Lagerhaus (Grasland)
+Warehouse (Grassland)
 }
 
 STRING 142
 // Doodads: D026 (Laub (Grasland)), Name (Name (dnam))
 {
-Laub (Grasland)
+Foliage (Grassland)
 }
 
 STRING 143
 // Doodads: D027 (Laubbaum 1 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 1 (Grasland)
+Deciduous Tree 1 (Grassland)
 }
 
 STRING 144
 // Doodads: D028 (Laubbaum 2 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 2 (Grasland)
+Deciduous Tree 2 (Grassland)
 }
 
 STRING 145
 // Doodads: D029 (Laubbaum 3 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 3 (Grasland)
+Deciduous Tree 3 (Grassland)
 }
 
 STRING 146
 // Doodads: D02A (Laubbaum 4 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 4 (Grasland)
+Deciduous Tree 4 (Grassland)
 }
 
 STRING 147
 // Doodads: D02B (Laubbaum 5 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 5 (Grasland)
+Deciduous Tree 5 (Grassland)
 }
 
 STRING 148
 // Doodads: D02C (Laubbaum 6 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 6 (Grasland)
+Deciduous Tree 6 (Grassland)
 }
 
 STRING 149
 // Doodads: D02D (Laubbaum 7 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 7 (Grasland)
+Deciduous Tree 7 (Grassland)
 }
 
 STRING 150
 // Doodads: D02E (Laubbaum 8 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 8 (Grasland)
+Deciduous Tree 8 (Grassland)
 }
 
 STRING 151
 // Doodads: D02F (Laubbaum 9 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 9 (Grasland)
+Deciduous Tree 9 (Grassland)
 }
 
 STRING 152
 // Doodads: D02G (Laubbaum 10 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 10 (Grasland)
+Deciduous Tree 10 (Grassland)
 }
 
 STRING 153
 // Doodads: D02H (Laubbaum 11 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 11 (Grasland)
+Deciduous Tree 11 (Grassland)
 }
 
 STRING 154
 // Doodads: D02I (Laubbaum 12 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 12 (Grasland)
+Deciduous Tree 12 (Grassland)
 }
 
 STRING 155
 // Doodads: D02J (Laubbaum 13 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 13 (Grasland)
+Deciduous Tree 13 (Grassland)
 }
 
 STRING 156
 // Doodads: D02K (Laubbaum 14 (Grasland)), Name (Name (dnam))
 {
-Laubbaum 14 (Grasland)
+Deciduous Tree 14 (Grassland)
 }
 
 STRING 157
 // Doodads: D02L (Liegende Rübe (Grasland)), Name (Name (dnam))
 {
-Liegende Rübe (Grasland)
+Lying Turnip (Grassland)
 }
 
 STRING 158
 // Doodads: D02M (Marktstand 1 (Grasland)), Name (Name (dnam))
 {
-Marktstand 1 (Grasland)
+Stall 1 (Grassland)
 }
 
 STRING 159
 // Doodads: D02N (Nadelbaum 1 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 1 (Grasland)
+Conifer 1 (Grassland)
 }
 
 STRING 160
 // Doodads: D02O (Nadelbaum 2 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 2 (Grasland)
+Conifer 2 (Grassland)
 }
 
 STRING 161
 // Doodads: D02P (Nadelbaum 3 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 3 (Grasland)
+Conifer 3 (Grassland)
 }
 
 STRING 162
 // Doodads: D02Q (Nadelbaum 4 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 4 (Grasland)
+Conifer 4 (Grassland)
 }
 
 STRING 163
 // Doodads: D02R (Nadelbaum 5 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 5 (Grasland)
+Conifer 5 (Grassland)
 }
 
 STRING 164
 // Doodads: D02S (Nadelbaum 6 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 6 (Grasland)
+Conifer 6 (Grassland)
 }
 
 STRING 165
 // Doodads: D02T (Nadelbaum 7 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 7 (Grasland)
+Conifer 7 (Grassland)
 }
 
 STRING 166
 // Doodads: D02U (Nadelbaum 8 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 8 (Grasland)
+Conifer 8 (Grassland)
 }
 
 STRING 167
 // Doodads: D02V (Nadelbaum 9 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 9 (Grasland)
+Conifer 9 (Grassland)
 }
 
 STRING 168
 // Doodads: D02W (Nadelbaum 10 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 10 (Grasland)
+Conifer 10 (Grassland)
 }
 
 STRING 169
 // Doodads: D02X (Nadelbaum 11 (Grasland)), Name (Name (dnam))
 {
-Nadelbaum 11 (Grasland)
+Conifer 11 (Grassland)
 }
 
 STRING 170
 // Doodads: D02Y (Palisade 1 (Grasland)), Name (Name (dnam))
 {
-Palisade 1 (Grasland)
+Pale 1 (Grassland)
 }
 
 STRING 171
 // Doodads: D02Z (Pranger (Grasland)), Name (Name (dnam))
 {
-Pranger (Grasland)
+Pillory (Grassland)
 }
 
 STRING 172
 // Doodads: D030 (Regal 1 (Grasland)), Name (Name (dnam))
 {
-Regal 1 (Grasland)
+Shelves 1 (Grassland)
 }
 
 STRING 173
 // Doodads: D031 (Rübe (Grasland)), Name (Name (dnam))
 {
-Rübe (Grasland)
+Turnip (Grassland)
 }
 
 STRING 174
 // Doodads: D032 (Ruinenmauer 1 (Grasland)), Name (Name (dnam))
 {
-Ruinenmauer 1 (Grasland)
+Ruins Wall 1 (Grassland)
 }
 
 STRING 175
 // Doodads: D033 (Ruinenmauer 2 (Grasland)), Name (Name (dnam))
 {
-Ruinenmauer 2 (Grasland)
+Ruins Wall 2 (Grassland)
 }
 
 STRING 176
 // Doodads: D034 (Sack 1 (Grasland)), Name (Name (dnam))
 {
-Sack 1 (Grasland)
+Sack 1 (Grassland)
 }
 
 STRING 177
 // Doodads: D035 (Sack 2 (Grasland)), Name (Name (dnam))
 {
-Sack 2 (Grasland)
+Sack 2 (Grassland)
 }
 
 STRING 178
 // Doodads: D036 (Sack 3 (Grasland)), Name (Name (dnam))
 {
-Sack 3 (Grasland)
+Sack 3 (Grassland)
 }
 
 STRING 179
 // Doodads: D037 (Sack 4 (Grasland)), Name (Name (dnam))
 {
-Sack 4 (Grasland)
+Sack 4 (Grassland)
 }
 
 STRING 180
 // Doodads: D038 (Säule (Grasland)), Name (Name (dnam))
 {
-Säule (Grasland)
+Column (Grassland)
 }
 
 STRING 181
 // Doodads: D039 (Salberhaus (Grasland)), Name (Name (dnam))
 {
-Salberhaus (Grasland)
+Salve House (Grassland)
 }
 
 STRING 182
 // Doodads: D03A (Scheune (Grasland)), Name (Name (dnam))
 {
-Scheune (Grasland)
+Barn (Grassland)
 }
 
 STRING 183
 // Doodads: D03B (Schleifstein (Grasland)), Name (Name (dnam))
 {
-Schleifstein (Grasland)
+Grindstone (Grassland)
 }
 
 STRING 184
 // Doodads: D03C (Schmiede (Grasland)), Name (Name (dnam))
 {
-Schmiede (Grasland)
+Forge (Grassland)
 }
 
 STRING 185
 // Gegenstände: I05Q (Baupläne einer Burg), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Requires Level 30|r|n|cffffcc00Knight and Dragon Slayer|r|nErzeugt an einem Zielort eine Burg.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Requires Level 30|r|n|cffffcc00Knight and Dragon Slayer|r|nCreates a castle at the target location.|n|n|cffffcc00Only one building can be constructed.|r
 }
 
 STRING 186
 // Doodads: D03E (Stadtmauer 1 (Grasland)), Name (Name (dnam))
 {
-Stadtmauer 1 (Grasland)
+City Wall 1 (Grassland)
 }
 
 STRING 187
 // Doodads: D03F (Stadtmauer 2 (Grasland)), Name (Name (dnam))
 {
-Stadtmauer 2 (Grasland)
+City Wall 2 (Grassland)
 }
 
 STRING 188
 // Doodads: D03G (Stadtmauerneck 1 (Grasland)), Name (Name (dnam))
 {
-Stadtmauerneck 1 (Grasland)
+City Wall Corner 1 (Grassland)
 }
 
 STRING 189
 // Doodads: D03H (Stadtmauerneck 2 (Grasland)), Name (Name (dnam))
 {
-Stadtmauerneck 2 (Grasland)
+City Wall Corner 2 (Grassland)
 }
 
 STRING 190
 // Doodads: D03I (Stadtmauerneck 3 (Grasland)), Name (Name (dnam))
 {
-Stadtmauerneck 3 (Grasland)
+City Wall Corner 3 (Grassland)
 }
 
 STRING 191
 // Doodads: D03J (Stadtmauerneck 4 (Grasland)), Name (Name (dnam))
 {
-Stadtmauerneck 4 (Grasland)
+City Wall Corner 4 (Grassland)
 }
 
 STRING 192
 // Doodads: D03K (Stadtmauernkeil 1 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernkeil 1 (Grasland)
+City Wall Wedge 1 (Grassland)
 }
 
 STRING 193
 // Doodads: D03L (Stadtmauernkeil 2 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernkeil 2 (Grasland)
+City Wall Wedge 2 (Grassland)
 }
 
 STRING 194
 // Doodads: D03M (Stadtmauernkeil 3 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernkeil 3 (Grasland)
+City Wall Wedge 3 (Grassland)
 }
 
 STRING 195
 // Doodads: D03N (Stadtmauernsenke 1 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 1 (Grasland)
+City Wall Sink 1 (Grassland)
 }
 
 STRING 196
 // Doodads: D03O (Stadtmauernsenke 2 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 2 (Grasland)
+City Wall Sink 2 (Grassland)
 }
 
 STRING 197
 // Doodads: D03P (Stadtmauernsenke 3 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 3 (Grasland)
+City Wall Sink 3 (Grassland)
 }
 
 STRING 198
 // Doodads: D03Q (Stadtmauernsenke 4 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 4 (Grasland)
+City Wall Sink 4 (Grassland)
 }
 
 STRING 199
 // Doodads: D03R (Stadtmauernsenke 5 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 5 (Grasland)
+City Wall Sink 5 (Grassland)
 }
 
 STRING 200
 // Doodads: D03S (Stadtmauernsenke 6 (Grasland)), Name (Name (dnam))
 {
-Stadtmauernsenke 6 (Grasland)
+City Wall Sink 6 (Grassland)
 }
 
 STRING 201
 // Doodads: D03T (Stadttor (Grasland)), Name (Name (dnam))
 {
-Stadttor (Grasland)
+City Gate (Grassland)
 }
 
 STRING 202
 // Doodads: D03U (Stadttorhaus (Grasland)), Name (Name (dnam))
 {
-Stadttorhaus (Grasland)
+City Gatehouse (Grassland)
 }
 
 STRING 203
 // Doodads: D03V (Stadtturm (Grasland)), Name (Name (dnam))
 {
-Stadtturm (Grasland)
+City Tower (Grassland)
 }
 
 STRING 204
 // Doodads: D03W (Statue (Grasland)), Name (Name (dnam))
 {
-Statue (Grasland)
+Statue (Grassland)
 }
 
 STRING 205
 // Doodads: D03X (Steinbogen (Grasland)), Name (Name (dnam))
 {
-Steinbogen (Grasland)
+Stone Arch (Grassland)
 }
 
 STRING 206
 // Doodads: D03Y (Stuhl 1 (Grasland)), Name (Name (dnam))
 {
-Stuhl 1 (Grasland)
+Chair 1 (Grassland)
 }
 
 STRING 207
 // Doodads: D03Z (Stuhl 2 (Grasland)), Name (Name (dnam))
 {
-Stuhl 2 (Grasland)
+Chair 2 (Grassland)
 }
 
 STRING 208
 // Doodads: D040 (Taverne (Grasland)), Name (Name (dnam))
 {
-Taverne (Grasland)
+Tavern (Grassland)
 }
 
 STRING 209
 // Doodads: D042 (Tisch (Grasland)), Name (Name (dnam))
 {
-Tisch (Grasland)
+Table (Grassland)
 }
 
 STRING 210
 // Doodads: D043 (Stadttreppe (Grasland)), Name (Name (dnam))
 {
-Stadttreppe (Grasland)
+City Stairs (Grassland)
 }
 
 STRING 211
 // Doodads: D044 (Truhe 1 (Grasland)), Name (Name (dnam))
 {
-Truhe 1 (Grasland)
+Chest 1 (Grassland)
 }
 
 STRING 212
 // Doodads: D045 (Truhe 2 (Grasland)), Name (Name (dnam))
 {
-Truhe 2 (Grasland)
+Chest 2 (Grassland)
 }
 
 STRING 213
@@ -1282,43 +1282,43 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 214
 // Doodads: D047 (Wäscheleine (Grasland)), Name (Name (dnam))
 {
-Wäscheleine (Grasland)
+Clothes Line (Grassland)
 }
 
 STRING 215
 // Doodads: D048 (Waffenkiste (Grasland)), Name (Name (dnam))
 {
-Waffenkiste (Grasland)
+Weapon Box (Grassland)
 }
 
 STRING 216
 // Doodads: D049 (Waffenständer (Grasland)), Name (Name (dnam))
 {
-Waffenständer (Grasland)
+Weapon Racks (Grassland)
 }
 
 STRING 217
 // Doodads: D04A (Wandfackel (Grasland)), Name (Name (dnam))
 {
-Wandfackel (Grasland)
+Wall Torch (Grassland)
 }
 
 STRING 218
 // Doodads: D04B (Wandregal (Grasland)), Name (Name (dnam))
 {
-Wandregal (Grasland)
+Wall Shelf (Grassland)
 }
 
 STRING 219
 // Doodads: D04C (Wasserfall (Grasland)), Name (Name (dnam))
 {
-Wasserfall (Grasland)
+Waterfall (Grassland)
 }
 
 STRING 220
 // Doodads: D04D (Wasserfläche (Grasland)), Name (Name (dnam))
 {
-Wasserfläche (Grasland)
+Water Surface (Grassland)
 }
 
 STRING 221
@@ -1330,73 +1330,73 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 STRING 222
 // Doodads: D04F (Busch 1 (Insel)), Name (Name (dnam))
 {
-Busch 1 (Insel)
+Bush 1 (Island)
 }
 
 STRING 223
 // Doodads: D04G (Busch 2 (Insel)), Name (Name (dnam))
 {
-Busch 2 (Insel)
+Bush 2 (Island)
 }
 
 STRING 224
 // Doodads: D04H (Medusenstatue (Insel)), Name (Name (dnam))
 {
-Medusenstatue (Insel)
+Medusa Statue (Island)
 }
 
 STRING 225
 // Doodads: D04I (Mineneingang (Gebirge)), Name (Name (dnam))
 {
-Mineneingang (Gebirge)
+Mine Entrance (Mountains)
 }
 
 STRING 226
 // Doodads: D04J (Minensäulen (Gebirge)), Name (Name (dnam))
 {
-Minensäulen (Gebirge)
+Mine Columns (Mountains)
 }
 
 STRING 227
 // Doodads: D04K (Säule (Gebirge)), Name (Name (dnam))
 {
-Säule (Gebirge)
+Column (Mountains)
 }
 
 STRING 228
 // Doodads: D04L (Säulenfundament (Gebirge)), Name (Name (dnam))
 {
-Säulenfundament (Gebirge)
+Column Foundation (Mountains)
 }
 
 STRING 229
 // Doodads: D04M (Steingrab (Gebirge)), Name (Name (dnam))
 {
-Steingrab (Gebirge)
+Stone Grave (Mountains)
 }
 
 STRING 230
 // Doodads: D04N (Treppe (Gebirge)), Name (Name (dnam))
 {
-Treppe (Gebirge)
+Stairway (Mountains)
 }
 
 STRING 231
 // Gegenstände: I05R (Baupläne einer Kirche), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Kleriker und Nekromant|r|nErzeugt an einem Zielort eine Kirche.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Requires Level 30|r|n|cffffcc00Cleric and Necromancer|r|nCreates a church at a target location.|n|n|cffffcc00Only one building can be constructed.|r
 }
 
 STRING 232
 // Gegenstände: I05S (Baupläne eines Baumhauses), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cffffcc00Benötigt Stufe 30|r|n|cffffcc00Druide und Waldläufer|r|nErzeugt an einem Zielort ein Baumhaus.|n|n|cffffcc00Es kann nur ein Gebäude errichtet werden.|r
+|cffffcc00Requires Level 30|r|n|cffffcc00Druid and Ranger|r|nCreates a treehouse at a target location.|n|n|cffffcc00Only one building can be constructed.|r
 }
 
 STRING 233
 // Gegenstände: I02Q (Flügel des Todesengels), Name (Name (unam))
 {
-Flügel des Todesengels
+Wings of the Death Angel
 }
 
 STRING 234
@@ -1408,295 +1408,295 @@ Blind [|cffffcc00Level 3|r]
 STRING 235
 // Doodads: D04S (Schilf (Sumpf)), Name (Name (dnam))
 {
-Schilf (Sumpf)
+Reed (Swamp)
 }
 
 STRING 236
 // Doodads: D010 (Marktstand 2 (Grasland)), Name (Name (dnam))
 {
-Marktstand 2 (Grasland)
+Stable 2 (Grassland)
 }
 
 STRING 237
 // Doodads: D04U (Brot (Grasland)), Name (Name (dnam))
 {
-Brot (Grasland)
+Bread (Grassland)
 }
 
 STRING 238
 // Doodads: D04V (Birne (Grasland)), Name (Name (dnam))
 {
-Birne (Grasland)
+Pear (Grassland)
 }
 
 STRING 239
 // Doodads: D04W (Brücke (Grasland)), Name (Name (dnam))
 {
-Brücke (Grasland)
+Bridge (Grassland)
 }
 
 STRING 240
 // Doodads: D04Y (Pilz 1 (Grasland)), Name (Name (dnam))
 {
-Pilz 1 (Grasland)
+Mushroom 1 (Grassland)
 }
 
 STRING 241
 // Doodads: D04Z (Karotte (Grasland)), Name (Name (dnam))
 {
-Karotte (Grasland)
+Carrot (Grassland)
 }
 
 STRING 242
 // Doodads: D050 (Regal 2 (Grasland)), Name (Name (dnam))
 {
-Regal 2 (Grasland)
+Shelf 2 (Grassland)
 }
 
 STRING 243
 // Doodads: D051 (Wurst (Grasland)), Name (Name (dnam))
 {
-Wurst (Grasland)
+Sausage (Grassland)
 }
 
 STRING 244
 // Doodads: D052 (Burgmauer 1 (Grasland)), Name (Name (dnam))
 {
-Burgmauer 1 (Grasland)
+Castle Wall 1 (Grassland)
 }
 
 STRING 245
 // Doodads: D053 (Burgtor (Grasland)), Name (Name (dnam))
 {
-Burgtor (Grasland)
+Castle Gate (Grassland)
 }
 
 STRING 246
 // Doodads: D054 (Käse (Grasland)), Name (Name (dnam))
 {
-Käse (Grasland)
+Cheese (Grassland)
 }
 
 STRING 247
 // Doodads: D055 (Pilz 2 (Grasland)), Name (Name (dnam))
 {
-Pilz 2 (Grasland)
+Mushroom 2 (Grassland)
 }
 
 STRING 248
 // Doodads: D057 (Kirsche (Grasland)), Name (Name (dnam))
 {
-Kirsche (Grasland)
+Cherry (Grassland)
 }
 
 STRING 249
 // Doodads: D058 (Pflaume (Grasland)), Name (Name (dnam))
 {
-Pflaume (Grasland)
+Plum (Grassland)
 }
 
 STRING 250
 // Doodads: D059 (Fleischkeule (Grasland)), Name (Name (dnam))
 {
-Fleischkeule (Grasland)
+Meat Curry (Grassland)
 }
 
 STRING 251
 // Doodads: D05A (Honigtopf (Grasland)), Name (Name (dnam))
 {
-Honigtopf (Grasland)
+Honey Pot (Grassland)
 }
 
 STRING 252
 // Doodads: D05B (Leiter (Grasland)), Name (Name (dnam))
 {
-Leiter (Grasland)
+Ladder (Grassland)
 }
 
 STRING 253
 // Doodads: D04T (Palisade 2 (Grasland)), Name (Name (dnam))
 {
-Palisade 2 (Grasland)
+Pale 2 (Grassland)
 }
 
 STRING 254
 // Doodads: D04X (Palisade 3 (Grasland)), Name (Name (dnam))
 {
-Palisade 3 (Grasland)
+Pale 3 (Grassland)
 }
 
 STRING 255
 // Doodads: D05C (Palisade 4 (Grasland)), Name (Name (dnam))
 {
-Palisade 4 (Grasland)
+Pale 4 (Grassland)
 }
 
 STRING 256
 // Doodads: D05D (Palisadenturm 1 (Grasland)), Name (Name (dnam))
 {
-Palisadenturm 1 (Grasland)
+Pale Tower 1 (Grassland)
 }
 
 STRING 257
 // Doodads: D05E (Palisadenturm 2 (Grasland)), Name (Name (dnam))
 {
-Palisadenturm 2 (Grasland)
+Pale Tower 2 (Grassland)
 }
 
 STRING 258
 // Doodads: D05F (Felsbrocken 5 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 5 (Grasland)
+Lump of Rock 5 (Grassland)
 }
 
 STRING 259
 // Doodads: D05G (Felsbrocken 6 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 6 (Grasland)
+Lump of Rock 6 (Grassland)
 }
 
 STRING 260
 // Doodads: D05H (Felsbrocken 7 (Grasland)), Name (Name (dnam))
 {
-Felsbrocken 7 (Grasland)
+Lump of Rock 7 (Grassland)
 }
 
 STRING 261
 // Doodads: D05I (Ast 1 (Grasland)), Name (Name (dnam))
 {
-Ast 1 (Grasland)
+Branch 1 (Grassland)
 }
 
 STRING 262
 // Doodads: D05J (Ast 2 (Grasland)), Name (Name (dnam))
 {
-Ast 2 (Grasland)
+Branch 2 (Grassland)
 }
 
 STRING 263
 // Doodads: D05K (Banner 1 (Grasland)), Name (Name (dnam))
 {
-Banner 1 (Grasland)
+Banner 1 (Grassland)
 }
 
 STRING 264
 // Doodads: D05L (Banner 2 (Grasland)), Name (Name (dnam))
 {
-Banner 2 (Grasland)
+Banner 2 (Grassland)
 }
 
 STRING 265
 // Doodads: D05M (Bett (Grasland)), Name (Name (dnam))
 {
-Bett (Grasland)
+Bed (Grassland)
 }
 
 STRING 266
 // Doodads: D05N (Bienenkorb (Grasland)), Name (Name (dnam))
 {
-Bienenkorb (Grasland)
+Beehive (Grassland)
 }
 
 STRING 267
 // Doodads: D05O (Bienenschwarm (Grasland)), Name (Name (dnam))
 {
-Bienenschwarm (Grasland)
+Swarm of Bees (Grassland)
 }
 
 STRING 268
 // Doodads: D05P (Blume 4 (Grasland)), Name (Name (dnam))
 {
-Blume 4 (Grasland)
+Flower 4 (Grassland)
 }
 
 STRING 269
 // Doodads: D05Q (Blume 5 (Grasland)), Name (Name (dnam))
 {
-Blume 5 (Grasland)
+Flower 5 (Grassland)
 }
 
 STRING 270
 // Doodads: D05R (Blume 6 (Grasland)), Name (Name (dnam))
 {
-Blume 6 (Grasland)
+Flower 6 (Grassland)
 }
 
 STRING 271
 // Doodads: D05S (Blume 7 (Grasland)), Name (Name (dnam))
 {
-Blume 7 (Grasland)
+Flower 7 (Grassland)
 }
 
 STRING 272
 // Doodads: D05T (Blume 8 (Grasland)), Name (Name (dnam))
 {
-Blume 8 (Grasland)
+Flower 8 (Grassland)
 }
 
 STRING 273
 // Doodads: D05U (Blume 9 (Grasland)), Name (Name (dnam))
 {
-Blume 9 (Grasland)
+Flower 9 (Grassland)
 }
 
 STRING 274
 // Doodads: D05V (Bogen Mit Pfeilen (Grasland)), Name (Name (dnam))
 {
-Bogen Mit Pfeilen (Grasland)
+Bow with Arrows (Grassland)
 }
 
 STRING 275
 // Doodads: D05W (Bretter (Grasland)), Name (Name (dnam))
 {
-Bretter (Grasland)
+Boards (Grassland)
 }
 
 STRING 276
 // Doodads: D05X (Busch 12 (Grasland)), Name (Name (dnam))
 {
-Busch 12 (Grasland)
+Bush 12 (Grassland)
 }
 
 STRING 277
 // Doodads: D05Y (Busch 13 (Grasland)), Name (Name (dnam))
 {
-Busch 13 (Grasland)
+Bush 13 (Grassland)
 }
 
 STRING 278
 // Doodads: D05Z (Busch 14 (Grasland)), Name (Name (dnam))
 {
-Busch 14 (Grasland)
+Bush 14 (Grassland)
 }
 
 STRING 279
 // Doodads: D060 (Busch 15 (Grasland)), Name (Name (dnam))
 {
-Busch 15 (Grasland)
+Bush 15 (Grassland)
 }
 
 STRING 280
 // Doodads: D061 (Busch 16 (Grasland)), Name (Name (dnam))
 {
-Busch 16 (Grasland)
+Bush 16 (Grassland)
 }
 
 STRING 281
 // Doodads: D062 (Fahne (Grasland)), Name (Name (dnam))
 {
-Fahne (Grasland)
+Flag (Grassland)
 }
 
 STRING 282
 // Doodads: D063 (Fellständer (Grasland)), Name (Name (dnam))
 {
-Fellständer (Grasland)
+Fur Stand (Grassland)
 }
 
 STRING 283
 // Doodads: D064 (Feuerkessel (Grasland)), Name (Name (dnam))
 {
-Feuerkessel (Grasland)
+Fire Boiler (Grassland)
 }
 
 STRING 284
@@ -26980,7 +26980,7 @@ Bärengestalt - Stufe 5
 STRING 5371
 // Fähigkeiten: A0JD (Waldfeenzauber - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+(Spell Book Ability - Druid)
 }
 
 STRING 5372
@@ -26992,7 +26992,7 @@ Bärengestalt - Stufe 1
 STRING 5373
 // Fähigkeiten: A0EJ (Zorn des Waldes - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+(Spell Book Ability - Druid)
 }
 
 STRING 5374
@@ -27796,7 +27796,7 @@ Baumhirte - Stufe 5
 STRING 5730
 // Fähigkeiten: A0EM (Zorn des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5731
@@ -27808,7 +27808,7 @@ Baumhirte - Stufe 1
 STRING 5732
 // Fähigkeiten: A0UE (Bärengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5733
@@ -27820,7 +27820,7 @@ Baumhirte - Stufe 2
 STRING 5734
 // Fähigkeiten: A0D1 (Dryadenquelle - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5735
@@ -27832,7 +27832,7 @@ Baumhirte - Stufe 3
 STRING 5736
 // Fähigkeiten: A0E0 (Waldholzfäuste - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5737
@@ -27844,7 +27844,7 @@ Baumhirte - Stufe 4
 STRING 5738
 // Fähigkeiten: A0DM (Baumhirte - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5739
@@ -27862,7 +27862,7 @@ Treefolk
 STRING 5741
 // Zauberverstärker/Effekte: B01X (), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Ein mächtiger Gefährte.
+A powerful fellow.
 }
 
 STRING 5742
@@ -28192,7 +28192,7 @@ Ranken - Stufe 5
 STRING 5905
 // Fähigkeiten: A0DY (Waldholzfäuste - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5906
@@ -28204,7 +28204,7 @@ Ranken - Stufe 1
 STRING 5907
 // Fähigkeiten: A0JV (Erwachen des Waldes - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5908
@@ -28216,7 +28216,7 @@ Ranken - Stufe 2
 STRING 5909
 // Fähigkeiten: A0JB (Waldfeenzauber - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5910
@@ -28228,7 +28228,7 @@ Ranken - Stufe 3
 STRING 5911
 // Fähigkeiten: A0CP (Krähengestalt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5912
@@ -28240,7 +28240,7 @@ Ranken - Stufe 4
 STRING 5913
 // Fähigkeiten: A0DZ (Waldholzfäuste - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5914
@@ -28330,7 +28330,7 @@ Zorn des Waldes - Stufe 3
 STRING 5960
 // Fähigkeiten: A150 (Einschüchtern - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Angriffsgeschwindkeit eines Gegners 7 Sekunden lang.|n<A05Q,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r - Verringert die Angrifssgeschwindigkeit um 10 %.|n|cffffcc00Stufe 2|r - Verringert die Angrifssgeschwindigkeit um 20 %.|n|cffffcc00Stufe 3|r - Verringert die Angrifssgeschwindigkeit um 30 %.|n|cffffcc00Stufe 4|r - Verringert die Angrifssgeschwindigkeit um 40 %.|n|cffffcc00Stufe 5|r - Verringert die Angrifssgeschwindigkeit um 50 %.
+Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Reduces the attack speed by 10 %.|n|cffffcc00Level 2|r - Reduces the attack speed by 20 %.|n|cffffcc00Level 3|r - Reduces the attack speed by 30 %.|n|cffffcc00Level 4|r - Reduces the attack speed by 40 %.|n|cffffcc00Level 5|r - Reduces the attack speed by 50 %.
 }
 
 STRING 5970
@@ -28372,7 +28372,7 @@ Zorn des Waldes - Stufe 5
 STRING 5988
 // Fähigkeiten: A03Y (Alpha - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5989
@@ -28384,7 +28384,7 @@ Zorn des Waldes - Stufe 1
 STRING 5990
 // Fähigkeiten: A1L0 (Waldfeenzauber - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Portection [|cffffcc00Level 2|r]
 }
 
 STRING 5991
@@ -28827,13 +28827,13 @@ Erlauben das Fesseln von Gegnern.
 STRING 6119
 // Gegenstände: I062 (Trollketten), Tip (Tooltipp - Einfach (utip))
 {
-Trollketten kaufen
+Buy Troll Chains
 }
 
 STRING 6120
 // Fähigkeiten: A1C6 (Trollketten), Name (Name (anam))
 {
-Trollketten
+Troll Chains
 }
 
 STRING 6121
@@ -28965,7 +28965,7 @@ STRING 6141
 STRING 6142
 // Fähigkeiten: A1CB (Manatrank), Name (Name (anam))
 {
-Manatrank
+Mana Potion
 }
 
 STRING 6143
@@ -28977,7 +28977,7 @@ STRING 6143
 STRING 6144
 // Fähigkeiten: A1CC (Großer Manatrank), Name (Name (anam))
 {
-Großer Manatrank
+Big Mana Potion
 }
 
 STRING 6145
@@ -28989,13 +28989,13 @@ STRING 6145
 STRING 6146
 // Fähigkeiten: A1CD (Aufträge - Krieg), Name (Name (anam))
 {
-Aufträge - Krieg
+Missions - War
 }
 
 STRING 6147
 // Fähigkeiten: A1CD (Aufträge - Krieg), Tip (Tooltipp - Normal (atp1))
 {
-Krieg
+War
 }
 
 STRING 6148
@@ -29025,7 +29025,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 STRING 6160
 // Fähigkeiten: A1CH (Bestehlen - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen [|cffffcc00Stufe 2|r]
+Steal [|cffffcc00Level 2|r]
 }
 
 STRING 6161
@@ -29037,7 +29037,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6162
 // Fähigkeiten: A1CL (Bestehlen - Stufe 2), Name (Name (anam))
 {
-Bestehlen - Stufe 2
+Steal - Level 2
 }
 
 STRING 6165
@@ -29079,7 +29079,7 @@ Master of Necromancy [|cffffcc00Level 5|r]
 STRING 6189
 // Fähigkeiten: A0LD (Schützen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+Selflessness [|cffffcc00Level 3|r]
 }
 
 STRING 6190
@@ -29103,7 +29103,7 @@ Meister der Nekromantie - Stufe 1
 STRING 6195
 // Fähigkeiten: A0RZ (Seelendiebstahl - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
+Removes all negative buffs from an ally or all positive buffs from an opponent every 25 seconds. Sets the duration of summoned allies to 50 seconds or of summoned opponents to 20 seconds.|nThe cooldown is reduced every level.
 }
 
 STRING 6196
@@ -29151,13 +29151,13 @@ Meister der Nekromantie - Stufe 5
 STRING 6204
 // Fähigkeiten: A0SW (Schwachstelle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffcc00Stufe 1|r - <A06Y,DataA1>%ige Chance.|n|cffffcc00Stufe 2|r - <A06Y,DataA2>%ige Chance.|n|cffffcc00Stufe 3|r - <A06Y,DataA3>%ige Chance.|n|cffffcc00Stufe 4|r - <A06Y,DataA4>%ige Chance.|n|cffffcc00Stufe 5|r - <A06Y,DataA5>%ige Chance.
+The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - Chance of <A06Y,DataA1>%.|n|cffffcc00Level 2|r - Chance of <A06Y,DataA2>%.|n|cffffcc00Level 3|r - Chance of <A06Y,DataA3>%.|n|cffffcc00Level 4|r - Chance of <A06Y,DataA4>%.|n|cffffcc00Level 5|r - Chance of <A06Y,DataA5>%.
 }
 
 STRING 6213
 // Fähigkeiten: A0SS (Schwachstelle - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 1|r]
+Weak Spot [|cffffcc00Level 1|r]
 }
 
 STRING 6214
@@ -29169,7 +29169,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6215
 // Fähigkeiten: A0SS (Schwachstelle - Stufe 1), Name (Name (anam))
 {
-Schwachstelle - Stufe 1
+Weak Spot - Level 1
 }
 
 STRING 6218
@@ -29181,7 +29181,7 @@ Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffc
 STRING 6227
 // Fähigkeiten: A0ST (Schwachstelle - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 2|r]
+Weak Spot [|cffffcc00Level 2|r]
 }
 
 STRING 6228
@@ -29193,7 +29193,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6229
 // Fähigkeiten: A0SY (Schwachstelle - Stufe 2), Name (Name (anam))
 {
-Schwachstelle - Stufe 2
+Weak Spot - Level 2
 }
 
 STRING 6232
@@ -29205,7 +29205,7 @@ Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffc
 STRING 6241
 // Fähigkeiten: A0SU (Schwachstelle - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 3|r]
+Weak Spot [|cffffcc00Level 3|r]
 }
 
 STRING 6242
@@ -29229,7 +29229,7 @@ Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffc
 STRING 6255
 // Fähigkeiten: A0SV (Schwachstelle - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 4|r]
+Weak Spot [|cffffcc00Level 4|r]
 }
 
 STRING 6256
@@ -29241,7 +29241,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6257
 // Fähigkeiten: A0T0 (Schwachstelle - Stufe 4), Name (Name (anam))
 {
-Schwachstelle - Stufe 4
+Weak Spot - Level 4
 }
 
 STRING 6260
@@ -29253,7 +29253,7 @@ Der Drachentöter hat eine Chance von zweifachen Schaden zuzufügen. |n|n|cffffc
 STRING 6269
 // Fähigkeiten: A06Y (Schwachstelle), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle [|cffffcc00Stufe 5|r]
+Weak Spot [|cffffcc00Level 5|r]
 }
 
 STRING 6270
@@ -29265,7 +29265,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 6271
 // Fähigkeiten: A0SW (Schwachstelle - Stufe 5), Name (Name (anam))
 {
-Schwachstelle - Stufe 5
+Weak Spot - Level 5
 }
 
 STRING 6274
@@ -29277,7 +29277,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6275
 // Fähigkeiten: A0SX (Schwachstelle - Stufe 1), Name (Name (anam))
 {
-Schwachstelle - Stufe 1
+Weak Spot - Level 1
 }
 
 STRING 6276
@@ -29601,7 +29601,7 @@ STRING 6392
 STRING 6393
 // Fähigkeiten: A0FH (Alpha - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Alpha [|cffffcc00Stufe 1|r]
+Alpha [|cffffcc00Level 1|r]
 }
 
 STRING 6394
@@ -29781,31 +29781,31 @@ Schwachstelle - Stufe 5
 STRING 6434
 // Fähigkeiten: A0FL (Totenbeschwörung - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 1|r]
+Necromancy [|cffffcc00Level 1|r]
 }
 
 STRING 6435
 // Fähigkeiten: A0FM (Totenbeschwörung - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 2|r]
+Necromancy [|cffffcc00Level 2|r]
 }
 
 STRING 6436
 // Fähigkeiten: A0FN (Totenbeschwörung - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 3|r]
+Necromancy [|cffffcc00Level 3|r]
 }
 
 STRING 6437
 // Fähigkeiten: A0FO (Totenbeschwörung - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 4|r]
+Necromancy [|cffffcc00Level 4|r]
 }
 
 STRING 6438
 // Fähigkeiten: A0FP (Totenbeschwörung - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 5|r]
+Necromancy [|cffffcc00Level 5|r]
 }
 
 STRING 6442
@@ -29829,7 +29829,7 @@ STRING 6444
 STRING 6455
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+The Elemental Mage stuns his target for some time. |n|n|cffffcc00Level 1|r - 3 seconds. |n|cffffcc00Level 2|r - 4 seconds. |n|cffffcc00Level 3|r - 5 seconds. |n|cffffcc00Level 4|r - 6 seconds.|n|cffffcc00Level 5|r - 7 seconds.
 }
 
 STRING 6456
@@ -29859,7 +29859,7 @@ Treefolk
 STRING 6482
 // Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung [|cffffcc00Stufe 3|r]
+Necromancy [|cffffcc00Level 3|r]
 }
 
 STRING 6483
@@ -54067,7 +54067,7 @@ Verbessert den Angriffsschaden des Gebäudes.
 STRING 14272
 // Ausbaustufen: R003 (Eisen-Schwerter,Stahl-Schwerter,Mithril-Schwerter), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Verbessert den Angriffsschaden des Gebäudes.
+Imporves the attack damage of the building.
 }
 
 STRING 14273
@@ -59977,7 +59977,7 @@ Beutezug - Stufe 1
 STRING 15270
 // Fähigkeiten: A0VO (Horn des Kampfes), Tip (Tooltipp - Normal (atp1))
 {
-Horn des Kampfes
+Horn of the Fight
 }
 
 STRING 15271
@@ -60025,7 +60025,7 @@ Neck Stone
 STRING 15279
 // Gegenstände: I05W (Nixenstein), Tip (Tooltipp - Einfach (utip))
 {
-Nixenstein kaufen
+Buy Neck Stone
 }
 
 STRING 15280
@@ -60205,25 +60205,25 @@ Verfluchter Boden - Stufe 1
 STRING 15334
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 2|r]
+Cursed Ground [|cffffcc00Level 2|r]
 }
 
 STRING 15335
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 3|r]
+Cursed Ground [|cffffcc00Level 3|r]
 }
 
 STRING 15336
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 4|r]
+Cursed Ground [|cffffcc00Level 4|r]
 }
 
 STRING 15337
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden [|cffffcc00Stufe 5|r]
+Cursed Ground [|cffffcc00Level 5|r]
 }
 
 STRING 15338
@@ -67521,7 +67521,7 @@ Erhöht die Bewegungsgeschwindigkeit von Packpferden.
 STRING 17045
 // Ausbaustufen: R007 (Berserker-Kraft), Ubertip (Tooltipp - Erweitert (gub1))
 {
-Erhöht die Bewegungsgeschwindigkeit von Packpferden.
+Increases the movement speed of packhorses.
 }
 
 STRING 17046
@@ -74540,7 +74540,7 @@ Ranken - Erlernen
 STRING 18959
 // Fähigkeiten: A0JN (Wohltat - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+(Spell Book Ability - Druid)
 }
 
 STRING 18960
@@ -75362,7 +75362,7 @@ Erster Mann - Stufe 1
 STRING 19257
 // Fähigkeiten: A0DW (Waldholzfäuste - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+(Spell Book Ability - Druid)
 }
 
 STRING 19258
