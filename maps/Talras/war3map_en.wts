@@ -2422,25 +2422,25 @@ STRING 403
 STRING 404
 // Fähigkeiten: A004 (Magische Explosion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 405
 // Fähigkeiten: A004 (Magische Explosion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 406
 // Fähigkeiten: A004 (Magische Explosion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 407
 // Fähigkeiten: A004 (Magische Explosion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 408
@@ -2488,7 +2488,7 @@ STRING 414
 STRING 415
 // Fähigkeiten: A004 (Magische Explosion), Name (Name (anam))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 416
@@ -2992,7 +2992,7 @@ STRING 498
 STRING 499
 // Fähigkeiten: A00B (Flucht), Name (Name (anam))
 {
-Flucht
+Escape
 }
 
 STRING 500
@@ -4091,7 +4091,7 @@ Strength
 }
 
 STRING 684
-// Fähigkeiten: A1V4 (Optionen - Weltkarte), Name (Name (anam))
+// Fähigkeiten: A1V5 (Optionen - Weltkarte), Name (Name (anam))
 {
 Options - World Map
 }
@@ -4502,7 +4502,7 @@ STRING 752
 STRING 753
 // Gegenstände: I03Q (Ein Beutel voll Scheiße), Description (Beschreibung (ides))
 {
-Ein Beutel gefüllt mit Ralphs Scheiße.
+A bag filled with Ralph's shit.
 }
 
 STRING 754
@@ -4544,7 +4544,7 @@ Shows the character management in which the character can be managed.
 STRING 760
 // Fähigkeiten: A1V7 (Optionen - Charakterverwaltung), Name (Name (anam))
 {
-Optionen - Charakterverwaltung
+Options - Character Management
 }
 
 STRING 761
@@ -4568,7 +4568,7 @@ STRING 763
 STRING 764
 // Gegenstände: I07B (Buch der Dämonologie), Name (Name (unam))
 {
-Buch der Dämonologie
+Book of Demonology
 }
 
 STRING 765
@@ -4616,7 +4616,7 @@ Prevent Evil - Level 2
 STRING 772
 // Fähigkeiten: A1V8 (Buch der Dämonologie), Name (Name (anam))
 {
-Buch der Dämonologie
+Book of Demonology
 }
 
 STRING 773
@@ -4638,7 +4638,7 @@ STRING 775
 }
 
 STRING 776
-// Fähigkeiten: A1V9 (Kind opfern), Tip (Tooltipp - Normal (atp1))
+// Fähigkeiten: A1V9 (Kind opfern), Name (Name (anam))
 {
 Sacrifice Child
 }
@@ -4680,7 +4680,7 @@ STRING 782
 }
 
 STRING 783
-// Fähigkeiten: A1VA (Tier opfern), Name (Name (anam))
+// Fähigkeiten: A1VA (Tier opfern), Tip (Tooltipp - Normal (atp1))
 {
 Sacrifice Animal
 }
@@ -4760,7 +4760,7 @@ Beschwörung
 STRING 796
 // Einheiten: n08V (Herr der Finsternis), Name (Name (unam))
 {
-Herr der Finsternis
+Lord of Darkness
 }
 
 STRING 797
@@ -4902,7 +4902,7 @@ Der Geist eines Tieres
 }
 
 STRING 820
-// Gegenstände: I07C (Die Seele eines Kindes), Tip (Tooltipp - Einfach (utip))
+// Gegenstände: I07D (Der Geist eines Tieres), Tip (Tooltipp - Einfach (utip))
 {
 Buy the Soul of a Child
 }
@@ -7882,7 +7882,7 @@ Stellt bei Benutzung <AImr,DataA1> Mana bei sich selbst und verbündeten Einheit
 }
 
 STRING 1317
-// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
+// Gegenstände: I00G (Spruchrolle der Zauberkraft), Description (Beschreibung (ides))
 {
 Restores missing mana.
 }
@@ -7932,7 +7932,7 @@ STRING 1324
 STRING 1325
 // Fähigkeiten: A1VD (Herr der Finsternis), Tip (Tooltipp - Normal (atp1))
 {
-Herr der Finsternis
+Lord of Darkness
 }
 
 STRING 1326
@@ -8790,7 +8790,7 @@ Todesruf
 STRING 1468
 // Fähigkeiten: A0RD (Todesmantel), EditorSuffix (Editor-Suffix (ansf))
 {
-(Skelettmagier)
+(Skeleton Magician)
 }
 
 STRING 1469
@@ -8826,7 +8826,7 @@ Diese Einheit steht unter dem Einfluss von 'Todesruf'; Angriffsrate und Bewegung
 STRING 1474
 // Fähigkeiten: A0RC (Totenerweckung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Skelettmagier)
+(Skeleton Magician)
 }
 
 STRING 1475
@@ -11100,7 +11100,7 @@ STRING 1852
 STRING 1853
 // Fähigkeiten: A04H (Ziel markieren), Tip (Tooltipp - Normal (atp1))
 {
-Ziel markieren
+Mark Target
 }
 
 STRING 1854
@@ -11715,7 +11715,7 @@ B
 }
 
 STRING 1960
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1KH (Großes Heilkraut), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -11756,7 +11756,7 @@ Loaf
 }
 
 STRING 1970
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A061 (Steinpilz), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -11932,7 +11932,7 @@ Die Standarte der schwarzen Legion.
 STRING 2009
 // Gegenstände: I01C (Standarte der weißen Legion), Name (Name (unam))
 {
-Standarte der weißen Legion
+Banner of the White Legion
 }
 
 STRING 2010
@@ -12940,7 +12940,7 @@ STRING 2193
 STRING 2194
 // Fähigkeiten: A1AG (Standarte der weißen Legion), Name (Name (anam))
 {
-Standarte der weißen Legion
+Banner of the White Legion
 }
 
 STRING 2195
@@ -13336,7 +13336,7 @@ Banner of the White Legion
 STRING 2269
 // Zauberverstärker/Effekte: B00N (Standarte der weißen Legion), EditorName (Name (nur Editor) (fnam))
 {
-Standarte der weißen Legion
+Banner of the White Legion
 }
 
 STRING 2270
@@ -13516,13 +13516,13 @@ Kristallgolem
 STRING 2304
 // Einheiten: n00F (Blutquelle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2305
 // Einheiten: n00G (Schattenefreet), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2306
@@ -13534,13 +13534,13 @@ Schattenefreet-Händler
 STRING 2307
 // Einheiten: n00H (Schattenefreet-Händler), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2308
 // Einheiten: n00I (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2309
@@ -13558,19 +13558,19 @@ STRING 2310
 STRING 2311
 // Einheiten: n00L (Baldar), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2312
 // Einheiten: n026 (Meister), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2313
 // Einheiten: n00N (Imp), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2314
@@ -13582,13 +13582,13 @@ Camp of the Black Legion
 STRING 2315
 // Einheiten: u000 (Lager der Schwarzen Legion), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2316
 // Einheiten: u001 (Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2317
@@ -13600,7 +13600,7 @@ Schmettern
 STRING 2318
 // Einheiten: n027 (Gardist), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2319
@@ -13612,7 +13612,7 @@ Schwertkämpferin
 STRING 2320
 // Einheiten: u00C (Armseliger Imp-Arbeiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2321
@@ -13636,7 +13636,7 @@ Archer
 STRING 2324
 // Einheiten: n028 (Bogenschütze), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2325
@@ -13648,7 +13648,7 @@ Reiter
 STRING 2326
 // Einheiten: n029 (Reiter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2327
@@ -13660,7 +13660,7 @@ Haldar
 STRING 2328
 // Einheiten: n00K (Haldar), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2329
@@ -13672,7 +13672,7 @@ Honigquelle
 STRING 2330
 // Einheiten: n02A (Honigquelle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2331
@@ -14028,7 +14028,7 @@ Rigidity
 }
 
 STRING 2394
-// Fähigkeiten: A05I (Rundumhieb), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0N5 (Ruf des Nordens), EditorSuffix (Editor-Suffix (ansf))
 {
 A peaceful sheep who likes to be ridden.
 }
@@ -14148,13 +14148,13 @@ Schil|cffffcc00d|rblock
 }
 
 STRING 2414
-// Fähigkeiten: A05H (Speerwurf), Name (Name (anam))
+// Zauberverstärker/Effekte: B00S (Speerwurf), EditorName (Name (nur Editor) (fnam))
 {
 Spear Throw
 }
 
 STRING 2415
-// Fähigkeiten: A05H (Speerwurf), Name (Name (anam))
+// Zauberverstärker/Effekte: B00S (Speerwurf), Bufftip (Tooltipp (ftip))
 {
 Spear Throw
 }
@@ -14240,7 +14240,7 @@ Setzt alle Einheiten auf dem Rücken des Drachens am Zielort ab.
 STRING 2429
 // Fähigkeiten: A0RA (Tote beleben), EditorSuffix (Editor-Suffix (ansf))
 {
-(Untoten-König)
+(Undead King)
 }
 
 STRING 2430
@@ -14403,7 +14403,7 @@ Lebensregenerationsaura
 STRING 2457
 // Fähigkeiten: A05K (Lebensregenerationsaura), EditorSuffix (Editor-Suffix (ansf))
 {
-(Nur Verbündete)
+(Only Allies)
 }
 
 STRING 2458
@@ -14475,7 +14475,7 @@ Protection of the King
 STRING 2479
 // Zauberverstärker/Effekte: B029 (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Untoten-König)
+(Undead King)
 }
 
 STRING 2480
@@ -14643,7 +14643,7 @@ Farmhand
 STRING 2510
 // Einheiten: n02J (Knecht), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Bauernhof)
+(Farm)
 }
 
 STRING 2511
@@ -14739,7 +14739,7 @@ Tücke
 STRING 2526
 // Fähigkeiten: A05U (Tücke), EditorSuffix (Editor-Suffix (ansf))
 {
-(Vampir)
+(Vampire)
 }
 
 STRING 2527
@@ -14829,7 +14829,7 @@ Lässt in einem Gebiet <A0RA,DataA1> tote Einheiten auferstehen, die <A0RA,Dur1>
 STRING 2541
 // Zauberverstärker/Effekte: B02A (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Untoten-König)
+(Undead King)
 }
 
 STRING 2542
@@ -14913,7 +14913,7 @@ Ancestors Pact |cffffcc00Level 4|r]
 STRING 2557
 // Fähigkeiten: A05Y (Arkaner Hunger - Erlernen), Name (Name (anam))
 {
-Arkaner Hunger - Erlernen
+Arcane Hunger - Learn
 }
 
 STRING 2560
@@ -15007,7 +15007,7 @@ STRING 2581
 }
 
 STRING 2582
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04S (Fleischkeule), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -15019,7 +15019,7 @@ Chanterelle
 }
 
 STRING 2584
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19J (Heilkraut), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -15051,7 +15051,7 @@ Ein Todesmantel, der bei einer befreundeten untoten Einheit <A0RD,DataA1> Treffe
 STRING 2589
 // Fähigkeiten: A062 (Amulett des Schreckens), Name (Name (anam))
 {
-Amulett des Schreckens
+Amulet of Terror
 }
 
 STRING 2590
@@ -15093,7 +15093,7 @@ Erhöht die Bewegungs- und Angriffsgeschwindigkeit des Trägers und seiner Verb�
 STRING 2596
 // Zauberverstärker/Effekte: B009 (Todesruf), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Skelettmagier)
+(Skeleton Magician)
 }
 
 STRING 2597
@@ -15117,7 +15117,7 @@ STRING 2599
 STRING 2600
 // Gegenstände: I01L (Steinpilz), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A060,DataA1> Trefferpunkte wieder her.
+Restores <A060,DataA1> hitpoints on usage.
 }
 
 STRING 2601
@@ -15585,7 +15585,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 2705
 // Fähigkeiten: A06C (Arkaner Schutz - Erlernen), Name (Name (anam))
 {
-Arkaner Schutz - Erlernen
+Arcane Protection - Learn
 }
 
 STRING 2706
@@ -15621,7 +15621,7 @@ STRING 2717
 STRING 2720
 // Fähigkeiten: A13I (Feenfeuer), EditorSuffix (Editor-Suffix (ansf))
 {
-(Vampir)
+(Vampire)
 }
 
 STRING 2721
@@ -15720,7 +15720,7 @@ Buy Wizard Hat
 STRING 2744
 // Fähigkeiten: A06G (Zauberhut), Name (Name (anam))
 {
-Zauberhut
+Wizard Hat
 }
 
 STRING 2745
@@ -15732,7 +15732,7 @@ STRING 2745
 STRING 2746
 // Fähigkeiten: A06H (Zauberhut), Name (Name (anam))
 {
-Zauberhut
+Wizard Hat
 }
 
 STRING 2747
@@ -15744,7 +15744,7 @@ STRING 2747
 STRING 2748
 // Fähigkeiten: A06I (Zaubermantel), Name (Name (anam))
 {
-Zaubermantel
+Magic Cloak
 }
 
 STRING 2749
@@ -17346,7 +17346,7 @@ Der Riese ist so fett, dass ihm eine Chance von <A077,DataA1>% gewährt wird, An
 STRING 3077
 // Fähigkeiten: A078 (Dummheit), Tip (Tooltipp - Normal (atp1))
 {
-Dummheit
+Stupidity
 }
 
 STRING 3078
@@ -17394,13 +17394,13 @@ Diese Einheit steht unter der Wirkung von 'Übergewicht'; sie hat eine Chance de
 STRING 3086
 // Zauberverstärker/Effekte: B016 (Dummheit), EditorName (Name (nur Editor) (fnam))
 {
-Dummheit
+Stupidity
 }
 
 STRING 3087
 // Zauberverstärker/Effekte: B016 (Dummheit), Bufftip (Tooltipp (ftip))
 {
-Dummheit
+Stupidity
 }
 
 STRING 3088
@@ -17928,7 +17928,7 @@ Erhöht das Wissen des Lesers dauerhaft um <A04T,DataB1>.
 STRING 3179
 // Gegenstände: I01W (Speer), Name (Name (unam))
 {
-Speer
+Spear
 }
 
 STRING 3180
@@ -18366,7 +18366,7 @@ Langbogen kaufen
 STRING 3263
 // Fähigkeiten: A1DE (Kapuze), Name (Name (anam))
 {
-Kapuze
+Hood
 }
 
 STRING 3264
@@ -18390,7 +18390,7 @@ Seelendiebstahl - Stufe 1
 STRING 3267
 // Fähigkeiten: A07S (Mantel), Name (Name (anam))
 {
-Mantel
+Cloak
 }
 
 STRING 3268
@@ -18492,7 +18492,7 @@ STRING 3284
 STRING 3285
 // Fähigkeiten: A04N (Kapuze), Name (Name (anam))
 {
-Kapuze
+Hood
 }
 
 STRING 3286
@@ -18504,7 +18504,7 @@ STRING 3286
 STRING 3287
 // Fähigkeiten: S003 (Kapuze), Name (Name (anam))
 {
-Kapuze
+Hood
 }
 
 STRING 3288
@@ -18516,7 +18516,7 @@ STRING 3288
 STRING 3289
 // Fähigkeiten: A07R (Mantel), Name (Name (anam))
 {
-Mantel
+Cloak
 }
 
 STRING 3290
@@ -18528,7 +18528,7 @@ STRING 3290
 STRING 3291
 // Fähigkeiten: A1DC (Mantel), Name (Name (anam))
 {
-Mantel
+Cloak
 }
 
 STRING 3292
@@ -18612,13 +18612,13 @@ STRING 3304
 STRING 3305
 // Zauberverstärker/Effekte: B01D (Mantel), EditorName (Name (nur Editor) (fnam))
 {
-Mantel
+Cloak
 }
 
 STRING 3306
 // Zauberverstärker/Effekte: B01D (Mantel), Bufftip (Tooltipp (ftip))
 {
-Mantel
+Cloak
 }
 
 STRING 3307
@@ -19764,7 +19764,7 @@ Heals <A06A,DataD5> life per second for an allied non-mechanic target for <A06A,
 STRING 3564
 // Fähigkeiten: A1CG (Heer der Hochelfen), Tip (Tooltipp - Normal (atp1))
 {
-Heer der Hochelfen
+Army of the High Elves
 }
 
 STRING 3565
@@ -20148,7 +20148,7 @@ Erhöht den Schaden um <A07M,DataA1>. Bei einem Treffer werden für <A07L,DataC1
 STRING 3645
 // Gegenstände: I02I (Spruchrolle der Totenbeschwörung), Name (Name (unam))
 {
-Spruchrolle der Totenbeschwörung
+Scroll of Necromancy
 }
 
 STRING 3646
@@ -28915,7 +28915,7 @@ Blessing [|cffffcc00Level 2|r]
 }
 
 STRING 6134
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A04Q (Brotlaib), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -38245,7 +38245,7 @@ Exorcize Evil [|cffffcc00Level 1|r]
 }
 
 STRING 9803
-// Fähigkeiten: A1U1 (Dungeons - Trommelhöhle), Tip (Tooltipp - Normal (atp1))
+// Einheiten: n040 (Trommelhöhle), Name (Name (unam))
 {
 Drum Cave
 }
@@ -38277,7 +38277,7 @@ Erhöht die Stärke des Trinkenden dauerhaft um <A07C,DataC1>.
 STRING 9810
 // Fähigkeiten: A0PV (Amulett des Schreckens), Name (Name (anam))
 {
-Amulett des Schreckens
+Amulet of Terror
 }
 
 STRING 9811
@@ -38439,19 +38439,19 @@ Eine Zauberspruchrolle der Zauberin Sisgard, die einen Pfeilhagel über dem Zaub
 STRING 9844
 // Fähigkeiten: A0G9 (Arkaner Schutz - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 9845
 // Fähigkeiten: A0G7 (Arkaner Schutz - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 9846
 // Fähigkeiten: A06C (Arkaner Schutz - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 9847
@@ -38463,13 +38463,13 @@ Crow Form [|cffffcc00Level 5|r]
 STRING 9848
 // Fähigkeiten: A0G8 (Arkaner Schutz - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 9849
 // Fähigkeiten: A0GA (Arkaner Schutz - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 9850
@@ -44635,7 +44635,7 @@ STRING 12153
 STRING 12154
 // Zauberverstärker/Effekte: B00W (Tücke), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Vampir)
+(Vampire)
 }
 
 STRING 12155
@@ -44749,7 +44749,7 @@ Epidemie - Stufe 1
 STRING 12188
 // Fähigkeiten: A17J (Mächtiger Zauberhut), Name (Name (anam))
 {
-Mächtiger Zauberhut
+Powerful Wizard Hat
 }
 
 STRING 12189
@@ -46585,7 +46585,7 @@ Man on a sheep
 STRING 12875
 // Fähigkeiten: A15U (Stein des Opfers), Name (Name (anam))
 {
-Stein des Opfers
+Stone of Sacrifice
 }
 
 STRING 12876
@@ -49501,7 +49501,7 @@ Wildgrubenpfähle, die einem Gegner Schaden zufügen können, der auf sie fällt
 STRING 13498
 // Einheiten: h02A (Packpferd), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Gebäude)
+(Building)
 }
 
 STRING 13499
@@ -49567,7 +49567,7 @@ Templer anheuern
 STRING 13509
 // Einheiten: n051 (Templer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 13510
@@ -49585,7 +49585,7 @@ Templer-Gardist anheuern
 STRING 13512
 // Einheiten: n052 (Templer-Gardist), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 13513
@@ -49603,7 +49603,7 @@ Templer-Schlächter anheuern
 STRING 13515
 // Einheiten: n053 (Templer-Schlächter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 13516
@@ -49621,7 +49621,7 @@ Templer-Arzt anheuern
 STRING 13518
 // Einheiten: n054 (Templer-Arzt), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 13519
@@ -50039,7 +50039,7 @@ STRING 13587
 }
 
 STRING 13588
-// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
+// Gegenstände: I05L (Manakraut), Description (Beschreibung (ides))
 {
 Restores missing mana.
 }
@@ -50359,7 +50359,7 @@ Baupläne einer Burg kaufen
 STRING 13642
 // Fähigkeiten: A196 (Beladen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Gebäude)
+(Building)
 }
 
 STRING 13643
@@ -50479,13 +50479,13 @@ Laderaum
 STRING 13662
 // Fähigkeiten: A19D (Reparieren), EditorSuffix (Editor-Suffix (ansf))
 {
-(Gebäude)
+(Building)
 }
 
 STRING 13663
 // Fähigkeiten: A197 (Dunkle Beschwörung), EditorSuffix (Editor-Suffix (ansf))
 {
-(Gebäude)
+(Building)
 }
 
 STRING 13664
@@ -50699,7 +50699,7 @@ Bekehrung [|cffffcc00Stufe 2|r] (|cffffcc00T|r)
 }
 
 STRING 13711
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1SA (Mehl), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -50725,7 +50725,7 @@ Laden-Pfeil
 STRING 13715
 // Zauberverstärker/Effekte: B00N (Standarte der weißen Legion), Bufftip (Tooltipp (ftip))
 {
-Standarte der weißen Legion
+Banner of the White Legion
 }
 
 STRING 13716
@@ -59833,7 +59833,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 15233
 // Fähigkeiten: A19V (Zaubermantel), Name (Name (anam))
 {
-Zaubermantel
+Magic Cloak
 }
 
 STRING 15234
@@ -60899,7 +60899,7 @@ Erz
 }
 
 STRING 15461
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07H (Skelettmörder), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -72054,7 +72054,7 @@ STRING 17875
 }
 
 STRING 17876
-// Fähigkeiten: A1KH (Großes Heilkraut), Name (Name (anam))
+// Gegenstände: I06Q (Großes Heilkraut), Name (Name (unam))
 {
 Big Healing Herb
 }
@@ -72078,7 +72078,7 @@ Big Healing Herb
 }
 
 STRING 17880
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1KI (Kleines Heilkraut), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -72150,7 +72150,7 @@ Buy Small Mana Herb
 }
 
 STRING 17892
-// Gegenstände: I06S (Großes Manakraut), Description (Beschreibung (ides))
+// Gegenstände: I06T (Kleines Manakraut), Description (Beschreibung (ides))
 {
 Restores missing mana.
 }
@@ -72162,13 +72162,13 @@ Kleines Heilkraut
 }
 
 STRING 17894
-// Gegenstände: I06S (Großes Manakraut), Name (Name (unam))
+// Fähigkeiten: A1KJ (Großes Manakraut), Name (Name (anam))
 {
 Big Mana Herb
 }
 
 STRING 17895
-// Gegenstände: I06T (Kleines Manakraut), Name (Name (unam))
+// Fähigkeiten: A1KK (Kleines Manakraut), Name (Name (anam))
 {
 Small Mana Herb
 }
@@ -77682,7 +77682,7 @@ Axt herstellen
 }
 
 STRING 19753
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07I (Obsidian-Diener), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -77934,7 +77934,7 @@ Missions - A New Alliance
 }
 
 STRING 19799
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07J (Dunkler Wächter), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78042,7 +78042,7 @@ Dunkler Wächter
 }
 
 STRING 19817
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07K (Missglücktes Experiment), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78066,7 +78066,7 @@ Herr der Gruft
 }
 
 STRING 19821
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07M (Schrecken der Erde), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78078,7 +78078,7 @@ Schrecken der Erde
 }
 
 STRING 19823
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07N (Deranors Unheil), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78090,7 +78090,7 @@ Deranors Unheil
 }
 
 STRING 19825
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07O (Meister der Magier), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78102,7 +78102,7 @@ Meister der Magier
 }
 
 STRING 19827
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07P (Deranors Leibwache), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78210,19 +78210,19 @@ STRING 19844
 }
 
 STRING 19845
-// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1S1 (Zauber-Immunität), EditorSuffix (Editor-Suffix (ansf))
 {
 (Master of Magicians)
 }
 
 STRING 19846
-// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1RY (Fluch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Master of Magicians)
 }
 
 STRING 19847
-// Fähigkeiten: A1S0 (Stille), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1RZ (Manabrand), EditorSuffix (Editor-Suffix (ansf))
 {
 (Master of Magicians)
 }
@@ -78276,7 +78276,7 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um
 }
 
 STRING 19856
-// Einheiten: n07L (Herr der Gruft), EditorSuffix (Name - Editor-Suffix (unsf))
+// Einheiten: n07U (Urwesen), EditorSuffix (Name - Editor-Suffix (unsf))
 {
 (Deranor's Swamp)
 }
@@ -78324,7 +78324,7 @@ STRING 19863
 }
 
 STRING 19864
-// Fähigkeiten: A04B (Das Heer der Orks), Name (Name (anam))
+// Fähigkeiten: A04B (Das Heer der Orks), Tip (Tooltipp - Normal (atp1))
 {
 The Army of the Orcs
 }
@@ -78450,7 +78450,7 @@ Heilt bei Benutzung <A1SA,DataA1> Trefferpunkte.
 }
 
 STRING 19885
-// Fähigkeiten: A1C7 (Apfel), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A060 (Pfifferling), EditorSuffix (Editor-Suffix (ansf))
 {
 (Healing)
 }
@@ -78504,7 +78504,7 @@ STRING 19901
 }
 
 STRING 19902
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1ST (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78552,7 +78552,7 @@ STRING 19919
 }
 
 STRING 19920
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SQ (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78600,7 +78600,7 @@ STRING 19927
 }
 
 STRING 19928
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SW (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78612,7 +78612,7 @@ STRING 19929
 }
 
 STRING 19930
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SN (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78708,7 +78708,7 @@ STRING 19945
 }
 
 STRING 19946
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SX (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78900,7 +78900,7 @@ STRING 19977
 }
 
 STRING 19978
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SR (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78912,7 +78912,7 @@ STRING 19979
 }
 
 STRING 19980
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SM (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78924,7 +78924,7 @@ STRING 19981
 }
 
 STRING 19982
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SU (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78936,7 +78936,7 @@ STRING 19983
 }
 
 STRING 19984
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SH (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78948,7 +78948,7 @@ STRING 19985
 }
 
 STRING 19986
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SY (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78960,7 +78960,7 @@ STRING 19987
 }
 
 STRING 19988
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SO (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78972,7 +78972,7 @@ STRING 19989
 }
 
 STRING 19990
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SK (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -78996,7 +78996,7 @@ STRING 19993
 }
 
 STRING 19994
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SS (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -79008,7 +79008,7 @@ STRING 19995
 }
 
 STRING 19996
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SV (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -79020,7 +79020,7 @@ STRING 19997
 }
 
 STRING 19998
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SL (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -79032,7 +79032,7 @@ STRING 19999
 }
 
 STRING 20000
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1T0 (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -79044,7 +79044,7 @@ STRING 20001
 }
 
 STRING 20002
-// Fähigkeiten: A1SP (Pferd reiten), Name (Name (anam))
+// Fähigkeiten: A1SZ (Pferd reiten), Name (Name (anam))
 {
 Ride Horse
 }
@@ -79380,7 +79380,7 @@ War Drums of the Orcs
 }
 
 STRING 20059
-// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
+// Gegenstände: I076 (Kriegstrommeln der Orks), Tip (Tooltipp - Einfach (utip))
 {
 War Drums of the Orcs
 }
@@ -79398,13 +79398,13 @@ Erhöhen den Schaden Verbündeter im Umkreis.
 }
 
 STRING 20062
-// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
+// Fähigkeiten: A1TN (Kriegstrommeln der Orks), Name (Name (anam))
 {
 War Drums of the Orcs
 }
 
 STRING 20063
-// Gegenstände: I076 (Kriegstrommeln der Orks), Name (Name (unam))
+// Fähigkeiten: A1TM (Kriegstrommeln der Orks), Name (Name (anam))
 {
 War Drums of the Orcs
 }
@@ -79512,7 +79512,7 @@ Zieht die Hauer von einem toten Keiler.
 }
 
 STRING 20081
-// Fähigkeiten: A1TQ (Hauer ziehen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1TS (Knochen entfernen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Hunting)
 }
@@ -79536,7 +79536,7 @@ Camera - Increase Camera Distance
 }
 
 STRING 20085
-// Fähigkeiten: A1TQ (Hauer ziehen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1TR (Fell abziehen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Book of Hunting)
 }
@@ -80100,7 +80100,7 @@ Gestein aus der Unterwelt.
 }
 
 STRING 20183
-// Einheiten: n081 (Sklavin), Name (Name (unam))
+// Einheiten: n07Y (Sklavin), Name (Name (unam))
 {
 Slave
 }
@@ -80118,7 +80118,7 @@ Sklavin erwerben
 }
 
 STRING 20186
-// Einheiten: n081 (Sklavin), Name (Name (unam))
+// Einheiten: n07Z (Sklavin), Name (Name (unam))
 {
 Slave
 }
@@ -80136,7 +80136,7 @@ Sklavin erwerben
 }
 
 STRING 20189
-// Einheiten: n081 (Sklavin), Name (Name (unam))
+// Einheiten: n080 (Sklavin), Name (Name (unam))
 {
 Slave
 }
@@ -80208,7 +80208,7 @@ Jumps to the current target location of the mission.
 }
 
 STRING 20201
-// Fähigkeiten: A1UR (Aufträge - Arenameister), Name (Name (anam))
+// Fähigkeiten: A1V3 (Aufträge - Arenameister), Name (Name (anam))
 {
 Missions - Arena Champison
 }
