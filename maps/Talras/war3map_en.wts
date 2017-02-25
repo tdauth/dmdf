@@ -2446,7 +2446,7 @@ Magische Explosion
 STRING 408
 // Fähigkeiten: A004 (Magische Explosion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Explosion
+Magical Explosion
 }
 
 STRING 409
@@ -2926,31 +2926,31 @@ Antizauber
 STRING 488
 // Fähigkeiten: A00B (Flucht), Tip (Tooltipp - Normal (atp1))
 {
-Flucht
+Escape
 }
 
 STRING 489
 // Fähigkeiten: A1TT (Optionen - Dungeons), Name (Name (anam))
 {
-Optionen - Dungeons
+Options - Dungeons
 }
 
 STRING 490
 // Fähigkeiten: A1TV (Optionen - Kamera), Name (Name (anam))
 {
-Optionen - Kamera
+Options - Camera
 }
 
 STRING 491
 // Fähigkeiten: A1TU (Optionen - Gespräche), Name (Name (anam))
 {
-Optionen - Gespräche
+Options - Talks
 }
 
 STRING 492
 // Fähigkeiten: A1BY (Optionen - Aufträge), Name (Name (anam))
 {
-Optionen - Aufträge
+Options - Missions
 }
 
 STRING 493
@@ -4448,7 +4448,7 @@ Prevent Evil - Level 1
 STRING 744
 // Gegenstände: I02F (Harke), Tip (Tooltipp - Einfach (utip))
 {
-Harke kaufen
+Buy Ruke
 }
 
 STRING 745
@@ -4460,7 +4460,7 @@ The knight rushes his target and stuns it for 2 seconds and deals X points damag
 STRING 746
 // Gegenstände: I03Q (Ein Beutel voll Scheiße), Name (Name (unam))
 {
-Ein Beutel voll Scheiße
+A Bag full of Shit
 }
 
 STRING 747
@@ -4514,31 +4514,31 @@ Entzünden
 STRING 755
 // Gegenstände: I03Q (Ein Beutel voll Scheiße), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Beutel gefüllt mit Ralphs Scheiße.
+A bag filled with Ralph's shit.
 }
 
 STRING 756
 // Gegenstände: I03Q (Ein Beutel voll Scheiße), Tip (Tooltipp - Einfach (utip))
 {
-Einen Beutel voll Scheiße kaufen
+Buy a Bag full of Shit
 }
 
 STRING 757
 // Fähigkeiten: A1V6 (Optionen - Charakterverwaltung), Name (Name (anam))
 {
-Optionen - Charakterverwaltung
+Options - Character Management
 }
 
 STRING 758
 // Fähigkeiten: A1V6 (Optionen - Charakterverwaltung), Tip (Tooltipp - Normal (atp1))
 {
-Charakterverwaltung
+Character Management
 }
 
 STRING 759
 // Fähigkeiten: A1V6 (Optionen - Charakterverwaltung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zeigt die Charakterverwaltung an, in welcher der Charakter verwaltet werden kann.
+Shows the character management in which the character can be managed.
 }
 
 STRING 760
@@ -4586,7 +4586,7 @@ Eiszeit
 STRING 767
 // Gegenstände: I07B (Buch der Dämonologie), Tip (Tooltipp - Einfach (utip))
 {
-Buch der Dämonologie
+Book of Demonology
 }
 
 STRING 768
@@ -4928,7 +4928,7 @@ STRING 823
 STRING 824
 // Fähigkeiten: A1VD (Herr der Finsternis), Name (Name (anam))
 {
-Herr der Finsternis
+Lord of Darkness
 }
 
 STRING 825
@@ -11088,7 +11088,7 @@ STRING 1850
 STRING 1851
 // Fähigkeiten: A04H (Ziel markieren), Name (Name (anam))
 {
-Ziel markieren
+Mark Target
 }
 
 STRING 1852
@@ -11106,7 +11106,7 @@ Ziel markieren
 STRING 1854
 // Einheiten: n091 (Erster Stock), Name (Name (unam))
 {
-Erster Stock
+First Floor
 }
 
 STRING 1855
@@ -11136,13 +11136,13 @@ Stiehlt <A1WA,DataB1> % des Lebens und <A1WA,DataA1> % des Manas eines Gegners u
 STRING 1859
 // Gegenstände: I084 (Dunkle Essenz), Name (Name (unam))
 {
-Dunkle Essenz
+Dark Essence
 }
 
 STRING 1860
 // Gegenstände: I084 (Dunkle Essenz), Tip (Tooltipp - Einfach (utip))
 {
-Dunkle Essenz kaufen
+Buy Dark Essence
 }
 
 STRING 1861
@@ -11484,7 +11484,7 @@ Geistestotem
 STRING 1917
 // Gegenstände: I087 (Geistestotem), Description (Beschreibung (ides))
 {
-Teilt den Schmerz mit Verbündeten.
+Shares the pain with allies.
 }
 
 STRING 1918
@@ -13330,7 +13330,7 @@ Diese Einheit steht unter der Wirkung der 'Standarte der schwarzen Legion'; sie 
 STRING 2268
 // Fähigkeiten: A059 (Standarte der weißen Legion), Name (Name (anam))
 {
-Standarte der weißen Legion
+Banner of the White Legion
 }
 
 STRING 2269
@@ -13546,13 +13546,13 @@ STRING 2308
 STRING 2309
 // Einheiten: n00J (Berserker), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Schwarze Legion)
+(Drum Cave - Black Legion)
 }
 
 STRING 2310
 // Einheiten: n00M (Schwertkämpferin), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Trommelhöhle - Weiße Legion)
+(Drum Cave - White Legion)
 }
 
 STRING 2311
@@ -13576,7 +13576,7 @@ STRING 2313
 STRING 2314
 // Einheiten: u000 (Lager der Schwarzen Legion), Name (Name (unam))
 {
-Lager der Schwarzen Legion
+Camp of the Black Legion
 }
 
 STRING 2315
@@ -13618,7 +13618,7 @@ STRING 2320
 STRING 2321
 // Einheiten: n026 (Meister), Name (Name (unam))
 {
-Meister
+Master
 }
 
 STRING 2322
@@ -13630,7 +13630,7 @@ Gardist
 STRING 2323
 // Einheiten: n028 (Bogenschütze), Name (Name (unam))
 {
-Bogenschütze
+Archer
 }
 
 STRING 2324
@@ -13678,7 +13678,7 @@ STRING 2330
 STRING 2331
 // Gegenstände: I04V (Stein des Opfers), Name (Name (unam))
 {
-Stein des Opfers
+Stone of Sacrifice
 }
 
 STRING 2332
@@ -13708,7 +13708,7 @@ STRING 2335
 STRING 2336
 // Einheiten: n00U (Wegelagerer), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Fernkampf)
+(Range Combat)
 }
 
 STRING 2337
@@ -13801,7 +13801,7 @@ Feuerregen
 
 STRING 2353
 {
-%d Goldmünzen und %d Baumaterial von %s erhalten.
+Got %d golc coins and %d building materials.
 }
 
 STRING 2354
@@ -13811,7 +13811,7 @@ Got %d gold coins from %s.
 
 STRING 2355
 {
-%d Baumaterial von %s erhalten.
+Got %d building materials from %s.
 }
 
 STRING 2356
@@ -13851,7 +13851,7 @@ Aura of the King
 
 STRING 2362
 {
-Baumaterial:
+Building Materials:
 }
 
 STRING 2363
@@ -13888,12 +13888,12 @@ Gold Coins
 STRING 2369
 // Fähigkeiten: A0R8 (Aura des Königs), EditorSuffix (Editor-Suffix (ansf))
 {
-(Untoten-König)
+(Undead King)
 }
 
 STRING 2370
 {
-Baumaterial
+Building Materials
 }
 
 STRING 2371
@@ -13926,7 +13926,7 @@ Flammenhaut
 
 STRING 2376
 {
-Baumaterial gesammelt
+Collected Building Materials
 }
 
 STRING 2377
@@ -13953,13 +13953,13 @@ Noch nicht erhaltener Auftrag
 STRING 2381
 // Einheiten: n071 (Dämonen-Bestie), Name (Name (unam))
 {
-Dämonen-Bestie
+Demon Beast
 }
 
 STRING 2382
 // Einheiten: n072 (Flammendämon), Name (Name (unam))
 {
-Flammendämon
+Flame Demon
 }
 
 STRING 2383
@@ -14030,7 +14030,7 @@ Rigidity
 STRING 2394
 // Fähigkeiten: A05I (Rundumhieb), EditorSuffix (Editor-Suffix (ansf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+A peaceful sheep who likes to be ridden.
 }
 
 STRING 2395
@@ -14042,7 +14042,7 @@ Rigidity
 STRING 2396
 // Fähigkeiten: A05F (Unbeugsamkeit), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Macht Wigberht gegenüber allen Zaubern immun.
+Makes Wigberht immune to all spells.
 }
 
 STRING 2397
@@ -14415,7 +14415,7 @@ Manaregenerationsaura
 STRING 2459
 // Fähigkeiten: A05L (Manaregenerationsaura), EditorSuffix (Editor-Suffix (ansf))
 {
-(Nur Verbündete)
+(Only Allies)
 }
 
 STRING 2460
@@ -14445,7 +14445,7 @@ STRING 2473
 STRING 2474
 // Fähigkeiten: A05Y (Arkaner Hunger - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Hunger erlernen
+Learn Arcane Hunger
 }
 
 STRING 2475
@@ -14781,7 +14781,7 @@ Tücke
 STRING 2533
 // Fähigkeiten: S006 (Blut saugen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Vampir)
+(Vampire)
 }
 
 STRING 2534
@@ -14853,7 +14853,7 @@ Bannt positive Zauberverstärker von feindlichen Einheiten und negative Zauberve
 STRING 2545
 // Gegenstände: I022 (Kapuze), Name (Name (unam))
 {
-Kapuze
+Hood
 }
 
 STRING 2546
@@ -14865,7 +14865,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 2547
 // Gegenstände: I023 (Mantel), Name (Name (unam))
 {
-Mantel
+Cloak
 }
 
 STRING 2548
@@ -14925,13 +14925,13 @@ Parasite [|cffffcc00Level 2|r]
 STRING 2561
 // Fähigkeiten: A05Z (Arkaner Hunger - Erlernen), Name (Name (anam))
 {
-Arkaner Hunger - Erlernen
+Arcane Hunger - Learn
 }
 
 STRING 2562
 // Fähigkeiten: A0GB (Arkaner Schutz - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt einen Schilld, der verhindert, dass Zauber einen angewählten Verbündeten oder den Zauberer selbst beeinflussen. Reduziert außerdem den erlittenen Magie-Schaden des Ziels.|n|n|cffffcc00Stufe 1|r - <A0A8,DataB1>% Magieschaden-Reduzierung. Hält <A0A8,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - <A0A8,DataB2>% Magieschaden-Reduzierung. Hält <A0A8,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - <A0A8,DataB3>% Magieschaden-Reduzierung. Hält <A0A8,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - <A0A8,DataB4>% Magieschaden-Reduzierung. Hält <A0A8,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - <A0A8,DataB5>% Magieschaden-Reduzierung. Hält <A0A8,Dur5> Sekunden.
+Creates a shield that prevents spells from affecting a selected ally or the wizard himself. Besides reduces the suffered magical damage of the target.|n|n|cffffcc00Level 1|r - <A0A8,DataB1>% magical damage reduction. Lasts <A0A8,Dur1> seconds.|n|cffffcc00Level 2|r - <A0A8,DataB2>% magical damage reduction. Lasts <A0A8,Dur2> seconds.|n|cffffcc00Level 3|r - <A0A8,DataB3>% magical damage reduction. Lasts <A0A8,Dur3> seconds.|n|cffffcc00Level 4|r - <A0A8,DataB4>% magical damage reduction. Lasts <A0A8,Dur4> seconds.|n|cffffcc00Level 5|r - <A0A8,DataB5>% magical damage reduction. Lasts <A0A8,Dur5> seconds.
 }
 
 STRING 2570
@@ -15003,7 +15003,7 @@ P
 STRING 2581
 // Fähigkeiten: A02U (Todesruf), EditorSuffix (Editor-Suffix (ansf))
 {
-(Skelettmagier)
+(Skeleton Magician)
 }
 
 STRING 2582
@@ -15033,7 +15033,7 @@ Cep
 STRING 2586
 // Gegenstände: I01M (Amulett des Schreckens), Name (Name (unam))
 {
-Amulett des Schreckens
+Amulet of Terror
 }
 
 STRING 2587
@@ -15105,7 +15105,7 @@ Satyr
 STRING 2598
 // Gegenstände: I01K (Pfifferling), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A060,DataA1> Trefferpunkte wieder her.
+Restores <A060,DataA1> hitpoints on usage.
 }
 
 STRING 2599
@@ -15561,7 +15561,7 @@ STRING 2697
 STRING 2698
 // Fähigkeiten: S006 (Blut saugen), Name (Name (anam))
 {
-Blut saugen
+Suck Blood
 }
 
 STRING 2699
@@ -15573,7 +15573,7 @@ STRING 2699
 STRING 2701
 // Fähigkeiten: A06D (Arkaner Schutz - Erlernen), Name (Name (anam))
 {
-Arkaner Schutz - Erlernen
+Arcane Protection - Learn
 }
 
 STRING 2704
@@ -15696,25 +15696,25 @@ Zauberamulett
 STRING 2736
 // Gegenstände: I01R (Zaubermantel), Name (Name (unam))
 {
-Zaubermantel
+Magic Cloak
 }
 
 STRING 2739
 // Gegenstände: I01R (Zaubermantel), Tip (Tooltipp - Einfach (utip))
 {
-Zaubermantel kaufen
+Buy Magic Cloak
 }
 
 STRING 2740
 // Gegenstände: I01S (Zauberhut), Name (Name (unam))
 {
-Zauberhut
+Wizard Hat
 }
 
 STRING 2743
 // Gegenstände: I01S (Zauberhut), Tip (Tooltipp - Einfach (utip))
 {
-Zauberhut kaufen
+Buy Wizard Hat
 }
 
 STRING 2744
@@ -15876,7 +15876,7 @@ STRING 2777
 STRING 2778
 // Fähigkeiten: A06L (Machtentzug), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Nimmt einem Gegner das gesamte Mana und gibt es der Waldhexe.
+Takes the whole mana of an opponent and transfers it to the forest fury.
 }
 
 STRING 2779
@@ -16567,7 +16567,7 @@ Rekrutierungsstelle
 STRING 2937
 // Einheiten: n04F (Rekrutierungsstelle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Bauernhof)
+(Farm)
 }
 
 STRING 2938
@@ -16837,7 +16837,7 @@ Animal Abilities
 STRING 2986
 // Gegenstände: I05A (Mächtiger Zauberhut), Name (Name (unam))
 {
-Mächtiger Zauberhut
+Powerful Wizard Hat
 }
 
 STRING 2987
@@ -17364,7 +17364,7 @@ Der Riese ist so dumm, dass die Dauer negativer Zauber reduziert wird und ihn ge
 STRING 3080
 // Fähigkeiten: A078 (Dummheit), Name (Name (anam))
 {
-Dummheit
+Stupidity
 }
 
 STRING 3081
@@ -18006,7 +18006,7 @@ STRING 3191
 STRING 3192
 // Fähigkeiten: A07F (Speer), Name (Name (anam))
 {
-Speer
+Spear
 }
 
 STRING 3193
@@ -19314,7 +19314,7 @@ Erhöht die Bewegungsgeschwindigkeit und ermöglicht es, bei Nacht für Gegner u
 STRING 3439
 // Gegenstände: I023 (Mantel), Description (Beschreibung (ides))
 {
-Erhöht die Bewegungsgeschwindigkeit, die Angriffsrate und das Geschick.
+Increases the movement speed, the attack rate and the dexterity.
 }
 
 STRING 3440
@@ -20172,7 +20172,7 @@ Beschwört Leichen, die für den Zaubernden kämpfen.
 STRING 3649
 // Fähigkeiten: A08S (Spruchrolle der Totenbeschwörung), Name (Name (anam))
 {
-Spruchrolle der Totenbeschwörung
+Scroll of Necromancy
 }
 
 STRING 3650
@@ -20460,7 +20460,7 @@ Arkane List [|cffffcc00Stufe 1|r]
 STRING 3705
 // Einheiten: n04Z (Wildgrubenpfähle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Gebäude)
+(Building)
 }
 
 STRING 3706
@@ -29007,7 +29007,7 @@ Jumps to the current target location of the mission.
 STRING 6149
 // Fähigkeiten: A1CG (Heer der Hochelfen), Name (Name (anam))
 {
-Heer der Hochelfen
+Army of the High Elves
 }
 
 STRING 6150
@@ -80288,7 +80288,7 @@ Aufträge - Tod der schwarzen Legion
 STRING 20214
 // Fähigkeiten: A1UV (Aufträge - Tod der schwarzen Legion), Tip (Tooltipp - Normal (atp1))
 {
-Tod der schwarzen Legion
+Death to the Black Legion
 }
 
 STRING 20215
@@ -80456,11 +80456,11 @@ Helmet of the Captain
 STRING 20242
 // Fähigkeiten: A1V1 (Helm des Hauptmanns), EditorSuffix (Editor-Suffix (ansf))
 {
-(+6 Stärke)
+(+6 Strength)
 }
 
 STRING 20243
 // Gegenstände: I072 (Helm des Hauptmanns), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verstärkt die Rüstung um <A1V0,DataA1>. Erhöht die Stärke um <A1V0,DataC1>.
+Strengthens the armour by <A1V0,DataA1>. Increases the damage by <A1V0,DataC1>.
 }
