@@ -7,7 +7,6 @@ library StructGameShop requires Asl
 		private unit m_npc
 		private unit m_shop
 		private static trigger m_sellTrigger
-		private static AIntegerList m_shops
 
 		/**
 		 * Creates a new shop instance for an NPC.
@@ -18,7 +17,12 @@ library StructGameShop requires Asl
 			local thistype this = thistype.allocate()
 			set this.m_npc = npc
 			set this.m_shop = shop
+			call DmdfHashTable.global().setHandleInteger(npc, DMDF_HASHTABLE_KEY_SHOP, this)
 			return this
+		endmethod
+
+		public method onDestroy takes nothing returns nothing
+			call DmdfHashTable.global().removeHandleInteger(this.m_npc, DMDF_HASHTABLE_KEY_SHOP)
 		endmethod
 
 		private static method triggerConditionSell takes nothing returns boolean
@@ -32,19 +36,11 @@ library StructGameShop requires Asl
 		private static method timerFunctionSelectShop takes nothing returns nothing
 			local unit sellingUnit = thistype(DmdfHashTable.global().handleUnit(GetExpiredTimer(), 0))
 			local unit soldUnit = DmdfHashTable.global().handleUnit(GetExpiredTimer(), 1)
-			local thistype shop = 0
-			local AIntegerListIterator iterator = thistype.m_shops.begin()
-			loop
-				exitwhen (not iterator.isValid())
-				set shop = thistype(iterator.data())
-				debug call Print("Checking shop " + GetUnitName(shop.m_npc))
-				if (sellingUnit == shop.m_npc) then
-					call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(shop.m_shop), GetUnitY(shop.m_shop), 0.0, 0.0)
-					call SelectUnitForPlayerSingle(shop.m_shop, GetOwningPlayer(soldUnit))
-				endif
-				call iterator.next()
-			endloop
-			call iterator.destroy()
+			local thistype shop = thistype(DmdfHashTable.global().handleInteger(sellingUnit, DMDF_HASHTABLE_KEY_SHOP))
+			if (shop != 0) then
+				call SmartCameraPanWithZForPlayer(GetOwningPlayer(soldUnit), GetUnitX(shop.m_shop), GetUnitY(shop.m_shop), 0.0, 0.0)
+				call SelectUnitForPlayerSingle(shop.m_shop, GetOwningPlayer(soldUnit))
+			endif
 
 			set sellingUnit = null
 			call RemoveUnit(soldUnit)
@@ -71,12 +67,15 @@ library StructGameShop requires Asl
 			call TimerStart(whichTimer, 0.0, false, function thistype.timerFunctionSelectShop)
 		endmethod
 
+		/**
+		 * Initializes the shop system. This has to be called before any shop is used.
+		 * Initializes the sell trigger.
+		 */
 		public static method init takes nothing returns nothing
 			set thistype.m_sellTrigger = CreateTrigger()
 			call TriggerRegisterAnyUnitEventBJ(thistype.m_sellTrigger, EVENT_PLAYER_UNIT_SELL)
 			call TriggerAddCondition(thistype.m_sellTrigger, Condition(function thistype.triggerConditionSell))
 			call TriggerAddAction(thistype.m_sellTrigger, function thistype.triggerActionSell)
-			set thistype.m_shops = AIntegerList.create()
 		endmethod
 	endstruct
 

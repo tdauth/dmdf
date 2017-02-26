@@ -113,7 +113,9 @@ library StructMapMapNpcs requires StructGameDmdfHashTable
 			call SetUnitInvulnerable(gg_unit_n01I_0151, true)
 			call SetUnitInvulnerable(gg_unit_n01I_0152, true)
 			call SetUnitInvulnerable(gg_unit_n01I_0153, true)
+		endmethod
 
+		public static method initShops takes nothing returns nothing
 			// has to be called AFTER Shop.init()!
 			call Shop.create(thistype.m_einar, thistype.m_einarsShop)
 			call Shop.create(thistype.m_irmina, thistype.m_irminasShop)
