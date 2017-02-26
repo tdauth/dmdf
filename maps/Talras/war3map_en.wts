@@ -5114,7 +5114,7 @@ Prevent Evil [|cffffcc00Level 5|r]
 STRING 855
 // Einheiten: n045 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 856
@@ -22776,7 +22776,7 @@ Previous page
 STRING 4173
 // Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4182
@@ -23412,7 +23412,7 @@ Rückkopplung [|cffffcc00Stufe 4|r]
 STRING 4338
 // Fähigkeiten: A0VR (Stab der Vereisung), Name (Name (anam))
 {
-Stab der Vereisung
+Staff of Icing
 }
 
 STRING 4339
@@ -23424,7 +23424,7 @@ STRING 4339
 STRING 4340
 // Fähigkeiten: A0VS (Amulett der Lebenskraft), Name (Name (anam))
 {
-Amulett der Lebenskraft
+Amulet of Life Energy
 }
 
 STRING 4341
@@ -24138,7 +24138,7 @@ STRING 4564
 STRING 4565
 // Einheiten: n046 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 4566
@@ -24156,7 +24156,7 @@ Schattenefreet anheuern
 STRING 4568
 // Einheiten: n047 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 4569
@@ -24174,7 +24174,7 @@ Schattenefreet anheuern
 STRING 4571
 // Einheiten: n048 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 4572
@@ -24192,7 +24192,7 @@ Schattenefreet anheuern
 STRING 4574
 // Einheiten: n049 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 4575
@@ -24210,7 +24210,7 @@ Schattenefreet anheuern
 STRING 4577
 // Einheiten: n07A (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 4578
@@ -26722,13 +26722,13 @@ Allows the wearing unit to teleport itself to an already discovered revival shri
 STRING 5267
 // Gegenstände: I03F (Dämonenasche), Description (Beschreibung (ides))
 {
-Stiehlt die Seele eines Gegners.
+Steals the soul of an opponent.
 }
 
 STRING 5268
 // Gegenstände: I03F (Dämonenasche), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stiehlt die Seele eines Gegners.
+Steals the soul of an opponent.
 }
 
 STRING 5269
@@ -26812,7 +26812,7 @@ Zutaten:- Dämonenasche- Engelslocken- Schamanenkraut
 STRING 5287
 // Gegenstände: I03I (Tellborns Geisterrune), Name (Name (unam))
 {
-Tellborns Geisterrune
+Tellborn's Ghost Rune
 }
 
 STRING 5288
@@ -27004,7 +27004,7 @@ Bärengestalt - Stufe 2
 STRING 5375
 // Fähigkeiten: A0DN (Baumhirte - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5376
@@ -27016,7 +27016,7 @@ Bärengestalt - Stufe 3
 STRING 5377
 // Fähigkeiten: A1JS (Krähengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5378
@@ -27028,7 +27028,7 @@ Bärengestalt - Stufe 4
 STRING 5379
 // Fähigkeiten: A0EU (Tierkunde - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5380
@@ -27064,7 +27064,7 @@ Krähengestalt - Stufe 1
 STRING 5395
 // Fähigkeiten: A0JW (Erwachen des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5396
@@ -27148,7 +27148,7 @@ Krähengestalt - Stufe 5
 STRING 5453
 // Fähigkeiten: A0JC (Waldfeenzauber - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5454
@@ -27160,7 +27160,7 @@ Krähengestalt - Stufe 2
 STRING 5455
 // Fähigkeiten: A0EC (Ranken - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5456
@@ -27172,7 +27172,7 @@ Krähengestalt - Stufe 3
 STRING 5457
 // Fähigkeiten: A0X3 (Kräuterheilung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5458
@@ -27184,7 +27184,7 @@ Krähengestalt - Stufe 4
 STRING 5459
 // Fähigkeiten: A0CI (Krähengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5460
@@ -27268,7 +27268,7 @@ Dryadenquelle - Stufe 1
 STRING 5489
 // Fähigkeiten: A0CO (Krähengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5490
@@ -27280,7 +27280,7 @@ Dryadenquelle - Stufe 2
 STRING 5491
 // Fähigkeiten: A0CQ (Krähengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5492
@@ -27382,7 +27382,7 @@ Dryadenquelle - Stufe 5
 STRING 5549
 // Fähigkeiten: A0DC (Hain - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5550
@@ -27394,7 +27394,7 @@ Dryadenquelle - Stufe 3
 STRING 5551
 // Fähigkeiten: A0DF (Hain - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5552
@@ -27406,7 +27406,7 @@ Dryadenquelle - Stufe 4
 STRING 5553
 // Fähigkeiten: A0JY (Erwachen des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5554
@@ -27598,7 +27598,7 @@ Hain - Stufe 5
 STRING 5641
 // Fähigkeiten: A0JU (Erwachen des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5642
@@ -27610,7 +27610,7 @@ Hain - Stufe 1
 STRING 5643
 // Fähigkeiten: A0EW (Tierkunde - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5644
@@ -27622,7 +27622,7 @@ Hain - Stufe 2
 STRING 5645
 // Fähigkeiten: A0EA (Ranken - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5646
@@ -27634,7 +27634,7 @@ Hain - Stufe 3
 STRING 5647
 // Fähigkeiten: A0CG (Bärengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5648
@@ -27646,7 +27646,7 @@ Hain - Stufe 4
 STRING 5649
 // Fähigkeiten: A1NC (Wohltat - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5650
@@ -27958,7 +27958,7 @@ Waldholzfäuste - Stufe 5
 STRING 5812
 // Fähigkeiten: A0JM (Wohltat - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5813
@@ -27970,7 +27970,7 @@ Waldholzfäuste - Stufe 1
 STRING 5814
 // Fähigkeiten: A1OA (Ranken - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5815
@@ -27982,7 +27982,7 @@ Waldholzfäuste - Stufe 2
 STRING 5816
 // Fähigkeiten: A0ET (Tierkunde - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5817
@@ -27994,7 +27994,7 @@ Waldholzfäuste - Stufe 3
 STRING 5818
 // Fähigkeiten: A1KY (Waldfestung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5819
@@ -28006,7 +28006,7 @@ Waldholzfäuste - Stufe 4
 STRING 5820
 // Fähigkeiten: A0CD (Bärengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5821
@@ -28396,7 +28396,7 @@ Zorn des Waldes - Stufe 2
 STRING 5992
 // Fähigkeiten: A0DE (Hain - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5993
@@ -28408,7 +28408,7 @@ Zorn des Waldes - Stufe 3
 STRING 5994
 // Fähigkeiten: A0D2 (Dryadenquelle - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5995
@@ -28420,7 +28420,7 @@ Zorn des Waldes - Stufe 4
 STRING 5996
 // Fähigkeiten: A0E9 (Ranken - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 5997
@@ -28546,7 +28546,7 @@ Tierkunde - Stufe 5
 STRING 6068
 // Fähigkeiten: A0EB (Ranken - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6069
@@ -28558,7 +28558,7 @@ Tierkunde - Stufe 1
 STRING 6070
 // Fähigkeiten: A0CN (Krähengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6071
@@ -28570,7 +28570,7 @@ Tierkunde - Stufe 2
 STRING 6072
 // Fähigkeiten: A0DB (Hain - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6073
@@ -28582,7 +28582,7 @@ Tierkunde - Stufe 3
 STRING 6074
 // Fähigkeiten: A0FD (Waldfestung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6075
@@ -28594,7 +28594,7 @@ Tierkunde - Stufe 4
 STRING 6076
 // Fähigkeiten: A0JO (Wohltat - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6077
@@ -29577,7 +29577,7 @@ Waldfestung - Stufe 1
 STRING 6389
 // Fähigkeiten: A0DQ (Baumhirte - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6390
@@ -29661,7 +29661,7 @@ Alpha - Stufe 1
 STRING 6414
 // Fähigkeiten: A1LG (Kräuterheilung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6415
@@ -30267,7 +30267,7 @@ Eisgeschoss - Stufe 3
 STRING 6652
 // Fähigkeiten: A1L2 (Waldholzfäuste - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 6653
@@ -30303,7 +30303,7 @@ Arkaner Schutz - Stufe 3
 STRING 6680
 // Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 6681
@@ -32181,7 +32181,7 @@ Verzehren - Stufe 2
 STRING 7382
 // Fähigkeiten: A0DO (Baumhirte - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7383
@@ -32529,7 +32529,7 @@ Waldfeenzauber - Stufe 5
 STRING 7576
 // Fähigkeiten: A0JE (Waldfeenzauber - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7577
@@ -32541,7 +32541,7 @@ Waldfeenzauber - Stufe 1
 STRING 7578
 // Fähigkeiten: A0JX (Erwachen des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7579
@@ -32553,7 +32553,7 @@ Waldfeenzauber - Stufe 2
 STRING 7580
 // Fähigkeiten: A0EV (Tierkunde - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7581
@@ -32565,7 +32565,7 @@ Waldfeenzauber - Stufe 3
 STRING 7582
 // Fähigkeiten: A0CC (Bärengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7583
@@ -32577,7 +32577,7 @@ Waldfeenzauber - Stufe 4
 STRING 7584
 // Fähigkeiten: A0EL (Zorn des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7585
@@ -32691,7 +32691,7 @@ Wohltat - Stufe 5
 STRING 7656
 // Fähigkeiten: A1OQ (Zorn des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7657
@@ -32703,7 +32703,7 @@ Wohltat - Stufe 1
 STRING 7658
 // Fähigkeiten: A0FI (Alpha - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7659
@@ -32715,7 +32715,7 @@ Wohltat - Stufe 2
 STRING 7660
 // Fähigkeiten: A1KA (Dryadenquelle - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7661
@@ -32727,7 +32727,7 @@ Wohltat - Stufe 3
 STRING 7662
 // Fähigkeiten: A1PE (Erster Mann - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7663
@@ -32739,7 +32739,7 @@ Wohltat - Stufe 4
 STRING 7664
 // Fähigkeiten: A0EK (Zorn des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7665
@@ -32859,7 +32859,7 @@ Erwachen des Waldes - Stufe 5
 STRING 7736
 // Fähigkeiten: A0JL (Wohltat - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7737
@@ -32871,7 +32871,7 @@ Erwachen des Waldes - Stufe 1
 STRING 7738
 // Fähigkeiten: A0CF (Bärengestalt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7739
@@ -32883,7 +32883,7 @@ Erwachen des Waldes - Stufe 2
 STRING 7740
 // Fähigkeiten: A0D0 (Dryadenquelle - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7741
@@ -32895,7 +32895,7 @@ Erwachen des Waldes - Stufe 3
 STRING 7742
 // Fähigkeiten: A1PC (Erster Mann - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7743
@@ -32907,7 +32907,7 @@ Erwachen des Waldes - Stufe 4
 STRING 7744
 // Fähigkeiten: A0DX (Waldholzfäuste - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 7745
@@ -34119,7 +34119,7 @@ Kräuterheilung - Stufe 1
 STRING 8263
 // Fähigkeiten: A0JA (Waldfeenzauber - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 8264
@@ -46891,31 +46891,31 @@ STRING 12925
 STRING 12926
 // Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 12927
 // Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 12928
 // Fähigkeiten: A0UB (Verbannen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 12929
 // Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 12930
 // Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 12933
@@ -50707,13 +50707,13 @@ STRING 13711
 STRING 13712
 // Fähigkeiten: A19J (Heilkraut), Name (Name (anam))
 {
-Heilkraut
+Healing Herb
 }
 
 STRING 13713
 // Fähigkeiten: A19K (Manakraut), Name (Name (anam))
 {
-Manakraut
+Mana Herb
 }
 
 STRING 13714
@@ -60661,7 +60661,7 @@ Eine Ballista ist eine Fernkampf-Belagerungseinheit mit Flächenschaden.
 STRING 15421
 // Einheiten: n05H (Botin), Name (Name (unam))
 {
-Botin
+Messenger
 }
 
 STRING 15422
@@ -62815,7 +62815,7 @@ STRING 15896
 STRING 15897
 // Fähigkeiten: A1LF (Kräuterheilung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+|cffffcc00Basic Spell|r|nHeals <A0AJ,DataA1> life of a non-mechanic ally during <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 15898
@@ -62833,7 +62833,7 @@ STRING 15899
 STRING 15900
 // Fähigkeiten: A1N3 (Wut der Elemente - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30% for 10 seconds.|n<A01J,Cool1> seconds cooldown.
 }
 
 STRING 15901
@@ -68594,7 +68594,7 @@ Dryadenquelle - Erlernen
 STRING 17267
 // Fähigkeiten: A0DD (Hain - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 17268
@@ -69428,7 +69428,7 @@ Alpha - Erlernen
 STRING 17437
 // Fähigkeiten: A0PU (Erwachen des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 17438
@@ -72410,7 +72410,7 @@ Waldfestung - Erlernen
 STRING 18005
 // Fähigkeiten: A0JK (Wohltat - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18006
@@ -72446,7 +72446,7 @@ Waldfeenzauber - Erlernen
 STRING 18021
 // Fähigkeiten: A0EI (Zorn des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18022
@@ -72482,7 +72482,7 @@ Waldholzfäuste - Erlernen
 STRING 18037
 // Fähigkeiten: A0CU (Dryadenquelle - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18038
@@ -72662,7 +72662,7 @@ Hain - Erlernen
 STRING 18117
 // Fähigkeiten: A0E8 (Ranken - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18118
@@ -72710,7 +72710,7 @@ Pfeilhagel - Erlernen
 STRING 18135
 // Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+|cffffcc00Basic Spell|r|nHeals <A0AJ,DataA1> life of a non-mechanic ally during <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 18144
@@ -72734,7 +72734,7 @@ Kräuterheilung - Erlernen
 STRING 18149
 // Fähigkeiten: A1OI (Baumhirte - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18150
@@ -73370,7 +73370,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 18436
 // Fähigkeiten: A1MF (Meister der Nekromantie - Erlernen), Name (Name (anam))
 {
-Meister der Nekromantie - Erlernen
+Master of Necromancy - Learn
 }
 
 STRING 18437
@@ -73736,7 +73736,7 @@ Schützen - Erlernen
 STRING 18595
 // Fähigkeiten: A0ZK (Pure Energie - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nThe Elemental Mage deals damage to his target equal to his current mana points.|n<A01X,Cool1> seconds cooldown.
 }
 
 STRING 18605
@@ -73766,7 +73766,7 @@ Pure Energie - Erlernen
 STRING 18611
 // Fähigkeiten: A0ZM (Wut der Elemente - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30% for 10 seconds.|n<A01J,Cool1> seconds cooldown.
 }
 
 STRING 18620
@@ -73928,7 +73928,7 @@ Wohltat - Erlernen
 STRING 18687
 // Fähigkeiten: A0CV (Dryadenquelle - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 18688
@@ -74684,7 +74684,7 @@ Baumhirte - Erlernen
 STRING 19021
 // Fähigkeiten: A1LC (Hain - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 19022
@@ -74822,7 +74822,7 @@ Zorn des Waldes - Erlernen
 STRING 19085
 // Fähigkeiten: A0CE (Bärengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 19086
@@ -74858,7 +74858,7 @@ Tierkunde - Erlernen
 STRING 19101
 // Fähigkeiten: A0DP (Baumhirte - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 19102
@@ -74870,7 +74870,7 @@ Tierkunde - Erlernen
 STRING 19103
 // Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 19112
@@ -75050,7 +75050,7 @@ Increases the damage of an ally by <A0A1,DataA5,%> %. |nLasts <A0A1,Dur5> second
 STRING 19143
 // Einheiten: n079 (Sukkubus), Name (Name (unam))
 {
-Sukkubus
+Succubus
 }
 
 STRING 19144
@@ -75062,7 +75062,7 @@ Increases the damage of an ally by <A0A1,DataA5,%> %. |nLasts <A0A1,Dur5> second
 STRING 19145
 // Einheiten: n086 (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 19146
@@ -75110,7 +75110,7 @@ Salatkopf
 STRING 19153
 // Gegenstände: I06U (Salatkopf), Tip (Tooltipp - Einfach (utip))
 {
-Manakraut kaufen
+Buy Mana Herb
 }
 
 STRING 19154
@@ -75326,7 +75326,7 @@ Erster Mann - Erlernen
 STRING 19241
 // Fähigkeiten: A1OS (Tierkunde - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 19242
@@ -80132,7 +80132,7 @@ STRING 20187
 STRING 20188
 // Einheiten: n07Z (Sklavin), Tip (Tooltipp - Einfach (utip))
 {
-Sklavin erwerben
+Purchase Slave
 }
 
 STRING 20189
@@ -80150,7 +80150,7 @@ STRING 20190
 STRING 20191
 // Einheiten: n080 (Sklavin), Tip (Tooltipp - Einfach (utip))
 {
-Sklavin erwerben
+Purchase Slave
 }
 
 STRING 20192
@@ -80168,7 +80168,7 @@ STRING 20193
 STRING 20194
 // Einheiten: n081 (Sklavin), Tip (Tooltipp - Einfach (utip))
 {
-Sklavin erwerben
+Purchase Slave
 }
 
 STRING 20195
