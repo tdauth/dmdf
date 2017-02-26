@@ -3160,7 +3160,7 @@ A
 STRING 527
 // Fähigkeiten: A003 (ASystemGUI - shortcut a), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel A.
+The keyboard shortcut A.
 }
 
 STRING 528
@@ -3184,7 +3184,7 @@ B
 STRING 531
 // Fähigkeiten: A00F (ASystemGUI - shortcut b), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel B.
+The keyboard shortcut B.
 }
 
 STRING 532
@@ -3208,7 +3208,7 @@ C
 STRING 535
 // Fähigkeiten: A00G (ASystemGUI - shortcut c), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel C.
+The keyboard shortcut C.
 }
 
 STRING 536
@@ -3232,7 +3232,7 @@ D
 STRING 539
 // Fähigkeiten: A00H (ASystemGUI - shortcut d), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel D.
+The keyboard shortcut D.
 }
 
 STRING 540
@@ -3256,7 +3256,7 @@ E
 STRING 543
 // Fähigkeiten: A00I (ASystemGUI - shortcut e), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel E.
+The keyboard shortcut E.
 }
 
 STRING 544
@@ -3280,7 +3280,7 @@ F
 STRING 547
 // Fähigkeiten: A00J (ASystemGUI - shortcut f), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel F.
+The keyboard shortcut F.
 }
 
 STRING 548
@@ -3298,13 +3298,13 @@ ASystemGUI - shortcut g
 STRING 550
 // Einheiten: n05Y (NPC-Laden), Hotkey (Tastaturkürzel (uhot))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+The knight can connect with an ally and suffer 160% of his damage for 15 seconds. The ally suffers 60% less damage during this time. The effect cannot be interrupted.
 }
 
 STRING 551
 // Fähigkeiten: A00K (ASystemGUI - shortcut g), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel G.
+The keyboard shortcut G.
 }
 
 STRING 552
@@ -3328,7 +3328,7 @@ H
 STRING 555
 // Fähigkeiten: A00L (ASystemGUI - shortcut h), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel H.
+The keyboard shortcut H.
 }
 
 STRING 556
@@ -3352,7 +3352,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 559
 // Fähigkeiten: A00M (ASystemGUI - shortcut i), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel I.
+The keyboard shortcut I.
 }
 
 STRING 560
@@ -3376,7 +3376,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 563
 // Fähigkeiten: A00N (ASystemGUI - shortcut j), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel J.
+The keyboard shortcut J.
 }
 
 STRING 564
@@ -3394,13 +3394,13 @@ ASystemGUI - shortcut k
 STRING 566
 // Einheiten: n00B (Katze), Hotkey (Tastaturkürzel (uhot))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+Summons a healing source for <A0D3,Dur1> seconds which heals life per second of allies around. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
 }
 
 STRING 567
 // Fähigkeiten: A00O (ASystemGUI - shortcut k), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel K.
+The keyboard shortcut K.
 }
 
 STRING 568
@@ -3418,7 +3418,7 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 570
 // Fähigkeiten: A00P (ASystemGUI - shortcut l), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel L.
+The keyboard shortcut L.
 }
 
 STRING 571
@@ -3442,7 +3442,7 @@ M
 STRING 574
 // Fähigkeiten: A00Q (ASystemGUI - shortcut m), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel M.
+The keyboard shortcut M.
 }
 
 STRING 575
@@ -3466,7 +3466,7 @@ N
 STRING 578
 // Fähigkeiten: A00R (ASystemGUI - shortcut n), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel N.
+The keyboard shortcut N.
 }
 
 STRING 579
@@ -3490,7 +3490,7 @@ Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten 
 STRING 582
 // Fähigkeiten: A00S (ASystemGUI - shortcut o), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel O.
+The keyboard shortcut O.
 }
 
 STRING 583
@@ -3514,7 +3514,7 @@ P
 STRING 586
 // Fähigkeiten: A00T (ASystemGUI - shortcut p), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel P.
+The keyboard shortcut P.
 }
 
 STRING 587
@@ -3538,7 +3538,7 @@ Q
 STRING 590
 // Fähigkeiten: A00U (ASystemGUI - shortcut q), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel Q.
+The keyboard shortcut Q.
 }
 
 STRING 591
@@ -3562,7 +3562,7 @@ Increases the damage of an ally by <A0A1,DataA3,%> %. |nLasts <A0A1,Dur1> second
 STRING 594
 // Fähigkeiten: A00V (ASystemGUI - shortcut r), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel R.
+The keyboard shortcut R.
 }
 
 STRING 595
@@ -3586,7 +3586,7 @@ S
 STRING 598
 // Fähigkeiten: A00W (ASystemGUI - shortcut s), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel S.
+The keyboard shortcut S.
 }
 
 STRING 599
@@ -3610,7 +3610,7 @@ T
 STRING 602
 // Fähigkeiten: A00X (ASystemGUI - shortcut t), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel T.
+The keyboard shortcut T.
 }
 
 STRING 603
@@ -3634,7 +3634,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 606
 // Fähigkeiten: A00Y (ASystemGUI - shortcut u), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel U.
+The keyboard shortcut U.
 }
 
 STRING 607
@@ -3658,7 +3658,7 @@ V
 STRING 610
 // Fähigkeiten: A00Z (ASystemGUI - shortcut v), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel V.
+The keyboard shortcut V.
 }
 
 STRING 611
@@ -3682,7 +3682,7 @@ Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefäng
 STRING 614
 // Fähigkeiten: A010 (ASystemGUI - shortcut w), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel W.
+The keyboard shortcut W.
 }
 
 STRING 615
@@ -3706,7 +3706,7 @@ X
 STRING 618
 // Fähigkeiten: A011 (ASystemGUI - shortcut x), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel X.
+The keyboard shortcut X.
 }
 
 STRING 619
@@ -3730,7 +3730,7 @@ Y
 STRING 622
 // Fähigkeiten: A012 (ASystemGUI - shortcut y), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel Y.
+The keyboard shortcut Y.
 }
 
 STRING 623
@@ -3754,7 +3754,7 @@ Z
 STRING 626
 // Fähigkeiten: A013 (ASystemGUI - shortcut z), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Das Tastenkürzel Z.
+The keyboard shortcut Z.
 }
 
 STRING 627
@@ -3790,7 +3790,7 @@ Fire missile
 STRING 632
 // Gegenstände: I013 (Knochenbogen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A07M,DataA1>. Bei einem Treffer werden für <A07L,DataC1> Sekunden <A07L,DataB1> Zombies aus der Leiche des Opfers beschworen, falls dieses spätestens <A07L,Dur1> Sekunden nach dem Treffer getötet wird.|n|cffc3dbffFernkampfwaffe, Zweihandwaffe.|r
+Increases the damage by <A07M,DataA1>. On hitting a target <A07L,DataB1> zombies are summoned from the corpse of the victim for <A07L,DataC1> seconds if the target is killed by <A07L,Dur1> seconds after the hit.|n|cffc3dbffRange Weapon, Two Handed Weapon.|r
 }
 
 STRING 633
@@ -4712,13 +4712,13 @@ STRING 787
 STRING 788
 // Fähigkeiten: A1VA (Tier opfern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Opfert ein Tier.
+Sacrifices an animal.
 }
 
 STRING 789
 // Fähigkeiten: A1VB (Beschwörung), Name (Name (anam))
 {
-Beschwörung
+Incantation
 }
 
 STRING 790
@@ -4754,7 +4754,7 @@ STRING 794
 STRING 795
 // Fähigkeiten: A1VB (Beschwörung), Tip (Tooltipp - Normal (atp1))
 {
-Beschwörung
+Incantation
 }
 
 STRING 796
@@ -4766,7 +4766,7 @@ Lord of Darkness
 STRING 797
 // Einheiten: H03K (Wahnsinniger Dorfältester), Name (Name (unam))
 {
-Wahnsinniger Dorfältester
+Insane Village Elders
 }
 
 STRING 798
@@ -4946,7 +4946,7 @@ Teleportation
 STRING 827
 // Einheiten: u00E (Biene), Name (Name (unam))
 {
-Biene
+Bee
 }
 
 STRING 828
@@ -4958,7 +4958,7 @@ STRING 828
 STRING 829
 // Einheiten: n00G (Schattenefreet), Name (Name (unam))
 {
-Schattenefreet
+Shadow Efreet
 }
 
 STRING 830
@@ -5102,7 +5102,7 @@ STRING 852
 STRING 853
 // Einheiten: n00F (Blutquelle), Name (Name (unam))
 {
-Blutquelle
+Blood Source
 }
 
 STRING 854
@@ -22536,25 +22536,25 @@ Arcane Protection [|cffffcc00Level 1|r]
 STRING 4116
 // Fähigkeiten: A0G8 (Arkaner Schutz - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Schutz [|cffffcc00Stufe 2|r]
+Arcane Protection [|cffffcc00Level 2|r]
 }
 
 STRING 4117
 // Fähigkeiten: A0G9 (Arkaner Schutz - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Schutz [|cffffcc00Stufe 3|r]
+Arcane Protection [|cffffcc00Level 3|r]
 }
 
 STRING 4118
 // Fähigkeiten: A0GA (Arkaner Schutz - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Schutz [|cffffcc00Stufe 4|r]
+Arcane Protection [|cffffcc00Level 4|r]
 }
 
 STRING 4119
 // Fähigkeiten: A0GB (Arkaner Schutz - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Arkaner Schutz [|cffffcc00Stufe 5|r]
+Arcane Protection [|cffffcc00Level 5|r]
 }
 
 STRING 4120
@@ -23040,31 +23040,31 @@ Parasite
 STRING 4272
 // Fähigkeiten: A03A (Manaschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert. Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+The wizard creates a mana shield around himself which absorbs damage. Uses 5 mana per damage point and absorbs 100 damage maximum.|n|cffc3dbffInterrupt spell with repeated usage.|r
 }
 
 STRING 4273
 // Fähigkeiten: A03A (Manaschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert. Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+The wizard creates a mana shield around himself which absorbs damage. Uses 4 mana per damage point and absorbs 200 damage maximum.|n|cffc3dbffInterrupt spell with repeated usage.|r
 }
 
 STRING 4274
 // Fähigkeiten: A03A (Manaschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert. Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+The wizard creates a mana shield around himself which absorbs damage. Uses 3 mana per damage point and absorbs 300 damage maximum.|n|cffc3dbffInterrupt spell with repeated usage.|r
 }
 
 STRING 4275
 // Fähigkeiten: A03A (Manaschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert. Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+The wizard creates a mana shield around himself which absorbs damage. Uses 2 mana per damage point and absorbs 400 damage maximum.|n|cffc3dbffInterrupt spell with repeated usage.|r
 }
 
 STRING 4276
 // Fähigkeiten: A03A (Manaschild), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert. Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+The wizard creates a mana shield around himself which absorbs damage. Uses 1 mana per damage point and absorbs 500 damage maximum.|n|cffc3dbffInterrupt spell with repeated usage.|r
 }
 
 STRING 4277
@@ -23340,13 +23340,13 @@ STRING 4325
 STRING 4326
 // Gegenstände: I04J (Stab der Vereisung), Name (Name (unam))
 {
-Stab der Vereisung
+Staff of Icing
 }
 
 STRING 4327
 // Gegenstände: I04J (Stab der Vereisung), Tip (Tooltipp - Einfach (utip))
 {
-Stab der Vereisung kaufen
+Buy Staff of Icing
 }
 
 STRING 4328
@@ -23364,25 +23364,25 @@ A haunted staff.
 STRING 4330
 // Gegenstände: I04K (Amulett der Lebenskraft), Name (Name (unam))
 {
-Amulett der Lebenskraft
+Amulet of Life Energy
 }
 
 STRING 4331
 // Gegenstände: I04K (Amulett der Lebenskraft), Tip (Tooltipp - Einfach (utip))
 {
-Amulett der Lebenskraft kaufen
+Buy Amulet of Life Energy
 }
 
 STRING 4332
 // Gegenstände: I04K (Amulett der Lebenskraft), Description (Beschreibung (ides))
 {
-Erhöht die Lebensregeneration.
+Increases the life regeneration.
 }
 
 STRING 4333
 // Gegenstände: I04K (Amulett der Lebenskraft), Ubertip (Tooltipp - Erweitert (utub))
 {
-Regeneriert <A0VS,DataA1> Leben pro Sekunde.
+Regenerates <A0VS,DataA1> life per second.
 }
 
 STRING 4334
@@ -48751,7 +48751,7 @@ STRING 13290
 STRING 13291
 // Gegenstände: I06V (Stein des Sukkubus), Name (Name (unam))
 {
-Stein des Sukkubus
+Stone of the Sukkubus
 }
 
 STRING 13292
@@ -62773,7 +62773,7 @@ STRING 15889
 STRING 15890
 // Fähigkeiten: A01J (Wut der Elemente), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nErhöht den Schaden durch Elementarzauber 10 Sekunden lang um 30%.|n<A01J,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30% for 10 seconds.|n<A01J,Cool1> seconds cooldown.
 }
 
 STRING 15891
@@ -62785,7 +62785,7 @@ STRING 15891
 STRING 15892
 // Fähigkeiten: A0AJ (Kräuterheilung), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nHeilt <A0AJ,DataA1> Leben eines nicht-mechanischen Verbündeten während <A0AJ,Dur1> Sekunden.|nHat eine Reichweite von <A0AJ,Rng1>.
+|cffffcc00Basic Spell|r|nHeals <A0AJ,DataA1> life of a non-mechanic ally during <A0AJ,Dur1> seconds.|nHas a range of <A0AJ,Rng1>.
 }
 
 STRING 15893
@@ -62797,7 +62797,7 @@ STRING 15893
 STRING 15894
 // Fähigkeiten: A1N1 (Pure Energie - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nThe Elemental Mage deals damage to his target equal to his current mana points.|n<A01X,Cool1> seconds cooldown.
 }
 
 STRING 15895
@@ -80012,31 +80012,31 @@ STRING 20167
 STRING 20168
 // Gegenstände: I078 (Goldbrocken), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein wertvoller Goldbrocken.
+A precious gold chunk.
 }
 
 STRING 20169
 // Gegenstände: I078 (Goldbrocken), Name (Name (unam))
 {
-Goldbrocken
+Gold Chunk
 }
 
 STRING 20170
 // Gegenstände: I078 (Goldbrocken), Tip (Tooltipp - Einfach (utip))
 {
-Goldbrocken kaufen
+Buy Gold Chunk
 }
 
 STRING 20171
 // Gegenstände: I078 (Goldbrocken), Description (Beschreibung (ides))
 {
-Ein wertvoller Goldbrocken.
+A precious gold chunk.
 }
 
 STRING 20172
 // Einheiten: H03E (Sukkubus), Name (Name (unam))
 {
-Sukkubus
+Succubus
 }
 
 STRING 20173
@@ -80054,25 +80054,25 @@ Droka
 STRING 20175
 // Gegenstände: I079 (Dämonenblut), Name (Name (unam))
 {
-Dämonenblut
+Demon Blood
 }
 
 STRING 20176
 // Gegenstände: I079 (Dämonenblut), Tip (Tooltipp - Einfach (utip))
 {
-Dämonenblut kaufen
+Buy Demon Blood
 }
 
 STRING 20177
 // Gegenstände: I079 (Dämonenblut), Description (Beschreibung (ides))
 {
-Stiehlt die Seele eines Gegners.
+Steals the soul of an opponent.
 }
 
 STRING 20178
 // Gegenstände: I079 (Dämonenblut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Das Blut eines Dämons.
+The Blood of a Demon
 }
 
 STRING 20179
@@ -80114,7 +80114,7 @@ STRING 20184
 STRING 20185
 // Einheiten: n07Y (Sklavin), Tip (Tooltipp - Einfach (utip))
 {
-Sklavin erwerben
+Purchase Slave
 }
 
 STRING 20186
@@ -80174,7 +80174,7 @@ Sklavin erwerben
 STRING 20195
 // Einheiten: H03F (Konvertierter Inquisitor), Name (Name (unam))
 {
-Konvertierter Inquisitor
+Converted Inquisitor
 }
 
 STRING 20196
@@ -80318,7 +80318,7 @@ Jumps to the current target location of the mission.
 STRING 20219
 // Fähigkeiten: A1UX (Tellborns Geisterrune), Name (Name (anam))
 {
-Tellborns Geisterrune
+Tellborn's Ghost Rune
 }
 
 STRING 20220
@@ -80336,7 +80336,7 @@ Buy Items (|cffffcc00G|r)
 STRING 20222
 // Gegenstände: I04U (Schaf), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt. Erhöht bei Benutzung die Bewegungsgeschwindkeit um 80 und ergänzt sich dabei mit Gegenständen und Fähigkeiten.
+A peaceful sheep who likes to be ridden. Increases the movement speed by 80 when used and adds with other items and abilities.
 }
 
 STRING 20223
