@@ -3796,7 +3796,7 @@ Erhöht den Schaden um <A07M,DataA1>. Bei einem Treffer werden für <A07L,DataC1
 STRING 633
 // Gegenstände: I020 (Jagdbogen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A07N,DataA1>.|n|cffc3dbffFernkampfwaffe, Zweihandwaffe.|r
+Increases the damage by <A07N,DataA1>.|n|cffc3dbffRange Weapon, Two Handed Weapon.|r
 }
 
 STRING 634
@@ -3808,7 +3808,7 @@ Erhöht die Reichweite um <A07P,Rng1> und den Schaden um <A07P,DataA1> Punkte un
 STRING 635
 // Gegenstände: I04T (Orkarmbrust), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <AItk,DataA1>.|n|cffc3dbffFernkampfwaffe, Zweihandwaffe.|r
+Increases the damage by <AItk,DataA1>.|n|cffc3dbffRange Weapon, Two Handed Weapon.|r
 }
 
 STRING 636
@@ -5922,7 +5922,7 @@ A simple morning star.
 STRING 990
 // Einheiten: n08C (Kuh), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Zweitwaffe. Erhöht den Schaden um <A04O,DataA1>.
+Secondary Weapon. Increases the damage by <A04O,DataA1>.
 }
 
 STRING 991
@@ -6930,7 +6930,7 @@ NPC with Dialog
 STRING 1158
 // Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nStellt 50 % des maximalen Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nRestores 50 % of the maximum mana.|n<A01Y,Cool1> seconds cooldown.
 }
 
 STRING 1159
@@ -6942,13 +6942,13 @@ STRING 1159
 STRING 1160
 // Fähigkeiten: A01Y (Heilige Kraft), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nStellt 50 % des maximalen Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nRestores 50 % of the maximum mana.|n<A01Y,Cool1> seconds cooldown.
 }
 
 STRING 1161
 // Fähigkeiten: A1LH (Heilige Kraft - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nStellt 50 % des maximalen Manas wieder her.|n<A01Y,Cool1> Sekunden Abklingzeit.
+|cffffcc00Basic Spell|r|nRestores 50 % of the maximum mana.|n<A01Y,Cool1> seconds cooldown.
 }
 
 STRING 1162
@@ -7848,7 +7848,7 @@ Osman
 STRING 1311
 // Gegenstände: I00F (Spruchrolle der Heilung), Name (Name (unam))
 {
-Spruchrolle der Heilung
+Scroll of Healing
 }
 
 STRING 1312
@@ -9462,7 +9462,7 @@ Verstärkt die Rüstung um <A1VV,DataA1>.
 STRING 1580
 // Gegenstände: I07P (Jagdpanzer), Description (Beschreibung (ides))
 {
-Die Kleidung eines Jägers.
+The clothing of a hunter.
 }
 
 STRING 1581
@@ -11818,7 +11818,7 @@ Dickes Buch
 STRING 1987
 // Einheiten: n01V (Botin), Name (Name (unam))
 {
-Botin
+Messenger
 }
 
 STRING 1988
@@ -11860,7 +11860,7 @@ Wieland
 STRING 1994
 // Einheiten: n01P (Untoten-König), Name (Name (unam))
 {
-Untoten-König
+Undead King
 }
 
 STRING 1995
@@ -13222,7 +13222,7 @@ Ein Todesmantel, der eine befreundete untote Einheit um <A0I7,DataA4> Trefferpun
 STRING 2248
 // Fähigkeiten: A05M (Ahnenpakt - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt erlernen
+Learn Ancestors Pact
 }
 
 STRING 2249
@@ -14871,13 +14871,13 @@ Cloak
 STRING 2548
 // Einheiten: n06C (Stand des Schafshirten), Name (Name (unam))
 {
-Stand des Schafshirten
+Stand of the Shepherd
 }
 
 STRING 2549
 // Gegenstände: I064 (Spruchrolle der Kühe), Name (Name (unam))
 {
-Spruchrolle der Kühe
+Scroll of Cows
 }
 
 STRING 2550
@@ -15690,7 +15690,7 @@ Buy Magic Ring
 STRING 2732
 // Gegenstände: I01Q (Zauberamulett), Name (Name (unam))
 {
-Zauberamulett
+Magic Amulet
 }
 
 STRING 2736
@@ -17293,12 +17293,12 @@ Fels 3 (Grasland)
 STRING 3068
 // Gegenstände: I003 (Stab), Tip (Tooltipp - Einfach (utip))
 {
-Stab kaufen
+Buy Staff
 }
 
 STRING 3069
 {
-Talras ist eine kleine Burg im Grenzland des Königreichs der Menschen. Seine Eitelkeit, der Herzog Heimrich, herrscht über die Burg und Ländereien mit Strenge und Hoffnung angesichts der finsteren Lage dieser Tage.
+Talras is a small castle in the borderland of the kingdom of the humans. His vanity, the duke Heimrich, rules over the castle and lands with severity and hope, in the face of the dark position of these days.
 }
 
 STRING 3070
@@ -18090,13 +18090,13 @@ Björn
 STRING 3208
 // Einheiten: n02V (Björns Frau), Name (Name (unam))
 {
-Björns Frau
+Björn's Wife
 }
 
 STRING 3209
 // Gegenstände: I01Z (Riesen-Fell), Name (Name (unam))
 {
-Riesen-Fell
+Giant Skin
 }
 
 STRING 3210
@@ -18126,7 +18126,7 @@ STRING 3213
 STRING 3214
 // Gegenstände: I01N (Magische Rune der Wiederbelebungsschreine), Name (Name (unam))
 {
-Magische Rune der Wiederbelebungsschreine
+Magical Rune of Reival Shrines
 }
 
 STRING 3215
@@ -18228,7 +18228,7 @@ Steals the soul from a hostile target and drains life and mana from it per secon
 STRING 3232
 // Gegenstände: I013 (Knochenbogen), Name (Name (unam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3233
@@ -18246,7 +18246,7 @@ Knochenbogen kaufen
 STRING 3236
 // Fähigkeiten: A07M (Knochenbogen), Name (Name (anam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3237
@@ -18258,7 +18258,7 @@ STRING 3237
 STRING 3238
 // Fähigkeiten: A1DO (Knochenbogen), Name (Name (anam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3239
@@ -18270,7 +18270,7 @@ STRING 3239
 STRING 3240
 // Fähigkeiten: A07L (Knochenbogen), Name (Name (anam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3241
@@ -18288,7 +18288,7 @@ Zombie
 STRING 3243
 // Zauberverstärker/Effekte: B01A (Knochenbogen), EditorName (Name (nur Editor) (fnam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3244
@@ -18336,7 +18336,7 @@ The bow of a hunter.
 STRING 3257
 // Gegenstände: I06M (Björns Kurzbogen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A07N,DataA1>.
+Increases the damage by <A07N,DataA1>.
 }
 
 STRING 3258
@@ -18882,13 +18882,13 @@ Large Round Buckler
 STRING 3359
 // Einheiten: n02X (Huhn), Name (Name (unam))
 {
-Huhn
+Chicken
 }
 
 STRING 3360
 // Einheiten: n02Y (Hahn), Name (Name (unam))
 {
-Hahn
+Cock
 }
 
 STRING 3361
@@ -19179,7 +19179,7 @@ Character level:
 STRING 3413
 // Gegenstände: I01N (Magische Rune der Wiederbelebungsschreine), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ermöglicht es dem Träger, sich zu einem bereits erkundeten Wiederbelebungsschrein zu teleportieren.|n|cffc3dbffUnendlich oft benutzbar.|r
+Allows the carrier to teleport to an already discovered revival shrine.|n|cffc3dbffCan be used infinitely often.|r
 }
 
 STRING 3414
@@ -19440,37 +19440,37 @@ Erhöht den Schaden um <A02F,DataA1>. Außerdem hat der Träger eine <AIcs,DataA
 STRING 3467
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Impeding Disaster [|cffffcc00Level 2|r]
+Impending Disaster [|cffffcc00Level 2|r]
 }
 
 STRING 3468
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Impeding Disaster [|cffffcc00Level 3|r]
+Impending Disaster [|cffffcc00Level 3|r]
 }
 
 STRING 3469
 // Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Impeding Disaster [|cffffcc00Level 4|r]
+Impending Disaster [|cffffcc00Level 4|r]
 }
 
 STRING 3470
 // Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Impeding Disaster [|cffffcc00Level 5|r]
+Impending Disaster [|cffffcc00Level 5|r]
 }
 
 STRING 3471
 // Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 3472
 // Fähigkeiten: A08C (Drohendes Unheil), Name (Name (anam))
 {
-Impeding Disaster
+Impending Disaster
 }
 
 STRING 3475
@@ -19482,7 +19482,7 @@ STRING 3475
 STRING 3476
 // Fähigkeiten: A08B (Drohendes Unheil), Name (Name (anam))
 {
-Impeding Disaster
+Impending Disaster
 }
 
 STRING 3477
@@ -19896,13 +19896,13 @@ Teleportiert den Zaubernden mit maximal <A0BO,DataA1> Verbündeten im Umkreis zu
 STRING 3591
 // Gegenstände: I048 (Amulett der Weisheit), Name (Name (unam))
 {
-Amulett der Weisheit
+Amulet of Wisdom
 }
 
 STRING 3592
 // Gegenstände: I048 (Amulett der Weisheit), Tip (Tooltipp - Einfach (utip))
 {
-Amulett der Weisheit kaufen
+Buy Amulet of Wisdom
 }
 
 STRING 3593
@@ -20142,7 +20142,7 @@ Der Drache landet.
 STRING 3644
 // Einheiten: H03D (Optionen), Propernames (Eigennamen (upro))
 {
-Erhöht den Schaden um <A07M,DataA1>. Bei einem Treffer werden für <A07L,DataC1> Sekunden <A07L,DataB1> <n02M,Name>s aus der Leiche des Opfers beschworen, falls dieses spätestens <A07L,Dur1> Sekunden nach dem Treffer getötet wird.|n|cffffcc00Fernkampfwaffe|r
+Game Options
 }
 
 STRING 3645
@@ -24072,25 +24072,25 @@ STRING 4553
 STRING 4554
 // Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4555
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4556
 // Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4557
 // Fähigkeiten: A1OT (Bekehrung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Übernimmt 30 Sekunden lang die Kontrolle über einen Gegner.|n|n|cffffcc00Stufe 1|r - Gegner bis Stufe <A0PZ,DataA1>.|n|cffffcc00Stufe 2|r - Gegner bis Stufe <A0PZ,DataA2>. |n|cffffcc00Stufe 3|r - Gegner bis Stufe <A0PZ,DataA3>. |n|cffffcc00Stufe 4|r - Gegner bis Stufe <A0PZ,DataA4>.|n|cffffcc00Stufe 5|r - Gegner bis Stufe <A0PZ,DataA5>.
+Takes over the control of an opponent for 30 second.|n|n|cffffcc00Level 1|r - Opponents up to level <A0PZ,DataA1>.|n|cffffcc00Level 2|r - Opponents up to level <A0PZ,DataA2>. |n|cffffcc00Level 3|r - Opponents up to level <A0PZ,DataA3>. |n|cffffcc00Level 4|r - Opponents up to level <A0PZ,DataA4>.|n|cffffcc00Level 5|r - Opponents up to level <A0PZ,DataA5>.
 }
 
 STRING 4558
@@ -24120,19 +24120,19 @@ Conversion
 STRING 4562
 // Einheiten: n044 (Schlächter), Name (Name (unam))
 {
-Schlächter
+Butcher
 }
 
 STRING 4563
 // Fähigkeiten: A0ZY (Schreckgeheul), EditorSuffix (Editor-Suffix (ansf))
 {
-(Schlächter)
+(Butcher)
 }
 
 STRING 4564
 // Fähigkeiten: A0ZZ (Gebrüll), EditorSuffix (Editor-Suffix (ansf))
 {
-(Schlächter)
+(Butcher)
 }
 
 STRING 4565
@@ -24954,7 +24954,7 @@ STRING 4855
 STRING 4857
 // Gegenstände: I01Q (Zauberamulett), Tip (Tooltipp - Einfach (utip))
 {
-Zauberamulett kaufen
+Buy Magic Amulet
 }
 
 STRING 4858
@@ -25086,25 +25086,25 @@ Erhöht den Schaden um <A020,DataA1> und vergiftet zudem nicht-mechanische Gegne
 STRING 4882
 // Gegenstände: I02P (Holzbrett), Name (Name (unam))
 {
-Holzbrett
+Plank of Wood
 }
 
 STRING 4883
 // Gegenstände: I02P (Holzbrett), Tip (Tooltipp - Einfach (utip))
 {
-Holzbrett kaufen
+Buy Plank of Wood
 }
 
 STRING 4884
 // Gegenstände: I02P (Holzbrett), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein einfaches Holzbrett.
+A simple plank of wood.
 }
 
 STRING 4885
 // Gegenstände: I02P (Holzbrett), Description (Beschreibung (ides))
 {
-Ein einfaches Holzbrett.
+A simple plank of wood.
 }
 
 STRING 4886
@@ -28606,7 +28606,7 @@ Tierkunde - Stufe 5
 STRING 6079
 // Einheiten: n02B (Schafshirte), Name (Name (unam))
 {
-Schafshirte
+Shepherd
 }
 
 STRING 6080
@@ -29067,7 +29067,7 @@ Bestehlen - Stufe 3
 STRING 6179
 // Fähigkeiten: A1J4 (Linderung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Allows the wearing unit to teleport itself to an already discovered revival shrine.
+Heals a friendly non-mechanical target.|n|cffc3dbffSpell can be used on the caster.|r |n|n|cffffcc00Level 1|r - Heals 100 life. |n|cffffcc00Level 2|r - Heals 150 life. |n|cffffcc00Level 3|r - Heals 200 life. |n|cffffcc00Level 4|r - Heals 250 life.|n|cffffcc00Level 5|r - Heals 300 life.
 }
 
 STRING 6188
@@ -33657,7 +33657,7 @@ Fire Missile [|cffffcc00Level 3|r]
 STRING 8068
 // Fähigkeiten: A0H8 (Segen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 8069
@@ -34407,7 +34407,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8415
 // Fähigkeiten: A0UJ (Segen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 2|r]
+Segen erlernen
 }
 
 STRING 8416
@@ -35529,7 +35529,7 @@ Testzauber
 STRING 8862
 // Fähigkeiten: A1J8 (Blenden - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Entfernt nach 15 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.Setzt die Dauer beschworener Verbündeter auf 70 Sekunden oder beschworener Gegner auf 10 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
+Learn Blind
 }
 
 STRING 8863
@@ -35925,7 +35925,7 @@ A haunted staff.
 STRING 8935
 // Gegenstände: I03V (Verzauberter Stab), Tip (Tooltipp - Einfach (utip))
 {
-Verzauberten Stab kaufen
+Buy Enchanted Staff
 }
 
 STRING 8936
@@ -37043,31 +37043,31 @@ Demon Servant
 STRING 9305
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 60 % of his life and 40 % of his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 60 % of his life and 40 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9306
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 70 % of his life and 50 % of his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 70 % of his life and 50 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9307
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 80 % of his life and 60 % of his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 80 % of his life and 60 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9308
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 90 % of his life and 70 % of his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 90 % of his life and 70 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9309
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9313
@@ -37269,7 +37269,7 @@ The ranger sets his arrows on fire before releasing them. Hit opponents burn for
 STRING 9409
 // Zauberverstärker/Effekte: B01B (Knochenbogen), EditorName (Name (nur Editor) (fnam))
 {
-Impeding Disaster [|cffffcc00Level 1|r]
+Impending Disaster [|cffffcc00Level 1|r]
 }
 
 STRING 9410
@@ -37281,7 +37281,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 9411
 // Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), Name (Name (anam))
 {
-Impeding Disaster - Level 1
+Impending Disaster - Level 1
 }
 
 STRING 9414
@@ -37293,7 +37293,7 @@ The ranger sets his arrows on fire before releasing them. Hit opponents burn for
 STRING 9423
 // Einheiten: n06D (Lothars Kiste), Name (Name (unam))
 {
-Impeding Disaster [|cffffcc00Level 2|r]
+Lothar's Box
 }
 
 STRING 9424
@@ -37305,7 +37305,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 9425
 // Fähigkeiten: A0OT (Drohendes Unheil - Stufe 2), Name (Name (anam))
 {
-Impeding Disaster - Level 2
+Impending Disaster - Level 2
 }
 
 STRING 9428
@@ -37317,7 +37317,7 @@ The ranger sets his arrows on fire before releasing them. Hit opponents burn for
 STRING 9437
 // Einheiten: n06D (Lothars Kiste), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Impeding Disaster [|cffffcc00Level 3|r]
+Impending Disaster [|cffffcc00Level 3|r]
 }
 
 STRING 9438
@@ -37329,7 +37329,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 9439
 // Fähigkeiten: A0OU (Drohendes Unheil - Stufe 3), Name (Name (anam))
 {
-Impeding Disaster - Level 3
+Impending Disaster - Level 3
 }
 
 STRING 9442
@@ -37353,7 +37353,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 9453
 // Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), Name (Name (anam))
 {
-Impeding Disaster - Level 4
+Impending Disaster - Level 4
 }
 
 STRING 9456
@@ -37377,7 +37377,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 9467
 // Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Name (Name (anam))
 {
-Impeding Disaster - Level 5
+Impending Disaster - Level 5
 }
 
 STRING 9470
@@ -37389,7 +37389,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9471
 // Fähigkeiten: A0OS (Drohendes Unheil - Stufe 1), Name (Name (anam))
 {
-Impeding Disaster - Level 1
+Impending Disaster - Level 1
 }
 
 STRING 9472
@@ -37401,7 +37401,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9473
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), Name (Name (anam))
 {
-Impeding Disaster - Level 2
+Impending Disaster - Level 2
 }
 
 STRING 9474
@@ -37413,7 +37413,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9475
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), Name (Name (anam))
 {
-Impeding Disaster - Level 3
+Impending Disaster - Level 3
 }
 
 STRING 9476
@@ -37425,7 +37425,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9477
 // Fähigkeiten: A0OV (Drohendes Unheil - Stufe 4), Name (Name (anam))
 {
-Impeding Disaster - Level 4
+Impending Disaster - Level 4
 }
 
 STRING 9478
@@ -37437,7 +37437,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9479
 // Fähigkeiten: A0OW (Drohendes Unheil - Stufe 5), Name (Name (anam))
 {
-Impeding Disaster - Level 5
+Impending Disaster - Level 5
 }
 
 STRING 9480
@@ -37473,61 +37473,61 @@ The cleric frees an ally from all negative effects.|n<A052,Cool5> seconds cooldo
 STRING 9485
 // Fähigkeiten: A0H6 (Segen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 9486
 // Fähigkeiten: A0H9 (Segen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 9487
 // Fähigkeiten: A0HA (Segen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 9488
 // Fähigkeiten: A0H7 (Segen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 9489
 // Fähigkeiten: A0UJ (Segen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Makes all friendly units around the cleric invulnerable for some time. |n|n|cffffcc00Level 1|r - <A0H4,Dur1> seconds.|n|cffffcc00Level 2|r - <A0H4,Dur2> seconds.|n|cffffcc00Level 3|r - <A0H4,Dur3> seconds.|n|cffffcc00Level 4|r - <A0H4,Dur4> seconds.|n|cffffcc00Level 5|r - <A0H4,Dur5> seconds.
 }
 
 STRING 9490
 // Fähigkeiten: A0NU (Blenden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Mock [|cffffcc00Level 4|r]
+Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cffffcc00Level 1|r - <A0NP,Dur1> seconds.|n|cffffcc00Level 2|r - <A0NP,Dur2> seconds.|n|cffffcc00Level 3|r - <A0NP,Dur3> seconds.|n|cffffcc00Level 4|r - <A0NP,Dur4> seconds.|n|cffffcc00Level 5|r - <A0NP,Dur5> seconds.
 }
 
 STRING 9491
 // Fähigkeiten: A1J8 (Blenden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Mock [|cffffcc00Level 4|r]
+Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cffffcc00Level 1|r - <A0NP,Dur1> seconds.|n|cffffcc00Level 2|r - <A0NP,Dur2> seconds.|n|cffffcc00Level 3|r - <A0NP,Dur3> seconds.|n|cffffcc00Level 4|r - <A0NP,Dur4> seconds.|n|cffffcc00Level 5|r - <A0NP,Dur5> seconds.
 }
 
 STRING 9492
 // Fähigkeiten: A0NR (Blenden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Mock [|cffffcc00Level 4|r]
+Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cffffcc00Level 1|r - <A0NP,Dur1> seconds.|n|cffffcc00Level 2|r - <A0NP,Dur2> seconds.|n|cffffcc00Level 3|r - <A0NP,Dur3> seconds.|n|cffffcc00Level 4|r - <A0NP,Dur4> seconds.|n|cffffcc00Level 5|r - <A0NP,Dur5> seconds.
 }
 
 STRING 9493
 // Fähigkeiten: A0NT (Blenden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Mock [|cffffcc00Level 4|r]
+Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cffffcc00Level 1|r - <A0NP,Dur1> seconds.|n|cffffcc00Level 2|r - <A0NP,Dur2> seconds.|n|cffffcc00Level 3|r - <A0NP,Dur3> seconds.|n|cffffcc00Level 4|r - <A0NP,Dur4> seconds.|n|cffffcc00Level 5|r - <A0NP,Dur5> seconds.
 }
 
 STRING 9494
 // Fähigkeiten: A0NS (Blenden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Mock [|cffffcc00Level 4|r]
+Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cffffcc00Level 1|r - <A0NP,Dur1> seconds.|n|cffffcc00Level 2|r - <A0NP,Dur2> seconds.|n|cffffcc00Level 3|r - <A0NP,Dur3> seconds.|n|cffffcc00Level 4|r - <A0NP,Dur4> seconds.|n|cffffcc00Level 5|r - <A0NP,Dur5> seconds.
 }
 
 STRING 9495
@@ -39063,7 +39063,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 10111
 // Fähigkeiten: A1JE (Reinheit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Gleißenes Licht [|cffffcc00Stufe 2|r]
+Learn Clarity
 }
 
 STRING 10112
@@ -42212,7 +42212,7 @@ Der Drachentöter erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,
 STRING 11301
 // Fähigkeiten: A0NB (Nächste Klasse), Tip (Tooltipp - Normal (atp1))
 {
-Increases the damage of an ally by <A0A1,DataA4,%> %. |nLasts <A0A1,Dur4> seconds.
+Next Class (|cffffcc00E|r)
 }
 
 STRING 11302
@@ -42716,31 +42716,31 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo 17 Sekunden lang 
 STRING 11523
 // Einheiten: n06G (Deranors Leibwache), Name (Name (unam))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+Deranor's Bodyguard
 }
 
 STRING 11524
 // Einheiten: n06I (Deranors Leibwache), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+(Flying)
 }
 
 STRING 11525
 // Einheiten: n06I (Deranors Leibwache), Name (Name (unam))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+Deranor's Bodyguard
 }
 
 STRING 11526
 // Einheiten: H02I (Deranors Leibwache), Name (Name (unam))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+Deranor's Bodyguard
 }
 
 STRING 11527
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Name (Name (unam))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+Wings of Deranor's Bodyguard
 }
 
 STRING 11528
@@ -43477,61 +43477,61 @@ Der Druide verwandelt sich in einen Bären. Das maximale Leben erhöht sich dabe
 STRING 11755
 // Fähigkeiten: A08B (Drohendes Unheil), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it causes only 85 % of the dealt damage.|n<A08B,Cool1> seconds cooldown.
+An allied unit will be protected from an impending threat. The next attack on it causes only 85 % of the dealt damage.|n<A08B,Cool1> seconds cooldown.
 }
 
 STRING 11756
 // Fähigkeiten: A08B (Drohendes Unheil), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it causes only 80 % of the dealt damage.|n<A08B,Cool2> seconds cooldown.
+An allied unit will be protected from an impending threat. The next attack on it causes only 80 % of the dealt damage.|n<A08B,Cool2> seconds cooldown.
 }
 
 STRING 11757
 // Fähigkeiten: A08B (Drohendes Unheil), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it causes only 75 % of the dealt damage.|n<A08B,Cool3> seconds cooldown.
+An allied unit will be protected from an impending threat. The next attack on it causes only 75 % of the dealt damage.|n<A08B,Cool3> seconds cooldown.
 }
 
 STRING 11758
 // Fähigkeiten: A08B (Drohendes Unheil), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it causes only 70 % of the dealt damage.|n<A08B,Cool4> seconds cooldown.
+An allied unit will be protected from an impending threat. The next attack on it causes only 70 % of the dealt damage.|n<A08B,Cool4> seconds cooldown.
 }
 
 STRING 11759
 // Fähigkeiten: A08B (Drohendes Unheil), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it causes only 65 % of the dealt damage.|n<A08B,Cool5> seconds cooldown.
+An allied unit will be protected from an impending threat. The next attack on it causes only 65 % of the dealt damage.|n<A08B,Cool5> seconds cooldown.
 }
 
 STRING 11760
 // Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 11761
 // Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 11762
 // Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 11763
 // Fähigkeiten: A1LP (Drohendes Unheil - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 11764
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 11765
@@ -44659,7 +44659,7 @@ Riesen beschwören
 STRING 12158
 // Einheiten: n04B (Fass), Name (Name (unam))
 {
-Fass
+Barrel
 }
 
 STRING 12159
@@ -44761,7 +44761,7 @@ Holy Will [|cffffcc00Level 1|r]
 STRING 12190
 // Einheiten: n04C (Fass), Name (Name (unam))
 {
-Fass
+Barrel
 }
 
 STRING 12191
@@ -44773,7 +44773,7 @@ STRING 12191
 STRING 12192
 // Einheiten: n04D (Fass), Name (Name (unam))
 {
-Fass
+Barrel
 }
 
 STRING 12193
@@ -48583,7 +48583,7 @@ STRING 13254
 STRING 13255
 // Einheiten: n04S (Einars Waffenkiste), Name (Name (unam))
 {
-Einars Waffenkiste
+Einar's Weapon Box
 }
 
 STRING 13256
@@ -48595,7 +48595,7 @@ STRING 13256
 STRING 13257
 // Einheiten: n04T (Irminas Tränkekiste), Name (Name (unam))
 {
-Irminas Tränkekiste
+Irmina's Potion Box
 }
 
 STRING 13258
@@ -49957,13 +49957,13 @@ STRING 13573
 STRING 13574
 // Gegenstände: I05K (Heilkraut), Name (Name (unam))
 {
-Heilkraut
+Healing Herb
 }
 
 STRING 13575
 // Gegenstände: I05K (Heilkraut), Tip (Tooltipp - Einfach (utip))
 {
-Heilkraut kaufen
+Buy Healing Herb
 }
 
 STRING 13576
@@ -49987,13 +49987,13 @@ Blind [|cffffcc00Level 3|r]
 STRING 13579
 // Gegenstände: I05L (Manakraut), Name (Name (unam))
 {
-Manakraut
+Mana Herb
 }
 
 STRING 13580
 // Gegenstände: I05L (Manakraut), Tip (Tooltipp - Einfach (utip))
 {
-Manakraut kaufen
+Buy Mana Herb
 }
 
 STRING 13581
@@ -50287,19 +50287,19 @@ Magierturm
 STRING 13630
 // Einheiten: n056 (Meister Gerhard), Name (Name (unam))
 {
-Meister Gerhard
+Master Gerhard
 }
 
 STRING 13631
 // Einheiten: n057 (Meister Gerhards Stand), Name (Name (unam))
 {
-Meister Gerhards Stand
+Master Gerhard's Stand
 }
 
 STRING 13632
 // Einheiten: h029 (Kirche), Name (Name (unam))
 {
-Kirche
+Church
 }
 
 STRING 13633
@@ -50365,7 +50365,7 @@ STRING 13642
 STRING 13643
 // Gegenstände: I05R (Baupläne einer Kirche), Name (Name (unam))
 {
-Baupläne einer Kirche
+Construction Plans of a Church
 }
 
 STRING 13644
@@ -50377,7 +50377,7 @@ Ermöglicht den Bau einer Kirche.
 STRING 13645
 // Gegenstände: I05R (Baupläne einer Kirche), Tip (Tooltipp - Einfach (utip))
 {
-Baupläne einer Kirche kaufen
+Buy Construction Plans of a Church
 }
 
 STRING 13646
@@ -50395,13 +50395,13 @@ Magierturm erzeugen
 STRING 13648
 // Fähigkeiten: A191 (Burg erzeugen), Name (Name (anam))
 {
-Burg erzeugen
+Create Castle
 }
 
 STRING 13649
 // Fähigkeiten: A192 (Kirche erzeugen), Name (Name (anam))
 {
-Kirche erzeugen
+Create Church
 }
 
 STRING 13650
@@ -50605,7 +50605,7 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 13695
 // Einheiten: n059 (Schlächter), Name (Name (unam))
 {
-Schlächter
+Butcher
 }
 
 STRING 13696
@@ -50749,7 +50749,7 @@ STRING 13718
 STRING 13719
 // Einheiten: n05E (Person ansprechen), Name (Name (unam))
 {
-Person ansprechen
+Speak to Person
 }
 
 STRING 13720
@@ -59767,7 +59767,7 @@ Umgibt das Gebäude mit Stacheln, die feindliche Nahkampf-Angreifer verletzen. V
 STRING 15222
 // Einheiten: n05E (Person ansprechen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Der Charakter spricht die entsprechende Person an.
+The character talks to the corresponding person.
 }
 
 STRING 15223
@@ -59821,7 +59821,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 15231
 // Fähigkeiten: A19U (Zauberamulett), Name (Name (anam))
 {
-Zauberamulett
+Magic Amulet
 }
 
 STRING 15232
@@ -60895,7 +60895,7 @@ Ein einfacher Erzbrocken, der zu Eisen verarbeitet werden kann.
 STRING 15460
 // Gegenstände: I05Y (Erz), Name (Name (unam))
 {
-Erz
+Ore
 }
 
 STRING 15461
@@ -60973,13 +60973,13 @@ STRING 15472
 STRING 15473
 // Fähigkeiten: A1BD (Erz schmelzen), Name (Name (anam))
 {
-Erz schmelzen
+Melt Ore
 }
 
 STRING 15474
 // Fähigkeiten: A1BD (Erz schmelzen), Tip (Tooltipp - Normal (atp1))
 {
-Erz schmelzen
+Melt Ore
 }
 
 STRING 15475
@@ -63421,13 +63421,13 @@ Blind [|cffffcc00Level 3|r]
 STRING 15998
 // Gegenstände: I06A (Magierrüstung), Name (Name (unam))
 {
-Magierrüstung
+Magician Armour
 }
 
 STRING 15999
 // Gegenstände: I06A (Magierrüstung), Tip (Tooltipp - Einfach (utip))
 {
-Magierrüstung kaufen
+Buy Magician Armour
 }
 
 STRING 16000
@@ -63439,7 +63439,7 @@ Teufelshund
 STRING 16001
 // Gegenstände: I06A (Magierrüstung), Description (Beschreibung (ides))
 {
-Die Rüstung eines Magiers.
+The armour of a magician.
 }
 
 STRING 16002
@@ -63463,13 +63463,13 @@ STRING 16004
 STRING 16005
 // Fähigkeiten: A1EF (Magierrüstung), Name (Name (anam))
 {
-Magierrüstung
+Magician Armour
 }
 
 STRING 16006
 // Fähigkeiten: A1EE (Magierrüstung), Name (Name (anam))
 {
-Magierrüstung
+Magician Armour
 }
 
 STRING 16007
@@ -63481,7 +63481,7 @@ STRING 16007
 STRING 16008
 // Fähigkeiten: A1ED (Magierrüstung), Name (Name (anam))
 {
-Magierrüstung
+Magician Armour
 }
 
 STRING 16009
@@ -63696,7 +63696,7 @@ STRING 16048
 STRING 16049
 // Gegenstände: I06C (Kopfbedeckung), Name (Name (unam))
 {
-Kopfbedeckung
+Head Cover
 }
 
 STRING 16050
@@ -63708,7 +63708,7 @@ Fliegen
 STRING 16051
 // Gegenstände: I06D (Kleidung), Name (Name (unam))
 {
-Kleidung
+Clothing
 }
 
 STRING 16052
@@ -63720,7 +63720,7 @@ STRING 16052
 STRING 16053
 // Gegenstände: I06E (Erstwaffe), Name (Name (unam))
 {
-Erstwaffe
+Primary Weapon
 }
 
 STRING 16054
@@ -63732,19 +63732,19 @@ Landet und verwandelt sich zurück in einen Menschen.
 STRING 16055
 // Gegenstände: I06F (Zweitwaffe), Name (Name (unam))
 {
-Zweitwaffe
+Secondary Weapon
 }
 
 STRING 16057
 // Gegenstände: I06G (Amulett oder Ring), Name (Name (unam))
 {
-Amulett oder Ring
+Amulet or Ring
 }
 
 STRING 16061
 // Gegenstände: I06C (Kopfbedeckung), Ubertip (Tooltipp - Erweitert (utub))
 {
-In diesem Fach wird die aktuelle Kopfbedeckung angezeigt.
+In this slot the current head cover is shown.
 }
 
 STRING 16062
@@ -63755,25 +63755,25 @@ STRING 16062
 STRING 16063
 // Gegenstände: I06E (Erstwaffe), Ubertip (Tooltipp - Erweitert (utub))
 {
-In diesem Fach wird die aktuelle Erstwaffe angezeigt.
+In this slot the current primary weapon is shown.
 }
 
 STRING 16064
 // Gegenstände: I06F (Zweitwaffe), Ubertip (Tooltipp - Erweitert (utub))
 {
-In diesem Fach wird die aktuelle Zweitwaffe angezeigt.
+In this slot the current secondary weapon is shown.
 }
 
 STRING 16065
 // Gegenstände: I06G (Amulett oder Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-In diesem Fach wird ein getragenes Amulett oder ein getragener Ring angezeigt.
+In this slot a carried amulet or crried ring is shown.
 }
 
 STRING 16069
 // Fähigkeiten: A1JZ (Dunkler Zauber - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Dunkler Zauber erlernen
+Learn Dark Spell
 }
 
 STRING 16070
@@ -65087,31 +65087,31 @@ Böses bannen (|cffffcc00L|r)
 STRING 16491
 // Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer [|cffffcc00Stufe 2|r] (|cffffcc00G|r)
+Martyr [|cffffcc00Level 2|r] (|cffffcc00G|r)
 }
 
 STRING 16492
 // Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer [|cffffcc00Stufe 3|r] (|cffffcc00G|r)
+Martyr [|cffffcc00Level 3|r] (|cffffcc00G|r)
 }
 
 STRING 16493
 // Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer [|cffffcc00Stufe 4|r] (|cffffcc00G|r)
+Martyr [|cffffcc00Level 4|r] (|cffffcc00G|r)
 }
 
 STRING 16494
 // Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer [|cffffcc00Stufe 5|r] (|cffffcc00G|r)
+Martyr [|cffffcc00Level 5|r] (|cffffcc00G|r)
 }
 
 STRING 16495
 // Fähigkeiten: A0NC (Märtyrer), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
+Martyr [|cffffcc00Level 1|r] (|cffffcc00G|r)
 }
 
 STRING 16496
@@ -69217,7 +69217,7 @@ STRING 17390
 STRING 17391
 // Gegenstände: I06D (Kleidung), Ubertip (Tooltipp - Erweitert (utub))
 {
-The current clothing is displayed in this slot.
+In this slot the current clothing is shown.
 }
 
 STRING 17392
@@ -69227,7 +69227,7 @@ STRING 17392
 
 STRING 17393
 {
-"Klicken Sie hier,|Num zum aktiven Schrein Ihres Charakters zu gelangen."
+"Click here,|Nto get to the active shrine of your character."
 }
 
 STRING 17394
@@ -69290,7 +69290,7 @@ Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen e
 STRING 17404
 // Fähigkeiten: A1J4 (Linderung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Linderung erlernen
+Learn Relief
 }
 
 STRING 17406
@@ -72062,7 +72062,7 @@ Big Healing Herb
 STRING 17877
 // Gegenstände: I06Q (Großes Heilkraut), Tip (Tooltipp - Einfach (utip))
 {
-Großes Heilkraut kaufen
+Buy Big Healing Herb
 }
 
 STRING 17878
@@ -72086,7 +72086,7 @@ STRING 17880
 STRING 17881
 // Gegenstände: I06R (Kleines Heilkraut), Name (Name (unam))
 {
-Kleines Heilkraut
+Small Healing Herb
 }
 
 STRING 17882
@@ -72104,7 +72104,7 @@ Heilt bei Benutzung <A1KI,DataA1> Trefferpunkte.
 STRING 17884
 // Gegenstände: I06R (Kleines Heilkraut), Tip (Tooltipp - Einfach (utip))
 {
-Buy small Healing Herb
+Buy Small Healing Herb
 }
 
 STRING 17885
@@ -72158,7 +72158,7 @@ Restores missing mana.
 STRING 17893
 // Fähigkeiten: A1KI (Kleines Heilkraut), Name (Name (anam))
 {
-Kleines Heilkraut
+Small Healing Herb
 }
 
 STRING 17894
@@ -72284,7 +72284,7 @@ STRING 17943
 STRING 17952
 // Fähigkeiten: A1KR (Böses bannen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Böses bannen erlernen
+Learn Ban Evil
 }
 
 STRING 17953
@@ -72608,7 +72608,7 @@ Increases the armour of an ally for a certain time.|n|n|cffffcc00Level 1|r - <A0
 STRING 18096
 // Fähigkeiten: A1L9 (Göttergunst - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Göttergunst erlernen
+Learn Gods Favour
 }
 
 STRING 18097
@@ -72644,7 +72644,7 @@ Summons a mana regenerating grove for <A0D4,Dur1> seconds which regenerates mana
 STRING 18112
 // Fähigkeiten: A1LB (Hain - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Hain erlernen
+Learn Grove
 }
 
 STRING 18113
@@ -72776,7 +72776,7 @@ STRING 18167
 STRING 18176
 // Fähigkeiten: A1LJ (Heiliger Wille - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Heiliger Wille erlernen
+Learn Holy Will
 }
 
 STRING 18177
@@ -72878,13 +72878,13 @@ Eisgeschoss - Erlernen
 STRING 18215
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-An allied unit will be protected from an impeding threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
+An allied unit will be protected from an impending threat. The next attack on it does not cause full damage.|n<A08B,Cool1> seconds cooldown. |n|n|cffffcc00Level 1|r - The next attack only deals 85 % damage. |n|cffffcc00Level 2|r - The next attack only deals 80 % damage. |n|cffffcc00Level 3|r - The next attack only deals 75 % damage. |n|cffffcc00Level 4|r - The next attack only deals 70 % damage. |n|cffffcc00Level 5|r - The next attack only deals 65 % damage.
 }
 
 STRING 18224
 // Fähigkeiten: A1LP (Drohendes Unheil - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Drohendes Unheil erlernen
+Learn Impending Disaster
 }
 
 STRING 18225
@@ -73166,7 +73166,7 @@ The cleric sacrifies himself and by that regenerates the life and mana of his al
 STRING 18350
 // Fähigkeiten: A1M5 (Märtyrer - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Märtyrer erlernen
+Learn Martyr
 }
 
 STRING 18351
@@ -73346,7 +73346,7 @@ Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  
 STRING 18430
 // Fähigkeiten: A1MF (Meister der Nekromantie - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie erlernen
+Learn Master of Necromancy
 }
 
 STRING 18431
@@ -73358,7 +73358,7 @@ Selbstlosigkeit [|cffffcc00Stufe 3|r]
 STRING 18432
 // Fähigkeiten: A1MG (Meister der Nekromantie - Erlernen), Name (Name (anam))
 {
-Meister der Nekromantie - Erlernen
+Master of Necromancy - Learn
 }
 
 STRING 18435
@@ -73670,7 +73670,7 @@ Can be used on undeads and demons and slows down their movement and attack speed
 STRING 18572
 // Fähigkeiten: A1MX (Böses hindern - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Böses hindern erlernen
+Learn Prevent Evil
 }
 
 STRING 18573
@@ -73706,7 +73706,7 @@ An allied suffers less damage for 10 seconds. Channeling spell. |n|n|cffffcc00Le
 STRING 18588
 // Fähigkeiten: A1MZ (Schützen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Schützen erlernen
+Learn Protect
 }
 
 STRING 18589
@@ -73874,7 +73874,7 @@ Heals life per second for an allied non-mechanic target for <A06A,Dur1> seconds.
 STRING 18666
 // Fähigkeiten: A1N9 (Genesung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Genesung erlernen
+Learn Recovery
 }
 
 STRING 18667
@@ -74018,7 +74018,7 @@ Revives an ally with a share of his life and his mana.|nThe ally is decided on b
 STRING 18730
 // Fähigkeiten: A1NH (Wiederbeleben - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Wiederbeleben erlernen
+Learn Revive
 }
 
 STRING 18731
@@ -74876,7 +74876,7 @@ STRING 19103
 STRING 19112
 // Fähigkeiten: A1OT (Bekehrung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Bekehrung erlernen
+Learn Conversion
 }
 
 STRING 19113
@@ -74906,7 +74906,7 @@ Bekehrung - Erlernen
 STRING 19119
 // Einheiten: n077 (Satz überspringen), Name (Name (unam))
 {
-Skip sentence
+Skip Sentence
 }
 
 STRING 19120
@@ -74948,13 +74948,13 @@ STRING 19125
 STRING 19126
 // Einheiten: n05E (Person ansprechen), Tip (Tooltipp - Einfach (utip))
 {
-Person ansprechen (|cffffcc00S|r)
+Speak to Person (|cffffcc00S|r)
 }
 
 STRING 19127
 // Einheiten: n077 (Satz überspringen), Tip (Tooltipp - Einfach (utip))
 {
-Satz überspringen (|cffffcc00D|r)
+Skip Sentence (|cffffcc00D|r)
 }
 
 STRING 19128
@@ -75086,7 +75086,7 @@ Berserker
 STRING 19149
 // Fähigkeiten: A0R0 (Vorherige Klasse), Tip (Tooltipp - Normal (atp1))
 {
-Vorherige Klasse (|cffffcc00W|r)
+Previous Class (|cffffcc00W|r)
 }
 
 STRING 19150
@@ -75752,13 +75752,13 @@ Berserker-Hauptmann anheuern
 STRING 19333
 // Fähigkeiten: A0R1 (Klasse auswählen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Wählt die aktuelle Klasse für den Spielercharakter aus.
+Chooses the current class for the player character.
 }
 
 STRING 19334
 // Fähigkeiten: A0R1 (Klasse auswählen), Tip (Tooltipp - Normal (atp1))
 {
-Klasse auswählen (|cffffcc00Q|r)
+Choose Class (|cffffcc00Q|r)
 }
 
 STRING 19335
@@ -77606,13 +77606,13 @@ Attribut-Bonus
 STRING 19731
 // Fähigkeiten: A1QZ (Attribut-Bonus - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht alle drei Attribute des Charakters um drei Punkte pro Stufe.
+Increases all three attributes of the character by three points per level.
 }
 
 STRING 19740
 // Fähigkeiten: A1QZ (Attribut-Bonus - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus erlernen
+Learn Attribute Bonus
 }
 
 STRING 19741
@@ -78434,13 +78434,13 @@ Urwesen
 STRING 19882
 // Gegenstände: I073 (Mehl), Tip (Tooltipp - Einfach (utip))
 {
-Mehl kaufen
+Buy Flour
 }
 
 STRING 19883
 // Gegenstände: I073 (Mehl), Name (Name (unam))
 {
-Mehl
+Flour
 }
 
 STRING 19884
@@ -78458,7 +78458,7 @@ STRING 19885
 STRING 19886
 // Fähigkeiten: A1SA (Mehl), Name (Name (anam))
 {
-Mehl
+Flour
 }
 
 STRING 19887
@@ -78518,7 +78518,7 @@ Hail of Arrows
 STRING 19914
 // Fähigkeiten: A1SI (Pferd reiten - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Pferd reiten erlernen
+Learn Horse Riding
 }
 
 STRING 19915
@@ -78620,7 +78620,7 @@ Ride Horse
 STRING 19931
 // Fähigkeiten: A1SI (Pferd reiten - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Benötigt Stufe 30|r|nDer Charakter kann ein reiterloses Pferd besteigen und darauf reiten.
+|cffffcc00Requires Level 30|r|nThe character can mount a riderless horse and ride on it.
 }
 
 STRING 19932
@@ -79568,7 +79568,7 @@ STRING 20090
 STRING 20091
 // Fähigkeiten: A1BY (Optionen - Aufträge), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Eine Liste der aktiven Aufträge. Erlaubt das Springen der Kamera zum Zielpunkt eines Auftrags.
+A list of the active missions. Allows the camera to jump to the destination of a mission.
 }
 
 STRING 20092
@@ -79586,7 +79586,7 @@ Kameradistanz vergrößern
 STRING 20095
 // Fähigkeiten: A1TT (Optionen - Dungeons), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Eine Liste der Dungeons in dieser Karte. Erlaubt das Springen der Kamera zu einem Dungeon.
+A list of dungeons in this map. Allows the camera to jump to a dungeon.
 }
 
 STRING 20097
@@ -79598,7 +79598,7 @@ Erhöht die Distanz von der Kamera zum Ziel.
 STRING 20098
 // Fähigkeiten: A1TV (Optionen - Kamera), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Eine Liste von Gesprächen, die mit Personen geführt wurden. Erlaubt das Auflisten von geführten Unterhaltungen.
+A list of conversations conducted with people. Allows to list of conversations.
 }
 
 STRING 20099
@@ -79640,7 +79640,7 @@ Camera (|cffffcc00K|r)
 STRING 20106
 // Fähigkeiten: A1TU (Optionen - Gespräche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Eine Liste von Gesprächen, die mit Personen geführt wurden. Erlaubt das Auflisten von geführten Unterhaltungen.
+A list of conversations conducted with people. Allows to list of conversations.
 }
 
 STRING 20107
@@ -79874,7 +79874,7 @@ Optionen - Charakteranzeige aktivieren
 STRING 20145
 // Fähigkeiten: A1UC (Optionen - Charakteranzeige aktivieren), Tip (Tooltipp - Normal (atp1))
 {
-Charakteranzeige aktivieren/deaktivieren
+Enable/Disable Charakters View
 }
 
 STRING 20146
