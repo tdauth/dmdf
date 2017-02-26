@@ -13784,7 +13784,7 @@ Not enough gold coins.
 
 STRING 2350
 {
-Nicht genug Baumaterial.
+Not enough building materials.
 }
 
 STRING 2351
@@ -13796,12 +13796,12 @@ STRING 2351
 STRING 2352
 // Fähigkeiten: A0R6 (Feuerregen), Tip (Tooltipp - Normal (atp1))
 {
-Feuerregen
+Fire Rain
 }
 
 STRING 2353
 {
-Got %d golc coins and %d building materials.
+Got %d gold coins and %d building materials.
 }
 
 STRING 2354
@@ -14090,7 +14090,7 @@ S
 STRING 2404
 // Fähigkeiten: A05H (Speerwurf), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00S|rpeerwurf
+Spear Throw (|cffffcc00S|r)
 }
 
 STRING 2405
@@ -14294,7 +14294,7 @@ Ruft einen mächtigen Drachen herbei. Es kann immer nur ein Drache herbeigerufen
 STRING 2438
 // Fähigkeiten: A04F (Drachen herbeirufen), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00D|rrachen herbeirufen
+Call Dragon (|cffffcc00D|r)
 }
 
 STRING 2439
@@ -14312,7 +14312,7 @@ D
 STRING 2441
 // Doodads: D091 (Messer (Grasland)), Name (Name (dnam))
 {
-Messer (Grasland)
+Knife (Grassland)
 }
 
 STRING 2442
@@ -68942,7 +68942,7 @@ STRING 17344
 STRING 17345
 // Einheiten: n06V (Baradé, Fürst der Dunkelelfen), Name (Name (unam))
 {
-Baradé, Fürst der Dunkelelfen
+Baradé, Lord of the Dark Elves
 }
 
 STRING 17346
@@ -68983,19 +68983,19 @@ Teleportation [|cffffcc00Stufe 1|r]
 
 STRING 17352
 {
-Version 0.7
+Version 0.9
 }
 
 STRING 17353
 // Einheiten: n06W (Gammar, Kriegsherr der Orks), Name (Name (unam))
 {
-Gammar, Kriegsherr der Orks
+Gammar, Warlord of the Orcs
 }
 
 STRING 17354
 // Einheiten: n06X (Gardonars Leibwache), Name (Name (unam))
 {
-Gardonars Leibwache
+Gardonar's Bodyguard
 }
 
 STRING 17355
