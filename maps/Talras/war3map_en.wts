@@ -5550,7 +5550,7 @@ Summons a demon for 60 seconds.|nRequired items:|n - The soul of a child.|n- Two
 STRING 928
 // Fähigkeiten: A1VD (Herr der Finsternis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört Dämonen für 60 Sekunden.|nBenötigte Gegenstände:|n- Eine Seele eines Kindes.|n- Zwei Geister von Tieren.
+Summons a demon for 60 seconds.|nRequired items:|n - The soul of a child.|n- Two spirits of animals.
 }
 
 STRING 929
@@ -5994,7 +5994,7 @@ Demon Servant
 STRING 1002
 // Zauberverstärker/Effekte: B010 (Beschworener Dämon), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Ein mächtiger Dämon.
+A powerful demon.
 }
 
 STRING 1003
@@ -6156,7 +6156,7 @@ STRING 1028
 STRING 1029
 // Fähigkeiten: A1VF (Verzauberte Zwergenklinge), Name (Name (anam))
 {
-Verzauberte Zwergenklinge
+Enchanted Dwarf Blade
 }
 
 STRING 1030
@@ -7896,7 +7896,7 @@ Staff of the wizard
 STRING 1319
 // Einheiten: h03R (Magier), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Magier des Nordens.
+A magician of the north.
 }
 
 STRING 1320
@@ -8196,7 +8196,7 @@ STRING 1368
 STRING 1369
 // Fähigkeiten: A016 (Schwerer Holzschild), Name (Name (anam))
 {
-Schwerer Holzschild
+Heavy Wooden Shield
 }
 
 STRING 1370
@@ -8568,7 +8568,7 @@ Waffenplatz (Grasland)
 STRING 1431
 // Fähigkeiten: A02P (Axt), Name (Name (anam))
 {
-Axt
+Axe
 }
 
 STRING 1432
@@ -9954,7 +9954,7 @@ Rune des Geschicks
 STRING 1662
 // Fähigkeiten: A1I0 (Björns Kurzbogen), EditorSuffix (Editor-Suffix (ansf))
 {
-(+3 Geschick)
+(+3 Dexterity)
 }
 
 STRING 1663
@@ -10272,13 +10272,13 @@ STRING 1714
 STRING 1715
 // Einheiten: h03T (Ginarr), Tip (Tooltipp - Einfach (utip))
 {
-Zwergenmagier ausbilden
+Recruit Dwarf Magician
 }
 
 STRING 1716
 // Einheiten: h03T (Ginarr), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Magier des Nordens.
+A magician of the north.
 }
 
 STRING 1717
@@ -11632,7 +11632,7 @@ Fast Trade Level 1
 }
 
 STRING 1942
-// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
 {
 Beast Hunter
 }
@@ -11655,7 +11655,7 @@ STRING 1945
 }
 
 STRING 1946
-// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -14599,7 +14599,7 @@ Einschüchtern [|cffffcc00Stufe 1|r]
 }
 
 STRING 2502
-// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16078,7 +16078,7 @@ Wilder Blutrausch [|cffffcc00Stufe 1|r]
 }
 
 STRING 2823
-// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16379,7 +16379,7 @@ STRING 2898
 }
 
 STRING 2899
-// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16421,7 +16421,7 @@ Schwachstelle
 }
 
 STRING 2913
-// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16505,7 +16505,7 @@ Hieb
 }
 
 STRING 2927
-// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16595,7 +16595,7 @@ Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwi
 }
 
 STRING 2943
-// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -16931,7 +16931,7 @@ Stiefel eines Druiden kaufen
 }
 
 STRING 3003
-// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
+// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
 {
 Beast Hunter
 }
@@ -16955,7 +16955,7 @@ STRING 3006
 }
 
 STRING 3007
-// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
+// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
 {
 Beast Hunter
 }
@@ -18828,7 +18828,7 @@ STRING 3349
 STRING 3350
 // Fähigkeiten: A07X (Ritterrüstung), Name (Name (anam))
 {
-Ritterrüstung
+Knight Armour
 }
 
 STRING 3351
@@ -18852,7 +18852,7 @@ STRING 3353
 STRING 3354
 // Fähigkeiten: A07Z (Topfhelm), Name (Name (anam))
 {
-Topfhelm
+Pot Helmet
 }
 
 STRING 3355
@@ -30397,7 +30397,7 @@ Arkaner Schutz - Stufe 5
 }
 
 STRING 6709
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -33127,7 +33127,7 @@ Colossus
 }
 
 STRING 7820
-// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -39709,7 +39709,7 @@ STRING 10373
 }
 
 STRING 10374
-// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -39787,7 +39787,7 @@ STRING 10386
 }
 
 STRING 10387
-// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -40401,7 +40401,7 @@ Herbal Cure
 STRING 10683
 // Fähigkeiten: A0Y5 (Stich - Stufe 4), Name (Name (anam))
 {
-Stich - Stufe 4
+Stab - Level 4
 }
 
 STRING 10684
@@ -40413,7 +40413,7 @@ Herbal Cure
 STRING 10685
 // Fähigkeiten: A0YB (Stich - Stufe 5), Name (Name (anam))
 {
-Stich - Stufe 5
+Stab - Level 5
 }
 
 STRING 10694
@@ -42027,7 +42027,7 @@ Zehren - Stufe 1
 STRING 11232
 // Fähigkeiten: A1JK (Bezwingung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Zehren [|cffffcc00Stufe 2|r]
+Feeding [|cffffcc00Level 2|r]
 }
 
 STRING 11233
@@ -42045,7 +42045,7 @@ Zehren - Stufe 2
 STRING 11246
 // Fähigkeiten: A0XS (Anstürmen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Zehren [|cffffcc00Stufe 3|r]
+Feeding [|cffffcc00Level 3|r]
 }
 
 STRING 11247
@@ -42063,7 +42063,7 @@ Zehren - Stufe 3
 STRING 11260
 // Fähigkeiten: A1JK (Bezwingung - Erlernen), Name (Name (anam))
 {
-Zehren [|cffffcc00Stufe 4|r]
+Feeding [|cffffcc00Level 4|r]
 }
 
 STRING 11261
@@ -45395,7 +45395,7 @@ STRING 12419
 }
 
 STRING 12420
-// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -45761,7 +45761,7 @@ Holy Power (|cffffcc00Q|r)
 }
 
 STRING 12585
-// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -50491,7 +50491,7 @@ STRING 13663
 STRING 13664
 // Einheiten: n05M (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 13665
@@ -60997,7 +60997,7 @@ STRING 15476
 STRING 15477
 // Einheiten: n05O (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15478
@@ -61075,7 +61075,7 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 15490
 // Einheiten: n05P (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15491
@@ -61099,7 +61099,7 @@ Ein Hundezwinger lässt aggressive Hunde frei, sobald der Gegner sich ihnen näh
 STRING 15494
 // Einheiten: n05Q (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15495
@@ -61123,7 +61123,7 @@ Ein Hundezwinger lässt aggressive Hunde frei, sobald der Gegner sich ihnen näh
 STRING 15498
 // Einheiten: n05R (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15499
@@ -61147,7 +61147,7 @@ Ein Hundezwinger lässt aggressive Hunde frei, sobald der Gegner sich ihnen näh
 STRING 15502
 // Einheiten: n05S (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15503
@@ -61171,7 +61171,7 @@ Ein Hundezwinger lässt aggressive Hunde frei, sobald der Gegner sich ihnen näh
 STRING 15506
 // Fähigkeiten: A1BG (Hundezwinger), Name (Name (anam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15507
@@ -61315,7 +61315,7 @@ STRING 15529
 STRING 15530
 // Fähigkeiten: A1BN (Hundezwinger), Name (Name (anam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15531
@@ -61453,7 +61453,7 @@ STRING 15552
 STRING 15553
 // Zauberverstärker/Effekte: B02Q (), Bufftip (Tooltipp (ftip))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15554
@@ -61663,7 +61663,7 @@ Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffff
 STRING 15642
 // Zauberverstärker/Effekte: B033 (Hundezwinger), EditorName (Name (nur Editor) (fnam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 15643
@@ -64443,13 +64443,13 @@ Rage
 }
 
 STRING 16273
-// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
 
 STRING 16274
-// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -64761,13 +64761,13 @@ Reserven - Stufe 5
 }
 
 STRING 16390
-// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
 
 STRING 16391
-// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
 {
 (Dragon Slayer)
 }
@@ -65001,7 +65001,7 @@ Auge um Auge - Stufe 5
 }
 
 STRING 16477
-// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -65481,7 +65481,7 @@ Sprungattacke - Stufe 5
 }
 
 STRING 16601
-// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -65499,7 +65499,7 @@ Dummy Caster - Sprungattacke
 }
 
 STRING 16604
-// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Dragon Slayer)
 }
@@ -68181,7 +68181,7 @@ Björn's Short Bow
 STRING 17156
 // Fähigkeiten: A1W0 (Rune des Geschicks), EditorSuffix (Editor-Suffix (ansf))
 {
-(+3 Geschick)
+(+3 Dexterity)
 }
 
 STRING 17157
@@ -77600,7 +77600,7 @@ STRING 19729
 STRING 19730
 // Fähigkeiten: A1QY (Attribut-Bonus), Name (Name (anam))
 {
-Attribut-Bonus
+Attribute Bonus
 }
 
 STRING 19731
@@ -77954,7 +77954,7 @@ Missions - War
 STRING 19802
 // Fähigkeiten: A1CF (Aufträge - Die Verteidigung von Talras), Name (Name (anam))
 {
-Aufträge - Die Verteidigung von Talras
+Missions - The Defense of Talras
 }
 
 STRING 19803
