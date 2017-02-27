@@ -3412,7 +3412,7 @@ ASystemGUI - shortcut l
 STRING 569
 // Fähigkeiten: A00P (ASystemGUI - shortcut l), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 570
@@ -3424,7 +3424,7 @@ The keyboard shortcut L.
 STRING 571
 // Fähigkeiten: A00P (ASystemGUI - shortcut l), Tip (Tooltipp - Normal (atp1))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 572
@@ -3484,7 +3484,7 @@ ASystemGUI - shortcut o
 STRING 581
 // Fähigkeiten: A05Q (Einschüchtern), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 582
@@ -3496,7 +3496,7 @@ The keyboard shortcut O.
 STRING 583
 // Fähigkeiten: A056 (Wiederbeleben), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 584
@@ -3628,7 +3628,7 @@ ASystemGUI - shortcut u
 STRING 605
 // Fähigkeiten: A08T (Vervielfachung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 606
@@ -3640,7 +3640,7 @@ The keyboard shortcut U.
 STRING 607
 // Fähigkeiten: A019 (Erfrierung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 608
@@ -3676,7 +3676,7 @@ ASystemGUI - shortcut w
 STRING 613
 // Fähigkeiten: A184 (Falle), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 614
@@ -3688,7 +3688,7 @@ The keyboard shortcut W.
 STRING 615
 // Fähigkeiten: A08H (Manaexplosion), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 616
@@ -3802,7 +3802,7 @@ Increases the damage by <A07N,DataA1>.|n|cffc3dbffRange Weapon, Two Handed Weapo
 STRING 634
 // Gegenstände: I021 (Langbogen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht die Reichweite um <A07P,Rng1> und den Schaden um <A07P,DataA1> Punkte und <A07O,DataA1,%>%.|n|cffc3dbffFernkampfwaffe, Zweihandwaffe.|r
+Increases the range by <A07P,Rng1> and the damage by <A07P,DataA1> points and <A07O,DataA1,%>%.|n|cffc3dbffRange Weapon, Two Handed Weapon.|r
 }
 
 STRING 635
@@ -3814,7 +3814,7 @@ Increases the damage by <AItk,DataA1>.|n|cffc3dbffRange Weapon, Two Handed Weapo
 STRING 636
 // Gegenstände: I05B (Todessense), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A17K,DataA1> und gibt eine Chance von <A17L,DataA1> % den <A17L,DataB1>fachen Schaden anzurichten.|n|cffc3dbffZweihandwaffe.|r
+Increases the damage by <A17K,DataA1> and grants a chance of <A17L,DataA1> % to deal <A17L,DataB1> times damage.|n|cffc3dbffTwo Hand Weapons.|r
 }
 
 STRING 637
@@ -3826,13 +3826,13 @@ STRING 637
 STRING 638
 // Gegenstände: I05C (Nordischer Kriegshammer), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A17M,DataA1>. Verleiht eine Chance von <A17N,DataA1> % den Gegner <A17N,Dur1> Sekunden lang zu betäuben und einen zusätzlichen Schaden von <A17N,DataC1> zu versursachen.|n|cffc3dbffZweihandwaffe.|r
+Increases the damage by <A17M,DataA1>. Grants a chance of <A17N,DataA1> % to stun the opponent for <A17N,Dur1> seconds and to deal an additional damage of <A17N,DataC1>.|n|cffc3dbffSecondary Weapon.|r
 }
 
 STRING 639
 // Gegenstände: I06I (Morgenstern), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A04O,DataA1>.|n|cffc3dbffZweitwaffe.|r
+Increases the damage by <A04O,DataA1>.|n|cffc3dbffSecondary Weapon.|r
 }
 
 STRING 640
@@ -3903,7 +3903,7 @@ Chapter 1: Talras
 STRING 651
 // Einheiten: H015 (Dorfbewohner), Name (Name (unam))
 {
-Dorfbewohner
+Villager
 }
 
 STRING 652
@@ -3915,7 +3915,7 @@ Gods Favor [|cffffcc00Level 4|r]
 STRING 653
 // Fähigkeiten: A0OQ (Drohendes Unheil - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 654
@@ -3938,7 +3938,7 @@ The Power of Fire
 STRING 657
 // Gegenstände: I002 (Ricmans Speer), Name (Name (unam))
 {
-Ricman's spear
+Ricman's Spear
 }
 
 STRING 658
@@ -3992,25 +3992,25 @@ World Map
 STRING 666
 // Fähigkeiten: A1V4 (Optionen - Weltkarte), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Zeigt die Weltkarte an. Auf der Weltkarte können Sie eine Zielkarte auswählen, zu der Sie reisen wollen.
+Shows the world map. On the world map you can select the target map to which you want to travel.
 }
 
 STRING 667
 // Doodads: D020 (Steinmauer (Grasland)), Name (Name (dnam))
 {
-Steinmauer (Grasland)
+Stone Wall (Grassland)
 }
 
 STRING 668
 // Doodads: D021 (Holzbrett (Grasland)), Name (Name (dnam))
 {
-Holzbrett (Grasland)
+Wooden Board (Grassland)
 }
 
 STRING 669
 // Doodads: D022 (Kirchenbank (Grasland)), Name (Name (dnam))
 {
-Kirchenbank (Grasland)
+Church Bench (Grassland)
 }
 
 STRING 670
@@ -4160,7 +4160,7 @@ Gods Favor [|cffffcc00Level 5|r]
 STRING 696
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Zauberbuch - Kleriker)
 }
 
 STRING 697
@@ -4250,13 +4250,13 @@ STRING 710
 STRING 711
 // Einheiten: H03H (Dorfbewohnerin), Name (Name (unam))
 {
-Dorfbewohnerin
+Female Villager
 }
 
 STRING 712
 // Einheiten: H03H (Dorfbewohnerin), Propernames (Eigennamen (upro))
 {
-Mutter
+Mother
 }
 
 STRING 713
@@ -4352,13 +4352,13 @@ STRING 727
 STRING 728
 // Doodads: D0BP (Gardonars Thron (Gardonar)), Name (Name (dnam))
 {
-Gardonars Thron (Gardonar)
+Gardonar's Throne (Gardonar)
 }
 
 STRING 729
 // Einheiten: H03J (Dorfältester), Name (Name (unam))
 {
-Dorfältester
+Village Elders
 }
 
 STRING 730
@@ -4382,19 +4382,19 @@ STRING 732
 STRING 733
 // Gegenstände: I02F (Harke), Name (Name (unam))
 {
-Harke
+Rake
 }
 
 STRING 734
 // Gegenstände: I02F (Harke), Description (Beschreibung (ides))
 {
-Eine Harke zum Umgraben.
+A rake for digging.
 }
 
 STRING 735
 // Gegenstände: I02F (Harke), Ubertip (Tooltipp - Erweitert (utub))
 {
-Eine Harke zum Umgraben.
+A rake for digging.
 }
 
 STRING 736
@@ -4508,7 +4508,7 @@ A bag filled with Ralph's shit.
 STRING 754
 // Fähigkeiten: A01C (Entzünden), Name (Name (anam))
 {
-Entzünden
+Inflame
 }
 
 STRING 755
@@ -4580,7 +4580,7 @@ Ein Buch mit geheimnisvollen Anleitungen.
 STRING 766
 // Fähigkeiten: A03G (Eiszeit), Name (Name (anam))
 {
-Eiszeit
+Ice Age
 }
 
 STRING 767
@@ -4604,7 +4604,7 @@ Prevent Evil [|cffffcc00Level 2|r]
 STRING 770
 // Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Zauberbuch - Kleriker)
 }
 
 STRING 771
@@ -4796,13 +4796,13 @@ Prevent Evil [|cffffcc00Level 3|r]
 STRING 802
 // Fähigkeiten: A01G (Zehren), Name (Name (anam))
 {
-Zehren
+Feeding
 }
 
 STRING 803
 // Fähigkeiten: A0NV (Blenden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+Selflessness [|cffffcc00Level 3|r]
 }
 
 STRING 804
@@ -4886,7 +4886,7 @@ Buy the Soul of a Child
 STRING 817
 // Gegenstände: I07C (Die Seele eines Kindes), Ubertip (Tooltipp - Erweitert (utub))
 {
-Die Seele eines unschuldigen Kindes.
+The soul of an innocent child.
 }
 
 STRING 818
@@ -4898,7 +4898,7 @@ Die Seele eines unschuldigen Kindes.
 STRING 819
 // Gegenstände: I07D (Der Geist eines Tieres), Name (Name (unam))
 {
-Der Geist eines Tieres
+The Spirit of an Animal
 }
 
 STRING 820
@@ -4910,7 +4910,7 @@ Buy the Soul of a Child
 STRING 821
 // Gegenstände: I07D (Der Geist eines Tieres), Ubertip (Tooltipp - Erweitert (utub))
 {
-Der Geist eines friedlichen Tieres.
+The spirit of a peaceful animal.
 }
 
 STRING 822
@@ -4964,7 +4964,7 @@ Shadow Efreet
 STRING 830
 // Einheiten: n00G (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 831
@@ -4976,7 +4976,7 @@ Berserker
 STRING 832
 // Einheiten: n00J (Berserker), Tip (Tooltipp - Einfach (utip))
 {
-Berserker anheuern
+Recruit Berserker
 }
 
 STRING 833
@@ -5006,7 +5006,7 @@ Prevent Evil [|cffffcc00Level 4|r]
 STRING 837
 // Fähigkeiten: A1NH (Wiederbeleben - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Zauberbuch - Kleriker)
 }
 
 STRING 838
@@ -5030,7 +5030,7 @@ Creates a swarm of angry bees that sting nearby opponents. While they sting thei
 STRING 841
 // Fähigkeiten: A09J (Flügelschlag), Name (Name (anam))
 {
-Flügelschlag
+Wing Stroke
 }
 
 STRING 842
@@ -5120,7 +5120,7 @@ Shadow Efreet
 STRING 856
 // Fähigkeiten: A0OD (Linderung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Zauberbuch - Kleriker)
 }
 
 STRING 857
@@ -5664,7 +5664,7 @@ Secondary Weapon. Increases the damage by <A04O,DataA1>.
 STRING 947
 // Einheiten: n089 (Eisbär), Name (Name (unam))
 {
-Erhöht den Schaden um <A07M,DataA1>. Bei einem Treffer werden für <A07L,DataC1> Sekunden <A07L,DataB1> Zombies aus der Leiche des Opfers beschworen, falls dieses spätestens <A07L,Dur1> Sekunden nach dem Treffer getötet wird.|n|cffffcc00Fernkampfwaffe|r
+Icebear
 }
 
 STRING 948
@@ -5844,7 +5844,7 @@ Increases the armour.
 STRING 977
 // Doodads: D046 (BESCHÄDIGT - Übungspuppe (Grasland)), Name (Name (dnam))
 {
-BESCHÄDIGT - Übungspuppe (Grasland)
+DAMAGED - Exercise Doll (Grassland)
 }
 
 STRING 978
@@ -6990,7 +6990,7 @@ Wild Boar
 STRING 1168
 // Gegenstände: I060 (Kurzschwert für Einar), Name (Name (unam))
 {
-Kurzschwert für Einar
+Short Sword for Einar
 }
 
 STRING 1169
@@ -7116,7 +7116,7 @@ Small Mana Potion
 STRING 1189
 // Gegenstände: I00E (Kleiner Manatrank), Tip (Tooltipp - Einfach (utip))
 {
-Kleinen M|cffffcc00a|rnatrank kaufen
+Buy Small Mana Potion (|cffffcc00A|r)
 }
 
 STRING 1190
@@ -7134,7 +7134,7 @@ A
 STRING 1192
 // Gegenstände: I009 (Kleiner Heiltrank), Hotkey (Tastaturkürzel (uhot))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 1193
@@ -7146,13 +7146,13 @@ Missions - A New Alliance
 STRING 1194
 // Einheiten: n08R (Nordfrau), Name (Name (unam))
 {
-Nordfrau
+Northwoman
 }
 
 STRING 1195
 // Einheiten: n08R (Nordfrau), Tip (Tooltipp - Einfach (utip))
 {
-Nordfrau ausbilden
+Recruit Northwoman
 }
 
 STRING 1196
@@ -7254,121 +7254,121 @@ Freeze [|cffffcc00Level 1|r]
 STRING 1212
 // Fähigkeiten: A0TS (Entzünden - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden [|cffffcc00Stufe 2|r]
+Inflame [|cffffcc00Level 2|r]
 }
 
 STRING 1213
 // Fähigkeiten: A0TT (Entzünden - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden [|cffffcc00Stufe 3|r]
+Inflame [|cffffcc00Level 3|r]
 }
 
 STRING 1214
 // Fähigkeiten: A0TU (Entzünden - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Inflame [|cffffcc00Level 4|r]
 }
 
 STRING 1215
 // Fähigkeiten: A0TV (Entzünden - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+Inflame [|cffffcc00Level 5|r]
 }
 
 STRING 1216
 // Fähigkeiten: A0TR (Entzünden - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden [|cffffcc00Stufe 1|r]
+Inflame [|cffffcc00Level 1|r]
 }
 
 STRING 1217
 // Fähigkeiten: A0TI (Eiszeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Eiszeit [|cffffcc00Stufe 2|r]
+Ice Age [|cffffcc00Level 2|r]
 }
 
 STRING 1218
 // Fähigkeiten: A0TJ (Eiszeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Eiszeit [|cffffcc00Stufe 3|r]
+Ice Age [|cffffcc00Level 3|r]
 }
 
 STRING 1219
 // Fähigkeiten: A0TK (Eiszeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Eiszeit [|cffffcc00Stufe 4|r]
+Ice Age [|cffffcc00Level 4|r]
 }
 
 STRING 1220
 // Fähigkeiten: A0TL (Eiszeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Eiszeit [|cffffcc00Stufe 5|r]
+Ice Age [|cffffcc00Level 5|r]
 }
 
 STRING 1221
 // Fähigkeiten: A0TH (Eiszeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Eiszeit [|cffffcc00Stufe 1|r]
+Ice Age [|cffffcc00Level 1|r]
 }
 
 STRING 1222
 // Fähigkeiten: A0L1 (Teleportation - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation [|cffffcc00Stufe 2|r]
+Teleportation [|cffffcc00Level 2|r]
 }
 
 STRING 1223
 // Fähigkeiten: A0L2 (Teleportation - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation [|cffffcc00Stufe 3|r]
+Teleportation [|cffffcc00Level 3|r]
 }
 
 STRING 1224
 // Fähigkeiten: A0L3 (Teleportation - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation [|cffffcc00Stufe 4|r]
+Teleportation [|cffffcc00Level 4|r]
 }
 
 STRING 1225
 // Fähigkeiten: A0L4 (Teleportation - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation [|cffffcc00Stufe 5|r]
+Teleportation [|cffffcc00Level 5|r]
 }
 
 STRING 1226
 // Fähigkeiten: A0L0 (Teleportation - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+Teleportation [|cffffcc00Level 1|r]
 }
 
 STRING 1227
 // Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 2|r]
+Sprint [|cffffcc00Level 2|r]
 }
 
 STRING 1228
 // Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 3|r]
+Sprint [|cffffcc00Level 3|r]
 }
 
 STRING 1229
 // Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 4|r]
+Sprint [|cffffcc00Level 4|r]
 }
 
 STRING 1230
 // Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 5|r]
+Sprint [|cffffcc00Level 5|r]
 }
 
 STRING 1231
 // Fähigkeiten: A1EK (Sprinten), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 1|r]
+Sprint [|cffffcc00Level 1|r]
 }
 
 STRING 1232
@@ -7386,13 +7386,13 @@ STRING 1233
 STRING 1234
 // Einheiten: n08S (Mammutreiter), Name (Name (unam))
 {
-Mammutreiter
+Mammoth Rider
 }
 
 STRING 1235
 // Einheiten: n08S (Mammutreiter), Tip (Tooltipp - Einfach (utip))
 {
-Mammutreiter ausbilden
+Recruit Mammoth Rider
 }
 
 STRING 1236
@@ -7596,43 +7596,43 @@ Shows the overview over all available spells.
 STRING 1269
 // Fähigkeiten: A029 (Aura der eisernen Haut), Tip (Tooltipp - Normal (atp1))
 {
-Eiserne Haut [|cffffcc00Stufe 1|r]
+Iron Skin [|cffffcc00Level 1|r]
 }
 
 STRING 1270
 // Fähigkeiten: A029 (Aura der eisernen Haut), Tip (Tooltipp - Normal (atp1))
 {
-Eiserne Haut [|cffffcc00Stufe 2|r]
+Iron Skin [|cffffcc00Level 2|r]
 }
 
 STRING 1271
 // Fähigkeiten: A029 (Aura der eisernen Haut), Tip (Tooltipp - Normal (atp1))
 {
-Eiserne Haut [|cffffcc00Stufe 3|r]
+Iron Skin [|cffffcc00Level 3|r]
 }
 
 STRING 1272
 // Fähigkeiten: A029 (Aura der eisernen Haut), Tip (Tooltipp - Normal (atp1))
 {
-Eiserne Haut [|cffffcc00Stufe 4|r]
+Iron Skin [|cffffcc00Level 4|r]
 }
 
 STRING 1273
 // Fähigkeiten: A029 (Aura der eisernen Haut), Tip (Tooltipp - Normal (atp1))
 {
-Eiserne Haut [|cffffcc00Stufe 5|r]
+Iron Skin [|cffffcc00Level 5|r]
 }
 
 STRING 1274
 // Einheiten: n08T (Hauptmann), Tip (Tooltipp - Einfach (utip))
 {
-Hauptmann ausbilden
+Recruit Captain
 }
 
 STRING 1275
 // Einheiten: n08Q (Nordmann), Ubertip (Tooltipp - Erweitert (utub))
 {
-A Norseman is a strong melee fighter.
+A Northman is a strong melee fighter.
 }
 
 STRING 1276
@@ -7644,13 +7644,13 @@ STRING 1276
 STRING 1277
 // Einheiten: n08U (Gezähmter Wolf), Name (Name (unam))
 {
-Gezähmter Wolf
+Tame Wolf
 }
 
 STRING 1278
 // Einheiten: n08U (Gezähmter Wolf), Tip (Tooltipp - Einfach (utip))
 {
-Gezähmten Wolf ausbilden
+Recruit Tame Wolf
 }
 
 STRING 1279
@@ -7722,7 +7722,7 @@ STRING 1289
 STRING 1290
 // Einheiten: h03P (Drachenreiter), Name (Name (unam))
 {
-Drachenreiter
+Dragon Rider
 }
 
 STRING 1291
@@ -7734,7 +7734,7 @@ STRING 1291
 STRING 1292
 // Einheiten: h03P (Drachenreiter), Tip (Tooltipp - Einfach (utip))
 {
-Drachenreiter ausbilden
+Recruit Dragon Rider
 }
 
 STRING 1293
@@ -7746,7 +7746,7 @@ STRING 1293
 STRING 1294
 // Einheiten: h03P (Drachenreiter), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Nordmann auf einem Drachen.
+A Northman on a dragon.
 }
 
 STRING 1295
@@ -7854,7 +7854,7 @@ Scroll of Healing
 STRING 1312
 // Gegenstände: I00F (Spruchrolle der Heilung), Tip (Tooltipp - Einfach (utip))
 {
-|cffffcc00S|rpruchrolle der Heilung kaufen
+Buy Scroll of Healing (|cffffcc00S|r)
 }
 
 STRING 1313
@@ -7866,13 +7866,13 @@ Heilt bei Benutzung <AIha,DataA1> Trefferpunkte bei sich selbst und verbündeten
 STRING 1314
 // Gegenstände: I00G (Spruchrolle der Zauberkraft), Name (Name (unam))
 {
-Spruchrolle der Zauberkraft
+Scroll of Magic Power
 }
 
 STRING 1315
 // Einheiten: h03R (Magier), Tip (Tooltipp - Einfach (utip))
 {
-Magier ausbilden
+Recruit Magician
 }
 
 STRING 1316
@@ -7890,7 +7890,7 @@ Restores missing mana.
 STRING 1318
 // Gegenstände: I00H (Stab des Zauberers), Name (Name (unam))
 {
-Staff of the wizard
+Staff of the Wizard
 }
 
 STRING 1319
@@ -7902,7 +7902,7 @@ A magician of the north.
 STRING 1320
 // Einheiten: n08V (Herr der Finsternis), Tip (Tooltipp - Einfach (utip))
 {
-Herrn der Finsternis anheuern
+Recruit Lord of Darkness
 }
 
 STRING 1321
@@ -7920,7 +7920,7 @@ Z
 STRING 1323
 // Fähigkeiten: A086 (Stab des Zauberers), Name (Name (anam))
 {
-Staff of the wizard
+Staff of the Wizard
 }
 
 STRING 1324
@@ -23850,67 +23850,67 @@ Manaschild - Stufe 5
 STRING 4517
 // Fähigkeiten: A0WG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A0WG,DataA1>.
+Increases the armour by <A0WG,DataA1>.
 }
 
 STRING 4518
 // Fähigkeiten: A0WG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A0WG,DataA2>.
+Increases the armour by <A0WG,DataA2>.
 }
 
 STRING 4519
 // Fähigkeiten: A0WG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A0WG,DataA3>.
+Increases the armour by <A0WG,DataA3>.
 }
 
 STRING 4520
 // Fähigkeiten: A0WG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A0WG,DataA4>.
+Increases the armour by <A0WG,DataA4>.
 }
 
 STRING 4521
 // Fähigkeiten: A0WG (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung um <A0WG,DataA5>.
+Increases the armour by <A0WG,DataA5>.
 }
 
 STRING 4522
 // Fähigkeiten: A0WG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Rüstungsbonus [|cffffcc00Stufe 1|r]
+Master of Necromancy - Armour Bonus [|cffffcc00Level 1|r]
 }
 
 STRING 4523
 // Fähigkeiten: A0WG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Rüstungsbonus [|cffffcc00Stufe 2|r]
+Master of Necromancy - Armour Bonus [|cffffcc00Level 2|r]
 }
 
 STRING 4524
 // Fähigkeiten: A0WG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Rüstungsbonus [|cffffcc00Stufe 3|r]
+Master of Necromancy - Armour Bonus [|cffffcc00Level 3|r]
 }
 
 STRING 4525
 // Fähigkeiten: A0WG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Rüstungsbonus [|cffffcc00Stufe 4|r]
+Master of Necromancy - Armour Bonus [|cffffcc00Level 4|r]
 }
 
 STRING 4526
 // Fähigkeiten: A0WG (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Rüstungsbonus [|cffffcc00Stufe 5|r]
+Master of Necromancy - Armour Bonus [|cffffcc00Level 5|r]
 }
 
 STRING 4527
 // Fähigkeiten: A0WG (Meister der Nekromantie), EditorSuffix (Editor-Suffix (ansf))
 {
-(Nekromant - Rüstung)
+(Necromancer - Armour)
 }
 
 STRING 4528
@@ -23922,67 +23922,67 @@ Master of Necromancy
 STRING 4529
 // Fähigkeiten: A0WH (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden um <A0WH,DataA1,%>%.
+Increases the damage by <A0WH,DataA1,%>%.
 }
 
 STRING 4530
 // Fähigkeiten: A0WH (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden um <A0WH,DataA2,%>%.
+Increases the damage by <A0WH,DataA2,%>%.
 }
 
 STRING 4531
 // Fähigkeiten: A0WH (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden um <A0WH,DataA3,%>%.
+Increases the damage by <A0WH,DataA3,%>%.
 }
 
 STRING 4532
 // Fähigkeiten: A0WH (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden um <A0WH,DataA4,%>%.
+Increases the damage by <A0WH,DataA4,%>%.
 }
 
 STRING 4533
 // Fähigkeiten: A0WH (Meister der Nekromantie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden um <A0WH,DataA5,%>%.
+Increases the damage by <A0WH,DataA5,%>%.
 }
 
 STRING 4534
 // Fähigkeiten: A0WH (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Schadensbonus [|cffffcc00Stufe 1|r]
+Master of Necromancy - Damage Bonus [|cffffcc00Level 1|r]
 }
 
 STRING 4535
 // Fähigkeiten: A0WH (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Schadensbonus [|cffffcc00Stufe 2|r]
+Master of Necromancy - Damage Bonus [|cffffcc00Level 2|r]
 }
 
 STRING 4536
 // Fähigkeiten: A0WH (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Schadensbonus [|cffffcc00Stufe 3|r]
+Master of Necromancy - Damage Bonus [|cffffcc00Level 3|r]
 }
 
 STRING 4537
 // Fähigkeiten: A0WH (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Schadensbonus [|cffffcc00Stufe 4|r]
+Master of Necromancy - Damage Bonus [|cffffcc00Level 4|r]
 }
 
 STRING 4538
 // Fähigkeiten: A0WH (Meister der Nekromantie), Tip (Tooltipp - Normal (atp1))
 {
-Meister der Nekromantie - Schadensbonus [|cffffcc00Stufe 5|r]
+Master of Necromancy - Damage Bonus [|cffffcc00Level 5|r]
 }
 
 STRING 4539
 // Fähigkeiten: A0WH (Meister der Nekromantie), EditorSuffix (Editor-Suffix (ansf))
 {
-(Nekromant - Schadensbonus)
+(Necromancer - Damage Bonus)
 }
 
 STRING 4540
@@ -24204,7 +24204,7 @@ STRING 4575
 STRING 4576
 // Einheiten: n049 (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 4577
@@ -24288,7 +24288,7 @@ Der Zauberer vervielfacht sich selbst <A08T,DataA5> mal. Seine Vervielfachungen 
 STRING 4590
 // Fähigkeiten: A0WL (Vervielfachung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4591
@@ -24318,7 +24318,7 @@ Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen 
 STRING 4603
 // Fähigkeiten: A100 (Magische Schockwellen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Magische Schockwellen [|cffffcc00Stufe 1|r]
+Magical Shockwaves [|cffffcc00Level 1|r]
 }
 
 STRING 4604
@@ -24684,7 +24684,7 @@ Test-Zauberer
 STRING 4761
 // Fähigkeiten: A138 (Aura der eisernen Haut - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 4762
@@ -26548,7 +26548,7 @@ Haldar's Ring
 STRING 5223
 // Fähigkeiten: A16N (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 5227
@@ -36377,7 +36377,7 @@ Some dragon eggs.
 STRING 9075
 // Gegenstände: I040 (Drachenfeuer), Description (Beschreibung (ides))
 {
-Das Feuer eines Drachen.
+The fire of a dragon.
 }
 
 STRING 9076
@@ -36389,7 +36389,7 @@ Beschwört ein mächtiges Drachenfeuer auf einem Gebiet, das Gegnern im Laufe de
 STRING 9077
 // Gegenstände: I040 (Drachenfeuer), Tip (Tooltipp - Einfach (utip))
 {
-Drachenfeuer kaufen
+Buy Dragon Fire
 }
 
 STRING 9078
@@ -43123,7 +43123,7 @@ A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - D
 STRING 11658
 // Fähigkeiten: A0ZO (Zehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 11659
@@ -43195,7 +43195,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 11674
 // Fähigkeiten: A1IW (Arkane Zeit), EditorSuffix (Editor-Suffix (ansf))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+(Zauberer - Negativer Zauberverstärker)
 }
 
 STRING 11675
@@ -43207,7 +43207,7 @@ Arcane Time [|cffffcc00Level 1|r]
 STRING 11676
 // Fähigkeiten: A08V (Arkane Zeit), Name (Name (anam))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+Arkane Zeit
 }
 
 STRING 11677
@@ -43219,7 +43219,7 @@ Arcane Time [|cffffcc00Level 2|r]
 STRING 11678
 // Zauberverstärker/Effekte: B02Y (), EditorSuffix (Editor-Suffix (fnsf))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+(Zauberer - Positiver Zauberverstärker)
 }
 
 STRING 11679
@@ -43231,7 +43231,7 @@ Arcane Time [|cffffcc00Level 3|r]
 STRING 11680
 // Fähigkeiten: A1IX (Arkane Zeit), Name (Name (anam))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+Arkane Zeit
 }
 
 STRING 11681
@@ -43243,7 +43243,7 @@ Arcane Time [|cffffcc00Level 4|r]
 STRING 11682
 // Zauberverstärker/Effekte: B02X (), Bufftip (Tooltipp (ftip))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+Arkane Zeit
 }
 
 STRING 11683
@@ -44389,7 +44389,7 @@ Aura der eisernen Haut
 STRING 12063
 // Fähigkeiten: A0PP (Aura der eisernen Haut - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
 }
 
 STRING 12072
@@ -44413,7 +44413,7 @@ Aura der eisernen Haut - Stufe 1
 STRING 12077
 // Fähigkeiten: A137 (Aura der eisernen Haut - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
 }
 
 STRING 12086
@@ -44437,7 +44437,7 @@ Aura der eisernen Haut - Stufe 2
 STRING 12091
 // Fähigkeiten: A135 (Aura der eisernen Haut - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
 }
 
 STRING 12100
@@ -44461,7 +44461,7 @@ Aura der eisernen Haut - Stufe 3
 STRING 12105
 // Fähigkeiten: A136 (Aura der eisernen Haut - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
 }
 
 STRING 12114
@@ -44485,7 +44485,7 @@ Aura der eisernen Haut - Stufe 4
 STRING 12119
 // Fähigkeiten: A134 (Aura der eisernen Haut - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Manaexplosion [|cffffcc00Stufe 1|r]
+Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
 }
 
 STRING 12128
@@ -44725,7 +44725,7 @@ STRING 12172
 STRING 12182
 // Fähigkeiten: A1JX (Dunkle Diener - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Zauberbuch - Nekromant)
 }
 
 STRING 12183
@@ -44737,7 +44737,7 @@ Epidemie - Stufe 1
 STRING 12186
 // Fähigkeiten: A0I2 (Dämonendiener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
+(Zauberbuchfähigkeit - Nekromant)
 }
 
 STRING 12187
@@ -44863,7 +44863,7 @@ Erhöht den Schaden um <A13S,DataA1>. Erlaubt es dem Träger <A13T,Dur1> Sekunde
 STRING 12208
 // Gegenstände: I04S (Orkaxt), Tip (Tooltipp - Einfach (utip))
 {
-Orkaxt kaufen
+Buy Orc Axe
 }
 
 STRING 12209
@@ -44875,7 +44875,7 @@ STRING 12209
 STRING 12210
 // Fähigkeiten: A13S (Orkaxt), Name (Name (anam))
 {
-Orkaxt
+Orc Axe
 }
 
 STRING 12211
@@ -44893,7 +44893,7 @@ Orkaxt
 STRING 12213
 // Gegenstände: I04T (Orkarmbrust), Name (Name (unam))
 {
-Orkarmbrust
+Orc Crossbow
 }
 
 STRING 12214
@@ -44905,7 +44905,7 @@ Erhöht den Schaden des Trägers.
 STRING 12216
 // Gegenstände: I04T (Orkarmbrust), Tip (Tooltipp - Einfach (utip))
 {
-Orkarmbrust kaufen
+Buy Orc Crossbow
 }
 
 STRING 12217
@@ -44959,7 +44959,7 @@ Crow Form [|cffffcc00Level 1|r]
 STRING 12230
 // Fähigkeiten: A15Z (Gift), Tip (Tooltipp - Normal (atp1))
 {
-Gift
+Poison
 }
 
 STRING 12231
@@ -45781,7 +45781,7 @@ Protect [|cffffcc00Level 1|r]
 STRING 12588
 // Fähigkeiten: A09O (Kontrollierter Zeitfluss), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 2|r|nDer Zauberer hält 7 Sekunden lang die Zeit an. Dabei werden sämtliche Einheiten angehalten und sind angriffs- und bewegungsunfähig. Außerdem wird der Tageszeitzyklus gestoppt. Der Zauberer selbst, sowie Verbündete im Umkreis von 600, können sich mit 80% ihrer Bewegungsgeschwindigkeit weiterhin bewegen.
+|cffffcc00Ultimate Spell 2|r|nThe Wizard stops the time for 7 seconds. All units will be stopped and are not able to attack nor to move. Besides the day cycle is stopped. The Wizard himself as well as allies within 600 can still move with 80% of their movement speed.
 }
 
 STRING 12589
@@ -46333,7 +46333,7 @@ Manastrom - Stufe 1
 STRING 12786
 // Fähigkeiten: A10D (Arkaner Hunger - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Manastrom [|cffffcc00Stufe 2|r]
+(Zauberbuch - Zauberer)
 }
 
 STRING 12787
@@ -46483,19 +46483,19 @@ Sheep
 STRING 12848
 // Gegenstände: I04U (Schaf), Description (Beschreibung (ides))
 {
-Ein Schaf.
+A sheep.
 }
 
 STRING 12849
 // Zauberverstärker/Effekte: B036 (), EditorSuffix (Editor-Suffix (fnsf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+(Wigberht)
 }
 
 STRING 12850
 // Gegenstände: I04U (Schaf), Tip (Tooltipp - Einfach (utip))
 {
-Schaf kaufen
+Buy Sheep
 }
 
 STRING 12860
@@ -72386,13 +72386,13 @@ Feuergeschoss - Erlernen
 STRING 17991
 // Fähigkeiten: A1KX (Waldfestung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nCreates a forest fortress from living trees which defend it at any cost.
 }
 
 STRING 18000
 // Fähigkeiten: A1KX (Waldfestung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Waldfestung erlernen
+Learn Forest Fortress
 }
 
 STRING 18001
@@ -74408,7 +74408,7 @@ Stich - Erlernen
 STRING 18897
 // Fähigkeiten: A1O3 (Überlegenheit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 18906
@@ -74912,7 +74912,7 @@ Skip Sentence
 STRING 19120
 // Fähigkeiten: A1OW (Laden-Pfeil), EditorSuffix (Editor-Suffix (ansf))
 {
-(Feuertrank)
+(Fire Potion)
 }
 
 STRING 19121
@@ -78272,7 +78272,7 @@ STRING 19854
 STRING 19855
 // Einheiten: n07P (Deranors Leibwache), Name (Name (unam))
 {
-Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um 80 %. |n|n|cffffcc00Stufe 1|r - Lasts 5 Sekunden.|n|cffffcc00Stufe 2|r - Lasts 8 Sekunden.|n|cffffcc00Stufe 3|r - Lasts 11 Sekunden.|n|cffffcc00Stufe 4|r - Lasts 14 Sekunden.|n|cffffcc00Stufe 5|r - Lasts 17 Sekunden.
+Deranors Leibwache
 }
 
 STRING 19856
@@ -78314,7 +78314,7 @@ Summon Dragon
 STRING 19862
 // Fähigkeiten: A1EI (Drachen beschwören), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört <A1EI,DataA1> fliegende Drachen.
+Summons <A1EI,DataA1> flying dragons.
 }
 
 STRING 19863
@@ -78380,7 +78380,7 @@ STRING 19872
 STRING 19873
 // Fähigkeiten: A1S8 (Unholde erwecken), Name (Name (anam))
 {
-Unholde erwecken
+Raise Creeps from the Dead
 }
 
 STRING 19874
@@ -78398,7 +78398,7 @@ STRING 19875
 STRING 19876
 // Fähigkeiten: A1S8 (Unholde erwecken), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erweckt alle toten Unholde auf der Karte wieder.
+Raises all creeps on the map from the dead.
 }
 
 STRING 19877
@@ -78584,7 +78584,7 @@ Dragon Slayer
 STRING 19925
 // Einheiten: H02X (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19926

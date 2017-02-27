@@ -11632,7 +11632,7 @@ Schneller Handel Stufe 1
 }
 
 STRING 1942
-// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
+// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
 {
 Bestienjäger
 }
@@ -11655,7 +11655,7 @@ STRING 1945
 }
 
 STRING 1946
-// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
+// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -14599,7 +14599,7 @@ Einschüchtern [|cffffcc00Stufe 1|r]
 }
 
 STRING 2502
-// Fähigkeiten: A05Q (Einschüchtern), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16078,7 +16078,7 @@ Wilder Blutrausch [|cffffcc00Stufe 1|r]
 }
 
 STRING 2823
-// Fähigkeiten: A06Y (Schwachstelle), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16379,7 +16379,7 @@ STRING 2898
 }
 
 STRING 2899
-// Fähigkeiten: A1FV (Reserven), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16421,7 +16421,7 @@ Schwachstelle
 }
 
 STRING 2913
-// Fähigkeiten: A0VF (Fernkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16505,7 +16505,7 @@ Hieb
 }
 
 STRING 2927
-// Fähigkeiten: A146 (Baldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16595,7 +16595,7 @@ Diese Einheit steht unter der Wirkung von 'Überlegenheit'; ihre Angriffsgeschwi
 }
 
 STRING 2943
-// Fähigkeiten: A14M (Haldars Ring), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -16931,7 +16931,7 @@ Stiefel eines Druiden kaufen
 }
 
 STRING 3003
-// Fähigkeiten: A0T2 (Bestienjäger), Name (Name (anam))
+// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
 {
 Bestienjäger
 }
@@ -16955,7 +16955,7 @@ STRING 3006
 }
 
 STRING 3007
-// Fähigkeiten: A076 (Bestienjäger), Name (Name (anam))
+// Zauberverstärker/Effekte: B038 (), Bufftip (Tooltipp (ftip))
 {
 Bestienjäger
 }
@@ -30402,7 +30402,7 @@ Arkaner Schutz - Stufe 5
 }
 
 STRING 6709
-// Fähigkeiten: A1G8 (Auge um Auge), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -33132,7 +33132,7 @@ Koloss
 }
 
 STRING 7820
-// Fähigkeiten: A070 (Hieb), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -39754,7 +39754,7 @@ STRING 10373
 }
 
 STRING 10374
-// Fähigkeiten: A0V8 (Nahkampf), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -39832,7 +39832,7 @@ STRING 10386
 }
 
 STRING 10387
-// Fähigkeiten: A1A3 (Bestehlen), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -45440,7 +45440,7 @@ STRING 12419
 }
 
 STRING 12420
-// Fähigkeiten: A06W (Überlegenheit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -45806,7 +45806,7 @@ Heilige Kraft (|cffffcc00Q|r)
 }
 
 STRING 12585
-// Fähigkeiten: A1FF (Rage), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -64497,13 +64497,13 @@ Rage
 }
 
 STRING 16273
-// Fähigkeiten: A0K5 (Koloss), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
 
 STRING 16274
-// Fähigkeiten: A1FR (Siegeswunsch), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -64815,13 +64815,13 @@ Reserven - Stufe 5
 }
 
 STRING 16390
-// Fähigkeiten: A19Z (Beutezug), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
 
 STRING 16391
-// Fähigkeiten: A1F3 (Unbarmherzigkeit), EditorSuffix (Editor-Suffix (ansf))
+// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
 {
 (Drachentöter)
 }
@@ -65055,7 +65055,7 @@ Auge um Auge - Stufe 5
 }
 
 STRING 16477
-// Fähigkeiten: A1GK (Sprungattacke), EditorSuffix (Editor-Suffix (ansf))
+// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Drachentöter)
 }
@@ -65535,7 +65535,7 @@ Sprungattacke - Stufe 5
 }
 
 STRING 16601
-// Zauberverstärker/Effekte: B012 (Überlegenheit), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Drachentöter)
 }
@@ -65553,7 +65553,7 @@ Dummy Caster - Sprungattacke
 }
 
 STRING 16604
-// Zauberverstärker/Effekte: B024 (Koloss), EditorSuffix (Editor-Suffix (fnsf))
+// Zauberverstärker/Effekte: B038 (), EditorSuffix (Editor-Suffix (fnsf))
 {
 (Drachentöter)
 }
