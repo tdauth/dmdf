@@ -1726,49 +1726,49 @@ Geweihhaufen (Grasland)
 STRING 288
 // Doodads: D069 (Grabstein 1 (Grasland)), Name (Name (dnam))
 {
-Grabstein 1 (Grasland)
+Tombstone 1 (Grassland)
 }
 
 STRING 289
 // Doodads: D06A (Grabstein 2 (Grasland)), Name (Name (dnam))
 {
-Grabstein 2 (Grasland)
+Tombstone 2 (Grassland)
 }
 
 STRING 290
 // Doodads: D06B (Grabstein 3 (Grasland)), Name (Name (dnam))
 {
-Grabstein 3 (Grasland)
+Tombstone 3 (Grassland)
 }
 
 STRING 291
 // Doodads: D06C (Grabstein 4 (Grasland)), Name (Name (dnam))
 {
-Grabstein 4 (Grasland)
+Tombstone 4 (Grassland)
 }
 
 STRING 292
 // Doodads: D06D (Grabstein 5 (Grasland)), Name (Name (dnam))
 {
-Grabstein 5 (Grasland)
+Tombstone 5 (Grassland)
 }
 
 STRING 293
 // Doodads: D06E (Grabstein 6 (Grasland)), Name (Name (dnam))
 {
-Grabstein 6 (Grasland)
+Tombstone 6 (Grassland)
 }
 
 STRING 294
 // Doodads: D06F (Gras 8 (Grasland)), Name (Name (dnam))
 {
-Gras 8 (Grasland)
+Grass 8 (Grassland)
 }
 
 STRING 295
 // Doodads: D06G (Gras 9 (Grasland)), Name (Name (dnam))
 {
-Gras 9 (Grasland)
+Grass 9 (Grassland)
 }
 
 STRING 296
@@ -1780,133 +1780,133 @@ Händlerschild (Grasland)
 STRING 297
 // Doodads: D06I (Haus 3 (Grasland)), Name (Name (dnam))
 {
-Haus 3 (Grasland)
+House 3 (Grassland)
 }
 
 STRING 298
 // Doodads: D06J (Haus 4 (Grasland)), Name (Name (dnam))
 {
-Haus 4 (Grasland)
+House 4 (Grassland)
 }
 
 STRING 299
 // Doodads: D06K (Haus 5 (Grasland)), Name (Name (dnam))
 {
-Haus 5 (Grasland)
+House 5 (Grassland)
 }
 
 STRING 300
 // Doodads: D06L (Haus 6 (Grasland)), Name (Name (dnam))
 {
-Haus 6 (Grasland)
+House 6 (Grassland)
 }
 
 STRING 301
 // Doodads: D06M (Haus 7 (Grasland)), Name (Name (dnam))
 {
-Haus 7 (Grasland)
+House 7 (Grassland)
 }
 
 STRING 302
 // Doodads: D06N (Haus 8 (Grasland)), Name (Name (dnam))
 {
-Haus 8 (Grasland)
+House 8 (Grassland)
 }
 
 STRING 303
 // Doodads: D06O (Haus 9 (Grasland)), Name (Name (dnam))
 {
-Haus 9 (Grasland)
+House 9 (Grassland)
 }
 
 STRING 304
 // Doodads: D06P (Haus 10 (Grasland)), Name (Name (dnam))
 {
-Haus 10 (Grasland)
+House 10 (Grassland)
 }
 
 STRING 305
 // Doodads: D06Q (Haus 11 (Grasland)), Name (Name (dnam))
 {
-Haus 11 (Grasland)
+House 11 (Grassland)
 }
 
 STRING 306
 // Doodads: D06R (Haus 12 (Grasland)), Name (Name (dnam))
 {
-Haus 12 (Grasland)
+House 12 (Grassland)
 }
 
 STRING 307
 // Doodads: D06S (Haus 13 (Grasland)), Name (Name (dnam))
 {
-Haus 13 (Grasland)
+House 13 (Grassland)
 }
 
 STRING 308
 // Doodads: D06T (Haus 14 (Grasland)), Name (Name (dnam))
 {
-Haus 14 (Grasland)
+House 14 (Grassland)
 }
 
 STRING 309
 // Doodads: D06U (Haus 15 (Grasland)), Name (Name (dnam))
 {
-Haus 15 (Grasland)
+House 15 (Grassland)
 }
 
 STRING 310
 // Doodads: D06V (Haus 16 (Grasland)), Name (Name (dnam))
 {
-Haus 16 (Grasland)
+House 16 (Grassland)
 }
 
 STRING 311
 // Doodads: D06W (Haus 17 (Grasland)), Name (Name (dnam))
 {
-Haus 17 (Grasland)
+House 17 (Grassland)
 }
 
 STRING 312
 // Doodads: D06X (Haus 18 (Grasland)), Name (Name (dnam))
 {
-Haus 18 (Grasland)
+House 18 (Grassland)
 }
 
 STRING 313
 // Doodads: D06Y (Haus 19 (Grasland)), Name (Name (dnam))
 {
-Haus 19 (Grasland)
+House 19 (Grassland)
 }
 
 STRING 314
 // Doodads: D06Z (Haus 20 (Grasland)), Name (Name (dnam))
 {
-Haus 20 (Grasland)
+House 20 (Grassland)
 }
 
 STRING 315
 // Doodads: D070 (Haus 21 (Grasland)), Name (Name (dnam))
 {
-Haus 21 (Grasland)
+House 21 (Grassland)
 }
 
 STRING 316
 // Doodads: D071 (Holzkäfig (Grasland)), Name (Name (dnam))
 {
-Holzkäfig (Grasland)
+Wooden Cage (Grassland)
 }
 
 STRING 317
 // Doodads: D072 (Kette (Grasland)), Name (Name (dnam))
 {
-Kette (Grasland)
+Chain (Grassland)
 }
 
 STRING 318
 // Doodads: D073 (Lagerfeuer (Grasland)), Name (Name (dnam))
 {
-Lagerfeuer (Grasland)
+Camp Fire (Grassland)
 }
 
 STRING 319
@@ -2020,19 +2020,19 @@ Seerosenblätter 2 (Grasland)
 STRING 337
 // Doodads: D07M (Steinhütte 1 (Grasland)), Name (Name (dnam))
 {
-Steinhütte 1 (Grasland)
+Stone Hut 1 (Grassland)
 }
 
 STRING 338
 // Doodads: D07N (Steinhütte 2 (Grasland)), Name (Name (dnam))
 {
-Steinhütte 2 (Grasland)
+Stone Hut 2 (Grassland)
 }
 
 STRING 339
 // Doodads: D07O (Steinhütte 3 (Grasland)), Name (Name (dnam))
 {
-Steinhütte 3 (Grasland)
+Stone Hut 3 (Grassland)
 }
 
 STRING 340
@@ -7434,25 +7434,25 @@ Rush [|cffffcc00Level 1|r]
 STRING 1242
 // Fähigkeiten: A0Y3 (Stich - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 2|r]
+Stab [|cffffcc00Level 2|r]
 }
 
 STRING 1243
 // Fähigkeiten: A0Y4 (Stich - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 3|r]
+Stab [|cffffcc00Level 3|r]
 }
 
 STRING 1244
 // Fähigkeiten: A0Y5 (Stich - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 4|r]
+Stab [|cffffcc00Level 4|r]
 }
 
 STRING 1245
 // Fähigkeiten: A0Y6 (Stich - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Stich [|cffffcc00Stufe 5|r]
+Stab [|cffffcc00Level 5|r]
 }
 
 STRING 1246
@@ -48235,7 +48235,7 @@ STRING 13196
 STRING 13197
 // Einheiten: n04H (Hundezwinger), Name (Name (unam))
 {
-Hundezwinger
+Kennels
 }
 
 STRING 13198
@@ -50539,7 +50539,7 @@ STRING 13671
 STRING 13672
 // Einheiten: h02D (Kathedrale), Name (Name (unam))
 {
-Kathedrale
+Cathedral
 }
 
 STRING 13673
@@ -60799,13 +60799,13 @@ STRING 15443
 STRING 15444
 // Fähigkeiten: A1B5 (Attribut-Bonus), Tip (Tooltipp - Normal (atp1))
 {
-Attribut-Bonus
+Attribute Bonus
 }
 
 STRING 15445
 // Fähigkeiten: A1B5 (Attribut-Bonus), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verleiht insgesamt <A1B5,DataA1> Punkte zu Beweglichkeit, Intelligenz und Stärke.
+Grants a total of <A1B5,DataA1> points to dexterity, lore and strength.
 }
 
 STRING 15446
