@@ -2212,31 +2212,31 @@ Power Withdrawal
 STRING 369
 // Fähigkeiten: A06L (Machtentzug), Name (Name (anam))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 370
 // Fähigkeiten: A001 (Machtentzug), Name (Name (anam))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 371
 // Fähigkeiten: A001 (Machtentzug), Tip (Tooltipp - Normal (atp1))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 372
 // Fähigkeiten: A001 (Machtentzug), Tip (Tooltipp - Normal (atp1))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 373
 // Fähigkeiten: A001 (Machtentzug), Tip (Tooltipp - Normal (atp1))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 374
@@ -2284,31 +2284,31 @@ Power Transfer
 STRING 381
 // Fähigkeiten: A000 (Machtübertragung), Tip (Tooltipp - Normal (atp1))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 382
 // Fähigkeiten: A000 (Machtübertragung), Tip (Tooltipp - Normal (atp1))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 383
 // Fähigkeiten: A000 (Machtübertragung), Tip (Tooltipp - Normal (atp1))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 384
 // Fähigkeiten: A000 (Machtübertragung), Tip (Tooltipp - Normal (atp1))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 385
 // Fähigkeiten: A000 (Machtübertragung), Tip (Tooltipp - Normal (atp1))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 386
@@ -2356,31 +2356,31 @@ Magical Implusion
 STRING 393
 // Fähigkeiten: A002 (Magische Implusion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Implusion
+Magical Implusion
 }
 
 STRING 394
 // Fähigkeiten: A002 (Magische Implusion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Implusion
+Magical Implusion
 }
 
 STRING 395
 // Fähigkeiten: A002 (Magische Implusion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Implusion
+Magical Implusion
 }
 
 STRING 396
 // Fähigkeiten: A002 (Magische Implusion), Tip (Tooltipp - Normal (atp1))
 {
-Magische Implusion
+Magical Implusion
 }
 
 STRING 397
 // Fähigkeiten: A002 (Magische Implusion), Name (Name (anam))
 {
-Magische Implusion
+Magical Implusion
 }
 
 STRING 398
@@ -2500,25 +2500,25 @@ Body Exchange
 STRING 417
 // Fähigkeiten: A005 (Körpertausch), Tip (Tooltipp - Normal (atp1))
 {
-Körpertausch
+Body Exchange
 }
 
 STRING 418
 // Fähigkeiten: A005 (Körpertausch), Tip (Tooltipp - Normal (atp1))
 {
-Körpertausch
+Body Exchange
 }
 
 STRING 419
 // Fähigkeiten: A005 (Körpertausch), Tip (Tooltipp - Normal (atp1))
 {
-Körpertausch
+Body Exchange
 }
 
 STRING 420
 // Fähigkeiten: A005 (Körpertausch), Tip (Tooltipp - Normal (atp1))
 {
-Körpertausch
+Body Exchange
 }
 
 STRING 421
@@ -2560,7 +2560,7 @@ STRING 426
 STRING 427
 // Fähigkeiten: A005 (Körpertausch), Name (Name (anam))
 {
-Körpertausch
+Body Exchange
 }
 
 STRING 428
@@ -2572,25 +2572,25 @@ Enchanted Guardian
 STRING 429
 // Fähigkeiten: A006 (Verzauberter Wächter), Tip (Tooltipp - Normal (atp1))
 {
-Verzauberter Wächter
+Enchanted Guardian
 }
 
 STRING 430
 // Fähigkeiten: A006 (Verzauberter Wächter), Tip (Tooltipp - Normal (atp1))
 {
-Verzauberter Wächter
+Enchanted Guardian
 }
 
 STRING 431
 // Fähigkeiten: A006 (Verzauberter Wächter), Tip (Tooltipp - Normal (atp1))
 {
-Verzauberter Wächter
+Enchanted Guardian
 }
 
 STRING 432
 // Fähigkeiten: A006 (Verzauberter Wächter), Tip (Tooltipp - Normal (atp1))
 {
-Verzauberter Wächter
+Enchanted Guardian
 }
 
 STRING 433
@@ -2632,7 +2632,7 @@ STRING 438
 STRING 439
 // Fähigkeiten: A006 (Verzauberter Wächter), Name (Name (anam))
 {
-Verzauberter Wächter
+Enchanted Guardian
 }
 
 STRING 440
@@ -2644,25 +2644,25 @@ Seclusion
 STRING 441
 // Fähigkeiten: A007 (Verborgenheit), Tip (Tooltipp - Normal (atp1))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 442
 // Fähigkeiten: A007 (Verborgenheit), Tip (Tooltipp - Normal (atp1))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 443
 // Fähigkeiten: A007 (Verborgenheit), Tip (Tooltipp - Normal (atp1))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 444
 // Fähigkeiten: A007 (Verborgenheit), Tip (Tooltipp - Normal (atp1))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 445
@@ -2704,7 +2704,7 @@ STRING 450
 STRING 451
 // Fähigkeiten: A007 (Verborgenheit), Tip (Tooltipp - Normal (atp1))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 452
@@ -2716,25 +2716,25 @@ Magic Protection
 STRING 453
 // Fähigkeiten: A008 (Magie-Schutz), Tip (Tooltipp - Normal (atp1))
 {
-Magie-Schutz
+Magic Protection
 }
 
 STRING 454
 // Fähigkeiten: A008 (Magie-Schutz), Tip (Tooltipp - Normal (atp1))
 {
-Magie-Schutz
+Magic Protection
 }
 
 STRING 455
 // Fähigkeiten: A008 (Magie-Schutz), Tip (Tooltipp - Normal (atp1))
 {
-Magie-Schutz
+Magic Protection
 }
 
 STRING 456
 // Fähigkeiten: A008 (Magie-Schutz), Tip (Tooltipp - Normal (atp1))
 {
-Magie-Schutz
+Magic Protection
 }
 
 STRING 457
@@ -2776,7 +2776,7 @@ STRING 462
 STRING 463
 // Fähigkeiten: A008 (Magie-Schutz), Name (Name (anam))
 {
-Magie-Schutz
+Magic Protection
 }
 
 STRING 464
@@ -2860,19 +2860,19 @@ Anti Spell
 STRING 477
 // Fähigkeiten: A00A (Antizauber), Tip (Tooltipp - Normal (atp1))
 {
-Antizauber
+Anti Spell
 }
 
 STRING 478
 // Fähigkeiten: A00A (Antizauber), Tip (Tooltipp - Normal (atp1))
 {
-Antizauber
+Anti Spell
 }
 
 STRING 479
 // Fähigkeiten: A00A (Antizauber), Tip (Tooltipp - Normal (atp1))
 {
-Antizauber
+Anti Spell
 }
 
 STRING 480
@@ -2914,13 +2914,13 @@ STRING 485
 STRING 486
 // Fähigkeiten: A00A (Antizauber), Tip (Tooltipp - Normal (atp1))
 {
-Antizauber
+Anti Spell
 }
 
 STRING 487
 // Fähigkeiten: A00A (Antizauber), Name (Name (anam))
 {
-Antizauber
+Anti Spell
 }
 
 STRING 488
@@ -2980,7 +2980,7 @@ An ability of the Northman Ricman.|nThe player and his allies receive 50 gold co
 STRING 497
 // Fähigkeiten: A1P2 (Fette Beute - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Eine Fähigkeit vom Nordmann Ricman.|nDer Spieler und seine Verbündeten erhalten je 50 Goldmünzen.
+An ability of the Northman Ricman.|nThe player and his allies receive 50 gold coins each.
 }
 
 STRING 498
@@ -3040,19 +3040,19 @@ The Dragon Slayer rages anger for some killed opponents. When activated, his dam
 STRING 507
 // Fähigkeiten: A1FH (Rage - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 10 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+The Dragon Slayer rages anger for some killed opponents. When activated, his damage is increased per opponent. Lasts 10 seconds. |n|n|cffffcc00Level 1|r - Up to 2 opponents and 10 damage per opponent. |n|cffffcc00Level 2|r - Up to 4 opponents and 20 damage per opponent. |n|cffffcc00Level 3|r - Up to 6 opponents and 30 damage per opponent. |n|cffffcc00Level 4|r - Up to 8 opponents and 40 damage per opponent. |n|cffffcc00Level 5|r - Up to 10 opponents and 50 damage per opponent.
 }
 
 STRING 508
 // Fähigkeiten: A1FJ (Rage - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 10 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+The Dragon Slayer rages anger for some killed opponents. When activated, his damage is increased per opponent. Lasts 10 seconds. |n|n|cffffcc00Level 1|r - Up to 2 opponents and 10 damage per opponent. |n|cffffcc00Level 2|r - Up to 4 opponents and 20 damage per opponent. |n|cffffcc00Level 3|r - Up to 6 opponents and 30 damage per opponent. |n|cffffcc00Level 4|r - Up to 8 opponents and 40 damage per opponent. |n|cffffcc00Level 5|r - Up to 10 opponents and 50 damage per opponent.
 }
 
 STRING 509
 // Fähigkeiten: A1FL (Rage - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 10 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+The Dragon Slayer rages anger for some killed opponents. When activated, his damage is increased per opponent. Lasts 10 seconds. |n|n|cffffcc00Level 1|r - Up to 2 opponents and 10 damage per opponent. |n|cffffcc00Level 2|r - Up to 4 opponents and 20 damage per opponent. |n|cffffcc00Level 3|r - Up to 6 opponents and 30 damage per opponent. |n|cffffcc00Level 4|r - Up to 8 opponents and 40 damage per opponent. |n|cffffcc00Level 5|r - Up to 10 opponents and 50 damage per opponent.
 }
 
 STRING 510
@@ -3064,7 +3064,7 @@ STRING 510
 STRING 511
 // Fähigkeiten: A00C (Unendliche Macht), Name (Name (anam))
 {
-Unendliche Macht
+Unlimited Power
 }
 
 STRING 512
@@ -3076,13 +3076,13 @@ Force Field
 STRING 513
 // Fähigkeiten: A1N5 (Rage - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 10 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+The Dragon Slayer rages anger for some killed opponents. When activated, his damage is increased per opponent. Lasts 10 seconds. |n|n|cffffcc00Level 1|r - Up to 2 opponents and 10 damage per opponent. |n|cffffcc00Level 2|r - Up to 4 opponents and 20 damage per opponent. |n|cffffcc00Level 3|r - Up to 6 opponents and 30 damage per opponent. |n|cffffcc00Level 4|r - Up to 8 opponents and 40 damage per opponent. |n|cffffcc00Level 5|r - Up to 10 opponents and 50 damage per opponent.
 }
 
 STRING 514
 // Fähigkeiten: A1FI (Rage - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter staut Wut für einige getötete Gegner an. Bei Aktivierung wird sein Schaden pro Gegner erhöht. Hält 10 Sekunden. |n|n|cffffcc00Stufe 1|r - Bis zu 2 Gegner und 10 Schaden pro Gegner. |n|cffffcc00Stufe 2|r - Bis zu 4 Gegner und 20 Schaden pro Gegner. |n|cffffcc00Stufe 3|r - Bis zu 6 Gegner und 30 Schaden pro Gegner. |n|cffffcc00Stufe 4|r - Bis zu 8 Gegner und 40 Schaden pro Gegner. |n|cffffcc00Stufe 5|r - Bis zu 10 Gegner und 50 Schaden pro Gegner.
+The Dragon Slayer rages anger for some killed opponents. When activated, his damage is increased per opponent. Lasts 10 seconds. |n|n|cffffcc00Level 1|r - Up to 2 opponents and 10 damage per opponent. |n|cffffcc00Level 2|r - Up to 4 opponents and 20 damage per opponent. |n|cffffcc00Level 3|r - Up to 6 opponents and 30 damage per opponent. |n|cffffcc00Level 4|r - Up to 8 opponents and 40 damage per opponent. |n|cffffcc00Level 5|r - Up to 10 opponents and 50 damage per opponent.
 }
 
 STRING 515
@@ -3136,7 +3136,7 @@ STRING 522
 STRING 523
 // Fähigkeiten: A00D (Kraftfeld), Name (Name (anam))
 {
-Kraftfeld
+Force Field
 }
 
 STRING 524
@@ -3862,13 +3862,13 @@ Increases the damage of an ally by <A0A1,DataA3,%> %. |nLasts <A0A1,Dur1> second
 STRING 644
 // Fähigkeiten: A001 (Machtentzug), Tip (Tooltipp - Normal (atp1))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 645
 // Fähigkeiten: A001 (Machtentzug), Tip (Tooltipp - Normal (atp1))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 646
@@ -3880,13 +3880,13 @@ STRING 646
 STRING 647
 // Zauberverstärker/Effekte: B001 (Machtübertragung), EditorName (Name (nur Editor) (fnam))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 648
 // Zauberverstärker/Effekte: B001 (Machtübertragung), Bufftip (Tooltipp (ftip))
 {
-Machtübertragung
+Power Transfer
 }
 
 STRING 649
@@ -14757,7 +14757,7 @@ STRING 2528
 STRING 2529
 // Fähigkeiten: A007 (Verborgenheit), Name (Name (anam))
 {
-Verborgenheit
+Seclusion
 }
 
 STRING 2530
@@ -16104,13 +16104,13 @@ Wilder Blutrausch
 STRING 2829
 // Zauberverstärker/Effekte: B000 (Machtentzug), EditorName (Name (nur Editor) (fnam))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 2830
 // Zauberverstärker/Effekte: B000 (Machtentzug), Bufftip (Tooltipp (ftip))
 {
-Machtentzug
+Power Withdrawal
 }
 
 STRING 2833
@@ -80192,7 +80192,7 @@ Gustav
 STRING 20198
 // Fähigkeiten: A1V2 (Aufträge - Zu den Waffen Bauern!), Name (Name (anam))
 {
-Aufträge - Zu den Waffen Bauern!
+Missions - To Arms, Peasants!
 }
 
 STRING 20199
