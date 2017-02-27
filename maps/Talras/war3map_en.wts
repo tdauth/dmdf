@@ -3394,7 +3394,7 @@ ASystemGUI - shortcut k
 STRING 566
 // Einheiten: n00B (Katze), Hotkey (Tastaturkürzel (uhot))
 {
-Summons a healing source for <A0D3,Dur1> seconds which heals life per second of allies around. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
+K
 }
 
 STRING 567
@@ -11166,7 +11166,7 @@ Erschafft ein Portal, durch welches sich Einheiten zu einem bestimmten Punkt auf
 STRING 1864
 // Fähigkeiten: A04G (Portal erschaffen), Tip (Tooltipp - Normal (atp1))
 {
-|cffffcc00P|rortal erschaffen
+Create |cffffcc00P|rortal
 }
 
 STRING 1865
@@ -16194,7 +16194,7 @@ D
 STRING 2854
 // Fähigkeiten: A0D4 (Hain), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 2855
@@ -26032,13 +26032,13 @@ Opfer
 STRING 5107
 // Fähigkeiten: A0DG (Ranken), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Summons a healing spring for <A0D3,Dur1> seconds which heals life of nearby units. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
+O
 }
 
 STRING 5108
 // Fähigkeiten: A01C (Entzünden), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 5109
@@ -38157,37 +38157,37 @@ Calls hordes of raving mad rams which explode at opponents of the druid. Each ex
 STRING 9784
 // Einheiten: n03K (Hain), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
+(Druide - Stufe 1)
 }
 
 STRING 9785
 // Fähigkeiten: A0FJ (Totenbeschwörung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 9786
 // Fähigkeiten: A01I (Teleportation), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 9787
 // Fähigkeiten: A0S4 (Parasit), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 9788
 // Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+Linderung [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
 }
 
 STRING 9789
 // Fähigkeiten: A04W (Linderung), Tip (Tooltipp - Normal (atp1))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+Linderung [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
 }
 
 STRING 9790
@@ -69674,7 +69674,7 @@ Ahnenpakt |cffffcc00Stufe 1|r] (|cffffcc00G|r)
 STRING 17478
 // Fähigkeiten: A1TV (Optionen - Kamera), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 17479
@@ -69740,7 +69740,7 @@ D
 STRING 17489
 // Fähigkeiten: A0BQ (Opfer), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17490
@@ -70094,19 +70094,19 @@ Waldfeenzauber [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
 STRING 17548
 // Fähigkeiten: A0A6 (Verbannen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 17549
 // Fähigkeiten: A0E1 (Baumhirte), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 17550
 // Fähigkeiten: A014 (Feuergeschoss), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17551
@@ -70196,7 +70196,7 @@ D
 STRING 17565
 // Fähigkeiten: A0BQ (Opfer), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Summons a healing source for <A0D3,Dur1> seconds which heals life per second of allies in range. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A0QX,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A0QX,DataA1,%> % of the life per second.
+O
 }
 
 STRING 17566
@@ -70520,7 +70520,7 @@ Bezwingung [|cffffcc00Stufe 5|r] (|cffffcc00O|r)
 STRING 17619
 // Fähigkeiten: A00S (ASystemGUI - shortcut o), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17620
@@ -70838,7 +70838,7 @@ D
 STRING 17672
 // Fähigkeiten: A00S (ASystemGUI - shortcut o), Tip (Tooltipp - Normal (atp1))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17673
@@ -71042,7 +71042,7 @@ Pfeilhagel [|cffffcc00Stufe 5|r] (|cffffcc00O|r)
 STRING 17706
 // Fähigkeiten: A1UA (Optionen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17707
@@ -71180,7 +71180,7 @@ D
 STRING 17729
 // Fähigkeiten: A1H9 (Bezwingung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17730
@@ -71612,7 +71612,7 @@ D
 STRING 17801
 // Fähigkeiten: A12E (Pfeilhagel), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17802
@@ -71780,7 +71780,7 @@ Manaexplosion [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
 STRING 17829
 // Fähigkeiten: A00O (ASystemGUI - shortcut k), Tip (Tooltipp - Normal (atp1))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 17830
@@ -72026,7 +72026,7 @@ STRING 17870
 STRING 17871
 // Fähigkeiten: A12E (Pfeilhagel), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 17872
@@ -79646,7 +79646,7 @@ A list of conversations conducted with people. Allows to list of conversations.
 STRING 20107
 // Fähigkeiten: A0H4 (Segen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+K
 }
 
 STRING 20108
@@ -79844,7 +79844,7 @@ Lists further options.
 STRING 20140
 // Fähigkeiten: A05W (Magische Schockwellen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+O
 }
 
 STRING 20141
