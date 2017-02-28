@@ -9606,7 +9606,7 @@ STRING 1603
 STRING 1604
 // Einheiten: u00B (Pestkarren), Name (Name (unam))
 {
-Pest Barrow
+Plague Cart
 }
 
 STRING 1605
@@ -9618,13 +9618,13 @@ STRING 1605
 STRING 1606
 // Fähigkeiten: A0VK (Pestkarren), Name (Name (anam))
 {
-Pest Barrow
+Plague Cart
 }
 
 STRING 1607
 // Fähigkeiten: A08G (Pestkarren), Name (Name (anam))
 {
-Pest Barrow
+Plague Cart
 }
 
 STRING 1608
@@ -15650,17 +15650,17 @@ The Necromancer regenerates his life and mana with the help of a corpse. Convert
 
 STRING 2725
 {
-- Jeder Punkt erhöht die Lebenspunkte um %d
+- Every point increases the life points by %d
 }
 
 STRING 2726
 {
-- Jeder Punkt erhöht die Lebensregeneration
+- Every point increases the life regeneration
 }
 
 STRING 2727
 {
-- Jeder Punkt erhöht die Manaregeneration
+- Every point increases the mana regeneration
 }
 
 STRING 2728
@@ -27940,7 +27940,7 @@ Waldholzfäuste - Stufe 4
 STRING 5798
 // Fähigkeiten: A0ID (Dunkler Zauber - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 5808
@@ -34179,7 +34179,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 STRING 8290
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Pest Barrow [|cffffcc00Level 1|r]
+Plague Cart [|cffffcc00Level 1|r]
 }
 
 STRING 8291
@@ -34191,7 +34191,7 @@ STRING 8291
 STRING 8292
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Name (Name (anam))
 {
-Pest Barrow - Level 1
+Plague Cart - Level 1
 }
 
 STRING 8295
@@ -34203,7 +34203,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 8296
 // Fähigkeiten: A0X7 (Pestkarren - Stufe 1), Name (Name (anam))
 {
-Pest Barrow - Level 1
+Plague Cart - Level 1
 }
 
 STRING 8305
@@ -42955,7 +42955,7 @@ Throws an ice missile at an opponent, deals ice damage and reduces the movement 
 STRING 11628
 // Fähigkeiten: A1JM (Verzehren - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-(Grimoire - Necromancer)
+Learn Consume
 }
 
 STRING 11629
@@ -48919,7 +48919,7 @@ STRING 13318
 STRING 13319
 // Fähigkeiten: A1K3 (Pestkarren - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nBeschwört dauerhaft einen Pestkarren, der Leichen transportieren kann und selbst Leichen erzeugt.
+|cffffcc00Basic Spell|r|nSummons a plague cart permanently that can transport corpses and creates corpses itself.
 }
 
 STRING 13320
@@ -62335,7 +62335,7 @@ Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Crea
 STRING 15803
 // Fähigkeiten: A1JX (Dunkle Diener - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Dunkle Diener erlernen
+Learn Dark Servants
 }
 
 STRING 15804
@@ -62641,37 +62641,37 @@ Dunkle Diener
 STRING 15866
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
 }
 
 STRING 15867
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Consumes a nearby corpse and regenerates hit points per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hit points per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hit points per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hit points per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hit points per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hit points per second.
 }
 
 STRING 15868
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
 }
 
 STRING 15869
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
 }
 
 STRING 15870
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
 }
 
 STRING 15871
 // Fähigkeiten: A01U (Dunkle Diener), Name (Name (anam))
 {
-Dunkle Diener
+Dark Servant
 }
 
 STRING 15872
@@ -66159,7 +66159,7 @@ Fast Trade Level 11
 STRING 16814
 // Fähigkeiten: A1K3 (Pestkarren - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Pestkarren erlernen
+Learn Plague Cart
 }
 
 STRING 16815
@@ -68504,7 +68504,7 @@ Zerlegt den Elementarmagier in Elementarwesen, sodass spezielle Elementarwesen e
 STRING 17240
 // Fähigkeiten: A1K7 (Dämonendiener - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Dämonendiener erlernen
+Learn Demon Servant
 }
 
 STRING 17241
@@ -74306,7 +74306,7 @@ Steals the soul from a hostile target and drains life and mana from it per secon
 STRING 18858
 // Fähigkeiten: A1NX (Seelendiebstahl - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Seelendiebstahl erlernen
+Learn Soul Theft
 }
 
 STRING 18859
@@ -74318,7 +74318,7 @@ STRING 18859
 STRING 18860
 // Fähigkeiten: A1NY (Seelendiebstahl - Erlernen), Name (Name (anam))
 {
-Seelendiebstahl - Erlernen
+Soul Theft - Learn
 }
 
 STRING 18863
@@ -75260,7 +75260,7 @@ Nordische Wucht - Erlernen
 STRING 19210
 // Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,ulev> with <n00O,uhpm> life, <n00O,ua1b> damage and <n00O,udef> armour. |n|cffffcc00Level 2|r - Level <n03O,ulev> with <n03O,uhpm> life, <n03O,ua1b> damage and <n03O,udef> armour. |n|cffffcc00Level 3|r - Level <n03P,ulev> with <n03P,uhpm> life, <n03P,ua1b> damage and <n03P,udef> armour. |n|cffffcc00Level 4|r - Level <n03Q,ulev> with <n03Q,uhpm> life, <n03Q,ua1b> damage and <n03Q,udef> armour. |n|cffffcc00Level 5|r - Level <n03R,ulev> with <n03R,uhpm> life, <n03R,ua1b> damage and <n03R,udef> armour.
 }
 
 STRING 19219
@@ -76022,7 +76022,7 @@ Attribute Bonus [|cffffcc00Level 21|r]
 STRING 19395
 // Fähigkeiten: A1QF (Verdammnis - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Verdammnis erlernen
+Learn Damnation
 }
 
 STRING 19396
@@ -76034,7 +76034,7 @@ STRING 19396
 STRING 19397
 // Fähigkeiten: A1QF (Verdammnis - Erlernen), Name (Name (anam))
 {
-Verdammnis - Erlernen
+Damnation - Learn
 }
 
 STRING 19400
@@ -76148,7 +76148,7 @@ Attribute Bonus [|cffffcc00Level 28|r]
 STRING 19428
 // Fähigkeiten: A0HY (Dämonendiener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents aroand him.|n|cffc3dbffThere can only be one summoned demon servant.|r .|n|n|cffffcc00Level 1|r - Level <n00P,ulev>, deals <n00P,ua1b> damage and has <n00P,def> armour, <n00P,umpm> mana and <n00P,uhpm> life. |n|cffffcc00Level 2|r - Level <n03S,ulev>, deals <n03S,ua1b> damage and has <n03S,udef> armour, <n03S,umpm> mana and <n03S,uhpm> life. |n|cffffcc00Level 3|r - Level <n03T,ulev>, deals <n03T,ua1b> damage and has <n03T,udef> armour, <n03T,umpm> mana and <n03T,uhpm> life. |n|cffffcc00Level 4|r - Level <n03U,ulev>, deals <n03U,ua1b> damage and has <n03U,udef> armour, <n03U,umpm> mana and <n03U,uhpm> life. |n|cffffcc00Level 5|r - Level <n03V,ulev>, deals <n03V,ua1b> damage and has <n03V,udef> armour, <n03V,umpm> mana and <n03V,uhpm> life.
 }
 
 STRING 19429
@@ -76226,13 +76226,13 @@ Attribute Bonus [|cffffcc00Level 30|r]
 STRING 19441
 // Fähigkeiten: A1QD (Verdammnis), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1|r|nDas Ziel verliert 80 % seiner maximalen Lebenspunkte. Befinden sich Kadaver in der Nähe des Ziels, werden diese zu untoten Skelett-Flammenkriegern des Nekromanten, die 30 Sekunden lang für den Nekromanten kämpfen.|nMaximal 6 Diener können beschworen werden.
+|cffffcc00Ultimate Spell 1|r|nThe target loses 80 % of its maximum life points. If corpses are close to the target, they will become undead skeletal flame warriors of the Necromancer who fight for the Necromancer for 30 seconds.|nThere can be summoned 6 servants maximum.
 }
 
 STRING 19442
 // Fähigkeiten: A1QF (Verdammnis - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1 - Benötigt Stufe 12|r|nDas Ziel verliert 80 % seiner maximalen Lebenspunkte. Befinden sich Kadaver in der Nähe des Ziels, werden diese zu untoten Skelett-Flammenkriegern des Nekromanten, die 30 Sekunden lang für den Nekromanten kämpfen.|nMaximal 6 Diener können beschworen werden.
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nThe target loses 80 % of its maximum life points. If corpses are close to the target, they will become undead skeletal flame warriors of the Necromancer who fight for the Necromancer for 30 seconds.|nThere can be summoned 6 servants maximum.
 }
 
 STRING 19443
