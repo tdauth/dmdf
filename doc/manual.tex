@@ -310,6 +310,18 @@ The grimoire icons require an icon with every level from 0 to 6. There is an abi
 
 \newpage
 
+\chapter{Release}
+
+\section{Optimizing}
+
+Each map can be optimized using some standard routines. First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore. This can happen when a hero ability is change to a unit ability but some hero only fields are still changed. This optimization reduces the number of strings which have to be translated or optimized later.
+
+\vspace{\baselineskip}
+
+Besides all object data fields which are for the World Editor only can be optimized. These are usually editor only suffixes. The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
+
+\newpage
+
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
