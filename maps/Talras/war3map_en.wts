@@ -13228,7 +13228,7 @@ Learn Ancestors Pact
 STRING 2249
 // Fähigkeiten: A0FP (Totenbeschwörung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 2250
@@ -14030,7 +14030,7 @@ Rigidity
 STRING 2394
 // Fähigkeiten: A0N5 (Ruf des Nordens), EditorSuffix (Editor-Suffix (ansf))
 {
-A peaceful sheep who likes to be ridden.
+(Wigberht)
 }
 
 STRING 2395
@@ -14102,7 +14102,7 @@ Rundumhieb
 STRING 2406
 // Fähigkeiten: A05I (Rundumhieb), EditorSuffix (Editor-Suffix (ansf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+(Wigberht)
 }
 
 STRING 2407
@@ -14180,7 +14180,7 @@ Rundumhieb
 STRING 2419
 // Fähigkeiten: A05F (Unbeugsamkeit), EditorSuffix (Editor-Suffix (ansf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+(Wigberht)
 }
 
 STRING 2420
@@ -14907,7 +14907,7 @@ STRING 2555
 STRING 2556
 // Fähigkeiten: A166 (Übertragung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 2557
@@ -15531,7 +15531,7 @@ Learn Arcane Protection
 STRING 2693
 // Fähigkeiten: A0BD (Dämpfung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 2694
@@ -15768,7 +15768,7 @@ Erhöht das Mana um <AI2m,DataA1> und blockt einmal alle <ANss,Cool1> Sekunden e
 STRING 2753
 // Fähigkeiten: A0RO (Ahnenpakt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 2754
@@ -15942,7 +15942,7 @@ Ancestors Pact [|cffffcc00Level 2|r]
 STRING 2792
 // Fähigkeiten: A0ID (Dunkler Zauber - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 2793
@@ -16315,7 +16315,7 @@ Ancestors Pact [|cffffcc00Level 3|r]
 STRING 2880
 // Fähigkeiten: A13P (Epidemie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 2881
@@ -16393,7 +16393,7 @@ Ancestors Pact [|cffffcc00Level 4|r]
 STRING 2907
 // Fähigkeiten: A0F0 (Weltenportal - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 2908
@@ -17304,7 +17304,7 @@ Talras is a small castle in the borderland of the kingdom of the humans. His van
 STRING 3070
 // Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3071
@@ -17544,7 +17544,7 @@ Arkane List erlernen
 STRING 3112
 // Fähigkeiten: A0BG (Dämpfung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 3113
@@ -18378,7 +18378,7 @@ Kapuze kaufen
 STRING 3265
 // Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3266
@@ -18774,7 +18774,7 @@ Throwing Spear
 STRING 3341
 // Fähigkeiten: A1MR (Parasit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3342
@@ -19500,7 +19500,7 @@ Soul Theft [|cffffcc00Level 3|r]
 STRING 3482
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3487
@@ -19614,7 +19614,7 @@ Ancestors Pact
 STRING 3518
 // Fähigkeiten: A0RV (Seelendiebstahl - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3519
@@ -19716,7 +19716,7 @@ Der Zauberer erzeugt eine Kuppel mit einem Radius von 600 und verringert den von
 STRING 3554
 // Fähigkeiten: A1K3 (Pestkarren - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3555
@@ -19920,7 +19920,7 @@ Learn Arcane Time
 STRING 3596
 // Fähigkeiten: A0AN (Manaexplosion - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 3597
@@ -20322,7 +20322,7 @@ Arcane Time [|cffffcc00Level 1|r]
 STRING 3680
 // Fähigkeiten: A08W (Arkane Zeit), Name (Name (anam))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+Arcane Time
 }
 
 STRING 3683
@@ -20334,7 +20334,7 @@ STRING 3683
 STRING 3684
 // Fähigkeiten: A1IW (Arkane Zeit), Name (Name (anam))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+Arcane Time
 }
 
 STRING 3685
@@ -20736,7 +20736,7 @@ STRING 3757
 STRING 3760
 // Fähigkeiten: A0HY (Dämonendiener - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3761
@@ -20796,7 +20796,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 3780
 // Fähigkeiten: A0HP (Seuche - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3781
@@ -21390,7 +21390,7 @@ Parasite [|cffffcc00Level 3|r]
 STRING 3898
 // Fähigkeiten: A0S7 (Parasit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 3899
@@ -22308,7 +22308,7 @@ Parasite [|cffffcc00Level 4|r]
 STRING 4072
 // Fähigkeiten: A0EZ (Weltenportal - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 4073
@@ -22728,7 +22728,7 @@ Parasite [|cffffcc00Level 5|r]
 STRING 4153
 // Fähigkeiten: A0IB (Dunkler Zauber - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 4155
@@ -23532,7 +23532,7 @@ Rückkopplung [|cffffcc00Stufe 1|r]
 STRING 4366
 // Fähigkeiten: A0WT (Verbannen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4367
@@ -23556,7 +23556,7 @@ Rückkopplung [|cffffcc00Stufe 2|r]
 STRING 4380
 // Fähigkeiten: A0BA (Dämpfung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4381
@@ -23580,7 +23580,7 @@ Rückkopplung [|cffffcc00Stufe 3|r]
 STRING 4394
 // Fähigkeiten: A104 (Magische Schockwellen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4395
@@ -23604,7 +23604,7 @@ Rückkopplung [|cffffcc00Stufe 4|r]
 STRING 4408
 // Fähigkeiten: A15I (Manastrom - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4409
@@ -23628,7 +23628,7 @@ Rückkopplung [|cffffcc00Stufe 5|r]
 STRING 4422
 // Fähigkeiten: A1KT (Rückkopplung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4423
@@ -23706,7 +23706,7 @@ Erhöht das Wissen des Trägers.
 STRING 4446
 // Fähigkeiten: A0WS (Verbannen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4447
@@ -23724,7 +23724,7 @@ Wildgrubenpfähle aufstellen
 STRING 4460
 // Fähigkeiten: A0VW (Rückkopplung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4461
@@ -23742,7 +23742,7 @@ Ring der Weisheit kaufen
 STRING 4474
 // Fähigkeiten: A0W6 (Manaschild - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4475
@@ -23760,7 +23760,7 @@ Ring der Stärke
 STRING 4488
 // Fähigkeiten: A0W8 (Manaschild - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4489
@@ -23778,7 +23778,7 @@ Erhöht die Stärke des Trägers.
 STRING 4502
 // Fähigkeiten: A0AZ (Manaexplosion - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4503
@@ -24324,7 +24324,7 @@ Magical Shockwaves [|cffffcc00Level 1|r]
 STRING 4604
 // Fähigkeiten: A0VX (Rückkopplung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4605
@@ -24342,7 +24342,7 @@ Magische Schockwellen [|cffffcc00Stufe 2|r]
 STRING 4617
 // Fähigkeiten: A1MD (Manastrom - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4618
@@ -24360,7 +24360,7 @@ Magische Schockwellen [|cffffcc00Stufe 3|r]
 STRING 4630
 // Fähigkeiten: A10E (Arkaner Hunger - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4631
@@ -24378,7 +24378,7 @@ Magische Schockwellen [|cffffcc00Stufe 4|r]
 STRING 4643
 // Fähigkeiten: A165 (Übertragung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4644
@@ -24438,7 +24438,7 @@ Summon Grove [|cffffcc00Level 2|r]
 STRING 4670
 // Fähigkeiten: A0GB (Arkaner Schutz - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4671
@@ -24462,7 +24462,7 @@ Multiplication [|cffffcc00Level 2|r]
 STRING 4684
 // Fähigkeiten: A0VZ (Rückkopplung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4685
@@ -24480,7 +24480,7 @@ Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summon
 STRING 4698
 // Fähigkeiten: A10C (Arkaner Hunger - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4699
@@ -24498,7 +24498,7 @@ Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summon
 STRING 4712
 // Fähigkeiten: A0G9 (Arkaner Schutz - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4713
@@ -24666,7 +24666,7 @@ Multiplication [|cffffcc00Level 2|r]
 STRING 4750
 // Fähigkeiten: A15J (Manastrom - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4751
@@ -24690,7 +24690,7 @@ Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|c
 STRING 4762
 // Fähigkeiten: A0WL (Vervielfachung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4763
@@ -24702,7 +24702,7 @@ Manaexplosion - Stufe 1
 STRING 4775
 // Fähigkeiten: A0K3 (Kontrollierter Zeitfluss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4776
@@ -24840,7 +24840,7 @@ Magische Schockwellen [|cffffcc00Stufe 5|r]
 STRING 4812
 // Fähigkeiten: A102 (Magische Schockwellen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4813
@@ -24852,7 +24852,7 @@ Manaexplosion - Stufe 3
 STRING 4825
 // Fähigkeiten: A1MB (Manaschild - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4826
@@ -24864,7 +24864,7 @@ Manaexplosion - Stufe 4
 STRING 4838
 // Fähigkeiten: A10N (Arkane Zeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4839
@@ -25386,7 +25386,7 @@ Throws a fire missile at an opponent, deals fire damage and lets the opponent bu
 STRING 4943
 // Fähigkeiten: A1M9 (Manaexplosion - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4944
@@ -25446,7 +25446,7 @@ Dämpfung - Stufe 3
 STRING 4965
 // Fähigkeiten: A167 (Übertragung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4966
@@ -25458,7 +25458,7 @@ Dämpfung - Stufe 2
 STRING 4977
 // Fähigkeiten: A1MN (Vervielfachung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4978
@@ -25476,7 +25476,7 @@ Master of Necromancy [|cffffcc00Level 1|r]
 STRING 4991
 // Fähigkeiten: A1JP (Kontrollierter Zeitfluss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 4992
@@ -25500,7 +25500,7 @@ Meister der Nekromantie - Stufe 1
 STRING 5005
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 5006
@@ -26650,7 +26650,7 @@ Absorbation [|cffffcc00Stufe 1|r]
 STRING 5252
 // Fähigkeiten: A10M (Arkane Zeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 5253
@@ -28654,7 +28654,7 @@ Increases the damage by <A07H,DataA1>.
 STRING 6087
 // Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6088
@@ -29361,7 +29361,7 @@ Wrath of the Forest [|cffffcc00Stufe 2|r]
 STRING 6297
 // Fähigkeiten: A0RM (Ahnenpakt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6298
@@ -29385,7 +29385,7 @@ Worlds Portal [|cffffcc00Level 2|r]
 STRING 6311
 // Fähigkeiten: A1NX (Seelendiebstahl - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6312
@@ -29403,7 +29403,7 @@ The druid transforms himself into a crow. The mana regeneration and the armour a
 STRING 6325
 // Fähigkeiten: A1ON (Weltenportal - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6326
@@ -29421,7 +29421,7 @@ The druid transforms himself into a crow. The mana regeneration and the armour a
 STRING 6339
 // Fähigkeiten: A0RY (Seelendiebstahl - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6340
@@ -29439,7 +29439,7 @@ The druid transforms himself into a crow. The mana regeneration and the armour a
 STRING 6353
 // Fähigkeiten: A0F3 (Weltenportal - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6354
@@ -29841,7 +29841,7 @@ Totenbeschwörung - Stufe 1
 STRING 6469
 // Fähigkeiten: A1JM (Verzehren - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6470
@@ -29865,7 +29865,7 @@ Necromancy [|cffffcc00Level 3|r]
 STRING 6483
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6484
@@ -29883,7 +29883,7 @@ STRING 6496
 STRING 6497
 // Fähigkeiten: A1MT (Seuche - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6498
@@ -29901,7 +29901,7 @@ Necromancy [|cffffcc00Level 5|r]
 STRING 6511
 // Fähigkeiten: A0I0 (Dämonendiener - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 6512
@@ -30249,7 +30249,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 6639
 // Fähigkeiten: A0WW (Verbannen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6640
@@ -30273,7 +30273,7 @@ Arcane Protection [|cffffcc00Level 2|r]
 STRING 6653
 // Fähigkeiten: A168 (Übertragung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6654
@@ -30291,7 +30291,7 @@ Necromancy [|cffffcc00Level 5|r]
 STRING 6667
 // Fähigkeiten: A0BF (Dämpfung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6668
@@ -30309,7 +30309,7 @@ Arcane Protection [|cffffcc00Level 4|r]
 STRING 6681
 // Fähigkeiten: A06E (Arkane List - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6682
@@ -30327,7 +30327,7 @@ Treefolk
 STRING 6695
 // Fähigkeiten: A10P (Arkane Zeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6696
@@ -30771,7 +30771,7 @@ Brandpfeile - Stufe 3
 STRING 6878
 // Fähigkeiten: A0C4 (Absorbation - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 6879
@@ -31179,7 +31179,7 @@ Seuche [|cffffcc00Stufe 5|r]
 STRING 7015
 // Fähigkeiten: A0AO (Manaexplosion - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 7016
@@ -31275,7 +31275,7 @@ Seuche [|cffffcc00Stufe 1|r]
 STRING 7040
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7041
@@ -31305,7 +31305,7 @@ Seuche [|cffffcc00Stufe 2|r]
 STRING 7054
 // Fähigkeiten: A0FL (Totenbeschwörung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7055
@@ -31329,7 +31329,7 @@ Seuche [|cffffcc00Stufe 3|r]
 STRING 7068
 // Fähigkeiten: A0I9 (Dunkler Zauber - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7069
@@ -31353,7 +31353,7 @@ Seuche [|cffffcc00Stufe 4|r]
 STRING 7082
 // Fähigkeiten: A023 (Dämonendiener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7083
@@ -31383,7 +31383,7 @@ Seuche [|cffffcc00Stufe 5|r]
 STRING 7096
 // Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7097
@@ -31689,7 +31689,7 @@ Zoology [|cffffcc00Stufe 5|r]
 STRING 7168
 // Fähigkeiten: A0F1 (Weltenportal - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7169
@@ -31701,7 +31701,7 @@ Dämonendiener - Stufe 1
 STRING 7182
 // Fähigkeiten: A0HQ (Seuche - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7183
@@ -31719,7 +31719,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 7196
 // Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7197
@@ -31737,7 +31737,7 @@ Eisgeschoss - Stufe 5
 STRING 7210
 // Fähigkeiten: A0RW (Seelendiebstahl - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7211
@@ -31749,7 +31749,7 @@ Dämonendiener - Stufe 4
 STRING 7224
 // Fähigkeiten: A1QF (Verdammnis - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7225
@@ -31899,7 +31899,7 @@ STRING 7251
 STRING 7261
 // Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7262
@@ -31917,7 +31917,7 @@ Eisgeschoss - Stufe 3
 STRING 7275
 // Fähigkeiten: A0S8 (Parasit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7276
@@ -31941,7 +31941,7 @@ Dark Spell [|cffffcc00Level 3|r]
 STRING 7289
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7290
@@ -31965,7 +31965,7 @@ STRING 7302
 STRING 7303
 // Fähigkeiten: A0HZ (Dämonendiener - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7304
@@ -31989,7 +31989,7 @@ Dark Spell [|cffffcc00Level 5|r]
 STRING 7317
 // Fähigkeiten: A0FN (Totenbeschwörung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7318
@@ -32151,7 +32151,7 @@ Der Elementarmagier vereist das Gebiet in einem Umkreis von 600 um sich herum f�
 STRING 7355
 // Fähigkeiten: A0IC (Dunkler Zauber - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7356
@@ -32169,7 +32169,7 @@ Der Elementarmagier vereist das Gebiet in einem Umkreis von 600 um sich herum f�
 STRING 7369
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7370
@@ -32187,7 +32187,7 @@ Arcane Protection [|cffffcc00Level 2|r]
 STRING 7383
 // Fähigkeiten: A0HN (Seuche - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7384
@@ -32205,7 +32205,7 @@ Dark Spell [|cffffcc00Level 5|r]
 STRING 7397
 // Fähigkeiten: A1K7 (Dämonendiener - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7398
@@ -32223,7 +32223,7 @@ Verzehren [|cffffcc00Stufe 5|r]
 STRING 7411
 // Fähigkeiten: A0RK (Ahnenpakt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7412
@@ -32295,7 +32295,7 @@ Verzehren - Stufe 5
 STRING 7436
 // Fähigkeiten: A0RN (Ahnenpakt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7437
@@ -32313,7 +32313,7 @@ The druid transforms himself into a crow. The mana regeneration and the armour a
 STRING 7450
 // Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7451
@@ -32331,7 +32331,7 @@ Worlds Portal [|cffffcc00Level 2|r]
 STRING 7464
 // Fähigkeiten: A0HR (Seuche - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7465
@@ -32349,7 +32349,7 @@ Worlds Portal [|cffffcc00Level 2|r]
 STRING 7478
 // Fähigkeiten: A0I1 (Dämonendiener - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7479
@@ -32367,7 +32367,7 @@ Erschafft für <A01U,Dur5> Sekunden einen schwachen Zombie Stufe <n000,level> mi
 STRING 7492
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 7493
@@ -32991,7 +32991,7 @@ Diese Einheit steht unter einem 'Unbeugsamkeit'; sie ist unverwundbar und Heilef
 STRING 7790
 // Fähigkeiten: A0UB (Verbannen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 7791
@@ -33825,7 +33825,7 @@ Ein Verbündeter erleidet 10 Sekunden lang 40 % weniger Schaden. Kanalisierter Z
 STRING 8136
 // Fähigkeiten: A10K (Arkane List - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 8137
@@ -34185,7 +34185,7 @@ Pest Barrow [|cffffcc00Level 1|r]
 STRING 8291
 // Fähigkeiten: A0IA (Dunkler Zauber - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 8292
@@ -34407,7 +34407,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8415
 // Fähigkeiten: A0UJ (Segen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Segen erlernen
+Learn Blessing
 }
 
 STRING 8416
@@ -34455,7 +34455,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8443
 // Fähigkeiten: A0UJ (Segen - Erlernen), Name (Name (anam))
 {
-Selbstlosigkeit [|cffffcc00Stufe 4|r]
+Blessing - Learn
 }
 
 STRING 8444
@@ -34599,7 +34599,7 @@ Throws a fire missile at an opponent, deals fire damage and lets the opponent bu
 STRING 8509
 // Fähigkeiten: A0UK (Segen - Erlernen), Name (Name (anam))
 {
-Selbstlosigkeit [|cffffcc00Stufe 4|r]
+Blessing - Learn
 }
 
 STRING 8510
@@ -35391,7 +35391,7 @@ Eispfeile - Stufe 4
 STRING 8826
 // Fähigkeiten: A15H (Manastrom - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 8836
@@ -35517,7 +35517,7 @@ Wigberht brüllt einen Kriegsruf hinaus, der die Kampfkraft seiner Verbündeten 
 STRING 8858
 // Zauberverstärker/Effekte: B00T (Rundumhieb), EditorSuffix (Editor-Suffix (fnsf))
 {
-Ein friedliches Schaf, das sich gerne reiten lässt.
+(Wigberht)
 }
 
 STRING 8859
@@ -39807,7 +39807,7 @@ Protect [|cffffcc00Level 1|r]
 STRING 10390
 // Fähigkeiten: A0WA (Manaschild - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 10391
@@ -39825,7 +39825,7 @@ Enable Rigidity [|cffffcc00Level 1|r]
 STRING 10404
 // Fähigkeiten: A100 (Magische Schockwellen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 10405
@@ -39843,7 +39843,7 @@ Enable Rigidity [|cffffcc00Level 1|r]
 STRING 10418
 // Fähigkeiten: A10O (Arkane Zeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 10419
@@ -39867,7 +39867,7 @@ Ban [|cffffcc00Level 2|r]
 STRING 10432
 // Fähigkeiten: A103 (Magische Schockwellen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 10433
@@ -41145,7 +41145,7 @@ Changes to the next page of the grimoire. On each page of the grimoire learnable
 STRING 10976
 // Fähigkeiten: A0WU (Verbannen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 10977
@@ -42236,7 +42236,7 @@ Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Leve
 STRING 11310
 // Fähigkeiten: A0BE (Dämpfung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11311
@@ -42254,7 +42254,7 @@ Arkaner Hunger [|cffffcc00Stufe 5|r]
 STRING 11323
 // Fähigkeiten: A0WI (Vervielfachung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11324
@@ -42332,7 +42332,7 @@ Der Elementarmagier lähmt sein Ziel für 4 Sekunden.
 STRING 11346
 // Fähigkeiten: A0G7 (Arkaner Schutz - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11347
@@ -42356,7 +42356,7 @@ Arkane List - Stufe 1
 STRING 11361
 // Fähigkeiten: A0VY (Rückkopplung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11362
@@ -42368,7 +42368,7 @@ Arkane Zeit - Stufe 1
 STRING 11374
 // Fähigkeiten: A0W7 (Manaschild - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11375
@@ -42386,7 +42386,7 @@ The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc0
 STRING 11387
 // Fähigkeiten: A0WV (Verbannen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11388
@@ -42398,7 +42398,7 @@ Arkane Zeit - Stufe 3
 STRING 11400
 // Fähigkeiten: A05Y (Arkaner Hunger - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11401
@@ -42410,7 +42410,7 @@ Arkane Zeit - Stufe 4
 STRING 11413
 // Fähigkeiten: A0PL (Arkane Zeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 11414
@@ -42955,19 +42955,19 @@ Throws an ice missile at an opponent, deals ice damage and reduces the movement 
 STRING 11628
 // Fähigkeiten: A1JM (Verzehren - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 11629
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 11630
 // Fähigkeiten: A1JN (Verzehren - Erlernen), Name (Name (anam))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 11633
@@ -43195,7 +43195,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 11674
 // Fähigkeiten: A1IW (Arkane Zeit), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberer - Negativer Zauberverstärker)
+(Wizard - Negative Buff)
 }
 
 STRING 11675
@@ -43207,7 +43207,7 @@ Arcane Time [|cffffcc00Level 1|r]
 STRING 11676
 // Fähigkeiten: A08V (Arkane Zeit), Name (Name (anam))
 {
-Arkane Zeit
+Arcane Time
 }
 
 STRING 11677
@@ -43219,7 +43219,7 @@ Arcane Time [|cffffcc00Level 2|r]
 STRING 11678
 // Zauberverstärker/Effekte: B02Y (), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Zauberer - Positiver Zauberverstärker)
+Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
 }
 
 STRING 11679
@@ -43231,7 +43231,7 @@ Arcane Time [|cffffcc00Level 3|r]
 STRING 11680
 // Fähigkeiten: A1IX (Arkane Zeit), Name (Name (anam))
 {
-Arkane Zeit
+Arcane Time
 }
 
 STRING 11681
@@ -43243,7 +43243,7 @@ Arcane Time [|cffffcc00Level 4|r]
 STRING 11682
 // Zauberverstärker/Effekte: B02X (), Bufftip (Tooltipp (ftip))
 {
-Arkane Zeit
+Arcane Time
 }
 
 STRING 11683
@@ -44725,7 +44725,7 @@ STRING 12172
 STRING 12182
 // Fähigkeiten: A1JX (Dunkle Diener - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Nekromant)
+(Grimoire - Necromancer)
 }
 
 STRING 12183
@@ -46321,7 +46321,7 @@ Manastrom [|cffffcc00Stufe 1|r]
 STRING 12773
 // Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Zauberer)
+(Grimoire - Wizard)
 }
 
 STRING 12774
@@ -46333,13 +46333,13 @@ Manastrom - Stufe 1
 STRING 12786
 // Fähigkeiten: A10D (Arkaner Hunger - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Zauberer)
+(Grimoire - Wizard)
 }
 
 STRING 12787
 // Fähigkeiten: A10B (Arkaner Hunger - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Zauberer)
+(Grimoire - Wizard)
 }
 
 STRING 12788
@@ -46357,7 +46357,7 @@ STRING 12800
 STRING 12801
 // Fähigkeiten: A169 (Übertragung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12802
@@ -46369,7 +46369,7 @@ Manastrom - Stufe 3
 STRING 12815
 // Fähigkeiten: A15K (Manastrom - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12816
@@ -46381,7 +46381,7 @@ Manastrom - Stufe 4
 STRING 12829
 // Fähigkeiten: A1M7 (Magische Schockwellen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12830
@@ -46927,7 +46927,7 @@ Transfer [|cffffcc00Level 1|r]
 STRING 12934
 // Fähigkeiten: A1OD (Übertragung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12935
@@ -47065,7 +47065,7 @@ STRING 12966
 STRING 12967
 // Fähigkeiten: A15L (Manastrom - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12968
@@ -47083,7 +47083,7 @@ Transfer [|cffffcc00Level 3|r]
 STRING 12980
 // Fähigkeiten: A06C (Arkaner Schutz - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12981
@@ -47095,7 +47095,7 @@ STRING 12981
 STRING 12993
 // Fähigkeiten: A10A (Arkaner Hunger - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 12994
@@ -47107,7 +47107,7 @@ STRING 12994
 STRING 13006
 // Fähigkeiten: A0W0 (Rückkopplung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 13007
@@ -59947,7 +59947,7 @@ Bestiehlt eine Einheit, die nicht dem Spieler gehört. Stiehlt für alle Spieler
 STRING 15262
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 15263
@@ -60187,7 +60187,7 @@ Verfluchter Boden [|cffffcc00Stufe 1|r]
 STRING 15330
 // Fähigkeiten: A0S6 (Parasit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 15331
@@ -62359,7 +62359,7 @@ Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Crea
 STRING 15817
 // Fähigkeiten: A0RX (Seelendiebstahl - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 15818
@@ -63797,7 +63797,7 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um
 STRING 16073
 // Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16074
@@ -66267,13 +66267,13 @@ Transfer [|cffffcc00Level 3|r]
 STRING 16834
 // Fähigkeiten: A0FM (Totenbeschwörung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16835
 // Fähigkeiten: A01V (Seelendiebstahl - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16836
@@ -66297,7 +66297,7 @@ Pestkarren - Erlernen
 STRING 16839
 // Fähigkeiten: A1JZ (Dunkler Zauber - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16840
@@ -66315,7 +66315,7 @@ Transfer [|cffffcc00Level 3|r]
 STRING 16843
 // Fähigkeiten: A0S9 (Parasit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16844
@@ -66333,7 +66333,7 @@ Transfer [|cffffcc00Level 3|r]
 STRING 16847
 // Fähigkeiten: A1MP (Totenbeschwörung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 16848
@@ -68516,7 +68516,7 @@ Elemental Creatures [|cffffcc00Level 2|r]
 STRING 17242
 // Fähigkeiten: A05M (Ahnenpakt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 17243
@@ -69025,7 +69025,7 @@ Soul Theft [|cffffcc00Level 3|r]
 STRING 17359
 // Zauberverstärker/Effekte: B02X (), EditorSuffix (Editor-Suffix (fnsf))
 {
-Entfernt nach einer bestimmten Zeit alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.|nErhöht die Dauer beschworener Verbündeter oder verringert die Dauer beschworener Gegner auf.|n|n|cffffcc00Stufe 1|r - Entfernt Zauberverstärker nach 25 Sekuden. Erhöht die Dauer beschworener Verbündeter um 50 Sekunden. Verringert die Dauer beschworener Gegner um 20 Sekunden. Abklingzeit <A08V,Cool1> Sekunden.|n|cffffcc00Stufe 2|r - Entfernt Zauberverstärker nach 20 Sekuden. Erhöht die Dauer beschworener Verbündeter um 60 Sekunden. Verringert die Dauer beschworener Gegner um 15 Sekunden. Abklingzeit <A08V,Cool2> Sekunden.|n|cffffcc00Stufe 3|r - Entfernt Zauberverstärker nach 15 Sekuden. Erhöht die Dauer beschworener Verbündeter um 70 Sekunden. Verringert die Dauer beschworener Gegner um 10 Sekunden. Abklingzeit <A08V,Cool3> Sekunden.
+(Wizard - Negative Buff)
 }
 
 STRING 17360
@@ -69338,7 +69338,7 @@ Absorbation erlernen
 STRING 17421
 // Fähigkeiten: A1JT (Dämpfung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 17422
@@ -72254,7 +72254,7 @@ Epidemie erlernen
 STRING 17937
 // Fähigkeiten: A1QG (Verdammnis - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 17938
@@ -72326,7 +72326,7 @@ Rückkopplung erlernen
 STRING 17969
 // Fähigkeiten: A0G8 (Arkaner Schutz - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 17970
@@ -73208,7 +73208,7 @@ Magische Schockwellen erlernen
 STRING 18367
 // Fähigkeiten: A0WM (Vervielfachung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18368
@@ -73244,7 +73244,7 @@ Manaexplosion erlernen
 STRING 18383
 // Fähigkeiten: A101 (Magische Schockwellen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18384
@@ -73280,7 +73280,7 @@ Manaschild erlernen
 STRING 18399
 // Fähigkeiten: A0WK (Vervielfachung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18400
@@ -73316,7 +73316,7 @@ Manastrom erlernen
 STRING 18415
 // Fähigkeiten: A0GA (Arkaner Schutz - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18416
@@ -73496,7 +73496,7 @@ Vervielfachung erlernen
 STRING 18493
 // Fähigkeiten: A1J6 (Absorbation - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18494
@@ -73532,7 +73532,7 @@ Totenbeschwörung erlernen
 STRING 18509
 // Fähigkeiten: A0RL (Ahnenpakt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 18510
@@ -73568,7 +73568,7 @@ Parasit erlernen
 STRING 18525
 // Fähigkeiten: A0F2 (Weltenportal - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 18526
@@ -73604,7 +73604,7 @@ Seuche erlernen
 STRING 18541
 // Fähigkeiten: A0HO (Seuche - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 18542
@@ -74312,7 +74312,7 @@ Seelendiebstahl erlernen
 STRING 18859
 // Fähigkeiten: A0FO (Totenbeschwörung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 18860
@@ -74600,7 +74600,7 @@ STRING 18984
 STRING 18985
 // Fähigkeiten: A0B1 (Manaexplosion - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Grimoire - Wizard)
 }
 
 STRING 18986
@@ -74780,7 +74780,7 @@ Learn Worlds Portal
 STRING 19065
 // Fähigkeiten: A1KP (Epidemie - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 19066
@@ -76028,7 +76028,7 @@ Verdammnis erlernen
 STRING 19396
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 19397
@@ -76052,7 +76052,7 @@ Verdammnis [|cffffcc00Stufe 1|r]
 STRING 19410
 // Fähigkeiten: A0SA (Parasit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Der Elementarmagier lähmt sein Ziel eine Zeit lang. |n|n|cffffcc00Stufe 1|r - 3 Sekunden. |n|cffffcc00Stufe 2|r - 4 Sekunden. |n|cffffcc00Stufe 3|r - 5 Sekunden. |n|cffffcc00Stufe 4|r - 6 Sekunden.|n|cffffcc00Stufe 5|r - 7 Sekunden.
+(Grimoire - Necromancer)
 }
 
 STRING 19411
