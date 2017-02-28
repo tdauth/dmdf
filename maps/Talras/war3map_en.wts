@@ -4160,7 +4160,7 @@ Gods Favor [|cffffcc00Level 5|r]
 STRING 696
 // Fähigkeiten: A0SI (Meister der Nekromantie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Kleriker)
+(Grimoire - Cleric)
 }
 
 STRING 697
@@ -4268,7 +4268,7 @@ STRING 713
 STRING 714
 // Einheiten: H03I (Dorfbewohnerin), Name (Name (unam))
 {
-Dorfbewohnerin
+Female Villager
 }
 
 STRING 715
@@ -4430,7 +4430,7 @@ Prevent Evil [|cffffcc00Level 1|r]
 STRING 741
 // Fähigkeiten: A0ON (Drohendes Unheil - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire Cleric)
 }
 
 STRING 742
@@ -4604,7 +4604,7 @@ Prevent Evil [|cffffcc00Level 2|r]
 STRING 770
 // Fähigkeiten: A0X4 (Heilige Kraft - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Kleriker)
+(Grimoire - Cleric)
 }
 
 STRING 771
@@ -4802,7 +4802,7 @@ Feeding
 STRING 803
 // Fähigkeiten: A0NV (Blenden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selflessness [|cffffcc00Level 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 804
@@ -4892,7 +4892,7 @@ The soul of an innocent child.
 STRING 818
 // Gegenstände: I07C (Die Seele eines Kindes), Description (Beschreibung (ides))
 {
-Die Seele eines unschuldigen Kindes.
+The soul of an innocent child.
 }
 
 STRING 819
@@ -4916,7 +4916,7 @@ The spirit of a peaceful animal.
 STRING 822
 // Gegenstände: I07D (Der Geist eines Tieres), Description (Beschreibung (ides))
 {
-Der Geist eines friedlichen Tieres.
+The spirit of a peaceful animal.
 }
 
 STRING 823
@@ -5006,7 +5006,7 @@ Prevent Evil [|cffffcc00Level 4|r]
 STRING 837
 // Fähigkeiten: A1NH (Wiederbeleben - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Kleriker)
+(Grimoire - Cleric)
 }
 
 STRING 838
@@ -5120,7 +5120,7 @@ Shadow Efreet
 STRING 856
 // Fähigkeiten: A0OD (Linderung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuch - Kleriker)
+(Grimoire - Cleric)
 }
 
 STRING 857
@@ -7770,7 +7770,7 @@ STRING 1297
 STRING 1298
 // Einheiten: h03Q (Drachenreiter), Name (Name (unam))
 {
-Drachenreiter
+Dragon Rider
 }
 
 STRING 1299
@@ -7782,13 +7782,13 @@ Concentration
 STRING 1300
 // Einheiten: h03Q (Drachenreiter), Tip (Tooltipp - Einfach (utip))
 {
-Drachenreiter ausbilden
+Recruit Dragon Rider
 }
 
 STRING 1301
 // Einheiten: h03Q (Drachenreiter), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Nordmann auf einem Drachen.
+A Northman on a dragon.
 }
 
 STRING 1302
@@ -8970,7 +8970,7 @@ Warrior
 STRING 1498
 // Fähigkeiten: A03H (Entzünden), Name (Name (anam))
 {
-Entzünden
+Inflame
 }
 
 STRING 1499
@@ -8994,13 +8994,13 @@ Nordic Corn Eater
 STRING 1502
 // Fähigkeiten: A043 (Zehren), Name (Name (anam))
 {
-Zehren
+Feeding
 }
 
 STRING 1503
 // Zauberverstärker/Effekte: B00E (Zehren), EditorName (Name (nur Editor) (fnam))
 {
-Zehren
+Feeding
 }
 
 STRING 1504
@@ -9648,7 +9648,7 @@ Amulet of Strength
 STRING 1611
 // Einheiten: n03J (Dryadenquelle), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-Summons a demon level <n00P,level> for <A01V,Dur1> seconds which causes <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life .|nThe summoned demon burns opponents within his radius.|n|cffc3dbffThere can only be summoned one demon servant.|r
+(Druid - Level 1)
 }
 
 STRING 1612
@@ -10080,7 +10080,7 @@ STRING 1682
 STRING 1683
 // Fähigkeiten: A01D (Eiszeit), Name (Name (anam))
 {
-Eiszeit
+Ice Age
 }
 
 STRING 1684
@@ -10548,7 +10548,7 @@ STRING 1760
 STRING 1761
 // Zauberverstärker/Effekte: B00E (Zehren), Bufftip (Tooltipp (ftip))
 {
-Zehren
+Feeding
 }
 
 STRING 1762
@@ -16711,25 +16711,25 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 2962
 // Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 2|r]
+Selflessness [|cffffcc00Level 2|r]
 }
 
 STRING 2963
 // Fähigkeiten: A0LN (Selbstlosigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+Selflessness [|cffffcc00Level 3|r]
 }
 
 STRING 2964
 // Fähigkeiten: A0LO (Selbstlosigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 4|r]
+Selflessness [|cffffcc00Level 4|r]
 }
 
 STRING 2965
 // Fähigkeiten: A0LP (Selbstlosigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit [|cffffcc00Stufe 5|r]
+Selflessness [|cffffcc00Level 5|r]
 }
 
 STRING 2966
@@ -21282,7 +21282,7 @@ Lässt in einem Gebiet <A09I,DataA1> Tote auferstehen, die <A09I,Dur1> Sekunden 
 STRING 3879
 // Fähigkeiten: A09J (Flügelschlag), Tip (Tooltipp - Normal (atp1))
 {
-Flügelschlag
+Wing Stroke
 }
 
 STRING 3880
@@ -21294,7 +21294,7 @@ STRING 3880
 STRING 3881
 // Fähigkeiten: A11W (Tierkunde - Stufe 4 - Krähengestalt - Flügelschlag), Tip (Tooltipp - Normal (atp1))
 {
-Flügelschlag
+Wing Stroke
 }
 
 STRING 3882
@@ -24042,7 +24042,7 @@ Diese Einheit wurde von einem Nekromanten beschworen; sie hat einen erhöhten An
 STRING 4549
 // Zauberverstärker/Effekte: B02D (Meister der Nekromantie), EditorSuffix (Editor-Suffix (fnsf))
 {
-(Nekromant - Schadensbonus)
+(Necromancer - Damage Bonus)
 }
 
 STRING 4550
@@ -24150,7 +24150,7 @@ STRING 4566
 STRING 4567
 // Einheiten: n046 (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 4568
@@ -24168,7 +24168,7 @@ STRING 4569
 STRING 4570
 // Einheiten: n047 (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 4571
@@ -24186,7 +24186,7 @@ STRING 4572
 STRING 4573
 // Einheiten: n048 (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 4574
@@ -24222,7 +24222,7 @@ STRING 4578
 STRING 4579
 // Einheiten: n07A (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 4580
@@ -24294,25 +24294,25 @@ The wizard multiplies himself. His multiplications deal a part of his damage. |n
 STRING 4591
 // Fähigkeiten: A1MN (Vervielfachung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4592
 // Fähigkeiten: A0WJ (Vervielfachung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4593
 // Fähigkeiten: A0WI (Vervielfachung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4594
 // Fähigkeiten: A0WM (Vervielfachung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 4603
@@ -25488,7 +25488,7 @@ Dämpfung - Stufe 4
 STRING 4995
 // Fähigkeiten: A0OZ (Reinheit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 5004
@@ -26560,7 +26560,7 @@ Master of Necromancy [|cffffcc00Level 2|r]
 STRING 5228
 // Fähigkeiten: A0Q2 (Bekehrung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 5229
@@ -26842,7 +26842,7 @@ Imp anheuern
 STRING 5292
 // Einheiten: n07B (Berserker), Tip (Tooltipp - Einfach (utip))
 {
-Berserker anheuern
+Recruit Berserker
 }
 
 STRING 5293
@@ -27316,7 +27316,7 @@ Dryadenquelle - Stufe 2
 STRING 5507
 // Fähigkeiten: A0PA (Genesung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 5516
@@ -27748,7 +27748,7 @@ Baumhirte - Stufe 2
 STRING 5691
 // Fähigkeiten: A12H (Pfeilhagel - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 5700
@@ -28504,7 +28504,7 @@ Beschwört einen mächtigen Gefährten mit <e003,realHP> Leben, der sich einwurz
 STRING 6049
 // Fähigkeiten: A1LJ (Heiliger Wille - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6050
@@ -29079,7 +29079,7 @@ Master of Necromancy [|cffffcc00Level 5|r]
 STRING 6189
 // Fähigkeiten: A0LD (Schützen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selflessness [|cffffcc00Level 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6190
@@ -30519,7 +30519,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 6744
 // Fähigkeiten: A0GW (Brandpfeile - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6745
@@ -30537,7 +30537,7 @@ Magische Schockwellen - Stufe 2
 STRING 6758
 // Fähigkeiten: A0GM (Vergiftete Pfeile - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6759
@@ -30555,7 +30555,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 6772
 // Fähigkeiten: A12T (Lauern - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6773
@@ -30573,7 +30573,7 @@ Magische Schockwellen - Stufe 3
 STRING 6786
 // Fähigkeiten: A1BR (Hundezwinger - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6787
@@ -30591,7 +30591,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 6800
 // Fähigkeiten: A1OF (Falle - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6801
@@ -30729,7 +30729,7 @@ Fire Arrows
 STRING 6837
 // Fähigkeiten: A1NT (Schuss ins Herz - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6838
@@ -30741,7 +30741,7 @@ Brandpfeile - Stufe 1
 STRING 6851
 // Fähigkeiten: A0YM (Gewandheit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6852
@@ -30759,7 +30759,7 @@ Fire Arrows [|cffffcc00Level 3|r]
 STRING 6865
 // Fähigkeiten: A17T (Mehrfachschuss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6866
@@ -30777,7 +30777,7 @@ Ancestors Pact |cffffcc00Level 4|r]
 STRING 6879
 // Fähigkeiten: A12W (Lauern - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6880
@@ -30795,7 +30795,7 @@ Fire Arrows [|cffffcc00Level 5|r]
 STRING 6893
 // Fähigkeiten: A0GK (Vergiftete Pfeile - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 6894
@@ -30957,7 +30957,7 @@ Laden-Pfeil Schwert
 STRING 6931
 // Fähigkeiten: A1L9 (Göttergunst - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6932
@@ -30975,7 +30975,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 6945
 // Fähigkeiten: A0O4 (Wiederbeleben - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6946
@@ -30993,7 +30993,7 @@ Blessing [|cffffcc00Level 3|r]
 STRING 6959
 // Fähigkeiten: A0NU (Blenden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6960
@@ -31011,7 +31011,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 6973
 // Fähigkeiten: A0SK (Meister der Nekromantie - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6974
@@ -31035,7 +31035,7 @@ Blessing [|cffffcc00Level 5|r]
 STRING 6987
 // Fähigkeiten: A0H8 (Segen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 6988
@@ -31557,7 +31557,7 @@ Tarnpulver kaufen
 STRING 7127
 // Fähigkeiten: A1TE (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 7129
@@ -31857,7 +31857,7 @@ Dark Spell [|cffffcc00Level 5|r]
 STRING 7245
 // Fähigkeiten: A0KO (Inferno - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7246
@@ -31869,7 +31869,7 @@ Eisgeschoss - Stufe 1
 STRING 7247
 // Fähigkeiten: A1N2 (Pure Energie - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7248
@@ -31893,7 +31893,7 @@ Dark Spell
 STRING 7251
 // Fähigkeiten: A1IF (Elementarwesen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7261
@@ -31929,7 +31929,7 @@ Dunkler Zauber - Stufe 2
 STRING 7279
 // Fähigkeiten: A0L9 (Teleportation - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7288
@@ -31977,7 +31977,7 @@ Dunkler Zauber - Stufe 4
 STRING 7307
 // Fähigkeiten: A0ZJ (Erdgefängnis - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7316
@@ -33387,7 +33387,7 @@ Inferno - Stufe 5
 STRING 7933
 // Fähigkeiten: A0UU (Blitzschlag - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7934
@@ -33399,7 +33399,7 @@ Inferno - Stufe 1
 STRING 7935
 // Fähigkeiten: A0ZU (Zehren - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7936
@@ -33411,7 +33411,7 @@ Inferno - Stufe 2
 STRING 7937
 // Fähigkeiten: A11O (Beherrschung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7938
@@ -33423,7 +33423,7 @@ Inferno - Stufe 3
 STRING 7939
 // Fähigkeiten: A0TM (Eiszeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7940
@@ -33435,7 +33435,7 @@ Inferno - Stufe 4
 STRING 7941
 // Fähigkeiten: A1KG (Elementarwesen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 7942
@@ -33555,7 +33555,7 @@ Feuergeschoss - Stufe 5
 STRING 8013
 // Fähigkeiten: A0V3 (Erfrierung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8014
@@ -33567,7 +33567,7 @@ Feuergeschoss - Stufe 1
 STRING 8015
 // Fähigkeiten: A0U6 (Feuersbrunst - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8016
@@ -33579,7 +33579,7 @@ Feuergeschoss - Stufe 2
 STRING 8017
 // Fähigkeiten: A0TF (Eisgeschoss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8018
@@ -33591,7 +33591,7 @@ Feuergeschoss - Stufe 3
 STRING 8019
 // Fähigkeiten: A0US (Blitzschlag - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8020
@@ -33603,7 +33603,7 @@ Feuergeschoss - Stufe 4
 STRING 8021
 // Fähigkeiten: A1LO (Eisgeschoss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8022
@@ -33639,7 +33639,7 @@ Transforms the druid back into a human.
 STRING 8054
 // Fähigkeiten: A0KY (Feuergeschoss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8056
@@ -33705,7 +33705,7 @@ Teleportation - Stufe 5
 STRING 8115
 // Fähigkeiten: A0ZF (Erdgefängnis - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8116
@@ -33717,7 +33717,7 @@ Teleportation - Stufe 1
 STRING 8117
 // Fähigkeiten: A11R (Beherrschung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8118
@@ -33729,7 +33729,7 @@ Teleportation - Stufe 2
 STRING 8119
 // Fähigkeiten: A0TP (Eiszeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8120
@@ -33741,7 +33741,7 @@ Teleportation - Stufe 3
 STRING 8121
 // Fähigkeiten: A0ZH (Erdgefängnis - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8122
@@ -33753,7 +33753,7 @@ Teleportation - Stufe 4
 STRING 8123
 // Fähigkeiten: A1M2 (Blitzschlag - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8124
@@ -33849,7 +33849,7 @@ Protect [|cffffcc00Level 1|r]
 STRING 8155
 // Fähigkeiten: A0QE (Göttergunst - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8156
@@ -33873,7 +33873,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 8169
 // Fähigkeiten: A0SL (Meister der Nekromantie - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8170
@@ -33897,7 +33897,7 @@ Protect [|cffffcc00Level 1|r]
 STRING 8183
 // Fähigkeiten: A1MX (Böses hindern - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8184
@@ -33921,7 +33921,7 @@ Protect [|cffffcc00Level 4|r]
 STRING 8197
 // Fähigkeiten: A0LA (Schützen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8198
@@ -33945,7 +33945,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 8211
 // Fähigkeiten: A0O7 (Wiederbeleben - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8212
@@ -34149,7 +34149,7 @@ Holy Power [|cffffcc00Level 1|r]
 STRING 8275
 // Fähigkeiten: A0P7 (Böses bannen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8276
@@ -34335,7 +34335,7 @@ Eiszeit - Stufe 5
 STRING 8384
 // Fähigkeiten: A1LM (Eiszeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8385
@@ -34353,7 +34353,7 @@ Eiszeit - Stufe 1
 STRING 8387
 // Fähigkeiten: A0Z9 (Elementare Gewalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8388
@@ -34365,7 +34365,7 @@ Eiszeit - Stufe 2
 STRING 8389
 // Fähigkeiten: A0KW (Feuergeschoss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8390
@@ -34431,7 +34431,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8429
 // Fähigkeiten: A0P9 (Genesung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8430
@@ -34977,7 +34977,7 @@ Aura der Rücknahme
 STRING 8649
 // Fähigkeiten: A0TW (Entzünden - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8650
@@ -35031,7 +35031,7 @@ Aura of Authority
 STRING 8663
 // Fähigkeiten: A0Z1 (Überlegenheit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 8672
@@ -35055,7 +35055,7 @@ Aura der Autorität - Stufe 1
 STRING 8677
 // Fähigkeiten: A0YY (Überlegenheit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 8686
@@ -35079,7 +35079,7 @@ Aura der Autorität - Stufe 2
 STRING 8691
 // Fähigkeiten: A0Z2 (Überlegenheit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 8700
@@ -35103,7 +35103,7 @@ Aura der Autorität - Stufe 3
 STRING 8705
 // Fähigkeiten: A0YZ (Überlegenheit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 8714
@@ -35127,7 +35127,7 @@ Aura der Autorität - Stufe 4
 STRING 8719
 // Fähigkeiten: A0Z0 (Überlegenheit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter erhöht sein Angriffstempo eine Zeit lang.|n<A06W,Cool1> Sekunden Abklingzeit. |n|n|cffffcc00Stufe 1|r - Erhöht sein Angriffstempo <A06W,Dur1> Sekunden lang um <A06W,DataB1,%> %.|n|cffffcc00Stufe 2|r - Erhöht sein Angriffstempo <A06W,Dur2> Sekunden lang um <A06W,DataB2,%> %.|n|cffffcc00Stufe 3|r -  Erhöht sein Angriffstempo <A06W,Dur3> Sekunden lang um <A06W,DataB3,%> %.|n|cffffcc00Stufe 4|r - Erhöht sein Angriffstempo <A06W,Dur4> Sekunden lang um <A06W,DataB4,%> %.|n|cffffcc00Stufe 5|r - Erhöht sein Angriffstempo <A06W,Dur5> Sekunden lang um <A06W,DataB5,%> %.
+The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> seconds cooldow. |n|n|cffffcc00Level 1|r - Increases his attack speed for <A06W,Dur1> seconds by <A06W,DataB1,%> %.|n|cffffcc00Level 2|r - Increases his attack speed for <A06W,Dur2> seconds by <A06W,DataB2,%> %.|n|cffffcc00Level 3|r -  Increases his attack speed for <A06W,Dur3> seconds by <A06W,DataB3,%> %.|n|cffffcc00Level 4|r - Increases his attack speed for <A06W,Dur4> seconds by <A06W,DataB4,%> %.|n|cffffcc00Level 5|r - Increases his attack speed for <A06W,Dur5> seconds by <A06W,DataB5,%> %.
 }
 
 STRING 8728
@@ -35343,7 +35343,7 @@ Ice Arrows
 STRING 8780
 // Fähigkeiten: A0YG (Adlerauge - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Inflame [|cffffcc00Level 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 8781
@@ -35355,7 +35355,7 @@ Eispfeile - Stufe 1
 STRING 8794
 // Fähigkeiten: A0MZ (Eispfeile - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Inflame [|cffffcc00Level 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 8795
@@ -35367,7 +35367,7 @@ Eispfeile - Stufe 2
 STRING 8808
 // Fähigkeiten: A17W (Mehrfachschuss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Inflame [|cffffcc00Level 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 8809
@@ -35379,7 +35379,7 @@ Eispfeile - Stufe 3
 STRING 8822
 // Fähigkeiten: A1NR (Schütze - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Inflame [|cffffcc00Level 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 8823
@@ -35397,7 +35397,7 @@ Ancestors Pact |cffffcc00Level 4|r]
 STRING 8836
 // Fähigkeiten: A10Z (Sprinten - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 8837
@@ -35535,7 +35535,7 @@ Learn Blind
 STRING 8863
 // Fähigkeiten: A0NF (Märtyrer - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8864
@@ -35553,7 +35553,7 @@ STRING 8865
 STRING 8866
 // Fähigkeiten: A1MI (Beherrschung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 8867
@@ -36009,7 +36009,7 @@ Martyr [|cffffcc00Level 1|r]
 STRING 8964
 // Fähigkeiten: A0QF (Göttergunst - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8965
@@ -36027,7 +36027,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 8978
 // Fähigkeiten: A0OR (Drohendes Unheil - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8979
@@ -36045,7 +36045,7 @@ Martyr [|cffffcc00Level 3|r]
 STRING 8992
 // Fähigkeiten: A0Q5 (Bekehrung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 8993
@@ -36063,7 +36063,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 9006
 // Fähigkeiten: A0QO (Böses hindern - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9007
@@ -36081,7 +36081,7 @@ Train Norseman
 STRING 9020
 // Fähigkeiten: A0P0 (Reinheit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9021
@@ -36503,7 +36503,7 @@ A Norseman is a strong melee fighter.
 STRING 9105
 // Fähigkeiten: A0QP (Böses hindern - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9106
@@ -36521,7 +36521,7 @@ Blind [|cffffcc00Level 2|r]
 STRING 9119
 // Fähigkeiten: A0OX (Reinheit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9120
@@ -36539,7 +36539,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 9133
 // Fähigkeiten: A0QH (Göttergunst - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9134
@@ -36557,7 +36557,7 @@ Stab der Verzögerung
 STRING 9147
 // Fähigkeiten: A1LP (Drohendes Unheil - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9148
@@ -36575,7 +36575,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 9161
 // Fähigkeiten: A0H6 (Segen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9162
@@ -36749,7 +36749,7 @@ Revive [|cffffcc00Level 1|r]
 STRING 9206
 // Fähigkeiten: A0LC (Schützen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9207
@@ -36773,7 +36773,7 @@ Revive [|cffffcc00Level 2|r]
 STRING 9220
 // Fähigkeiten: A0OE (Linderung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9221
@@ -36791,7 +36791,7 @@ Revive [|cffffcc00Level 3|r]
 STRING 9234
 // Fähigkeiten: A0PC (Genesung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9235
@@ -36809,7 +36809,7 @@ Revive [|cffffcc00Level 4|r]
 STRING 9248
 // Fähigkeiten: A1MZ (Schützen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9249
@@ -36827,7 +36827,7 @@ Revive [|cffffcc00Level 5|r]
 STRING 9262
 // Fähigkeiten: A0OF (Linderung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9263
@@ -37073,7 +37073,7 @@ Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decide
 STRING 9313
 // Fähigkeiten: A0XA (Block - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 9314
@@ -37121,7 +37121,7 @@ STRING 9320
 STRING 9330
 // Fähigkeiten: A1N9 (Genesung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9331
@@ -37139,7 +37139,7 @@ STRING 9334
 STRING 9344
 // Fähigkeiten: A091 (Schützen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9345
@@ -37157,7 +37157,7 @@ Hail of Arrows
 STRING 9358
 // Fähigkeiten: A0OO (Drohendes Unheil - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9359
@@ -37174,7 +37174,7 @@ Dunkelelf:
 STRING 9372
 // Fähigkeiten: A1J8 (Blenden - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9373
@@ -37191,7 +37191,7 @@ Orc:
 STRING 9386
 // Fähigkeiten: A0O5 (Wiederbeleben - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9387
@@ -37203,7 +37203,7 @@ Relief - Level 5
 STRING 9390
 // Fähigkeiten: A1M6 (Märtyrer - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Mock [|cffffcc00Level 2|r]
+(Grimoire Ability - Cleric)
 }
 
 STRING 9391
@@ -37215,7 +37215,7 @@ Relief - Level 1
 STRING 9392
 // Fähigkeiten: A0HB (Segen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Mock [|cffffcc00Level 2|r]
+(Grimoire Ability - Cleric)
 }
 
 STRING 9393
@@ -37275,7 +37275,7 @@ Impending Disaster [|cffffcc00Level 1|r]
 STRING 9410
 // Fähigkeiten: A0Q1 (Bekehrung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9411
@@ -37299,7 +37299,7 @@ Lothar's Box
 STRING 9424
 // Fähigkeiten: A0NR (Blenden - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9425
@@ -37323,7 +37323,7 @@ Impending Disaster [|cffffcc00Level 3|r]
 STRING 9438
 // Fähigkeiten: A0QD (Göttergunst - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9439
@@ -37347,7 +37347,7 @@ Heals <A1C9,DataA1> hit points on usage.
 STRING 9452
 // Fähigkeiten: A0H9 (Segen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9453
@@ -37371,7 +37371,7 @@ Buy Honey Pot
 STRING 9466
 // Fähigkeiten: A0QR (Böses hindern - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9467
@@ -37575,7 +37575,7 @@ Honey Pot
 STRING 9510
 // Fähigkeiten: A1KR (Böses bannen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9511
@@ -37599,7 +37599,7 @@ Heilt bei Benutzung <A1CB,DataA1> Mana und <A1C9,DataA1> Trefferpunkte.
 STRING 9524
 // Fähigkeiten: A0SM (Meister der Nekromantie - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9525
@@ -37623,7 +37623,7 @@ Clarity [|cffffcc00Level 3|r]
 STRING 9538
 // Fähigkeiten: A0OH (Linderung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9539
@@ -37647,7 +37647,7 @@ Clarity [|cffffcc00Level 4|r]
 STRING 9552
 // Fähigkeiten: A0HA (Segen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9553
@@ -37671,7 +37671,7 @@ Clarity [|cffffcc00Level 5|r]
 STRING 9566
 // Fähigkeiten: A0Q3 (Bekehrung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9567
@@ -37761,7 +37761,7 @@ Entzünden - Stufe 4
 STRING 9591
 // Fähigkeiten: A0NH (Märtyrer - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9592
@@ -37797,7 +37797,7 @@ Recovery [|cffffcc00Level 1|r]
 STRING 9607
 // Fähigkeiten: A0OP (Drohendes Unheil - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9608
@@ -37821,7 +37821,7 @@ Recovery [|cffffcc00Level 2|r]
 STRING 9621
 // Fähigkeiten: A1OT (Bekehrung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9622
@@ -37845,7 +37845,7 @@ Recovery [|cffffcc00Level 3|r]
 STRING 9635
 // Fähigkeiten: A0OY (Reinheit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9636
@@ -37869,7 +37869,7 @@ Recovery [|cffffcc00Level 4|r]
 STRING 9649
 // Fähigkeiten: A1M5 (Märtyrer - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9650
@@ -37887,7 +37887,7 @@ Recovery [|cffffcc00Level 5|r]
 STRING 9663
 // Fähigkeiten: A0QN (Böses hindern - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9664
@@ -37965,7 +37965,7 @@ Holy Will [|cffffcc00Level 1|r]
 STRING 9687
 // Fähigkeiten: A0Q4 (Bekehrung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9688
@@ -37989,7 +37989,7 @@ Holy Will - Level 1
 STRING 9703
 // Fähigkeiten: A0SJ (Meister der Nekromantie - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9707
@@ -38007,7 +38007,7 @@ Summon Grove [|cffffcc00Level 2|r]
 STRING 9717
 // Fähigkeiten: A0H7 (Segen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9718
@@ -38019,7 +38019,7 @@ Peinigen - Stufe 2
 STRING 9731
 // Fähigkeiten: A0NG (Märtyrer - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9732
@@ -38043,13 +38043,13 @@ The ranger sets his arrows on fire before releasing them. Hit opponents burn for
 STRING 9745
 // Fähigkeiten: A0O3 (Wiederbeleben - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9759
 // Fähigkeiten: A0O6 (Wiederbeleben - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9763
@@ -38157,7 +38157,7 @@ Calls hordes of raving mad rams which explode at opponents of the druid. Each ex
 STRING 9784
 // Einheiten: n03K (Hain), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-(Druide - Stufe 1)
+(Druid - Level 1)
 }
 
 STRING 9785
@@ -38391,7 +38391,7 @@ Eine Aura, die in der Nähe befindlichen befreundeten Einheiten bei Nahkampfangr
 STRING 9836
 // Fähigkeiten: A1JC (Brandpfeile - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 9837
@@ -38589,7 +38589,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 9881
 // Fähigkeiten: A1LH (Heilige Kraft - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9882
@@ -38613,7 +38613,7 @@ Ein Packpferd kann zu einem Marktplatz geschickt werden, um zu handeln. Jeder Ha
 STRING 9895
 // Fähigkeiten: A0LB (Schützen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9896
@@ -38631,7 +38631,7 @@ Marktplatz
 STRING 9909
 // Fähigkeiten: A0NT (Blenden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 9910
@@ -38655,7 +38655,7 @@ Conversion - Level 4
 STRING 9927
 // Fähigkeiten: A0ZW (Zehren - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 9936
@@ -38871,7 +38871,7 @@ Entzünden - Stufe 1
 STRING 10001
 // Fähigkeiten: A0U9 (Feuersbrunst - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10002
@@ -38883,7 +38883,7 @@ Entzünden - Stufe 2
 STRING 10003
 // Fähigkeiten: A1IH (Elementarwesen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10004
@@ -38895,7 +38895,7 @@ Entzünden - Stufe 3
 STRING 10005
 // Fähigkeiten: A0L6 (Teleportation - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10006
@@ -38907,7 +38907,7 @@ Entzünden - Stufe 4
 STRING 10007
 // Fähigkeiten: A1KE (Erdgefängnis - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10008
@@ -38997,7 +38997,7 @@ Feuersbrunst - Stufe 5
 STRING 10079
 // Fähigkeiten: A0KM (Inferno - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10080
@@ -39009,7 +39009,7 @@ Feuersbrunst - Stufe 1
 STRING 10081
 // Fähigkeiten: A0L8 (Teleportation - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10082
@@ -39021,7 +39021,7 @@ Feuersbrunst - Stufe 2
 STRING 10083
 // Fähigkeiten: A0UQ (Blitzschlag - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10084
@@ -39033,7 +39033,7 @@ Feuersbrunst - Stufe 3
 STRING 10085
 // Fähigkeiten: A0V1 (Erfrierung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10086
@@ -39045,7 +39045,7 @@ Feuersbrunst - Stufe 4
 STRING 10087
 // Fähigkeiten: A1IJ (Elementarwesen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10088
@@ -39075,7 +39075,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 10113
 // Fähigkeiten: A0OG (Linderung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 10125
@@ -39129,31 +39129,31 @@ Gleißendes Licht - Stufe 5
 STRING 10158
 // Fähigkeiten: A0V2 (Erfrierung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10160
 // Fähigkeiten: A0KN (Inferno - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10162
 // Fähigkeiten: A0ZG (Erdgefängnis - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10164
 // Fähigkeiten: A0TN (Eiszeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10166
 // Fähigkeiten: A0TX (Entzünden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10178
@@ -39219,7 +39219,7 @@ Blitzschlag - Stufe 5
 STRING 10238
 // Fähigkeiten: A0U7 (Feuersbrunst - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10239
@@ -39231,7 +39231,7 @@ Blitzschlag - Stufe 1
 STRING 10240
 // Fähigkeiten: A0KX (Feuergeschoss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10241
@@ -39243,7 +39243,7 @@ Blitzschlag - Stufe 2
 STRING 10242
 // Fähigkeiten: A0TD (Eisgeschoss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10243
@@ -39255,7 +39255,7 @@ Blitzschlag - Stufe 3
 STRING 10244
 // Fähigkeiten: A11P (Beherrschung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10245
@@ -39267,7 +39267,7 @@ Blitzschlag - Stufe 4
 STRING 10246
 // Fähigkeiten: A0TG (Eisgeschoss - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10247
@@ -39411,7 +39411,7 @@ Erfrierung - Stufe 5
 STRING 10323
 // Fähigkeiten: A0TQ (Eiszeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10324
@@ -39423,7 +39423,7 @@ Erfrierung - Stufe 1
 STRING 10325
 // Fähigkeiten: A0UA (Feuersbrunst - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10326
@@ -39435,7 +39435,7 @@ Erfrierung - Stufe 2
 STRING 10327
 // Fähigkeiten: A1OK (Zehren - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10328
@@ -39447,7 +39447,7 @@ Erfrierung - Stufe 3
 STRING 10329
 // Fähigkeiten: A1KO (Entzünden - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10330
@@ -39459,7 +39459,7 @@ Erfrierung - Stufe 4
 STRING 10331
 // Fähigkeiten: A0ZN (Wut der Elemente - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10332
@@ -39735,37 +39735,37 @@ Ban [|cffffcc00Level 2|r]
 STRING 10378
 // Fähigkeiten: A1T9 (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10379
 // Fähigkeiten: A16L (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10380
 // Fähigkeiten: A0VF (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10381
 // Fähigkeiten: A1TG (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10382
 // Fähigkeiten: A16K (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10383
 // Fähigkeiten: A0VD (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 10384
@@ -39957,7 +39957,7 @@ Block - Stufe 5
 STRING 10451
 // Fähigkeiten: A0U0 (Entzünden - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10452
@@ -39969,7 +39969,7 @@ Block - Stufe 1
 STRING 10453
 // Fähigkeiten: A1IG (Elementarwesen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 10454
@@ -40425,7 +40425,7 @@ Eagle Eye [|cffffcc00Level 1|r]
 STRING 10695
 // Fähigkeiten: A0YO (Gewandheit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10696
@@ -40443,7 +40443,7 @@ Eagle Eye [|cffffcc00Level 2|r]
 STRING 10708
 // Fähigkeiten: A1IP (Leprechaun - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10709
@@ -40461,7 +40461,7 @@ Eagle Eye [|cffffcc00Level 3|r]
 STRING 10721
 // Fähigkeiten: A1LV (Hundezwinger - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10722
@@ -40479,7 +40479,7 @@ Eagle Eye [|cffffcc00Level 4|r]
 STRING 10734
 // Fähigkeiten: A11G (Schütze - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10735
@@ -40497,7 +40497,7 @@ Eagle Eye [|cffffcc00Level 5|r]
 STRING 10747
 // Fähigkeiten: A1LZ (Lauern - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10748
@@ -40575,7 +40575,7 @@ Agility [|cffffcc00Level 1|r]
 STRING 10770
 // Fähigkeiten: A0YD (Adlerauge - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10771
@@ -40593,7 +40593,7 @@ Agility [|cffffcc00Level 2|r]
 STRING 10783
 // Fähigkeiten: A188 (Falle - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10784
@@ -40611,7 +40611,7 @@ Agility [|cffffcc00Level 3|r]
 STRING 10796
 // Fähigkeiten: A119 (Schuss ins Herz - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10797
@@ -40629,7 +40629,7 @@ Agility [|cffffcc00Level 4|r]
 STRING 10809
 // Fähigkeiten: A1BP (Hundezwinger - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10810
@@ -40647,7 +40647,7 @@ Agility [|cffffcc00Level 5|r]
 STRING 10822
 // Fähigkeiten: A12L (Pfeilhagel - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 10823
@@ -41793,7 +41793,7 @@ Elementare Gewalt - Stufe 1
 STRING 11095
 // Fähigkeiten: A0ZI (Erdgefängnis - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11096
@@ -41859,7 +41859,7 @@ Erdgefängnis - Stufe 3
 STRING 11139
 // Fähigkeiten: A0R0 (Vorherige Klasse), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 11149
@@ -41877,7 +41877,7 @@ Erdgefängnis - Stufe 4
 STRING 11153
 // Fähigkeiten: A09Z (Erwachen des Waldes), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 11163
@@ -41895,7 +41895,7 @@ Erdgefängnis - Stufe 5
 STRING 11167
 // Fähigkeiten: A1LS (Inferno - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11168
@@ -41907,7 +41907,7 @@ Erdgefängnis - Stufe 1
 STRING 11169
 // Fähigkeiten: A0ZX (Zehren - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11170
@@ -41919,7 +41919,7 @@ Erdgefängnis - Stufe 2
 STRING 11171
 // Fähigkeiten: A0UT (Blitzschlag - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11172
@@ -41931,7 +41931,7 @@ Erdgefängnis - Stufe 3
 STRING 11173
 // Fähigkeiten: A0L5 (Teleportation - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11174
@@ -41943,7 +41943,7 @@ Erdgefängnis - Stufe 4
 STRING 11175
 // Fähigkeiten: A0ZL (Pure Energie - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11176
@@ -41973,7 +41973,7 @@ Pure Energie - Stufe 1
 STRING 11191
 // Fähigkeiten: A0ZT (Zehren - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11192
@@ -42003,7 +42003,7 @@ Wut der Elemente - Stufe 1
 STRING 11207
 // Fähigkeiten: A11N (Beherrschung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11208
@@ -42111,7 +42111,7 @@ Beherrschung - Stufe 2
 STRING 11284
 // Fähigkeiten: A0KV (Feuergeschoss - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11285
@@ -42123,7 +42123,7 @@ Zehren - Stufe 1
 STRING 11286
 // Fähigkeiten: A0UR (Blitzschlag - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11287
@@ -42135,7 +42135,7 @@ Zehren - Stufe 2
 STRING 11288
 // Fähigkeiten: A0KK (Inferno - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11289
@@ -42147,7 +42147,7 @@ Zehren - Stufe 3
 STRING 11290
 // Fähigkeiten: A0UI (Feuersbrunst - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11291
@@ -42159,7 +42159,7 @@ Zehren - Stufe 4
 STRING 11292
 // Fähigkeiten: A0TZ (Entzünden - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11293
@@ -42548,13 +42548,13 @@ Throws an ice missile at an opponent, deals ice damage and reduces the movement 
 STRING 11453
 // Fähigkeiten: A10W (Sprinten - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 1|r]
+Sprint [|cffffcc00Level 1|r]
 }
 
 STRING 11454
 // Fähigkeiten: A12X (Lauern - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11455
@@ -42566,13 +42566,13 @@ Sprinten - Stufe 1
 STRING 11466
 // Fähigkeiten: A10X (Sprinten - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 2|r]
+Sprint [|cffffcc00Level 2|r]
 }
 
 STRING 11467
 // Fähigkeiten: A0GX (Brandpfeile - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11468
@@ -42584,13 +42584,13 @@ Sprinten - Stufe 2
 STRING 11479
 // Fähigkeiten: A10Y (Sprinten - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 3|r]
+Sprint [|cffffcc00Level 3|r]
 }
 
 STRING 11480
 // Fähigkeiten: A1KB (Adlerauge - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11481
@@ -42602,13 +42602,13 @@ Sprinten - Stufe 3
 STRING 11492
 // Fähigkeiten: A10Z (Sprinten - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 4|r]
+Sprint [|cffffcc00Level 4|r]
 }
 
 STRING 11493
 // Fähigkeiten: A12K (Pfeilhagel - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11494
@@ -42620,13 +42620,13 @@ Sprinten - Stufe 4
 STRING 11505
 // Fähigkeiten: A110 (Sprinten - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten [|cffffcc00Stufe 5|r]
+Sprint [|cffffcc00Level 5|r]
 }
 
 STRING 11506
 // Fähigkeiten: A0YQ (Gewandheit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11507
@@ -42752,7 +42752,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 11538
 // Fähigkeiten: A1BS (Hundezwinger - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11539
@@ -42770,7 +42770,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 11552
 // Fähigkeiten: A187 (Falle - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11553
@@ -42788,7 +42788,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 11566
 // Fähigkeiten: A1ML (Mehrfachschuss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11567
@@ -42806,7 +42806,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 11580
 // Fähigkeiten: A12V (Lauern - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11581
@@ -42824,7 +42824,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 11594
 // Fähigkeiten: A1L5 (Eispfeile - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11595
@@ -42907,7 +42907,7 @@ Archer [|cffffcc00Level 1|r]
 STRING 11618
 // Fähigkeiten: A17U (Mehrfachschuss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11619
@@ -43129,25 +43129,25 @@ The Elemental Mage restores mana points for life per second. He can die from thi
 STRING 11659
 // Fähigkeiten: A0ZQ (Zehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 11660
 // Fähigkeiten: A0ZR (Zehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 11661
 // Fähigkeiten: A1OJ (Zehren - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 11662
 // Fähigkeiten: A0ZP (Zehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 11663
@@ -43321,7 +43321,7 @@ Beherrschung - Stufe 5
 STRING 11723
 // Fähigkeiten: A1O8 (Teleportation - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11724
@@ -43333,7 +43333,7 @@ Beherrschung - Stufe 1
 STRING 11725
 // Fähigkeiten: A0KL (Inferno - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11726
@@ -43345,7 +43345,7 @@ Beherrschung - Stufe 2
 STRING 11727
 // Fähigkeiten: A1N4 (Wut der Elemente - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 11728
@@ -43399,31 +43399,31 @@ Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schade
 STRING 11738
 // Fähigkeiten: A0XB (Block - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 11739
 // Fähigkeiten: A0X9 (Block - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 11740
 // Fähigkeiten: A1JA (Block - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 11741
 // Fähigkeiten: A0X8 (Block - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 11742
 // Fähigkeiten: A0XC (Block - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzünden [|cffffcc00Stufe 4|r]
+Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
 }
 
 STRING 11743
@@ -43855,7 +43855,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 11873
 // Fähigkeiten: A0MW (Eispfeile - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11874
@@ -43873,7 +43873,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 11887
 // Fähigkeiten: A116 (Schuss ins Herz - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11888
@@ -43891,7 +43891,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 11901
 // Fähigkeiten: A10X (Sprinten - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11902
@@ -43909,7 +43909,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 11915
 // Fähigkeiten: A18A (Falle - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11916
@@ -43927,7 +43927,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 11929
 // Fähigkeiten: A0YF (Adlerauge - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11930
@@ -44119,7 +44119,7 @@ STRING 11962
 STRING 11972
 // Fähigkeiten: A0MY (Eispfeile - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11973
@@ -44131,7 +44131,7 @@ Lauern - Stufe 1
 STRING 11985
 // Fähigkeiten: A1LX (Leprechaun - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11986
@@ -44143,7 +44143,7 @@ Lauern - Stufe 2
 STRING 11998
 // Fähigkeiten: A110 (Sprinten - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 11999
@@ -44161,7 +44161,7 @@ Lying in Wait [|cffffcc00Level 4|r]
 STRING 12011
 // Fähigkeiten: A1NZ (Sprinten - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 12012
@@ -44179,7 +44179,7 @@ Lying in Wait [|cffffcc00Level 5|r]
 STRING 12024
 // Fähigkeiten: A0C6 (Vergiftete Pfeile - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 12025
@@ -44389,7 +44389,7 @@ Aura der eisernen Haut
 STRING 12063
 // Fähigkeiten: A0PP (Aura der eisernen Haut - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 12072
@@ -44413,7 +44413,7 @@ Aura der eisernen Haut - Stufe 1
 STRING 12077
 // Fähigkeiten: A137 (Aura der eisernen Haut - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 12086
@@ -44437,7 +44437,7 @@ Aura der eisernen Haut - Stufe 2
 STRING 12091
 // Fähigkeiten: A135 (Aura der eisernen Haut - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 12100
@@ -44461,7 +44461,7 @@ Aura der eisernen Haut - Stufe 3
 STRING 12105
 // Fähigkeiten: A136 (Aura der eisernen Haut - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 12114
@@ -44485,7 +44485,7 @@ Aura der eisernen Haut - Stufe 4
 STRING 12119
 // Fähigkeiten: A134 (Aura der eisernen Haut - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Rüstung des Ritters und von Verbündeten in einem Gebiet von <A029,Area1> .|n|n|cffffcc00Stufe 1|r - Erhöht die Rüstung um <A029,DataA1>.|n|cffffcc00Stufe 2|r - Erhöht die Rüstung um <A029,DataA2>.|n|cffffcc00Stufe 3|r - Erhöht die Rüstung um  <A029,DataA3>.|n|cffffcc00Stufe 4|r - Erhöht die Rüstung um <A029,DataA4>.|n|cffffcc00Stufe 5|r - Erhöht die Rüstung um <A029,DataA5>.
+Increases the armour of the Knight and allies in an area of <A029,Area1> .|n|n|cffffcc00Level 1|r - Increases the armour by <A029,DataA1>.|n|cffffcc00Level 2|r - Increases the armour by <A029,DataA2>.|n|cffffcc00Level 3|r - Increases the armour by <A029,DataA3>.|n|cffffcc00Level 4|r - Increases the armour by <A029,DataA4>.|n|cffffcc00Level 5|r - Increases the armour by <A029,DataA5>.
 }
 
 STRING 12128
@@ -44737,7 +44737,7 @@ Epidemie - Stufe 1
 STRING 12186
 // Fähigkeiten: A0I2 (Dämonendiener - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-(Zauberbuchfähigkeit - Nekromant)
+Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners.Setzt die Dauer beschworener Verbündeter auf 50 Sekunden oder beschworener Gegner auf 20 Sekunden.|nDie Abklingzeit nimmt mit der Stufe ab.
 }
 
 STRING 12187
@@ -44845,7 +44845,7 @@ STRING 12203
 STRING 12205
 // Gegenstände: I04S (Orkaxt), Name (Name (unam))
 {
-Orkaxt
+Orc Axe
 }
 
 STRING 12206
@@ -44887,7 +44887,7 @@ STRING 12211
 STRING 12212
 // Fähigkeiten: A13T (Orkaxt), Name (Name (anam))
 {
-Orkaxt
+Orc Axe
 }
 
 STRING 12213
@@ -44947,7 +44947,7 @@ The wool of a sheep.
 STRING 12223
 // Gegenstände: I05M (Gift), Name (Name (unam))
 {
-Gift
+Poison
 }
 
 STRING 12228
@@ -46321,7 +46321,7 @@ Manastrom [|cffffcc00Stufe 1|r]
 STRING 12773
 // Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Zauberbuch - Zauberer)
 }
 
 STRING 12774
@@ -46339,7 +46339,7 @@ STRING 12786
 STRING 12787
 // Fähigkeiten: A10B (Arkaner Hunger - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Ancestors Pact |cffffcc00Level 4|r]
+(Zauberbuch - Zauberer)
 }
 
 STRING 12788
@@ -47203,7 +47203,7 @@ STRING 13023
 STRING 13024
 // Fähigkeiten: A0YN (Gewandheit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13025
@@ -47311,7 +47311,7 @@ STRING 13041
 STRING 13042
 // Fähigkeiten: A0VC (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13043
@@ -47575,7 +47575,7 @@ STRING 13085
 STRING 13086
 // Fähigkeiten: A1TB (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13087
@@ -47587,7 +47587,7 @@ STRING 13087
 STRING 13088
 // Fähigkeiten: A1TA (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13089
@@ -47599,7 +47599,7 @@ STRING 13089
 STRING 13090
 // Fähigkeiten: A16I (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13091
@@ -47611,7 +47611,7 @@ STRING 13091
 STRING 13092
 // Fähigkeiten: A0VH (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13093
@@ -47623,7 +47623,7 @@ STRING 13093
 STRING 13094
 // Fähigkeiten: A16O (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13095
@@ -47635,7 +47635,7 @@ STRING 13095
 STRING 13096
 // Fähigkeiten: A1TD (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13097
@@ -47647,7 +47647,7 @@ STRING 13097
 STRING 13098
 // Fähigkeiten: A0VG (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 13099
@@ -48991,7 +48991,7 @@ Mehrfachschuss [|cffffcc00Stufe 3|r]
 STRING 13336
 // Fähigkeiten: A10W (Sprinten - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13337
@@ -49009,7 +49009,7 @@ Mehrfachschuss [|cffffcc00Stufe 4|r]
 STRING 13349
 // Fähigkeiten: A1MV (Vergiftete Pfeile - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13350
@@ -49027,7 +49027,7 @@ Mehrfachschuss [|cffffcc00Stufe 5|r]
 STRING 13362
 // Fähigkeiten: A0GU (Brandpfeile - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13363
@@ -49297,7 +49297,7 @@ Trap
 STRING 13418
 // Fähigkeiten: A12I (Pfeilhagel - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13419
@@ -49309,7 +49309,7 @@ Falle - Stufe 1
 STRING 13431
 // Fähigkeiten: A189 (Falle - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13432
@@ -49321,7 +49321,7 @@ Falle - Stufe 2
 STRING 13444
 // Fähigkeiten: A0GL (Vergiftete Pfeile - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13445
@@ -49333,7 +49333,7 @@ Falle - Stufe 3
 STRING 13457
 // Fähigkeiten: A0GV (Brandpfeile - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13458
@@ -49345,7 +49345,7 @@ Falle - Stufe 4
 STRING 13470
 // Fähigkeiten: A12J (Pfeilhagel - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 13471
@@ -50119,7 +50119,7 @@ Baupläne eines Baumhauses
 STRING 13602
 // Fähigkeiten: A15Z (Gift), Name (Name (anam))
 {
-Gift
+Poison
 }
 
 STRING 13603
@@ -61471,7 +61471,7 @@ Tierfähigkeiten - Krähengestalt - Manaregeneration
 STRING 15564
 // Fähigkeiten: A1BO (Hundezwinger - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 15565
@@ -61489,7 +61489,7 @@ Learn Spell (|cffffcc00Z|r) - 11 Zauberpunkte
 STRING 15578
 // Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 15579
@@ -61507,7 +61507,7 @@ Learn Spell (|cffffcc00Z|r) - 12 Zauberpunkte
 STRING 15592
 // Fähigkeiten: A0GY (Brandpfeile - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 15593
@@ -61525,7 +61525,7 @@ Learn Spell (|cffffcc00Z|r) - 13 Zauberpunkte
 STRING 15606
 // Fähigkeiten: A01B (Gewandheit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 15607
@@ -61543,7 +61543,7 @@ Learn Spell (|cffffcc00Z|r) - 14 Zauberpunkte
 STRING 15620
 // Fähigkeiten: A0YP (Gewandheit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 15621
@@ -62479,7 +62479,7 @@ STRING 15838
 STRING 15839
 // Fähigkeiten: A0FC (Waldfestung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nErzeugt eine Waldfestung aus lebendigen Bäumen, die sie um jeden Preis verteidigen.
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nCreates a forest fortress from living trees which defend it at any cost.
 }
 
 STRING 15840
@@ -68636,7 +68636,7 @@ Adlerauge erlernen
 STRING 17282
 // Fähigkeiten: A12U (Lauern - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 17283
@@ -68858,7 +68858,7 @@ Leprechaun [|cffffcc00Stufe 1|r]
 STRING 17329
 // Fähigkeiten: A17V (Mehrfachschuss - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 17330
@@ -68978,7 +68978,7 @@ STRING 17350
 STRING 17351
 // Fähigkeiten: A0TO (Eiszeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 17352
@@ -69061,7 +69061,7 @@ STRING 17364
 STRING 17365
 // Fähigkeiten: A1IY (Entzünden), Name (Name (anam))
 {
-Entzünden
+Inflame
 }
 
 STRING 17366
@@ -69350,7 +69350,7 @@ Absorbation - Erlernen
 STRING 17424
 // Fähigkeiten: A1KM (Elementare Gewalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 17425
@@ -69380,7 +69380,7 @@ Gewandheit erlernen
 STRING 17429
 // Fähigkeiten: A0GJ (Vergiftete Pfeile - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 17430
@@ -69506,7 +69506,7 @@ Dark Servant [|cffffcc00Level 5|r] (|cffffcc00W|r)
 STRING 17450
 // Fähigkeiten: A027 (Stich), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17451
@@ -69716,7 +69716,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 17485
 // Fähigkeiten: A073 (Selbstlosigkeit), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17486
@@ -70178,7 +70178,7 @@ Erwachen des Waldes [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
 STRING 17562
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17563
@@ -70448,7 +70448,7 @@ Rush [|cffffcc00Level 1|r] (|cffffcc00T|r)
 STRING 17607
 // Fähigkeiten: A04W (Linderung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17608
@@ -70460,7 +70460,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 17609
 // Fähigkeiten: A0HX (Vergiftete Pfeile), Unhotkey (Tastaturkürzel - Ausschalten (auhk))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17610
@@ -70688,7 +70688,7 @@ Beutezug [|cffffcc00Stufe 1|r] (|cffffcc00U|r)
 STRING 17647
 // Fähigkeiten: A052 (Reinheit), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17648
@@ -70760,7 +70760,7 @@ Rage [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
 STRING 17659
 // Fähigkeiten: A1FF (Rage), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17660
@@ -71006,7 +71006,7 @@ Vergiftete Pfeile [|cffffcc00Stufe 5|r] (|cffffcc00U|r)
 STRING 17700
 // Fähigkeiten: A06J (Seelendiebstahl), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17701
@@ -71114,7 +71114,7 @@ Trap [|cffffcc00Level 5|r] (|cffffcc00W|r)
 STRING 17718
 // Fähigkeiten: A00Y (ASystemGUI - shortcut u), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17719
@@ -71162,7 +71162,7 @@ Kennels [|cffffcc00Level 5|r] (|cffffcc00G|r)
 STRING 17726
 // Fähigkeiten: A01U (Dunkle Diener), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17727
@@ -71546,7 +71546,7 @@ Wut der Elemente (|cffffcc00Q|r)
 STRING 17790
 // Fähigkeiten: A0A8 (Arkaner Schutz), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 17791
@@ -71576,7 +71576,7 @@ Y
 STRING 17795
 // Fähigkeiten: A00Y (ASystemGUI - shortcut u), Tip (Tooltipp - Normal (atp1))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17796
@@ -71594,7 +71594,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 17798
 // Fähigkeiten: A010 (ASystemGUI - shortcut w), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17799
@@ -71822,7 +71822,7 @@ Kontrollierter Zeitfluss [|cffffcc00Stufe 1|r] (|cffffcc00Y|r)
 STRING 17836
 // Fähigkeiten: A1QD (Verdammnis), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 17837
@@ -71990,7 +71990,7 @@ Transfer [|cffffcc00Level 1|r] (|cffffcc00J|r)
 STRING 17865
 // Fähigkeiten: A19Z (Beutezug), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+U
 }
 
 STRING 17866
@@ -72008,7 +72008,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 17868
 // Fähigkeiten: A010 (ASystemGUI - shortcut w), Tip (Tooltipp - Normal (atp1))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 17869
@@ -72194,7 +72194,7 @@ Elementare Gewalt - Erlernen
 STRING 17909
 // Fähigkeiten: A0V0 (Erfrierung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 17910
@@ -72230,7 +72230,7 @@ Entzünden - Erlernen
 STRING 17925
 // Fähigkeiten: A0TE (Eisgeschoss - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 17926
@@ -72290,7 +72290,7 @@ Learn Ban Evil
 STRING 17953
 // Fähigkeiten: A0PD (Genesung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 17954
@@ -72374,7 +72374,7 @@ Feuergeschoss - Erlernen
 STRING 17989
 // Fähigkeiten: A1KW (Feuergeschoss - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 17990
@@ -72518,7 +72518,7 @@ Erfrierung - Erlernen
 STRING 18053
 // Fähigkeiten: A0TY (Entzünden - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18054
@@ -72542,7 +72542,7 @@ Eispfeile erlernen
 STRING 18065
 // Fähigkeiten: A0MX (Eispfeile - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18066
@@ -72614,7 +72614,7 @@ Learn Gods Favour
 STRING 18097
 // Fähigkeiten: A0NS (Blenden - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18098
@@ -72686,7 +72686,7 @@ Pfeilhagel erlernen
 STRING 18129
 // Fähigkeiten: A1LD (Pfeilhagel - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18130
@@ -72746,7 +72746,7 @@ Kräuterheilung - Erlernen
 STRING 18161
 // Fähigkeiten: A0UJ (Segen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18162
@@ -72782,7 +72782,7 @@ Learn Holy Will
 STRING 18177
 // Fähigkeiten: A0PB (Genesung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18178
@@ -72830,7 +72830,7 @@ Eiszeit - Erlernen
 STRING 18197
 // Fähigkeiten: A0KU (Feuergeschoss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18198
@@ -72866,7 +72866,7 @@ Eisgeschoss - Erlernen
 STRING 18213
 // Fähigkeiten: A11Q (Beherrschung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18214
@@ -72890,7 +72890,7 @@ Learn Impending Disaster
 STRING 18225
 // Fähigkeiten: A1J4 (Linderung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18226
@@ -72938,7 +72938,7 @@ Inferno - Erlernen
 STRING 18245
 // Fähigkeiten: A0ZV (Zehren - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18246
@@ -72998,7 +72998,7 @@ Hundezwinger erlernen
 STRING 18271
 // Fähigkeiten: A117 (Schuss ins Herz - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18272
@@ -73034,7 +73034,7 @@ Leprechaun erlernen
 STRING 18287
 // Fähigkeiten: A0YE (Adlerauge - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18288
@@ -73070,7 +73070,7 @@ Lauern erlernen
 STRING 18303
 // Fähigkeiten: A17S (Mehrfachschuss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18304
@@ -73118,7 +73118,7 @@ Blitzschlag - Erlernen
 STRING 18323
 // Fähigkeiten: A1L4 (Erfrierung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18324
@@ -73172,7 +73172,7 @@ Learn Martyr
 STRING 18351
 // Fähigkeiten: A0PJ (Heiliger Wille - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18352
@@ -73352,7 +73352,7 @@ Learn Master of Necromancy
 STRING 18431
 // Fähigkeiten: A0QQ (Böses hindern - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18432
@@ -73400,7 +73400,7 @@ Beherrschung - Erlernen
 STRING 18451
 // Fähigkeiten: A0V4 (Erfrierung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18452
@@ -73460,7 +73460,7 @@ Mehrfachschuss erlernen
 STRING 18477
 // Fähigkeiten: A0MV (Eispfeile - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18478
@@ -73484,7 +73484,7 @@ Mehrfachschuss - Erlernen
 STRING 18483
 // Fähigkeiten: A0WK (Vervielfachung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer vervielfacht sich selbst. Seine Vervielfachungen verursachen einen Teil seines Schadens. |n|n|cffffcc00Stufe 1|r - Vervielfacht sich <A08T,DataA1> mal. Seine Vervielfachungen verursachen <A08T,DataB1,%> % seines Schadens.|n|cffffcc00Stufe 2|r - Vervielfacht sich <A08T,DataA2> mal. Seine Vervielfachungen verursachen <A08T,DataB2,%> % seines Schadens.|n|cffffcc00Stufe 3|r - Vervielfacht sich <A08T,DataA3> mal. Seine Vervielfachungen verursachen <A08T,DataB3,%> % seines Schadens.|n|cffffcc00Stufe 4|r - Vervielfacht sich <A08T,DataA4> mal. Seine Vervielfachungen verursachen <A08T,DataB4,%> % seines Schadens.|n|cffffcc00Stufe 5|r - Vervielfacht sich <A08T,DataA5> mal. Seine Vervielfachungen verursachen <A08T,DataB5,%> % seines Schadens.
+The wizard multiplies himself. His multiplications deal a part of his damage. |n|n|cffffcc00Level 1|r - Multiplies himself <A08T,DataA1> times. His multiplications deal <A08T,DataB1,%> % of his damage.|n|cffffcc00Level 2|r - Multiplies himself <A08T,DataA2> times. His multiplications deal <A08T,DataB2,%> % of his damage.|n|cffffcc00Level 3|r - Multiplies himself <A08T,DataA3> times. His multiplications deal <A08T,DataB3,%> % of his damage.|n|cffffcc00Level 4|r - Multiplies himself <A08T,DataA4> times. His multiplications deal <A08T,DataB4,%> % of his damage.|n|cffffcc00Level 5|r - Multiplies himself <A08T,DataA5> times. His multiplications deal <A08T,DataB5,%> % of his damage.
 }
 
 STRING 18492
@@ -73640,7 +73640,7 @@ Vergiftete Pfeile erlernen
 STRING 18557
 // Fähigkeiten: A118 (Schuss ins Herz - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18558
@@ -73676,7 +73676,7 @@ Learn Prevent Evil
 STRING 18573
 // Fähigkeiten: A0NI (Märtyrer - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18574
@@ -73712,7 +73712,7 @@ Learn Protect
 STRING 18589
 // Fähigkeiten: A1MF (Meister der Nekromantie - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18590
@@ -73754,7 +73754,7 @@ Pure Energie - Erlernen
 STRING 18609
 // Fähigkeiten: A1II (Elementarwesen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18610
@@ -73790,7 +73790,7 @@ Wut der Elemente - Erlernen
 STRING 18625
 // Fähigkeiten: A0U8 (Feuersbrunst - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18626
@@ -73880,7 +73880,7 @@ Learn Recovery
 STRING 18667
 // Fähigkeiten: A0NE (Märtyrer - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18668
@@ -74024,7 +74024,7 @@ Learn Revive
 STRING 18731
 // Fähigkeiten: A0P1 (Reinheit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 18732
@@ -74204,7 +74204,7 @@ Schütze erlernen
 STRING 18811
 // Fähigkeiten: A11A (Schuss ins Herz - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18812
@@ -74240,7 +74240,7 @@ Schuss ins Herz erlernen
 STRING 18827
 // Fähigkeiten: A10Y (Sprinten - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18828
@@ -74348,7 +74348,7 @@ Sprinten erlernen
 STRING 18875
 // Fähigkeiten: A0YC (Adlerauge - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 18876
@@ -74504,7 +74504,7 @@ Teleportation - Erlernen
 STRING 18943
 // Fähigkeiten: A0L7 (Teleportation - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 18944
@@ -74636,7 +74636,7 @@ Learn Trap
 STRING 19001
 // Fähigkeiten: A186 (Falle - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Entzünden [|cffffcc00Stufe 5|r]
+(Grimoire - Ranger)
 }
 
 STRING 19002
@@ -74696,7 +74696,7 @@ Baumhirte - Erlernen
 STRING 19023
 // Fähigkeiten: A0ZS (Zehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier bekommt Manapunkte für Leben pro Sekunde zurück. Er kann an dieser Fähigkeit sterben. |n|n|cffffcc00Stufe 1|r -  20 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 2|r -  30 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 3|r -  40 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 4|r -  50 Manapunkte für 10 Leben pro Sekunde.|n|cffffcc00Stufe 5|r -  60 Manapunkte für 10 Leben pro Sekunde.
+The Elemental Mage restores mana points for life per second. He can die from this ability. |n|n|cffffcc00Level 1|r -  20 mana points for 10 life per second.|n|cffffcc00Level 2|r -  30 mana points for 10 life per second.|n|cffffcc00Level 3|r -  40 mana points for 10 life per second.|n|cffffcc00Level 4|r -  50 mana points for 10 life per second.|n|cffffcc00Level 5|r -  60 mana points for 10 life per second.
 }
 
 STRING 19032
@@ -74720,7 +74720,7 @@ Zehren - Erlernen
 STRING 19037
 // Fähigkeiten: A0TC (Eisgeschoss - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Teleportation [|cffffcc00Stufe 1|r]
+(Grimoire Ability - Elemental Mage)
 }
 
 STRING 19038
@@ -74882,7 +74882,7 @@ Learn Conversion
 STRING 19113
 // Fähigkeiten: A1JE (Reinheit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Selbstlosigkeit [|cffffcc00Stufe 3|r]
+(Grimoire - Cleric)
 }
 
 STRING 19114
@@ -75740,7 +75740,7 @@ Sukkubus anheuern
 STRING 19331
 // Einheiten: n087 (Berserker), Tip (Tooltipp - Einfach (utip))
 {
-Berserker anheuern
+Recruit Berserker
 }
 
 STRING 19332
@@ -75764,7 +75764,7 @@ Choose Class (|cffffcc00Q|r)
 STRING 19335
 // Fähigkeiten: A0AL (Waldfeenzauber), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Elementarmagier schließt einen Gegner bis zu X Sekunden in einem Erdgefängnis ein. In dieser Zeit kann er nicht agieren. Das Gefängnis entfernt alle negativen Effekte auf dem Ziel und wird durch feindlichen Schaden gebrochen.
+W
 }
 
 STRING 19336
@@ -75950,7 +75950,7 @@ Verstärkt die Rüstung um <A1Q7,DataA1>. Verursacht zudem <A1Q8,DataA1> Schaden
 STRING 19367
 // Einheiten: n086 (Schattenefreet), Tip (Tooltipp - Einfach (utip))
 {
-Schattenefreet anheuern
+Recruit Shadow Efreet
 }
 
 STRING 19368
@@ -75998,7 +75998,7 @@ Verdammnis
 STRING 19383
 // Fähigkeiten: A08L (Böses bannen), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Beschwört für <A0D3,Dur1> Sekunden eine heilende Quelle, die bei Verbündeten im Umkreis Leben pro Sekunde heilt. |n|n|cffffcc00Stufe 1|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 2|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 3|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde. |n|cffffcc00Stufe 4|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.|n|cffffcc00Stufe 5|r - Heilt <A0QX,DataA1,%> % des Lebens pro Sekunde.
+L
 }
 
 STRING 19384
@@ -78272,7 +78272,7 @@ STRING 19854
 STRING 19855
 // Einheiten: n07P (Deranors Leibwache), Name (Name (unam))
 {
-Deranors Leibwache
+Deranor's Bodyguard
 }
 
 STRING 19856
@@ -78386,7 +78386,7 @@ Raise Creeps from the Dead
 STRING 19874
 // Fähigkeiten: A1S8 (Unholde erwecken), Tip (Tooltipp - Normal (atp1))
 {
-Unholde erwecken
+Raise Creeps from the Dead
 }
 
 STRING 19875
@@ -78566,7 +78566,7 @@ Dragon Slayer
 STRING 19922
 // Einheiten: H02W (Drachentöter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19923
@@ -78632,7 +78632,7 @@ Druid
 STRING 19933
 // Einheiten: H02Z (Druide), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19934
@@ -78650,7 +78650,7 @@ Druid
 STRING 19936
 // Einheiten: H030 (Druide), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19937
@@ -78668,7 +78668,7 @@ Elemental Mage
 STRING 19939
 // Einheiten: H031 (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19940
@@ -78686,7 +78686,7 @@ Elemental Mage
 STRING 19942
 // Einheiten: H032 (Elementarmagier), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19943
@@ -78722,7 +78722,7 @@ Cleric
 STRING 19948
 // Einheiten: H033 (Kleriker), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19949
@@ -78740,7 +78740,7 @@ Cleric
 STRING 19951
 // Einheiten: H034 (Kleriker), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19952
@@ -78758,7 +78758,7 @@ Necromancer
 STRING 19954
 // Einheiten: H035 (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19955
@@ -78776,7 +78776,7 @@ Necromancer
 STRING 19957
 // Einheiten: H036 (Nekromant), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19958
@@ -78794,7 +78794,7 @@ Knight
 STRING 19960
 // Einheiten: H037 (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19961
@@ -78812,7 +78812,7 @@ Knight
 STRING 19963
 // Einheiten: H038 (Ritter), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19964
@@ -78830,7 +78830,7 @@ Ranger
 STRING 19966
 // Einheiten: H039 (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19967
@@ -78848,7 +78848,7 @@ Ranger
 STRING 19969
 // Einheiten: H03A (Waldläufer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19970
@@ -78866,7 +78866,7 @@ Wizard
 STRING 19972
 // Einheiten: H03B (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19973
@@ -78884,7 +78884,7 @@ Wizard
 STRING 19975
 // Einheiten: H03C (Zauberer), Propernames (Eigennamen (upro))
 {
-Mensch auf einem Pferd
+Human on a Horse
 }
 
 STRING 19976
@@ -79154,7 +79154,7 @@ STRING 20019
 STRING 20020
 // Fähigkeiten: A16J (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20021
@@ -79166,7 +79166,7 @@ STRING 20021
 STRING 20022
 // Fähigkeiten: A0C1 (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20023
@@ -79178,7 +79178,7 @@ STRING 20023
 STRING 20024
 // Fähigkeiten: A0VE (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20025
@@ -79190,7 +79190,7 @@ STRING 20025
 STRING 20026
 // Fähigkeiten: A1TC (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20027
@@ -79202,7 +79202,7 @@ STRING 20027
 STRING 20028
 // Fähigkeiten: A16P (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20029
@@ -79214,7 +79214,7 @@ STRING 20029
 STRING 20030
 // Fähigkeiten: A1TF (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20031
@@ -79226,7 +79226,7 @@ STRING 20031
 STRING 20032
 // Fähigkeiten: A16M (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20033
@@ -79238,7 +79238,7 @@ STRING 20033
 STRING 20034
 // Fähigkeiten: A0VI (Fernkampf), Name (Name (anam))
 {
-Fernkampf
+Range Combat
 }
 
 STRING 20035
