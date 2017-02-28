@@ -6846,7 +6846,7 @@ STRING 1143
 STRING 1144
 // Fähigkeiten: A02Z (Zauberfähigkeiten), Tip (Tooltipp - Normal (atp1))
 {
-Spell abilities (|cffffcc00F|r)
+Spell Abilities (|cffffcc00F|r)
 }
 
 STRING 1145
@@ -16303,7 +16303,7 @@ Throws an ice missile at an opponent, deals 250 points of ice damage and reduces
 STRING 2878
 // Fähigkeiten: A13F (Zurück zum Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Back to the grimoire
+Back to the Grimoire
 }
 
 STRING 2879
@@ -20088,7 +20088,7 @@ STRING 3634
 STRING 3635
 // Fähigkeiten: A015 (Rucksack öffnen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In the rucksack additional items can be stored. It contains 32 different bags with four different slots each. Items of the same type will be stacked automatically.When an item with several charges is moved to or dropped on a slot in its current rucksack bag only one charge will be moved or rather dropped. Items which are storedin the rucksack can be dropped by placing them on the current slot. Equipped items can be moved to the rucksack by this method.
+In the backpack additional items can be stored. It contains 32 different bags with four different slots each. Items of the same type will be stacked automatically.When an item with several charges is moved to or dropped on a slot in its current backpack bag only one charge will be moved or rather dropped. Items which are storedin the backpack can be dropped by placing them on the current slot. Equipped items can be moved to the backpack by this method.
 }
 
 STRING 3636
@@ -22890,7 +22890,7 @@ Increases the level of the spell by 1.
 STRING 4223
 // Fähigkeiten: A0AF (Zauberstufe erhöhen), Tip (Tooltipp - Normal (atp1))
 {
-Increase spell level
+Increase Spell Level
 }
 
 STRING 4224
@@ -22902,7 +22902,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 4225
 // Fähigkeiten: A0AF (Zauberstufe erhöhen), Name (Name (anam))
 {
-Increase spell level
+Increase Spell Level
 }
 
 STRING 4228
@@ -22914,7 +22914,7 @@ Decreases the level of the spell by 1.
 STRING 4237
 // Fähigkeiten: A0AG (Zauberstufe verringern), Tip (Tooltipp - Normal (atp1))
 {
-Decrease spell level
+Decrease Spell Level
 }
 
 STRING 4238
@@ -22926,7 +22926,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 4239
 // Fähigkeiten: A0AG (Zauberstufe verringern), Name (Name (anam))
 {
-Decrease spell level
+Decrease Spell Level
 }
 
 STRING 4242
@@ -22938,7 +22938,7 @@ Adds the spell to the favorites.
 STRING 4251
 // Fähigkeiten: A0AU (Zu Favoriten hinzufügen), Name (Name (anam))
 {
-Add to favorites
+Add to Favorites
 }
 
 STRING 4252
@@ -22950,7 +22950,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 4253
 // Fähigkeiten: A0AH (Zu Favoriten hinzufügen), Tip (Tooltipp - Normal (atp1))
 {
-Add to favorites
+Add to Favorites
 }
 
 STRING 4256
@@ -23010,7 +23010,7 @@ Parasit - Stufe 5
 STRING 4265
 // Fähigkeiten: A0AI (Aus Favoriten entfernen), Tip (Tooltipp - Normal (atp1))
 {
-Remove from favorites
+Remove from Favorites
 }
 
 STRING 4266
@@ -23022,7 +23022,7 @@ Stab der Verzögerung kaufen
 STRING 4267
 // Fähigkeiten: A0AI (Aus Favoriten entfernen), Name (Name (anam))
 {
-Remove from favorites
+Remove from Favorites
 }
 
 STRING 4270
@@ -24780,7 +24780,7 @@ STRING 4791
 STRING 4792
 // Fähigkeiten: A0AT (Aus Favoriten entfernen), Name (Name (anam))
 {
-Remove from favorites
+Remove from Favorites
 }
 
 STRING 4793
@@ -24816,7 +24816,7 @@ STRING 4797
 STRING 4798
 // Fähigkeiten: A0AW (Zauberstufe verringern), Name (Name (anam))
 {
-Decrease spell level
+Decrease Spell Level
 }
 
 STRING 4799
@@ -28666,13 +28666,13 @@ Buy Short Sword
 STRING 6091
 // Fähigkeiten: A1UY (Optionen - Auftragssignale auf Minikarte aktivieren), Name (Name (anam))
 {
-Buy Missions
+Options - Enable Mission Signals on the Minimap
 }
 
 STRING 6092
 // Fähigkeiten: A1UY (Optionen - Auftragssignale auf Minikarte aktivieren), Tip (Tooltipp - Normal (atp1))
 {
-A list of current missions to jump to their target locations.
+Enable/Disable Mission Signals on the Minimap
 }
 
 STRING 6093
@@ -31533,7 +31533,7 @@ Eine Rune von Tellborn.
 STRING 7123
 // Fähigkeiten: A1UY (Optionen - Auftragssignale auf Minikarte aktivieren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entfernt alle Zauberverstärker von Einheiten in einem Zielgebiet. |n|cffffcc00Verursacht <AIds,DataB1> Punkte Schaden an beschworenen Einheiten.|r
+Enables/disables the signals of missions on the minimap. The signals show a player where he has to go to complete the mission.
 }
 
 STRING 7124
@@ -33027,7 +33027,7 @@ Blind [|cffffcc00Level 3|r]
 STRING 7798
 // Fähigkeiten: A13F (Zurück zum Zauberbuch), Name (Name (anam))
 {
-Back to the grimoire
+Back to the Grimoire
 }
 
 STRING 7801
@@ -44053,7 +44053,7 @@ Lying in Wait [|cffffcc00Level 5|r]
 STRING 11952
 // Fähigkeiten: A13G (Zurück zum Zauberbuch), Name (Name (anam))
 {
-Back to the grimoire
+Back to the Grimoire
 }
 
 STRING 11953
@@ -45049,7 +45049,7 @@ Change to the next bag
 STRING 12275
 // Fähigkeiten: A1CX (Großen Heiltrank herstellen), Name (Name (anam))
 {
-Changes on usage to the next bag of the rucksack.Drop an item from the rucksack on this item to move it into the next bag.|nThe rucksack has 32 bags.
+Changes on usage to the next bag of the backpack. Drop an item from the backpack on this item to move it into the next bag.|nThe backpack has 32 bags.
 }
 
 STRING 12276
@@ -46855,7 +46855,7 @@ Bear form
 STRING 12920
 // Fähigkeiten: A1CX (Großen Heiltrank herstellen), Tip (Tooltipp - Normal (atp1))
 {
-Changes on usage to the next bag of the rucksack.Drop an item from the rucksack on this item to move it into the next bag.|nThe rucksack has 32 bags.
+Changes on usage to the next bag of the backpack. Drop an item from the backpack on this item to move it into the next bag.|nThe backpack has 32 bags.
 }
 
 STRING 12921
@@ -48793,43 +48793,43 @@ STRING 13297
 STRING 13298
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 0 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 0 Skill Points
 }
 
 STRING 13299
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 1 Zauberpunkt
+Learn Spell (|cffffcc00Z|r) - 1 Skill Point
 }
 
 STRING 13300
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 2 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 2 Skill Points
 }
 
 STRING 13301
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 3 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 3 Skill Points
 }
 
 STRING 13302
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 4 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 4 Skill Points
 }
 
 STRING 13303
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 5 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 5 Skill Points
 }
 
 STRING 13304
 // Fähigkeiten: A0AP (Zauberbuch), Tip (Tooltipp - Normal (atp1))
 {
-Learn Spell (|cffffcc00Z|r) - 6 Zauberpunkte
+Learn Spell (|cffffcc00Z|r) - 6 Skill Points
 }
 
 STRING 13305
@@ -63767,7 +63767,7 @@ In this slot the current secondary weapon is shown.
 STRING 16065
 // Gegenstände: I06G (Amulett oder Ring), Ubertip (Tooltipp - Erweitert (utub))
 {
-In this slot a carried amulet or crried ring is shown.
+In this slot a carried amulet or carried ring is shown.
 }
 
 STRING 16069
@@ -64493,7 +64493,7 @@ STRING 16290
 STRING 16295
 // Einheiten: n06J (Spielerschrein), Name (Name (unam))
 {
-Spielerschrein
+Player Shrine
 }
 
 STRING 16296
@@ -68211,7 +68211,7 @@ Buy Holy Water
 STRING 17161
 // Fähigkeiten: A1I1 (Maximale Zauberstufe), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Stufe des Zaubers so weit wie möglich.
+Increases the level of the spell as much as possible.
 }
 
 STRING 17170
@@ -78494,7 +78494,7 @@ Ruft <A1TO,DataA1> Wellen von Pfeilen herbei. Jede Welle verursacht an Einheiten
 STRING 19900
 // Fähigkeiten: A1SH (Pferd reiten), Tip (Tooltipp - Normal (atp1))
 {
-Aufsteigen
+Mount
 }
 
 STRING 19901
@@ -78698,7 +78698,7 @@ STRING 19943
 STRING 19944
 // Fähigkeiten: A1SH (Pferd reiten), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Charakter steigt auf das ausgewählte reiterlose Pferd. Auf einem Pferd ist der Charakter schneller unterwegs.
+The character mounts the selected riderless horse. The character can move faster on a horse.
 }
 
 STRING 19945
@@ -79580,7 +79580,7 @@ A
 STRING 20094
 // Fähigkeiten: A1U6 (Kamera - Kameradistanz vergrößern), Tip (Tooltipp - Normal (atp1))
 {
-Kameradistanz vergrößern
+Increase Camera Distance
 }
 
 STRING 20095
@@ -79592,13 +79592,13 @@ A list of dungeons in this map. Allows the camera to jump to a dungeon.
 STRING 20097
 // Fähigkeiten: A1U6 (Kamera - Kameradistanz vergrößern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Distanz von der Kamera zum Ziel.
+Increases the distance from the camera to the target.
 }
 
 STRING 20098
 // Fähigkeiten: A1TV (Optionen - Kamera), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-A list of conversations conducted with people. Allows to list of conversations.
+A list of conversations conducted with people. Allows to list led conversations.
 }
 
 STRING 20099
@@ -79640,7 +79640,7 @@ Camera (|cffffcc00K|r)
 STRING 20106
 // Fähigkeiten: A1TU (Optionen - Gespräche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-A list of conversations conducted with people. Allows to list of conversations.
+A list of conversations conducted with people. Allows to list led conversations.
 }
 
 STRING 20107
@@ -79712,7 +79712,7 @@ Talras
 STRING 20118
 // Fähigkeiten: A1U0 (Dungeons - Talras), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Springt zum Dungeon Talras.
+Jumps to the dungeon Talras.
 }
 
 STRING 20119
@@ -79730,7 +79730,7 @@ Drum Cave
 STRING 20121
 // Fähigkeiten: A1U1 (Dungeons - Trommelhöhle), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Springt zum Dungeon Trommelhöhle.
+Jumps to the dungeon Drum Cave.
 }
 
 STRING 20122
@@ -79748,7 +79748,7 @@ Crypt
 STRING 20124
 // Fähigkeiten: A1U2 (Dungeons - Gruft), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Springt zum Dungeon Gruft.
+Jumps to the dungeon Crypt.
 }
 
 STRING 20125
@@ -79772,55 +79772,55 @@ Dungeons - Trommelhöhle
 STRING 20128
 // Fähigkeiten: A1U7 (Kamera - Kameradistanz verkleinern), Name (Name (anam))
 {
-Kamera - Kameradistanz verkleinern
+Camera - Decrease Camera Distance
 }
 
 STRING 20129
 // Fähigkeiten: A1U7 (Kamera - Kameradistanz verkleinern), Tip (Tooltipp - Normal (atp1))
 {
-Kameradistanz verkleinern
+Decrease Camera Distance
 }
 
 STRING 20130
 // Fähigkeiten: A1U7 (Kamera - Kameradistanz verkleinern), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verringert die Distanz von der Kamera zum Ziel.
+Decreases the distance from the camera to the target.
 }
 
 STRING 20131
 // Fähigkeiten: A1U8 (Kamera - Zurücksetzen), Name (Name (anam))
 {
-Kamera - Zurücksetzen
+Camera - Reset
 }
 
 STRING 20132
 // Fähigkeiten: A1U8 (Kamera - Zurücksetzen), Tip (Tooltipp - Normal (atp1))
 {
-Zurücksetzen
+Reset
 }
 
 STRING 20133
 // Fähigkeiten: A1U8 (Kamera - Zurücksetzen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Setzt die Kameradistanz zum Standardwert zurück.
+Resets the camera distance to the default value.
 }
 
 STRING 20134
 // Fähigkeiten: A1U9 (Kamera - Rollenspielmodus), Name (Name (anam))
 {
-Kamera - Rollenspielmodus
+Camera - Roleplay Game Mode
 }
 
 STRING 20135
 // Fähigkeiten: A1U9 (Kamera - Rollenspielmodus), Tip (Tooltipp - Normal (atp1))
 {
-Rollenspielmodus
+Roleplay Game Mode
 }
 
 STRING 20136
 // Fähigkeiten: A1U9 (Kamera - Rollenspielmodus), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Aktiviert bzw. deaktiviert eine Third-Person-Kamera.
+Enables/disables a third person camera.
 }
 
 STRING 20137
@@ -79862,13 +79862,13 @@ Tutorial aktivieren/deaktivieren
 STRING 20143
 // Fähigkeiten: A1UB (Optionen - Tutorial aktivieren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Aktiviert bzw. deaktiviert das Tutorial. Im Tutorial-Modus werden Tipps an bestimmten Punkten im Spiel angezeigt. Zudem erhält der Spieler alle paar Sekunden einen zufälligen Tipp.
+Enables/disables the tutorial. In the tutorial mode tips will be shown at specific points in the game. Besides the player gets a random tip every few seconds.
 }
 
 STRING 20144
 // Fähigkeiten: A1UC (Optionen - Charakteranzeige aktivieren), Name (Name (anam))
 {
-Optionen - Charakteranzeige aktivieren
+Options - Enable Characters View
 }
 
 STRING 20145
@@ -79880,73 +79880,73 @@ Enable/Disable Charakters View
 STRING 20146
 // Fähigkeiten: A1UC (Optionen - Charakteranzeige aktivieren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Aktiviert bzw. deaktiviert eine Anzeige mit den Attributen aller Spielercharaktere.
+Enables/disables the view with the attributes of all player characters.
 }
 
 STRING 20147
 // Fähigkeiten: A1UJ (Optionen - Schreinbutton aktivieren), Name (Name (anam))
 {
-Optionen - Schreinbutton aktivieren
+Optiones - Enable Shrine Button
 }
 
 STRING 20148
 // Fähigkeiten: A1UD (Optionen - Schreinbutton aktivieren), Tip (Tooltipp - Normal (atp1))
 {
-Schreinbutton aktivieren/deaktivieren
+Enable/Disable Shrine Button
 }
 
 STRING 20149
 // Fähigkeiten: A1UD (Optionen - Schreinbutton aktivieren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Aktiviert bzw. deaktiviert einen Button links unten, der zum aktiven Schrein des Charakters führt.
+Enables/Disables a button in the left bottom which leads to the active shrine of the character.
 }
 
 STRING 20150
 // Fähigkeiten: A1UE (Optionen - Kontrolle erlauben), Name (Name (anam))
 {
-Optionen - Kontrolle erlauben
+Options - Share Control
 }
 
 STRING 20151
 // Fähigkeiten: A1UE (Optionen - Kontrolle erlauben), Tip (Tooltipp - Normal (atp1))
 {
-Kontrolle erlauben/entziehen
+Share/Revoke Control
 }
 
 STRING 20152
 // Fähigkeiten: A1UE (Optionen - Kontrolle erlauben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erlaubt bzw. entzieht anderern Spielern die Kontrolle über die eigenen Einheiten.
+Shares/revokes the control over the own units with/from other players.
 }
 
 STRING 20153
 // Fähigkeiten: A1UF (Optionen - Mitwirkende), Name (Name (anam))
 {
-Optionen - Mitwirkende
+Options - Credits
 }
 
 STRING 20154
 // Fähigkeiten: A1UF (Optionen - Mitwirkende), Tip (Tooltipp - Normal (atp1))
 {
-Mitwirkende
+Credits
 }
 
 STRING 20155
 // Fähigkeiten: A1UF (Optionen - Mitwirkende), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Listet alle Mitwirkenden der Modifikation auf.
+Lists all credits of the modification.
 }
 
 STRING 20156
 // Fähigkeiten: A1UG (Optionen - Mitwirkende), Name (Name (anam))
 {
-Optionen - Mitwirkende
+Options - Credits
 }
 
 STRING 20157
 // Fähigkeiten: A1UH (Optionen - Kontrolle erlauben), Name (Name (anam))
 {
-Optionen - Kontrolle erlauben
+Options - Share Control
 }
 
 STRING 20158
@@ -79988,13 +79988,13 @@ Camera - Increase Camera Distance
 STRING 20164
 // Fähigkeiten: A1UN (Kamera - Kameradistanz verkleinern), Name (Name (anam))
 {
-Kamera - Kameradistanz verkleinern
+Camera - Decrease Camera Distance
 }
 
 STRING 20165
 // Fähigkeiten: A1UO (Kamera - Kamera zurücksetzen), Name (Name (anam))
 {
-Kamera - Kamera zurücksetzen
+Camera - Reset Camera
 }
 
 STRING 20166
