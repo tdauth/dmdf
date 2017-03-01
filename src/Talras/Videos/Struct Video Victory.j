@@ -136,15 +136,15 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen.", "It had to be. Deranor's disappearance lured the prince of the Dark Elves from his fortress. I could not hesitate myself to miss this opportunity."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Es musste sein. Deranors Verschwinden hat den Fürsten der Dunkelelfen aus seiner Festung gelockt. Ich konnte nicht zögern mir diese Chance entgehen zu lassen.", "It had to be. Deranor's disappearance lured the prince of the Dark Elves from his fortress. I could not hesitate myself to miss this opportunity."), gg_snd_Dararos2)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos2))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Wir werden jedoch erst mehr Männer sammeln und dann in Richtung Norden ziehen. Vielleicht können wir ihn auf offenem Felde stellen.", "However, we will first collect more men and then move northwards. Perhaps we can attack him on the open field."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Wir werden jedoch erst mehr Männer sammeln und dann in Richtung Norden ziehen. Vielleicht können wir ihn auf offenem Felde stellen.", "However, we will first collect more men and then move northwards. Perhaps we can attack him on the open field."), gg_snd_Dararos3)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos3))) then
 				return
 			endif
 
@@ -154,27 +154,27 @@ library StructMapVideosVideoVictory requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("So ist es. Du hast sehr gute Dienste geleistet. Deranor war eine große Bedrohung für uns. Nun da er sich vermutlich für sehr lange Zeit erst einmal zurückziehen musste, ist mein Bruder geschwächt.", "That's the way it is. You have done a very good service. Deranor was a great threat to us. Now that he had to retire for a very long time, my brother is weakened."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("So ist es. Du hast sehr gute Dienste geleistet. Deranor war eine große Bedrohung für uns. Nun da er sich vermutlich für sehr lange Zeit erst einmal zurückziehen musste, ist mein Bruder geschwächt.", "That's the way it is. You have done a very good service. Deranor was a great threat to us. Now that he had to retire for a very long time, my brother is weakened."), gg_snd_Dararos4)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos4))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Deine Verbündeten hier haben sehr tapfer gekämpft. Mir scheint ich habe die Menschen unterschätzt. Wenn sie nur wüssten, dass der König der Dunkelelfen selbst ein Mensch ist, dann ...", "Your allies here have fought very bravely. I seem to have underestimated the humans. If they only knew that the king of the dark elves is a human himself, then ..."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Deine Verbündeten hier haben sehr tapfer gekämpft. Mir scheint ich habe die Menschen unterschätzt. Wenn sie nur wüssten, dass der König der Dunkelelfen selbst ein Mensch ist, dann ...", "Your allies here have fought very bravely. I seem to have underestimated the humans. If they only knew that the king of the dark elves is a human himself, then ..."), gg_snd_Dararos5)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos5))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Nun denn, ich habe entschieden, dass du die Menschen weiter unterstützt. Mir kam zu Ohren, dass die Nordmänner ebenfalls in Richtung Norden ziehen wollen. Vielleicht kannst du schon einiges in Erfahrung bringen lange bevor mein Heer aufgestellt ist.", "Well, I've decided that you continue to support the people. I heard that the Northmen also want to move to the north. Maybe you can find out a lot before my army is raised."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Nun denn, ich habe entschieden, dass du die Menschen weiter unterstützt. Mir kam zu Ohren, dass die Nordmänner ebenfalls in Richtung Norden ziehen wollen. Vielleicht kannst du schon einiges in Erfahrung bringen lange bevor mein Heer aufgestellt ist.", "Well, I've decided that you continue to support the people. I heard that the Northmen also want to move to the north. Maybe you can find out a lot before my army is raised."), gg_snd_Dararos6)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos6))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Schließ dich den Nordmännern an und berichte mir von Zeit zu Zeit weiter wie bisher.", "Join the Northmen and report to me from time to time."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorDararos), tre("Dararos", "Dararos"), tre("Schließ dich den Nordmännern an und berichte mir von Zeit zu Zeit weiter wie bisher.", "Join the Northmen and report to me from time to time."), gg_snd_Dararos7)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos7))) then
 				return
 			endif
 

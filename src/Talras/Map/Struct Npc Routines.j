@@ -92,6 +92,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 
 		private static NpcTalksRoutine m_carstenTalks
 
+		private static NpcTalksRoutine m_dararosTalks = 0
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -411,13 +413,26 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		 * Before that she doesn't have any routine.
 		 */
 		public static method initDragonSlayerSells takes nothing returns nothing
-			set thistype.m_dragonSlayerSells = NpcTalksRoutine.create(Routines.talk(), Npcs.dragonSlayer(), 270.0, 23.59, gg_rct_waypoint_dragon_slayer_farm)
+			set thistype.m_dragonSlayerSells = NpcTalksRoutine.create(Routines.talk(), Npcs.dragonSlayer(), 0.0, 23.59, gg_rct_waypoint_dragon_slayer_farm)
 			call thistype.m_dragonSlayerSells.setFacing(277.12)
 			call thistype.m_dragonSlayerSells.setPartner(null)
 			call thistype.m_dragonSlayerSells.addSound(tre("Beste Waren aus dem Königreich der Hochelfen.", "Best articles of the kingdom of the High Elves."), gg_snd_DragonSlayerFarm1)
 			call thistype.m_dragonSlayerSells.addSound(tre("Greift zu solange die Ware noch frisch ist!", "Take it as long as the product is still fresh!"), gg_snd_DragonSlayerFarm2)
 			call thistype.m_dragonSlayerSells.addSound(tre("Das gab es noch nie: Eine Hochelfin räumt aus! Die besten Angebote, nur heute!", "That never happened: A High Elf clears out! The best offers today only!"), gg_snd_DragonSlayerFarm3)
 			call thistype.m_dragonSlayerSells.addSound(tre("Artefakte, echte und gefälschte, nur bei mir!", "Artifacts, real and fake, just with me!"), gg_snd_DragonSlayerFarm4)
+		endmethod
+
+		public static method initDararosAndDragonSlayer takes nothing returns nothing
+			call thistype.m_dragonSlayerSells.destroy()
+			set thistype.m_dragonSlayerSells = 0
+
+			set thistype.m_dararosTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.dararos(), 0.0, 23.59, gg_rct_quest_the_defense_of_talras_camp_dragon_slayer)
+			call thistype.m_dararosTalks.setFacing(270.0)
+			call thistype.m_dararosTalks.setPartner(Npcs.dragonSlayer())
+			call thistype.m_dararosTalks.addSound(tr("Du hast deine Befehle, führe sie aus!"), gg_snd_DararosTalk1)
+			call thistype.m_dararosTalks.addSound(tr("Exzellente Arbeit."), gg_snd_DararosTalk2)
+			call thistype.m_dararosTalks.addSound(tr("Wir sollten diesen Außenposten besser befestigen lassen."), gg_snd_DararosTalk3)
+			call thistype.m_dararosTalks.addSound(tr("Ich warte darauf, dass die restlichen Truppen eintreffen."), gg_snd_DararosTalk4)
 		endmethod
 	endstruct
 

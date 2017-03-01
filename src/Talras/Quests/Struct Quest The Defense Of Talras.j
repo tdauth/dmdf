@@ -327,6 +327,11 @@ library StructMapQuestsQuestTheDefenseOfTalras requires Asl, StructMapQuestsQues
 
 			call SetUnitPositionRectFacing(Npcs.dragonSlayer(), gg_rct_quest_the_defense_of_talras_camp_dragon_slayer, 270.0)
 			call SetUnitPositionRectFacing(Npcs.dararos(), gg_rct_quest_the_defense_of_talras_camp_dararos, 270.0)
+
+			call NpcRoutines.initDararosAndDragonSlayer()
+			call AUnitRoutine.manualStart(Npcs.dararos())
+			call AUnitRoutine.manualStart(Npcs.dragonSlayer())
+
 			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_0, 0.0)
 			call SetUnitInvulnerable(guard, true)
 			set guard = CreateUnitAtRect(MapSettings.neutralPassivePlayer(), 'h02H', gg_rct_quest_the_defense_of_talras_camp_guard_1, 0.0)

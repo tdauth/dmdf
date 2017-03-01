@@ -83,9 +83,9 @@ library StructMapVideosVideoDararos requires Asl, StructGameGame
 
 			call QueueUnitAnimation(this.m_actorDararos, "Spell")
 
-			call TransmissionFromUnitWithName(this.m_actorDararos, tre("Dararos", "Dararos"), tre("Auf meine Krieger, auf ihr Hochelfen! Helft unseren Brüdern in ihrer Not und vertreibt die abtrünnigen Dunkelelfen und die Horden der Orks aus diesem Königreich!", "On my warriors, on you High Elves! Help our brothers in their distress and drive out the renegade Dark Elves and the horde of Orcs from this kingdom!"), null)
+			call TransmissionFromUnitWithName(this.m_actorDararos, tre("Dararos", "Dararos"), tre("Auf meine Krieger, auf ihr Hochelfen! Helft unseren Brüdern in ihrer Not und vertreibt die abtrünnigen Dunkelelfen und die Horden der Orks aus diesem Königreich!", "On my warriors, on you High Elves! Help our brothers in their distress and drive out the renegade Dark Elves and the horde of Orcs from this kingdom!"), gg_snd_Dararos1)
 
-			if (wait(GetSimpleTransmissionDuration(null))) then
+			if (wait(GetSimpleTransmissionDuration(gg_snd_Dararos1))) then
 				return
 			endif
 

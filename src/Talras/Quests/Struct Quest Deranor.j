@@ -122,7 +122,7 @@ library StructMapQuestsQuestDeranor requires Asl, StructGameCharacter, StructMap
 		endmethod
 
 		public method completeMeetAtDeranorsTomb takes nothing returns nothing
-			local integer i
+			local integer i = 0
 			call Fellows.dragonSlayer().reset()
 			call TalkDragonSlayer.initTalk()
 			call NpcRoutines.initDragonSlayerSells()
