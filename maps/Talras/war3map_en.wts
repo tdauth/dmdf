@@ -15303,13 +15303,13 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area5> sow
 STRING 2645
 // Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 2646
 // Fähigkeiten: A0M9 (Aura der Rücknahme - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 2652
@@ -15327,7 +15327,7 @@ Ursulas Totem
 STRING 2655
 // Fähigkeiten: A0M7 (Aura der Rücknahme - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 2656
@@ -19494,7 +19494,7 @@ STRING 3477
 STRING 3481
 // Fähigkeiten: A10N (Arkane Zeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 3482
@@ -20028,31 +20028,31 @@ Summons a demon for <A0RU,Dur1> seconds. The summoned demon burns opponents with
 STRING 3623
 // Fähigkeiten: A15I (Manastrom - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 2|r]
+Mana Stream [|cffffcc00Level 2|r]
 }
 
 STRING 3624
 // Fähigkeiten: A15J (Manastrom - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 3|r]
+Mana Stream [|cffffcc00Level 3|r]
 }
 
 STRING 3625
 // Fähigkeiten: A15K (Manastrom - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 4|r]
+Mana Stream [|cffffcc00Level 4|r]
 }
 
 STRING 3626
 // Fähigkeiten: A15L (Manastrom - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 5|r]
+Mana Stream [|cffffcc00Level 5|r]
 }
 
 STRING 3627
 // Fähigkeiten: A15H (Manastrom - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 1|r]
+Mana Stream [|cffffcc00Level 1|r]
 }
 
 STRING 3628
@@ -21414,7 +21414,7 @@ Controlled Time Flow
 STRING 3908
 // Fähigkeiten: A0M8 (Aura der Rücknahme - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 3909
@@ -22302,7 +22302,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 4071
 // Fähigkeiten: A0ML (Aura der Autorität - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1>.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um <A0MH,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um <A0MH,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um <A0MH,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um <A0MH,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um <A0MH,DataA5,%> %.
 }
 
 STRING 4072
@@ -24432,7 +24432,7 @@ Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summon
 STRING 4669
 // Fähigkeiten: A0PN (Aura der Autorität - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 4670
@@ -26010,7 +26010,7 @@ Verursacht bei Angriffen einen zusätzlichen Schaden von <A0T6,DataA1>. Einheite
 STRING 5103
 // Fähigkeiten: A0MA (Aura der Rücknahme - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 5104
@@ -27442,13 +27442,13 @@ Grove
 STRING 5559
 // Fähigkeiten: A0PP (Aura der eisernen Haut - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Summon Grove [|cffffcc00Level 1|r]
+Learn Aura of Iron Skin
 }
 
 STRING 5560
 // Fähigkeiten: A0LN (Selbstlosigkeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 5561
@@ -27682,7 +27682,7 @@ Summon Grove [|cffffcc00Level 3|r]
 STRING 5656
 // Fähigkeiten: A0MB (Aura der Rücknahme - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Summon Treefolk [|cffffcc00Level 3|r]
+In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
 }
 
 STRING 5659
@@ -28120,7 +28120,7 @@ Revive [|cffffcc00Level 3|r] (|cffffcc00O|r)
 STRING 5858
 // Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Tendrils [|cffffcc00Level 2|r]
+Learn Auro of Taking Back
 }
 
 STRING 5859
@@ -28270,7 +28270,7 @@ STRING 5917
 STRING 5927
 // Fähigkeiten: A0LX (Verspotten - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 5928
@@ -32925,7 +32925,7 @@ Rigidity
 STRING 7748
 // Fähigkeiten: A0U1 (Feuersbrunst - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 7759
@@ -32949,7 +32949,7 @@ Unbeugsamkeit [|cffffcc00Stufe 1|r]
 STRING 7771
 // Fähigkeiten: A1HE (Bezwingung - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 7772
@@ -33453,7 +33453,7 @@ Der Elementarmagier regeneriert alle 10 Sekunden 5 % Mana.
 STRING 7952
 // Fähigkeiten: A0UH (Feuersbrunst - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Fire Missile [|cffffcc00Level 1|r]
+Learn Conflagration
 }
 
 STRING 7953
@@ -34059,7 +34059,7 @@ Will to Live [|cffffcc00Level 1|r]
 STRING 8240
 // Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8241
@@ -34215,7 +34215,7 @@ Block [|cffffcc00Level 1|r]
 STRING 8306
 // Fähigkeiten: A0XM (Konzentration - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8307
@@ -34233,7 +34233,7 @@ Block [|cffffcc00Level 2|r]
 STRING 8319
 // Fähigkeiten: A1M3 (Lebenswille - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8320
@@ -34251,7 +34251,7 @@ Block [|cffffcc00Level 3|r]
 STRING 8332
 // Fähigkeiten: A1NN (Anstürmen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8333
@@ -34269,7 +34269,7 @@ Block [|cffffcc00Level 4|r]
 STRING 8345
 // Fähigkeiten: A1HB (Bezwingung - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8346
@@ -34389,7 +34389,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8402
 // Fähigkeiten: A0Y6 (Stich - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8403
@@ -34413,7 +34413,7 @@ Learn Blessing
 STRING 8416
 // Fähigkeiten: A0M9 (Aura der Rücknahme - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8417
@@ -34437,7 +34437,7 @@ STRING 8429
 STRING 8430
 // Fähigkeiten: A0XK (Konzentration - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8431
@@ -34461,7 +34461,7 @@ Blessing - Learn
 STRING 8444
 // Fähigkeiten: A1QQ (Kraft der Schreine - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8445
@@ -34479,7 +34479,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 8458
 // Fähigkeiten: A0LP (Selbstlosigkeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8459
@@ -34557,7 +34557,7 @@ Throws a fire missile at an opponent, deals fire damage and lets the opponent bu
 STRING 8482
 // Fähigkeiten: A0XA (Block - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8483
@@ -34581,7 +34581,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 8496
 // Fähigkeiten: A0M7 (Aura der Rücknahme - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8497
@@ -34605,7 +34605,7 @@ Blessing - Learn
 STRING 8510
 // Fähigkeiten: A0Y4 (Stich - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8511
@@ -34629,7 +34629,7 @@ Mock [|cffffcc00Level 4|r]
 STRING 8524
 // Fähigkeiten: A0XB (Block - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8525
@@ -34647,7 +34647,7 @@ Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünd
 STRING 8538
 // Fähigkeiten: A126 (Standfestigkeit - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8539
@@ -34719,37 +34719,37 @@ Verspotten - Stufe 5
 STRING 8552
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Name (Name (anam))
 {
-Aura der Rücknahme
+Aura of Taking Back
 }
 
 STRING 8553
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 1|r]
+Aura of Taking Back [|cffffcc00Level 1|r]
 }
 
 STRING 8554
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 2|r]
+Aura of Taking Back [|cffffcc00Level 2|r]
 }
 
 STRING 8555
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 3|r]
+Aura of Taking Back [|cffffcc00Level 3|r]
 }
 
 STRING 8556
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 4|r]
+Aura of Taking Back [|cffffcc00Level 4|r]
 }
 
 STRING 8557
 // Fähigkeiten: A0M5 (Aura der Rücknahme), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 5|r]
+Aura of Taking Back [|cffffcc00Level 5|r]
 }
 
 STRING 8562
@@ -34767,7 +34767,7 @@ STRING 8563
 STRING 8564
 // Fähigkeiten: A0M6 (Aura der Rücknahme), Name (Name (anam))
 {
-Aura der Rücknahme
+Aura of Taking Back
 }
 
 STRING 8565
@@ -34779,13 +34779,13 @@ Causes a rain of healing energy which goes down above an area of <A0A4,Area1> an
 STRING 8574
 // Fähigkeiten: A0M7 (Aura der Rücknahme - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 1|r]
+Aura of Taking Back [|cffffcc00Level 1|r]
 }
 
 STRING 8575
 // Fähigkeiten: A0LW (Verspotten - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8576
@@ -34809,7 +34809,7 @@ Aura der Rücknahme [|cffffcc00Stufe 2|r]
 STRING 8589
 // Fähigkeiten: A0XT (Anstürmen - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8590
@@ -34833,7 +34833,7 @@ Aura der Rücknahme [|cffffcc00Stufe 3|r]
 STRING 8603
 // Fähigkeiten: A0XW (Anstürmen - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8604
@@ -34857,7 +34857,7 @@ Aura der Rücknahme [|cffffcc00Stufe 4|r]
 STRING 8617
 // Fähigkeiten: A1HM (Verteidigen - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8618
@@ -34881,7 +34881,7 @@ Aura der Rücknahme [|cffffcc00Stufe 5|r]
 STRING 8631
 // Fähigkeiten: A0X9 (Block - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8632
@@ -35043,7 +35043,7 @@ Aura der Autorität [|cffffcc00Stufe 1|r]
 STRING 8673
 // Fähigkeiten: A0MJ (Aura der Autorität - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8674
@@ -35067,7 +35067,7 @@ Aura der Autorität [|cffffcc00Stufe 2|r]
 STRING 8687
 // Fähigkeiten: A138 (Aura der eisernen Haut - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8688
@@ -35091,7 +35091,7 @@ Aura der Autorität [|cffffcc00Stufe 3|r]
 STRING 8701
 // Fähigkeiten: A1QN (Kraft der Schreine - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8702
@@ -35115,7 +35115,7 @@ Aura der Autorität [|cffffcc00Stufe 4|r]
 STRING 8715
 // Fähigkeiten: A0Y3 (Stich - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8716
@@ -35139,7 +35139,7 @@ Aura der Autorität [|cffffcc00Stufe 5|r]
 STRING 8729
 // Fähigkeiten: A1HD (Bezwingung - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 8730
@@ -37659,7 +37659,7 @@ Clarity - Level 4
 STRING 9556
 // Fähigkeiten: A0UH (Feuersbrunst - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 9565
@@ -38001,7 +38001,7 @@ Learn Block
 STRING 9716
 // Fähigkeiten: A0PP (Aura der eisernen Haut - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 9717
@@ -38085,7 +38085,7 @@ Mock [|cffffcc00Level 2|r]
 STRING 9772
 // Fähigkeiten: A1JC (Brandpfeile - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Peinigen - Stufe 5
+Learn Burning Arrows
 }
 
 STRING 9773
@@ -38211,13 +38211,13 @@ Increases the damage of an ally by <A0A1,DataA3,%> %. |nLasts <A0A1,Dur1> second
 STRING 9793
 // Fähigkeiten: A0U4 (Feuersbrunst - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 9794
 // Fähigkeiten: A0U3 (Feuersbrunst - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 9795
@@ -38457,7 +38457,7 @@ Creates a shield that prevents spells from affecting a selected ally or the wiza
 STRING 9847
 // Fähigkeiten: A0BD (Dämpfung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 9848
@@ -38475,25 +38475,25 @@ Creates a shield that prevents spells from affecting a selected ally or the wiza
 STRING 9850
 // Fähigkeiten: A0BG (Dämpfung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 9851
 // Fähigkeiten: A0BA (Dämpfung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 9852
 // Fähigkeiten: A0BF (Dämpfung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 9853
 // Fähigkeiten: A0BE (Dämpfung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 9854
@@ -39123,7 +39123,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 10155
 // Fähigkeiten: A0FY (Koloss - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10158
@@ -39369,7 +39369,7 @@ All opponents around the elemental mage are stunned for some time.|n|n|cffffcc00
 STRING 10304
 // Fähigkeiten: A1JG (Koloss - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Freeze [|cffffcc00Level 4|r]
+Learn Colossus
 }
 
 STRING 10305
@@ -39819,7 +39819,7 @@ Verbannen - Stufe 2
 STRING 10394
 // Fähigkeiten: A0U5 (Feuersbrunst - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 10404
@@ -39837,7 +39837,7 @@ Verbannen - Stufe 3
 STRING 10408
 // Fähigkeiten: A0U2 (Feuersbrunst - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Enable Rigidity [|cffffcc00Level 1|r]
+A conflagration captures an area with a radius of 300, inflicting damage to opponents in this area plus damage for every opponent it captures. |n|n|cffffcc00Level 1|r - Deals 30 points of damage. 2 points of damage additional damage for every captured opponent. |n|cffffcc00Level 2|r - Deals 40 points of damage. 4 points of damage additional damage for every captured opponent. |n|cffffcc00Level 3|r - Deals 50 points of damage. 6 points of damage additional damage for every captured opponent. |n|cffffcc00Level 4|r - Deals 60 points of damage. 8 points of damage additional damage for every captured opponent.|n|cffffcc00Level 5|r - Deals 70 points of damage. 10 points of damage additional damage for every captured opponent.
 }
 
 STRING 10418
@@ -39945,7 +39945,7 @@ Block [|cffffcc00Level 5|r]
 STRING 10447
 // Fähigkeiten: A1GY (Bezwingung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10448
@@ -40023,7 +40023,7 @@ Concentration [|cffffcc00Level 1|r]
 STRING 10470
 // Fähigkeiten: A137 (Aura der eisernen Haut - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10471
@@ -40041,7 +40041,7 @@ Concentration [|cffffcc00Level 2|r]
 STRING 10483
 // Fähigkeiten: A0M8 (Aura der Rücknahme - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10484
@@ -40059,7 +40059,7 @@ Concentration [|cffffcc00Level 3|r]
 STRING 10496
 // Fähigkeiten: A0XL (Konzentration - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10497
@@ -40077,7 +40077,7 @@ Concentration [|cffffcc00Level 4|r]
 STRING 10509
 // Fähigkeiten: A0K1 (Unbeugsamkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10510
@@ -40095,7 +40095,7 @@ Concentration [|cffffcc00Level 5|r]
 STRING 10522
 // Fähigkeiten: A1JA (Block - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10523
@@ -40173,7 +40173,7 @@ Rush [|cffffcc00Level 1|r]
 STRING 10545
 // Fähigkeiten: A0XI (Konzentration - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10546
@@ -40185,7 +40185,7 @@ Anstürmen - Stufe 1
 STRING 10558
 // Fähigkeiten: A0LJ (Lebenswille - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10559
@@ -40197,7 +40197,7 @@ Anstürmen - Stufe 2
 STRING 10571
 // Fähigkeiten: A0MM (Aura der Autorität - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10572
@@ -40209,7 +40209,7 @@ Anstürmen - Stufe 3
 STRING 10584
 // Fähigkeiten: A1NF (Standfestigkeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10585
@@ -40221,7 +40221,7 @@ Anstürmen - Stufe 4
 STRING 10597
 // Fähigkeiten: A0XJ (Konzentration - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10598
@@ -40293,7 +40293,7 @@ Anstürmen - Stufe 5
 STRING 10620
 // Fähigkeiten: A1QL (Kraft der Schreine - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10621
@@ -40305,7 +40305,7 @@ Stich - Stufe 1
 STRING 10633
 // Fähigkeiten: A135 (Aura der eisernen Haut - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10634
@@ -40317,7 +40317,7 @@ Stich - Stufe 2
 STRING 10646
 // Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10647
@@ -40329,7 +40329,7 @@ Stich - Stufe 3
 STRING 10659
 // Fähigkeiten: A0LV (Verspotten - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10660
@@ -40347,7 +40347,7 @@ Learn Concentration
 STRING 10672
 // Fähigkeiten: A1O5 (Verspotten - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10673
@@ -40929,37 +40929,37 @@ The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance
 STRING 10872
 // Fähigkeiten: A0G0 (Koloss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10873
 // Fähigkeiten: A0FZ (Koloss - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10874
 // Fähigkeiten: A0G1 (Koloss - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10875
 // Fähigkeiten: A1JG (Koloss - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10876
 // Fähigkeiten: A0FX (Koloss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gleißendes Licht - Stufe 5
+Increases the armour of the Dragon Slayer.|n|n|cffffcc00Level 1|r - Increases the armour of the Dragon Slayer by <A0K5,DataC1>. |n|cffffcc00Level 2|r - Increases the armour of the Dragon Slayer by <A0K5,DataC2>. |n|cffffcc00Level 3|r - Increases the armour of the Dragon Slayer by <A0K5,DataC3>. |n|cffffcc00Level 4|r - Increases the armour of the Dragon Slayer by <A0K5,DataC4>. |n|cffffcc00Level 5|r - Increases the armour of the Dragon Slayer by <A0K5,DataC5>.
 }
 
 STRING 10886
 // Fähigkeiten: A125 (Standfestigkeit - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 10887
@@ -42512,7 +42512,7 @@ Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und ver
 STRING 11435
 // Fähigkeiten: A1JM (Verzehren - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-(Favoritenfähigkeit - Zauberer)
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 11436
@@ -43639,7 +43639,7 @@ Standfestigkeit [|cffffcc00Stufe 1|r]
 STRING 11784
 // Fähigkeiten: A0XV (Anstürmen - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 11785
@@ -43663,7 +43663,7 @@ Standfestigkeit [|cffffcc00Stufe 2|r]
 STRING 11798
 // Fähigkeiten: A0LY (Verspotten - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 11799
@@ -43687,7 +43687,7 @@ Standfestigkeit [|cffffcc00Stufe 3|r]
 STRING 11812
 // Fähigkeiten: A0Y2 (Stich - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 11813
@@ -43711,7 +43711,7 @@ Standfestigkeit [|cffffcc00Stufe 4|r]
 STRING 11826
 // Fähigkeiten: A0X8 (Block - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 11827
@@ -43735,7 +43735,7 @@ Standfestigkeit [|cffffcc00Stufe 5|r]
 STRING 11840
 // Fähigkeiten: A0LO (Selbstlosigkeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 11841
@@ -44401,7 +44401,7 @@ Aura der eisernen Haut [|cffffcc00Stufe 1|r]
 STRING 12073
 // Fähigkeiten: A1QO (Kraft der Schreine - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 12074
@@ -44425,7 +44425,7 @@ Aura der eisernen Haut [|cffffcc00Stufe 2|r]
 STRING 12087
 // Fähigkeiten: A0MN (Aura der Autorität - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 12088
@@ -44449,7 +44449,7 @@ Aura der eisernen Haut [|cffffcc00Stufe 3|r]
 STRING 12101
 // Fähigkeiten: A1HC (Bezwingung - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 12102
@@ -44473,7 +44473,7 @@ Aura der eisernen Haut [|cffffcc00Stufe 4|r]
 STRING 12115
 // Fähigkeiten: A0MA (Aura der Rücknahme - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 12116
@@ -44497,7 +44497,7 @@ Aura der eisernen Haut [|cffffcc00Stufe 5|r]
 STRING 12129
 // Fähigkeiten: A0MB (Aura der Rücknahme - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 12130
@@ -46015,7 +46015,7 @@ Crow Form [|cffffcc00Level 4|r]
 STRING 12629
 // Fähigkeiten: A1JT (Dämpfung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Crow Form [|cffffcc00Level 5|r]
+The wizard creates a dome and reduces the magical damage he and his allies are suffering.|n|n|cffffcc00Level 1|r - Reduces for 15 seconds the suffered magical by 10% in a radius of 600.|n|cffffcc00Level 2|r - Reduces for 15 seconds the suffered magical by 20% in a radius of 600.|n|cffffcc00Level 3|r - Reduces for 15 seconds the suffered magical by 30% in a radius of 600.|n|cffffcc00Level 4|r - Reduces for 15 seconds the suffered magical by 40% in a radius of 600.|n|cffffcc00Level 5|r - Reduces for 15 seconds the suffered magical by 50% in a radius of 600.
 }
 
 STRING 12630
@@ -46219,7 +46219,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 12722
 // Fähigkeiten: A15E (Hieb - Stufe 3), Name (Name (anam))
 {
-Hieb - Stufe 3
+Learn Tempering
 }
 
 STRING 12735
@@ -47029,31 +47029,31 @@ Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verur
 STRING 12951
 // Fähigkeiten: A15I (Manastrom - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 12952
 // Fähigkeiten: A1MD (Manastrom - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 12953
 // Fähigkeiten: A15J (Manastrom - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 12954
 // Fähigkeiten: A15H (Manastrom - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 12955
 // Fähigkeiten: A15K (Manastrom - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 12966
@@ -47077,7 +47077,7 @@ STRING 12968
 STRING 12979
 // Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 12980
@@ -48955,31 +48955,31 @@ Der Ritter regeneriert alle 10 Sekunden 25 %  maximalen seiner Lebenspunkte.
 STRING 13325
 // Fähigkeiten: A0XK (Konzentration - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13326
 // Fähigkeiten: A0XL (Konzentration - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13327
 // Fähigkeiten: A0XI (Konzentration - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13328
 // Fähigkeiten: A0XJ (Konzentration - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13329
 // Fähigkeiten: A1JI (Konzentration - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
 }
 
 STRING 13335
@@ -60145,7 +60145,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 STRING 15321
 // Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 15324
@@ -62641,31 +62641,31 @@ Dunkle Diener
 STRING 15866
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15867
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Consumes a nearby corpse and regenerates hit points per second. A corpse can be consumed for <A0IJ,Dur1> seconds. |n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hit points per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hit points per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hit points per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hit points per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hit points per second.
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15868
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15869
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15870
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehrt eine in der Nähe befindliche Leiche und regeneriert dabei Trefferpunkte pro Sekunde. Eine Leiche kann <A0IJ,Dur1> Sekunden lang verzehrt werden.  |n|n|cffffcc00Stufe 1|r - Regeneriert <A0IJ,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Regeneriert <A0IJ,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Regeneriert <A0IJ,DataA3> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 4|r - Regeneriert <A0IJ,DataA4> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 5|r - Regeneriert <A0IJ,DataA5> Trefferpunkte pro Sekunde.
+Consumes a nearby corpse and regenerates hitpoints per second doing it. A corpse can be consumed for <A0IJ,Dur1> seconds.|n|n|cffffcc00Level 1|r - Regenerates <A0IJ,DataA1> hitpoints per second.|n|cffffcc00Level 2|r - Regenerates <A0IJ,DataA2> hitpoints per second.|n|cffffcc00Level 3|r - Regenerates <A0IJ,DataA3> hitpoints per second.|n|cffffcc00Level 4|r - Regenerates <A0IJ,DataA4> hitpoints per second.|n|cffffcc00Level 5|r - Regenerates <A0IJ,DataA5> hitpoints per second.
 }
 
 STRING 15871
@@ -65813,7 +65813,7 @@ Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird
 STRING 16665
 // Fähigkeiten: A1NJ (Unbeugsamkeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16666
@@ -65831,7 +65831,7 @@ Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird
 STRING 16679
 // Fähigkeiten: A1JK (Bezwingung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16680
@@ -65855,7 +65855,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 16693
 // Fähigkeiten: A136 (Aura der eisernen Haut - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16694
@@ -65879,7 +65879,7 @@ Einschüchtern - Erlernen
 STRING 16707
 // Fähigkeiten: A1NP (Selbstlosigkeit - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16708
@@ -65903,7 +65903,7 @@ STRING 16720
 STRING 16721
 // Fähigkeiten: A1QP (Kraft der Schreine - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16722
@@ -66005,7 +66005,7 @@ Markiert eine Ziel-Einheit mit maximaler Stufe 2 für die Manifestation eines Te
 STRING 16749
 // Fähigkeiten: A128 (Standfestigkeit - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 16750
@@ -66261,7 +66261,7 @@ STRING 16832
 STRING 16833
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 16834
@@ -66285,7 +66285,7 @@ Verfluchter Boden - Stufe 2
 STRING 16837
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 16838
@@ -66309,7 +66309,7 @@ Verfluchter Boden - Stufe 3
 STRING 16841
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 16843
@@ -66327,7 +66327,7 @@ Verfluchter Boden - Stufe 4
 STRING 16845
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Transfer [|cffffcc00Level 3|r]
+Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
 }
 
 STRING 16847
@@ -68456,7 +68456,7 @@ Verteidigen erlernen
 STRING 17222
 // Fähigkeiten: A1JI (Konzentration - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 17223
@@ -68756,7 +68756,7 @@ STRING 17306
 STRING 17307
 // Fähigkeiten: A10M (Arkane Zeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 17308
@@ -69001,25 +69001,25 @@ Gardonar's Bodyguard
 STRING 17355
 // Fähigkeiten: A10P (Arkane Zeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 17356
 // Fähigkeiten: A10O (Arkane Zeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 17357
 // Fähigkeiten: A0PL (Arkane Zeit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 17358
 // Fähigkeiten: A10Q (Arkane Zeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Soul Theft [|cffffcc00Level 3|r]
+Removes after a certain time all negative buffs of an ally or all positive buffs of an opponent.|nIncreases the duration of summoned allies or allied illusions or reduces the duration of summoned opponents or hostile illusions.|n|n|cffffcc00Level 1|r - Removes buffs after 25 seconds. Increases the duration of summoned allies by 50 seconds. Reduces the duration of summoned opponents by 20 seconds. Cooldown <A08V,Cool1> seconds.|n|cffffcc00Level 2|r - Removes buffs after 20 seconds. Increases the duration of summoned allies by 60 seconds. Reduces the duration of summoned opponents by 15 seconds. Cooldown <A08V,Cool2> seconds.|n|cffffcc00Level 3|r - Removes buffs after 15 seconds. Increases the duration of summoned allies by 70 seconds. Reduces the duration of summoned opponents by 10 seconds. Cooldown <A08V,Cool3> seconds.
 }
 
 STRING 17359
@@ -72956,7 +72956,7 @@ Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe v
 STRING 18256
 // Fähigkeiten: A1LT (Sprungattacke - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke erlernen
+Learn Jump Attack
 }
 
 STRING 18257
@@ -73136,7 +73136,7 @@ STRING 18325
 STRING 18335
 // Fähigkeiten: A0XC (Block - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18336
@@ -73310,7 +73310,7 @@ Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verur
 STRING 18414
 // Fähigkeiten: A1MD (Manastrom - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom erlernen
+Learn Mana Stream
 }
 
 STRING 18415
@@ -73526,7 +73526,7 @@ Tierfähigkeiten - Krähengestalt - Stufe 4 - Flügelschlag
 STRING 18508
 // Fähigkeiten: A1MP (Totenbeschwörung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Totenbeschwörung erlernen
+Learn Necromancy
 }
 
 STRING 18509
@@ -73562,7 +73562,7 @@ Infects a selected enemy with a lethal parasite who causes damage per second for
 STRING 18524
 // Fähigkeiten: A1MR (Parasit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Parasit erlernen
+Learn Parasite
 }
 
 STRING 18525
@@ -73988,7 +73988,7 @@ Standfestigkeit erlernen
 STRING 18715
 // Fähigkeiten: A0XU (Anstürmen - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18716
@@ -74060,7 +74060,7 @@ Unbeugsamkeit erlernen
 STRING 18747
 // Fähigkeiten: A1QM (Kraft der Schreine - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18748
@@ -74090,7 +74090,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 STRING 18762
 // Fähigkeiten: A1NL (Bestehlen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Bestehlen erlernen
+Learn Steal
 }
 
 STRING 18763
@@ -74132,7 +74132,7 @@ Anstürmen erlernen
 STRING 18779
 // Fähigkeiten: A0LZ (Verspotten - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18780
@@ -74168,7 +74168,7 @@ Selbstlosigkeit erlernen
 STRING 18795
 // Fähigkeiten: A1K5 (Verteidigen - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18796
@@ -74384,7 +74384,7 @@ Stich erlernen
 STRING 18891
 // Fähigkeiten: A127 (Standfestigkeit - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18892
@@ -74456,7 +74456,7 @@ Verspotten erlernen
 STRING 18923
 // Fähigkeiten: A124 (Standfestigkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 18924
@@ -76370,7 +76370,7 @@ Kraft der Schreine erlernen
 STRING 19473
 // Fähigkeiten: A1O1 (Stich - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19474
@@ -76394,7 +76394,7 @@ Kraft der Schreine [|cffffcc00Stufe 1|r]
 STRING 19487
 // Fähigkeiten: A0MK (Aura der Autorität - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19488
@@ -76418,7 +76418,7 @@ Kraft der Schreine [|cffffcc00Stufe 2|r]
 STRING 19501
 // Fähigkeiten: A0Y5 (Stich - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19502
@@ -76442,7 +76442,7 @@ Kraft der Schreine [|cffffcc00Stufe 3|r]
 STRING 19515
 // Fähigkeiten: A0ML (Aura der Autorität - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19516
@@ -76466,7 +76466,7 @@ Kraft der Schreine [|cffffcc00Stufe 4|r]
 STRING 19529
 // Fähigkeiten: A134 (Aura der eisernen Haut - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19530
@@ -76490,7 +76490,7 @@ Kraft der Schreine [|cffffcc00Stufe 5|r]
 STRING 19543
 // Fähigkeiten: A0LL (Selbstlosigkeit - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Summon Grove [|cffffcc00Level 2|r]
+(Grimoire - Knight)
 }
 
 STRING 19544
