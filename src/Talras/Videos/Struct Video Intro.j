@@ -161,7 +161,7 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(true)
-			call this.setPlayFilterTime(0.0)
+			call this.setPlayFilterTime(0.0) // Causes the bug, must be fixed in the ASL (filter time debug output).
 			call this.setActorOwner(MapSettings.neutralPassivePlayer())
 
 			return this
