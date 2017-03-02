@@ -6438,7 +6438,7 @@ Inferno [|cffffcc00Level 1|r]
 STRING 1076
 // Fähigkeiten: A0PN (Aura der Autorität - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 1077
@@ -6534,7 +6534,7 @@ Feeding [|cffffcc00Level 1|r]
 STRING 1092
 // Fähigkeiten: A0MJ (Aura der Autorität - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 1093
@@ -11040,19 +11040,19 @@ Legt ein Ziel für das Portal fest.
 STRING 1843
 // Fähigkeiten: A0MM (Aura der Autorität - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 1844
 // Fähigkeiten: A0MN (Aura der Autorität - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 1845
 // Fähigkeiten: A0MK (Aura der Autorität - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Parasite [|cffffcc00Level 4|r]
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 1846
@@ -21402,7 +21402,7 @@ Parasite - Level 3
 STRING 3905
 // Fähigkeiten: A0K3 (Kontrollierter Zeitfluss - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Kontrollierter Zeitfluss [|cffffcc00Stufe 1|r]
+Controlled Time Flow [|cffffcc00Level 1|r]
 }
 
 STRING 3906
@@ -22302,7 +22302,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 4071
 // Fähigkeiten: A0ML (Aura der Autorität - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht den Schaden des Ritters und von Verbündeten im Umkreis von <A0MH,Area1>.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um <A0MH,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um <A0MH,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um <A0MH,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um <A0MH,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um <A0MH,DataA5,%> %.
+Increases the damage of the Knight and allies within a range of <A0MH,Area1>.|n|n|cffffcc00Level 1|r - Increases the damage by <A0MH,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the damage by <A0MH,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the damage by <A0MH,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the damage by <A0MH,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the damage by <A0MH,DataA5,%> %.
 }
 
 STRING 4072
@@ -30303,7 +30303,7 @@ Arkaner Schutz - Stufe 3
 STRING 6680
 // Fähigkeiten: A0WT (Verbannen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 6681
@@ -32217,7 +32217,7 @@ Verzehren - Stufe 4
 STRING 7410
 // Fähigkeiten: A0T2 (Bestienjäger), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehren [|cffffcc00Stufe 5|r]
+|cffffcc00Basic Spell|r|nDamage to wild creatures is increased by 10%.
 }
 
 STRING 7411
@@ -32649,7 +32649,7 @@ Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds coo
 STRING 7637
 // Fähigkeiten: A0UF (Bestienjäger - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Relief [|cffffcc00Level 4|r]
+Learn Beast Hunter
 }
 
 STRING 7638
@@ -40749,7 +40749,7 @@ Can be used on undeads and demons and slows down their movement and attack speed
 STRING 10841
 // Fähigkeiten: A0K3 (Kontrollierter Zeitfluss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Standfestigkeit [|cffffcc00Stufe 5|r]
+|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nThe Wizard stops the time for 7 seconds. All units are stopped and cannot attack or move. Besides the day cycle is stopped. The Wizard himself as well as allies within a radius of 600 can continue to move with 80% of their movement speed.
 }
 
 STRING 10842
@@ -41133,7 +41133,7 @@ Changes to the previous page of the grimoire. On each page of the grimoire learn
 STRING 10974
 // Fähigkeiten: A1HE (Bezwingung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 10975
@@ -43729,7 +43729,7 @@ On activation the knight removes all the negative magical effects from himself a
 STRING 11839
 // Fähigkeiten: A1JP (Kontrollierter Zeitfluss - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Standfestigkeit [|cffffcc00Stufe 5|r]
+|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nThe Wizard stops the time for 7 seconds. All units are stopped and cannot attack or move. Besides the day cycle is stopped. The Wizard himself as well as allies within a radius of 600 can continue to move with 80% of their movement speed.
 }
 
 STRING 11840
@@ -44155,7 +44155,7 @@ Lauern - Stufe 3
 STRING 12010
 // Fähigkeiten: A1JP (Kontrollierter Zeitfluss - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Lying in Wait [|cffffcc00Level 4|r]
+Learn Controlled Time Flow
 }
 
 STRING 12011
@@ -46315,7 +46315,7 @@ Hieb - Stufe 5
 STRING 12772
 // Fähigkeiten: A1JT (Dämpfung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Manastrom [|cffffcc00Stufe 1|r]
+Learn Tempering
 }
 
 STRING 12773
@@ -46891,31 +46891,31 @@ STRING 12925
 STRING 12926
 // Fähigkeiten: A0WS (Verbannen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 12927
 // Fähigkeiten: A0WW (Verbannen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 12928
 // Fähigkeiten: A0UB (Verbannen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 12929
 // Fähigkeiten: A0WU (Verbannen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 12930
 // Fähigkeiten: A0WV (Verbannen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Protection [|cffffcc00Level 4|r]
+Prevents all opponents in an area of <A0A6,Area1> in a distance of <A0A6,Rng1> maximum, for some time to cast spells.|nThe duration increases with the level. |n|n|cffffcc00Level 1|r - Lasts for <A0A6,Dur1> seconds.|n|cffffcc00Level 2|r - Lasts for <A0A6,Dur2> seconds.|n|cffffcc00Level 3|r - Lasts for <A0A6,Dur3> seconds.|n|cffffcc00Level 4|r - Lasts for <A0A6,Dur4> seconds.|n|cffffcc00Level 5|r - Lasts for <A0A6,Dur5> seconds.
 }
 
 STRING 12933
@@ -59881,7 +59881,7 @@ Feuertrank kaufen
 STRING 15241
 // Fähigkeiten: A0UF (Bestienjäger - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehren [|cffffcc00Stufe 5|r]
+|cffffcc00Basic Spell|r|nDamage to wild creatures is increased by 10%.
 }
 
 STRING 15242
@@ -66053,31 +66053,31 @@ Markiert eine Ziel-Einheit mit maximaler Stufe 6 für die Manifestation von <A1H
 STRING 16759
 // Fähigkeiten: A1HB (Bezwingung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 16760
 // Fähigkeiten: A1HD (Bezwingung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 16761
 // Fähigkeiten: A1GY (Bezwingung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 16762
 // Fähigkeiten: A1HC (Bezwingung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 16763
 // Fähigkeiten: A1JK (Bezwingung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Arcane Hunger [|cffffcc00Level 3|r]
+Marks a target unit for the manifestation of one ore more templars. The affected unit cannot cast spells and takes damage per second until it dies. After its death one or more templars rise from its corpse. 'Conquest' can neither be banned nor stopped.  |n|n|cffffcc00Level 1|r - Opponents with a maximum level of 2, deals <A1H9,DataA1> damage per second and summons one templar.|n|cffffcc00Level 2|r - Opponents with a maximum level of 3, deals <A1H9,DataA2> damage per second and summons <A1H9,DataB2> templars.|n|cffffcc00Level 3|r - Opponents with a maximum level of 4, deals <A1H9,DataA3> damage per second and summons<A1H9,DataB3> templars.|n|cffffcc00Level 4|r - Opponents with a maximum level of 5, deals <A1H9,DataA4> damage per second and summons<A1H9,DataB4> templars.|n|cffffcc00Level 5|r - Opponents with a maximum level of 6, deals <A1H9,DataA5> damage per second and summons<A1H9,DataB5> templars.
 }
 
 STRING 16764
