@@ -16855,7 +16855,7 @@ STRING 2988
 STRING 2989
 // Fähigkeiten: A1OP (Zorn des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 2990
@@ -17298,7 +17298,7 @@ Buy Staff
 
 STRING 3069
 {
-Talras is a small castle in the borderland of the kingdom of the humans. His vanity, the duke Heimrich, rules over the castle and lands with severity and hope, in the face of the dark position of these days.
+Talras is a small castle in the borderland of the kingdom of the humans. His vanity, the duke Heimrich, rules over the castle and lands with severity and hope, in the face of the dark situation of these days.
 }
 
 STRING 3070
@@ -20784,7 +20784,7 @@ Crow Form
 STRING 3775
 // Zauberverstärker/Effekte: B01J (Krähengestalt), Buffubertip (Tooltipp - Erweitert (fube))
 {
-Dieser Druide hat die Gestalt einer Krähe angenommen; er hat eine erhöhte Rüstung.
+The druid transformed into the form of a crow; he has increased armour.
 }
 
 STRING 3779
@@ -24546,37 +24546,37 @@ Herbal Cure
 STRING 4728
 // Fähigkeiten: A0AM (Waldfeenzauber), Name (Name (anam))
 {
-Waldfeenzauber
+Forest Fairies Spell
 }
 
 STRING 4729
 // Fähigkeiten: A0J5 (Waldfeenzauber - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 1|r]
+Forest Fairies Spell [|cffffcc00Level 1|r]
 }
 
 STRING 4730
 // Fähigkeiten: A0J6 (Waldfeenzauber - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 2|r]
+Forest Fairies Spell [|cffffcc00Level 2|r]
 }
 
 STRING 4731
 // Fähigkeiten: A0J7 (Waldfeenzauber - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 3|r]
+Forest Fairies Spell [|cffffcc00Level 3|r]
 }
 
 STRING 4732
 // Fähigkeiten: A0J8 (Waldfeenzauber - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 4|r]
+Forest Fairies Spell [|cffffcc00Level 4|r]
 }
 
 STRING 4733
 // Fähigkeiten: A0J9 (Waldfeenzauber - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 5|r]
+Forest Fairies Spell [|cffffcc00Level 5|r]
 }
 
 STRING 4734
@@ -26896,7 +26896,7 @@ Bear form [|cffffcc00Stufe 1|r]
 STRING 5311
 // Fähigkeiten: A1PP (Tierfähigkeiten - Krähengestalt - Stufe 4 - Flügelschlag), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5312
@@ -26914,7 +26914,7 @@ Baut eine versteckte für den Gegner unsichtbare Bärenhöhle, die automatisch d
 STRING 5325
 // Fähigkeiten: A1PO (Tierfähigkeiten - Krähengestalt - Stufe 3 - Kreisen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5326
@@ -26932,7 +26932,7 @@ Increase damage
 STRING 5339
 // Fähigkeiten: A0DT (Waldholzfäuste - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5340
@@ -26950,7 +26950,7 @@ Increase damage
 STRING 5353
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5354
@@ -26968,7 +26968,7 @@ Erhöht die Schadenswirkung einer angewählten befreundeten Einheit um <A123,Dat
 STRING 5367
 // Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5368
@@ -27004,7 +27004,7 @@ Bärengestalt - Stufe 2
 STRING 5375
 // Fähigkeiten: A0DN (Baumhirte - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5376
@@ -27016,7 +27016,7 @@ Bärengestalt - Stufe 3
 STRING 5377
 // Fähigkeiten: A1JS (Krähengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5378
@@ -27028,7 +27028,7 @@ Bärengestalt - Stufe 4
 STRING 5379
 // Fähigkeiten: A0EU (Tierkunde - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5380
@@ -27052,7 +27052,7 @@ Crow Form [|cffffcc00Level 1|r]
 STRING 5391
 // Fähigkeiten: A0DR (Waldholzfäuste - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5392
@@ -27064,7 +27064,7 @@ Krähengestalt - Stufe 1
 STRING 5395
 // Fähigkeiten: A0JW (Erwachen des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5396
@@ -27082,7 +27082,7 @@ Crow Form [|cffffcc00Level 2|r]
 STRING 5407
 // Fähigkeiten: A0D8 (Hain - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5408
@@ -27100,7 +27100,7 @@ Crow Form [|cffffcc00Level 3|r]
 STRING 5421
 // Fähigkeiten: A0CZ (Dryadenquelle - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5422
@@ -27118,7 +27118,7 @@ Crow Form [|cffffcc00Level 4|r]
 STRING 5435
 // Fähigkeiten: A0J6 (Waldfeenzauber - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5436
@@ -27136,7 +27136,7 @@ Crow Form [|cffffcc00Level 5|r]
 STRING 5449
 // Fähigkeiten: A0JH (Wohltat - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5450
@@ -27148,7 +27148,7 @@ Krähengestalt - Stufe 5
 STRING 5453
 // Fähigkeiten: A0JC (Waldfeenzauber - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5454
@@ -27160,7 +27160,7 @@ Krähengestalt - Stufe 2
 STRING 5455
 // Fähigkeiten: A0EC (Ranken - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5456
@@ -27172,7 +27172,7 @@ Krähengestalt - Stufe 3
 STRING 5457
 // Fähigkeiten: A0X3 (Kräuterheilung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5458
@@ -27184,7 +27184,7 @@ Krähengestalt - Stufe 4
 STRING 5459
 // Fähigkeiten: A0CI (Krähengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5460
@@ -27196,13 +27196,13 @@ Krähengestalt - Stufe 5
 STRING 5461
 // Einheiten: n061 (Dryadenquelle), Name (Name (unam))
 {
-Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC2> points of damage. |nLasts <A09Z,Dur2> seconds.
+Dryad Source
 }
 
 STRING 5462
 // Einheiten: n062 (Dryadenquelle), Name (Name (unam))
 {
-Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC2> points of damage. |nLasts <A09Z,Dur2> seconds.
+Dryad Source
 }
 
 STRING 5468
@@ -27238,7 +27238,7 @@ STRING 5473
 STRING 5474
 // Einheiten: n063 (Dryadenquelle), Name (Name (unam))
 {
-Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC2> points of damage. |nLasts <A09Z,Dur2> seconds.
+Dryad Source
 }
 
 STRING 5475
@@ -27250,13 +27250,13 @@ STRING 5475
 STRING 5484
 // Fähigkeiten: A0CT (Dryadenquelle - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle [|cffffcc00Stufe 1|r]
+Dryad Source [|cffffcc00Level 1|r]
 }
 
 STRING 5485
 // Fähigkeiten: A0JG (Wohltat - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5486
@@ -27268,7 +27268,7 @@ Dryadenquelle - Stufe 1
 STRING 5489
 // Fähigkeiten: A0CO (Krähengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5490
@@ -27280,7 +27280,7 @@ Dryadenquelle - Stufe 2
 STRING 5491
 // Fähigkeiten: A0CQ (Krähengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5492
@@ -27298,13 +27298,13 @@ Master of Necromancy [|cffffcc00Level 3|r]
 STRING 5502
 // Fähigkeiten: A0CW (Dryadenquelle - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle [|cffffcc00Stufe 2|r]
+Dryad Source [|cffffcc00Level 2|r]
 }
 
 STRING 5503
 // Fähigkeiten: A0UD (Bärengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5504
@@ -27322,13 +27322,13 @@ STRING 5507
 STRING 5516
 // Fähigkeiten: A0CX (Dryadenquelle - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle [|cffffcc00Stufe 3|r]
+Dryad Source [|cffffcc00Level 3|r]
 }
 
 STRING 5517
 // Fähigkeiten: A0FH (Alpha - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5518
@@ -27352,7 +27352,7 @@ Dryadenquelle [|cffffcc00Stufe 4|r]
 STRING 5531
 // Fähigkeiten: A0CK (Krähengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5532
@@ -27370,7 +27370,7 @@ Dryadenquelle [|cffffcc00Stufe 5|r]
 STRING 5545
 // Fähigkeiten: A0DA (Hain - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5546
@@ -27382,7 +27382,7 @@ Dryadenquelle - Stufe 5
 STRING 5549
 // Fähigkeiten: A0DC (Hain - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5550
@@ -27394,7 +27394,7 @@ Dryadenquelle - Stufe 3
 STRING 5551
 // Fähigkeiten: A0DF (Hain - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5552
@@ -27406,7 +27406,7 @@ Dryadenquelle - Stufe 4
 STRING 5553
 // Fähigkeiten: A0JY (Erwachen des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5554
@@ -27508,7 +27508,7 @@ Grove [|cffffcc00Level 1|r]
 STRING 5581
 // Fähigkeiten: A0EE (Zorn des Waldes - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5582
@@ -27532,7 +27532,7 @@ Grove [|cffffcc00Level 2|r]
 STRING 5595
 // Fähigkeiten: A0D6 (Hain - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5596
@@ -27550,7 +27550,7 @@ Grove [|cffffcc00Level 3|r]
 STRING 5609
 // Fähigkeiten: A0DH (Baumhirte - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5610
@@ -27568,7 +27568,7 @@ Grove [|cffffcc00Level 4|r]
 STRING 5623
 // Fähigkeiten: A1PW (Tierfähigkeiten - Bärengestalt - Stufe 5 - Bärenhöhle), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5624
@@ -27586,7 +27586,7 @@ Grove [|cffffcc00Level 5|r]
 STRING 5637
 // Fähigkeiten: A1PJ (Tierfähigkeiten - Alpha), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5638
@@ -27598,7 +27598,7 @@ Hain - Stufe 5
 STRING 5641
 // Fähigkeiten: A0JU (Erwachen des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5642
@@ -27610,7 +27610,7 @@ Hain - Stufe 1
 STRING 5643
 // Fähigkeiten: A0EW (Tierkunde - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5644
@@ -27622,7 +27622,7 @@ Hain - Stufe 2
 STRING 5645
 // Fähigkeiten: A0EA (Ranken - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5646
@@ -27634,7 +27634,7 @@ Hain - Stufe 3
 STRING 5647
 // Fähigkeiten: A0CG (Bärengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5648
@@ -27646,7 +27646,7 @@ Hain - Stufe 4
 STRING 5649
 // Fähigkeiten: A1NC (Wohltat - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5650
@@ -27718,7 +27718,7 @@ STRING 5664
 STRING 5674
 // Fähigkeiten: A03M (Alpha - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5675
@@ -27736,7 +27736,7 @@ Mehrfachschuss [|cffffcc00Stufe 1|r]
 STRING 5687
 // Fähigkeiten: A1LF (Kräuterheilung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5688
@@ -27754,7 +27754,7 @@ STRING 5691
 STRING 5700
 // Fähigkeiten: A0C7 (Bärengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5701
@@ -27772,7 +27772,7 @@ Mehrfachschuss - Stufe 1
 STRING 5713
 // Fähigkeiten: A0EO (Tierkunde - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5714
@@ -27784,7 +27784,7 @@ Baumhirte - Stufe 4
 STRING 5726
 // Fähigkeiten: A0E3 (Ranken - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5727
@@ -27796,7 +27796,7 @@ Baumhirte - Stufe 5
 STRING 5730
 // Fähigkeiten: A0EM (Zorn des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5731
@@ -27808,7 +27808,7 @@ Baumhirte - Stufe 1
 STRING 5732
 // Fähigkeiten: A0UE (Bärengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5733
@@ -27820,7 +27820,7 @@ Baumhirte - Stufe 2
 STRING 5734
 // Fähigkeiten: A0D1 (Dryadenquelle - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5735
@@ -27832,7 +27832,7 @@ Baumhirte - Stufe 3
 STRING 5736
 // Fähigkeiten: A0E0 (Waldholzfäuste - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5737
@@ -27844,7 +27844,7 @@ Baumhirte - Stufe 4
 STRING 5738
 // Fähigkeiten: A0DM (Baumhirte - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5739
@@ -27874,7 +27874,7 @@ Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  
 STRING 5752
 // Fähigkeiten: A0C9 (Bärengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5753
@@ -27892,7 +27892,7 @@ Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  
 STRING 5766
 // Fähigkeiten: A1PM (Tierfähigkeiten - Krähengestalt - Stufe 1 - Junges), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5767
@@ -27910,7 +27910,7 @@ Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  
 STRING 5780
 // Fähigkeiten: A0DL (Baumhirte - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5781
@@ -27928,7 +27928,7 @@ Strengthens summoned undead units of the Necromancer.|n|n|cffffcc00Level 1|r -  
 STRING 5794
 // Fähigkeiten: A0DV (Waldholzfäuste - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5795
@@ -27946,7 +27946,7 @@ A death coil that can heal a friendly undead unit or damage a hostile living uni
 STRING 5808
 // Fähigkeiten: A0E5 (Ranken - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5809
@@ -27958,7 +27958,7 @@ Waldholzfäuste - Stufe 5
 STRING 5812
 // Fähigkeiten: A0JM (Wohltat - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5813
@@ -27970,7 +27970,7 @@ Waldholzfäuste - Stufe 1
 STRING 5814
 // Fähigkeiten: A1OA (Ranken - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5815
@@ -27982,7 +27982,7 @@ Waldholzfäuste - Stufe 2
 STRING 5816
 // Fähigkeiten: A0ET (Tierkunde - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5817
@@ -27994,7 +27994,7 @@ Waldholzfäuste - Stufe 3
 STRING 5818
 // Fähigkeiten: A1KY (Waldfestung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5819
@@ -28006,7 +28006,7 @@ Waldholzfäuste - Stufe 4
 STRING 5820
 // Fähigkeiten: A0CD (Bärengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5821
@@ -28102,7 +28102,7 @@ Spießt eine Reihe von Gegnern auf.
 STRING 5845
 // Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5846
@@ -28126,7 +28126,7 @@ Tendrils [|cffffcc00Level 2|r]
 STRING 5859
 // Fähigkeiten: A1PT (Tierfähigkeiten - Bärengestalt - Stufe 3 - Tollwut), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5860
@@ -28144,7 +28144,7 @@ Spießt eine Reihe von Gegnern auf.
 STRING 5873
 // Fähigkeiten: A0E6 (Ranken - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5874
@@ -28162,7 +28162,7 @@ Spießt eine Reihe von Gegnern auf.
 STRING 5887
 // Fähigkeiten: A1NB (Wohltat - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5888
@@ -28180,7 +28180,7 @@ Spießt eine Reihe von Gegnern auf.
 STRING 5901
 // Fähigkeiten: A1PR (Tierfähigkeiten - Bärengestalt - Stufe 1 - Gebrüll), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5902
@@ -28276,7 +28276,7 @@ Summon Grove [|cffffcc00Level 2|r]
 STRING 5928
 // Fähigkeiten: A0CW (Dryadenquelle - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5929
@@ -28300,7 +28300,7 @@ Wrath of the Forest [|cffffcc00Stufe 2|r]
 STRING 5942
 // Fähigkeiten: A1PQ (Tierfähigkeiten - Krähengestalt - Stufe 5 - Nest), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5943
@@ -28318,7 +28318,7 @@ Verringert die Angriffsgeschwindkeit eines Gegners für 7 Sekunden um 50 %.|n<A0
 STRING 5956
 // Fähigkeiten: A0CJ (Krähengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5957
@@ -28336,7 +28336,7 @@ Reduces the attack speed of an opponent for 7 seconds.|n<A05Q,Cool1> seconds coo
 STRING 5970
 // Fähigkeiten: A0J5 (Waldfeenzauber - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5971
@@ -28360,7 +28360,7 @@ Herbal Cure
 STRING 5984
 // Fähigkeiten: A0CM (Krähengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 5985
@@ -28396,7 +28396,7 @@ Zorn des Waldes - Stufe 2
 STRING 5992
 // Fähigkeiten: A0DE (Hain - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5993
@@ -28408,7 +28408,7 @@ Zorn des Waldes - Stufe 3
 STRING 5994
 // Fähigkeiten: A0D2 (Dryadenquelle - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5995
@@ -28420,7 +28420,7 @@ Zorn des Waldes - Stufe 4
 STRING 5996
 // Fähigkeiten: A0E9 (Ranken - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 5997
@@ -28444,7 +28444,7 @@ Zoology [|cffffcc00Stufe 1|r]
 STRING 6008
 // Fähigkeiten: A1PH (Tierfähigkeiten - Bärengestalt - Schaden), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6009
@@ -28462,7 +28462,7 @@ Barrikade errichten
 STRING 6022
 // Fähigkeiten: A0ER (Tierkunde - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6023
@@ -28486,7 +28486,7 @@ Master of Necromancy [|cffffcc00Level 4|r]
 STRING 6036
 // Fähigkeiten: A0EQ (Tierkunde - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6037
@@ -28510,7 +28510,7 @@ STRING 6049
 STRING 6050
 // Fähigkeiten: A0JF (Wohltat - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6051
@@ -28534,7 +28534,7 @@ Meister der Nekromantie - Stufe 4
 STRING 6064
 // Fähigkeiten: A0CY (Dryadenquelle - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6065
@@ -28546,7 +28546,7 @@ Tierkunde - Stufe 5
 STRING 6068
 // Fähigkeiten: A0EB (Ranken - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6069
@@ -28558,7 +28558,7 @@ Tierkunde - Stufe 1
 STRING 6070
 // Fähigkeiten: A0CN (Krähengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6071
@@ -28570,7 +28570,7 @@ Tierkunde - Stufe 2
 STRING 6072
 // Fähigkeiten: A0DB (Hain - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6073
@@ -28582,7 +28582,7 @@ Tierkunde - Stufe 3
 STRING 6074
 // Fähigkeiten: A0FD (Waldfestung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6075
@@ -28594,7 +28594,7 @@ Tierkunde - Stufe 4
 STRING 6076
 // Fähigkeiten: A0JO (Wohltat - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6077
@@ -29373,13 +29373,13 @@ Worlds Portal - Level 1
 STRING 6301
 // Fähigkeiten: A1DK (Laden-Pfeil Bogen), EditorSuffix (Editor-Suffix (ansf))
 {
-Blessing [|cffffcc00Level 2|r]
+(Shop)
 }
 
 STRING 6310
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Worlds Portal [|cffffcc00Level 2|r]
+Calls hordes of furious rams, exploding at the opponents of the Druid. <A09Z,DataA1> are summoned per second.|nLasts for <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 6311
@@ -29565,7 +29565,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 6385
 // Fähigkeiten: A0EG (Zorn des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6386
@@ -29577,7 +29577,7 @@ Waldfestung - Stufe 1
 STRING 6389
 // Fähigkeiten: A0DQ (Baumhirte - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6390
@@ -29649,7 +29649,7 @@ Fügt einem Gegner <A18U,DataD1> Schaden pro Sekunde zu, verringert seine Rüstu
 STRING 6410
 // Fähigkeiten: A0CH (Krähengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6411
@@ -29661,7 +29661,7 @@ Alpha - Stufe 1
 STRING 6414
 // Fähigkeiten: A1LG (Kräuterheilung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6415
@@ -29859,7 +29859,7 @@ Treefolk
 STRING 6482
 // Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Necromancy [|cffffcc00Level 3|r]
+Learn Awakening of the Forest
 }
 
 STRING 6483
@@ -29877,7 +29877,7 @@ Totenbeschwörung - Stufe 3
 STRING 6496
 // Fähigkeiten: A1OH (Baumhirte - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 6497
@@ -30267,7 +30267,7 @@ Eisgeschoss - Stufe 3
 STRING 6652
 // Fähigkeiten: A1L2 (Waldholzfäuste - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 6653
@@ -30285,7 +30285,7 @@ Arkaner Schutz - Stufe 2
 STRING 6666
 // Fähigkeiten: A0PU (Erwachen des Waldes - Erlernen), Name (Name (anam))
 {
-Necromancy [|cffffcc00Level 5|r]
+Awakening of the Forest - Learn
 }
 
 STRING 6667
@@ -31659,7 +31659,7 @@ Fire Arrows [|cffffcc00Level 5|r]
 STRING 7153
 // Fähigkeiten: A0UD (Bärengestalt - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Tendrils [|cffffcc00Level 5|r]
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 7154
@@ -31935,7 +31935,7 @@ STRING 7279
 STRING 7288
 // Fähigkeiten: A0UD (Bärengestalt - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Dark Spell [|cffffcc00Level 3|r]
+Learn Bear Form
 }
 
 STRING 7289
@@ -31959,7 +31959,7 @@ Eisgeschoss - Stufe 4
 STRING 7302
 // Fähigkeiten: A0CT (Dryadenquelle - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7303
@@ -32181,7 +32181,7 @@ Verzehren - Stufe 2
 STRING 7382
 // Fähigkeiten: A0DO (Baumhirte - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7383
@@ -32319,13 +32319,13 @@ STRING 7450
 STRING 7451
 // Fähigkeiten: A0JR (Erwachen des Waldes - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Worlds Portal [|cffffcc00Level 2|r]
+Calls hordes of furious rams, exploding at the opponents of the Druid. <A09Z,DataA1> are summoned per second.|nLasts for <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 7454
 // Fähigkeiten: A0JQ (Erwachen des Waldes - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Worlds Portal [|cffffcc00Level 2|r]
+Calls hordes of furious rams, exploding at the opponents of the Druid. <A09Z,DataA1> are summoned per second.|nLasts for <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 7464
@@ -32337,7 +32337,7 @@ STRING 7464
 STRING 7465
 // Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Worlds Portal [|cffffcc00Level 2|r]
+Calls hordes of furious rams, exploding at the opponents of the Druid. <A09Z,DataA1> are summoned per second.|nLasts for <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 7468
@@ -32355,7 +32355,7 @@ STRING 7478
 STRING 7479
 // Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Worlds Portal [|cffffcc00Level 2|r]
+Calls hordes of furious rams, exploding at the opponents of the Druid. <A09Z,DataA1> are summoned per second.|nLasts for <A09Z,Dur1> seconds.|n|n|cffffcc00Level 1|r -  Each exploding ram deals <A09Z,DataC1> points of damage. |n|cffffcc00Level 2|r -  Each exploding ram deals <A09Z,DataC2> points of damage. |n|cffffcc00Level 3|r -  Each exploding ram deals <A09Z,DataC3> points of damage.|n|cffffcc00Level 4|r -  Each exploding ram deals <A09Z,DataC4> points of damage.|n|cffffcc00Level 5|r -  Each exploding ram deals <A09Z,DataC5> points of damage.
 }
 
 STRING 7482
@@ -32445,7 +32445,7 @@ Die Feen des Waldes heilen bei maximal <A0AL,DataB1> nicht-mechanischen Verbünd
 STRING 7516
 // Fähigkeiten: A1PN (Tierfähigkeiten - Krähengestalt - Stufe 2 - Sturm), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7517
@@ -32457,13 +32457,13 @@ Waldfeenzauber - Stufe 1
 STRING 7520
 // Gegenstände: I06J (Einfacher Stab eines Druiden), Tip (Tooltipp - Einfach (utip))
 {
-Die Feen des Waldes heilen bei maximal <A0AL,DataB2> nicht-mechanischen Verbündeten in einem Gebiet von <A0AL,Area2> bis zu <A0AL,DataA2> Leben, indem sie von einem Ziel zum nächsten springen, wobei sich das erste Ziel in einer Reichweite von <A0AL,Rng2> befinden muss.|nKann auf sich selbst verwendet werden.
+Buy Simple Staff of a Druid
 }
 
 STRING 7530
 // Fähigkeiten: A0ED (Zorn des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7531
@@ -32481,7 +32481,7 @@ Morning Star
 STRING 7544
 // Fähigkeiten: A0DK (Baumhirte - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7545
@@ -32499,7 +32499,7 @@ Die Feen des Waldes heilen bei maximal <A0AL,DataB4> nicht-mechanischen Verbünd
 STRING 7558
 // Fähigkeiten: A1K9 (Dryadenquelle - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7559
@@ -32517,7 +32517,7 @@ Morning Star
 STRING 7572
 // Fähigkeiten: A1PK (Tierfähigkeiten - Krähengestalt - Manaregeneration), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7573
@@ -32529,7 +32529,7 @@ Waldfeenzauber - Stufe 5
 STRING 7576
 // Fähigkeiten: A0JE (Waldfeenzauber - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7577
@@ -32541,7 +32541,7 @@ Waldfeenzauber - Stufe 1
 STRING 7578
 // Fähigkeiten: A0JX (Erwachen des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7579
@@ -32553,7 +32553,7 @@ Waldfeenzauber - Stufe 2
 STRING 7580
 // Fähigkeiten: A0EV (Tierkunde - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7581
@@ -32565,7 +32565,7 @@ Waldfeenzauber - Stufe 3
 STRING 7582
 // Fähigkeiten: A0CC (Bärengestalt - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7583
@@ -32577,7 +32577,7 @@ Waldfeenzauber - Stufe 4
 STRING 7584
 // Fähigkeiten: A0EL (Zorn des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7585
@@ -32595,7 +32595,7 @@ Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 S
 STRING 7596
 // Fähigkeiten: A0PT (Erwachen des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7597
@@ -32613,7 +32613,7 @@ Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 S
 STRING 7610
 // Fähigkeiten: A0DU (Waldholzfäuste - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7611
@@ -32631,7 +32631,7 @@ Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 S
 STRING 7624
 // Fähigkeiten: A1JR (Krähengestalt - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7625
@@ -32655,7 +32655,7 @@ Relief [|cffffcc00Level 4|r]
 STRING 7638
 // Fähigkeiten: A0EN (Tierkunde - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7639
@@ -32679,7 +32679,7 @@ Relief [|cffffcc00Level 5|r]
 STRING 7652
 // Fähigkeiten: A0J9 (Waldfeenzauber - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7653
@@ -32691,7 +32691,7 @@ Wohltat - Stufe 5
 STRING 7656
 // Fähigkeiten: A1OQ (Zorn des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7657
@@ -32703,7 +32703,7 @@ Wohltat - Stufe 1
 STRING 7658
 // Fähigkeiten: A0FI (Alpha - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7659
@@ -32715,7 +32715,7 @@ Wohltat - Stufe 2
 STRING 7660
 // Fähigkeiten: A1KA (Dryadenquelle - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7661
@@ -32727,7 +32727,7 @@ Wohltat - Stufe 3
 STRING 7662
 // Fähigkeiten: A1PE (Erster Mann - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7663
@@ -32739,7 +32739,7 @@ Wohltat - Stufe 4
 STRING 7664
 // Fähigkeiten: A0EK (Zorn des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7665
@@ -32751,7 +32751,7 @@ Wohltat - Stufe 5
 STRING 7666
 // Fähigkeiten: A0D3 (Dryadenquelle), Name (Name (anam))
 {
-Calls hordes of raving mad rams which explode at opponents of the druid. Each exploding ram deals <A09Z,DataC2> points of damage. |nLasts <A09Z,Dur2> seconds.
+Dryad Source
 }
 
 STRING 7675
@@ -32763,7 +32763,7 @@ Awakening of the Forest [|cffffcc00Level 1|r]
 STRING 7676
 // Fähigkeiten: A0C8 (Bärengestalt - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7677
@@ -32775,13 +32775,13 @@ Erwachen des Waldes - Stufe 1
 STRING 7680
 // Fähigkeiten: A0CZ (Dryadenquelle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 7690
 // Fähigkeiten: A0CA (Bärengestalt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7691
@@ -32793,13 +32793,13 @@ Erwachen des Waldes - Stufe 2
 STRING 7694
 // Fähigkeiten: A0CW (Dryadenquelle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 7704
 // Fähigkeiten: A0E4 (Ranken - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7705
@@ -32811,7 +32811,7 @@ Erwachen des Waldes - Stufe 3
 STRING 7708
 // Fähigkeiten: A0CY (Dryadenquelle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 7717
@@ -32823,7 +32823,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 7718
 // Fähigkeiten: A0DS (Waldholzfäuste - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7719
@@ -32835,7 +32835,7 @@ Erwachen des Waldes - Stufe 4
 STRING 7722
 // Fähigkeiten: A0CT (Dryadenquelle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 7731
@@ -32847,19 +32847,19 @@ Awakening of the Forest [|cffffcc00Level 1|r]
 STRING 7732
 // Fähigkeiten: A0JP (Erwachen des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 7733
 // Fähigkeiten: A0JT (Erwachen des Waldes - Stufe 5), Name (Name (anam))
 {
-Erwachen des Waldes - Stufe 5
+Awakening of the Forest - Level 5
 }
 
 STRING 7736
 // Fähigkeiten: A0JL (Wohltat - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7737
@@ -32871,7 +32871,7 @@ Erwachen des Waldes - Stufe 1
 STRING 7738
 // Fähigkeiten: A0CF (Bärengestalt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7739
@@ -32883,7 +32883,7 @@ Erwachen des Waldes - Stufe 2
 STRING 7740
 // Fähigkeiten: A0D0 (Dryadenquelle - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7741
@@ -32895,7 +32895,7 @@ Erwachen des Waldes - Stufe 3
 STRING 7742
 // Fähigkeiten: A1PC (Erster Mann - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7743
@@ -32907,13 +32907,13 @@ Erwachen des Waldes - Stufe 4
 STRING 7744
 // Fähigkeiten: A0DX (Waldholzfäuste - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 7745
 // Fähigkeiten: A0JY (Erwachen des Waldes - Stufe 5), Name (Name (anam))
 {
-Erwachen des Waldes - Stufe 5
+Awakening of the Forest - Level 5
 }
 
 STRING 7746
@@ -33063,7 +33063,7 @@ Consumes a nearby corpse to heal <A0IJ,DataA5> hitpoints per second. A corpse ca
 STRING 7806
 // Fähigkeiten: A1K9 (Dryadenquelle - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 7807
@@ -34107,7 +34107,7 @@ Herbal Cure [|cffffcc00Level 1|r]
 STRING 8259
 // Fähigkeiten: A0D7 (Hain - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 8260
@@ -34119,7 +34119,7 @@ Kräuterheilung - Stufe 1
 STRING 8263
 // Fähigkeiten: A0JA (Waldfeenzauber - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 8264
@@ -37995,7 +37995,7 @@ STRING 9703
 STRING 9707
 // Fähigkeiten: A1JA (Block - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Fügt einem Gegner Schaden zu.|n|n|cffffcc00Stufe 1|r - <A04Y,DataC1> Schaden.|n|cffffcc00Stufe 2|r - <A04Y,DataC2> Schaden. |n|cffffcc00Stufe 3|r - <A04Y,DataC3> Schaden. |n|cffffcc00Stufe 4|r - <A04Y,DataC4> Schaden.|n|cffffcc00Stufe 5|r - <A04Y,DataC5> Schaden.
+Learn Block
 }
 
 STRING 9716
@@ -40341,7 +40341,7 @@ Stab - Level 4
 STRING 10671
 // Fähigkeiten: A1JI (Konzentration - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Stab [|cffffcc00Level 5|r]
+Learn Concentration
 }
 
 STRING 10672
@@ -42176,7 +42176,7 @@ Dunkelelf
 STRING 11295
 // Einheiten: n066 (Hain), EditorSuffix (Name - Editor-Suffix (unsf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 11296
@@ -45331,7 +45331,7 @@ Baldar's Ring
 STRING 12374
 // Fähigkeiten: A1JR (Krähengestalt - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Einschüchtern [|cffffcc00Stufe 1|r]
+Learn Crow Form
 }
 
 STRING 12375
@@ -45775,7 +45775,7 @@ STRING 12586
 STRING 12587
 // Fähigkeiten: A1JS (Krähengestalt - Erlernen), Name (Name (anam))
 {
-Protect [|cffffcc00Level 1|r]
+Crow Form - Learn
 }
 
 STRING 12588
@@ -46639,31 +46639,31 @@ Bärengestalt - Lebensregenerationssteigerung
 STRING 12884
 // Fähigkeiten: A0C7 (Bärengestalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12885
 // Fähigkeiten: A0C9 (Bärengestalt - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12886
 // Fähigkeiten: A0C8 (Bärengestalt - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12887
 // Fähigkeiten: A0CA (Bärengestalt - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12888
 // Fähigkeiten: A0CB (Bärengestalt - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-The druid transforms into a bear. The life regeneration rate and the caused damage is increased. Besides the attack speed is reduced and the druid causes area damage. |n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The caused damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The caused damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The caused damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The caused damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The caused damage is increased by <A09R,DataA5,%> %.
+The Druid transforms himself into a bear. The life regeneration rate and the dealt damage are increased. Besides the attack speed is reduced and the Druid deals area damage.|n|n|cffffcc00Level 1|r - The life regeneration rate is increased by <A15V,DataB1,%> %. The dealt damage is increased by <A09R,DataA1,%> %.|n|cffffcc00Level 2|r - The life regeneration rate is increased by <A15V,DataB2,%> %. The dealt damage is increased by <A09R,DataA2,%> %.|n|cffffcc00Level 3|r - The life regeneration rate is increased by <A15V,DataB3,%> %. The dealt damage is increased by <A09R,DataA3,%> %.|n|cffffcc00Level 4|r - The life regeneration rate is increased by <A15V,DataB4,%> %. The dealt damage is increased by <A09R,DataA4,%> %.|n|cffffcc00Level 5|r - The life regeneration rate is increased by <A15V,DataB5,%> %. The dealt damage is increased by <A09R,DataA5,%> %.
 }
 
 STRING 12889
@@ -48889,7 +48889,7 @@ Der Pestkarren lädt alle <A08K,Dur1> Sekunden den Kadaver eines pestkranken Dor
 STRING 13314
 // Fähigkeiten: A0X2 (Kräuterheilung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 13315
@@ -48901,7 +48901,7 @@ Tierfähigkeiten - Bärengestalt - Maximales Leben
 STRING 13316
 // Fähigkeiten: A07K (Tierfähigkeiten), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 13317
@@ -48913,7 +48913,7 @@ Tierfähigkeiten - Alpha
 STRING 13318
 // Fähigkeiten: A0D9 (Hain - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 13319
@@ -50629,13 +50629,13 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 13699
 // Gegenstände: I05K (Heilkraut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A19J,DataA1> Trefferpunkte.|nBietet <I05K,uses> Aufladung.
+Heals <A19J,DataA1> hitpoints on usage.|nProvides <I05K,uses> charges.
 }
 
 STRING 13700
 // Gegenstände: I05L (Manakraut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
+Restores <A19K,DataA1> mana on usage.|nProvides <I05L,uses> charges.
 }
 
 STRING 13701
@@ -62581,7 +62581,7 @@ STRING 15855
 STRING 15856
 // Fähigkeiten: A0JS (Erwachen des Waldes - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 15857
@@ -62605,7 +62605,7 @@ Dunkle Diener - Stufe 2
 STRING 15860
 // Fähigkeiten: A1PV (Tierfähigkeiten - Bärengestalt - Stufe 4 - Winterschlaf), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 15861
@@ -62617,7 +62617,7 @@ Dunkle Diener - Stufe 3
 STRING 15862
 // Gegenstände: I06J (Einfacher Stab eines Druiden), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden um <A1HX,DataA1>.
+Increases the damage by <A1HX,DataA1>.
 }
 
 STRING 15863
@@ -62707,7 +62707,7 @@ Dunkle Diener - Stufe 2
 STRING 15878
 // Fähigkeiten: A0JI (Wohltat - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 15880
@@ -62737,7 +62737,7 @@ Dunkle Diener - Stufe 4
 STRING 15884
 // Fähigkeiten: A1PS (Tierfähigkeiten - Bärengestalt - Stufe 2 - Prankenhieb), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 15885
@@ -68492,7 +68492,7 @@ Elementarwesen - Stufe 1
 STRING 17230
 // Fähigkeiten: A0DI (Baumhirte - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 17232
@@ -68552,7 +68552,7 @@ Dämonendiener - Erlernen
 STRING 17250
 // Fähigkeiten: A0CX (Dryadenquelle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft Horden tobsüchtiger Widder herbei, die bei den Gegnern des Druiden explodieren. Jeder explodierende Widder richtet <A09Z,DataC2> Punkte Schaden an. |nLasts <A09Z,Dur2> Sekunden lang an.
+Summons a healing source for <A0D3,Dur1> seconds, which heals life per second for nearby allies. |n|n|cffffcc00Level 1|r - Heals <A0QX,DataA1,%> % of the life per second. |n|cffffcc00Level 2|r - Heals <A1D0,DataA1,%> % of the life per second. |n|cffffcc00Level 3|r - Heals <A1D1,DataA1,%> % of the life per second. |n|cffffcc00Level 4|r - Heals <A1D2,DataA1,%> % of the life per second.|n|cffffcc00Level 5|r - Heals <A1D3,DataA1,%> % of the life per second.
 }
 
 STRING 17255
@@ -68576,13 +68576,13 @@ STRING 17260
 STRING 17262
 // Fähigkeiten: A1K9 (Dryadenquelle - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle erlernen
+Learn Dryad Source
 }
 
 STRING 17263
 // Fähigkeiten: A1KZ (Waldfeenzauber - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 17264
@@ -68594,7 +68594,7 @@ Dryadenquelle - Erlernen
 STRING 17267
 // Fähigkeiten: A0DD (Hain - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 17268
@@ -69416,7 +69416,7 @@ Learn Alpha
 STRING 17435
 // Fähigkeiten: A0CB (Bärengestalt - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 17436
@@ -69428,7 +69428,7 @@ Alpha - Erlernen
 STRING 17437
 // Fähigkeiten: A0PU (Erwachen des Waldes - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 17438
@@ -69920,31 +69920,31 @@ Baumhirten beschwören [|cffffcc00Stufe 5|r] (|cffffcc00L|r)
 STRING 17519
 // Fähigkeiten: A0D3 (Dryadenquelle), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle beschwören [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
+Summon Dryad Source [|cffffcc00Level 1|r] (|cffffcc00J|r)
 }
 
 STRING 17520
 // Fähigkeiten: A0D3 (Dryadenquelle), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle beschwören [|cffffcc00Stufe 2|r] (|cffffcc00J|r)
+Summon Dryad Source [|cffffcc00Level 2|r] (|cffffcc00J|r)
 }
 
 STRING 17521
 // Fähigkeiten: A0D3 (Dryadenquelle), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle beschwören [|cffffcc00Stufe 3|r] (|cffffcc00J|r)
+Summon Dryad Source [|cffffcc00Level 3|r] (|cffffcc00J|r)
 }
 
 STRING 17522
 // Fähigkeiten: A0D3 (Dryadenquelle), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle beschwören [|cffffcc00Stufe 4|r] (|cffffcc00J|r)
+Summon Dryad Source [|cffffcc00Level 4|r] (|cffffcc00J|r)
 }
 
 STRING 17523
 // Fähigkeiten: A0D3 (Dryadenquelle), Tip (Tooltipp - Normal (atp1))
 {
-Dryadenquelle beschwören [|cffffcc00Stufe 5|r] (|cffffcc00J|r)
+Summon Dryad Source [|cffffcc00Level 5|r] (|cffffcc00J|r)
 }
 
 STRING 17524
@@ -70064,31 +70064,31 @@ Kräuterheilung (|cffffcc00Q|r)
 STRING 17543
 // Fähigkeiten: A0AL (Waldfeenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+Forest Fairies Spell [|cffffcc00Level 1|r] (|cffffcc00W|r)
 }
 
 STRING 17544
 // Fähigkeiten: A0AL (Waldfeenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+Forest Fairies Spell [|cffffcc00Level 2|r] (|cffffcc00W|r)
 }
 
 STRING 17545
 // Fähigkeiten: A0AL (Waldfeenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+Forest Fairies Spell [|cffffcc00Level 3|r] (|cffffcc00W|r)
 }
 
 STRING 17546
 // Fähigkeiten: A0AL (Waldfeenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+Forest Fairies Spell [|cffffcc00Level 4|r] (|cffffcc00W|r)
 }
 
 STRING 17547
 // Fähigkeiten: A0AL (Waldfeenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
+Forest Fairies Spell [|cffffcc00Level 5|r] (|cffffcc00W|r)
 }
 
 STRING 17548
@@ -72044,7 +72044,7 @@ Q
 STRING 17874
 // Fähigkeiten: A0D3 (Dryadenquelle), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 17875
@@ -72398,7 +72398,7 @@ Learn Forest Fortress
 STRING 18001
 // Fähigkeiten: A0EH (Zorn des Waldes - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18002
@@ -72410,7 +72410,7 @@ Waldfestung - Erlernen
 STRING 18005
 // Fähigkeiten: A0JK (Wohltat - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18006
@@ -72428,13 +72428,13 @@ The fairies of the forest heal life of non-mechanical allies in an area of <A0AL
 STRING 18016
 // Fähigkeiten: A1KZ (Waldfeenzauber - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Waldfeenzauber erlernen
+Learn Forest Fairies Spell
 }
 
 STRING 18017
 // Fähigkeiten: A1OR (Tierkunde - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18018
@@ -72446,7 +72446,7 @@ Waldfeenzauber - Erlernen
 STRING 18021
 // Fähigkeiten: A0EI (Zorn des Waldes - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18022
@@ -72464,13 +72464,13 @@ Increases the damage of an ally. |nLasts <A0A1,Dur1> seconds. |n|n|cffffcc00Leve
 STRING 18032
 // Fähigkeiten: A1L1 (Waldholzfäuste - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Waldholzfäuste erlernen
+Learn Forest Wood Fists
 }
 
 STRING 18033
 // Fähigkeiten: A0CL (Krähengestalt - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18034
@@ -72482,7 +72482,7 @@ Waldholzfäuste - Erlernen
 STRING 18037
 // Fähigkeiten: A0CU (Dryadenquelle - Stufe 2), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18038
@@ -72650,7 +72650,7 @@ Learn Grove
 STRING 18113
 // Fähigkeiten: A0JJ (Wohltat - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18114
@@ -72662,7 +72662,7 @@ Hain - Erlernen
 STRING 18117
 // Fähigkeiten: A0E8 (Ranken - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18118
@@ -72716,13 +72716,13 @@ STRING 18135
 STRING 18144
 // Fähigkeiten: A1LF (Kräuterheilung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Kräuterheilung erlernen
+Learn Herbal Cure
 }
 
 STRING 18145
 // Fähigkeiten: A0EP (Tierkunde - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18146
@@ -72734,7 +72734,7 @@ Kräuterheilung - Erlernen
 STRING 18149
 // Fähigkeiten: A1OI (Baumhirte - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18150
@@ -73910,13 +73910,13 @@ Causes a rain of healing energy which goes down above an area of <A0A4,Area1> an
 STRING 18682
 // Fähigkeiten: A1NB (Wohltat - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Wohltat erlernen
+Learn Relief
 }
 
 STRING 18683
 // Fähigkeiten: A1PL (Tierfähigkeiten - Krähengestalt - Rüstung), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18684
@@ -73928,7 +73928,7 @@ Wohltat - Erlernen
 STRING 18687
 // Fähigkeiten: A0CV (Dryadenquelle - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 18688
@@ -74522,13 +74522,13 @@ Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die
 STRING 18954
 // Fähigkeiten: A1O9 (Ranken - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Ranken erlernen
+Learn Tendrils
 }
 
 STRING 18955
 // Fähigkeiten: A1LB (Hain - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 18956
@@ -74666,13 +74666,13 @@ Summons a powerful fellow who can root himself. |n|n|cffffcc00Level 1|r - Summon
 STRING 19016
 // Fähigkeiten: A1OH (Baumhirte - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Baumhirte erlernen
+Learn Treant
 }
 
 STRING 19017
 // Fähigkeiten: A1PI (Tierfähigkeiten - Bärengestalt - Maximales Leben), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19018
@@ -74684,7 +74684,7 @@ Baumhirte - Erlernen
 STRING 19021
 // Fähigkeiten: A1LC (Hain - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 19022
@@ -74804,13 +74804,13 @@ Weltenportal - Erlernen
 STRING 19080
 // Fähigkeiten: A1OP (Zorn des Waldes - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Zorn des Waldes erlernen
+Learn Wrath of the Forest
 }
 
 STRING 19081
 // Fähigkeiten: A1O9 (Ranken - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19082
@@ -74822,7 +74822,7 @@ Zorn des Waldes - Erlernen
 STRING 19085
 // Fähigkeiten: A0CE (Bärengestalt - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 19086
@@ -74840,13 +74840,13 @@ Allows the druid to cast new spells in his animal form.|n|n|cffffcc00Level 1|r -
 STRING 19096
 // Fähigkeiten: A1OR (Tierkunde - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Tierkunde erlernen
+Learn Zoology
 }
 
 STRING 19097
 // Fähigkeiten: A0FC (Waldfestung - Stufe 1), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19098
@@ -74858,7 +74858,7 @@ Tierkunde - Erlernen
 STRING 19101
 // Fähigkeiten: A0DP (Baumhirte - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 19102
@@ -75326,7 +75326,7 @@ Erster Mann - Erlernen
 STRING 19241
 // Fähigkeiten: A1OS (Tierkunde - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-Arcane Protection [|cffffcc00Level 2|r]
+(Grimoire Ability - Druid)
 }
 
 STRING 19242
@@ -75542,7 +75542,7 @@ Tierfähigkeiten - Krähengestalt - Stufe 5 - Nest
 STRING 19298
 // Fähigkeiten: A0DJ (Baumhirte - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19299
@@ -75554,7 +75554,7 @@ Tierfähigkeiten - Bärengestalt - Stufe 1 - Gebrüll
 STRING 19300
 // Fähigkeiten: A1L1 (Waldholzfäuste - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19301
@@ -75566,7 +75566,7 @@ Tierfähigkeiten - Bärengestalt - Stufe 2 - Prankenhieb
 STRING 19302
 // Fähigkeiten: A0E7 (Ranken - Stufe 5), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19303
@@ -75578,7 +75578,7 @@ Tierfähigkeiten - Bärengestalt - Stufe 3 - Tollwut
 STRING 19304
 // Fähigkeiten: A0J8 (Waldfeenzauber - Stufe 4), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19305
@@ -75590,7 +75590,7 @@ Tierfähigkeiten - Bärengestalt - Stufe 4 - Winterschlaf
 STRING 19306
 // Fähigkeiten: A0EF (Zorn des Waldes - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19307
@@ -75602,7 +75602,7 @@ Erhöht die Schadenswirkung eines Verbündeten um <A0A1,DataA3,%> %. |nHält <A0
 STRING 19308
 // Fähigkeiten: A1KX (Waldfestung - Erlernen), EditorSuffix (Editor-Suffix (ansf))
 {
-|cffff0000Ult|r|cff0000ffim|r|cff00ff00at|r|cffffff00iv|rzauber 2|nDer Elementarmagier fügt seinem Ziel Schaden in Höhe seiner momentanen Manapunkte zu.|n<A01X,Cool1> Sekunden Abklingzeit.
+(Grimoire - Druid)
 }
 
 STRING 19309
@@ -78446,7 +78446,7 @@ Flour
 STRING 19884
 // Gegenstände: I073 (Mehl), Ubertip (Tooltipp - Erweitert (utub))
 {
-Heilt bei Benutzung <A1SA,DataA1> Trefferpunkte.
+Heals <A1SA,DataA1> hitpoints on usage.
 }
 
 STRING 19885
@@ -79874,7 +79874,7 @@ Options - Enable Characters View
 STRING 20145
 // Fähigkeiten: A1UC (Optionen - Charakteranzeige aktivieren), Tip (Tooltipp - Normal (atp1))
 {
-Enable/Disable Charakters View
+Enable/Disable Characters View
 }
 
 STRING 20146

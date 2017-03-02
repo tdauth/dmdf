@@ -20,6 +20,8 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Concentration is cast all the time (although 100% life and 10 seconds timer!).
+* Learn Stab has the wrong icon.
 * Wieland's store has no effect.
 * String "Arkaner Schutz [|cffffcc00Stufe 2|r]" is very often in war3map.wts of Talras. wc3trans error? Wrong translation? Replace by "(Spell Book Ability - Druid)".
 * Teleportation (Elemental Mage): Wrong German tooltip (Aklingzeit).
@@ -342,6 +344,7 @@ Zeugs:
 
 Aufgehoben für Version 0.9:
 Critical errors:
+* At the moment the intro is 0.
 * FIXED (at least in my version of the map): Holzbruck's Underworld: Right lever cannot be reached in melee fight.
 * FIXED: Spell Attribute Bonus (grimoire spell) needs a unique spell ID for channel! Add it to the Excel table.
 * New installer for Windows 8 and 10 which uses local files and provides a script to enable or disable them: http://www.hiveworkshop.com/forums/world-editor-help-zone-98/local-files-107129/
