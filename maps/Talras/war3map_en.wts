@@ -10248,7 +10248,7 @@ Sprint
 STRING 1711
 // Fähigkeiten: A0R2 (Klassenzauber), Tip (Tooltipp - Normal (atp1))
 {
-Class spells (|cffffcc00Z|r)
+Class Spells (|cffffcc00Z|r)
 }
 
 STRING 1712
@@ -13120,7 +13120,7 @@ Z
 STRING 2228
 // Fähigkeiten: A0R2 (Klassenzauber), Name (Name (anam))
 {
-Class spells
+Class Spells
 }
 
 STRING 2229
@@ -24420,7 +24420,7 @@ Eine Feuersbrunst erfasst ein Gebiet mit einem Radius von 300 und fügt Gegnern 
 STRING 4659
 // Fähigkeiten: A0PN (Aura der Autorität - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Autorität erlernen
+Learn Aura of Authority
 }
 
 STRING 4660
@@ -28120,7 +28120,7 @@ Revive [|cffffcc00Level 3|r] (|cffffcc00O|r)
 STRING 5858
 // Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Learn Auro of Taking Back
+Learn Aura of Taking Back
 }
 
 STRING 5859
@@ -28348,7 +28348,7 @@ Zorn des Waldes - Stufe 4
 STRING 5974
 // Fähigkeiten: A0Y6 (Stich - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 5983
@@ -30753,7 +30753,7 @@ Brandpfeile - Stufe 2
 STRING 6864
 // Fähigkeiten: A0UB (Verbannen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Fire Arrows [|cffffcc00Level 3|r]
+Learn Ban
 }
 
 STRING 6865
@@ -31563,7 +31563,7 @@ Range Combat
 STRING 7129
 // Fähigkeiten: A0Y4 (Stich - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 7135
@@ -32589,7 +32589,7 @@ Waldfeenzauber - Stufe 5
 STRING 7586
 // Fähigkeiten: A0Y3 (Stich - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 7596
@@ -32607,7 +32607,7 @@ Wohltat - Stufe 1
 STRING 7600
 // Fähigkeiten: A0Y2 (Stich - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 7610
@@ -32625,7 +32625,7 @@ Wohltat - Stufe 2
 STRING 7614
 // Fähigkeiten: A1O1 (Stich - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 7624
@@ -37043,31 +37043,31 @@ Demon Servant
 STRING 9305
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 60 % of his life and 40 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 60 % of his life and 40 % of his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9306
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 70 % of his life and 50 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 70 % of his life and 50 % of his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9307
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 80 % of his life and 60 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 80 % of his life and 60 % of his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9308
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 90 % of his life and 70 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 90 % of his life and 70 % of his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9309
 // Fähigkeiten: A056 (Wiederbeleben), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decided on by the following order: 1. allied player characters 2. allies 3. neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
+Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place.
 }
 
 STRING 9313
@@ -37533,31 +37533,31 @@ Opponents in a target area of <A0NP,Area1> cannot attack for some time.  |n|n|cf
 STRING 9495
 // Fähigkeiten: A1NH (Wiederbeleben - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 9496
 // Fähigkeiten: A0O4 (Wiederbeleben - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 9497
 // Fähigkeiten: A0O7 (Wiederbeleben - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 9498
 // Fähigkeiten: A0O5 (Wiederbeleben - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 9499
 // Fähigkeiten: A0O3 (Wiederbeleben - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 9500
@@ -69374,7 +69374,7 @@ The ranger evades attacks with a certain chance.|n|n|cffffcc00Level 1|r - Chance
 STRING 17428
 // Fähigkeiten: A01B (Gewandheit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Gewandheit erlernen
+Learn Agility
 }
 
 STRING 17429
@@ -73100,7 +73100,7 @@ A lightning strike catches the target, deals damage. |n|n|cffffcc00Level 1|r - D
 STRING 18318
 // Fähigkeiten: A1M1 (Blitzschlag - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Blitzschlag erlernen
+Learn Lightning Strike
 }
 
 STRING 18319
@@ -73490,7 +73490,7 @@ The wizard multiplies himself. His multiplications deal a part of his damage. |n
 STRING 18492
 // Fähigkeiten: A1MN (Vervielfachung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Vervielfachung erlernen
+Learn Multiply
 }
 
 STRING 18493
@@ -73802,7 +73802,7 @@ Wut der Elemente - Erlernen
 STRING 18636
 // Fähigkeiten: A1N5 (Rage - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Rage erlernen
+Learn Rage
 }
 
 STRING 18637
@@ -73838,7 +73838,7 @@ Creates a random consumable item for all players. |n|n|cffffcc00Level 1|r - Crea
 STRING 18650
 // Fähigkeiten: A1N7 (Beutezug - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Beutezug erlernen
+Learn Raid
 }
 
 STRING 18651
@@ -74012,7 +74012,7 @@ Standfestigkeit - Erlernen
 STRING 18721
 // Fähigkeiten: A0O6 (Wiederbeleben - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order:1. allied player characters2. allies3. neutralsIf none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
+Revives an ally with a share of his life and his mana.|nThe ally is decided on by the following order: 1. Allied player characters. 2. Allies. 3. Neutrals. If none of these units is found within a radius of 800 from the target point, no effect takes place. |n|n|cffffcc00Level 1|r - 60 % life, 40 % mana.|n|cffffcc00Level 2|r - 70 % life, 50 % mana.|n|cffffcc00Level 3|r - 80 % life, 60 % mana.|n|cffffcc00Level 4|r - 90 % life, 70 % mana.|n|cffffcc00Level 5|r - 100 % life, 80 % mana.
 }
 
 STRING 18730
@@ -74372,13 +74372,13 @@ Sprinten - Erlernen
 STRING 18881
 // Fähigkeiten: A0Y5 (Stich - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Fügt dem angewählten Ziel Schaden zu.|n|n|cffffcc00Stufe 1|r - Verursacht 80 Schaden.|n|cffffcc00Stufe 2|r - Verursacht 160 Schaden.|n|cffffcc00Stufe 3|r - Verursacht 240 Schaden.|n|cffffcc00Stufe 4|r - Verursacht 320 Schaden.|n|cffffcc00Stufe 5|r - Verursacht 400 Schaden.
+Deals damage to the selected target.|n|n|cffffcc00Level 1|r - Deals 80 damage.|n|cffffcc00Level 2|r - Deals 160 damage.|n|cffffcc00Level 3|r - Deals 240 damage.|n|cffffcc00Level 4|r - Deals 320 damage.|n|cffffcc00Level 5|r - Deals 400 damage.
 }
 
 STRING 18890
 // Fähigkeiten: A1O1 (Stich - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Stich erlernen
+Learn Stab
 }
 
 STRING 18891
@@ -74486,7 +74486,7 @@ Teleports the Elemental Mage to an explored location on the map, absorbing taken
 STRING 18938
 // Fähigkeiten: A1O7 (Teleportation - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Teleportation erlernen
+Learn Teleportation
 }
 
 STRING 18939
@@ -74768,7 +74768,7 @@ Schwachstelle - Erlernen
 STRING 19055
 // Fähigkeiten: A0CX (Dryadenquelle - Stufe 3), EditorSuffix (Editor-Suffix (ansf))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,dmgplus1> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,dmgplus2> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,dmgplus3> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,dmgplus4> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,dmgplus5> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus2> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus3> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus4> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus5> damage.
 }
 
 STRING 19064
@@ -75260,7 +75260,7 @@ Nordische Wucht - Erlernen
 STRING 19210
 // Fähigkeiten: A0IX (Dunkle Diener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Creates two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,ulev> with <n00O,uhpm> life, <n00O,ua1b> damage and <n00O,udef> armour. |n|cffffcc00Level 2|r - Level <n03O,ulev> with <n03O,uhpm> life, <n03O,ua1b> damage and <n03O,udef> armour. |n|cffffcc00Level 3|r - Level <n03P,ulev> with <n03P,uhpm> life, <n03P,ua1b> damage and <n03P,udef> armour. |n|cffffcc00Level 4|r - Level <n03Q,ulev> with <n03Q,uhpm> life, <n03Q,ua1b> damage and <n03Q,udef> armour. |n|cffffcc00Level 5|r - Level <n03R,ulev> with <n03R,uhpm> life, <n03R,ua1b> damage and <n03R,udef> armour.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19219
@@ -75302,7 +75302,7 @@ STRING 19226
 STRING 19227
 // Fähigkeiten: A0IV (Dunkle Diener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19236
@@ -75338,7 +75338,7 @@ Erster Mann - Erlernen
 STRING 19243
 // Fähigkeiten: A0IZ (Dunkle Diener - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19252
@@ -75434,7 +75434,7 @@ Attribute Bonus [|cffffcc00Level 17|r]
 STRING 19280
 // Fähigkeiten: A0IY (Dunkle Diener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19281
@@ -75446,13 +75446,13 @@ Attribute Bonus [|cffffcc00Level 18|r]
 STRING 19282
 // Fähigkeiten: A1JX (Dunkle Diener - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19283
 // Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erschafft für <A01U,Dur1> Sekunden zwei schwache Zombies. |n|n|cffffcc00Stufe 1|r - Stufe <n00O,ulev> mit <n00O,uhpm> Leben, <n00O,ua1b> Schaden und <n00O,udef> Rüstung. |n|cffffcc00Stufe 2|r - Stufe <n03O,ulev> mit <n03O,uhpm> Leben, <n03O,ua1b> Schaden und <n03O,udef> Rüstung. |n|cffffcc00Stufe 3|r - Stufe <n03P,ulev> mit <n03P,uhpm> Leben, <n03P,ua1b> Schaden und <n03P,udef> Rüstung. |n|cffffcc00Stufe 4|r - Stufe <n03Q,ulev> mit <n03Q,uhpm> Leben, <n03Q,ua1b> Schaden und <n03Q,udef> Rüstung. |n|cffffcc00Stufe 5|r - Stufe <n03R,ulev> mit <n03R,uhpm> Leben, <n03R,ua1b> Schaden und <n03R,udef> Rüstung.
+Summons two weak zombies for <A01U,Dur1> seconds. |n|n|cffffcc00Level 1|r - Level <n00O,level> with <n00O,HP> life, <n00O,dmgplus1> damage and <n00O,def> armour. |n|cffffcc00Level 2|r - Level <n03O,level> with <n03O,HP> life, <n03O,dmgplus1> damage and <n03O,def> armour. |n|cffffcc00Level 3|r - Level <n03P,level> with <n03P,HP> life, <n03P,dmgplus1> damage and <n03P,def> armour. |n|cffffcc00Level 4|r - Level <n03Q,level> with <n03Q,HP> life, <n03Q,dmgplus1> damage and <n03Q,def> armour. |n|cffffcc00Level 5|r - Level <n03R,level> with <n03R,HP> life, <n03R,dmgplus1> damage and <n03R,def> armour.
 }
 
 STRING 19284
@@ -75464,25 +75464,25 @@ Attribute Bonus [|cffffcc00Level 19|r]
 STRING 19285
 // Fähigkeiten: A0F0 (Weltenportal - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19286
 // Fähigkeiten: A0EZ (Weltenportal - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19287
 // Fähigkeiten: A1ON (Weltenportal - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19288
 // Fähigkeiten: A0F3 (Weltenportal - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19289
@@ -75518,7 +75518,7 @@ Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine 
 STRING 19294
 // Fähigkeiten: A0F1 (Weltenportal - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19295
@@ -75530,7 +75530,7 @@ Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine 
 STRING 19296
 // Fähigkeiten: A0F2 (Weltenportal - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erzeugt ein Portal zur Welt der Dämonen, durch das nach und nach Dämonen strömen. Alle <A0EX,DataA1> Sekunden wird ein Dämon beschworen, der <A0EX,DataC1> Sekunden lange lebt. Das Portal hält <A0EX,Dur1> Sekunden.|n|n|cffffcc00Stufe 1|r - Ein Dämon besitzt <n045,HP> Trefferpunkte und <n045,manaN> Mana. Er verursacht <n045,ua1b> Schaden.|n|cffffcc00Stufe 2|r - Ein Dämon besitzt <n046,HP> Trefferpunkte und <n046,manaN> Mana. Er verursacht <n046,ua1b> Schaden.|n|cffffcc00Stufe 3|r - Ein Dämon besitzt <n047,HP> Trefferpunkte und <n047,manaN> Mana. Er verursacht <n047,ua1b> Schaden.|n|cffffcc00Stufe 4|r - Ein Dämon besitzt <n048,HP> Trefferpunkte und <n048,manaN> Mana. Er verursacht <n048,ua1b> Schaden.|n|cffffcc00Stufe 5|r - Ein Dämon besitzt <n049,HP> Trefferpunkte und <n049,manaN> Mana. Er verursacht <n049,ua1b> Schaden.
+Creates a portal to the world of demons through which demons are streaming gradually. Every <A0EX,DataA1> seconds a demon is summoned who lives for <A0EX,DataC1> seconds. The portal lasts for <A0EX,Dur1> seconds.|n|n|cffffcc00Level 1|r - A demon has <n045,HP> hitpoints and <n045,manaN> mana. He deals <n045,dmgplus1> damage.|n|cffffcc00Level 2|r - A demon has <n046,HP> hitpoints and <n046,manaN> mana. He deals <n046,dmgplus1> damage.|n|cffffcc00Level 3|r - A demon has <n047,HP> hitpoints and <n047,manaN> mana. He deals <n047,dmgplus1> damage.|n|cffffcc00Level 4|r - A demon has <n048,HP> hitpoints and <n048,manaN> mana. He deals <n048,dmgplus1> damage.|n|cffffcc00Level 5|r - A demon has <n049,HP> hitpoints and <n049,manaN> mana. He deals <n049,dmgplus1> damage.
 }
 
 STRING 19297
