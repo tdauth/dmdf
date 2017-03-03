@@ -440,6 +440,11 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: Add info for options.
 * Fix the war3map_en.wts file for Talras by undoing some commits and update the English Talras map. Some previous commits corrupted the file and removed most of the English translations!
 * FIXED (in the mod) wc3lib bug: field Arsg:UnitID is compressed although it was changed! Treefolk, Pest Carret and summon dragon.
+* wc3lib bug: fields Acn2:DataA and Acn2:DataB (for a custom ability based on it) are compressd although they were changed!
+* wc3lib bug: fields ACdr:DataA and ACdr:DataC (for a custom ability based on it) are compressd although they were changed!
+* wc3lib bug: fields Afbt:DataA-D (BUT NOT Afbt:DataE) (for a custom ability based on it) are compressd although they were changed!
+* Tooltips Soul Theft: <A06J,DataA1> life and <A06J,DataB1> is used but use <A06J,DataD1> life and <A06J,DataE1>. Besides how much life is lost per second for it.
+* Help Dago to kill the bears is not completed.
 * Video mit Diakon und Medusa: Kamerafahrten vereinfachen. Die letzte Kamerafahrt beim Diakon macht keinen Sinn. Predigt oder zaubert er?
 * Allgemein: Alle Zauber des Drachentöters testen.
 * FIXED: Drachentöter: Schwachstelle, Zaubericon ist grün.
