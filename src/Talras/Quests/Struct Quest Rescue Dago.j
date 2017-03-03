@@ -51,7 +51,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method stateConditionCompleted0 takes AQuestItem questItem returns boolean
-			return IsUnitDeadBJ(gg_unit_n008_0027) and IsUnitDeadBJ(gg_unit_n008_0083)
+			return (GetTriggerUnit() == gg_unit_n008_0083 and IsUnitDeadBJ(gg_unit_n008_0027)) or (GetTriggerUnit() == gg_unit_n008_0027 and IsUnitDeadBJ(gg_unit_n008_0083))
 		endmethod
 
 		private static method timerFunctionMove takes nothing returns nothing
@@ -72,7 +72,7 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 
 		private static method stateActionCompleted0 takes AQuestItem questItem returns nothing
 			local thistype this = thistype(questItem.quest())
-			local integer i
+			local integer i = 0
 			call VideoRescueDago1.video.evaluate().play()
 			call waitForVideo(Game.videoWaitInterval)
 			// make sure dago starts at the correct position
@@ -96,16 +96,11 @@ library StructMapQuestsQuestRescueDago requires Asl, StructMapMapFellows, Struct
 		endmethod
 
 		private static method stateEventCompleted1 takes AQuestItem questItem, trigger usedTrigger returns nothing
-			local event triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_0)
-			set triggerEvent = null
-			set triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_1)
-			set triggerEvent = null
-			set triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_2)
-			set triggerEvent = null
-			set triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_3)
-			set triggerEvent = null
-			set triggerEvent = TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_4)
-			set triggerEvent = null
+			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_0)
+			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_1)
+			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_2)
+			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_3)
+			call TriggerRegisterEnterRectSimple(usedTrigger, gg_rct_waypoint_dago_4)
 		endmethod
 
 		private static method stateConditionCompleted1 takes AQuestItem questItem returns boolean
