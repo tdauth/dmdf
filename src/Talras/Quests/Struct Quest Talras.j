@@ -65,7 +65,7 @@ library StructMapQuestsQuestTalras requires Asl, StructMapQuestsQuestTheNorsemen
 			call questItem1.setPing(true)
 			call questItem1.setPingCoordinatesFromRect(gg_rct_quest_talras_quest_item_1)
 			call questItem1.setPingColour(100.0, 100.0, 100.0)
-			call questItem1.setReward(thistype.rewardExperience, 300)
+			call questItem1.setReward(thistype.rewardExperience, 150)
 
 			return this
 		endmethod
