@@ -8340,25 +8340,25 @@ Zwergenmagier
 STRING 1393
 // Fähigkeiten: A0LW (Verspotten - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Mock [|cffffcc00Level 2|r]
+Mocking [|cffffcc00Level 2|r]
 }
 
 STRING 1394
 // Fähigkeiten: A0LX (Verspotten - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Mock [|cffffcc00Level 3|r]
+Mocking [|cffffcc00Level 3|r]
 }
 
 STRING 1395
 // Fähigkeiten: A0LY (Verspotten - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Mock [|cffffcc00Level 4|r]
+Mocking [|cffffcc00Level 4|r]
 }
 
 STRING 1396
 // Fähigkeiten: A0LZ (Verspotten - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Mock [|cffffcc00Level 5|r]
+Mocking [|cffffcc00Level 5|r]
 }
 
 STRING 1397
@@ -8394,13 +8394,13 @@ A magician of the north.
 STRING 1402
 // Fähigkeiten: A0LV (Verspotten - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Mock [|cffffcc00Level 1|r]
+Mocking [|cffffcc00Level 1|r]
 }
 
 STRING 1403
 // Fähigkeiten: A02O (Verspotten), Name (Name (anam))
 {
-Mock
+Mocking
 }
 
 STRING 1404
@@ -11196,7 +11196,7 @@ Berserker
 STRING 1869
 // Fähigkeiten: A0RH (Hieb), Tip (Tooltipp - Normal (atp1))
 {
-Hieb
+Blow
 }
 
 STRING 1870
@@ -11208,7 +11208,7 @@ STRING 1870
 STRING 1871
 // Fähigkeiten: A0RH (Hieb), Name (Name (anam))
 {
-Hieb
+Blow
 }
 
 STRING 1872
@@ -11262,7 +11262,7 @@ Der edle Helm eines Klerikers.
 STRING 1880
 // Fähigkeiten: A06T (Wilder Blutrausch), Name (Name (anam))
 {
-Wilder Blutrausch
+Wild Bloodlust
 }
 
 STRING 1881
@@ -11310,7 +11310,7 @@ A plain long sword.
 STRING 1888
 // Zauberverstärker/Effekte: B037 (), Bufftip (Tooltipp (ftip))
 {
-|cff00ff00Wilder Blutrausch|r
+|cff00ff00Wild Bloodlust|r
 }
 
 STRING 1889
@@ -15303,13 +15303,13 @@ In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area5> sow
 STRING 2645
 // Fähigkeiten: A0PR (Aura der Rücknahme - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 2646
 // Fähigkeiten: A0M9 (Aura der Rücknahme - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 2652
@@ -15327,7 +15327,7 @@ Ursulas Totem
 STRING 2655
 // Fähigkeiten: A0M7 (Aura der Rücknahme - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 2656
@@ -16074,7 +16074,7 @@ Ancestors Pact - Level 2
 STRING 2822
 // Fähigkeiten: A0YW (Wilder Blutrausch - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Wilder Blutrausch [|cffffcc00Stufe 1|r]
+Wild Bloodlust [|cffffcc00Level 1|r]
 }
 
 STRING 2823
@@ -16513,31 +16513,31 @@ STRING 2927
 STRING 2928
 // Fähigkeiten: A157 (Hieb - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Hieb [|cffffcc00Stufe 1|r]
+Blow [|cffffcc00Level 1|r]
 }
 
 STRING 2929
 // Fähigkeiten: A158 (Hieb - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Hieb [|cffffcc00Stufe 2|r]
+Blow [|cffffcc00Level 2|r]
 }
 
 STRING 2930
 // Fähigkeiten: A159 (Hieb - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Hieb [|cffffcc00Stufe 3|r]
+Blow [|cffffcc00Level 3|r]
 }
 
 STRING 2931
 // Fähigkeiten: A15A (Hieb - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Hieb [|cffffcc00Stufe 4|r]
+Blow [|cffffcc00Level 4|r]
 }
 
 STRING 2932
 // Fähigkeiten: A15B (Hieb - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Hieb [|cffffcc00Stufe 5|r]
+Blow [|cffffcc00Level 5|r]
 }
 
 STRING 2933
@@ -21414,7 +21414,7 @@ Controlled Time Flow
 STRING 3908
 // Fähigkeiten: A0M8 (Aura der Rücknahme - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 3909
@@ -26010,7 +26010,7 @@ Verursacht bei Angriffen einen zusätzlichen Schaden von <A0T6,DataA1>. Einheite
 STRING 5103
 // Fähigkeiten: A0MA (Aura der Rücknahme - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 5104
@@ -27682,7 +27682,7 @@ Summon Grove [|cffffcc00Level 3|r]
 STRING 5656
 // Fähigkeiten: A0MB (Aura der Rücknahme - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In der Nähe befindliche Verbündete des Ritters im Umkreis von <A0M5,Area1> sowie der Ritter selbst erhalten einen Teil ihres Angriffsschadens als Leben und Mana zurück, wenn sie Gegnern Schaden zufügen..|n|n|cffffcc00Stufe 1|r - <A0M5,DataA1,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 2|r - <A0M5,DataA2,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 3|r - <A0M5,DataA3,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 4|r - <A0M5,DataA4,%> % des Schadens werden in Leben umgewandelt.|n|cffffcc00Stufe 5|r - <A0M5,DataA5,%> % des Schadens werden in Leben umgewandelt.
+Allies nearby the Knight within a range of <A0M5,Area1> as well as the Knight himself receive a portion of their attack damage as life and mana back when they deal damage to opponents.|n|n|cffffcc00Level 1|r - <A0M5,DataA1,%> % of the damage are converted to life and mana.|n|cffffcc00Level 2|r - <A0M5,DataA2,%> % of the damage are converted to life and mana.|n|cffffcc00Level 3|r - <A0M5,DataA3,%> % of the damage are converted to life and mana.|n|cffffcc00Level 4|r - <A0M5,DataA4,%> % of the damage are converted to life and mana.|n|cffffcc00Level 5|r - <A0M5,DataA5,%> % of the damage are converted to life and mana.
 }
 
 STRING 5659
@@ -28893,7 +28893,7 @@ Small Mana Potion
 STRING 6130
 // Fähigkeiten: A06S (Wilder Blutrausch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2|r|nDer Drachentöter schlägt in blinder Wut zu. Jeder Schlag verbraucht 3% seiner maximalen Lebensenergie und fügt einen Schadensbonus von 25% seiner maximalen Lebensenergie zu. Kann nur eingesetzt werden bis noch mindestens 10% der maximalen Lebensenergie übrig sind.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+|cffffcc00Ultimate Spell 2|r|nThe Dragon Slayer attacks in blind furry. Each hit consumes 3 % of his maximum life energy and adds a damage bonus of 25 % of his maximum life energy. Can only be used until at least 10 % of the maximum life energy is left.|n|cffc3dbffCancel spell with repeated cast.|r
 }
 
 STRING 6131
@@ -31365,7 +31365,7 @@ Seuche - Stufe 4
 STRING 7085
 // Fähigkeiten: A0IB (Dunkler Zauber - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 7086
@@ -33297,7 +33297,7 @@ Metamorphosezauberbuch
 STRING 7863
 // Fähigkeiten: A0I9 (Dunkler Zauber - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 7873
@@ -33315,7 +33315,7 @@ Inferno - Stufe 1
 STRING 7877
 // Fähigkeiten: A0IC (Dunkler Zauber - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 7887
@@ -33333,7 +33333,7 @@ Inferno - Stufe 2
 STRING 7891
 // Fähigkeiten: A0IA (Dunkler Zauber - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 7901
@@ -37073,7 +37073,7 @@ Revives an ally with 100 % of his life and 80 % of his mana.|nThe ally is decide
 STRING 9313
 // Fähigkeiten: A0XA (Block - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 9314
@@ -40167,7 +40167,7 @@ Konzentration - Stufe 5
 STRING 10544
 // Fähigkeiten: A0XM (Konzentration - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Rush [|cffffcc00Level 1|r]
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 10545
@@ -42027,7 +42027,7 @@ Zehren - Stufe 1
 STRING 11232
 // Fähigkeiten: A1JK (Bezwingung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Feeding [|cffffcc00Level 2|r]
+Learn Conquest
 }
 
 STRING 11233
@@ -43399,31 +43399,31 @@ Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schade
 STRING 11738
 // Fähigkeiten: A0XB (Block - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 11739
 // Fähigkeiten: A0X9 (Block - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 11740
 // Fähigkeiten: A1JA (Block - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 11741
 // Fähigkeiten: A0X8 (Block - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 11742
 // Fähigkeiten: A0XC (Block - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter hat eine 30%ige Chance, Angriffe auf ihn abzublocken und ihren Schaden zu verringern. |n|n|cffffcc00Stufe 1|r - Verringert den Schaden um 20 %.|n|cffffcc00Stufe 2|r - Verringert den Schaden um 30 %.|n|cffffcc00Stufe 3|r - Verringert den Schaden um 40 %.|n|cffffcc00Stufe 4|r - Verringert den Schaden um 50 %.|n|cffffcc00Stufe 5|r - Verringert den Schaden um 60 %.
+The Knight has a chance of 30 % to block attacks on him and to reduce their damage. |n|n|cffffcc00Level 1|r - Reduces the damage by 20 %.|n|cffffcc00Level 2|r - Reduces the damage by 30 %.|n|cffffcc00Level 3|r - Reduces the damage by 40 %.|n|cffffcc00Level 4|r - Reduces the damage by 50 %.|n|cffffcc00Level 5|r - Reduces the damage by 60 %.
 }
 
 STRING 11743
@@ -47077,7 +47077,7 @@ STRING 12968
 STRING 12979
 // Fähigkeiten: A1A9 (Verfluchter Boden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 12980
@@ -48103,31 +48103,31 @@ Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ri
 STRING 13175
 // Fähigkeiten: A0LX (Verspotten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 13176
 // Fähigkeiten: A0LW (Verspotten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 13177
 // Fähigkeiten: A0LV (Verspotten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 13178
 // Fähigkeiten: A1O5 (Verspotten - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 13179
 // Fähigkeiten: A0LY (Verspotten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 13180
@@ -48163,31 +48163,31 @@ Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel <A070,Da
 STRING 13185
 // Fähigkeiten: A158 (Hieb - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 13186
 // Fähigkeiten: A157 (Hieb - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 13187
 // Fähigkeiten: A1NV (Hieb - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 13188
 // Fähigkeiten: A15B (Hieb - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 13189
 // Fähigkeiten: A15A (Hieb - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 13190
@@ -48661,7 +48661,7 @@ Mehrfachschuss - Stufe 2
 STRING 13271
 // Fähigkeiten: A13P (Epidemie - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25.|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nHält 30 Sekunden.|n|nBenötigt Stufe 25.
+|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nAll opponents in the area of influence suffer 50 points damage every 2 seconds. When an opponent dies by this ability, the efect spreads to other nearby opponents.|nLasts for 30 seconds.
 }
 
 STRING 13272
@@ -48847,7 +48847,7 @@ STRING 13306
 STRING 13307
 // Fähigkeiten: A13N (Epidemie), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 2|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nHält 30 Sekunden.
+|cffffcc00Ultimate Spell 2|r|nAll opponents in the area of influence suffer 50 points damage every 2 seconds. When an opponent dies by this ability, the efect spreads to other nearby opponents.|nLasts for 30 seconds.
 }
 
 STRING 13308
@@ -48955,31 +48955,31 @@ Der Ritter regeneriert alle 10 Sekunden 25 %  maximalen seiner Lebenspunkte.
 STRING 13325
 // Fähigkeiten: A0XK (Konzentration - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 13326
 // Fähigkeiten: A0XL (Konzentration - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 13327
 // Fähigkeiten: A0XI (Konzentration - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 13328
 // Fähigkeiten: A0XJ (Konzentration - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 13329
 // Fähigkeiten: A1JI (Konzentration - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter regeneriert alle 10 Sekunden einen Teil seiner maximalen seiner Lebenspunkte..|n|n|cffffcc00Stufe 1|r - 5 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 2|r - 10 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 3|r - 15 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 4|r - 20 %  maximalen seiner Lebenspunkte. |n|cffffcc00Stufe 5|r - 25 %  maximalen seiner Lebenspunkte.
+The Knight regenerates every 10 seconds a part of his maximum hitpoints. |n|n|cffffcc00Level 1|r - 5 % of his maximum hitpoints.|n|cffffcc00Level 2|r - 10 % of his maximum hitpoints.|n|cffffcc00Level 3|r - 15 % of his maximum hitpoints.|n|cffffcc00Level 4|r - 20 % of his maximum hitpoints.|n|cffffcc00Level 5|r - 25 % of his maximum hitpoints.
 }
 
 STRING 13335
@@ -50563,7 +50563,7 @@ Attribute Bonus [|cffffcc00Level 15|r]
 STRING 13688
 // Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Verfluchter Boden erlernen
+Learn Cursed Ground
 }
 
 STRING 13689
@@ -60145,7 +60145,7 @@ Stealing from a unit that does not belong to the player. The target unit can be 
 STRING 15321
 // Fähigkeiten: A1JV (Verfluchter Boden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 15324
@@ -62947,31 +62947,31 @@ Göttergunst [|cffffcc00Stufe 2|r] (|cffffcc00D|r)
 STRING 15919
 // Fähigkeiten: A0LN (Selbstlosigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 15920
 // Fähigkeiten: A0LP (Selbstlosigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 15921
 // Fähigkeiten: A0LM (Selbstlosigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 15922
 // Fähigkeiten: A0LO (Selbstlosigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 15923
 // Fähigkeiten: A1NP (Selbstlosigkeit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 15924
@@ -63229,7 +63229,7 @@ Göttergunst [|cffffcc00Stufe 5|r] (|cffffcc00D|r)
 STRING 15966
 // Fähigkeiten: A1JZ (Dunkler Zauber - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ein Todesmantel, der eine befreundete untote Einheit heilen oder eine feindliche lebende Einheit um die Hälfte der geheilten Trefferpunkte verletzen kann..|n|n|cffffcc00Stufe 1|r - Heilt <A0I7,DataA1> Leben. |n|cffffcc00Stufe 2|r - Heilt <A0I7,DataA2> Leben. |n|cffffcc00Stufe 3|r - Heilt <A0I7,DataA3> Leben. |n|cffffcc00Stufe 4|r - Heilt <A0I7,DataA4> Leben. |n|cffffcc00Stufe 5|r - Heilt <A0I7,DataA5> Leben.
+A death coil that can heal a friendly undead unit or damage a hostile living unit by half of the healed hitpoints.|n|n|cffffcc00Level 1|r - Heals <A0I7,DataA1> life. |n|cffffcc00Level 2|r - Heals <A0I7,DataA2> life. |n|cffffcc00Level 3|r - Heals <A0I7,DataA3> life. |n|cffffcc00Level 4|r - Heals <A0I7,DataA4> life. |n|cffffcc00Level 5|r - Heals <A0I7,DataA5> life.
 }
 
 STRING 15967
@@ -65357,7 +65357,7 @@ Martyr [|cffffcc00Level 2|r] (|cffffcc00F|r)
 STRING 16564
 // Fähigkeiten: A1K1 (Einschüchtern - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Einschüchtern erlernen
+Learn Intimidate
 }
 
 STRING 16565
@@ -66261,7 +66261,7 @@ STRING 16832
 STRING 16833
 // Fähigkeiten: A1HQ (Verfluchter Boden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16834
@@ -66285,7 +66285,7 @@ Verfluchter Boden - Stufe 2
 STRING 16837
 // Fähigkeiten: A1HO (Verfluchter Boden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16838
@@ -66309,7 +66309,7 @@ Verfluchter Boden - Stufe 3
 STRING 16841
 // Fähigkeiten: A1HP (Verfluchter Boden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16843
@@ -66327,7 +66327,7 @@ Verfluchter Boden - Stufe 4
 STRING 16845
 // Fähigkeiten: A1HN (Verfluchter Boden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verflucht den Boden um den Zielpunkt. Untote regenerieren ihr Leben schneller auf verfluchtem Boden. |n|n|cffffcc00Stufe 1|r -  Verflucht den Boden mit einem Radius von 100.|n|cffffcc00Stufe 2|r - Verflucht den Boden mit einem Radius von 200.|n|cffffcc00Stufe 3|r - Verflucht den Boden mit einem Radius von 300.|n|cffffcc00Stufe 4|r - Verflucht den Boden mit einem Radius von 400.|n|cffffcc00Stufe 5|r - Verflucht den Boden mit einem Radius von 500.
+Curses the ground around the target point. Unddeads regenerate their life faster on cursed ground. |n|n|cffffcc00Level 1|r -  Curses the ground with a radius of 100.|n|cffffcc00Level 2|r - Curses the ground with a radius of 200.|n|cffffcc00Level 3|r - Curses the ground with a radius of 300.|n|cffffcc00Level 4|r - Curses the ground with a radius of 400.|n|cffffcc00Level 5|r - Curses the ground with a radius of 500.
 }
 
 STRING 16847
@@ -70610,7 +70610,7 @@ Einschüchtern [|cffffcc00Stufe 1|r] (|cffffcc00O|r)
 STRING 17634
 // Fähigkeiten: A06S (Wilder Blutrausch), Tip (Tooltipp - Normal (atp1))
 {
-Wilder Blutrausch [|cffffcc00Stufe 1|r] (|cffffcc00G|r)
+Wild Bloodlust [|cffffcc00Level 1|r] (|cffffcc00G|r)
 }
 
 STRING 17635
@@ -72242,13 +72242,13 @@ Entzünden - Erlernen
 STRING 17927
 // Fähigkeiten: A1KP (Epidemie - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25.|r|nAlle Gegner im Einflussbereich erleiden alle 2 Sekunden 50 Punkte Schaden. Stirbt ein Gegner durch diese Fähigkeit, so breitet sich der Effekt auf weitere Gegner im Umkreis aus.|nHält 30 Sekunden.|n|nBenötigt Stufe 25.
+|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nAll opponents in the area of influence suffer 50 points damage every 2 seconds. When an opponent dies by this ability, the efect spreads to other nearby opponents.|nLasts for 30 seconds.
 }
 
 STRING 17936
 // Fähigkeiten: A1KP (Epidemie - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Epidemie erlernen
+Learn Epidemic
 }
 
 STRING 17937
@@ -72566,13 +72566,13 @@ Eispfeile - Erlernen
 STRING 18071
 // Fähigkeiten: A0YW (Wilder Blutrausch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Drachentöter schlägt in blinder Wut zu. Jeder Schlag verbraucht 3% seiner maximalen Lebensenergie und fügt einen Schadensbonus von 25% seiner maximalen Lebensenergie zu. Kann nur eingesetzt werden bis noch mindestens 10% der maximalen Lebensenergie übrig sind.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nThe Dragon Slayer attacks in blind furry. Each hit consumes 3 % of his maximum life energy and adds a damage bonus of 25 % of his maximum life energy. Can only be used until at least 10 % of the maximum life energy is left.|n|cffc3dbffCancel spell with repeated cast.|r
 }
 
 STRING 18080
 // Fähigkeiten: A1L7 (Wilder Blutrausch - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Wilder Blutrausch erlernen
+Learn Wild Bloodlust
 }
 
 STRING 18081
@@ -73598,7 +73598,7 @@ Attribute Bonus [|cffffcc00Level 16|r]
 STRING 18540
 // Fähigkeiten: A1MT (Seuche - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Seuche erlernen
+Learn Plague
 }
 
 STRING 18541
@@ -73982,7 +73982,7 @@ On activation the knight removes all the negative magical effects from himself a
 STRING 18714
 // Fähigkeiten: A1NF (Standfestigkeit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Standfestigkeit erlernen
+Learn Stability
 }
 
 STRING 18715
@@ -74054,7 +74054,7 @@ STRING 18737
 STRING 18746
 // Fähigkeiten: A1NJ (Unbeugsamkeit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Unbeugsamkeit erlernen
+Learn Rigidity
 }
 
 STRING 18747
@@ -74126,7 +74126,7 @@ The knight rushes to an opponent with 80 % increased speed, stuns him for 2 seco
 STRING 18778
 // Fähigkeiten: A1NN (Anstürmen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Anstürmen erlernen
+Learn Rush
 }
 
 STRING 18779
@@ -74156,13 +74156,13 @@ Anstürmen - Erlernen
 STRING 18785
 // Fähigkeiten: A0LL (Selbstlosigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit weniger Schaden. Der Effekt kann nicht unterbrochen werden.  |n|n|cffffcc00Stufe 1|r - Der Verbündete erleidet 60 % weniger Schaden.|n|cffffcc00Stufe 2|r - Der Verbündete erleidet 70 % weniger Schaden.|n|cffffcc00Stufe 3|r - Der Verbündete erleidet 80 % weniger Schaden.|n|cffffcc00Stufe 4|r - Der Verbündete erleidet 90 % weniger Schaden.|n|cffffcc00Stufe 5|r - Der Verbündete erleidet 100 % weniger Schaden.
+The Knight can connect with an ally and suffer 160 % of his suffered damage for 15 seconds. The ally suffers less damage. The effect cannot be interrupted.|n|n|cffffcc00Level 1|r - The ally suffers 60 % less damage.|n|cffffcc00Level 2|r - The ally suffers 70 % less damage.|n|cffffcc00Level 3|r - The ally suffers 80 % less damage.|n|cffffcc00Level 4|r - The ally suffers 90 % less damage.|n|cffffcc00Level 5|r - The ally suffers 100 % less damage.
 }
 
 STRING 18794
 // Fähigkeiten: A1NP (Selbstlosigkeit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Selbstlosigkeit erlernen
+Learn Selflessness
 }
 
 STRING 18795
@@ -74264,13 +74264,13 @@ Schuss ins Herz - Erlernen
 STRING 18833
 // Fähigkeiten: A159 (Hieb - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter schlägt kraftvoll zu und fügt dem angewählten Ziel Schaden zu.|n<A070,Cool1> Sekunden Abklingzeit.|n|n|cffffcc00Stufe 1|r -  Fügt dem angewählten Ziel <A070,DataC1> Punkte Schaden zu.|n|cffffcc00Stufe 2|r - Fügt dem angewählten Ziel <A070,DataC2> Punkte Schaden zu. |n|cffffcc00Stufe 3|r - Fügt dem angewählten Ziel <A070,DataC3> Punkte Schaden zu.|n|cffffcc00Stufe 4|r - Fügt dem angewählten Ziel <A070,DataC4> Punkte Schaden zu.|n|cffffcc00Stufe 5|r - Fügt dem angewählten Ziel <A070,DataC5> Punkte Schaden zu.
+The Dragon Slayer hits the target with strength and deals damage to the selected target.|n<A070,Cool1> seconds cooldown.|n|n|cffffcc00Level 1|r - Deals to the selected target <A070,DataC1> points of damage.|n|cffffcc00Level 2|r - Deals to the selected target <A070,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals to the selected target <A070,DataC3> points of damage.|n|cffffcc00Level 4|r - Deals to the selected target <A070,DataC4> points of damage.|n|cffffcc00Level 5|r - Deals to the selected target <A070,DataC5> points of damage.
 }
 
 STRING 18842
 // Fähigkeiten: A1NV (Hieb - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Hieb erlernen
+Learn Blow
 }
 
 STRING 18843
@@ -74414,7 +74414,7 @@ The Dragon Slayer increases his attack speed for some time.|n<A06W,Cool1> second
 STRING 18906
 // Fähigkeiten: A1O3 (Überlegenheit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Überlegenheit erlernen
+Learn Superiority
 }
 
 STRING 18907
@@ -74444,13 +74444,13 @@ STRING 18912
 STRING 18913
 // Fähigkeiten: A0LZ (Verspotten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Ritter verspottet ein Ziel, sodass es wütend wird und in blinder Wut den Ritter angreift. |n|n|cffffcc00Stufe 1|r -  Das angewählte Ziel greift 5 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 80 % des ursprünglichen Schadens.|n|cffffcc00Stufe 2|r - Das angewählte Ziel greift 6 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 70 % des ursprünglichen Schadens.|n|cffffcc00Stufe 3|r - Das angewählte Ziel greift 7 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 60 % des ursprünglichen Schadens.|n|cffffcc00Stufe 4|r - Das angewählte Ziel greift 8 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 50 % des ursprünglichen Schadens.|n|cffffcc00Stufe 5|r - Das angewählte Ziel greift 9 Sekunden lang nur den Ritter an. Schaden vom Ziel gegen den Ritter verursacht nur 40 % des ursprünglichen Schadens.
+The Knight mocks a target so that it becomes angry and attacks the Knight in blind rage.|n|n|cffffcc00Level 1|r - The selected target only attacks the Knight for 5 seconds. Damage from the target against the Knight deals only 80 % of the original damage.|n|cffffcc00Level 2|r - The selected target only attacks the Knight for 6 seconds. Damage from the target against the Knight deals only 70 % of the original damage.|n|cffffcc00Level 3|r - The selected target only attacks the Knight for 7 seconds. Damage from the target against the Knight deals only 60 % of the original damage.|n|cffffcc00Level 4|r - The selected target only attacks the Knight for 8 seconds. Damage from the target against the Knight deals only 50 % of the original damage.|n|cffffcc00Level 5|r - The selected target only attacks the Knight for 9 seconds. Damage from the target against the Knight deals only 40 % of the original damage.
 }
 
 STRING 18922
 // Fähigkeiten: A1O5 (Verspotten - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Verspotten erlernen
+Learn Mocking
 }
 
 STRING 18923
@@ -74738,7 +74738,7 @@ The Dragon Slayer has a chance to deal double damage. |n|n|cffffcc00Level 1|r - 
 STRING 19048
 // Fähigkeiten: A1OL (Schwachstelle - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Schwachstelle erlernen
+Learn Weak Spot
 }
 
 STRING 19049
@@ -76148,31 +76148,31 @@ Attribute Bonus [|cffffcc00Level 28|r]
 STRING 19428
 // Fähigkeiten: A0HY (Dämonendiener - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents aroand him.|n|cffc3dbffThere can only be one summoned demon servant.|r .|n|n|cffffcc00Level 1|r - Level <n00P,ulev>, deals <n00P,ua1b> damage and has <n00P,def> armour, <n00P,umpm> mana and <n00P,uhpm> life. |n|cffffcc00Level 2|r - Level <n03S,ulev>, deals <n03S,ua1b> damage and has <n03S,udef> armour, <n03S,umpm> mana and <n03S,uhpm> life. |n|cffffcc00Level 3|r - Level <n03T,ulev>, deals <n03T,ua1b> damage and has <n03T,udef> armour, <n03T,umpm> mana and <n03T,uhpm> life. |n|cffffcc00Level 4|r - Level <n03U,ulev>, deals <n03U,ua1b> damage and has <n03U,udef> armour, <n03U,umpm> mana and <n03U,uhpm> life. |n|cffffcc00Level 5|r - Level <n03V,ulev>, deals <n03V,ua1b> damage and has <n03V,udef> armour, <n03V,umpm> mana and <n03V,uhpm> life.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19429
 // Fähigkeiten: A0I0 (Dämonendiener - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19430
 // Fähigkeiten: A023 (Dämonendiener - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19431
 // Fähigkeiten: A0HZ (Dämonendiener - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19432
 // Fähigkeiten: A1K7 (Dämonendiener - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19433
@@ -76208,7 +76208,7 @@ Ruft für <A1CZ,Dur5> Sekunden einen Dämon Stufe <n00P,level> herbei, der  <n00
 STRING 19438
 // Fähigkeiten: A0I1 (Dämonendiener - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Ruft für <A1CZ,Dur1> Sekunden einen Dämon herbei Der beschworene Dämon verbrennt Gegner in seinem Umkreis..|n|cffc3dbffEs kann nur ein Dämonendiener beschworen werden.|r .|n|n|cffffcc00Stufe 1|r - Stufe <n00P,ulev>, verursacht <n00P,ua1b> Schaden und besitzt <n00P,def> Rüstung, <n00P,umpm> Mana und <n00P,uhpm> Leben. |n|cffffcc00Stufe 2|r - Stufe <n03S,ulev>, verursacht <n03S,ua1b> Schaden und besitzt <n03S,udef> Rüstung, <n03S,umpm> Mana und <n03S,uhpm> Leben. |n|cffffcc00Stufe 3|r - Stufe <n03T,ulev>, verursacht <n03T,ua1b> Schaden und besitzt <n03T,udef> Rüstung, <n03T,umpm> Mana und <n03T,uhpm> Leben. |n|cffffcc00Stufe 4|r - Stufe <n03U,ulev>, verursacht <n03U,ua1b> Schaden und besitzt <n03U,udef> Rüstung, <n03U,umpm> Mana und <n03U,uhpm> Leben. |n|cffffcc00Stufe 5|r - Stufe <n03V,ulev>, verursacht <n03V,ua1b> Schaden und besitzt <n03V,udef> Rüstung, <n03V,umpm> Mana und <n03V,uhpm> Leben.
+Calls a demon for <A1CZ,Dur1> seconds. The summoned demon burns opponents around him.|n|cffc3dbffOnly one demon servant can be summoned.|r .|n|n|cffffcc00Level 1|r - Level <n00P,level>, deals <n00P,dmgplus1> damage and has <n00P,def> armour, <n00P,manaN> mana and <n00P,HP> life. |n|cffffcc00Level 2|r - Level <n03S,level>, deals <n03S,dmgplus1> damage and has <n03S,def> armour, <n03S,manaN> mana and <n03S,HP> life. |n|cffffcc00Level 3|r - Level <n03T,level>, deals <n03T,dmgplus1> damage and has <n03T,def> armour, <n03T,manaN> mana and <n03T,HP> life. |n|cffffcc00Level 4|r - Level <n03U,level>, deals <n03U,dmgplus1> damage and has <n03U,def> armour, <n03U,manaN> mana and <n03U,HP> life. |n|cffffcc00Level 5|r - Level <n03V,level>, deals <n03V,dmgplus1> damage and has <n03V,def> armour, <n03V,manaN> mana and <n03V,HP> life.
 }
 
 STRING 19439
@@ -76244,37 +76244,37 @@ STRING 19443
 STRING 19444
 // Fähigkeiten: A0HP (Seuche - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19445
 // Fähigkeiten: A1MT (Seuche - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19446
 // Fähigkeiten: A0HQ (Seuche - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19447
 // Fähigkeiten: A0HN (Seuche - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19448
 // Fähigkeiten: A0HR (Seuche - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19449
 // Fähigkeiten: A0HO (Seuche - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang Schaden pro Sekunde erleiden.|n|n|cffffcc00Stufe 1|r - Verursacht <A1DD,DataA1> Treffer-Schaden und <A1DD,DataC1> Gebiets-Schaden.|n|cffffcc00Stufe 2|r - Verursacht <A1DD,DataA2> Treffer-Schaden und <A1DD,DataC2> Gebiets-Schaden.|n|cffffcc00Stufe 3|r - Verursacht <A1DD,DataA3> Treffer-Schaden und <A1DD,DataC3> Gebiets-Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DD,DataA4> Treffer-Schaden und <A1DD,DataC4> Gebiets-Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DD,DataA5> Treffer-Schaden und <A1DD,DataC5> Gebiets-Schaden.
+Infects an area on each attack in which all opponents get damage per second for several seconds.|n|n|cffffcc00Level 1|r - Deals <A1DD,DataA1> hit damage and <A1DD,DataC1> area damage.|n|cffffcc00Level 2|r - Deals <A1DD,DataA2> hit damage and <A1DD,DataC2> area damage.|n|cffffcc00Level 3|r - Deals <A1DD,DataA3> hit damage and <A1DD,DataC3> area damage.|n|cffffcc00Level 4|r - Deals <A1DD,DataA4> hit damage and <A1DD,DataC4> area damage.|n|cffffcc00Level 5|r - Deals <A1DD,DataA5> hit damage and <A1DD,DataC5> area damage.
 }
 
 STRING 19450
@@ -76364,7 +76364,7 @@ Attribute Bonus [|cffffcc00Level 36|r]
 STRING 19472
 // Fähigkeiten: A1QL (Kraft der Schreine - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Kraft der Schreine erlernen
+Learn Power of the Shrines
 }
 
 STRING 19473
@@ -76610,37 +76610,37 @@ Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern i
 STRING 19565
 // Fähigkeiten: A1QQ (Kraft der Schreine - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19566
 // Fähigkeiten: A1QN (Kraft der Schreine - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19567
 // Fähigkeiten: A1QL (Kraft der Schreine - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19568
 // Fähigkeiten: A1QO (Kraft der Schreine - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19569
 // Fähigkeiten: A1QP (Kraft der Schreine - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19570
 // Fähigkeiten: A1QM (Kraft der Schreine - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verbindet die Kraft aller erkundeten Wiederbelebungsschreine und fügt Gegnern in einem Gebiet entsprechenden Schaden zu. Die Kraft der Schreine entspricht dabei dem Verhältnis der Anzahl der erkundeten Schreine der Karte mal 100 zur Größe der Karte geteilt durch 100.|n|n|cffffcc00Stufe 1|r - Bonus zur Anzahl der erkundeten Schreine von 1. |n|cffffcc00Stufe 2|r - Bonus zur Anzahl der erkundeten Schreine von 2.|n|cffffcc00Stufe 3|r - Bonus zur Anzahl der erkundeten Schreine von 3.|n|cffffcc00Stufe 4|r - Bonus zur Anzahl der erkundeten Schreine von 4.|n|cffffcc00Stufe 5|r - Bonus zur Anzahl der erkundeten Schreine von 5.
+Combines the power of all explored revival shrines and deals corresponding damage to opponents in an area. The power of the shrines is equal to the ratio of the number of the explored shrines multiplied by 100 to the size of the map divided by 100.|n|n|cffffcc00Level 1|r - Bonus to the number of explored shrines of 1. |n|cffffcc00Level 2|r - Bonus to the number of explored shrines of 2.|n|cffffcc00Level 3|r - Bonus to the number of explored shrines of 3.|n|cffffcc00Level 4|r - Bonus to the number of explored shrines of 4.|n|cffffcc00Level 5|r - Bonus to the number of explored shrines of 5.
 }
 
 STRING 19571
