@@ -47,6 +47,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			call MapSettings.setGoldmine(gg_unit_n06E_0487)
 			call MapSettings.setNeutralPassivePlayer(Player(7))
 			call MapSettings.setPlayerGivesXP(thistype.orcPlayer, true)
+			call MapSettings.setStartLevel(2) // Talras starts AFTER Dornheim where the character gets to level 2
 
 			// Add all quest unit types of units which have to be moved somewhere.
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('n04P', true)
@@ -448,7 +449,7 @@ endif
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 			call QuestTalras.quest().enable()
 
-			call AUnitRoutine.manualStartAll() // necessary since at the beginning time of day events might not have be called
+			call NewOpLimit(function AUnitRoutine.manualStartAll) // necessary since at the beginning time of day events might not have be called
 
 			set handicap = Game.applyHandicapToCreeps()
 			call SetPlayerHandicap(MapData.orcPlayer, handicap)
