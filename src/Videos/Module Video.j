@@ -8,9 +8,10 @@ library ModuleVideosVideo
 	function FixVideoCamera takes camerasetup cameraSetup returns nothing
 		// reset z offset for safety, reset immediately, otherwise it might move in video sequences!
 		call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
-		call TriggerSleepAction(CameraHeight.period) // wait the field time for safety, otherwise the field is set the whole time during videos
+		// NOTE Doesn't fix the bug anyway
+		//call TriggerSleepAction(CameraHeight.period) // wait the field time for safety, otherwise the field is set the whole time during videos
 		// make sure the field is not applied anymore
-		call TriggerSleepAction(Character.cameraTimerInterval)
+		//call TriggerSleepAction(Character.cameraTimerInterval)
 		call SetCameraField(CAMERA_FIELD_TARGET_DISTANCE, Character.defaultCameraDistance, 0.0)
 		call SetCameraField(CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
 		call StopCamera() // for safety
