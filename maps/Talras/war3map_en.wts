@@ -7458,13 +7458,13 @@ Stab [|cffffcc00Level 5|r]
 STRING 1246
 // Fähigkeiten: A0C4 (Absorbation - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1 - Benötigt Stufe 12.|r|nImmer wenn ein gegnerischer Zauber im Umkreis von 800 gewirkt wird, stellt der Zauberer 5% seines und 2% des Manas von Verbündeten in diesem Umkreis wieder her.
+|cffffcc00Ultimate Level 1 - Requires Level 12.|r|nWhenever an enemy spell is cast in a radius of 800, the Wizard restores 5 % of his and 2 % of the mana of his allies within that radius.
 }
 
 STRING 1247
 // Fähigkeiten: A03C (Absorbation), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1|r|nImmer wenn ein gegnerischer Zauber im Umkreis von 800 gewirkt wird, stellt der Zauberer 5% seines und 2% des Manas von Verbündeten in diesem Umkreis wieder her.
+|cffffcc00Ultimate Level 1|r|nWhenever an enemy spell is cast in a radius of 800, the Wizard restores 5 % of his and 2 % of the mana of his allies within that radius.
 }
 
 STRING 1248
@@ -9828,31 +9828,31 @@ Stellt verlorenes Mana und Leben wieder her.
 STRING 1641
 // Fähigkeiten: A0W7 (Manaschild - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild [|cffffcc00Stufe 2|r]
+Mana Shield [|cffffcc00Level 2|r]
 }
 
 STRING 1642
 // Fähigkeiten: A0W8 (Manaschild - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild [|cffffcc00Stufe 3|r]
+Mana Shield [|cffffcc00Level 3|r]
 }
 
 STRING 1643
 // Fähigkeiten: A0W9 (Manaschild - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild [|cffffcc00Stufe 4|r]
+Mana Shield [|cffffcc00Level 4|r]
 }
 
 STRING 1644
 // Fähigkeiten: A0WA (Manaschild - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild [|cffffcc00Stufe 5|r]
+Mana Shield [|cffffcc00Level 5|r]
 }
 
 STRING 1645
 // Fähigkeiten: A0W6 (Manaschild - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild [|cffffcc00Stufe 1|r]
+Mana Shield [|cffffcc00Level 1|r]
 }
 
 STRING 1646
@@ -15591,7 +15591,7 @@ Arcane Protection - Learn
 STRING 2706
 // Fähigkeiten: A06E (Arkane List - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nEntfernt einen positiven Zauberverstärker eines Gegners und überträgt ihn auf einen Verbündeten oder entfernt einen negativen Zauberverstärker eines Verbündeten und überträgt ihn auf einen Gegner im Umkreis von <A08Z,Area1>.
+|cffffcc00Basic Spell|r|nRemoves a positive buff of an opponent and transfers it to an ally or a negative buff of an ally and transfers it to an opponent in a radius of <A08Z,Area1>.
 }
 
 STRING 2712
@@ -17538,7 +17538,7 @@ Rückverwandlung - Baldars Ring
 STRING 3111
 // Fähigkeiten: A06E (Arkane List - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Arkane List erlernen
+Learn Arcane Trick
 }
 
 STRING 3112
@@ -23238,31 +23238,31 @@ Erhöht die Rüstung von Verbündeten in der Nähe <A0VP,Dur1> Sekunden lang um 
 STRING 4309
 // Fähigkeiten: A0AN (Manaexplosion - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 4310
 // Fähigkeiten: A0AZ (Manaexplosion - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 4311
 // Fähigkeiten: A1M9 (Manaexplosion - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 4312
 // Fähigkeiten: A0B0 (Manaexplosion - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 4313
 // Fähigkeiten: A0AO (Manaexplosion - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 4314
@@ -41955,7 +41955,7 @@ Erdgefängnis - Stufe 5
 STRING 11177
 // Fähigkeiten: A0W6 (Manaschild - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 11187
@@ -42482,31 +42482,31 @@ Arkane Zeit - Stufe 5
 STRING 11428
 // Fähigkeiten: A1KT (Rückkopplung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 11429
 // Fähigkeiten: A0VW (Rückkopplung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 11430
 // Fähigkeiten: A0VX (Rückkopplung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 11431
 // Fähigkeiten: A0VZ (Rückkopplung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 11432
 // Fähigkeiten: A0VY (Rückkopplung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 11435
@@ -46969,31 +46969,31 @@ Gegner im Umkreis von 600, die über kein Mana verfügen, erleiden 30 Sekunden l
 STRING 12941
 // Fähigkeiten: A104 (Magische Schockwellen - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 12942
 // Fähigkeiten: A102 (Magische Schockwellen - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 12943
 // Fähigkeiten: A100 (Magische Schockwellen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 12944
 // Fähigkeiten: A103 (Magische Schockwellen - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 12945
 // Fähigkeiten: A1M7 (Magische Schockwellen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 12946
@@ -47245,31 +47245,31 @@ Der Zauberer überträgt 10 Sekunden lang 25 % seines maximalen Manas pro Sekund
 STRING 13031
 // Fähigkeiten: A166 (Übertragung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 13032
 // Fähigkeiten: A165 (Übertragung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 13033
 // Fähigkeiten: A167 (Übertragung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 13034
 // Fähigkeiten: A168 (Übertragung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 13035
 // Fähigkeiten: A169 (Übertragung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 13036
@@ -47953,25 +47953,25 @@ STRING 13148
 STRING 13149
 // Fähigkeiten: A0W8 (Manaschild - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 13150
 // Fähigkeiten: A1MB (Manaschild - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 13151
 // Fähigkeiten: A0WA (Manaschild - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 13152
 // Fähigkeiten: A0W7 (Manaschild - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 13153
@@ -50497,13 +50497,13 @@ Kennels
 STRING 13665
 // Fähigkeiten: A10K (Arkane List - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nEntfernt einen positiven Zauberverstärker eines Gegners und überträgt ihn auf einen Verbündeten oder entfernt einen negativen Zauberverstärker eines Verbündeten und überträgt ihn auf einen Gegner im Umkreis von <A08Z,Area1>.
+|cffffcc00Basic Spell|r|nRemoves a positive buff of an opponent and transfers it to an ally or a negative buff of an ally and transfers it to an opponent in a radius of <A08Z,Area1>.
 }
 
 STRING 13666
 // Fähigkeiten: A08Z (Arkane List), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nEntfernt einen positiven Zauberverstärker eines Gegners und überträgt ihn auf einen Verbündeten oder entfernt einen negativen Zauberverstärker eines Verbündeten und überträgt ihn auf einen Gegner im Umkreis von <A08Z,Area1>.
+|cffffcc00Basic Spell|r|nRemoves a positive buff of an opponent and transfers it to an ally or a negative buff of an ally and transfers it to an opponent in a radius of <A08Z,Area1>.
 }
 
 STRING 13667
@@ -69308,7 +69308,7 @@ Linderung - Erlernen
 STRING 17411
 // Fähigkeiten: A1J6 (Absorbation - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1 - Benötigt Stufe 12.|r|nImmer wenn ein gegnerischer Zauber im Umkreis von 800 gewirkt wird, stellt der Zauberer 5% seines und 2% des Manas von Verbündeten in diesem Umkreis wieder her.
+|cffffcc00Ultimate Level 1 - Requires Level 12.|r|nWhenever an enemy spell is cast in a radius of 800, the Wizard restores 5 % of his and 2 % of the mana of his allies within that radius.
 }
 
 STRING 17416
@@ -69332,7 +69332,7 @@ Elementarwesen - Erlernen
 STRING 17420
 // Fähigkeiten: A1J6 (Absorbation - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Absorbation erlernen
+Learn Absorbation
 }
 
 STRING 17421
@@ -72314,13 +72314,13 @@ Böses bannen - Erlernen
 STRING 17959
 // Fähigkeiten: A0W0 (Rückkopplung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Die Angriffe des Zauberers zerstören Mana pro Treffer bei jeder Einheit und verursachen einen Schaden-Bonus entsprechend dem zerstörten Mana.|n|nZusätzlich verursachen Angriffe durch den Zauberer einen Schaden-Bonus bei beschworenen Einheiten.|n|n|cffffcc00Stufe 1|r - Der Zauberer zerstört <A0VU,DataA1> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE1> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 2|r - Der Zauberer zerstört <A0VU,DataA2> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE2> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 3|r - Der Zauberer zerstört <A0VU,DataA3> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE3> Schaden gegen beschworene Einheiten.|n|cffffcc00Stufe 4|r - Der Zauberer zerstört <A0VU,DataA4> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE4> Schaden gegen beschworene Einheiten. |n|cffffcc00Stufe 5|r - Der Zauberer zerstört <A0VU,DataA5> Mana pro Treffer. Er veursacht zusätzlich <A0VU,DataE5> Schaden gegen beschworene Einheiten.
+The attacks of the Wizard destroy mana per hit at each unit and deal a damage bonus corresponding to the destroyed mana.|n|nBesides attacks by the Wizard deal a damage bonus against summoned units.|n|n|cffffcc00Level 1|r - The Wizard destroys <A0VU,DataA1> mana per hit. Additionally, he deals <A0VU,DataE1> damage against summoned units.|n|cffffcc00Level 2|r - The Wizard destroys <A0VU,DataA2> mana per hit. Additionally, he deals <A0VU,DataE2> damage against summoned units. |n|cffffcc00Level 3|r - The Wizard destroys <A0VU,DataA3> mana per hit. Additionally, he deals <A0VU,DataE3> damage against summoned units.|n|cffffcc00Level 4|r - The Wizard destroys <A0VU,DataA4> mana per hit. Additionally, he deals <A0VU,DataE4> damage against summoned units. |n|cffffcc00Level 5|r - The Wizard destroys <A0VU,DataA5> mana per hit. Additionally, he deals <A0VU,DataE5> damage against summoned units.
 }
 
 STRING 17968
 // Fähigkeiten: A1KT (Rückkopplung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Rückkopplung erlernen
+Learn Feedback
 }
 
 STRING 17969
@@ -73196,13 +73196,13 @@ Märtyrer - Erlernen
 STRING 18357
 // Fähigkeiten: A101 (Magische Schockwellen - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Gegner im Umkreis von 600 erleiden 30 Sekunden lang zusätzlichen Schaden.|n|n|cffffcc00Stufe 1|r - Gegner die über kein Mana verfügen, erleiden 15 % mehr Schaden. Gegner mit Mana erleiden 6 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 2|r - Gegner die über kein Mana verfügen, erleiden 20 % mehr Schaden. Gegner mit Mana erleiden 8 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 3|r - Gegner die über kein Mana verfügen, erleiden 25 % mehr Schaden. Gegner mit Mana erleiden 10 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 4|r - Gegner die über kein Mana verfügen, erleiden 30 % mehr Schaden. Gegner mit Mana erleiden 12 % ihres maximalen Manas als zusätzlichen Schaden.|n|cffffcc00Stufe 5|r - Gegner die über kein Mana verfügen, erleiden 35 % mehr Schaden. Gegner mit Mana erleiden 14 % ihres maximalen Manas als zusätzlichen Schaden.
+Opponents withing a radius of 600 suffer additional damage for 30 seconds.|n|n|cffffcc00Level 1|r - Opponents who have no mana, suffer 15 % more damage. Opponents with mana suffer 6 % of their maximum mana as additional damage.|n|cffffcc00Level 2|r - Opponents who have no mana, suffer 20 % more damage. Opponents with mana suffer 8 % of their maximum mana as additional damage.|n|cffffcc00Level 3|r - Opponents who have no mana, suffer 25 % more damage. Opponents with mana suffer 10 % of their maximum mana as additional damage.|n|cffffcc00Level 4|r - Opponents who have no mana, suffer 30 % more damage. Opponents with mana suffer 12 % of their maximum mana as additional damage.|n|cffffcc00Level 5|r - Opponents who have no mana, suffer 35 % more damage. Opponents with mana suffer 14 % of their maximum mana as additional damage.
 }
 
 STRING 18366
 // Fähigkeiten: A1M7 (Magische Schockwellen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Magische Schockwellen erlernen
+Learn Magical Shockwaves
 }
 
 STRING 18367
@@ -73232,13 +73232,13 @@ Magische Schockwellen - Erlernen
 STRING 18373
 // Fähigkeiten: A0B1 (Manaexplosion - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Entzieht einem Gegner Mana, fügt ihm Schaden in doppelter Höhe zu und überträgt es auf den Zauberer.|n|n|cffffcc00Stufe 1|r - Entzieht bis zu 80 Mana.|n|cffffcc00Stufe 2|r - Entzieht bis zu 120 Mana.|n|cffffcc00Stufe 3|r - Entzieht bis zu 140 Mana.|n|cffffcc00Stufe 4|r - Entzieht bis zu 180 Mana Schaden.|n|cffffcc00Stufe 5|r - Entzieht bis zu 240 Mana.
+Drains mana from an opponent, deals damage to him of double amount and transfers it to the Wizard.|n|n|cffffcc00Level 1|r - Drains up to 80 mana.|n|cffffcc00Level 2|r - Drains up to 120 mana.|n|cffffcc00Level 3|r - Drains up to 140 mana.|n|cffffcc00Level 4|r - Drains up to 180 mana Schaden.|n|cffffcc00Level 5|r - Drains up to 240 mana.
 }
 
 STRING 18382
 // Fähigkeiten: A1M9 (Manaexplosion - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Manaexplosion erlernen
+Learn Mana Explosion
 }
 
 STRING 18383
@@ -73268,13 +73268,13 @@ Manaexplosion - Erlernen
 STRING 18389
 // Fähigkeiten: A0W9 (Manaschild - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer erschafft einen Manaschild um sich herum, der Schaden absorbiert|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r.|n|n|cffffcc00Stufe 1|r - Verbraucht 5 Mana pro Schadenspunkt und absorbiert maximal 100 Schaden.|n|cffffcc00Stufe 2|r - Verbraucht 4 Mana pro Schadenspunkt und absorbiert maximal 200 Schaden.|n|cffffcc00Stufe 3|r - Verbraucht 3 Mana pro Schadenspunkt und absorbiert maximal 300 Schaden.|n|cffffcc00Stufe 4|r - Verbraucht 2 Mana pro Schadenspunkt und absorbiert maximal 400 Schaden.|n|cffffcc00Stufe 5|r - Verbraucht 1 Mana pro Schadenspunkt und absorbiert maximal 500 Schaden.
+The Wizard creates a mana shield around him that absorbs damage.|n|cffc3dbffStop spell by repeated cast.|r|n|n|cffffcc00Level 1|r - Consumes 5 mana per point of damage and absorbs 100 damage maximum.|n|cffffcc00Level 2|r - Consumes 4 mana per point of damage and absorbs 200 damage maximum.|n|cffffcc00Level 3|r - Consumes 3 mana per point of damage and absorbs 300 damage maximum.|n|cffffcc00Level 4|r - Consumes 2 mana per point of damage and absorbs 400 damage maximum.|n|cffffcc00Level 5|r - Consumes 1 mana per point of damage and absorbs 500 damage maximum.
 }
 
 STRING 18398
 // Fähigkeiten: A1MB (Manaschild - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Manaschild erlernen
+Learn Mana Shield
 }
 
 STRING 18399
@@ -74588,13 +74588,13 @@ Siegeswunsch - Erlernen
 STRING 18975
 // Fähigkeiten: A1OD (Übertragung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer überträgt 10 Sekunden lang einen Teil seines maximalen Manas pro Sekunde auf einen ausgewählten Verbündeten oder entzieht einen Teil des maximalen Manas eines ausgewählten Gegners pro Sekunde. |n|n|cffffcc00Stufe 1|r - Überträgt 5 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 2|r - Überträgt 10 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 3|r -  Überträgt 15 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 4|r - Überträgt 20 % des maximalen Manas pro Sekunde.|n|cffffcc00Stufe 5|r - Überträgt 25 % des maximalen Manas pro Sekunde.
+The wizard transfers a portion of his maximum mana per second to a selected ally or drains a portion of the maximum mana of a selected opponent per second for 10 seconds. |n|n|cffffcc00Level 1|r - Transfers 5 % of the maximum mana per second.|n|cffffcc00Level 2|r - Transfers 10 % of the maximum mana per second.|n|cffffcc00Level 3|r -  Transfers 15 % of the maximum mana per second.|n|cffffcc00Level 4|r - Transfers 20 % of the maximum mana per second.|n|cffffcc00Level 5|r - Transfers 25 % of the maximum mana per second.
 }
 
 STRING 18984
 // Fähigkeiten: A1OD (Übertragung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Übertragung erlernen
+Learn Transfer
 }
 
 STRING 18985
