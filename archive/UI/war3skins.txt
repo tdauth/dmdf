@@ -697,6 +697,8 @@ MinimapCreepCamp=UI\Minimap\MiniMap-CreepLoc-Small.mdl
 MinimapCreepCampTough=UI\Minimap\MiniMap-CreepLoc-Large.mdl
 
 MinimapResourceTexture=UI\Minimap\minimap-gold.blp
+MinimapEntangledResourceTexture=UI\Minimap\minimap-gold-entangled.blp
+MinimapHauntedResourceTexture=UI\Minimap\minimap-gold-haunted.blp
 MinimapNeutralTexture=UI\Minimap\minimap-neutralbuilding.blp
 MinimapCopTexture=UI\Minimap\MinimapIconCircleOfPower.blp
 MinimapHeroTexture=UI\Minimap\minimap-hero.blp
@@ -719,4 +721,3 @@ MultiboardMaximizeButtonDisabled=UI\Widgets\Glues\Gluescreen-Scrollbar-DownArrow
 
 // TPoF
 TPoFBackdrop_V1=UI\Glues\MainMenu\MainMenu3d_exp\MainMenu3d_exp.mdl
-

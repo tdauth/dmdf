@@ -56,6 +56,7 @@ Section "German Maps" GermanMaps
 	File "${INPUT_DIR}\maps\Karte 5 - Deranor.w3x"
 	File "${INPUT_DIR}\maps\Arena.w3x"
 	File "${INPUT_DIR}\maps\WorldMap.w3x"
+	File "${INPUT_DIR}\maps\Credits.w3x"
 SectionEnd
 
 Section "German Campaign" GermanCampaign
