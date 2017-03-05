@@ -63181,31 +63181,31 @@ The elemental mage imprisons an opponent for while in an earth prison. During th
 STRING 15958
 // Fähigkeiten: A0E3 (Ranken - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 15959
 // Fähigkeiten: A0E5 (Ranken - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 15960
 // Fähigkeiten: A0E6 (Ranken - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 15961
 // Fähigkeiten: A0E4 (Ranken - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 15962
 // Fähigkeiten: A1O9 (Ranken - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 15963
@@ -74516,7 +74516,7 @@ Teleportation - Erlernen
 STRING 18945
 // Fähigkeiten: A0E7 (Ranken - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Lässt den Boden erbeben, sendet eine Kraftwelle in einer geraden Linie aus, die Schaden anrichtet und feindliche Land-Einheiten in ihrem Turbulenz-Gebiet in die Luft wirbelt, sodass sie <A0DG,Dur1> Sekunden lang betäubt sind.. |n|n|cffffcc00Stufe 1|r - Verursacht <A0DG,DataC1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A0DG,DataC2> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A0DG,DataC3> Punkte Schaden. |n|cffffcc00Stufe 4|r - Verursacht <A0DG,DataC4> Punkte Schaden. |n|cffffcc00Stufe 5|r - Verursacht <A0DG,DataC5> Punkte Schaden.
+Lets the ground shake and sends a wave of power in a straight line which deals damage and throws hostile land units in the air in their turbulence area that they are stunned for <A0DG,Dur1> seconds. |n|n|cffffcc00Level 1|r - Deals <A0DG,DataC1> points of damage. |n|cffffcc00Level 2|r - Deals <A0DG,DataC2> points of damage. |n|cffffcc00Level 3|r - Deals <A0DG,DataC3> points of damage. |n|cffffcc00Level 4|r - Deals <A0DG,DataC4> points of damage. |n|cffffcc00Level 5|r - Deals <A0DG,DataC5> points of damage.
 }
 
 STRING 18954

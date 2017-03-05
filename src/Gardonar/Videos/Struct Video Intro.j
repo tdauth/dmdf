@@ -43,13 +43,13 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Unser Boot können wir nicht weiter benutzen. Daher müsst ihr einen Weg über Land finden. Ich bezweifle jedoch, dass wir einfach so wieder in unsere Welt zurückgelangen."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Unser Boot können wir nicht weiter benutzen. Daher müsst ihr einen Weg über Land finden. Ich bezweifle jedoch, dass wir einfach so wieder in unsere Welt zurückgelangen.", "We cannot continue to use our boat. Therefore you have to find a way over land. I doubt, however, that we can simply get back into our world."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
 
-			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tr("Wir stehen euch natürlich jederzeit zur Verfügung."), null)
+			call TransmissionFromUnitWithName(this.unitActor(this.m_actorWigberht), tre("Wigberht", "Wigberht"), tre("Wir stehen euch natürlich jederzeit zur Verfügung.", "We are at your disposal, of course, at any time."), null)
 
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return

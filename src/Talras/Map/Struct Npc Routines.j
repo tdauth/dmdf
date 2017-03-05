@@ -429,10 +429,10 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_dararosTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.dararos(), 0.0, 23.59, gg_rct_quest_the_defense_of_talras_camp_dragon_slayer)
 			call thistype.m_dararosTalks.setFacing(270.0)
 			call thistype.m_dararosTalks.setPartner(Npcs.dragonSlayer())
-			call thistype.m_dararosTalks.addSound(tr("Du hast deine Befehle, führe sie aus!"), gg_snd_DararosTalk1)
-			call thistype.m_dararosTalks.addSound(tr("Exzellente Arbeit."), gg_snd_DararosTalk2)
-			call thistype.m_dararosTalks.addSound(tr("Wir sollten diesen Außenposten besser befestigen lassen."), gg_snd_DararosTalk3)
-			call thistype.m_dararosTalks.addSound(tr("Ich warte darauf, dass die restlichen Truppen eintreffen."), gg_snd_DararosTalk4)
+			call thistype.m_dararosTalks.addSound(tre("Du hast deine Befehle, führe sie aus!", "You have your orders, execute them!"), gg_snd_DararosTalk1)
+			call thistype.m_dararosTalks.addSound(tre("Exzellente Arbeit.", "Excellent work."), gg_snd_DararosTalk2)
+			call thistype.m_dararosTalks.addSound(tre("Wir sollten diesen Außenposten besser befestigen lassen.", "We should fortify this outpost better."), gg_snd_DararosTalk3)
+			call thistype.m_dararosTalks.addSound(tre("Ich warte darauf, dass die restlichen Truppen eintreffen.", "I'm waiting for the rest of the troops to arrive."), gg_snd_DararosTalk4)
 		endmethod
 	endstruct
 
