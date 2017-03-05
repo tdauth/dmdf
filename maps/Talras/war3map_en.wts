@@ -4436,7 +4436,7 @@ STRING 741
 STRING 742
 // Fähigkeiten: A1GE (Auge um Auge - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 743
@@ -8646,13 +8646,13 @@ Erzeugt einen Eisregen, der Gegnern Schaden zufügt.
 STRING 1444
 // Fähigkeiten: A02Q (Sprungattacke), Name (Name (anam))
 {
-Sprungattacke
+Jump Attack
 }
 
 STRING 1445
 // Fähigkeiten: A02Q (Sprungattacke), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke
+Jump Attack
 }
 
 STRING 1446
@@ -11562,7 +11562,7 @@ STRING 1929
 STRING 1930
 // Einheiten: u001 (Imp-Arbeiter), Name (Name (unam))
 {
-Imp-Arbeiter
+Imp Worker
 }
 
 STRING 1931
@@ -13666,7 +13666,7 @@ STRING 2328
 STRING 2329
 // Einheiten: n02A (Honigquelle), Name (Name (unam))
 {
-Honigquelle
+Honey Source
 }
 
 STRING 2330
@@ -28905,7 +28905,7 @@ STRING 6131
 STRING 6132
 // Fähigkeiten: A1L7 (Wilder Blutrausch - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2 - Benötigt Stufe 25|r|nDer Drachentöter schlägt in blinder Wut zu. Jeder Schlag verbraucht 3% seiner maximalen Lebensenergie und fügt einen Schadensbonus von 25% seiner maximalen Lebensenergie zu. Kann nur eingesetzt werden bis noch mindestens 10% der maximalen Lebensenergie übrig sind.|n|cffc3dbffZauber mit erneuter Ausführung unterbrechen.|r
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nThe Dragon Slayer attacks in blind furry. Each hit consumes 3 % of his maximum life energy and adds a damage bonus of 25 % of his maximum life energy. Can only be used until at least 10 % of the maximum life energy is left.|n|cffc3dbffCancel spell with repeated cast.|r
 }
 
 STRING 6133
@@ -38625,7 +38625,7 @@ Conversion - Level 2
 STRING 9908
 // Einheiten: n06E (Marktplatz), Name (Name (unam))
 {
-Marktplatz
+Marketplace
 }
 
 STRING 9909
@@ -48049,7 +48049,7 @@ Ring der Treue kaufen
 STRING 13165
 // Einheiten: u00C (Armseliger Imp-Arbeiter), Name (Name (unam))
 {
-Armseliger Imp-Arbeiter
+Poor Imp Worker
 }
 
 STRING 13166
@@ -48367,7 +48367,7 @@ Ein Meutehund, der das aufgespürte Tier hetzt und seinem Herrn treu ergeben ist
 STRING 13219
 // Einheiten: n04L (Falkenkäfig), Name (Name (unam))
 {
-Falkenkäfig
+Falcon Cage
 }
 
 STRING 13220
@@ -48571,7 +48571,7 @@ Knecht ausbilden
 STRING 13253
 // Einheiten: n04R (Osmans Kiste), Name (Name (unam))
 {
-Osmans Kiste
+Osman's Box
 }
 
 STRING 13254
@@ -48607,7 +48607,7 @@ STRING 13258
 STRING 13259
 // Einheiten: n04U (Björns Kiste), Name (Name (unam))
 {
-Björns Kiste
+Björn's Box
 }
 
 STRING 13260
@@ -48631,7 +48631,7 @@ Ausbau zum Magierpalast
 STRING 13263
 // Einheiten: n04W (Agihards Kiste), Name (Name (unam))
 {
-Agihards Kiste
+Agihard's Box
 }
 
 STRING 13264
@@ -59785,7 +59785,7 @@ Dummy-Effekt für Langsamkeitskugel
 STRING 15225
 // Einheiten: n05B (Haids Stand), Name (Name (unam))
 {
-Haids Stand
+Haid's Stall
 }
 
 STRING 15226
@@ -61699,7 +61699,7 @@ Bekehrung [|cffffcc00Stufe 3|r] (|cffffcc00T|r)
 STRING 15648
 // Einheiten: n04V (Wielands Stand), Name (Name (unam))
 {
-Wielands Stand
+Wieland's Stall
 }
 
 STRING 15649
@@ -64001,43 +64001,43 @@ Der Waldläufer sprintet und erhöht somit sein Bewegungstempo eine Zeit lang um
 STRING 16107
 // Fähigkeiten: A1F4 (Unbarmherzigkeit), Name (Name (anam))
 {
-Unbarmherzigkeit
+Mercilessness
 }
 
 STRING 16108
 // Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 1|r]
+Mercilessness [|cffffcc00Level 1|r]
 }
 
 STRING 16109
 // Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 2|r]
+Mercilessness [|cffffcc00Level 2|r]
 }
 
 STRING 16110
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 3|r]
+Mercilessness [|cffffcc00Level 3|r]
 }
 
 STRING 16111
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 4|r]
+Mercilessness [|cffffcc00Level 4|r]
 }
 
 STRING 16112
 // Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 5|r]
+Mercilessness [|cffffcc00Level 5|r]
 }
 
 STRING 16113
 // Fähigkeiten: A1HM (Verteidigen - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Verteidigen [|cffffcc00Stufe 1|r]
+Defend [|cffffcc00Level 1|r]
 }
 
 STRING 16116
@@ -64049,7 +64049,7 @@ STRING 16116
 STRING 16117
 // Fähigkeiten: A1HL (Verteidigen), Name (Name (anam))
 {
-Verteidigen
+Defend
 }
 
 STRING 16118
@@ -64061,19 +64061,19 @@ STRING 16118
 STRING 16119
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Name (Name (anam))
 {
-Unbarmherzigkeit
+Mercilessness
 }
 
 STRING 16120
 // Fähigkeiten: A1FS (Siegeswunsch), Name (Name (anam))
 {
-Siegeswunsch
+Will to Win
 }
 
 STRING 16129
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 1|r]
+Mercilessness [|cffffcc00Level 1|r]
 }
 
 STRING 16130
@@ -64091,13 +64091,13 @@ Unbarmherzigkeit - Stufe 1
 STRING 16132
 // Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Siegeswunsch [|cffffcc00Stufe 1|r]
+Will to Win [|cffffcc00Level 1|r]
 }
 
 STRING 16141
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 2|r]
+Mercilessness [|cffffcc00Level 2|r]
 }
 
 STRING 16142
@@ -64115,13 +64115,13 @@ Unbarmherzigkeit - Stufe 2
 STRING 16144
 // Fähigkeiten: A1FR (Siegeswunsch), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 2|r|nSchaden gegen Gegner wird um 5 % mal die Anzahl der weiteren verbliebenen Gegner im Umkreis erhöht.
+|cffffcc00Ultimate Spell 2|r|nDamage against opponents is increased by 5 % times the number of the additional remaining opponents in range.
 }
 
 STRING 16153
 // Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 3|r]
+Mercilessness [|cffffcc00Level 3|r]
 }
 
 STRING 16154
@@ -64145,7 +64145,7 @@ STRING 16156
 STRING 16165
 // Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 4|r]
+Mercilessness [|cffffcc00Level 4|r]
 }
 
 STRING 16166
@@ -64169,7 +64169,7 @@ Siegeswunsch
 STRING 16177
 // Fähigkeiten: A1F3 (Unbarmherzigkeit), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit [|cffffcc00Stufe 5|r]
+Mercilessness [|cffffcc00Level 5|r]
 }
 
 STRING 16178
@@ -64247,7 +64247,7 @@ Unbarmherzigkeit - Stufe 5
 STRING 16190
 // Fähigkeiten: A1FT (Siegeswunsch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nSchaden gegen Gegner wird um 5 % mal die Anzahl der weiteren verbliebenen Gegner im Umkreis erhöht.
+|cffffcc00Ultimate Spell 2 - Requires Level 12|r|nDamage against opponents is increased by 5 % times the number of the additional remaining opponents in range.
 }
 
 STRING 16195
@@ -64355,7 +64355,7 @@ Rage - Stufe 4
 STRING 16249
 // Fähigkeiten: A1FR (Siegeswunsch), Tip (Tooltipp - Normal (atp1))
 {
-Siegeswunsch [|cffffcc00Stufe 1|r]
+Will to Win [|cffffcc00Level 1|r]
 }
 
 STRING 16259
@@ -64481,7 +64481,7 @@ Siegeswunsch - Stufe 1
 STRING 16279
 // Fähigkeiten: A1FX (Reserven), Name (Name (anam))
 {
-Reserven
+Reserves
 }
 
 STRING 16290
@@ -64499,7 +64499,7 @@ Player Shrine
 STRING 16296
 // Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 1|r]
+Reserves [|cffffcc00Level 1|r]
 }
 
 STRING 16297
@@ -64511,25 +64511,25 @@ Schlägt der Drachentöter einen Gegner 6 mal am Stück, wird sein Schaden um 5 
 STRING 16298
 // Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 2|r]
+Reserves [|cffffcc00Level 2|r]
 }
 
 STRING 16299
 // Fähigkeiten: A1G0 (Reserven - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 3|r]
+Reserves [|cffffcc00Level 3|r]
 }
 
 STRING 16300
 // Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 4|r]
+Reserves [|cffffcc00Level 4|r]
 }
 
 STRING 16301
 // Fähigkeiten: A1G2 (Reserven - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 5|r]
+Reserves [|cffffcc00Level 5|r]
 }
 
 STRING 16302
@@ -64577,7 +64577,7 @@ STRING 16308
 STRING 16309
 // Fähigkeiten: A1FV (Reserven), Name (Name (anam))
 {
-Reserven
+Reserves
 }
 
 STRING 16310
@@ -64589,7 +64589,7 @@ Aura der Autorität [|cffffcc00Stufe 4|r]
 STRING 16319
 // Fähigkeiten: A1FY (Reserven - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 1|r]
+Reserves [|cffffcc00Level 1|r]
 }
 
 STRING 16320
@@ -64613,7 +64613,7 @@ Aura der Autorität [|cffffcc00Stufe 5|r]
 STRING 16333
 // Fähigkeiten: A1FZ (Reserven - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 2|r]
+Reserves [|cffffcc00Level 2|r]
 }
 
 STRING 16334
@@ -64637,7 +64637,7 @@ Aura der Autorität - Upgrade 1
 STRING 16347
 // Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 3|r]
+Reserves [|cffffcc00Level 3|r]
 }
 
 STRING 16348
@@ -64661,7 +64661,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 16361
 // Fähigkeiten: A1G1 (Reserven - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 4|r]
+Reserves [|cffffcc00Level 4|r]
 }
 
 STRING 16362
@@ -64685,7 +64685,7 @@ Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden l
 STRING 16375
 // Fähigkeiten: A1FV (Reserven), Tip (Tooltipp - Normal (atp1))
 {
-Reserven [|cffffcc00Stufe 5|r]
+Reserves [|cffffcc00Level 5|r]
 }
 
 STRING 16376
@@ -64775,31 +64775,31 @@ STRING 16391
 STRING 16392
 // Fähigkeiten: A1G0 (Reserven - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 16393
 // Fähigkeiten: A1G2 (Reserven - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 16394
 // Fähigkeiten: A1FY (Reserven - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 16395
 // Fähigkeiten: A1FZ (Reserven - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 16396
 // Fähigkeiten: A1G1 (Reserven - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 16397
@@ -65207,31 +65207,31 @@ Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und 
 STRING 16511
 // Fähigkeiten: A04Y (Auge um Auge - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 16512
 // Fähigkeiten: A1GD (Auge um Auge - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 16513
 // Fähigkeiten: A1GC (Auge um Auge - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 16514
 // Fähigkeiten: A1GA (Auge um Auge - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 16515
 // Fähigkeiten: A1GB (Auge um Auge - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter kontert die nächsten vier Nahkampfangriffe eines Gegners und lenkt einen Teil des Schadens auf ihn zurück. Der Drachentöter erleidet keinen Schaden. |n|n|cffffcc00Stufe 1|r - Lenkt 5 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 2|r - Lenkt 10 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 3|r - Lenkt 15 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 4|r - Lenkt 20 % des Schadens auf den Gegner zurück.|n|cffffcc00Stufe 5|r - Lenkt 25 % des Schadens auf den Gegner zurück.
+The dragon slayer counteres the next four melee attacks of an opponent and directs some of the damage back to him. The dragon slayer suffers no damage.|n|n|cffffcc00Level 1|r - Directs 5 % of the damage back to the opponent.|n|cffffcc00Level 2|r - Directs 10 % of the damage back to the opponent.|n|cffffcc00Level 3|r - Directs 15 % of the damage back to the opponent.|n|cffffcc00Level 4|r - Directs 20 % of the damage back to the opponent.|n|cffffcc00Level 5|r - Directs 25 % of the damage back to the opponent.
 }
 
 STRING 16516
@@ -65267,37 +65267,37 @@ Aura der Autorität - Upgrade 3
 STRING 16521
 // Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 2|r]
+Jump Attack [|cffffcc00Level 2|r]
 }
 
 STRING 16522
 // Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 3|r]
+Jump Attack [|cffffcc00Level 3|r]
 }
 
 STRING 16523
 // Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 4|r]
+Jump Attack [|cffffcc00Level 4|r]
 }
 
 STRING 16524
 // Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 5|r]
+Jump Attack [|cffffcc00Level 5|r]
 }
 
 STRING 16525
 // Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Sprungattacke [|cffffcc00Stufe 1|r]
+Jump Attack [|cffffcc00Level 1|r]
 }
 
 STRING 16526
 // Fähigkeiten: A1GK (Sprungattacke), Name (Name (anam))
 {
-Sprungattacke
+Jump Attack
 }
 
 STRING 16529
@@ -65309,7 +65309,7 @@ STRING 16529
 STRING 16530
 // Fähigkeiten: A1GL (Sprungattacke), Name (Name (anam))
 {
-Sprungattacke
+Jump Attack
 }
 
 STRING 16531
@@ -65537,31 +65537,31 @@ Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe v
 STRING 16610
 // Fähigkeiten: A1GQ (Sprungattacke - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 16611
 // Fähigkeiten: A1GO (Sprungattacke - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 16612
 // Fähigkeiten: A1GM (Sprungattacke - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 16613
 // Fähigkeiten: A1GP (Sprungattacke - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 16614
 // Fähigkeiten: A1GN (Sprungattacke - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 16615
@@ -65807,7 +65807,7 @@ Bezwingung
 STRING 16655
 // Fähigkeiten: A1F5 (Unbarmherzigkeit - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 16665
@@ -65825,7 +65825,7 @@ Bezwingung - Stufe 1
 STRING 16669
 // Fähigkeiten: A1F6 (Unbarmherzigkeit - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 16679
@@ -65843,7 +65843,7 @@ Bezwingung - Stufe 2
 STRING 16683
 // Fähigkeiten: A1F9 (Unbarmherzigkeit - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 16692
@@ -65867,7 +65867,7 @@ Bezwingung - Stufe 3
 STRING 16697
 // Fähigkeiten: A1MJ (Unbarmherzigkeit - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 16706
@@ -65891,7 +65891,7 @@ Bezwingung - Stufe 4
 STRING 16711
 // Fähigkeiten: A1F7 (Unbarmherzigkeit - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 16720
@@ -66249,13 +66249,13 @@ STRING 16830
 STRING 16831
 // Fähigkeiten: A1HK (Verteidigen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nAktivieren, um eine Chance von <A1HK,DataF1> % zu haben, Stichangriffe auf deren Quelle zu reflektieren und nur <A1HK,DataA1,%> % des Schadens durch Angriffe, die nicht reflektiert werden, zu nehmen. Während 'Verteidigung' aktiv ist, ist Bewegung auf <A1HK,DataC1,%> % der normalen Geschwindigkeit reduziert.|n|cffc3dbffDer Ritter muss einen Schild tragen, um diesen Zauber wirken zu können.|r
+|cffffcc00Basic Spell|r|nEnable to get a chance of <A1HK,DataF1> % to reflect stab attacks on their source and to take only <A1HK,DataA1,%> % of the damage by attacks which are not reflected. While 'Defend' is active, the movement is reduced to <A1HK,DataC1,%> % of the normal speed.|n|cffc3dbffThe knight has to carry a shield to be able to cast this spell.|r
 }
 
 STRING 16832
 // Fähigkeiten: A1HM (Verteidigen - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nAktivieren, um eine Chance von <A1HK,DataF1> % zu haben, Stichangriffe auf deren Quelle zu reflektieren und nur <A1HK,DataA1,%> % des Schadens durch Angriffe, die nicht reflektiert werden, zu nehmen. Während 'Verteidigung' aktiv ist, ist Bewegung auf <A1HK,DataC1,%> % der normalen Geschwindigkeit reduziert.|n|cffc3dbffDer Ritter muss einen Schild tragen, um diesen Zauber wirken zu können.|r
+|cffffcc00Basic Spell|r|nEnable to get a chance of <A1HK,DataF1> % to reflect stab attacks on their source and to take only <A1HK,DataA1,%> % of the damage by attacks which are not reflected. While 'Defend' is active, the movement is reduced to <A1HK,DataC1,%> % of the normal speed.|n|cffc3dbffThe knight has to carry a shield to be able to cast this spell.|r
 }
 
 STRING 16833
@@ -66393,19 +66393,19 @@ Verfluchter Boden - Stufe 5
 STRING 16857
 // Einheiten: n06K (Wildschweinmutter), Name (Name (unam))
 {
-Wildschweinmutter
+Wild Boar Mother
 }
 
 STRING 16858
 // Einheiten: n06L (Junges Wildschwein), Name (Name (unam))
 {
-Junges Wildschwein
+Young Wild Boar
 }
 
 STRING 16859
 // Fähigkeiten: A1HW (Junge Wildschweine), Name (Name (anam))
 {
-Junge Wildschweine
+Young Wild Boars
 }
 
 STRING 16860
@@ -68253,7 +68253,7 @@ Unlearns a spell.
 STRING 17180
 // Fähigkeiten: A1K5 (Verteidigen - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nAktivieren, um eine Chance von <A1HK,DataF1> % zu haben, Stichangriffe auf deren Quelle zu reflektieren und nur <A1HK,DataA1,%> % des Schadens durch Angriffe, die nicht reflektiert werden, zu nehmen. Während 'Verteidigung' aktiv ist, ist Bewegung auf <A1HK,DataC1,%> % der normalen Geschwindigkeit reduziert.|n|cffc3dbffDer Ritter muss einen Schild tragen, um diesen Zauber wirken zu können.|r
+|cffffcc00Basic Spell|r|nEnable to get a chance of <A1HK,DataF1> % to reflect stab attacks on their source and to take only <A1HK,DataA1,%> % of the damage by attacks which are not reflected. While 'Defend' is active, the movement is reduced to <A1HK,DataC1,%> % of the normal speed.|n|cffc3dbffThe knight has to carry a shield to be able to cast this spell.|r
 }
 
 STRING 17184
@@ -68450,7 +68450,7 @@ Cuts the elemental mage into elemental creatures so that special elemental creat
 STRING 17221
 // Fähigkeiten: A1K5 (Verteidigen - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Verteidigen erlernen
+Learn Defend
 }
 
 STRING 17222
@@ -72050,7 +72050,7 @@ J
 STRING 17875
 // Fähigkeiten: A1KL (Elementare Gewalt - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+|cffffcc00Ultimate Spell - Requires Level 12|r|nIncreases the damage from elemental spells by 80 % for 20 seconds.|n<A045,Cool1> seconds cooldown.
 }
 
 STRING 17876
@@ -72566,7 +72566,7 @@ Eispfeile - Erlernen
 STRING 18071
 // Fähigkeiten: A0YW (Wilder Blutrausch - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimate Spell 2 - Requires Level 25.|r|nThe Dragon Slayer attacks in blind furry. Each hit consumes 3 % of his maximum life energy and adds a damage bonus of 25 % of his maximum life energy. Can only be used until at least 10 % of the maximum life energy is left.|n|cffc3dbffCancel spell with repeated cast.|r
+|cffffcc00Ultimate Spell 2 - Requires Level 25|r|nThe Dragon Slayer attacks in blind furry. Each hit consumes 3 % of his maximum life energy and adds a damage bonus of 25 % of his maximum life energy. Can only be used until at least 10 % of the maximum life energy is left.|n|cffc3dbffCancel spell with repeated cast.|r
 }
 
 STRING 18080
@@ -72950,7 +72950,7 @@ Inferno - Erlernen
 STRING 18247
 // Fähigkeiten: A1LT (Sprungattacke - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Drachentöter nimmt Anlauf und wirft sich mit voller Wucht auf eine Gruppe von Gegnern. Dabei richtet er Schaden bei jedem der Gegner an, stößt sie von sich und lähmt sie eine Zeit lang. |n|n|cffffcc00Stufe 1|r - Richtet 10 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur1> Sekunden.|n|cffffcc00Stufe 2|r - Richtet 20 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur2> Sekunden.|n|cffffcc00Stufe 3|r - Richtet 30 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur3> Sekunden.|n|cffffcc00Stufe 4|r - Richtet 40 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur4> Sekunden.|n|cffffcc00Stufe 5|r - Richtet 50 Schaden pro Gegner an und lähmt jeden Gegner für <A1GW,Dur5> Sekunden.
+The dragon slayer takes a start and throws himself with full force on a group of opponents. In doing so, he deals damage to each of the opponents, pushing them off and stunning them for some time.|n|n|cffffcc00Level 1|r - Deals 10 damage per opponent and stuns every opponent for <A1GW,Dur1> seconds.|n|cffffcc00Level 2|r - Deals 20 damage per opponent and stuns every opponent for <A1GW,Dur2> seconds.|n|cffffcc00Level 3|r - Deals 30 damage per opponent and stuns every opponent for <A1GW,Dur3> seconds.|n|cffffcc00Level 4|r - Deals 40 damage per opponent and stuns every opponent for <A1GW,Dur4> seconds.|n|cffffcc00Level 5|r - Deals 50 damage per opponent and stuns every opponent for <A1GW,Dur5> seconds.
 }
 
 STRING 18256
@@ -73022,7 +73022,7 @@ Hundezwinger - Erlernen
 STRING 18277
 // Fähigkeiten: A1LX (Leprechaun - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nDer Waldläufer ruft einen Leprechaun, der dem Waldläufer einen Topf voll Gold vom Ende seines Regenbogens bringt. Alle Spieler erhalten 500 Goldmünzen. Außerdem erzeugt der Lebrechaun eine Aura des Glücks, die <A1IO,Dur1> Sekunden lang die Rüstung um <A1IO,DataA1> erhöht und <A1IO,DataB1> Leben und <A1IO,DataC1> Mana bei Verbündeten regeneriert.
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nThe ranger calls a Leprechaun, which brings the ranger a pot of gold from the end of his rainbow. All players receive 500 gold coins. Besides the Leprechaun creates an aura of happiness that increases the armour by <A1IO,DataA1> for <A1IO,Dur1> seconds and regenerates <A1IO,DataB1> life and <A1IO,DataC1> mana of allies.
 }
 
 STRING 18286
@@ -73412,13 +73412,13 @@ Beherrschung - Erlernen
 STRING 18453
 // Fähigkeiten: A1F8 (Unbarmherzigkeit - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Fällt die Lebensenergie des Gegners des Drachentöters unter 30 %, wird der Schaden des Drachentöters gegen dieses Ziel erhöht.|n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 5 * seine eigene Stufe.|n|cffffcc00Stufe 2|r - Erhöht den Schaden um  um 10 * seine eigene Stufe.|n|cffffcc00Stufe 3|r - Erhöht den Schaden um 15 * seine eigene Stufe.|n|cffffcc00Stufe 4|r - Erhöht den Schaden um 20 * seine eigene Stufe.|n|cffffcc00Stufe 5|r - Erhöht den Schaden um 25 * seine eigene Stufe.
+Passive. If the life energy of an opponent of the dragon slayer becomes less than 30 %, the damage of the dragon slayer is increased against this target.|n|n|cffffcc00Level 1|r - Increases the damage by 5 * of his own level.|n|cffffcc00Level 2|r - Increases the damage by 10 * of his own level.|n|cffffcc00Level 3|r - Increases the damage by 15 * of his own level.|n|cffffcc00Level 4|r - Increases the damage by 20 * of his own level.|n|cffffcc00Level 5|r - Increases the damage by 25 * of his own level.
 }
 
 STRING 18462
 // Fähigkeiten: A1MJ (Unbarmherzigkeit - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Unbarmherzigkeit erlernen
+Learn Mercilessness
 }
 
 STRING 18463
@@ -73940,13 +73940,13 @@ Wohltat - Erlernen
 STRING 18689
 // Fähigkeiten: A1ND (Reserven - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Passiv. Schlägt der Drachentöter einen Gegner mehrere Male am Stück, wird sein Schaden gegen diesen Gegner erhöht.|n|n|cffffcc00Stufe 1|r - 6 mal hintereinander. Der Schaden wird um 5 % erhöht.|n|cffffcc00Stufe 2|r - 5 mal hintereinander. Der Schaden wird um 10 % erhöht. |n|cffffcc00Stufe 3|r - 4 mal hintereinander. Der Schaden wird um 15 % erhöht.|n|cffffcc00Stufe 4|r - 3 mal hintereinander. Der Schaden wird um 20 % erhöht. |n|cffffcc00Stufe 5|r - 2 mal hintereinander. Der Schaden wird um 25 % erhöht.
+Passive. If the dragon slayer hits an opponent several times at a time, his damage against this opponent is increased.|n|n|cffffcc00Level 1|r - 6 times at a time. Der Schaden wird um 5 % erhöht.|n|cffffcc00Level 2|r - 5 times at a time. Der Schaden wird um 10 % erhöht. |n|cffffcc00Level 3|r - 4 times at a time. Der Schaden wird um 15 % erhöht.|n|cffffcc00Level 4|r - 3 times at a time. Der Schaden wird um 20 % erhöht. |n|cffffcc00Level 5|r - 2 times at a time. Der Schaden wird um 25 % erhöht.
 }
 
 STRING 18698
 // Fähigkeiten: A1ND (Reserven - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Reserven erlernen
+Learn Reserves
 }
 
 STRING 18699
@@ -74342,7 +74342,7 @@ Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc
 STRING 18874
 // Fähigkeiten: A1NZ (Sprinten - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Sprinten erlernen
+Learn Sprint
 }
 
 STRING 18875
@@ -74552,13 +74552,13 @@ Ranken - Erlernen
 STRING 18961
 // Fähigkeiten: A1OB (Siegeswunsch - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nSchaden gegen Gegner wird um 5 % mal die Anzahl der weiteren verbliebenen Gegner im Umkreis erhöht.
+|cffffcc00Ultimate Spell 2 - Requires Level 12|r|nDamage against opponents is increased by 5 % times the number of the additional remaining opponents in range.
 }
 
 STRING 18970
 // Fähigkeiten: A1OB (Siegeswunsch - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Siegeswunsch erlernen
+Learn Wish to Win
 }
 
 STRING 18971
@@ -75488,31 +75488,31 @@ Creates a portal to the world of demons through which demons are streaming gradu
 STRING 19289
 // Fähigkeiten: A0FP (Totenbeschwörung - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19290
 // Fähigkeiten: A0FL (Totenbeschwörung - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19291
 // Fähigkeiten: A0FN (Totenbeschwörung - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19292
 // Fähigkeiten: A0FM (Totenbeschwörung - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19293
 // Fähigkeiten: A1MP (Totenbeschwörung - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19294
@@ -75524,7 +75524,7 @@ Creates a portal to the world of demons through which demons are streaming gradu
 STRING 19295
 // Fähigkeiten: A0FO (Totenbeschwörung - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Beschwört aus Kadavern in der Umgebung untote Diener, die den Nekromanten eine Zeit lang unterstützen.|n|cffc3dbffEs können maximal 6 Diener beschworen werden.|r|n|n|cffffcc00Stufe 1|r - <A0FJ,DataA1> Diener, <A0FJ,Dur1> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 2|r - <A0FJ,DataA2> Diener, <A0FJ,Dur2> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 3|r - <A0FJ,DataA3> Diener, <A0FJ,Dur3> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 4|r - <A0FJ,DataA4> Diener, <A0FJ,Dur4> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.|n|cffffcc00Stufe 5|r - <A0FJ,DataA5> Diener, <A0FJ,Dur5> Sekunden, Bogenschützen mit <n03N,realHP> Leben, die <n03N,ua1b> Punkte Schaden verursachen.
+Summons undead servants from corpses in the surrounding area who support the necromancer for some time.|n|cffc3dbffA maximum of 6 servants can be summoned.|r|n|n|cffffcc00Level 1|r - <A0FJ,DataA1> servants, <A0FJ,Dur1> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 2|r - <A0FJ,DataA2> servants, <A0FJ,Dur2> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 3|r - <A0FJ,DataA3> servants, <A0FJ,Dur3> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 4|r - <A0FJ,DataA4> servants, <A0FJ,Dur4> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.|n|cffffcc00Level 5|r - <A0FJ,DataA5> servants, <A0FJ,Dur5> seconds, archers with <n03N,realHP> life who deal <n03N,ua1b> points of damage.
 }
 
 STRING 19296
@@ -77780,7 +77780,7 @@ Manasalbe
 STRING 19769
 // Einheiten: n07G (Irminas Kiste mit Kräutern und Lebensmitteln), Name (Name (unam))
 {
-Irminas Kiste mit Kräutern und Lebensmitteln
+Irmina's Box with Herbs and Food
 }
 
 STRING 19770
@@ -78422,7 +78422,7 @@ STRING 19879
 STRING 19880
 // Einheiten: n07T (Guntrichs Stand), Name (Name (unam))
 {
-Guntrichs Stand
+Guntrich's Stall
 }
 
 STRING 19881
@@ -79244,7 +79244,7 @@ Range Combat
 STRING 20035
 // Einheiten: n07X (Stall), Name (Name (unam))
 {
-Stall
+Stable
 }
 
 STRING 20036
@@ -79856,7 +79856,7 @@ Optionen - Tutorial aktivieren
 STRING 20142
 // Fähigkeiten: A1UB (Optionen - Tutorial aktivieren), Tip (Tooltipp - Normal (atp1))
 {
-Tutorial aktivieren/deaktivieren
+Enable/Disable Tutorial
 }
 
 STRING 20143
