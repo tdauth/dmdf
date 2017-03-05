@@ -20,6 +20,7 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Show the campaign under "Campaign" not "Custom Campaigns". Change the file "UI/CampaignStrings_exp.txt" for this.
 * (0|0) is discovered in the beginning in Talras. Game options?
 * One spell of the Ranger is missing!
 * Concentration is cast all the time (although 100% life and 10 seconds timer!).
