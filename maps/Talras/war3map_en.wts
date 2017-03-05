@@ -10440,7 +10440,7 @@ Eisklippe 4 (Schnee)
 STRING 1743
 // Fähigkeiten: A0Z8 (Elementare Gewalt - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Elementare Gewalt [|cffffcc00Stufe 1|r]
+Elemental Power [|cffffcc00Level 1|r]
 }
 
 STRING 1744
@@ -10470,7 +10470,7 @@ Ein wunderbares Instrument.
 STRING 1748
 // Fähigkeiten: A045 (Elementare Gewalt), Name (Name (anam))
 {
-Elementare Gewalt
+Elemental Power
 }
 
 STRING 1749
@@ -34641,7 +34641,7 @@ Verspotten - Stufe 4
 STRING 8528
 // Fähigkeiten: A0TV (Entzünden - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 8538
@@ -37563,7 +37563,7 @@ Revives an ally with a share of his life and his mana.|nThe ally is decided on b
 STRING 9500
 // Fähigkeiten: A0TT (Entzünden - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 9509
@@ -37587,7 +37587,7 @@ Clarity - Level 1
 STRING 9514
 // Fähigkeiten: A0TR (Entzünden - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 9523
@@ -37611,7 +37611,7 @@ Clarity - Level 2
 STRING 9528
 // Fähigkeiten: A0TU (Entzünden - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 9537
@@ -37635,7 +37635,7 @@ Clarity - Level 3
 STRING 9542
 // Fähigkeiten: A1KN (Entzünden - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 9551
@@ -49255,31 +49255,31 @@ Falle [|cffffcc00Stufe 5|r]
 STRING 13402
 // Fähigkeiten: A17T (Mehrfachschuss - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13403
 // Fähigkeiten: A17W (Mehrfachschuss - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13404
 // Fähigkeiten: A1ML (Mehrfachschuss - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13405
 // Fähigkeiten: A17U (Mehrfachschuss - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13406
 // Fähigkeiten: A17V (Mehrfachschuss - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 13407
@@ -61621,43 +61621,43 @@ STRING 15634
 STRING 15635
 // Fähigkeiten: A1NR (Schütze - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Basic Spell|r|nDamage caused by ranged weapons is increased by 50 %.
 }
 
 STRING 15636
 // Fähigkeiten: A11G (Schütze - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Basic Spell|r|nDamage caused by ranged weapons is increased by 50 %.
 }
 
 STRING 15637
 // Fähigkeiten: A1BR (Hundezwinger - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15638
 // Fähigkeiten: A1LV (Hundezwinger - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15639
 // Fähigkeiten: A1BP (Hundezwinger - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15640
 // Fähigkeiten: A1BS (Hundezwinger - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15641
 // Fähigkeiten: A1BO (Hundezwinger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 15642
@@ -62761,7 +62761,7 @@ Dunkle Diener - Stufe 5
 STRING 15888
 // Fähigkeiten: A0Z8 (Elementare Gewalt - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nIncreases the damage from elemental spells by 80 % for 20 seconds.|n<A045,Cool1> seconds cooldown.
 }
 
 STRING 15889
@@ -62773,7 +62773,7 @@ STRING 15889
 STRING 15890
 // Fähigkeiten: A01J (Wut der Elemente), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30% for 10 seconds.|n<A01J,Cool1> seconds cooldown.
+|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30 % for 10 seconds.|n<A01J,Cool1> seconds cooldown.
 }
 
 STRING 15891
@@ -62845,7 +62845,7 @@ Verzehren [|cffffcc00Stufe 5|r]
 STRING 15902
 // Fähigkeiten: A045 (Elementare Gewalt), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1|r|nErhöht den Schaden durch Elementarzauber 20 Sekunden lang um 80 %.|n<A045,Cool1> Sekunden Abklingzeit.
+|cffffcc00Ultimate Spell 1|r|nIncreases the damage from elemental spells by 80 % for 20 seconds.|n<A045,Cool1> seconds cooldown.
 }
 
 STRING 15903
@@ -63067,31 +63067,31 @@ Trap
 STRING 15939
 // Fähigkeiten: A1OF (Falle - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15940
 // Fähigkeiten: A188 (Falle - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15941
 // Fähigkeiten: A187 (Falle - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15942
 // Fähigkeiten: A18A (Falle - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15943
 // Fähigkeiten: A189 (Falle - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 15944
@@ -63577,31 +63577,31 @@ Blind [|cffffcc00Level 3|r]
 STRING 16024
 // Fähigkeiten: A10Z (Sprinten - Stufe 4), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16025
 // Fähigkeiten: A10X (Sprinten - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16026
 // Fähigkeiten: A110 (Sprinten - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16027
 // Fähigkeiten: A1NZ (Sprinten - Erlernen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16028
 // Fähigkeiten: A10W (Sprinten - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 16029
@@ -68630,7 +68630,7 @@ Erzeugt einen Frostschild um eine angewählte befreundete Einheit herum. Der Sch
 STRING 17281
 // Fähigkeiten: A1KB (Adlerauge - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Adlerauge erlernen
+Learn Eagle Eye
 }
 
 STRING 17282
@@ -68828,7 +68828,7 @@ Trained Rat
 STRING 17319
 // Fähigkeiten: A1IP (Leprechaun - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimativzauber 1 - Benötigt Stufe 12|r|nDer Waldläufer ruft einen Leprechaun, der dem Waldläufer einen Topf voll Gold vom Ende seines Regenbogens bringt. Alle Spieler erhalten 500 Goldmünzen. Außerdem erzeugt der Lebrechaun eine Aura des Glücks, die <A1IO,Dur1> Sekunden lang die Rüstung um <A1IO,DataA1> erhöht und <A1IO,DataB1> Leben und <A1IO,DataC1> Mana bei Verbündeten regeneriert.
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nThe ranger calls a Leprechaun, which brings the ranger a pot of gold from the end of his rainbow. All players receive 500 gold coins. Besides the Leprechaun creates an aura of happiness that increases the armour by <A1IO,DataA1> for <A1IO,Dur1> seconds and regenerates <A1IO,DataB1> life and <A1IO,DataC1> mana of allies.
 }
 
 STRING 17325
@@ -71204,67 +71204,67 @@ Leprechaun [|cffffcc00Stufe 1|r] (|cffffcc00J|r)
 STRING 17733
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 2|r] (|cffffcc00W|r)
+Fire Missile [|cffffcc00Level 2|r] (|cffffcc00W|r)
 }
 
 STRING 17734
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 3|r] (|cffffcc00W|r)
+Fire Missile [|cffffcc00Level 3|r] (|cffffcc00W|r)
 }
 
 STRING 17735
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 4|r] (|cffffcc00W|r)
+Fire Missile [|cffffcc00Level 4|r] (|cffffcc00W|r)
 }
 
 STRING 17736
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 5|r] (|cffffcc00W|r)
+Fire Missile [|cffffcc00Level 5|r] (|cffffcc00W|r)
 }
 
 STRING 17737
 // Fähigkeiten: A014 (Feuergeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Feuergeschoss [|cffffcc00Stufe 1|r] (|cffffcc00W|r)
+Fire Missile [|cffffcc00Level 1|r] (|cffffcc00W|r)
 }
 
 STRING 17738
 // Fähigkeiten: A045 (Elementare Gewalt), Tip (Tooltipp - Normal (atp1))
 {
-Elementare Gewalt [|cffffcc00Stufe 1|r] (|cffffcc00Y|r)
+Elemental Power [|cffffcc00Level 1|r] (|cffffcc00Y|r)
 }
 
 STRING 17739
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 2|r] (|cffffcc00E|r)
+Ice Missile [|cffffcc00Level 2|r] (|cffffcc00E|r)
 }
 
 STRING 17740
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 3|r] (|cffffcc00E|r)
+Ice Missile [|cffffcc00Level 3|r] (|cffffcc00E|r)
 }
 
 STRING 17741
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 4|r] (|cffffcc00E|r)
+Ice Missile [|cffffcc00Level 4|r] (|cffffcc00E|r)
 }
 
 STRING 17742
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 5|r] (|cffffcc00E|r)
+Ice Missile [|cffffcc00Level 5|r] (|cffffcc00E|r)
 }
 
 STRING 17743
 // Fähigkeiten: A017 (Eisgeschoss), Tip (Tooltipp - Normal (atp1))
 {
-Eisgeschoss [|cffffcc00Stufe 1|r] (|cffffcc00E|r)
+Ice Missile [|cffffcc00Level 1|r] (|cffffcc00E|r)
 }
 
 STRING 17744
@@ -72176,7 +72176,7 @@ Small Mana Herb
 STRING 17904
 // Fähigkeiten: A1KL (Elementare Gewalt - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Elementare Gewalt erlernen
+Learn Elemental Power
 }
 
 STRING 17905
@@ -72206,13 +72206,13 @@ Elementare Gewalt - Erlernen
 STRING 17911
 // Fähigkeiten: A0TS (Entzünden - Stufe 2), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Elementarmagier kann die Waffen eines Verbündeten 30 Sekunden lang entzünden und ihren Schaden erhöhen. |n|n|cffffcc00Stufe 1|r - Erhöht den Schaden um 10. |n|cffffcc00Stufe 2|r - Erhöht den Schaden um 15. |n|cffffcc00Stufe 3|r - Erhöht den Schaden um 20. |n|cffffcc00Stufe 4|r - Erhöht den Schaden um 25. |n|cffffcc00Stufe 5|r - Erhöht den Schaden um 30.
+The elemental mage can inflame the weapons of an ally for 30 seconds and increase their damage. |n|n|cffffcc00Level 1|r - Increases the damage by 10. |n|cffffcc00Level 2|r - Increases the damage by 15. |n|cffffcc00Level 3|r - Increases the damage by 20. |n|cffffcc00Level 4|r - Increases the damage by 25. |n|cffffcc00Level 5|r - Increases the damage by 30.
 }
 
 STRING 17920
 // Fähigkeiten: A1KN (Entzünden - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Entzünden erlernen
+Learn Inflame
 }
 
 STRING 17921
@@ -72536,7 +72536,7 @@ The ranger freezes his arrows. Hits slow down the movement speed of opponents. B
 STRING 18064
 // Fähigkeiten: A1L5 (Eispfeile - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Eispfeile erlernen
+Learn Ice Arrows
 }
 
 STRING 18065
@@ -72680,7 +72680,7 @@ Lets rain a hail of arrows in an area which deals damage to nearby hostile units
 STRING 18128
 // Fähigkeiten: A1LD (Pfeilhagel - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Pfeilhagel erlernen
+Learn Hail of Arrows
 }
 
 STRING 18129
@@ -72920,7 +72920,7 @@ Auf dem Boden unter dem Elementarmagier entsteht ein Flammenmeer, das Gegner im 
 STRING 18240
 // Fähigkeiten: A1LR (Inferno - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Inferno erlernen
+Learn Inferno
 }
 
 STRING 18241
@@ -72986,13 +72986,13 @@ Sprungattacke - Erlernen
 STRING 18261
 // Fähigkeiten: A1BQ (Hundezwinger - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Baut einen Hundezwinger, der Hunde freilässt, wenn er zerstört wird.|n|n|cffffcc00Stufe 1|r - Lässt <A1BI,DataA1> Hunde frei.|n|cffffcc00Stufe 2|r - Lässt <A1BJ,DataA1> Hunde frei. |n|cffffcc00Stufe 3|r - Lässt <A1BK,DataA1> Hunde frei.|n|cffffcc00Stufe 4|r - Lässt <A1BL,DataA1> Hunde frei.|n|cffffcc00Stufe 5|r - Lässt <A1BM,DataA1> Hunde frei.
+Builds kennels which releases dogs when it is destroyed.|n|n|cffffcc00Level 1|r - Releases <A1BI,DataA1> dogs.|n|cffffcc00Level 2|r - Releases <A1BJ,DataA1> dogs. |n|cffffcc00Level 3|r - Releases <A1BK,DataA1> dogs.|n|cffffcc00Level 4|r - Releases <A1BL,DataA1> dogs.|n|cffffcc00Level 5|r - Releases <A1BM,DataA1> dogs.
 }
 
 STRING 18270
 // Fähigkeiten: A1LV (Hundezwinger - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Hundezwinger erlernen
+Learn Kennels
 }
 
 STRING 18271
@@ -73028,7 +73028,7 @@ STRING 18277
 STRING 18286
 // Fähigkeiten: A1LX (Leprechaun - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Leprechaun erlernen
+Learn Leprechaun
 }
 
 STRING 18287
@@ -73064,7 +73064,7 @@ Makes the ranger invisible and slows down his movement speed by 30 %. When the r
 STRING 18302
 // Fähigkeiten: A1LZ (Lauern - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Lauern erlernen
+Learn Lie in Wait
 }
 
 STRING 18303
@@ -73382,7 +73382,7 @@ The Elemental Mage regenerates every 10 seconds a part of his mana.|n|n|cffffcc0
 STRING 18446
 // Fähigkeiten: A1MH (Beherrschung - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Beherrschung erlernen
+Learn Mastery
 }
 
 STRING 18447
@@ -73448,13 +73448,13 @@ Unbarmherzigkeit - Erlernen
 STRING 18467
 // Fähigkeiten: A17S (Mehrfachschuss - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer schießt zusätzlich weitere Pfeile auf in der Nähe befindliche feindliche Gegner und richtet mit jedem Treffer den verursachten Schaden des Waldläufers an.|n|n|cffffcc00Stufe 1|r - 3 Pfeile.|n|cffffcc00Stufe 2|r - 4 Pfeile.|n|cffffcc00Stufe 3|r - 5 Pfeile.|n|cffffcc00Stufe 4|r - 6 Pfeile.|n|cffffcc00Stufe 5|r - 7 Pfeile.
+The ranger shoots additionally more arrows at nearby opponents and deals the dealt damage by the ranger with every hit.|n|n|cffffcc00Level 1|r - 3 arrows.|n|cffffcc00Level 2|r - 4 arrows.|n|cffffcc00Level 3|r - 5 arrows.|n|cffffcc00Level 4|r - 6 arrows.|n|cffffcc00Level 5|r - 7 arrows.
 }
 
 STRING 18476
 // Fähigkeiten: A1ML (Mehrfachschuss - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Mehrfachschuss erlernen
+Learn Multishot
 }
 
 STRING 18477
@@ -73634,7 +73634,7 @@ The ranger poisons his arrows and deals additional damage to hit opponents. Ther
 STRING 18556
 // Fähigkeiten: A1MV (Vergiftete Pfeile - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Vergiftete Pfeile erlernen
+Learn Poisoned Arrows
 }
 
 STRING 18557
@@ -73766,13 +73766,13 @@ Pure Energie - Erlernen
 STRING 18611
 // Fähigkeiten: A0ZM (Wut der Elemente - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30% for 10 seconds.|n<A01J,Cool1> seconds cooldown.
+|cffffcc00Basic Spell|r|nIncreases the damage by elemental spells by 30 % for 10 seconds.|n<A01J,Cool1> seconds cooldown.
 }
 
 STRING 18620
 // Fähigkeiten: A1N3 (Wut der Elemente - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Wut der Elemente erlernen
+Learn Rage of Elements
 }
 
 STRING 18621
@@ -74198,7 +74198,7 @@ STRING 18801
 STRING 18810
 // Fähigkeiten: A1NR (Schütze - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Schütze erlernen
+Learn Hunter
 }
 
 STRING 18811
@@ -74234,7 +74234,7 @@ The ranger shoots into the heart of his target and deals damage to it.|n|n|cffff
 STRING 18826
 // Fähigkeiten: A1NT (Schuss ins Herz - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Schuss ins Herz erlernen
+Learn Shot into the Heart
 }
 
 STRING 18827
@@ -74336,7 +74336,7 @@ Seelendiebstahl - Erlernen
 STRING 18865
 // Fähigkeiten: A10Y (Sprinten - Stufe 3), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Erhöht die Bewegungsgeschwindkeit des Waldläufers für <A1EK,Dur1> Sekunden . |n|n|cffffcc00Stufe 1|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA1,%> %.|n|cffffcc00Stufe 2|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA2,%> %.|n|cffffcc00Stufe 3|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA3,%> %.|n|cffffcc00Stufe 4|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA4,%> %.|n|cffffcc00Stufe 5|r - Erhöht die Bewegungsgeschwindigkeit um <A1EK,DataA5,%> %.
+Increases the movement speed of the ranger for <A1EK,Dur1> seconds. |n|n|cffffcc00Level 1|r - Increases the movement speed by <A1EK,DataA1,%> %.|n|cffffcc00Level 2|r - Increases the movement speed by <A1EK,DataA2,%> %.|n|cffffcc00Level 3|r - Increases the movement speed by <A1EK,DataA3,%> %.|n|cffffcc00Level 4|r - Increases the movement speed by <A1EK,DataA4,%> %.|n|cffffcc00Level 5|r - Increases the movement speed by <A1EK,DataA5,%> %.
 }
 
 STRING 18874
@@ -74624,7 +74624,7 @@ STRING 18990
 STRING 18991
 // Fähigkeiten: A186 (Falle - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Waldläufer platziert eine Falle, die bei Gegnern Schaden verursacht und sie eine Zeit lang lähmt..|n|n|cffffcc00Stufe 1|r - Verursacht <A183,DataB1> Punkte Schaden. |n|cffffcc00Stufe 2|r - Verursacht <A1D8,DataB1> Punkte Schaden. |n|cffffcc00Stufe 3|r - Verursacht <A1D9,DataB1> Punkte Schaden.|n|cffffcc00Stufe 4|r - Verursacht <A1DA,DataB1> Punkte Schaden.|n|cffffcc00Stufe 5|r - Verursacht <A1DB,DataB1> Punkte Schaden.
+The ranger places a trap which causes damage to opponents and stuns them for a some time.|n|n|cffffcc00Level 1|r - Deals <A183,DataB1> points of damage. |n|cffffcc00Level 2|r - Deals <A1D8,DataB1> points of damage. |n|cffffcc00Level 3|r - Deals <A1D9,DataB1> points of damage.|n|cffffcc00Level 4|r - Deals <A1DA,DataB1> points of damage.|n|cffffcc00Level 5|r - Deals <A1DB,DataB1> points of damage.
 }
 
 STRING 19000
@@ -74702,7 +74702,7 @@ The Elemental Mage restores mana points for life per second. He can die from thi
 STRING 19032
 // Fähigkeiten: A1OJ (Zehren - Erlernen), Tip (Tooltipp - Normal (atp1))
 {
-Zehren erlernen
+Learn Feeding
 }
 
 STRING 19033
