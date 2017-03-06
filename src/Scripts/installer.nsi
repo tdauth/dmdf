@@ -71,6 +71,20 @@ Section "English Campaign" EnglishCampaign
 	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
+Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
+	SetOutPath "$INSTDIR\Maps\TPoF09de"
+	File "${INPUT_DIR}\DH.w3x"
+	File "${INPUT_DIR}\TL.w3x"
+	File "${INPUT_DIR}\GA.w3x"
+	File "${INPUT_DIR}\GH.w3x"
+	File "${INPUT_DIR}\DS.w3x"
+	File "${INPUT_DIR}\HB.w3x"
+	File "${INPUT_DIR}\HU.w3x"
+	File "${INPUT_DIR}\TN.w3x"
+	File "${INPUT_DIR}\WM.w3x"
+	File "${INPUT_DIR}\CT.w3x"
+SectionEnd
+
 Section "Uninstall"
 	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
 	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"

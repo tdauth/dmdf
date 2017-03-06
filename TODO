@@ -20,9 +20,10 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
-* wc3lib compression bug Shot into the Heart ACfd:DataA, ACfd:DataB, ACfd:DataC
+* src/Scripts/devinstaller.nsi: Install the translation files or different language versions of the maps.
+* FIXED in TPOF only: wc3lib compression bug Shot into the Heart ACfd:DataA, ACfd:DataB, ACfd:DataC
 * Archer: not 50 % more damage, something like 10 %. Use the data value in the tooltip.
-* wc3lib compression bug: Lauern ANwk:DataA, ANwk:DataB, ANwk:DataC (BUT NOT ANwk:DataD)
+* FIXED in TPOF only: wc3lib compression bug: Lauern ANwk:DataA, ANwk:DataB, ANwk:DataC (BUT NOT ANwk:DataD)
 * Show the campaign under "Campaign" not "Custom Campaigns". Change the file "UI/CampaignStrings_exp.txt" for this. Added files from war3x.mpq, maybe check the latest War3Patch.mpq? Do the files from the map folder work as campaign or should they be added to the MPQ archive?
 * Specify another credits map in the game: "UI/MiscUI.txt" entry "CreditsFile_V1".
 * (0|0) is discovered in the beginning in Talras. Game options?
@@ -439,7 +440,7 @@ Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * MapChanger: Options cannot be selected. But only in the map which is started via map transition for the first time. PauseUnit() by the intro video in Talras? Happens only sometimes.
 * Two Hand Sword of Cold and Two Hand Sword shoul have the right attack animations.
 * Fix tooltip for Two Hand Sword of Cold.
-* Fix tooltip of Necromancy.
+* Fix tooltip of Necromancy (unit values).
 * FIXED: Professions info add Book of Hunting.
 * FIXED: Limit of skeletons does still not work (necromancer). Why does not work? Whenever a skeleton dies the counter is decremented. Whenever one unit is summoned it is incremented. Are more skeletons summoned at once?! It has been removed AFTER being killed! It has to be removed before. Besides use AUnitList instead and add the new unit always to the back so that the longest living skeleton will be removed first and popFront() has a better performance.
 * FIXED: Add info for options.
