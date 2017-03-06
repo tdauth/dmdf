@@ -20,6 +20,7 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* The map in the singleplayer campaign is not detected as campaign (object data). Besides the map paths "TL.w3x" etc. have to be used to make the zones work. Therefore addd the maps directly to the root path in the MPQ archive TPoF.mpq.
 * src/Scripts/devinstaller.nsi: Install the translation files or different language versions of the maps.
 * FIXED in TPOF only: wc3lib compression bug Shot into the Heart ACfd:DataA, ACfd:DataB, ACfd:DataC
 * Archer: not 50 % more damage, something like 10 %. Use the data value in the tooltip.
@@ -41,7 +42,14 @@ Zeugs:
 * Wotan's quest: Add to the description where the scepter is (inventory) and where the children are.
 * DONE: Tanka: Add item types for learning stuff.
 * The North: Repick creates items again.
+* Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
+* Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list?
 * Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
+* Verzauberter Schädel eines Dämon: Keine Zauberbuchfähigkeit.
+* Knochenbogen: Keine Zauberbuchfähigkeit.
+* Necromancy: Zaubertooltip kaputt (nicht im Zauberbuch).
+* Orc Crossbow: Doesn't show attachment and no missiles.
+* FIXED (was ultimate 1): Damnation could not be learnt at level 12.
 * FIXED: Dungeon: Leaving a dungeon with a camera pan should be an immediate pan to the character.
 * AInventory: When an item has no equipment type (ItemType) the message appears that the equipment slot is already used. There should be a message that the item cannot be equipped.
 * FIXED: Dornheim: Wotan's staff has mana costs. Reduce it to 50. Increase the area size and implement the quest.
