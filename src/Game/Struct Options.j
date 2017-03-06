@@ -375,12 +375,13 @@ endif
 		endmethod
 
 		public method onDestroy takes nothing returns nothing
-			call RemoveUnit(this.m_unit)
-			set this.m_unit = null
 			call this.m_missions.destroy()
 			call this.m_dungeons.destroy()
 			call this.m_options.destroy()
 			call this.m_camera.destroy()
+
+			call RemoveUnit(this.m_unit)
+			set this.m_unit = null
 		endmethod
 	endstruct
 

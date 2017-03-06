@@ -27,16 +27,6 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			return this.m_mapName
 		endmethod
 
-		public method enable takes nothing returns nothing
-			set this.m_isEnabled = true
-			call ShowUnit(this.m_iconUnit, true)
-		endmethod
-
-		public method disable takes nothing returns nothing
-			set this.m_isEnabled = false
-			call ShowUnit(this.m_iconUnit, false)
-		endmethod
-
 		public method iconUnit takes nothing returns unit
 			return this.m_iconUnit
 		endmethod
@@ -64,6 +54,20 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		public stub method hide takes nothing returns nothing
 			call super.hide()
 			call ShowUnit(this.m_iconUnit, false)
+		endmethod
+
+		public stub method enable takes nothing returns nothing
+			call super.enable()
+			set this.m_isEnabled = true
+			call ShowUnit(this.m_iconUnit, true)
+			call this.show()
+		endmethod
+
+		public stub method disable takes nothing returns nothing
+			call super.disable()
+			set this.m_isEnabled = false
+			call ShowUnit(this.m_iconUnit, false)
+			call this.hide()
 		endmethod
 
 		/**

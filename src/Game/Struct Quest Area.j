@@ -178,6 +178,14 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			endloop
 		endmethod
 
+		public stub method enable takes nothing returns nothing
+			call EnableTrigger(this.m_enterTrigger)
+		endmethod
+
+		public stub method disable takes nothing returns nothing
+			call DisableTrigger(this.m_enterTrigger)
+		endmethod
+
 		/**
 		 * Creates a new quest area in rect \p whichRect.
 		 * This shows an energie wall around the rect and checks for condition \ref onCheck() when a character enters.

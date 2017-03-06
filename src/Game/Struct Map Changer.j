@@ -150,6 +150,22 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call whichGroup.destroy()
 		endmethod
 
+		private static method setupMapTransition takes nothing returns nothing
+			// Hide transition delay.
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUT, 0.00, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 0, 0, 0, 0)
+			call ShowInterface(false, 1.0)
+			call EnableUserControl(false)
+			call ClearTextMessages()
+			call ClearSelection()
+		endmethod
+
+		private static method clearMapTransition takes nothing returns nothing
+			// Disable the transition mode. NOTE don't play any video in onRestoreCharacter() before.
+			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.00, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 0, 0, 0, 0)
+			call ShowInterface(true, 1.0)
+			call EnableUserControl(true)
+		endmethod
+
 		/**
 		 * Stores all player characters to a game cache as well as general data which is required in the next map.
 		 * Stores the current savegame name and the zone name of the current zone that the next map can identify where the characters come from.
@@ -159,6 +175,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local gamecache cache  = InitGameCache(thistype.gameCacheName)
 			local Character character = 0
 			local integer i = 0
+			call thistype.setupMapTransition()
+			// Store all characters.
+			set i = 0
 			loop
 				exitwhen (i == MapSettings.maxPlayers())
 				set character = Character(Character.playerCharacter(Player(i)))
@@ -169,6 +188,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					endif
 
 					call thistype.storeCharacterSinglePlayer(cache, character)
+					call character.setMovable(false) // Protect from any damage during the delay, but after saving the character in the game cache.
 
 					// Not all zones allow traveling with other units.
 					if (Zone.zoneAllowTravelingWithOtherUnits.evaluate(zone)) then
@@ -324,6 +344,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// Since the character traveled for some time fill stats.
 			call SetUnitLifePercentBJ(restoredUnit, 100.0)
 			call SetUnitManaPercentBJ(restoredUnit, 100.0)
+
+			if (not character.isMovable()) then
+				call character.setMovable(true)
+			endif
+
 			// NOTE works not on the load event.
 			call thistype.selectAndMoveCamera(restoredUnit, whichPlayer)
 		endmethod
@@ -407,6 +432,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 					endif
 					set i = i + 1
 				endloop
+
+				call thistype.clearMapTransition()
+
 				//debug call Print("From zone: " + zone)
 				//debug call Print("Current save game: " + thistype.m_currentSaveGame)
 				call MapData.onRestoreCharacters.evaluate(zone)
