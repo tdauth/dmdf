@@ -18102,13 +18102,13 @@ Giant Skin
 STRING 3210
 // Gegenstände: I01Z (Riesen-Fell), Description (Beschreibung (ides))
 {
-Das Fell eines Riesen.
+The fur of a giant.
 }
 
 STRING 3211
 // Gegenstände: I01Z (Riesen-Fell), Ubertip (Tooltipp - Erweitert (utub))
 {
-Das Fell eines Riesen.
+The fur of a giant.
 }
 
 STRING 3212
@@ -18228,25 +18228,25 @@ Steals the soul from a hostile target and drains life and mana from it per secon
 STRING 3232
 // Gegenstände: I013 (Knochenbogen), Name (Name (unam))
 {
-Impending Disaster [|cffffcc00Level 1|r]
+Bone Bow
 }
 
 STRING 3233
 // Gegenstände: I013 (Knochenbogen), Description (Beschreibung (ides))
 {
-Ein Bogen gefertigt aus Knochen.
+A bow made from bones.
 }
 
 STRING 3235
 // Gegenstände: I013 (Knochenbogen), Tip (Tooltipp - Einfach (utip))
 {
-Knochenbogen kaufen
+Buy Bone Bow
 }
 
 STRING 3236
 // Fähigkeiten: A07M (Knochenbogen), Name (Name (anam))
 {
-Impending Disaster [|cffffcc00Level 1|r]
+Bone Bow
 }
 
 STRING 3237
@@ -18258,7 +18258,7 @@ STRING 3237
 STRING 3238
 // Fähigkeiten: A1DO (Knochenbogen), Name (Name (anam))
 {
-Impending Disaster [|cffffcc00Level 1|r]
+Bone Bow
 }
 
 STRING 3239
@@ -18270,7 +18270,7 @@ STRING 3239
 STRING 3240
 // Fähigkeiten: A07L (Knochenbogen), Name (Name (anam))
 {
-Impending Disaster [|cffffcc00Level 1|r]
+Bone Bow
 }
 
 STRING 3241
@@ -18288,7 +18288,7 @@ Zombie
 STRING 3243
 // Zauberverstärker/Effekte: B01A (Knochenbogen), EditorName (Name (nur Editor) (fnam))
 {
-Impending Disaster [|cffffcc00Level 1|r]
+Bone Bow
 }
 
 STRING 3244
@@ -22710,7 +22710,7 @@ Dark Servants [|cffffcc00Level 1|r]
 STRING 4146
 // Fähigkeiten: A0IW (Dunkle Diener - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Dark Servants[|cffffcc00Level 2|r]
+Dark Servants [|cffffcc00Level 2|r]
 }
 
 STRING 4147
@@ -23196,19 +23196,19 @@ Horn of the Fight
 STRING 4302
 // Gegenstände: I04G (Horn des Kampfes), Tip (Tooltipp - Einfach (utip))
 {
-Horn des Kampfes kaufen
+Buy Horn of the Fight
 }
 
 STRING 4303
 // Gegenstände: I04G (Horn des Kampfes), Description (Beschreibung (ides))
 {
-Erhöht den Schaden von Verbündeten in der Nähe.
+Increases the damage of allies nearby.
 }
 
 STRING 4304
 // Gegenstände: I04G (Horn des Kampfes), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden von Verbündeten in der Nähe <A0VO,Dur1> Sekunden lang um <A0VO,DataA1,%> %.
+Increases the damage of allies around by <A0VO,DataA1,%> % for <A0VO,Dur1> seconds.
 }
 
 STRING 4305
@@ -23220,19 +23220,19 @@ Horn of Protection
 STRING 4306
 // Gegenstände: I04H (Horn des Schutzes), Tip (Tooltipp - Einfach (utip))
 {
-Horn des Schutzes kaufen
+Buy Horn of Protection
 }
 
 STRING 4307
 // Gegenstände: I04H (Horn des Schutzes), Description (Beschreibung (ides))
 {
-Erhöht die Rüstung von Verbündeten in der Nähe.
+Increases the armour of allies nearby.
 }
 
 STRING 4308
 // Gegenstände: I04H (Horn des Schutzes), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht die Rüstung von Verbündeten in der Nähe <A0VP,Dur1> Sekunden lang um <A0VP,DataB1>.
+Increases the armour of allies nearby by <A0VP,DataB1> for <A0VP,Dur1> seconds.
 }
 
 STRING 4309
@@ -23388,19 +23388,19 @@ Regenerates <A0VS,DataA1> life per second.
 STRING 4334
 // Gegenstände: I04L (Verzauberter Schädel eines Dämons), Name (Name (unam))
 {
-Verzauberter Schädel eines Dämons
+Enchanted Skull of a Demon
 }
 
 STRING 4335
 // Gegenstände: I04L (Verzauberter Schädel eines Dämons), Description (Beschreibung (ides))
 {
-Erhöht das Wissen und beschwört Dämonen aus der Hölle.
+Increases lore and summons demons from hell.
 }
 
 STRING 4336
 // Gegenstände: I04L (Verzauberter Schädel eines Dämons), Tip (Tooltipp - Einfach (utip))
 {
-Verzauberten Schädel eines Dämon kaufen
+Buy Enchanted Skull of a Demon
 }
 
 STRING 4337
@@ -23460,7 +23460,7 @@ STRING 4345
 STRING 4346
 // Gegenstände: I04L (Verzauberter Schädel eines Dämons), Ubertip (Tooltipp - Erweitert (utub))
 {
-|cff8b00ffNekromant|r|nErhöht das Wissen des Trägers um 4. Erlaubt es dem Träger Dämonen aus der Hölle herbeizurufen.
+|cff8b00ffNecromancer|r|nIncreases the lore of the carrying unit by 4. Allows the carrying unit to summon demons from hell.
 }
 
 STRING 4347
@@ -31143,37 +31143,37 @@ STRING 7006
 STRING 7007
 // Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 1|r]
+Plague [|cffffcc00Level 1|r]
 }
 
 STRING 7008
 // Fähigkeiten: A0HM (Seuche), Name (Name (anam))
 {
-Seuche
+Plague
 }
 
 STRING 7009
 // Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 2|r]
+Plague [|cffffcc00Level 2|r]
 }
 
 STRING 7010
 // Fähigkeiten: A0HP (Seuche - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 3|r]
+Plague [|cffffcc00Level 3|r]
 }
 
 STRING 7011
 // Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 4|r]
+Plague [|cffffcc00Level 4|r]
 }
 
 STRING 7012
 // Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 5|r]
+Plague [|cffffcc00Level 5|r]
 }
 
 STRING 7015
@@ -31257,7 +31257,7 @@ STRING 7028
 STRING 7029
 // Zauberverstärker/Effekte: B02T (Seuche), EditorName (Name (nur Editor) (fnam))
 {
-Seuche
+Plague
 }
 
 STRING 7030
@@ -31269,7 +31269,7 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 7039
 // Fähigkeiten: A0HN (Seuche - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 1|r]
+Plague [|cffffcc00Level 1|r]
 }
 
 STRING 7040
@@ -31299,7 +31299,7 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 7053
 // Fähigkeiten: A0HO (Seuche - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 2|r]
+Plague [|cffffcc00Level 2|r]
 }
 
 STRING 7054
@@ -31323,7 +31323,7 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 7067
 // Fähigkeiten: A1DD (Seuche), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 3|r]
+Plague [|cffffcc00Level 3|r]
 }
 
 STRING 7068
@@ -31347,7 +31347,7 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 7081
 // Fähigkeiten: A0HQ (Seuche - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 4|r]
+Plague [|cffffcc00Level 4|r]
 }
 
 STRING 7082
@@ -31377,7 +31377,7 @@ Verseucht bei jedem Angriff ein Gebiet, in dem alle Gegner mehrere Sekunden lang
 STRING 7095
 // Fähigkeiten: A0HR (Seuche - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Seuche [|cffffcc00Stufe 5|r]
+Plague [|cffffcc00Level 5|r]
 }
 
 STRING 7096
@@ -32073,31 +32073,31 @@ Consume
 STRING 7333
 // Fähigkeiten: A0IL (Verzehren - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 1|r]
+Consume [|cffffcc00Level 1|r]
 }
 
 STRING 7334
 // Fähigkeiten: A0IM (Verzehren - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 2|r]
+Consume [|cffffcc00Level 2|r]
 }
 
 STRING 7335
 // Fähigkeiten: A0IN (Verzehren - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 3|r]
+Consume [|cffffcc00Level 3|r]
 }
 
 STRING 7336
 // Fähigkeiten: A0IO (Verzehren - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 4|r]
+Consume [|cffffcc00Level 4|r]
 }
 
 STRING 7337
 // Fähigkeiten: A0IP (Verzehren - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 5|r]
+Consume [|cffffcc00Level 5|r]
 }
 
 STRING 7338
@@ -36743,7 +36743,7 @@ Fire Missile [|cffffcc00Level 2|r]
 STRING 9205
 // Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revive [|cffffcc00Level 1|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9206
@@ -36767,7 +36767,7 @@ Entzünden - Stufe 3
 STRING 9219
 // Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revive [|cffffcc00Level 2|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9220
@@ -36785,7 +36785,7 @@ Revive - Level 2
 STRING 9233
 // Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revive [|cffffcc00Level 3|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9234
@@ -36803,7 +36803,7 @@ Revive - Level 3
 STRING 9247
 // Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revive [|cffffcc00Level 4|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9248
@@ -36821,7 +36821,7 @@ Revive - Level 4
 STRING 9261
 // Fähigkeiten: A1DD (Seuche), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Revive [|cffffcc00Level 5|r]
+Versucht den Boden unter dem Ziel des Nekromanten. Der verseuchte Boden fügt Gegnern Schaden zu. Der getroffene Gegner erleidet <A1DD,DataA1> Schaden alle <A1DD,DataB1> Sekunden und alle Gegner in seiner Umgebung erleiden <A1DD,DataC1> Schaden alle <A1DD,DataD1> Sekunden.
 }
 
 STRING 9262
@@ -37959,7 +37959,7 @@ Recovery - Level 5
 STRING 9686
 // Gegenstände: I05B (Todessense), Name (Name (unam))
 {
-Holy Will [|cffffcc00Level 1|r]
+Death Scythe
 }
 
 STRING 9687
@@ -44785,55 +44785,55 @@ STRING 12193
 STRING 12194
 // Gegenstände: I04Q (Schlangenschutz), Name (Name (unam))
 {
-Schlangenschutz
+Snake Protection
 }
 
 STRING 12195
 // Gegenstände: I04Q (Schlangenschutz), Tip (Tooltipp - Einfach (utip))
 {
-Schlangenschutz kaufen
+Buy Snake Protection
 }
 
 STRING 12196
 // Gegenstände: I04Q (Schlangenschutz), Description (Beschreibung (ides))
 {
-Beschwört einen Schlangenschutzzauber.
+Summons a snake protection spell.
 }
 
 STRING 12197
 // Gegenstände: I04Q (Schlangenschutz), Ubertip (Tooltipp - Erweitert (utub))
 {
-Beschwört einen Schlangenschutzzauber.
+Summons a snake protection spell.
 }
 
 STRING 12198
 // Gegenstände: I04R (Krone des Karornwaldes), Name (Name (unam))
 {
-Krone des Karornwaldes
+Crown of the Karorn Forest
 }
 
 STRING 12199
 // Gegenstände: I04R (Krone des Karornwaldes), Description (Beschreibung (ides))
 {
-Erhöht die Rüstung und das Wissen um 3.
+Increases the armour and lore by 3.
 }
 
 STRING 12200
 // Gegenstände: I04R (Krone des Karornwaldes), Tip (Tooltipp - Einfach (utip))
 {
-Krone des Karornwaldes kaufen
+Buy Crown of the Karorn Forest
 }
 
 STRING 12201
 // Gegenstände: I04R (Krone des Karornwaldes), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht die Rüstung und das Wissen des Trägers um 3.
+Increases the armour and lore of the carrying unit by 3.
 }
 
 STRING 12202
 // Fähigkeiten: A13R (Schlange beschwören), Name (Name (anam))
 {
-Schlange beschwören
+Summon Snake
 }
 
 STRING 12203
@@ -46501,7 +46501,7 @@ Buy Sheep
 STRING 12860
 // Gegenstände: I04V (Stein des Opfers), Ubertip (Tooltipp - Erweitert (utub))
 {
-Der Träger vernichtet sich selbst und fügt dabei Gegnern mit Mana Schaden zu.
+The carrier destroys himself and deals damage to opponents with mana.
 }
 
 STRING 12861
@@ -49795,19 +49795,19 @@ Spruchrolle der Heilung herstellen
 STRING 13547
 // Gegenstände: I05I (Knochen), Name (Name (unam))
 {
-Knochen
+Bones
 }
 
 STRING 13548
 // Gegenstände: I05I (Knochen), Description (Beschreibung (ides))
 {
-Einfache Knochen.
+Simple bones.
 }
 
 STRING 13549
 // Gegenstände: I05I (Knochen), Ubertip (Tooltipp - Erweitert (utub))
 {
-Einfache Knochen.
+Simple bones.
 }
 
 STRING 13550
@@ -49999,7 +49999,7 @@ Buy Mana Herb
 STRING 13581
 // Fähigkeiten: A18T (Wächter beschwören), Tip (Tooltipp - Normal (atp1))
 {
-Wächter beschwören
+Summon Guardians
 }
 
 STRING 13582
@@ -62545,7 +62545,7 @@ STRING 15849
 STRING 15850
 // Einheiten: H02I (Deranors Leibwache), Propernames (Eigennamen (upro))
 {
-The ranger sprints and therefore increases his movement speed for some time by 80 %. |n|n|cffffcc00Level 1|r - Lasts 5 seconds.|n|cffffcc00Level 2|r - Lasts 8 seconds.|n|cffffcc00Level 3|r - Lasts 11 seconds.|n|cffffcc00Level 4|r - Lasts 14 seconds.|n|cffffcc00Level 5|r - Lasts 17 seconds.
+Deranor's Bodyguard
 }
 
 STRING 15851
@@ -63631,13 +63631,13 @@ Buy Neck Stone
 STRING 16038
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Description (Beschreibung (ides))
 {
-Verwandelt den Träger in Deranors Leibwache.
+Tranfsorms the carrying unit into Deranor's bodyguard.
 }
 
 STRING 16039
 // Gegenstände: I06H (Flügel von Deranors Leibwache), Ubertip (Tooltipp - Erweitert (utub))
 {
-Verwandelt den Träger in Deranors Leibwache.
+Tranfsorms the carrying unit into Deranor's bodyguard.
 }
 
 STRING 16040
@@ -69614,61 +69614,61 @@ Necromancy [|cffffcc00Level 5|r] (|cffffcc00K|r)
 STRING 17468
 // Fähigkeiten: A0IJ (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 1|r] (|cffffcc00D|r)
+Consume [|cffffcc00Level 1|r] (|cffffcc00D|r)
 }
 
 STRING 17469
 // Fähigkeiten: A0IJ (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 2|r] (|cffffcc00D|r)
+Consume [|cffffcc00Level 2|r] (|cffffcc00D|r)
 }
 
 STRING 17470
 // Fähigkeiten: A0IJ (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 3|r] (|cffffcc00D|r)
+Consume [|cffffcc00Level 3|r] (|cffffcc00D|r)
 }
 
 STRING 17471
 // Fähigkeiten: A0IJ (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 4|r] (|cffffcc00D|r)
+Consume [|cffffcc00Level 4|r] (|cffffcc00D|r)
 }
 
 STRING 17472
 // Fähigkeiten: A0IJ (Verzehren), Tip (Tooltipp - Normal (atp1))
 {
-Verzehren [|cffffcc00Stufe 5|r] (|cffffcc00D|r)
+Consume [|cffffcc00Level 5|r] (|cffffcc00D|r)
 }
 
 STRING 17473
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 2|r] (|cffffcc00G|r)
+Ancestor Pact [|cffffcc00Level 2|r] (|cffffcc00G|r)
 }
 
 STRING 17474
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 3|r] (|cffffcc00G|r)
+Ancestor Pact [cffffcc00Level 3|r] (|cffffcc00G|r)
 }
 
 STRING 17475
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 4|r] (|cffffcc00G|r)
+Ancestor Pact [|cffffcc00Level 4|r] (|cffffcc00G|r)
 }
 
 STRING 17476
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 5|r] (|cffffcc00G|r)
+Ancestor Pact [|cffffcc00Level 5|r] (|cffffcc00G|r)
 }
 
 STRING 17477
 // Fähigkeiten: A08N (Ahnenpakt), Tip (Tooltipp - Normal (atp1))
 {
-Ahnenpakt |cffffcc00Stufe 1|r] (|cffffcc00G|r)
+Ancestor Pact [|cffffcc00Level 1|r] (|cffffcc00G|r)
 }
 
 STRING 17478
@@ -79388,13 +79388,13 @@ War Drums of the Orcs
 STRING 20060
 // Gegenstände: I076 (Kriegstrommeln der Orks), Ubertip (Tooltipp - Erweitert (utub))
 {
-Erhöht den Schaden von Verbündeten im Umkreis um <A1TM,DataA1,%> %.
+Increases the damage of allies around by <A1TM,DataA1,%> %.
 }
 
 STRING 20061
 // Gegenstände: I076 (Kriegstrommeln der Orks), Description (Beschreibung (ides))
 {
-Erhöhen den Schaden Verbündeter im Umkreis.
+Increases the damage of allies around.
 }
 
 STRING 20062
