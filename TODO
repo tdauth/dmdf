@@ -27,6 +27,7 @@ Zeugs:
 * FIXED in TPOF only: wc3lib compression bug: Lauern ANwk:DataA, ANwk:DataB, ANwk:DataC (BUT NOT ANwk:DataD)
 * Show the campaign under "Campaign" not "Custom Campaigns". Change the file "UI/CampaignStrings_exp.txt" for this. Added files from war3x.mpq, maybe check the latest War3Patch.mpq? Do the files from the map folder work as campaign or should they be added to the MPQ archive?
 * Specify another credits map in the game: "UI/MiscUI.txt" entry "CreditsFile_V1".
+* Finish Credits map: Show credits all the time, remove class selection, update custom interface and gameplay constants.
 * (0|0) is discovered in the beginning in Talras. Game options?
 * One spell of the Ranger is missing!
 * Concentration is cast all the time (although 100% life and 10 seconds timer!).
