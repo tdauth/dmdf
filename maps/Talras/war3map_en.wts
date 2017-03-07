@@ -3298,7 +3298,7 @@ ASystemGUI - shortcut g
 STRING 550
 // Einheiten: n05Y (NPC-Laden), Hotkey (Tastaturkürzel (uhot))
 {
-The knight can connect with an ally and suffer 160% of his damage for 15 seconds. The ally suffers 60% less damage during this time. The effect cannot be interrupted.
+G
 }
 
 STRING 551
@@ -3310,7 +3310,7 @@ The keyboard shortcut G.
 STRING 552
 // Gegenstände: I00U (Spruchrolle der Geborgenheit), Hotkey (Tastaturkürzel (uhot))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+G
 }
 
 STRING 553
@@ -3346,7 +3346,7 @@ ASystemGUI - shortcut i
 STRING 558
 // Fähigkeiten: A09X (Zorn des Waldes), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+I
 }
 
 STRING 559
@@ -3358,7 +3358,7 @@ The keyboard shortcut I.
 STRING 560
 // Fähigkeiten: A0EX (Weltenportal), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+I
 }
 
 STRING 561
@@ -3370,7 +3370,7 @@ ASystemGUI - shortcut j
 STRING 562
 // Fähigkeiten: A00N (ASystemGUI - shortcut j), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 563
@@ -3382,7 +3382,7 @@ The keyboard shortcut J.
 STRING 564
 // Fähigkeiten: A00N (ASystemGUI - shortcut j), Tip (Tooltipp - Normal (atp1))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 565
@@ -9558,7 +9558,7 @@ STRING 1595
 STRING 1596
 // Fähigkeiten: A1DD (Seuche), Name (Name (anam))
 {
-Seuche
+Plague
 }
 
 STRING 1597
@@ -10494,7 +10494,7 @@ STRING 1751
 STRING 1752
 // Fähigkeiten: A046 (Elementare Gewalt), Name (Name (anam))
 {
-Elementare Gewalt
+Elemental Power
 }
 
 STRING 1753
@@ -13474,7 +13474,7 @@ STRING 2291
 STRING 2292
 // Fähigkeiten: A0R4 (Schlange beschwören), Tip (Tooltipp - Normal (atp1))
 {
-Schlange beschwören
+Summon Snake
 }
 
 STRING 2293
@@ -13486,7 +13486,7 @@ STRING 2293
 STRING 2294
 // Fähigkeiten: A0R4 (Schlange beschwören), Name (Name (anam))
 {
-Schlange beschwören
+Summon Snake
 }
 
 STRING 2300
@@ -15489,7 +15489,7 @@ Verschlingt eine feindliche Einheit und verdaut sie langsam, wobei ihr pro Sekun
 STRING 2682
 // Fähigkeiten: A070 (Hieb), Name (Name (anam))
 {
-Hieb
+Blow
 }
 
 STRING 2683
@@ -15537,7 +15537,7 @@ STRING 2693
 STRING 2694
 // Fähigkeiten: A071 (Hieb), Name (Name (anam))
 {
-Hieb
+Blow
 }
 
 STRING 2695
@@ -16086,7 +16086,7 @@ STRING 2823
 STRING 2824
 // Fähigkeiten: A06S (Wilder Blutrausch), Name (Name (anam))
 {
-Wilder Blutrausch
+Wild Bloodlust
 }
 
 STRING 2827
@@ -16098,7 +16098,7 @@ STRING 2827
 STRING 2828
 // Fähigkeiten: A1WB (Wilder Blutrausch), Name (Name (anam))
 {
-Wilder Blutrausch
+Wild Bloodlust
 }
 
 STRING 2829
@@ -16501,7 +16501,7 @@ Schwachstelle
 STRING 2926
 // Fähigkeiten: A04J (Hieb), Tip (Tooltipp - Normal (atp1))
 {
-Hieb
+Blow
 }
 
 STRING 2927
@@ -16579,7 +16579,7 @@ STRING 2938
 STRING 2939
 // Fähigkeiten: A04J (Hieb), Name (Name (anam))
 {
-Hieb
+Blow
 }
 
 STRING 2941
@@ -24654,7 +24654,7 @@ STRING 4745
 STRING 4746
 // Fähigkeiten: A0AL (Waldfeenzauber), Name (Name (anam))
 {
-Waldfeenzauber
+Forest Fairies Spell
 }
 
 STRING 4749
@@ -34449,7 +34449,7 @@ Selbstlosigkeit - Stufe 3
 STRING 8434
 // Fähigkeiten: A02O (Verspotten), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+I
 }
 
 STRING 8443
@@ -34473,7 +34473,7 @@ Selbstlosigkeit - Stufe 4
 STRING 8448
 // Fähigkeiten: A08B (Drohendes Unheil), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 8458
@@ -34803,7 +34803,7 @@ Causes a rain of healing energy which goes down above an area of <A0A4,Area1> an
 STRING 8588
 // Fähigkeiten: A0M8 (Aura der Rücknahme - Stufe 2), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 2|r]
+Aura of Taking Back [|cffffcc00Level 2|r]
 }
 
 STRING 8589
@@ -34827,7 +34827,7 @@ Causes a rain of healing energy which goes down above an area of <A0A4,Area1> an
 STRING 8602
 // Fähigkeiten: A0M9 (Aura der Rücknahme - Stufe 3), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 3|r]
+Aura of Taking Back [|cffffcc00Level 3|r]
 }
 
 STRING 8603
@@ -34851,7 +34851,7 @@ Causes a rain of healing energy which goes down above an area of <A0A4,Area1> an
 STRING 8616
 // Fähigkeiten: A0MA (Aura der Rücknahme - Stufe 4), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 4|r]
+Aura of Taking Back [|cffffcc00Level 4|r]
 }
 
 STRING 8617
@@ -34875,7 +34875,7 @@ Opens the spell menu of the character in which are the learned spell abilities.|
 STRING 8630
 // Fähigkeiten: A0MB (Aura der Rücknahme - Stufe 5), Tip (Tooltipp - Normal (atp1))
 {
-Aura der Rücknahme [|cffffcc00Stufe 5|r]
+Aura of Taking Back [|cffffcc00Level 5|r]
 }
 
 STRING 8631
@@ -34959,7 +34959,7 @@ STRING 8645
 STRING 8646
 // Zauberverstärker/Effekte: B025 (Aura der Rücknahme), EditorName (Name (nur Editor) (fnam))
 {
-Aura der Rücknahme
+Aura of Taking Back
 }
 
 STRING 8647
@@ -34971,7 +34971,7 @@ STRING 8647
 STRING 8648
 // Zauberverstärker/Effekte: B025 (Aura der Rücknahme), Bufftip (Tooltipp (ftip))
 {
-Aura der Rücknahme
+Aura of Taking Back
 }
 
 STRING 8649
@@ -46285,7 +46285,7 @@ Awakening of the Forest [|cffffcc00Level 4|r]
 STRING 12758
 // Fähigkeiten: A159 (Hieb - Stufe 3), Name (Name (anam))
 {
-Hieb - Stufe 3
+Learn Tempering
 }
 
 STRING 12759
@@ -46519,7 +46519,7 @@ Sheep
 STRING 12864
 // Gegenstände: I04V (Stein des Opfers), Description (Beschreibung (ides))
 {
-Der Träger vernichtet sich selbst und fügt dabei Gegnern mit Mana Schaden zu.
+The carrier destroys himself and deals damage to opponents with mana.
 }
 
 STRING 12865
@@ -48925,7 +48925,7 @@ STRING 13319
 STRING 13320
 // Fähigkeiten: A0X6 (Pestkarren - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nBeschwört dauerhaft einen Pestkarren, der Leichen transportieren kann und selbst Leichen erzeugt.
+|cffffcc00Basic Spell|r|nSummons a plague cart permanently that can transport corpses and creates corpses itself.
 }
 
 STRING 13321
@@ -50059,7 +50059,7 @@ Manatrank herstellen
 STRING 13591
 // Fähigkeiten: A18T (Wächter beschwören), Name (Name (anam))
 {
-Wächter beschwören
+Summon Guardians
 }
 
 STRING 13592
@@ -62635,7 +62635,7 @@ Dunkle Diener - Stufe 5
 STRING 15865
 // Fähigkeiten: A036 (Dunkle Diener), Name (Name (anam))
 {
-Dunkle Diener
+Dark Servant
 }
 
 STRING 15866
@@ -62839,7 +62839,7 @@ STRING 15900
 STRING 15901
 // Fähigkeiten: A14V (Bestienjäger - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Verzehren [|cffffcc00Stufe 5|r]
+Consume [|cffffcc00Level 5|r]
 }
 
 STRING 15902
@@ -64163,7 +64163,7 @@ Unbarmherzigkeit - Stufe 4
 STRING 16168
 // Fähigkeiten: A1FR (Siegeswunsch), Name (Name (anam))
 {
-Siegeswunsch
+Will to Win
 }
 
 STRING 16177
@@ -64565,7 +64565,7 @@ STRING 16306
 STRING 16307
 // Fähigkeiten: A1FW (Siegeswunsch), Name (Name (anam))
 {
-Siegeswunsch
+Will to Win
 }
 
 STRING 16308
@@ -65897,7 +65897,7 @@ Passive. If the life energy of an opponent of the dragon slayer becomes less tha
 STRING 16720
 // Fähigkeiten: A0VK (Pestkarren), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nBeschwört dauerhaft einen Pestkarren, der Leichen transportieren kann und selbst Leichen erzeugt.
+|cffffcc00Basic Spell|r|nSummons a plague cart permanently that can transport corpses and creates corpses itself.
 }
 
 STRING 16721
@@ -69818,7 +69818,7 @@ Cursed Ground [|cffffcc00Level 1|r] (|cffffcc00J|r)
 STRING 17502
 // Fähigkeiten: A1IM (Leprechaun), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 17503
@@ -70274,13 +70274,13 @@ Bear Form [|cffffcc00Level 1|r] (|cffffcc00G|r)
 STRING 17578
 // Fähigkeiten: A0NC (Märtyrer), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+G
 }
 
 STRING 17579
 // Fähigkeiten: A01G (Zehren), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 17580
@@ -71192,7 +71192,7 @@ Q
 STRING 17731
 // Fähigkeiten: A163 (Übertragung), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 17732
@@ -71624,7 +71624,7 @@ Q
 STRING 17803
 // Fähigkeiten: A1AB (Verfluchter Boden), Hotkey (Tastaturkürzel - Normal (ahky))
 {
-Der Ritter kann sich mit einem Verbündeten verbinden und erleidet 15 Sekunden lang 160% dessen erlittenen Schadens. Der Verbündete erleidet während dieser Zeit 60% weniger Schaden. Der Effekt kann nicht unterbrochen werden.
+J
 }
 
 STRING 17804
@@ -72134,7 +72134,7 @@ Restores missing mana.
 STRING 17889
 // Gegenstände: I06T (Kleines Manakraut), Ubertip (Tooltipp - Erweitert (utub))
 {
-Stellt bei Benutzung <A19K,DataA1> Mana wieder her.|nBietet <I05L,uses> Aufladung.
+Restores <A19K,DataA1> mana on usage.|nProvides <I05L,uses> charges.
 }
 
 STRING 17890
@@ -73304,7 +73304,7 @@ Manaschild - Erlernen
 STRING 18405
 // Fähigkeiten: A15L (Manastrom - Stufe 5), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-Der Zauberer sendet seine Manaenergien 5 Sekunden lang an einen Gegner und verursacht so bei diesem pro Sekunde und nach Ablauf des Zaubers nochmal Schaden.|n|n|cffffcc00Stufe 1|r - Verursacht pro Sekunde 15 und nach Ablauf des Zaubers nochmal 150 Schaden.|n|cffffcc00Stufe 2|r - Verursacht pro Sekunde 20 und nach Ablauf des Zaubers nochmal 200 Schaden.|n|cffffcc00Stufe 3|r - Verursacht pro Sekunde 25 und nach Ablauf des Zaubers nochmal 250 Schaden.|n|cffffcc00Stufe 4|r - Verursacht pro Sekunde 30 und nach Ablauf des Zaubers nochmal 300 Schaden.|n|cffffcc00Stufe 5|r - Verursacht pro Sekunde 35 und nach Ablauf des Zaubers nochmal 350 Schaden.
+The Wizard sends his mana energies to an opponent for 5 seconds, dealing damage to him per second and after the spell dealing damage again. |n|n|cffffcc00Level 1|r - Deals per second 15 and after the spell again 150 damage.|n|cffffcc00Level 2|r - Deals per second 20 and after the spell again 200 damage.|n|cffffcc00Level 3|r - Deals per second 25 and after the spell again 250 damage.|n|cffffcc00Level 4|r - Deals per second 30 and after the spell again 300 damage.|n|cffffcc00Level 5|r - Deals per second 35 and after the spell again 350 damage.
 }
 
 STRING 18414
@@ -74192,7 +74192,7 @@ Selbstlosigkeit - Erlernen
 STRING 18801
 // Fähigkeiten: A03S (Schütze), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Grundzauber|r|nMit Fernwaffen verursachter Schaden wird um 50 % erhöht.
+|cffffcc00Basic Spell|r|nDamage caused by ranged weapons is increased by 50 %.
 }
 
 STRING 18810
@@ -74330,7 +74330,7 @@ Entfernt nach 25 Sekunden alle negativen Zauberverstärker eines Verbündeten od
 STRING 18864
 // Fähigkeiten: A1NX (Seelendiebstahl - Erlernen), Name (Name (anam))
 {
-Seelendiebstahl - Erlernen
+Soul Theft - Learn
 }
 
 STRING 18865
@@ -76088,7 +76088,7 @@ STRING 19417
 STRING 19418
 // Fähigkeiten: A1QH (Verdammnis - Erlernen), Name (Name (anam))
 {
-Verdammnis - Erlernen
+Damnation - Learn
 }
 
 STRING 19419
@@ -76238,7 +76238,7 @@ STRING 19442
 STRING 19443
 // Fähigkeiten: A1QG (Verdammnis - Stufe 1), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-|cffffcc00Ultimatumzauber 1 - Benötigt Stufe 12|r|nDas Ziel verliert 80 % seiner maximalen Lebenspunkte. Befinden sich Kadaver in der Nähe des Ziels, werden diese zu untoten Skelett-Flammenkriegern des Nekromanten, die 30 Sekunden lang für den Nekromanten kämpfen.|nMaximal 6 Diener können beschworen werden.
+|cffffcc00Ultimate Spell 1 - Requires Level 12|r|nThe target loses 80 % of its maximum life points. If corpses are close to the target, they will become undead skeletal flame warriors of the Necromancer who fight for the Necromancer for 30 seconds.|nThere can be summoned 6 servants maximum.
 }
 
 STRING 19444
@@ -79952,13 +79952,13 @@ Options - Share Control
 STRING 20158
 // Fähigkeiten: A1UI (Optionen - Charakteranzeige aktivieren), Name (Name (anam))
 {
-Optionen - Charakteranzeige aktivieren
+Options - Enable Characters View
 }
 
 STRING 20159
 // Fähigkeiten: A1UD (Optionen - Schreinbutton aktivieren), Name (Name (anam))
 {
-Optionen - Schreinbutton aktivieren
+Optiones - Enable Shrine Button
 }
 
 STRING 20160
@@ -79970,7 +79970,7 @@ Optionen - Tutorial aktivieren
 STRING 20161
 // Fähigkeiten: A1UL (Kamera - Rollenspielmodus), Name (Name (anam))
 {
-Kamera - Rollenspielmodus
+Camera - Roleplay Game Mode
 }
 
 STRING 20162
