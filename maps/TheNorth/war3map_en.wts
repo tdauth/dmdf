@@ -6,7 +6,7 @@ Enchanted Guardian
 
 STRING 1
 {
-Spieler 1
+Player 1
 }
 
 STRING 2
@@ -78148,7 +78148,7 @@ rmvx
 
 STRING 13025
 {
-Kapitel 4: Der Norden
+Chapter 4: The North
 }
 
 STRING 13026
@@ -78158,7 +78158,7 @@ STRING 13026
 
 STRING 13027
 {
-Der eisige Norden ist Wigberhts Heimat.
+The icy north is Wigberht's home.
 }
 
 STRING 13028
@@ -78173,37 +78173,37 @@ The Power of Fire
 
 STRING 13030
 {
-Kapitel 4: Der Norden
+Chapter 4: The North
 }
 
 STRING 13031
 {
-Der eisige Norden ist Wigberhts Heimat.
+The icy north is Wigberht's home.
 }
 
 STRING 13032
 {
-Spieler 2
+Player 2
 }
 
 STRING 13033
 {
-Spieler 3
+Player 3
 }
 
 STRING 13034
 {
-Spieler 4
+Player 4
 }
 
 STRING 13035
 {
-Spieler 5
+Player 5
 }
 
 STRING 13036
 {
-Spieler 6
+Player 6
 }
 
 STRING 13037

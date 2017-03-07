@@ -6,7 +6,7 @@ Reserven - Erlernen
 
 STRING 1
 {
-Spieler 1
+Player 1
 }
 
 STRING 2
@@ -77547,7 +77547,7 @@ STRING 12929
 
 STRING 12930
 {
-Über die Weltkarte kann der Spieler alle Orte bereisen.
+Through the world map the player can travel to all places.
 }
 
 STRING 12931
@@ -77567,37 +77567,37 @@ World Map
 
 STRING 12934
 {
-Über die Weltkarte kann der Spieler alle Orte bereisen.
+Through the world map the player can travel to all places.
 }
 
 STRING 12935
 {
-Spieler 2
+Player 2
 }
 
 STRING 12936
 {
-Spieler 3
+Player 3
 }
 
 STRING 12937
 {
-Spieler 4
+Player 4
 }
 
 STRING 12938
 {
-Spieler 5
+Player 5
 }
 
 STRING 12939
 {
-Spieler 6
+Player 6
 }
 
 STRING 12940
 {
-Spieler 7
+Player 7
 }
 
 STRING 12941

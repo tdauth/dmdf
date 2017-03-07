@@ -6,7 +6,7 @@ Drains up to 180 mana from an enemy, deals doubled damage to the enemy and trans
 
 STRING 1
 {
-Spieler 1
+Player 1
 }
 
 STRING 2
@@ -5554,7 +5554,7 @@ Speak to Person (|cffffcc00S|r)
 
 STRING 926
 {
-Kapitel 2: Gardonar
+Chapter 2: Gardonar
 }
 
 STRING 927
@@ -68954,7 +68954,7 @@ rmvx
 
 STRING 17246
 {
-Kapitel 2: Gardonar 0.9
+Chapter 2: Gardonar 0.9
 }
 
 STRING 17247
@@ -68964,7 +68964,7 @@ STRING 17247
 
 STRING 17248
 {
-Auf dem Weg nach Holzbruck öffnet sich ein Portal auf dem Fluss und das Langboot der Nordmänner wird durch den Sog hineingelenkt ...
+On the way to Holzbruck a portal opens on the river and the longboat of the Northmen is pulled in by the suction ...
 }
 
 STRING 17249
@@ -68998,27 +68998,27 @@ Gardonar's Bodyguard
 
 STRING 17254
 {
-Spieler 2
+Player 2
 }
 
 STRING 17255
 {
-Spieler 3
+Player 3
 }
 
 STRING 17256
 {
-Spieler 4
+Player 4
 }
 
 STRING 17257
 {
-Spieler 5
+Player 5
 }
 
 STRING 17258
 {
-Spieler 6
+Player 6
 }
 
 STRING 17259

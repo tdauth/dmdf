@@ -6,7 +6,7 @@ Mana explosion [|cffffcc00Level 5|r]
 
 STRING 1
 {
-Kapitel 2.2: Deranors Todessumpf 0.9
+Chapter 2.2: Deranor's Death Swamp 0.9
 }
 
 STRING 2
@@ -16,7 +16,7 @@ STRING 2
 
 STRING 3
 {
-Nachdem Gardonars Hölle durchquert wurde, landen die Gefährten in Deranors Reich: Dem verdorbenen Todessumpf, der voll von untoten Dienern Deranors ist.
+After crossing Gardonar's Hell, the companions end up in Deranor's realm: The corrupted Death Swamp, full of undead servants of Deranor.
 }
 
 STRING 4
@@ -75141,27 +75141,27 @@ rmvx
 
 STRING 19299
 {
-Spieler 2
+Player 2
 }
 
 STRING 19300
 {
-Spieler 3
+Player 3
 }
 
 STRING 19301
 {
-Spieler 4
+Player 4
 }
 
 STRING 19302
 {
-Spieler 5
+Player 5
 }
 
 STRING 19303
 {
-Spieler 6
+Player 6
 }
 
 STRING 19304
@@ -75494,7 +75494,7 @@ Rainbow Bridge
 
 STRING 19359
 {
-Kapitel 2.2: Deranors Sumpf
+Chapter 2.2: Deranor's Swamp
 }
 
 STRING 19360

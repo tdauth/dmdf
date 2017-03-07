@@ -6,7 +6,7 @@ Holy Power [|cffffcc00Level 1|r]
 
 STRING 1
 {
-Kapitel 2.1: Gardonars Unterwelt 0.9
+Chapter 2.1: Gardonar's Underworld 0.9
 }
 
 STRING 2
@@ -16,12 +16,12 @@ STRING 2
 
 STRING 3
 {
-Gardonars Hölle ist voll von Dämonen, die es allesamt auf euch abgesehen haben.
+Gardonar's Hell is full of demons who are all looking for you.
 }
 
 STRING 4
 {
-Landschaft von Heinvers
+Terrain by Heinvers
 }
 
 STRING 5
@@ -350,32 +350,32 @@ Options - Dungeons
 
 STRING 59
 {
-Spieler 1
+Player 1
 }
 
 STRING 60
 {
-Spieler 2
+Player 2
 }
 
 STRING 61
 {
-Spieler 3
+Player 3
 }
 
 STRING 62
 {
-Spieler 4
+Player 4
 }
 
 STRING 63
 {
-Spieler 5
+Player 5
 }
 
 STRING 64
 {
-Spieler 6
+Player 6
 }
 
 STRING 65
@@ -36541,7 +36541,7 @@ STRING 8328
 
 STRING 8329
 {
-Gardonars Hölle ist voll von Dämonen, die es allesamt auf euch abgesehen haben.
+Gardonar's Hell is full of demons who are all looking for you.
 }
 
 STRING 8332
@@ -55721,7 +55721,7 @@ Verfluchter Boden - Erlernen
 
 STRING 15038
 {
-Kapitel 2.1: Gardonars Hölle
+Chapter 2.1: Gardonar's Hell
 }
 
 STRING 15047
