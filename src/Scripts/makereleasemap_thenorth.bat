@@ -2,8 +2,6 @@ SET VERSION=%1
 
 del "E:\Projekte\dmdf\maps\releases\TheNorth\TheNorth%VERSION%.w3x"
 cp "E:\Projekte\dmdf\maps\TheNorth.w3x" "E:\Projekte\dmdf\maps\releases\TheNorth\TheNorth%VERSION%.w3x"
-del "E:\Projekte\dmdf\maps\releases\TheNorth\TN.w3x"
-cp "E:\Projekte\dmdf\maps\TheNorth.w3x" "E:\Projekte\dmdf\maps\releases\TheNorth\TN.w3x"
 del "E:\Projekte\dmdf\maps\releases\TheNorth\war3map.wts"
 cp "E:\Projekte\dmdf\maps\TheNorth\war3map_en.wts" "E:\Projekte\dmdf\maps\releases\TheNorth\war3map.wts"
 del "E:\Projekte\dmdf\maps\releases\de\TheNorth%VERSION%.w3x"
