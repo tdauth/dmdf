@@ -22,6 +22,7 @@ mkdir -p "$WORKSPACE/HolzbrucksUnderworld"
 mkdir -p "$WORKSPACE/Deranor"
 mkdir -p "$WORKSPACE/TheNorth"
 mkdir -p "$WORKSPACE/WorldMap"
+mkdir -p "$WORKSPACE/Credits"
 
 export LD_LIBRARY_PATH="LD_LIBRARY_PATH:$WORKSPACE/wc3lib/usr/lib"
 
@@ -37,8 +38,7 @@ cp -f "./Arena/war3map.wts" "$WORKSPACE/Arena/war3map_de.wts"
 cp -f "./Arena/war3map.wts" "$WORKSPACE/Arena/war3map_en.wts" # Use a new clean translation
 #cp -f "./war3map_en.wts" "$WORKSPACE/Arena/war3map_en.wts"
 
-# Tutorial dir does not exist yet:
-mkdir -p "$WORKSPACE/maps/Tutorial"
+# Tutorial
 cd "$WORKSPACE/maps/Tutorial"
 "$WORKSPACE/wc3lib/usr/bin/mpq" -x -f "war3map.wts" "../Tutorial.w3x"
 cp -f "./Tutorial/war3map.wts" "$WORKSPACE/Tutorial/war3map_de.wts"
@@ -75,18 +75,22 @@ cp -f "./Karte 5 - Deranor/war3map.wts" "$WORKSPACE/Deranor/war3map_de.wts"
 cp -f "./Karte 5 - Deranor/war3map.wts" "$WORKSPACE/Deranor/war3map_en.wts" # TODO add an initial English translation!
 
 # The North
-mkdir -p "$WORKSPACE/maps/TheNorth"
 cd "$WORKSPACE/maps/TheNorth"
 "$WORKSPACE/wc3lib/usr/bin/mpq" -x -f "war3map.wts" "../TheNorth.w3x"
 cp -f "./TheNorth/war3map.wts" "$WORKSPACE/TheNorth/war3map_de.wts"
 cp -f "./TheNorth/war3map.wts" "$WORKSPACE/TheNorth/war3map_en.wts" # TODO add an initial English translation!
 
 # World Map
-mkdir -p "$WORKSPACE/maps/WorldMap"
 cd "$WORKSPACE/maps/WorldMap"
 "$WORKSPACE/wc3lib/usr/bin/mpq" -x -f "war3map.wts" "../WorldMap.w3x"
 cp -f "./WorldMap/war3map.wts" "$WORKSPACE/WorldMap/war3map_de.wts"
 cp -f "./WorldMap/war3map.wts" "$WORKSPACE/WorldMap/war3map_en.wts" # TODO add an initial English translation!
+
+# Credits
+cd "$WORKSPACE/maps/Credits"
+"$WORKSPACE/wc3lib/usr/bin/mpq" -x -f "war3map.wts" "../Credits.w3x"
+cp -f "./Credits/war3map.wts" "$WORKSPACE/Credits/war3map_de.wts"
+cp -f "./Credits/war3map.wts" "$WORKSPACE/Credits/war3map_en.wts" # TODO add an initial English translation!
 
 # Change back to workspace dir.
 cd "$WORKSPACE"
@@ -134,3 +138,7 @@ export LD_LIBRARY_PATH="LD_LIBRARY_PATH:./wc3lib/usr/lib"
 # World Map
 ./wc3lib/usr/bin/wc3trans --update "$WORKSPACE/WorldMap/war3map_de.wts" "$WORKSPACE/WorldMap/war3map_en.wts" "$WORKSPACE/WorldMap/war3map_en.wts" "$WORKSPACE/WorldMap/war3map_en.wts"
 ./wc3lib/usr/bin/wc3trans "$WORKSPACE/Talras/war3map_de.wts" "$WORKSPACE/Talras/war3map_en.wts" "$WORKSPACE/WorldMap/war3map_en.wts" "$WORKSPACE/WorldMap/war3map_en.wts"
+
+# Credits
+./wc3lib/usr/bin/wc3trans --update "$WORKSPACE/Credits/war3map_de.wts" "$WORKSPACE/Credits/war3map_en.wts" "$WORKSPACE/Credits/war3map_en.wts" "$WORKSPACE/Credits/war3map_en.wts"
+./wc3lib/usr/bin/wc3trans "$WORKSPACE/Talras/war3map_de.wts" "$WORKSPACE/Talras/war3map_en.wts" "$WORKSPACE/Credits/war3map_en.wts" "$WORKSPACE/Credits/war3map_en.wts"
