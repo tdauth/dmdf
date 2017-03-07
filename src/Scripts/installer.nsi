@@ -43,7 +43,17 @@ SectionEnd
 
 Section "English Maps" EnglishMaps
 	SetOutPath "$INSTDIR\Maps\The Power of Fire\en"
+	File "${INPUT_DIR}\en\Dornheim${VERSION}.w3x"
 	File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
+	File "${INPUT_DIR}\en\Gardonar${VERSION}.w3x"
+	File "${INPUT_DIR}\en\GardonarsHell${VERSION}.w3x"
+	File "${INPUT_DIR}\en\Deranor${VERSION}.w3x"
+	File "${INPUT_DIR}\en\Holzbruck${VERSION}.w3x"
+	File "${INPUT_DIR}\en\HolzbrucksUnderworld${VERSION}.w3x"
+	File "${INPUT_DIR}\en\TheNorth${VERSION}.w3x"
+	File "${INPUT_DIR}\en\Arena${VERSION}.w3x"
+	File "${INPUT_DIR}\en\WorldMap${VERSION}.w3x"
+	File "${INPUT_DIR}\en\Credits${VERSION}.w3x"
 SectionEnd
 
 Section "German Maps" GermanMaps
@@ -85,10 +95,26 @@ Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
 	File "${INPUT_DIR}\CT.w3x"
 SectionEnd
 
+Section "English Singleplayer Campaign" EnglishSinglePlayerCampaign
+	SetOutPath "$INSTDIR\Maps\TPoF09en"
+	File "${INPUT_DIR}\en\DH.w3x"
+	File "${INPUT_DIR}\en\TL.w3x"
+	File "${INPUT_DIR}\en\GA.w3x"
+	File "${INPUT_DIR}\en\GH.w3x"
+	File "${INPUT_DIR}\en\DS.w3x"
+	File "${INPUT_DIR}\en\HB.w3x"
+	File "${INPUT_DIR}\en\HU.w3x"
+	File "${INPUT_DIR}\en\TN.w3x"
+	File "${INPUT_DIR}\en\WM.w3x"
+	File "${INPUT_DIR}\en\CT.w3x"
+SectionEnd
+
 Section "Uninstall"
 	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
 	 Delete "$INSTDIR\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
 	 RMDir /r "$INSTDIR\Maps\The Power of Fire"
+	 RMDir /r "$INSTDIR\Maps\TPoF09de"
+	 RMDir /r "$INSTDIR\Maps\TPoF09en"
 	 Delete "$INSTDIR\${INPUT_EXE_FILENAME}"
 	 RMDir /r "$INSTDIR\TPoF"
 	 Delete "$INSTDIR\The Power of Fire.lnk"

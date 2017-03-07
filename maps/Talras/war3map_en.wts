@@ -16200,13 +16200,13 @@ K
 STRING 2855
 // Einheiten: n073 (Höllen-Diener), Name (Name (unam))
 {
-Charaktere nehmen bei Stich-, Magie- und Belagerungsangriffen sowie bei Zaubern nur reduzierten Schaden.
+Hell Servant
 }
 
 STRING 2856
 // Einheiten: n074 (Ritter der Verdammnis), Name (Name (unam))
 {
-Charaktere nehmen bei Stich- und Belagerungsangriffen nur reduzierten Schaden.
+Ritter der Verdammnis
 }
 
 STRING 2857
@@ -66089,7 +66089,7 @@ Minimap - Entry
 STRING 16773
 // Einheiten: n06U (Gardonar der Dämonenfürst), Name (Name (unam))
 {
-Gardonar der Dämonenfürst
+Gardonar the Demon Lord
 }
 
 STRING 16774
@@ -69085,7 +69085,7 @@ Diese Einheit steht unter dem Einfluss von 'Entzünden'; ihr Schaden wurde erhö
 STRING 17369
 // Einheiten: n06Y (Gardonars Wächter), Name (Name (unam))
 {
-Gardonars Wächter
+Gardonar's Guardian
 }
 
 STRING 17370
@@ -69097,7 +69097,7 @@ Gardonars Wächter anheuern
 STRING 17371
 // Einheiten: n06Z (Gardonars Dämon), Name (Name (unam))
 {
-Gardonars Dämon
+Gardonar's Demon
 }
 
 STRING 17372
@@ -69109,7 +69109,7 @@ Verleiht in der Nähe befindlichen befreundeten Einheiten eine zusätzliche Mana
 STRING 17373
 // Einheiten: n070 (Gardonars Dämon), Name (Name (unam))
 {
-Gardonars Dämon
+Gardonar's Demon
 }
 
 STRING 17374
@@ -75068,7 +75068,7 @@ Shadow Efreet
 STRING 19146
 // Gegenstände: I06Z (Blut eines Höllen-Dieners), Name (Name (unam))
 {
-Blut eines Höllen-Dieners
+Blood of a Hell Servant
 }
 
 STRING 19147

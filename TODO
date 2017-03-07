@@ -32,6 +32,8 @@ Zeugs:
 * Concentration is cast all the time (although 100% life and 10 seconds timer!).
 * FIXED (Dungeon icon overwrites the one used): Learn Stab has the wrong icon.
 * Wieland's store has no effect.
+* The map names have to be translated separately (shown in wc3). They are not part of the war3map.wts.
+* Map Gardonar: Is missing custom user interface strings (Missions, Information etc.).
 * String "Arkaner Schutz [|cffffcc00Stufe 2|r]" is very often in war3map.wts of Talras. wc3trans error? Wrong translation? Replace by "(Spell Book Ability - Druid)".
 * Teleportation (Elemental Mage): Wrong German tooltip (Aklingzeit).
 * Mephisto: Add talk abilities as sold units. They are added but apparently hero transformation removes them. Besides he is not invulnerable after the transformation!
@@ -391,7 +393,9 @@ Repick Issues:
 * When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section? -> refreshRucksackItem() only update charges if shop is != null, otherwise the item is hidden.
 * Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
 * Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list?
-* Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
+* Game Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
+* The temporary save games folder was not deleted. So the transition to Talras did not work (savegame was not working). Dornheim should actually delete this file in the beginning which did not happen. After deleting the temporary folder manually, it worked again. The folder should also be removed automatically when a game is loaded by the user but a loaded game uses a different save game path anyway.
+* When the user saves the game, the temporary folder should be removed afterwards!
 
 Zone Transition:
 * FIXED: Skill points are not restored.
