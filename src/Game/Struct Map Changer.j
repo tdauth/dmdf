@@ -30,7 +30,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		/*
 		 * Stores markers for all zones which have a savegame in the current game. This prevents loading savegames which have to correct path but do not belong to the current game.
 		 */
-		private static AGlobalHashTable m_saveGamesHashTable = 0
+		private static AIntegerVector m_saveGames = 0
 
 		/**
 		 * \return Returns the file path of a map with the file name \p mapName (without extension) relatively to the Warcraft III directory.
@@ -179,7 +179,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local integer index = Zone.zoneNameIndex.evaluate(MapSettings.mapName())
 
 			if (index != -1) then
-				call thistype.m_saveGamesHashTable.setBoolean(index, 0, true)
+				if (not thistype.m_saveGames.contains(index)) then
+					call thistype.m_saveGames.pushBack(index)
+				endif
 			debug else
 				debug call Print("Critical: Missing zone of name " + MapSettings.mapName())
 			endif
@@ -191,11 +193,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * that the zone has a save game at all in the current game. Use this before checking with \ref SaveGameExists().
 		 * \return Returns true if the savegame for the zone \p targetZoneName should exist belongs the current game.
 		 */
-		private static method zoneHasSaveGame takes string targetZoneName returns boolean
+		public static method zoneHasSaveGame takes string targetZoneName returns boolean
 			local integer index = Zone.zoneNameIndex.evaluate(targetZoneName)
 
 			if (index != -1) then
-				return thistype.m_saveGamesHashTable.hasBoolean(index, 0)
+				return thistype.m_saveGames.contains(index)
 			debug else
 				debug call Print("Critical: Missing zone of name " + targetZoneName)
 			endif
@@ -208,13 +210,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * \param cache The game cache in which the markers are stored.
 		 */
 		private static method storeSaveGames takes gamecache cache returns nothing
-			local string zoneName = null
 			local integer i = 0
 			loop
 				exitwhen (i == Zone.zoneNames.evaluate().size())
-				set zoneName = Zone.zoneNames.evaluate()[i]
-				if (thistype.m_saveGamesHashTable.hasBoolean(i, 0)) then
-					call StoreBoolean(cache, "Zone", zoneName, true)
+				if (thistype.m_saveGames.contains(i)) then
+					call StoreBoolean(cache, "ZoneSaveGames", Zone.zoneNames.evaluate()[i], true)
 				endif
 				set i = i + 1
 			endloop
@@ -227,12 +227,13 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static method restoreSaveGames takes gamecache cache returns nothing
 			local string zoneName = null
 			local integer i = 0
-			call thistype.m_saveGamesHashTable.flush()
+			// clear all old entries before
+			call thistype.m_saveGames.clear()
 			loop
 				exitwhen (i == Zone.zoneNames.evaluate().size())
 				set zoneName = Zone.zoneNames.evaluate()[i]
-				if (HaveStoredBoolean(cache, "Zone", zoneName)) then
-					call thistype.m_saveGamesHashTable.setBoolean(i, 0, true)
+				if (HaveStoredBoolean(cache, "ZoneSaveGames", zoneName) and not thistype.m_saveGames.contains(i)) then
+					call thistype.m_saveGames.pushBack(i)
 				endif
 				set i = i + 1
 			endloop
@@ -248,6 +249,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local Character character = 0
 			local integer i = 0
 			call thistype.setupMapTransition()
+			call FlushGameCache(cache)
 			// Store all characters.
 			set i = 0
 			loop
@@ -682,8 +684,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endloop
 
 			set thistype.m_currentSaveGame = GetSaveBasicFilename()
-			// Mark this zone as a saved game.
-			call thistype.markCurrentSaveGame()
 			debug call Print("Copied zone save games for current save with size " + I2S(Zone.zones.evaluate().size()))
 		endmethod
 
@@ -717,7 +717,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerAddAction(thistype.m_saveTriggerUser, function thistype.triggerActionSaveUser)
 
 			set thistype.m_currentSaveGame = null
-			set thistype.m_saveGamesHashTable = AGlobalHashTable.create()
+			set thistype.m_saveGames = AIntegerVector.create()
 
 			// If the campaign is started completely new without loading it, the temporary folder should be cleared. Otherwise wrong zone save games from the last game might be used.
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapSettings.isSeparateChapter()) then

@@ -128,14 +128,12 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static method updateZones takes nothing returns nothing
 			local ZoneData zoneData = 0
 			local Zone zone = 0
-			local string zoneSaveGame = ""
 			local integer i = 0
 			loop
 				exitwhen(i == ZoneData.zoneData().size())
 				set zoneData = ZoneData(ZoneData.zoneData()[i])
 				set zone = zoneData.zone()
-				set zoneSaveGame = MapChanger.currentSaveGamePath(zone.mapName())
-				if (SaveGameExists(zoneSaveGame)) then
+				if (MapChanger.zoneHasSaveGame(zone.mapName())) then
 					call zoneData.enable()
 				else
 					call zoneData.disable()
