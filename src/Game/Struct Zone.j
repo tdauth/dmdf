@@ -131,25 +131,36 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
 		endmethod
 
-		public static method zoneNames takes nothing returns AIntegerVector
+		public static method zoneNames takes nothing returns AStringVector
 			return thistype.m_zoneNames
 		endmethod
 
-		public static method zoneAllowTravelingWithOtherUnits takes string zoneName returns boolean
+		/**
+		 * \return Returns the index of the zone name \p targetZoneName in the list of zone names. If the zone name was not found it returns -1.
+		 */
+		public static method zoneNameIndex takes string targetZoneName returns integer
+			local string zoneName = null
+			local integer index = -1
 			local integer i = 0
 			loop
-				exitwhen (i == thistype.m_zoneNames.size())
-				if (thistype.m_zoneNames[i] == zoneName) then
-					if (thistype.m_zoneAllowTravelingWithOtherUnits.size() > i) then
-						return thistype.m_zoneAllowTravelingWithOtherUnits[i]
-					debug else
-						debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
-					endif
+				exitwhen (i == thistype.zoneNames().size())
+				set zoneName = thistype.zoneNames()[i]
+				if (zoneName == targetZoneName) then
+					set index = i
+					exitwhen (true)
 				endif
-				set i = i + 1
 			endloop
 
-			return false
+			return index
+		endmethod
+
+		public static method zoneAllowTravelingWithOtherUnits takes string zoneName returns boolean
+			local integer index = thistype.zoneNameIndex(zoneName)
+			if (index != -1) then
+				return thistype.m_zoneAllowTravelingWithOtherUnits[index]
+			debug else
+				debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
+			endif
 		endmethod
 	endstruct
 

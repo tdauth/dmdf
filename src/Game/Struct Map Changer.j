@@ -11,6 +11,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 	 * The character is stored with all of his items and attributes. The quests depend on the map and are not transfered.
 	 *
 	 * \note Whenever the game is saved in single player campaign mode the save game name is kept and all zone save games are copied to a folder with that savegame name. So the player does always save all zones, too when saving the game. Otherwise the savegames of the zones would be lost. This is the way the Bonus Campaign handles this, too. The savegame name is also stored in the gamecache and passed to every zone.
+	 * \note For every existing savegame which belongs to the current game a boolean flag with the value true is stored in \ref m_saveGamesHashTable. It uses the index of the corresponding zone name of the savegame as parent key. This helps to decide whether a savegame exists and belongs to the current game.
 	 */
 	struct MapChanger
 		/// The name of the gamecache which is used for storing all character data.
@@ -26,6 +27,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		private static trigger m_saveTriggerUser
 		/// Stores the savegame name whenever the user saves the game. A directory is created with the same name which has a backup of all the zone savegames.
 		private static string m_currentSaveGame = null
+		/*
+		 * Stores markers for all zones which have a savegame in the current game. This prevents loading savegames which have to correct path but do not belong to the current game.
+		 */
+		private static AGlobalHashTable m_saveGamesHashTable = 0
 
 		/**
 		 * \return Returns the file path of a map with the file name \p mapName (without extension) relatively to the Warcraft III directory.
@@ -165,6 +170,73 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call ShowInterface(true, 1.0)
 			call EnableUserControl(true)
 		endmethod
+		/**
+		 * Marks the current zone as a saved game.
+		 * This indicates that a savegame exists of the path \ref zoneSaveGame(MapSettings.mapName()).
+		 * This is required for every map the user travels to that it can be decided on a map transition if the savegame exists.
+		 */
+		private static method markCurrentSaveGame takes nothing returns nothing
+			local integer index = Zone.zoneNameIndex.evaluate(MapSettings.mapName())
+
+			if (index != -1) then
+				call thistype.m_saveGamesHashTable.setBoolean(index, 0, true)
+			debug else
+				debug call Print("Critical: Missing zone of name " + MapSettings.mapName())
+			endif
+		endmethod
+
+		/**
+		 * Use this method to check if the savegame should exist and belongs to the current game.
+		 * Sometimes savegames exist in the temporary folder which do not belong to the current game. Therefore you need to make sure
+		 * that the zone has a save game at all in the current game. Use this before checking with \ref SaveGameExists().
+		 * \return Returns true if the savegame for the zone \p targetZoneName should exist belongs the current game.
+		 */
+		private static method zoneHasSaveGame takes string targetZoneName returns boolean
+			local integer index = Zone.zoneNameIndex.evaluate(targetZoneName)
+
+			if (index != -1) then
+				return thistype.m_saveGamesHashTable.hasBoolean(index, 0)
+			debug else
+				debug call Print("Critical: Missing zone of name " + targetZoneName)
+			endif
+
+			return false
+		endmethod
+
+		/**
+		 * Stores all markers for zone savegames for the next map.
+		 * \param cache The game cache in which the markers are stored.
+		 */
+		private static method storeSaveGames takes gamecache cache returns nothing
+			local string zoneName = null
+			local integer i = 0
+			loop
+				exitwhen (i == Zone.zoneNames.evaluate().size())
+				set zoneName = Zone.zoneNames.evaluate()[i]
+				if (thistype.m_saveGamesHashTable.hasBoolean(i, 0)) then
+					call StoreBoolean(cache, "Zone", zoneName, true)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
+
+		/**
+		 * Restores all markers for zone savegames for the current map.
+		 * \param cache The game cache from which the markers are restored.
+		 */
+		private static method restoreSaveGames takes gamecache cache returns nothing
+			local string zoneName = null
+			local integer i = 0
+			call thistype.m_saveGamesHashTable.flush()
+			loop
+				exitwhen (i == Zone.zoneNames.evaluate().size())
+				set zoneName = Zone.zoneNames.evaluate()[i]
+				if (HaveStoredBoolean(cache, "Zone", zoneName)) then
+					call thistype.m_saveGamesHashTable.setBoolean(i, 0, true)
+				endif
+				set i = i + 1
+			endloop
+		endmethod
 
 		/**
 		 * Stores all player characters to a game cache as well as general data which is required in the next map.
@@ -204,6 +276,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// the current save game name has to be stored to know from where the save games have to be copied
 			call StoreString(cache, "CurrentSaveGame", "CurrentSaveGame", thistype.m_currentSaveGame)
 			call StoreString(cache, "Zone", "Zone", zone)
+
+			// Store all save game flags
+			call thistype.storeSaveGames(cache)
+
 			call SaveGameCache(cache)
 			set cache = null
 
@@ -254,6 +330,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local unit restoredUnit = null
 			local integer i = 0
 			local Spell spell = 0
+			local unit oldUnit = null
 			set restoredUnit = Character.restoreUnitFromCache(cache, missionKey, whichPlayer, x, y, facing)
 			// clear the inventory before
 			set i = 0
@@ -273,10 +350,17 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call ACharacter.setPlayerCharacterByCharacter(character)
 			// The map is loaded with an existing character in it.
 			else
-				call AHashTable.global().flushHandle(character.unit())
-				call RemoveUnit(character.unit())
+				set oldUnit = character.unit()
 				// Replace the old character unit by the newly restored. This triggers also all updates which have to use the new unit reference.
 				call character.replaceUnit(restoredUnit)
+
+				// Update order of hero icons.
+				call character.refreshOptions()
+
+				// Remove after replacing the options.
+				call AHashTable.global().flushHandle(oldUnit)
+				call RemoveUnit(oldUnit)
+
 				// Reset all grimoire spells to reskill them afterwards with the total skill points. Besides the spells have to be removed from the skilled spells in grimoire.
 				debug call Print("Clearing grimoire spells with count: " + I2S(character.grimoire().spells()))
 				call character.grimoire().clearLearnedSpells()
@@ -290,9 +374,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.destroyAllNonGrimoireSpells.evaluate(character) // New OpLimit.
 				// don't clear all ASpell spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
 				call character.classSpells().clear()
-
-				// update order of hero icons
-				call character.refreshOptions()
 			endif
 
 			// Restores the class, inventory items etc.
@@ -423,6 +504,10 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				set zone = GetStoredString(cache, "Zone", "Zone")
 				// the current save game which is used as folder name for all zone savegames
 				set thistype.m_currentSaveGame = GetStoredString(cache, "CurrentSaveGame", "CurrentSaveGame")
+
+				// Restore all save game flags
+				call thistype.restoreSaveGames(cache)
+
 				set i = 0
 				loop
 					exitwhen (i == MapSettings.maxPlayers())
@@ -468,6 +553,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			// removing buffs and summoned units is also done in the Bonus Campaign, probably it indicates the elapsed time after a transition
 			call NewOpLimit(function thistype.removeBuffsAndSummonedUnits) // New Op Limit
 
+			/*
+			 * Mark this savegame before actually saving it, so that it is stored correctly in the gamecache.
+			 */
+			call thistype.markCurrentSaveGame()
+
 			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate(oldMap)) then // New Op Limit
 				debug call Print("Could store all characters.")
 				return
@@ -477,7 +567,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			debug call Print("Load game path: " + loadPath)
 			call SaveGame(savePath)
 
-			if (SaveGameExists(loadPath)) then
+			if (thistype.zoneHasSaveGame(newMap) and SaveGameExists(loadPath)) then
 				debug call Print("Loading game since it exists: " + loadPath)
 				call LoadGame(loadPath, false)
 			else
@@ -548,7 +638,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				exitwhen (i == zoneNames.size())
 				set zoneName = zoneNames[i]
 				set zoneSaveGame = thistype.currentSaveGamePath(zoneName)
-				if (SaveGameExists(zoneSaveGame)) then
+				if (thistype.zoneHasSaveGame(zoneName) and SaveGameExists(zoneSaveGame)) then
 					set zoneTargetSaveGame = thistype.temporarySaveGamePath(zoneName)
 					debug call Print("Copying: " + zoneSaveGame)
 					debug call Print("To: " + zoneTargetSaveGame)
@@ -580,7 +670,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				exitwhen (i == zoneNames.size())
 				set zoneName = zoneNames[i]
 				set zoneSaveGame = thistype.temporarySaveGamePath(zoneName)
-				if (SaveGameExists(zoneSaveGame)) then
+				if (thistype.zoneHasSaveGame(zoneName) and SaveGameExists(zoneSaveGame)) then
 					set zoneTargetSaveGame = thistype.saveGamePath(GetSaveBasicFilename(), zoneName)
 					debug call Print("Copying: " + zoneSaveGame)
 					debug call Print("To: " + zoneTargetSaveGame)
@@ -592,6 +682,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			endloop
 
 			set thistype.m_currentSaveGame = GetSaveBasicFilename()
+			// Mark this zone as a saved game.
+			call thistype.markCurrentSaveGame()
 			debug call Print("Copied zone save games for current save with size " + I2S(Zone.zones.evaluate().size()))
 		endmethod
 
@@ -625,10 +717,13 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call TriggerAddAction(thistype.m_saveTriggerUser, function thistype.triggerActionSaveUser)
 
 			set thistype.m_currentSaveGame = null
+			set thistype.m_saveGamesHashTable = AGlobalHashTable.create()
 
 			// If the campaign is started completely new without loading it, the temporary folder should be cleared. Otherwise wrong zone save games from the last game might be used.
 			if (bj_isSinglePlayer and Game.isCampaign.evaluate() and not IsMapFlagSet(MAP_RELOADED) and MapSettings.isSeparateChapter()) then
 				call RemoveSaveDirectory(thistype.temporaryFolder)
+			debug else
+				debug call Print("Not the first chapter. Therefore keep the temporary folder.")
 			endif
 		endmethod
 	endstruct
