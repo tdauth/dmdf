@@ -20,6 +20,12 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Refreshing the options after map transition removes dungeon and quest buttons?
+* DONE: World Map: Ask for user confirmation before traveling to another map.
+* World Map: When reenabling the models or images seem corrupted. Prevent enabling twice.
+* World Map: Make selection models for trackables bigger.
+* World Map: When traveling from Talras to World Map, Talras is disabled?
+* World Map: Pan the camera in the beginning to the zone from which the characters came.
 * war3mapSkin.txt is apparently optimized by the optimizer and therefore "Inventory is full" is still shown in English maps. But since the interface is changed correctly, the values must be integrated?
 * The map in the singleplayer campaign is not detected as campaign (object data). Besides the map paths "TL.w3x" etc. have to be used to make the zones work. Therefore addd the maps directly to the root path in the MPQ archive TPoF.mpq.
 * src/Scripts/devinstaller.nsi: Install the translation files or different language versions of the maps.
@@ -393,8 +399,8 @@ Repick Issues:
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
 * Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
 * When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section? -> refreshRucksackItem() only update charges if shop is != null, otherwise the item is hidden.
-* Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
-* Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list? The Bonus Campaign does it the same way. It stores all save games in a list and transfers them to every map.
+* FIXED (by placing it directly to the active shrine): Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
+* FIXED (store in a list which chapters have been visited already): Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list? The Bonus Campaign does it the same way. It stores all save games in a list and transfers them to every map.
 * Game Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
 * The temporary save games folder was not deleted. So the transition to Talras did not work (savegame was not working). Dornheim should actually delete this file in the beginning which did not happen. After deleting the temporary folder manually, it worked again. The folder should also be removed automatically when a game is loaded by the user but a loaded game uses a different save game path anyway.
 * When the user saves the game, the temporary folder should be removed afterwards!

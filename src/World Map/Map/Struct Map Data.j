@@ -1,13 +1,18 @@
 library StructMapMapMapData requires Asl, StructGameGame
 
 	private struct ZoneData
+		/**
+		 * A vector of instances of \ref thistype.
+		 */
 		private static AIntegerVector m_zoneData
+		private static Zone m_currentZone = 0
 		private Zone m_zone
 		private trackable m_trackable
 		private trigger m_clickTrigger
 		private trigger m_trackTrigger
 		private image m_image
 		private texttag m_textTag
+		private boolean m_isEnabled
 
 		public static method zoneData takes nothing returns AIntegerVector
 			return thistype.m_zoneData
@@ -17,25 +22,57 @@ library StructMapMapMapData requires Asl, StructGameGame
 			return this.m_zone
 		endmethod
 
+		public method isEnabled takes nothing returns boolean
+			return this.m_isEnabled
+		endmethod
+
 		public method enable takes nothing returns nothing
+			if (this.isEnabled()) then
+				return
+			endif
 			call this.m_zone.enable()
 			call EnableTrigger(this.m_clickTrigger)
 			call EnableTrigger(this.m_trackTrigger)
 			call ShowImage(this.m_image, true)
 			call SetTextTagVisibility(this.m_textTag, true)
+			set this.m_isEnabled = true
 		endmethod
 
 		public method disable takes nothing returns nothing
+			if (not this.isEnabled()) then
+				return
+			endif
 			call this.m_zone.disable()
 			call DisableTrigger(this.m_clickTrigger)
 			call DisableTrigger(this.m_trackTrigger)
 			call ShowImage(this.m_image, false)
 			call SetTextTagVisibility(this.m_textTag, false)
+			set this.m_isEnabled = false
+		endmethod
+
+		private static method dialogButtonActionTravelToCurrentZone takes ADialogButton dialogButton returns nothing
+			if (thistype.m_currentZone != 0) then
+				call thistype.m_currentZone.onStart.execute()
+			debug else
+				debug call Print("Invalid zone data: 0")
+			endif
 		endmethod
 
 		private static method triggerActionChangeZone takes nothing returns nothing
 			local Zone zone = Zone(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			call zone.onStart.execute()
+			set thistype.m_currentZone = zone
+
+			/*
+			 * Ask for the player's confirmation. Traveling means a complete map change, so make sure the player wants to travel there.
+			 *
+			 * The World map works for one player only, so use this one player.
+			 * Otherwise, a trackable per player would have to be created.
+			 */
+			call AGui.playerGui(Commands.adminPlayer()).dialog().clear()
+			call AGui.playerGui(Commands.adminPlayer()).dialog().setMessage(tre("Wirklich verreisen?", "Travel really?"))
+			call AGui.playerGui(Commands.adminPlayer()).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionTravelToCurrentZone)
+			call AGui.playerGui(Commands.adminPlayer()).dialog().addSimpleDialogButtonIndex(tre("Nein", "No"))
+			call AGui.playerGui(Commands.adminPlayer()).dialog().show()
 		endmethod
 
 		private static method triggerActionTrack takes nothing returns nothing
@@ -73,6 +110,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call DmdfHashTable.global().setHandleStr(this.m_trackTrigger, 1, description)
 			call ShowImage(this.m_image, true)
 			//call ShowUnit(zone.iconUnit(), false)
+			set this.m_isEnabled = true
 
 			call thistype.m_zoneData.pushBack(this)
 
@@ -240,8 +278,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
+			local integer index = Zone.zoneNameIndex(zone)
+			local Zone zoneFrom = 0
 			call thistype.hideCharacters()
 			call thistype.updateZones()
+
+			// Pan the camera to the zone from which the characters came.
+			if (index != -1) then
+				set zoneFrom = Zone(Zone.zones()[index])
+				call SetCameraPosition(GetRectCenterX(zoneFrom.rect()), GetRectCenterY(zoneFrom.rect()))
+			debug
+				debug call Print("Error: Missing zone " + zone)
+			endif
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing
