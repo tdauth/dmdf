@@ -175,16 +175,21 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 * This indicates that a savegame exists of the path \ref zoneSaveGame(MapSettings.mapName()).
 		 * This is required for every map the user travels to that it can be decided on a map transition if the savegame exists.
 		 */
-		private static method markCurrentSaveGame takes nothing returns nothing
+		private static method markCurrentSaveGame takes nothing returns boolean
 			local integer index = Zone.zoneNameIndex.evaluate(MapSettings.mapName())
 
 			if (index != -1) then
 				if (not thistype.m_saveGames.contains(index)) then
+					debug call Print("Marking savegame: " + MapSettings.mapName() + " with index " + I2S(index) + " which corresponds to zone name " +  Zone.zoneNames.evaluate()[index])
 					call thistype.m_saveGames.pushBack(index)
+
+					return true
 				endif
 			debug else
 				debug call Print("Critical: Missing zone of name " + MapSettings.mapName())
 			endif
+
+			return false
 		endmethod
 
 		/**
@@ -211,11 +216,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		 */
 		private static method storeSaveGames takes gamecache cache returns nothing
 			local integer i = 0
+			call FlushStoredMission(cache, "ZoneSaveGames")
 			loop
-				exitwhen (i == Zone.zoneNames.evaluate().size())
-				if (thistype.m_saveGames.contains(i)) then
-					call StoreBoolean(cache, "ZoneSaveGames", Zone.zoneNames.evaluate()[i], true)
-				endif
+				exitwhen (i == thistype.m_saveGames.size())
+				debug call Print("Store savegame of zone: " + Zone.zoneNames.evaluate()[thistype.m_saveGames[i]])
+				call StoreBoolean(cache, "ZoneSaveGames", Zone.zoneNames.evaluate()[thistype.m_saveGames[i]], true)
 				set i = i + 1
 			endloop
 		endmethod
@@ -229,11 +234,19 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local integer i = 0
 			// clear all old entries before
 			call thistype.m_saveGames.clear()
+			debug call Print("Zone names size: " + I2S(Zone.zoneNames.evaluate().size()) + " and allocated save games value " + I2S(thistype.m_saveGames))
 			loop
 				exitwhen (i == Zone.zoneNames.evaluate().size())
 				set zoneName = Zone.zoneNames.evaluate()[i]
-				if (HaveStoredBoolean(cache, "ZoneSaveGames", zoneName) and not thistype.m_saveGames.contains(i)) then
-					call thistype.m_saveGames.pushBack(i)
+				if (HaveStoredBoolean(cache, "ZoneSaveGames", zoneName)) then
+					if (not thistype.m_saveGames.contains(i)) then
+						debug call Print("Restored savegame of zone: " + zoneName)
+						call thistype.m_saveGames.pushBack(i)
+					debug else
+						debug call Print("Savegame is already stored for zone: " + zoneName)
+					endif
+				debug else
+					debug call Print("Savegame of zone does not exist: " + zoneName)
 				endif
 				set i = i + 1
 			endloop
@@ -249,7 +262,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			local Character character = 0
 			local integer i = 0
 			call thistype.setupMapTransition()
-			call FlushGameCache(cache)
 			// Store all characters.
 			set i = 0
 			loop
@@ -558,10 +570,13 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			/*
 			 * Mark this savegame before actually saving it, so that it is stored correctly in the gamecache.
 			 */
-			call thistype.markCurrentSaveGame()
+			if (not thistype.markCurrentSaveGame()) then
+				debug call Print("Could not mark the current savegame.")
+				return
+			endif
 
 			if (not thistype.storeCharactersSinglePlayerNewOpLimit.evaluate(oldMap)) then // New Op Limit
-				debug call Print("Could store all characters.")
+				debug call Print("Could not store all characters.")
 				return
 			endif
 

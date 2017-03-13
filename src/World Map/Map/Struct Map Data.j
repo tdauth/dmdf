@@ -124,6 +124,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/**
 		 * Enable visited zones only.
+		 * Has to be called AFTER the data is restored from the gamecache!
 		 */
 		private static method updateZones takes nothing returns nothing
 			local ZoneData zoneData = 0

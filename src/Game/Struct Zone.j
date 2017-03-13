@@ -142,7 +142,6 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		public static method zoneNameIndex takes string zoneName returns integer
 			local integer index = -1
 			local integer i = 0
-			debug call Print(I2S(thistype.zoneNames().size()) + " count of zone names.")
 			loop
 				exitwhen (i == thistype.zoneNames().size())
 				if (thistype.zoneNames()[i] == zoneName) then
