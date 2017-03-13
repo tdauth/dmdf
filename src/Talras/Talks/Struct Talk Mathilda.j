@@ -465,6 +465,8 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 				call character.inventory().removeItemType(QuestShawm.itemTypeId)
 				call character.giveQuestItem('I083')
 			endif
+
+			call this.showStartPage(character)
 		endmethod
 
 		// Aber sicher doch.
