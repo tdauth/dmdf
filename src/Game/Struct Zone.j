@@ -136,17 +136,20 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 		endmethod
 
 		/**
+		 * \param zoneName The name of the zone for which the index is returned.
 		 * \return Returns the index of the zone name \p zoneName in the list of zone names. If the zone name was not found it returns -1.
 		 */
 		public static method zoneNameIndex takes string zoneName returns integer
 			local integer index = -1
 			local integer i = 0
+			debug call Print(I2S(thistype.zoneNames().size()) + " count of zone names.")
 			loop
 				exitwhen (i == thistype.zoneNames().size())
 				if (thistype.zoneNames()[i] == zoneName) then
 					set index = i
 					exitwhen (true)
 				endif
+				set i = i + 1
 			endloop
 
 			return index
