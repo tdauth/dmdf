@@ -182,9 +182,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				if (not thistype.m_saveGames.contains(index)) then
 					debug call Print("Marking savegame: " + MapSettings.mapName() + " with index " + I2S(index) + " which corresponds to zone name " +  Zone.zoneNames.evaluate()[index])
 					call thistype.m_saveGames.pushBack(index)
-
-					return true
 				endif
+
+				return true
 			debug else
 				debug call Print("Critical: Missing zone of name " + MapSettings.mapName())
 			endif
@@ -368,7 +368,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				// Replace the old character unit by the newly restored. This triggers also all updates which have to use the new unit reference.
 				call character.replaceUnit(restoredUnit)
 
-				// Update order of hero icons.
+				// Update order of hero icons. FIXME refreshing options makes the new options unclickable.
 				call character.refreshOptions()
 
 				// Remove after replacing the options.
@@ -526,6 +526,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				loop
 					exitwhen (i == MapSettings.maxPlayers())
 					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
+						// TODO do not restore at (0 | 0). The region will be discovered!
 						call thistype.restoreCharacterSinglePlayer(cache, Player(i), 0.0, 0.0, 0.0)
 						call MapData.onRestoreCharacter.evaluate(zone, Character(Character.playerCharacter(Player(i))))
 					endif

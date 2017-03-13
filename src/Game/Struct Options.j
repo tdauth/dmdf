@@ -355,8 +355,21 @@ endif
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate()
+			local real x = GetUnitX(character.unit())
+			local real y = GetUnitY(character.unit())
+			local unit playerUnit = Shrine.playerUnit.evaluate(GetPlayerId(character.player()))
 			set this.m_character = character
-			set this.m_unit = CreateUnit(character.player(), 'H03D', GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
+
+			/*
+			 * Directly place the options at the shrine location.
+			 */
+			if (character.shrine() != 0 and playerUnit != null) then
+				set x = GetUnitX(playerUnit)
+				set y = GetUnitY(playerUnit)
+				set playerUnit = null
+			endif
+
+			set this.m_unit = CreateUnit(character.player(), 'H03D', x, y, 0.0)
 			call SetUnitInvulnerable(this.m_unit, true)
 			call SetUnitPathing(this.m_unit, false)
 			call SetUnitVertexColor(this.m_unit, 255, 255, 255, 0)
