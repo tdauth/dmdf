@@ -20,6 +20,9 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Character Management: Fix the size of the GUI and the placement as well as the discovered area.
+* FIXED: Before traveling to the World map show a dialog and ask for confirmation.
+* DONE: Dornheim: Change the loading background.
 * FIXED: "Teach me the witch song." of Mathilda does not show the start page again.
 * Refreshing the options after map transition removes dungeon and quest buttons?
 * DONE: World Map: Ask for user confirmation before traveling to another map.
