@@ -172,11 +172,23 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			return OptionsSpellbook(this.multipageSpellbook())
 		endmethod
 
+		private static method dialogButtonActionTravelToWorldMap takes ADialogButton dialogButton returns nothing
+			call MapChanger.changeMap.evaluate("WM")
+		endmethod
+
 		public stub method onTrigger takes nothing returns nothing
 			local Character character = this.spellbook().character()
 
 			if (MapSettings.mapName() != "WM") then
-				call MapChanger.changeMap.evaluate("WM")
+				if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
+					call AGui.playerGui(Commands.adminPlayer()).dialog().clear()
+					call AGui.playerGui(Commands.adminPlayer()).dialog().setMessage(tre("Wirklich verreisen?", "Do you really want to travel?"))
+					call AGui.playerGui(Commands.adminPlayer()).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionTravelToWorldMap)
+					call AGui.playerGui(Commands.adminPlayer()).dialog().addSimpleDialogButtonIndex(tre("Nein", "No"))
+					call AGui.playerGui(Commands.adminPlayer()).dialog().show()
+				else
+					call character.displayHint(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
+				endif
 			else
 				call character.displayMessage(Character.messageTypeError, tre("Sie sehen bereits die Weltkarte.", "You are already viewing the world map."))
 			endif
