@@ -104,6 +104,8 @@ endif
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 
+			call NewOpLimit(function AUnitRoutine.manualStartAll) // necessary since at the beginning time of day events might not have be called
+
 			call Game.applyHandicapToCreeps()
 
 			/*

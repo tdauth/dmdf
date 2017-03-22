@@ -7,6 +7,8 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		private static ARoutine m_teleport
 
 		private static NpcTalksRoutine m_motherTalksToGotlinde
+		private static NpcRoutineWithFacing m_motherStands
+		private static NpcHammerRoutine m_gotlindeWorks
 		private static NpcTalksRoutine m_wotanPrays
 		private static NpcTalksRoutine m_wotanHouse
 		private static NpcTalksRoutine m_wotanPortal
@@ -29,11 +31,19 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 		public static method init takes nothing returns nothing
 			set thistype.m_teleport = ARoutine.create(true, true, 0, 0, 0, thistype.teleportTargetAction) // NOTE second true means loop that it returns to the position.
 
-			set thistype.m_motherTalksToGotlinde = NpcTalksRoutine.create(Routines.talk(), Npcs.mother(), 0.00, 24.00, gg_rct_waypoint_mother)
+			set thistype.m_motherTalksToGotlinde = NpcTalksRoutine.create(Routines.talk(), Npcs.mother(), 0.00, 17.00, gg_rct_waypoint_mother)
 			call thistype.m_motherTalksToGotlinde.setFacing(218.30)
 			call thistype.m_motherTalksToGotlinde.setPartner(Npcs.gotlinde())
 			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), null)
 			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), null)
+
+			set thistype.m_motherStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mother(), 17.00, 23.59, gg_rct_waypoint_mother)
+			call thistype.m_motherStands.setFacing(305.64)
+
+			set thistype.m_gotlindeWorks = NpcHammerRoutine.create(Routines.hammer(), Npcs.gotlinde(), 17.00, 23.59, gg_rct_waypoint_gotlinde_smith)
+			call thistype.m_gotlindeWorks.setFacing(108.32)
+			call thistype.m_gotlindeWorks.setSound(gg_snd_BlacksmithWhat1)
+			call thistype.m_gotlindeWorks.setSoundVolume(30.0)
 
 			set thistype.m_wotanPrays = NpcTalksRoutine.create(Routines.talk(), Npcs.wotan(), 8.0, 23.0, gg_rct_waypoint_wotan_island)
 			call thistype.m_wotanPrays.setFacing(262.95)
