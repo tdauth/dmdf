@@ -120,7 +120,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tre("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen.", "Toghether you have a greater chance to defeat the enemy."), null)
+			call TransmissionFromUnit(this.actor(), tre("Gemeinsam habt ihr eine größere Chance den Feind zu bezwingen.", "Together you have a greater chance to defeat the enemy."), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif
@@ -170,7 +170,7 @@ library StructMapVideosVideoTheChief requires Asl, StructGameGame, StructMapMapN
 				return
 			endif
 
-			call TransmissionFromUnit(this.actor(), tre("Und wann wollt ihr angreifen?", "And when you will attack?"), null)
+			call TransmissionFromUnit(this.actor(), tre("Und wann wollt ihr angreifen?", "And when will you attack?"), null)
 			if (wait(GetSimpleTransmissionDuration(null))) then
 				return
 			endif

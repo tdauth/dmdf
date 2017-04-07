@@ -20,6 +20,18 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* Decrease the XP gained from killing creeps. Leveling in singleplayer is too fast. Maybe only in 0.8. In 0.9 It should be 10 % like in the Bonus Campaign and the XP from wc3 is used. Watch the Let's Play of 0.8: https://www.youtube.com/watch?v=vCeUAUiXB8E&index=6&list=PLM18cnYYRV5OQRQFKEPbDKecc1qGdEYgW
+* FIXED (0.9): Change sound of the Orc Leader in Talras like Deranors sound (deeper).
+* Talras daily routines of NPCs seem not to start after traveling there for the first time until a video sequence has been played? Not sure?
+* Increase the costs of the long bow and reduce its damaga ability's damage.
+* Replace the main menu frozen frames by demonic interface ones.
+* Waiting for sound gg_snd_OrcLeader1 does not work. Export the sound again.
+* Use new music! In the Let's Play he turned the music of. Ministrel Guild is annoying as hell. http://www.freesound.org/ https://www.jamendo.com/?language=en
+* Play music during all video sequences. If no custom music is available, use wc3s music!
+* Add a marching sound to the video where the Northman march: http://www.freesound.org/people/Yap_Audio_Production/sounds/218998/
+* Intro music: http://www.freesound.org/people/Tristan_Lohengrin/sounds/319781/
+* Market sound: http://www.freesound.org/people/Metzik/sounds/371222/
+* Sound when the High Elves arrive: http://www.freesound.org/people/CGEffex/sounds/99961/
 * Character Management: Fix the size of the GUI and the placement as well as the discovered area.
 * FIXED: Before traveling to the World map show a dialog and ask for confirmation.
 * DONE: Dornheim: Change the loading background.

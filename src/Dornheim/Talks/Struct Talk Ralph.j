@@ -113,7 +113,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			call speech(info, character, false, tre("Wotan hat sich auf den Beutel gesetzt.", "Wotan has put himself on the bag."), null)
 			call speech(info, character, true, tre("Hervorragend. Du hast es wirklich drauf! Mann, ich hätte gerne sein Gesicht gesehen. Dieses arrogante Arschloch. Kumpel, ich werde dich echt vermissen!", "Outstanding. You really got it! Man, I would have liked to see his face. This arrogant asshole. Buddy, I'll really miss you!"), null)
-			call speech(info, character, false, tre("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!", "Here you have something to say goodbye. Goodbye and take care of yourself!"), null)
+			call speech(info, character, true, tre("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!", "Here you have something to say goodbye. Goodbye and take care of yourself!"), null)
 
 			call characterQuest.complete()
 
