@@ -166,6 +166,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			endloop
 			call TriggerAddCondition(this.m_killTrigger, Condition(function thistype.triggerConditionKill))
 			call DmdfHashTable.global().setHandleInteger(this.m_killTrigger, 0, this)
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\PursuitTheme.mp3")
 		endmethod
 
 		private static method setMoveSpeed takes unit whichUnit returns nothing
@@ -365,6 +367,8 @@ library StructMapVideosVideoWigberht requires Asl, StructGameGame, StructMapMapF
 			endif
 
 			call CinematicFadeBJ(bj_CINEFADETYPE_FADEIN, 1.0, "ReplaceableTextures\\CameraMasks\\Black_mask.blp", 100.00, 100.00, 100.00, 0.0)
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\HeroicVictory.mp3")
 
 			if (wait(1.50)) then
 				return

@@ -13,7 +13,9 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 		public stub method onInitAction takes nothing returns nothing
 			call Game.initVideoSettings(this)
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_0, true, 0.0)
-			call PlayThematicMusic("Music\\RescueDago.mp3")
+			//call PlayThematicMusic("Music\\RescueDago.mp3")
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\PursuitTheme.mp3")
 
 			// bears
 			set this.m_actorBear0 = this.unitActor(this.saveUnitActor(gg_unit_n008_0083))
@@ -88,7 +90,6 @@ library StructMapVideosVideoRescueDago0 requires Asl, StructGameGame, StructGame
 			call IssueTargetOrder(Npcs.dago(), "attack", gg_unit_n008_0083)
 			call IssueTargetOrder(gg_unit_n008_0083, "attack", Npcs.dago())
 			call IssueTargetOrder(gg_unit_n008_0027, "attack", Npcs.dago())
-			call EndThematicMusic()
 
 			call Game.resetVideoSettings()
 

@@ -79,7 +79,7 @@ library StructMapVideosVideoBloodthirstiness requires Asl, StructGameGame, Struc
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Deranor der Schreckliche, das ist sein Name. Er kam von den Todessümpfen, vermutlich um seinen eigenen Vorteil im Chaos zu suchen, das dieses Königreich bald überziehen wird. Genaues wissen jedoch auch wir Hochelfen nicht darüber.", "Deranor the Terrible, that's his name. He came from the Death Swamps, presumably to seek his own advantage in the chaos that will impact upon this kingdom soon. But even we High Elves don't know accurate things about it."), gg_snd_DragonSlayerBloodthirstiness7)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Deranor der Schreckliche, das ist sein Name. Er kam von den Todessümpfen, vermutlich um seinen eigenen Vorteil im Chaos zu suchen, das dieses Königreich bald überziehen wird. Genaues wissen jedoch auch wir Hochelfen nicht darüber.", "Deranor the Terrible, that's his name. He came from the Death Swamps, presumably to seek his own advantage in the chaos that will impact upon this kingdom soon. But even we High Elves don't know exact things about it."), gg_snd_DragonSlayerBloodthirstiness7)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayerBloodthirstiness7))) then
 				return

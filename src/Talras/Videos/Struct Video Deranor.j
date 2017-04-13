@@ -37,6 +37,8 @@ library StructMapVideosVideoDeranor requires Asl, StructGameGame
 			call SetUnitFacing(this.actor(), 270.0)
 			call ShowUnit(this.actor(), false)
 			call IssueImmediateOrder(this.actor(), "stop")
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\Doom.mp3")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing

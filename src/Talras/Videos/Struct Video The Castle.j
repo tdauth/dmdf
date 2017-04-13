@@ -127,7 +127,6 @@ library StructMapVideosVideoTheCastle requires Asl, StructGameGame
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
-			call EndThematicMusic()
 			call Game.resetVideoSettings()
 
 			call SetDoodadAnimationRect(gg_rct_gate_0, 'D085', "Death", false)

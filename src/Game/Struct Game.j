@@ -1041,6 +1041,7 @@ endif
 				call thistype.m_actorOrderAnimations.destroy()
 				set thistype.m_actorOrderAnimations = 0
 			endif
+			call EndThematicMusic()
 			call VolumeGroupResetBJ()
 			call ResumeMusic()
 			call MapData.resetVideoSettings.evaluate()
