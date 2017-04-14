@@ -199,6 +199,14 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.hasRevival()) then
 				call EnableTrigger(this.m_revivalTrigger)
 			endif
+
+			// Make sure that the fellow has an inventory ability.
+			call UnitAddAbility(this.unit(), 'AInv')
+			call UnitMakeAbilityPermanent(this.unit(), true, 'AInv')
+
+			call this.m_inventory.enable()
+			call this.m_inventory.enableOnlyRucksack(true)
+
 			if (thistype.m_infoMessageJoin != null) then
 				if (character == 0) then
 					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).s(this.revivalTitle()).result())
@@ -269,6 +277,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 */
 		public method reset takes nothing returns nothing
 			local integer i
+			if (not this.isShared()) then
+				debug call Print("Fellow is not shared.")
+				return
+			endif
 			if (this.hasRevival()) then
 				call DisableTrigger(this.m_revivalTrigger)
 			endif
@@ -281,6 +293,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			 * Make sure the fellow cannot carry items forever and they become unreachable for the players.
 			 */
 			call this.m_inventory.dropAllRucksack(GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
+			call this.m_inventory.disable()
+
+			// Make sure that you cannot give a fellow items afterwards.
+			call UnitRemoveAbility(this.unit(), 'AInv')
 
 			call SetUnitOwner(this.m_unit, MapSettings.neutralPassivePlayer(), true)
 			call SetUnitInvulnerable(this.m_unit, true)
@@ -510,7 +526,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			set this.m_trades = false
 			set this.m_isShared = false
 			set this.m_inventory = AUnitInventory.create(this.m_unit)
-			call this.m_inventory.enableOnlyRucksack(true)
+			call UnitRemoveAbility(this.unit(), 'A015') // rucksack only
 
 			call thistype.m_fellows.pushBack(this)
 
