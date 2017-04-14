@@ -31,7 +31,7 @@ library StructGameOrderAnimations requires Asl, StructGameDmdfHashTable, StructG
 
 		private static method triggerActionOrder takes nothing returns nothing
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			local AInventory inventory = this.m_character.inventory()
+			local AUnitInventory inventory = this.m_character.inventory()
 			local AIntegerVector values = 0
 			/*
 			 * If the character is morphed it has not the villager255 model.

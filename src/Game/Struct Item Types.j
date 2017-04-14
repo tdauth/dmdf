@@ -3,38 +3,39 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 	/**
 	 * \brief Default item type struct for all item types in The Power of Fire.
 	 */
-	struct ItemType extends AItemType
+	struct ItemType extends ACharacterItemType
 		private static AIntegerVector m_twoSlotItems
 
 		public static method itemTypeIdRequiresTwoSlots takes integer itemTypeId returns boolean
 			return thistype.m_twoSlotItems.contains(itemTypeId)
 		endmethod
 
-		public stub method checkRequirement takes ACharacter character returns boolean
-			local integer i
-			if (this.equipmentType() == AItemType.equipmentTypeSecondaryWeapon and character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then
+		public stub method checkRequirement takes unit whichUnit returns boolean
+			local integer i = 0
+			local AUnitInventory inventory = AUnitInventory.getUnitsInventory(whichUnit)
+			if (this.equipmentType() == AItemType.equipmentTypeSecondaryWeapon and inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon) != 0) then
 				set i = 0
 				loop
 					exitwhen (i == thistype.m_twoSlotItems.size())
-					if (character.inventory().equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId() == thistype.m_twoSlotItems[i]) then
-						call character.displayMessage(ACharacter.messageTypeError, tre("Charakter trägt Gegenstand, der beide Slots benötigt.", "Character wears item which requires both slots."))
+					if (inventory.equipmentItemData(AItemType.equipmentTypePrimaryWeapon).itemTypeId() == thistype.m_twoSlotItems[i]) then
+						call SimError(GetOwningPlayer(whichUnit), tre("Charakter trägt Gegenstand, der beide Slots benötigt.", "Character wears item which requires both slots."))
 						return false
 					endif
 					set i = i + 1
 				endloop
-			elseif (character.inventory().equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0) then
+			elseif (inventory.equipmentItemData(AItemType.equipmentTypeSecondaryWeapon) != 0) then
 				set i = 0
 				loop
 					exitwhen (i == thistype.m_twoSlotItems.size())
 					if (this.itemType() == thistype.m_twoSlotItems[i]) then
-						call character.displayMessage(ACharacter.messageTypeError, tre("Gegenstand benötigt beide Slots.", "The item requires both slots."))
+						call SimError(GetOwningPlayer(whichUnit), tre("Gegenstand benötigt beide Slots.", "The item requires both slots."))
 						return false
 					endif
 					set i = i + 1
 				endloop
 			endif
 
-			return super.checkRequirement(character)
+			return super.checkRequirement(whichUnit)
 		endmethod
 
 		private static method onInit takes nothing returns nothing
@@ -166,15 +167,15 @@ library StructGameItemTypes requires Asl, StructGameClasses, StructGameCharacter
 			return unitTypeId == 'H02W' or unitTypeId == 'H02Z' or unitTypeId == 'H031' or unitTypeId == 'H033' or unitTypeId == 'H035' or unitTypeId == 'H037' or unitTypeId == 'H039' or unitTypeId == 'H03B' or unitTypeId == 'H02X' or unitTypeId == 'H030' or unitTypeId == 'H032' or unitTypeId == 'H034' or unitTypeId == 'H036' or unitTypeId == 'H038' or unitTypeId == 'H03A' or unitTypeId == 'H03C'
 		endmethod
 
-		public stub method checkRequirement takes ACharacter character returns boolean
-			local integer unitTypeId = GetUnitTypeId(character.unit())
+		public stub method checkRequirement takes unit whichUnit returns boolean
+			local integer unitTypeId = GetUnitTypeId(whichUnit)
 
 			if (not thistype.isUnitOnHorse(unitTypeId)) then
-				call character.displayMessage(ACharacter.messageTypeError, tre("Charakter muss Pferd reiten.", "Character has to ride a horse."))
+				call SimError(GetOwningPlayer(whichUnit), tre("Charakter muss Pferd reiten.", "Character has to ride a horse."))
 				return false
 			endif
 
-			return super.checkRequirement(character)
+			return super.checkRequirement(whichUnit)
 		endmethod
 
 		public static method create takes integer itemType, integer equipmentType, integer requiredLevel, integer requiredStrength, integer requiredAgility, integer requiredIntelligence, AClass requiredClass returns thistype

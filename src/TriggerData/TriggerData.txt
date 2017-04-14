@@ -56,7 +56,7 @@ AMissile=0,1,1,"Missile",integer
 
 Character=0,1,1,"Player Character",integer
 AClass=0,1,1,"Character Class",integer
-AInventory=0,1,1,"Character Inventory",integer
+AUnitInventory=0,1,1,"Character Inventory",integer
 
 Talk=0,1,1,"Talk",integer
 Fellow=0,1,1,"Fellow",integer

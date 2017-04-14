@@ -395,8 +395,8 @@ endif
 
 			if (disableInventory) then
 				debug call Print("Enabling inventory again")
-				call this.inventory().setEnableAgain(true)
-				call this.inventory().enable()
+				call this.characterInventory().setEnableAgain(true)
+				call this.characterInventory().enable()
 			elseif (enableRucksackOnly) then
 				call this.inventory().enableOnlyRucksack(false)
 			endif
@@ -435,10 +435,10 @@ endif
 
 			// Make sure it won't be enabled again when the character is set movable.
 			if (disableInventory) then
-				call this.inventory().setEnableAgain(false)
+				call this.characterInventory().setEnableAgain(false)
 				debug call Print("Disabling inventory")
 				// Should remove but store all items and their permanently added abilities if the rucksack is open!
-				call this.inventory().disable()
+				call this.characterInventory().disable()
 				debug call Print("After disabling inventory")
 			elseif (enableRucksackOnly) then
 				// unequipping leads to melee unit, always!

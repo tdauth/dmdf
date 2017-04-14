@@ -208,7 +208,7 @@ function GetTriggerZoneName takes nothing returns string
 	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), TRIGGERDATA_KEY_ZONENAME)
 endfunction
 
-function GetTriggerInventory takes nothing returns AInventory
+function GetTriggerInventory takes nothing returns AUnitInventory
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_INVENTORY)
 endfunction
 
@@ -445,7 +445,7 @@ function CharacterClass takes Character character returns AClass
 	return character.class()
 endfunction
 
-function CharacterInventory takes Character character returns AInventory
+function CharacterInventory takes Character character returns AUnitInventory
 	return character.inventory()
 endfunction
 
@@ -459,35 +459,35 @@ endfunction
 
 // Inventory API
 
-function InventoryEquipmentItemType takes AInventory inventory, integer equipmentType returns integer
-	local AInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
+function InventoryEquipmentItemType takes AUnitInventory inventory, integer equipmentType returns integer
+	local AUnitInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
 	if (itemData != 0) then
 		return itemData.itemTypeId()
 	endif
 	return 0
 endfunction
 
-function InventoryRucksackItemType takes AInventory inventory, integer index returns integer
-	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+function InventoryRucksackItemType takes AUnitInventory inventory, integer index returns integer
+	local AUnitInventoryItemData itemData = inventory.rucksackItemData(index)
 	if (itemData != 0) then
 		return itemData.itemTypeId()
 	endif
 	return 0
 endfunction
 
-function InventoryRucksackItemCharges takes AInventory inventory, integer index returns integer
-	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+function InventoryRucksackItemCharges takes AUnitInventory inventory, integer index returns integer
+	local AUnitInventoryItemData itemData = inventory.rucksackItemData(index)
 	if (itemData != 0) then
 		return itemData.charges()
 	endif
 	return 0
 endfunction
 
-function InventoryHasItemType takes AInventory inventory, integer itemCode returns boolean
+function InventoryHasItemType takes AUnitInventory inventory, integer itemCode returns boolean
 	return inventory.hasItemType(itemCode)
 endfunction
 
-function InventoryTotalItemTypeCharges takes AInventory inventory, integer itemCode returns integer
+function InventoryTotalItemTypeCharges takes AUnitInventory inventory, integer itemCode returns integer
 	return inventory.totalItemTypeCharges(itemCode)
 endfunction
 

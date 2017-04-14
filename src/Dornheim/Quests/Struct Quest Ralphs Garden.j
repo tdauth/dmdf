@@ -6,7 +6,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemReport = 2
 		private trigger m_hintTriggerHans
 
-		private static method onAddItemToRucksackRuke takes AInventory inventory, integer index, boolean firstTime returns nothing
+		private static method onAddItemToRucksackRuke takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
 			local thistype this = thistype.characterQuest.evaluate(inventory.character())
 			if (this.questItem(thistype.questItemBuyRake).isNew()) then
 				if (firstTime and inventory.rucksackItemData(index) != 0 and inventory.rucksackItemData(index).itemTypeId() == 'I02F') then

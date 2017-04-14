@@ -7,7 +7,7 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemGotlinde = 3
 		private trigger m_hintTriggerHans
 
-		private static method onAddItemToRucksackFood takes AInventory inventory, integer index, boolean firstTime returns nothing
+		private static method onAddItemToRucksackFood takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
 			local thistype this = thistype.characterQuest.evaluate(inventory.character())
 			local integer count0 = 0
 			local integer count1 = 0
