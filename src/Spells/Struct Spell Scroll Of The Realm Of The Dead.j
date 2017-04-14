@@ -14,9 +14,9 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 		 * \return Returns the nearest shrine of the given location which is unmasked to the player and within a distance of \ref thistype.distance. If none is found it returns 0.
 		 */
 		public static method getNearestShrine takes player whichPlayer, real x, real y returns Shrine
-			local integer i
+			local integer i = 0
 			local Shrine shrine = 0
-			local real dist
+			local real dist = 0.0
 			local Shrine result = 0
 			set i = 0
 			loop
