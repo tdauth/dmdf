@@ -15,11 +15,12 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 
 			if (shrine == 0) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel-Punkt muss sich in der Nähe eines erkundeten Wiederbelebungsschreins befinden.", "Target location has to be in the range of a discovered revival shrine."))
+				debug call Print("Return false")
 
-				return true
+				return false
 			endif
 
-			return false
+			return true
 		endmethod
 
 		private static method filter takes nothing returns boolean
@@ -40,11 +41,12 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 			local effect targetEffect = AddSpellEffectById(thistype.abilityId, EFFECT_TYPE_TARGET, x, y)
 			local AEffectVector casterEffects = AEffectVector.create()
 			local integer i = 0
-			debug call Print("Spell Scroll Of The Realm!")
+			debug call Print("Spell Scroll Of The Realm! at pos " + R2S(x) + " | " + R2S(y))
 			call whichGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), thistype.rangeOfAllies, Filter(function thistype.filter))
 			call thistype.removeEnemiesOfUnitNewOpLimit.evaluate(whichGroup, caster) // Use a new OpLimit for safety.
 			// Caster is moved separately.
 			call whichGroup.units().remove(caster)
+			debug call Print("Remaining units: " + I2S(whichGroup.units().size()))
 
 			set i = 0
 			loop
