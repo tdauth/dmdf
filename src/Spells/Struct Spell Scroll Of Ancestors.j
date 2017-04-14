@@ -5,7 +5,8 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 	 */
 	struct SpellScrollOfAncestors extends ASpell
 		public static constant integer abilityId = 'A19H'
-		public static constant real distance = 400.0
+		public static constant real rangeOfAllies = 700.0
+		public static constant integer maximumAllies = 12
 
 		// http://www.hiveworkshop.com/forums/triggers-scripts-269/does-getspelltargetx-y-work-177175/
 		// GetSpellTargetX() etc. does not work in conditions but in actions?
@@ -40,8 +41,9 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 			local AEffectVector casterEffects = AEffectVector.create()
 			local integer i = 0
 			debug call Print("Spell Scroll Of The Realm!")
-			call whichGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), 700.0, Filter(function thistype.filter))
-			call whichGroup.removeEnemiesOfUnit(caster)
+			call whichGroup.addUnitsInRange(GetUnitX(caster), GetUnitY(caster), thistype.rangeOfAllies, Filter(function thistype.filter))
+			call thistype.removeEnemiesOfUnitNewOpLimit.evaluate(whichGroup, caster) // Use a new OpLimit for safety.
+			// Caster is moved separately.
 			call whichGroup.units().remove(caster)
 
 			set i = 0
@@ -59,14 +61,15 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 
 			set i = 0
 			loop
-				exitwhen (i == 12 or i == whichGroup.units().size())
-				call casterEffects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest"))
+				exitwhen (i == thistype.maximumAllies or i == whichGroup.units().size())
+				call casterEffects.pushBack(AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, whichGroup.units()[i], "chest"))
 				call SetUnitPosition(whichGroup.units()[i], x, y)
 				set i = i + 1
 			endloop
 			call whichGroup.destroy()
 			set whichGroup = 0
 
+			// Move caster separately.
 			call SetUnitPosition(caster, x, y)
 			call TriggerSleepAction(0.0)
 			call IssueImmediateOrder(caster, "stop")
@@ -77,6 +80,10 @@ library StructSpellsSpellScrollOfAncestors requires Asl, StructGameShrine, Struc
 			set targetEffect = null
 			call casterEffects.forEach(thistype.removeEffect)
 			call casterEffects.destroy()
+		endmethod
+
+		private static method removeEnemiesOfUnitNewOpLimit takes AGroup whichGroup , unit whichUnit returns nothing
+			call whichGroup.removeEnemiesOfUnit(whichUnit)
 		endmethod
 
 		public static method create takes Character character returns thistype
