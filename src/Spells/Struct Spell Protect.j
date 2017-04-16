@@ -34,7 +34,7 @@ library StructSpellsSpellProtect requires Asl, StructGameClasses, StructGameSpel
 			call damageRecorder.setOnDamageAction(thistype.onDamageAction)
 			call DmdfGlobalHashTable.global().setReal(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder, damage)
 			loop
-				exitwhen (time <= 0.0 or ASpell.allyChannelLoopCondition(caster) or ASpell.allyTargetLoopCondition(target) or GetUnitCurrentOrder(caster) != OrderId("ambush"))
+				exitwhen (time <= 0.0 or AUnitSpell.allyChannelLoopCondition(caster) or AUnitSpell.allyTargetLoopCondition(target) or GetUnitCurrentOrder(caster) != OrderId("ambush"))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop

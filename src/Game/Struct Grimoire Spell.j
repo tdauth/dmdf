@@ -26,7 +26,7 @@ library StructGameGrimoireSpell requires Asl, StructGameCharacter
 
 			call UnitAddAbility(whichUnit, this.grimoireAbility())
 			call SetPlayerAbilityAvailable(GetOwningPlayer(whichUnit), this.grimoireAbility(), false)
-			call SetUnitAbilityLevel(whichUnit, this.ability(), 1)
+			call SetUnitAbilityLevel(whichUnit, this.unitSpell().ability(), 1)
 			call this.enable()
 		endmethod
 
@@ -52,7 +52,7 @@ library StructGameGrimoireSpell requires Asl, StructGameCharacter
 			 * Use EVENT_PLAYER_UNIT_SPELL_ENDCAST to prevent any null GetAbilityId() calls when the ability is removed before running trigger events.
 			 * Since the grimoire buttons do not need any event data like GetSpellTargetX() this event is just okay.
 			 */
-			local thistype this = thistype.allocate(grimoire.character.evaluate(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST, false, true, true)
+			local thistype this = thistype.allocate(grimoire.character.evaluate(), abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_ENDCAST, false, true)
 			set this.m_grimoire = grimoire
 			set this.m_grimoireAbility = grimoireAbility
 

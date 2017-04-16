@@ -23,7 +23,7 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 			call damageProtector.setOnDamageAction(thistype.onDamageAction)
 			set i = thistype.time
 			loop
-				exitwhen (thistype.allyTargetLoopCondition(GetSpellTargetUnit()) or i == 0)
+				exitwhen (AUnitSpell.allyTargetLoopCondition(GetSpellTargetUnit()) or i == 0)
 				call TriggerSleepAction(1.0)
 				set i = i - 1
 			endloop
@@ -34,10 +34,10 @@ library StructSpellsSpellHolyWill requires Asl, StructGameClasses, StructGameSpe
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.cleric(), thistype.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, 0)
-			
+
 			call this.addGrimoireEntry('A1LJ', 'A1LK')
 			call this.addGrimoireEntry('A0PJ', 'A0PK')
-			
+
 			return this
 		endmethod
 	endstruct

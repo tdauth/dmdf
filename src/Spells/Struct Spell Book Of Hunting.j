@@ -1,4 +1,4 @@
-library StructSpellsSpellBookOfHunting requires Asl, StructGameCharacter
+library StructSpellsSpellBookOfHunting requires StructSpellsSpellBookCraftingSpell
 
 	/**
 	 * \return Returns the first unit from a group of a specific point with a specified radius of 250.0 using a custom filter. Returns null if no unit is in range matching the filter.
@@ -17,7 +17,7 @@ library StructSpellsSpellBookOfHunting requires Asl, StructGameCharacter
 		return result
 	endfunction
 
-	struct SpellBookOfHuntingPullFangs extends ASpell
+	struct SpellBookOfHuntingPullFangs extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1TQ'
 
 		private static method filter takes nothing returns boolean
@@ -50,11 +50,11 @@ library StructSpellsSpellBookOfHunting requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfHuntingPullFurs extends ASpell
+	struct SpellBookOfHuntingPullFurs extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1TR'
 
 
@@ -117,11 +117,11 @@ library StructSpellsSpellBookOfHunting requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfHuntingPullBones extends ASpell
+	struct SpellBookOfHuntingPullBones extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1TS'
 
 
@@ -156,7 +156,7 @@ library StructSpellsSpellBookOfHunting requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 

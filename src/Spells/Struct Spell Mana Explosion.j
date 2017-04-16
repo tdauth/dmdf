@@ -27,7 +27,7 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
 			local effect targetEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, caster, "chest")
 			local real mana
-			if (not thistype.enemyTargetLoopCondition(target)) then
+			if (not AUnitSpell.enemyTargetLoopCondition(target)) then
 				set mana = RMinBJ(thistype.manaStartValue + this.level() * thistype.manaLevelValue, GetUnitState(target, UNIT_STATE_MANA))
 				call SetUnitState(target, UNIT_STATE_MANA, GetUnitState(target, UNIT_STATE_MANA) - mana)
 				call SetUnitState(caster, UNIT_STATE_MANA, GetUnitState(caster, UNIT_STATE_MANA) + mana)

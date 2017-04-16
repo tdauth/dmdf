@@ -4,7 +4,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 	private struct SpellIceMissileType extends AMissileType
 		private Character m_character
 		private unit m_targetUnit
-		
+
 		private static method freezeTarget takes SpellIceMissile spell, unit caster, unit target returns nothing
 			local real oldMoveSpeed = GetUnitMoveSpeed(target)
 			local real moveSpeedDifference = oldMoveSpeed * spell.level() * SpellIceMissile.speedFactor
@@ -16,7 +16,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			debug call Print("New move speed: " + R2S(moveSpeed) + " and old move speed " + R2S(oldMoveSpeed))
 			set time = SpellIceMissile.time
 			loop
-				exitwhen (time <= 0.0 or ASpell.enemyTargetLoopCondition(target))
+				exitwhen (time <= 0.0 or AUnitSpell.enemyTargetLoopCondition(target))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
@@ -25,7 +25,7 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			call DestroyEffect(freezeEffect)
 			set freezeEffect = null
 		endmethod
-		
+
 		private static method damage takes AMissile missile returns nothing
 			local thistype this = thistype(missile.missileType())
 			local unit caster = this.m_character.unit()
@@ -42,30 +42,30 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 			set caster = null
 			set target = null
 		endmethod
-	
+
 		private static method customOnDeathFunction takes AMissile missile returns nothing
 			local thistype this = thistype(missile.missileType())
 			if (not IsUnitDeadBJ(this.m_targetUnit)) then
 				call thistype.damage(missile)
 			endif
 		endmethod
-		
+
 		public static method create takes Character character, unit targetUnit returns thistype
 			local thistype this = thistype.allocate()
-			
+
 			set this.m_character = character
 			set this.m_targetUnit = targetUnit
-			
+
 			call this.setOwner(character.player())
 			call this.setUnitType('n06M')
 			call this.setSpeed(700.0)
 			call this.setTargetSeeking(true)
 			call this.setDestroyOnDeath(true)
 			call this.setOnDeathFunction(thistype.customOnDeathFunction)
-			
+
 			return this
 		endmethod
-		
+
 	endstruct
 
 	/// Wirft ein Eisgeschoss auf den Gegner, verursacht X Punkte Schaden und verringert die Bewegungs- und Angriffsgeschwindigkeit um Y %.
@@ -94,14 +94,14 @@ library StructSpellsSpellIceMissile requires Asl, StructSpellsSpellElementalMage
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
-			
+
 			call this.addGrimoireEntry('A1LN', 'A1LO')
 			call this.addGrimoireEntry('A0T7', 'A0TC')
 			call this.addGrimoireEntry('A0T8', 'A0TD')
 			call this.addGrimoireEntry('A0T9', 'A0TE')
 			call this.addGrimoireEntry('A0TA', 'A0TF')
 			call this.addGrimoireEntry('A0TB', 'A0TG')
-			
+
 			return this
 		endmethod
 	endstruct

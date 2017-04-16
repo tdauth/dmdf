@@ -15,20 +15,20 @@ library StructSpellsSpellQuiver requires Asl, StructGameItemTypes
 				else
 					set result = false
 				endif
-				
+
 				if (not result) then
 					call character.displayMessage(ACharacter.messageTypeError, tre("Trägt keinen Bogen.", "Does not carry a bow."))
 				endif
 			debug else
 				debug call Print("Quiver: Is no character")
 			endif
-			
+
 			return result
 		endmethod
 
 		public static method create takes nothing returns thistype
-			return thistype.allocate(thistype.abilityId, 0, thistype.condition, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL)
-		endmethod	
+			return thistype.allocate(thistype.abilityId, 0, thistype.condition, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, false)
+		endmethod
 	endstruct
 
 endlibrary

@@ -36,7 +36,7 @@ library StructSpellsSpellScrollOfCollector requires Asl
 		endmethod
 
 		public static method create takes Character character returns thistype
-			local thistype this = thistype.allocate(character, thistype.abilityId, 0, thistype.condition, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			local thistype this = thistype.allocate(character, thistype.abilityId, 0, thistype.condition, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true)
 
 			set this.m_foundOne = false
 			set thistype.m_spell[GetPlayerId(character.player())] = this

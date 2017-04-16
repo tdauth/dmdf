@@ -20,11 +20,11 @@ library StructSpellsSpellElementalMageDamageSpell requires Asl, StructGameClasse
 			return spell.ability() == SpellBlaze.abilityId or spell.ability() == SpellIceAge.abilityId or spell.ability() == SpellFireMissile.abilityId or spell.ability() == SpellIceMissile.abilityId or spell.ability() == SpellInferno.abilityId or spell.ability() == SpellPureEnergy.abilityId or spell.ability() == SpellLightning.abilityId
 		endmethod
 
-		public static method create takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
+		public static method create takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, AUnitSpellUpgradeAction upgradeAction, AUnitSpellCastCondition castCondition, AUnitSpellCastAction castAction returns thistype
 			return thistype.allocate(character, Classes.elementalMage(), spellType, maxLevel, abilityId, favouriteAbilityId, upgradeAction, castCondition, castAction)
 		endmethod
-		
-		public static method createWithEventDamageSpell takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
+
+		public static method createWithEventDamageSpell takes Character character, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbilityId, AUnitSpellUpgradeAction upgradeAction, AUnitSpellCastCondition castCondition, AUnitSpellCastAction castAction, playerunitevent unitEvent returns thistype
 			return thistype.createWithEvent(character, Classes.elementalMage(), spellType, maxLevel, abilityId, favouriteAbilityId, upgradeAction, castCondition, castAction, unitEvent)
 		endmethod
 	endstruct

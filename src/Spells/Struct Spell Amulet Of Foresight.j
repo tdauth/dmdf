@@ -13,7 +13,7 @@ library StructSpellsSpellAmuletOfForesight requires Asl
 			debug call Print("Amulet of Foresight: Share vision.")
 			call UnitShareVision(GetSpellTargetUnit(), this.character().player(), true)
 			loop
-				exitwhen (i <= 0 or thistype.enemyTargetLoopConditionResistant(GetSpellTargetUnit()) or IsUnitDeadBJ(this.character().unit())) /// \todo Create buff and check for buff removal!
+				exitwhen (i <= 0 or AUnitSpell.enemyTargetLoopConditionResistant(GetSpellTargetUnit()) or IsUnitDeadBJ(this.character().unit())) /// \todo Create buff and check for buff removal!
 				call TriggerSleepAction(1.0)
 				debug call Print("Amulet of Foresight: Wait 1 second.")
 				set i = i - 1.0
@@ -25,7 +25,7 @@ library StructSpellsSpellAmuletOfForesight requires Asl
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true)
 		endmethod
 	endstruct
 

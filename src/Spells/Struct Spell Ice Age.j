@@ -23,7 +23,7 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 			set filterUnit = null
 			return result
 		endmethod
-		
+
 		private method targets takes nothing returns AGroup
 			local unit caster = this.character().unit()
 			local group targetGroup = CreateGroup()
@@ -33,7 +33,7 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 			local unit target
 			call GroupEnumUnitsInRange(targetGroup, GetSpellTargetX(), GetSpellTargetY(), thistype.radius, filter)
 			call targets.addGroup(targetGroup, true, false) // destroys the group
-				
+
 			set i = 0
 			loop
 				exitwhen (i == targets.units().size())
@@ -45,25 +45,25 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 				endif
 				set target = null
 			endloop
-				
+
 			set targetGroup = null
 			set caster = null
 			call DestroyFilter(filter)
 			set filter = null
-			
+
 			return targets
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets()
 			local boolean result = not targets.units().isEmpty()
-			
+
 			if (not result) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine gültigen Ziele.", "No valid targets."))
 			endif
-			
+
 			call targets.destroy()
-			
+
 			return result
 		endmethod
 
@@ -84,7 +84,7 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 					loop
 						exitwhen (i == targets.units().size())
 						set target = targets.units()[i]
-						if (not ASpell.enemyTargetLoopCondition(target)) then
+						if (not AUnitSpell.enemyTargetLoopCondition(target)) then
 							call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
 							call ShowBashTextTagForPlayer(null, GetWidgetX(target), GetWidgetY(target), R2I(damage))
 							set i = i + 1
@@ -109,7 +109,7 @@ library StructSpellsSpellIceAge requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0TJ', 'A0TO')
 			call this.addGrimoireEntry('A0TK', 'A0TP')
 			call this.addGrimoireEntry('A0TL', 'A0TQ')
-			
+
 			return this
 		endmethod
 	endstruct

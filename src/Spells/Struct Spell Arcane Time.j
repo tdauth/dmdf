@@ -25,15 +25,15 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		private static constant real timeStartValue = 30.0
 		private static constant real timeLevelValue = -5.0
 		private static sound whichSound
-		
+
 		private static method filter takes nothing returns boolean
 			if (IsUnitDeadBJ(GetFilterUnit())) then
 				return false
 			endif
-			
+
 			return true
 		endmethod
-		
+
 		private method targets takes real x, real y returns AGroup
 			local AGroup result = AGroup.create()
 			local integer i
@@ -48,23 +48,23 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 					set i = i + 1
 				endif
 			endloop
-			
+
 			return result
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets(GetSpellTargetX(), GetSpellTargetY())
 			local boolean result = not targets.units().isEmpty()
-			
+
 			if (not result) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Ziel muss eine beschworene Einheit oder eine Einheit mit Zauberverstärkern sein.", "Target has to be a summoned unit or a unit with buffs."))
 			endif
-			
+
 			call targets.destroy()
-			
+
 			return result
 		endmethod
-		
+
 		private method removeTimedLifeAfter takes real time, unit target returns nothing
 			local effect whichEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call UnitAddAbility(target, thistype.negativeBuffAbilityId)
@@ -72,11 +72,11 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			debug call Print("Arcane Time: Start timer for timed life removal!")
 			/// \todo Instead of simply checking for spell resistance add buff and check for buff when time expired
 			loop
-				exitwhen (time <= 0.0 or thistype.enemyTargetLoopConditionResistant(target))
+				exitwhen (time <= 0.0 or AUnitSpell.enemyTargetLoopConditionResistant(target))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
-			if (not thistype.enemyTargetLoopConditionResistant(target)) then
+			if (not AUnitSpell.enemyTargetLoopConditionResistant(target)) then
 				debug call Print("Arcane Time: Remove timed life!")
 				call UnitRemoveBuffsEx(target, true, false, false, false, true, false, false) // remove timed life!
 			endif
@@ -84,7 +84,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private method pauseTimedLifeFor takes real time, unit target returns nothing
 			local effect whichEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call UnitAddAbility(target, thistype.positiveBuffAbilityId)
@@ -92,30 +92,30 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			debug call Print("Arcane Time: Start pausing timed life!")
 			call UnitPauseTimedLife(target, true)
 			loop
-				exitwhen (time <= 0.0 or thistype.allyTargetLoopCondition(target))
+				exitwhen (time <= 0.0 or AUnitSpell.allyTargetLoopCondition(target))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
 			debug call Print("Arcane Time: End pausing timed life!")
-			if (not thistype.allyTargetLoopCondition(target)) then
+			if (not AUnitSpell.allyTargetLoopCondition(target)) then
 				call UnitPauseTimedLife(target, false)
 			endif
 			call UnitRemoveAbility(target, thistype.positiveBuffAbilityId)
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private method removePositiveBuffsAfter takes real time, unit target returns nothing
 			local effect whichEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call UnitAddAbility(target, thistype.negativeBuffAbilityId)
 			call thistype.showTimeTextTag(target, -time)
 			loop
-				exitwhen (time <= 0.0 or thistype.enemyTargetLoopConditionResistant(target))
+				exitwhen (time <= 0.0 or AUnitSpell.enemyTargetLoopConditionResistant(target))
 				call TriggerSleepAction(1.0)
 				debug call Print("Arcane Time: 1 second.")
 				set time = time - 1.0
 			endloop
-			if (not thistype.enemyTargetLoopConditionResistant(target)) then
+			if (not AUnitSpell.enemyTargetLoopConditionResistant(target)) then
 				call UnitRemoveBuffs(target, true, false)
 				debug call Print("Arcane Timer: Remove positive buffs of enemy!")
 			debug else
@@ -125,17 +125,17 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private method removeNegativeBuffsAfter takes real time, unit target returns nothing
 			local effect whichEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_TARGET, target, "chest")
 			call UnitAddAbility(target, thistype.positiveBuffAbilityId)
 			call thistype.showTimeTextTag(target, time)
 			loop
-				exitwhen (time <= 0.0 or thistype.allyTargetLoopCondition(target))
+				exitwhen (time <= 0.0 or AUnitSpell.allyTargetLoopCondition(target))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
-			if (not thistype.allyTargetLoopCondition(target)) then
+			if (not AUnitSpell.allyTargetLoopCondition(target)) then
 				call UnitRemoveBuffs(target, false, true)
 				debug call Print("Arcane Timer: Remove negative buffs of ally!")
 			debug else
@@ -145,7 +145,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			call DestroyEffect(whichEffect)
 			set whichEffect = null
 		endmethod
-		
+
 		private method action takes nothing returns nothing
 			local AGroup targets = this.targets(GetSpellTargetX(), GetSpellTargetY())
 			local unit target
@@ -162,7 +162,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 						if (GetUnitAllianceStateToUnit(this.character().unit(), target) == bj_ALLIANCE_UNALLIED) then
 							set time = thistype.summonedRemovalTimeStartValue + (thistype.summonedRemovalTimeLevelValue * this.level())
 							call this.removeTimedLifeAfter.execute(time, target)
-						
+
 						else
 							set time = thistype.summonedTimeStartValue + (thistype.summonedTimeLevelValue * this.level())
 							call this.pauseTimedLifeFor.execute(time, target)
@@ -171,7 +171,7 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 						if (GetUnitAllianceStateToUnit(this.character().unit(), target) == bj_ALLIANCE_UNALLIED) then
 							set time = thistype.illusionRemovalTimeStartValue + (thistype.illusionRemovalTimeLevelValue * this.level())
 							call this.removeTimedLifeAfter.execute(time, target)
-						
+
 						else
 							set time = thistype.illusionTimeStartValue + (thistype.illusionTimeLevelValue * this.level())
 							call this.pauseTimedLifeFor.execute(time, target)
@@ -200,10 +200,10 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 			call this.addGrimoireEntry('A10O', 'A10T')
 			call this.addGrimoireEntry('A10P', 'A10U')
 			call this.addGrimoireEntry('A10Q', 'A10V')
-			
+
 			return this
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.whichSound = CreateSound("Abilities\\Spells\\Undead\\ReplenishMana\\SpiritTouch.wav", false, false, true, 12700, 12700, "")
 		endmethod

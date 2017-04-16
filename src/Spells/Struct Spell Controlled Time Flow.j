@@ -131,7 +131,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			debug call Print("Controlled Time Flow: " + I2S(allies.units().size()) + " allies.")
 
 			loop
-				exitwhen (time <= 0.0 or thistype.allyTargetLoopCondition(caster))
+				exitwhen (time <= 0.0 or AUnitSpell.allyTargetLoopCondition(caster))
 				call TriggerSleepAction(1.0)
 				// check for range of allies
 				set i = 0
@@ -165,7 +165,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			call RemoveRegion(mapRegion)
 			set mapRegion = null
 		endmethod
-		
+
 		private static method removeUnitFromGroupWithNewOp takes AGroup whichGroup, unit whichUnit returns nothing
 			call whichGroup.units().remove(whichUnit)
 		endmethod
@@ -174,7 +174,7 @@ library StructSpellsSpellControlledTimeFlow requires Asl, StructGameClasses, Str
 			local thistype this = thistype.allocate(character, Classes.wizard(), Spell.spellTypeUltimate1, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
 			call this.addGrimoireEntry('A1JP', 'A1JQ')
 			call this.addGrimoireEntry('A0K3', 'A0K4')
-			
+
 			return this
 		endmethod
 	endstruct

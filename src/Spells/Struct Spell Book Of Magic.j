@@ -1,9 +1,9 @@
-library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
+library StructSpellsSpellBookOfMagic requires StructSpellsSpellBookCraftingSpell
 
 	/**
 	 * Allows the creation of scrolls with the corresponding resources.
 	 */
-	struct SpellBookOfMagicScrollOfHex extends ASpell
+	struct SpellBookOfMagicScrollOfHex extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A18M'
 
 		private method condition takes nothing returns boolean
@@ -27,14 +27,14 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
 	/**
 	 * Allows the creation of scrolls with the corresponding resources.
 	 */
-	struct SpellBookOfMagicScrollOfNecromancy extends ASpell
+	struct SpellBookOfMagicScrollOfNecromancy extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A18N'
 
 		private method condition takes nothing returns boolean
@@ -58,11 +58,11 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfMagicScrollOfHealing extends ASpell
+	struct SpellBookOfMagicScrollOfHealing extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A18O'
 
 		private method condition takes nothing returns boolean
@@ -85,11 +85,11 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfMagicScrollOfMana extends ASpell
+	struct SpellBookOfMagicScrollOfMana extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A18P'
 
 		private method condition takes nothing returns boolean
@@ -112,11 +112,11 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfMagicScrollOfAncestors extends ASpell
+	struct SpellBookOfMagicScrollOfAncestors extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A19Y'
 
 		private method condition takes nothing returns boolean
@@ -141,11 +141,11 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfMagicScrollOfCollector extends ASpell
+	struct SpellBookOfMagicScrollOfCollector extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1AC'
 
 		private method condition takes nothing returns boolean
@@ -169,11 +169,11 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfMagicScrollOfWay extends ASpell
+	struct SpellBookOfMagicScrollOfWay extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1A7'
 
 		private method condition takes nothing returns boolean
@@ -197,7 +197,7 @@ library StructSpellsSpellBookOfMagic requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 

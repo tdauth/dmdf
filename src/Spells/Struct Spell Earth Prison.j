@@ -25,7 +25,7 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 			call UnitMakeAbilityPermanent(target, true, thistype.buffId)
 			set damageRecorder = ADamageRecorder.create(target)
 			loop
-				exitwhen (time <= 0.0 or ASpell.enemyTargetLoopCondition(target) or damageRecorder.totalDamage() > 0.0)
+				exitwhen (time <= 0.0 or AUnitSpell.enemyTargetLoopCondition(target) or damageRecorder.totalDamage() > 0.0)
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop
@@ -39,14 +39,14 @@ library StructSpellsSpellEarthPrison requires Asl, StructGameClasses, StructGame
 
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action)
-			
+
 			call this.addGrimoireEntry('A1KD', 'A1KE')
 			call this.addGrimoireEntry('A0ZA', 'A0ZF')
 			call this.addGrimoireEntry('A0ZB', 'A0ZG')
 			call this.addGrimoireEntry('A0ZC', 'A0ZH')
 			call this.addGrimoireEntry('A0ZD', 'A0ZI')
 			call this.addGrimoireEntry('A0ZE', 'A0ZJ')
-			
+
 			return this
 		endmethod
 	endstruct
