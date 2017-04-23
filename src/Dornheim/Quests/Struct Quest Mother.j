@@ -7,12 +7,12 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemGotlinde = 3
 		private trigger m_hintTriggerHans
 
-		private static method onAddItemToRucksackFood takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
-			local thistype this = thistype.characterQuest.evaluate(inventory.character())
+		private static method onAddItemToBackpackFood takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
+			local thistype this = thistype.characterQuest.evaluate(ACharacterInventory(inventory).character())
 			local integer count0 = 0
 			local integer count1 = 0
 			if (this.questItem(thistype.questItemGoods).isNew()) then
-				if (firstTime and inventory.rucksackItemData(index) != 0 and (inventory.rucksackItemData(index).itemTypeId() == 'I016' or inventory.rucksackItemData(index).itemTypeId() == 'I03O')) then
+				if (firstTime and inventory.backpackItemData(index) != 0 and (inventory.backpackItemData(index).itemTypeId() == 'I016' or inventory.backpackItemData(index).itemTypeId() == 'I03O')) then
 					set count0 = this.character().inventory().totalItemTypeCharges('I016')
 					set count1 = this.character().inventory().totalItemTypeCharges('I03O')
 
@@ -30,7 +30,7 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 			//call character.giveQuestItem(thistype.itemTypeId)
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
 
-			call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksackFood)
+			call character.inventory().addOnAddToBackpackFunction(thistype.onAddItemToBackpackFood)
 
 			return super.enableUntil(thistype.questItemTalk)
 		endmethod

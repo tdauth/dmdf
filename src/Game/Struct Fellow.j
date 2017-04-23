@@ -205,7 +205,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call UnitMakeAbilityPermanent(this.unit(), true, 'AInv')
 
 			call this.m_inventory.enable()
-			call this.m_inventory.enableOnlyRucksack(true)
+			call this.m_inventory.enableOnlyBackpack(true)
 
 			if (thistype.m_infoMessageJoin != null) then
 				if (character == 0) then
@@ -292,7 +292,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			/*
 			 * Make sure the fellow cannot carry items forever and they become unreachable for the players.
 			 */
-			call this.m_inventory.dropAllRucksack(GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
+			call this.m_inventory.dropAllBackpack(GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
 			call this.m_inventory.disable()
 
 			// Make sure that you cannot give a fellow items afterwards.

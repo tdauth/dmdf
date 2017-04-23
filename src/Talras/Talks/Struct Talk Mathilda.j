@@ -365,7 +365,7 @@ library StructMapTalksTalkMathilda requires Asl, StructGameFellow, StructMapMapF
 
 		// (Charakter hat Holz und Goldmünzen dabei)
 		private static method infoConditionLumberAndGold takes AInfo info, ACharacter character returns boolean
-			return character.inventory().totalRucksackItemTypeCharges('I02P') > 0 and GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= 100
+			return character.inventory().totalBackpackItemTypeCharges('I02P') > 0 and GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= 100
 		endmethod
 
 		// Hier sind das Holz und die Goldmünzen.

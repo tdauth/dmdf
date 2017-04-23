@@ -387,7 +387,7 @@ endif
 		 * The spell levels has been stored in \ref realSpellLevels() while calling \ref morph().
 		 * \note Has to be called just after the character's unit restores from morphing.
 		 */
-		public method restoreUnit takes boolean disableInventory, boolean enableRucksackOnly returns boolean
+		public method restoreUnit takes boolean disableInventory, boolean enableBackpackOnly returns boolean
 			if (not this.hasRealSpellLevels()) then
 				debug call Print("Has not been morphed before!")
 				return false
@@ -397,8 +397,8 @@ endif
 				debug call Print("Enabling inventory again")
 				call this.characterInventory().setEnableAgain(true)
 				call this.characterInventory().enable()
-			elseif (enableRucksackOnly) then
-				call this.inventory().enableOnlyRucksack(false)
+			elseif (enableBackpackOnly) then
+				call this.inventory().enableOnlyBackpack(false)
 			endif
 
 			call this.updateGrimoireAfterPassiveTransformation()
@@ -416,10 +416,10 @@ endif
 		* \note Has to be called just before the character's unit morphes.
 		* \param spell The spell from which this method is called. Since there can only be one morphing at a time this spell can be accessed via \ref morphSpell() after successful morphing.
 		* \param disableInventory If this value is true, the inventory system of the characer is disabled.
-		* \param enableRucksackOnly If this value is true, at least the rucksack is enabled but \p disableInventory has to be false.
+		* \param enableBackpackOnly If this value is true, at least the backpack is enabled but \p disableInventory has to be false.
 		* \return Returns true on successful morphing. Otherwise it returns false.
 		*/
-		public method morph takes SpellMetamorphosis spell, boolean disableInventory, boolean enableRucksackOnly returns boolean
+		public method morph takes SpellMetamorphosis spell, boolean disableInventory, boolean enableBackpackOnly returns boolean
 			debug if (GetUnitAbilityLevel(this.unit(), 'AInv') == 0) then
 			debug call Print("It is too late to store the items! Add a delay for the morphing ability!")
 			debug endif
@@ -437,12 +437,12 @@ endif
 			if (disableInventory) then
 				call this.characterInventory().setEnableAgain(false)
 				debug call Print("Disabling inventory")
-				// Should remove but store all items and their permanently added abilities if the rucksack is open!
+				// Should remove but store all items and their permanently added abilities if the backpack is open!
 				call this.characterInventory().disable()
 				debug call Print("After disabling inventory")
-			elseif (enableRucksackOnly) then
+			elseif (enableBackpackOnly) then
 				// unequipping leads to melee unit, always!
-				call this.inventory().enableOnlyRucksack(true)
+				call this.inventory().enableOnlyBackpack(true)
 			endif
 
 			set this.m_isMorphed = true
@@ -533,7 +533,7 @@ endif
 		public method giveItem takes integer itemTypeId returns nothing
 			local item whichItem = CreateItem(itemTypeId, GetUnitX(this.unit()), GetUnitY(this.unit()))
 			call SetItemPlayer(whichItem, this.player(), true)
-			// make sure it is put into the rucksack if possible and that it works even if the character is morphed and has no inventory ability.
+			// make sure it is put into the backpack if possible and that it works even if the character is morphed and has no inventory ability.
 			call this.inventory().addItem(whichItem)
 			//call UnitAddItem(this.unit(), whichItem)
 		endmethod
@@ -546,7 +546,7 @@ endif
 			call SetItemPawnable(whichItem, false)
 			call SetItemInvulnerable(whichItem, true)
 			call SetItemPlayer(whichItem, this.player(), true)
-			// make sure it is put into the rucksack if possible and that it works even if the character is morphed and has no inventory ability.
+			// make sure it is put into the backpack if possible and that it works even if the character is morphed and has no inventory ability.
 			call this.inventory().addItem(whichItem)
 			//call UnitAddItem(this.unit(), whichItem)
 		endmethod

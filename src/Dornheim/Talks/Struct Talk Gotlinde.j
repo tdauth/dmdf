@@ -25,14 +25,14 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 				call character.giveItem('I03V')
 			elseif (character.class() == Classes.dragonSlayer()) then
 				// sword and morning star
-				call character.giveItem(ItemTypes.shortword().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
 				call character.giveItem('I06I')
 			elseif (character.class() == Classes.druid()) then
 				// simple druid staff
 				call character.giveItem('I06J')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			set i = 0

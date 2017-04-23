@@ -6,10 +6,10 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemReport = 2
 		private trigger m_hintTriggerHans
 
-		private static method onAddItemToRucksackRuke takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
-			local thistype this = thistype.characterQuest.evaluate(inventory.character())
+		private static method onAddItemToBackpackRuke takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
+			local thistype this = thistype.characterQuest.evaluate(ACharacterInventory(inventory).character())
 			if (this.questItem(thistype.questItemBuyRake).isNew()) then
-				if (firstTime and inventory.rucksackItemData(index) != 0 and inventory.rucksackItemData(index).itemTypeId() == 'I02F') then
+				if (firstTime and inventory.backpackItemData(index) != 0 and inventory.backpackItemData(index).itemTypeId() == 'I02F') then
 					call this.questItem(thistype.questItemBuyRake).setState(thistype.stateCompleted)
 				endif
 			endif
@@ -20,7 +20,7 @@ library StructMapQuestsQuestRalphsGarden requires Asl, Game, StructMapMapNpcs
 			//call character.giveQuestItem(thistype.itemTypeId)
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
 
-			call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksackRuke)
+			call character.inventory().addOnAddToBackpackFunction(thistype.onAddItemToBackpackRuke)
 
 			return super.enableUntil(thistype.questItemGarden)
 		endmethod

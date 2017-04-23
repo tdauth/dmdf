@@ -439,7 +439,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				if (UnitItemInSlot(whichUnit, i) != null) then
 					set itemType = ItemType.itemTypeOfItem(UnitItemInSlot(whichUnit, i))
 					if (itemType != 0) then
-						call itemType.addPermanentAbilities(whichUnit)
+						call itemType.addAbilities(whichUnit)
 					endif
 				endif
 				set i = i + 1

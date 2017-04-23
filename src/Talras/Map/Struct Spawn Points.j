@@ -584,7 +584,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 
 			set thistype.m_undeadsWithKing = SpawnPoint.create()
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n01P_0068, 1.0)
-			call thistype.m_undeadsWithKing.addNewItemType(index, ItemTypes.swordOfDarkness().itemType(), 1.0)
+			call thistype.m_undeadsWithKing.addNewItemType(index, ItemTypes.swordOfDarkness().itemTypeId(), 1.0)
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n00Z_0067, 1.0)
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n00Z_0066, 1.0)
 			set index = thistype.m_undeadsWithKing.addUnitWithType(gg_unit_n01O_0178, 1.0)
