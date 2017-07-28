@@ -2,6 +2,8 @@
 #include <QtGui>
 #include <QtWidgets>
 
+#include <thread>
+
 int main(int argc, char** argv)
 {
 	QApplication app(argc, argv);
@@ -45,9 +47,9 @@ int main(int argc, char** argv)
 
 		QProcess *myProcess = new QProcess(&app);
 		myProcess->start(program, arguments);
-		myProcess->waitForFinished();
-
+		std::this_thread::sleep_for(std::chrono::seconds(4));
 		splash.close();
+		myProcess->waitForFinished();
 	}
 	else
 	{
