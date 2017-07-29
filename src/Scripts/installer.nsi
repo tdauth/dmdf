@@ -45,7 +45,7 @@ Section "Application" Application
 SectionEnd
 
 Section "English Maps" EnglishMaps
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\en"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\en"
 	File "${INPUT_DIR}\en\Dornheim${VERSION}.w3x"
 	File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
 	File "${INPUT_DIR}\en\Gardonar${VERSION}.w3x"
@@ -60,7 +60,7 @@ Section "English Maps" EnglishMaps
 SectionEnd
 
 Section "German Maps" GermanMaps
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\de"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\de"
 	File "${INPUT_DIR}\de\Dornheim${VERSION}.w3x"
 	File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
 	File "${INPUT_DIR}\de\Gardonar${VERSION}.w3x"
@@ -75,17 +75,17 @@ Section "German Maps" GermanMaps
 SectionEnd
 
 Section "German Campaign" GermanCampaign
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
 	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}de.w3n"
 SectionEnd
 
 Section "English Campaign" EnglishCampaign
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
 	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
 Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
 	File "${INPUT_DIR}\DH.w3x"
 	File "${INPUT_DIR}\TL.w3x"
 	File "${INPUT_DIR}\GA.w3x"
@@ -99,7 +99,7 @@ Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
 SectionEnd
 
 Section "English Singleplayer Campaign" EnglishSinglePlayerCampaign
-	SetOutPath "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
 	File "${INPUT_DIR}\en\DH.w3x"
 	File "${INPUT_DIR}\en\TL.w3x"
 	File "${INPUT_DIR}\en\GA.w3x"
@@ -135,7 +135,7 @@ SectionEnd
 
 Section "JNGP" JNGP
 	SetOutPath "$INSTDIR\The Power of Fire\JNGP"
-	File /r "${INPUT_DIR_TPOF}\tools\JNGP"
+	File /r "${INPUT_DIR_TPOF}\tools\"
 SectionEnd
 
 Section "Source Code" SourceCode
@@ -159,11 +159,11 @@ Section "ASL Source Documentation" AslDocumentation
 SectionEnd
 
 Section "Uninstall"
-	 Delete "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
-	 Delete "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
-	 RMDir /r "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
-	 RMDir /r "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
-	 RMDir /r "$PROFILE\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
+	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
+	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
+	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
+	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
+	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
 	 RMDir /r "$INSTDIR\Abilities"
 	 RMDir /r "$INSTDIR\Fonts"
 	 RMDir /r "$INSTDIR\Icons"
