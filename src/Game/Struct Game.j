@@ -198,7 +198,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 	 */
 	struct Game
 		/// The version of the current release of the modification.
-		public static constant string gameVersion = "0.9"
+		public static constant string gameVersion = "1.0"
 
 		/**
 		 * The polling interval in seconds when waiting for a video.
