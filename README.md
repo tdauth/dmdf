@@ -93,9 +93,9 @@ On Windows the release process consists of the following steps:
 * Create the archive TPoF.mpq from the directory "archive".
 * Create the executable TPoF.exe with MPQraft using this MPQ archive into the directory "E:/Warcraft III/"
 * Export the latest object data from the map "maps/Karte 1 - Talras.w3x" and import it into all other maps (if they use custom Doodads, only import the other parts).
-* Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically.
-* Run the script "src/Scripts/makereleasemaps.bat". This script creates all German release versions of the maps and prepares the English ones.
-* Open the prepared English maps (for example in "maps/releases/Arena/Arena0.9.w3x") with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory.
+* Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release.
+* Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
+* Open the prepared English maps (for example in "maps/releases/Arena/Arena<version>.w3x") with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory.
 * After having done this for ALL maps run the script "src/Scripts/makeenglishreleasemaps.bat" which creates the English optimized release maps.
 * Open the German campaign "TPoF10de.w3n" and replace all chapters by the maps from "maps/releases" (for example "TL.w3x") and save it.
 * Open the English campaign "TPoF10en.w3n" and replace all chapters by the maps from "maps/releases/en" (for example "TL.w3x") and save it.
