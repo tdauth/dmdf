@@ -15,7 +15,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method initSettings takes nothing returns nothing
 			call MapSettings.setMapName("TN")
-			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0008)
 		endmethod
 

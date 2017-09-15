@@ -14,29 +14,6 @@
  * Using triggers instead of function pointers is a bit more complicated. Since the GUI trigger does not simply allow handling with function references it is much easier to simply use a whole trigger as a function pointer. To use a trigger as function pointer a unique hash table has to be used such as \ref TalkStartActionsHashTable and the trigger has to be stored using a passed function argument (passed to the function of the function pointer) as parent key. Then a predefined function which matches the function interface has to be set as function pointer. When the function of the pointer is called it uses the parameter which was used as parent key again to restore the stored trigger and calls the trigger instead of doing anything else. Thus a trigger is called in the end which has been specified by the user. Any trigger parameters have to be attached as well like it is done for event handling using \ref DmdfHashTable.global() and the called trigger.
  */
 
-/**
- * Predefinition simplifies the usage of the systems.
- * These are the default values for the ASL and the modification TPoF.
- */
-globals
-	constant boolean A_SYSTEMS = true
-	constant boolean A_DEBUG_HANDLES = false
-	constant boolean A_DEBUG_NATIVES = false
-	constant real A_MAX_COLLISION_SIZE = 300
-	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
-	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
-	constant boolean DMDF_INFO_LOG = true
-	constant boolean DMDF_NPC_ROUTINES = true
-	constant boolean DMDF_VIOLENCE = true
-	constant boolean DMDF_CREDITS = true
-
-	// used by function GetTimeString()
-	constant string A_TEXT_TIME_VALUE = "0%1%" // GetLocalizedString(
-	constant string A_TEXT_TIME_PAIR = "%1%:%2%" // GetLocalizedString(
-	// used by ADialog
-	constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%" // GetLocalizedString(
-endglobals
-
 //! import "Import Asl.j"
 //! import "Import Dmdf.j"
 //! import "Systems/Debug/Text en.j"

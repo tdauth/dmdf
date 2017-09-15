@@ -63,9 +63,9 @@ call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Test
 call thistype.addContributor("Clemens Weichard", tre("Eigenes Let's Play", "Custom Let's Play"))
 
 call thistype.addTitle(tre("Musik", "Music"))
-call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Pippin the Hunchback")
 call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Minstrel Guild")
 call thistype.addContributor("Freesound.org - swamp_at_dusk.wav", "MeffyElli")
+call thistype.addContributor("Karlheinz Stockhausen", "Luzifers Abschied")
 // TODO add main menu music
 
 /*
