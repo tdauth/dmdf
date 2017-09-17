@@ -4,6 +4,7 @@ The Power of Fire
 "Die Macht des Feuers" (engl. The Power of Fire) is a cooperative RPG multiplayer modification for Warcraft III: The Frozen Throne.
 All source code is put under the GPLv3.
 
+# Repository and Resources
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
 Since I have pushed the history of binary map and campaign files as well, the history became quite big.
 
@@ -19,9 +20,10 @@ The Power of Fire (German "Die Macht des Feuers") is a modification of the realt
 It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign traveling between multiple maps.
 
 # vJass
-vJass is a scripting language based on Warcraft III's scripting language JASS. It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
+[vJass](http://www.wc3c.net/vexorian/jasshelpermanual.html) is a scripting language based on Warcraft III's scripting language JASS. It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
 
-The first and probably most popular compiler is the JassHelper. It has also been used for The Power of Fire.
+The first and probably most popular compiler is the [JassHelper](http://www.wc3c.net/showthread.php?t=88142).
+It has also been used for The Power of Fire.
 
 By now other approaches with a better syntax exist like Wurst which has not been there when the project was started. It is highly unlikely that the modification will change its core scripting language since too much code is based on it. Besides it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
 
@@ -34,6 +36,8 @@ This file is automatically loaded by Warcraft III when put into its directory.
 It is also automatically loaded by the World Editor.
 
 # Creating a new Map
+
+To create a new map for the modification, several things have to applied for the map to make it work with the modification.
 
 ## Import Code
 
@@ -50,8 +54,32 @@ The maps have to be saved with the help of the JassHelper which generates a JASS
 
 Every map has to provide a struct called MapData with several methods and static constants which are used by the Game backend of the modification to run all required systems.
 
-## Required Rects
+## GUI Triggers
+Instead of importing the code manually and providing a MapData struct, GUI triggers in the World Editor's trigger editor can be used.
+TheNorth.w3x is one existing map which follows this approach rather than using vJass code.
+The War3Mod.mpq file has to exist in the Warcraft III directory to use the GUI trigger API provided by The Power of Fire.
+When the World Editor is started it show new trigger functions in the trigger editor for the modification.
+To use them the following code has to be used in the custom map script:
+```
+//! import "TriggerData/TPoF.j"
+```
 
+There has to be a map settings initialization trigger which looks like this:
+```
+Init Settings
+    Events
+        Map - Trigger Register Map Init Settings Event
+    Conditions
+    Actions
+        Map - Set Map Settings Map Name to TN
+        Map - Set Map Settings Allied Player to Spieler 7 (GrÃ¼n)
+        Map - Set Map Settings Player Neutral feindlich Gives XP True
+        Map - Set Map Settings Goldmine to Unit Marktplatz 0008 <gen>
+        Map - Set Map Settings Music to Sound\Music\mp3Music\Pippin the Hunchback.mp3;Sound\Music\mp3Music\PippinTheHunchback.mp3
+        Map - Set Map Settings Start Level To 60
+```
+
+## Required Rects
 Every map requires some specific rects for the systems of the modiciation:
 * gg_rct_main_window_credits
 * gg_rct_main_window_info_log
@@ -97,3 +125,15 @@ On Windows the release process consists of the following steps:
 Each map can be optimized using some standard routines. First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore. This can happen when a hero ability is change to a unit ability but some hero only fields are still changed. This optimization reduces the number of strings which have to be translated or optimized later.
 
 Besides all object data fields which are for the World Editor only can be optimized. These are usually editor only suffixes. The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
+
+# Credits
+This modification has been created by Tamino Dauth.
+There is many other people which contributed to the modification.
+They are listed in the file `src/Game/Credits.j`.
+The core team has been:
+* Oliver T. - 3D graphics.
+* Andreas B. - Much of the terrain of the maps Talras and Holzbruck, testing, design.
+* Johanna W. - Testing.
+
+The resources which are not part of this repository like models and textures are mainly from websites like [HIVE](https://www.hiveworkshop.com/) and [Warcraft 3 Campaigns](http://www.wc3c.net/).
+They have been created by many different people.
