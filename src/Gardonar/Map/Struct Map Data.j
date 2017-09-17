@@ -100,8 +100,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemTypeId(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
@@ -122,8 +122,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				// Haunted Staff
 				call character.giveItem('I03V')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways

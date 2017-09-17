@@ -6,8 +6,7 @@ Unicode true
 !define INPUT_DIR_ASL "E:\Projekte\asl\"
 !define INPUT_DIR_TPOF "E:\Projekte\dmdf\"
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
-!define INPUT_SPLASH_DIR "E:\Projekte\dmdf\splash\TPoFSplash\build\TPoF"
-!define INPUT_ARCHIVE_DIR "E:\Projekte\dmdf\archive"
+!define INPUT_ARCHIVE "E:\Projekte\dmdf\War3Mod.mpq"
 !define OUTPUT_WARCRAFT_DOCUMENTS_DIR "Warcraft III"
 !define VERSION "1.0"
 !define CAMPAIGN_VERSION "10"
@@ -35,13 +34,8 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
-	File /r "${INPUT_ARCHIVE_DIR}\"
-	File /r "${INPUT_SPLASH_DIR}"
+	File "${INPUT_ARCHIVE}"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
-
-	SetOutPath "$INSTDIR\TPoF"
-	CreateShortCut "$INSTDIR\The Power of Fire.lnk" "$INSTDIR\TPoF\The Power of Fire.exe" ""
-	CreateShortCut "$DESKTOP\The Power of Fire.lnk" "$INSTDIR\The Power of Fire.lnk" ""
 SectionEnd
 
 Section "English Maps" EnglishMaps
@@ -85,7 +79,7 @@ Section "English Campaign" EnglishCampaign
 SectionEnd
 
 Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF${CAMPAIGN_VERSION}de"
 	File "${INPUT_DIR}\DH.w3x"
 	File "${INPUT_DIR}\TL.w3x"
 	File "${INPUT_DIR}\GA.w3x"
@@ -99,7 +93,7 @@ Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
 SectionEnd
 
 Section "English Singleplayer Campaign" EnglishSinglePlayerCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF${CAMPAIGN_VERSION}en"
 	File "${INPUT_DIR}\en\DH.w3x"
 	File "${INPUT_DIR}\en\TL.w3x"
 	File "${INPUT_DIR}\en\GA.w3x"
@@ -164,20 +158,7 @@ Section "Uninstall"
 	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
 	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
 	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
-	 RMDir /r "$INSTDIR\Abilities"
-	 RMDir /r "$INSTDIR\Icons"
-	 RMDir /r "$INSTDIR\Models"
-	 RMDir /r "$INSTDIR\Objects"
-	 RMDir /r "$INSTDIR\PathTextures"
-	 RMDir /r "$INSTDIR\ReplaceableTextures"
-	 RMDir /r "$INSTDIR\Scripts"
-	 RMDir /r "$INSTDIR\Sound"
-	 RMDir /r "$INSTDIR\TerrainArt"
-	 RMDir /r "$INSTDIR\Textures"
-	 RMDir /r "$INSTDIR\UI"
-	 RMDir /r "$INSTDIR\Units"
-	 RMDir /r "$INSTDIR\UserInterfaces"
-	 Delete "$INSTDIR\CharacterManagement.tga"
+	 Delete "$INSTDIR\War3Mod.mpq"
 	 RMDir /r "$INSTDIR\The Power of Fire"
 	 RMDir /r "$INSTDIR\ASL"
 	 RMDir /r "$INSTDIR\TPoF"

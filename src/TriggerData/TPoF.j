@@ -445,7 +445,7 @@ function InventoryEquipmentItemType takes AUnitInventory inventory, integer equi
 endfunction
 
 function InventoryRucksackItemType takes AUnitInventory inventory, integer index returns integer
-	local AUnitInventoryItemData itemData = inventory.rucksackItemData(index)
+	local AUnitInventoryItemData itemData = inventory.backpackItemData(index)
 	if (itemData != 0) then
 		return itemData.itemTypeId()
 	endif
@@ -453,7 +453,7 @@ function InventoryRucksackItemType takes AUnitInventory inventory, integer index
 endfunction
 
 function InventoryRucksackItemCharges takes AUnitInventory inventory, integer index returns integer
-	local AUnitInventoryItemData itemData = inventory.rucksackItemData(index)
+	local AUnitInventoryItemData itemData = inventory.backpackItemData(index)
 	if (itemData != 0) then
 		return itemData.charges()
 	endif
@@ -912,12 +912,12 @@ struct MapData
 	public static method onStart takes nothing returns nothing
 	endmethod
 
-	private static method onEquipItem takes AInventory inventory, integer index, boolean firstTime returns nothing
+	private static method onEquipItem takes ACharacterInventory inventory, integer index, boolean firstTime returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnEquipItemTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
-			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory.unitInventory())
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
 			call ConditionalTriggerExecute(characterOnEquipItemTriggers[i])
@@ -925,12 +925,12 @@ struct MapData
 		endloop
 	endmethod
 
-	private static method onAddItemToRucksack takes AInventory inventory, integer index, boolean firstTime returns nothing
+	private static method onAddItemToRucksack takes ACharacterInventory inventory, integer index, boolean firstTime returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnAddRucksackItemTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
-			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory.unitInventory())
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
 			call ConditionalTriggerExecute(characterOnAddRucksackItemTriggers[i])
@@ -943,7 +943,7 @@ struct MapData
 		local integer i = 0
 		// Do this on the character creation ONCE!
 		call character.inventory().addOnEquipFunction(thistype.onEquipItem)
-		call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksack)
+		call character.inventory().addOnAddToBackpackFunction(thistype.onAddItemToRucksack)
 		loop
 			exitwhen (i == mapSelectClassTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(mapSelectClassTriggers[i], TRIGGERDATA_KEY_CHARACTER, character)

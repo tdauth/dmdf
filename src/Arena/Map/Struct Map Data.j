@@ -78,14 +78,14 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			elseif (class == Classes.dragonSlayer()) then
 				// sword and morning star
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
 				call UnitAddItemToSlotById(whichUnit, 'I06I', 3)
 			elseif (class == Classes.druid()) then
 				// simple druid staff
 				call UnitAddItemToSlotById(whichUnit, 'I06J', 2)
 			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemTypeId(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
@@ -107,14 +107,14 @@ library StructMapMapMapData requires Asl, StructGameGame
 				call character.giveItem('I03V')
 			elseif (character.class() == Classes.dragonSlayer()) then
 				// sword and morning star
-				call character.giveItem(ItemTypes.shortword().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
 				call character.giveItem('I06I')
 			elseif (character.class() == Classes.druid()) then
 				// simple druid staff
 				call character.giveItem('I06J')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
