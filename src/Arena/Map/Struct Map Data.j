@@ -21,7 +21,7 @@ library StructMapMapMapData requires Asl, StructGameGame
 		/// Required by \ref Game.
 		public static method initSettings takes nothing returns nothing
 			call MapSettings.setMapName("AR")
-			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setMaxPlayers(12)
 			call MapSettings.setAlliedPlayer(null)
 			call MapSettings.setNeutralPassivePlayer(Player(PLAYER_NEUTRAL_PASSIVE))
