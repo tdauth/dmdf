@@ -3,7 +3,6 @@
 Unicode true
 
 !define PROJECTS_DIR "E:\Projekte\"
-!define INPUT_DIR_ASL "E:\Projekte\asl\"
 !define INPUT_DIR_TPOF "E:\Projekte\dmdf\"
 !define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
 !define INPUT_ARCHIVE "E:\Projekte\dmdf\War3Mod.mpq"
@@ -142,16 +141,6 @@ Section "Documentation" Documentation
 	File /r "${INPUT_DIR_TPOF}\doc"
 SectionEnd
 
-Section "ASL Source Code" AslSourceCode
-	SetOutPath "$INSTDIR\ASL\"
-	File /r "${INPUT_DIR_ASL}\src"
-SectionEnd
-
-Section "ASL Source Documentation" AslDocumentation
-	SetOutPath "$INSTDIR\ASL\"
-	File /r "${INPUT_DIR_ASL}\doc"
-SectionEnd
-
 Section "Uninstall"
 	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
 	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
@@ -160,7 +149,6 @@ Section "Uninstall"
 	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
 	 Delete "$INSTDIR\War3Mod.mpq"
 	 RMDir /r "$INSTDIR\The Power of Fire"
-	 RMDir /r "$INSTDIR\ASL"
 	 RMDir /r "$INSTDIR\TPoF"
 	 Delete "$INSTDIR\The Power of Fire.lnk"
 	 Delete "$DESKTOP\The Power of Fire.lnk"

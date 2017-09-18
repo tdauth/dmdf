@@ -68,6 +68,10 @@ Download the [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
 It has to be installed into the subdirectory "jasshelper" of the Warcraft III directory.
 It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (http://www.wc3c.net/showpost.php?p=1115263&postcount=154).
 
+# JassNewGenPack or SharpCraft World Editor Extended Bundle
+Use either the [JassNewGenPack](https://www.hiveworkshop.com/threads/jass-newgen-pack-official.290525/) or the [SharpCraft World Editor Extended Bundle](https://www.hiveworkshop.com/threads/sharpcraft-world-editor-extended-bundle.292127) to create and modify maps of the modification.
+These tools allow the usage of vJass and disable the Doodad limit of the World Editor.
+
 # Advanced Script Library
 The Advanced Script Library (short ASL) is the core of this modification.
 Its code can be found in the ddirectory `src/ASL`.
@@ -318,7 +322,7 @@ On Windows the release process consists of the following steps:
 * Create the archive TPoF.mpq from the directory "archive".
 * Create the executable TPoF.exe with MPQraft using this MPQ archive into the directory "E:/Warcraft III/"
 * Export the latest object data from the map "maps/Karte 1 - Talras.w3x" and import it into all other maps (if they use custom Doodads, only import the other parts).
-* Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully.
+* Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully. Warning: When the maps are saved once, they contain the generated JASS map script. Therefore, a second save won't import the vJass code anymore. Hence, a manual save with the JassNewGenPack's World Editor is preferred.
 * Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
 * Open the prepared English maps (for example in "maps/releases/Arena/Arena<version>.w3x") with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory.
 * After having done this for ALL maps run the script "src/Scripts/makeenglishreleasemaps.bat" which creates the English optimized release maps.
