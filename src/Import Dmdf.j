@@ -1,3 +1,5 @@
+//! import "Asl/Import Asl.j"
+//! import "Asl/Systems/Debug/Text en.j"
 //! import "Game/Import.j"
 //! import "Guis/Import.j"
 //! import "Quests/Import.j"

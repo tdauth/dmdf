@@ -1,7 +1,8 @@
 The Power of Fire
 ======================
 
-"Die Macht des Feuers" (engl. The Power of Fire) is a cooperative RPG multiplayer modification for Warcraft III: The Frozen Throne.
+The Power of Fire (German "Die Macht des Feuers") is a cooperative RPG multiplayer modification of the realtime strategy game Warcraft III: The Frozen Throne.
+It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign which allows traveling between multiple maps.
 All source code is put under the GPLv3.
 
 # Repository and Resources
@@ -11,13 +12,107 @@ Since I have pushed the history of binary map and campaign files as well, the hi
 The model, texture and sound resources are not part of this repository.
 Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install all resources files.
 
-# Dependencies
-You need the [Advanced Scripting Library](https://github.com/tdauth/asl) to use this code.
-The ASL is the core of this modification's code.
+# JassHelper Setup
+JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
+code from being compiled correctly.
+Read the following posts for further information:
+http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
+http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
 
-# Introduction
-The Power of Fire (German "Die Macht des Feuers") is a modification of the realtime strategy game Warcraft III: The Frozen Throne.
-It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign traveling between multiple maps.
+Options [forcemethodevaluate] and [noimplicitthis] are supported!
+
+Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set:
+```
+[lookupfolders]
+// Just type the folders where //! import would look for if relative paths where used, include the final \
+// embed them in quotes
+// example: "c:\"
+// The order causes priority:
+"C:\\YourDirectory\\dmdf\\src"
+
+[externaltools]
+// this is for //! external NAME args the syntax is "NAME","executable path"
+// example:
+//"OBJMERGE","c:\kool.exe"
+
+//*
+//* grimextension pack by pitzermike:
+//*
+"FileImporter","grimext\FileImporter.exe"
+"ObjectMerger","grimext\ObjectMerger.exe"
+"PathMapper","grimext\PathMapper.exe"
+"TileSetter","gimext\TileSetter.exe"
+"ConstantMerger","grimext\ConstantMerger.exe"
+"TriggerMerger","grimext\TriggerMerger.exe"
+"FileExporter","grimext\\FileExporter.exe"
+"PatchGenerator","grimext\\PatchGenerator.exe"
+
+[wewarlock]
+//put the path to WEWarlock between quotes
+//Ex: "C:\WeWarlock-0.7.0\WarlockCompiler.exe"
+
+[jasscompiler]
+//this is to specify what compiler to use, normally pjass.exe,
+// though you may also want to use JassParserCLI.exe ...
+"JassParserCLI.exe"
+// The next line specifies the jass syntax checker's arguments:
+"--report-leaks --pjass $COMMONJ $BLIZZARDJ $WAR3MAPJ"
+// i.e. You can change it to "$COMMONJ +rb $BLIZZARDJ -rb $WAR3MAPJ"
+// in case of a recent  PJass version ...
+
+[forcemethodevaluate]
+[noimplicitthis]
+```
+
+Download the [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
+It has to be installed into the subdirectory "jasshelper" of the Warcraft III directory.
+It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (http://www.wc3c.net/showpost.php?p=1115263&postcount=154).
+
+# Advanced Script Library
+The Advanced Script Library (short ASL) is the core of this modification.
+Its code can be found in the ddirectory `src/ASL`.
+It has formerly been a separate repository but is now merged into this repository.
+
+## Code Integration
+Use file `src/ASL/Import Asl.j` to import all required scripts.
+Usually you have to change the lookup folder entry in the "jasshelper.conf" file of your JassHelper
+program before.
+The JassHelper has to lookup folder "src" in this directory. If configured correctly you're able to
+write a simple statement like `//! import "Import Asl.j` into your own code or map script.
+
+The following list shows you which global constants have to be specified in your custom code that ASL works properly:
+```
+globals
+	constant boolean A_SYSTEMS = true
+	constant boolean A_DEBUG_HANDLES = false // not usable yet!
+	constant boolean A_DEBUG_NATIVES = false
+	constant real A_MAX_COLLISION_SIZE = 500.0 // used by function GetUnitCollisionSize
+	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10 // used by function GetUnitCollisionSize
+	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6 // used by function IsUnitSpellResistant
+	// used by function GetTimeString()
+	constant string A_TEXT_TIME_VALUE = "0%1%"
+	constant string A_TEXT_TIME_PAIR = "%1%:%2%"
+	// used by ATalk
+	constant string A_TEXT_EXIT = "Exit"
+	constant string A_TEXT_BACK = "Back"
+	constant string A_TEXT_TARGET_TALKS_ALREADY = "Target is already talking."
+	// used by ADialog
+	constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%" // first one is the button short cut (integer), second one is the button text (string)
+endglobals
+```
+
+If you're using debug mode and ASL's debug utilities (ASystemsDebug) you'll have to defined lots of cheat strings.
+For default English strings you can import a pre-defined file using:
+//! import "Systems/Debug/Text en.j"
+
+WARNING: Apparently, GetLocalizedString() in constant strings crashes the game in map selection!
+
+WARNING: Using % chars in the custom map script leads to unexpected results. You should define the globals somewhere else if possible.
+
+## BonusMod Support
+For using Bonus Mod you have to make an entry in the "jasshelper.conf" file for the object merger tool.
+It should always be named "ObjectMerger".
+You have to import file "src/ASL/Systems/BonusMod/Creation Bonus Mod.j" once to create all object editor data required by Bonus Mod code.
 
 # vJass
 [vJass](http://www.wc3c.net/vexorian/jasshelpermanual.html) is a scripting language based on Warcraft III's scripting language JASS. It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
@@ -35,24 +130,103 @@ Therefore, The Power of Fire provides a custom file called "War3Mod.mpq" with al
 This file is automatically loaded by Warcraft III when put into its directory.
 It is also automatically loaded by the World Editor.
 
+# Adding new Item Types
+To add range items like bows you have to create a custom item type.
+
+To use the proper attack animations the IDs of the item types have to added to methods like
+ItemTypes.itemTypeIdIsTwoHandedLance() for example.
+
 # Creating a new Map
 
 To create a new map for the modification, several things have to applied for the map to make it work with the modification.
+
+## Directory Structure
+It's highly recommended by me that you divide your map code into several files which are placed
+in various directories.
+Your map code folder should look like this:
+Spells - directory for map-specific spell structs
+Map - directory for default map structs
+Videos - directory for map video structs
+Quests - directory for map quest structs
+Talks - directory for map talk structs
+Import.j - file for map code library and import statements
 
 ## Import Code
 
 Every map has to import the vJass systems of the modification.
 Simply add the following code snippet to the custom map script:
 ```
-//! import "Import Asl.j"
 //! import "Import Dmdf.j"
-//! import "Systems/Debug/Text en.j"
 ```
 The maps have to be saved with the help of the JassHelper which generates a JASS map script based on the vJass code.
 
 ## MapData
 
 Every map has to provide a struct called MapData with several methods and static constants which are used by the Game backend of the modification to run all required systems.
+```
+struct MapData
+	private static method create takes nothing returns thistype
+		return 0
+	endmethod
+
+	private method onDestroy takes nothing returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method initSettings takes nothing returns nothing
+		call MapSettings.setMapName("AR")
+		// Set all MapSettings properties here
+	endmethod
+
+	/// Required by \ref Game.
+	public static method init takes nothing returns nothing
+	endmethod
+
+	/**
+	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+	 * Required by \ref ClassSelection.
+	 */
+	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+	endmethod
+
+	/// Required by \ref Game.
+	public static method initMapSpells takes ACharacter character returns nothing
+		call initMapCharacterSpells.evaluate(character)
+	endmethod
+
+	/// Required by \ref Game.
+	public static method onStart takes nothing returns nothing
+	endmethod
+
+	/// Required by \ref ClassSelection.
+	public static method onSelectClass takes Character character, AClass class, boolean last returns nothing
+	endmethod
+
+	/// Required by \ref ClassSelection.
+	public static method onRepick takes Character character returns nothing
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method onRestoreCharacter takes string zone, Character character returns nothing
+	endmethod
+
+	/// Required by \ref MapChanger.
+	public static method onRestoreCharacters takes string zone returns nothing
+	endmethod
+
+	/**
+	 * Required by \ref Game. Called by .evaluate()
+	 */
+	public static method initVideoSettings takes nothing returns nothing
+	endmethod
+
+	/**
+	 * Required by \ref Game. Called by .evaluate()
+	 */
+	public static method resetVideoSettings takes nothing returns nothing
+	endmethod
+endstruct
+```
 
 ## GUI Triggers
 Instead of importing the code manually and providing a MapData struct, GUI triggers in the World Editor's trigger editor can be used.
@@ -85,6 +259,36 @@ Every map requires some specific rects for the systems of the modiciation:
 * gg_rct_main_window_info_log
 * gg_rct_class_selection - At the center of this rect the class selection unit is placed.
 
+There is a list of color definitions for those various rect types which are used in maps:
+* cheat rects - purple
+* quest rects - white
+* layer rects - orange
+* main window rects - black
+* shrine discover rects - yellow
+* shrine revival rects - red
+* spawn point rects - grey
+* video rects - green
+* waypoint rects - grey blue
+* weather rects - dark green
+* music rects - pink
+* marker rects - magenta
+* default map rects - lite blue
+
+Besides there are some naming conventions:
+* cheat rects - "cheat <cheat name>"
+* quest rects - "quest <quest name> [quest item <quest item number> | <user-specific description>]"
+* layer rects - "layer <layer name> [entry <entry number> | exit <exit number>]"
+* main window rects - "main window <main window name>"
+* shrine discover rects - "shrine <shrine number|shrine identifier> discover"
+* shrine revival rects - "shrine <shrine number|shrine identifier> revival"
+* spawn point rects - "spawn point <spawn point identifier|<spawn point creature name> <spawn point number of spawn points with same creature type>>"
+* video rects - "video <video name> <rect identifier>"
+* waypoint rects - "waypoint <npc name> <rect number|rect identifier>"
+* weather rects - "weather <location name>"
+* music rects - "music <location name>"
+* marker rects - "marker <marker name>"
+* default map rects - "<rect name>"
+
 ## Required Camera Setups
 * gg_cam_class_selection - This camera setup is used for the view of the class selection in the beginning of the game.
 * gg_cam_main_window - This camera setup is used for viewing the main windows of the custom GUI system.
@@ -102,10 +306,10 @@ The campaign file has to be copied and uses the translated maps. Besides the inf
 
 Besides the file for the user interface has to be replaced.
 
-# Icons
+# Generating Level Icons for the Grimoire
 The grimoire icons require an icon with every level from 0 to 6. There is an ability per level for the grimoire since changing the icon of an ability cannot be done dynamically. The script `Scripts/dmdf-all-grimoire-icons` creates all those icons using ImageMagick. Since ImageMagick cannot handle BLP files. The icons have to be converted into PNG or TGA files.
 
-# Release
+# Release Process
 To update the translations always add English translations to the file "maps/Talras/war3map_en.wts".
 To update all translations automatically use wc3trans from the wc3lib project. The script "src/Scripts/jenkins/dmdf_translation.sh" contains everything.
 
@@ -125,6 +329,22 @@ On Windows the release process consists of the following steps:
 Each map can be optimized using some standard routines. First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore. This can happen when a hero ability is change to a unit ability but some hero only fields are still changed. This optimization reduces the number of strings which have to be translated or optimized later.
 
 Besides all object data fields which are for the World Editor only can be optimized. These are usually editor only suffixes. The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
+
+# Trigger Editor Integration
+To provide the trigger editor integration, the two files `TriggerData.txt` and `TriggerStrings.txt` have to be generated.
+The files `src/TriggerData/TriggerData.txt` and `src/TriggerData/TriggerStrings.txt` are automatically merged by the program wc3converter to generate the files `UI/TriggerData.txt` and `UI/TriggerStrings.txt` in the MPQ archive War3Mod.mpq.
+
+The tool wc3converter is provided by the project wc3lib.
+It can be used the following way to create a new trigger data file:
+```
+wc3converter --merge TriggerDataNew.txt <path to original TriggerData.txt from War3Patch.mpq> gui/UI/TriggerData.txt
+```
+
+Then import the file "TriggerDataNew.txt" as `UI\TriggerData.txt`.
+
+Import the file "gui_<language id>/UI/TriggerStrings.txt" as `UI\TriggerStrings.txt`.
+
+Import the file "gui_<language id>/UI/WorldEditStrings.txt" as `UI\WorldEditStrings.txt`.
 
 # Credits
 This modification has been created by Tamino Dauth.

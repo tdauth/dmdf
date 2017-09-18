@@ -1,0 +1,41 @@
+- Types should be able to be private or public members of libraries and scopes.
+- Types should be able to be contained by a struct or an interface.
+- Function interfaces should be able to be private or public members of libraries and scopes.
+- Function interfaces should be able to be contained by a struct or an interface.
+- DEPRECATED: Functions which are using function interfaces should be able to be contained by a struct or an interface.
+- Text macros should be able to be private or public members of libraries and scopes.
+- Text macros should be able to be contained by a struct or an interface.
+- Text macro instances should be able to be private or public members of libraries and scopes.
+- DEPRECATED ("thistype"): Keyword "self" should point at the current struct.
+- Keyword "protected" should be added.
+- Size-specified structures should be able to extend interfaces.
+- Size-specified structures should be able to extend structures with the same size.
+- "static if" should be considered by "//! import" and "//! runtextmacro" statements or something similar like "//! if" should be added.
+
+- improve type checks: function interfaces variables can get non-static functions (with wrong parameters) without any error, explicit casting!
+- improve function declaration checks: TriggerAddAction( - function has to be declared before?
+
+Bugs:
+- Constants from common.j or Blizzard.j can not be used as array sizes.
+- Private destructors are not really private.
+- The debug keyword can not be used for the globals and endglobals keyword.
+- You can not define the size of an array struct (struct bla extends array[10]).
+
+Reported Bugs:
+http://www.wc3c.net/showpost.php?p=1124945&postcount=3566
+http://www.wc3c.net/showpost.php?p=1122504&postcount=3556
+http://www.wc3c.net/showpost.php?p=1115249&postcount=3220
+http://www.wc3c.net/showpost.php?p=1113594&postcount=3084
+http://www.wc3c.net/showpost.php?p=1092010&postcount=2036
+http://www.wc3c.net/showpost.php?p=1113647&postcount=3090
+http://www.wc3c.net/showpost.php?p=1120884&postcount=3511
+http://www.wc3c.net/showpost.php?p=1114829&postcount=3152
+http://www.wc3c.net/showpost.php?p=1114678&postcount=3144
+http://www.wc3c.net/showpost.php?p=1114682&postcount=3147
+http://www.wc3c.net/showpost.php?p=1114130&postcount=3107
+http://www.wc3c.net/showpost.php?p=1114312&postcount=3119
+http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
+http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
+http://www.wc3c.net/showpost.php?p=1136086&postcount=168
+http://www.wc3c.net/showpost.php?p=1136208&postcount=172
+http://www.wc3c.net/showpost.php?p=1136328&postcount=178

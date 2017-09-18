@@ -1,6 +1,6 @@
 SET CLIJASSHELPER="E:\Warcraft III\jasshelper\clijasshelper.exe"
-SET COMMONJ="E:\Projekte\asl\src\common.j"
-SET BLIZZARDJ="E:\Projekte\asl\src\Blizzard.j"
+SET COMMONJ="E:\Projekte\dmdf\src\Asl\common.j"
+SET BLIZZARDJ="E:\Projekte\dmdf\src\Asl\Blizzard.j"
 SET OPTIONS=""
 SET DIR="E:\Projekte\dmdf\src\Scripts"
 REM "--debug"
