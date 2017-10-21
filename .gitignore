@@ -1,5 +1,6 @@
 /archives
 /archive
+/releases
 /Ressourcen
 /oldsound
 /oldstuff
@@ -8,3 +9,10 @@
 /splash/TPoFSplash/build/CMakeFiles
 /splash/TPoFSplash/build/Makefile
 /War3Mod.mpq
+/maps/Abilities.w3a
+/maps/Buffs.w3h
+/maps/Destructibles.w3b
+/maps/Doodads.w3d
+/maps/Items.w3t
+/maps/Researches.w3q
+/maps/Units.w3u
