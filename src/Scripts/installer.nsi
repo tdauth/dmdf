@@ -2,16 +2,16 @@
 
 Unicode true
 
-!define PROJECTS_DIR "E:\Projekte\"
-!define INPUT_DIR_TPOF "E:\Projekte\dmdf\"
-!define INPUT_DIR "E:\Projekte\dmdf\maps\releases"
-!define INPUT_ARCHIVE "E:\Projekte\dmdf\War3Mod.mpq"
+!define PROJECTS_DIR "F:\Projekte\"
+!define INPUT_DIR_TPOF "F:\Projekte\dmdf\"
+!define INPUT_DIR "F:\Projekte\dmdf\maps\releases"
+!define INPUT_ARCHIVE "F:\Projekte\dmdf\War3Mod.mpq"
 !define OUTPUT_WARCRAFT_DOCUMENTS_DIR "Warcraft III"
 !define VERSION "1.0"
 !define CAMPAIGN_VERSION "10"
 
 Name "The Power of Fire"
-OutFile "E:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"
+OutFile "F:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
 
 !define MUI_ABORTWARNING

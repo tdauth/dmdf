@@ -371,21 +371,20 @@ The script `Scripts/dmdf-all-grimoire-icons` creates all those icons using Image
 Since ImageMagick cannot handle BLP files. The icons have to be converted into PNG or TGA files.
 
 ## Release Process <a name="release_process"></a>
-To update the translations always add English translations to the file "maps/Talras/war3map_en.wts".
-To update all translations automatically use wc3trans from the wc3lib project. The script "src/Scripts/jenkins/dmdf_translation.sh" contains everything.
+To update the translations always add English translations to the file `maps/Talras/war3map_en.wts`.
+To update all translations automatically use wc3trans from the wc3lib project. The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything.
 
-On Windows the project is expected in the directory "E:/Projekte/dmdf".
+On Windows the project is expected in the directory `F:/Projekte/dmdf`.
 On Windows the release process consists of the following steps:
-* Create the archive TPoF.mpq from the directory "archive".
-* Create the executable TPoF.exe with MPQraft using this MPQ archive into the directory "E:/Warcraft III/"
-* Export the latest object data from the map "maps/Karte 1 - Talras.w3x" and import it into all other maps (if they use custom Doodads, only import the other parts).
+* Create the archive War3Mod.mpq from the directory `archive` in the project folder.
+* Export the latest object data from the map `maps/Karte 1 - Talras.w3x` and import it into all other maps (if they use custom Doodads, only import the other parts).
 * Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully. Warning: The script uses the exported map scripts of all maps. If they are outdated (files like `maps/Talras/war3map.j`), they have to be extracted from the maps after saving them without the JassHelper enabled.
 * Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
-* Open the prepared English maps (for example in "maps/releases/Arena/Arena<version>.w3x") with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory.
-* After having done this for ALL maps run the script "src/Scripts/makeenglishreleasemaps.bat" which creates the English optimized release maps.
-* Open the German campaign "TPoF10de.w3n" and replace all chapters by the maps from "maps/releases" (for example "TL.w3x") and save it.
-* Open the English campaign "TPoF10en.w3n" and replace all chapters by the maps from "maps/releases/en" (for example "TL.w3x") and save it.
-* Call the NSIS script "src/Scripts/installer.nsi" to create the installer. It includes the development files.
+* Open the prepared English maps (for example in `maps/releases/Arena/Arena<version>.w3x`) with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory. This could be automated by an MPQ tool in the future.
+* After having done this for ALL maps run the script `src/Scripts/makeenglishreleasemaps.bat` which creates the English optimized release maps.
+* Open the German campaign `TPoF10de.w3n` and replace all chapters by the maps from `maps/releases` (for example `TL.w3x`) and save it.
+* Open the English campaign `TPoF10en.w3n` and replace all chapters by the maps from `maps/releases/en` (for example `TL.w3x`) and save it.
+* Execute the NSIS script `src/Scripts/installer.nsi` to create the installer. It includes the development files.
 
 Each map can be optimized using some standard routines. First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore. This can happen when a hero ability is change to a unit ability but some hero only fields are still changed. This optimization reduces the number of strings which have to be translated or optimized later.
 
