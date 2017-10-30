@@ -8,7 +8,8 @@ library StructSpellsSpellManaExplosion requires Asl, StructGameClasses, StructGa
 		public static constant integer classSelectionAbilityId = 'A1M9'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1MA'
 		public static constant integer maxLevel = 5
-		private static constant integer buffId = 0 /// @todo FIXME
+		/// \todo Add buff.
+		private static constant integer buffId = 0
 		private static constant real manaStartValue = 40.0
 		private static constant real manaLevelValue = 40.0
 

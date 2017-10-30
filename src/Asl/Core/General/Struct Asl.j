@@ -3,7 +3,6 @@ library AStructCoreGeneralAsl requires optional ALibraryCoreDebugMisc, ALibraryC
 	struct Asl
 		public static constant string version = "1.3"
 		public static constant string maintainer = "Tamino Dauth"
-		public static constant string website = "http://wc3lib.org/vjass.html"
 
 		private static method create takes nothing returns thistype
 			return 0
@@ -31,7 +30,6 @@ static if (DEBUG_MODE) then
 			call Print("Advanced Script Library")
 			call Print(StringArg(tr("Version: %s"), thistype.version))
 			call Print(StringArg(tr("Maintainer: %s"), thistype.maintainer))
-			call Print(StringArg(tr("Website: %s"), thistype.website))
 			if (thistype.useDebugHandles()) then
 				call Print(tr("* uses debug handles"))
 			endif

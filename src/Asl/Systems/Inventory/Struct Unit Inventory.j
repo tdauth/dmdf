@@ -243,14 +243,17 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		/**
 		 * No empty slot is required since picking up items with full inventory is supported as well as buying items with a full inventory as long as the shop is selected by the player before.
 		 * If no empty slot is used the items however can not be dropped with all stacks at once (which the empty slot was used for).
+		 * \ref AItemType.equipmentTypeAmulet gets the last two slots. Therefore two amulets can be carried. \todo \ref AItemType.maxEuqipmentTypes, vJass bug
 		 */
-		public static constant integer maxEquipmentTypes = 6 /// \ref AItemType.equipmentTypeAmulet gets the last two slots. Therefore two amulets can be carried. \todo \ref AItemType.maxEuqipmentTypes, vJass bug
-		public static constant integer maxBackpackPages = 30 //maxBackpackItems / maxBackpackItemsPerPage
+		public static constant integer maxEquipmentTypes = 6
+		/// maxBackpackItems / maxBackpackItemsPerPage
+		public static constant integer maxBackpackPages = 30
 		/**
 		 * Picking up an item is still possible although all slots are used by detecting the order and running some code manually.
 		 */
 		public static constant integer maxBackpackItemsPerPage = 4
-		public static constant integer maxBackpackItems = 120 // TODO thistype.maxBackpackPages * thistype.maxBackpackItemsPerPage
+		/// TODO thistype.maxBackpackPages * thistype.maxBackpackItemsPerPage
+		public static constant integer maxBackpackItems = 120
 		public static constant integer previousPageItemSlot = 4
 		public static constant integer nextPageItemSlot = 5
 		// static construction members

@@ -21,7 +21,8 @@ library StructGameMapSettings
 		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
 		private static real m_revivalTime = 35.0
 		private static integer m_startLevel = 1
-		private static integer m_startSkillPoints = 1 /// Includes the skill point for the default spell.
+		/// Includes the skill point for the default spell.
+		private static integer m_startSkillPoints = 1
 		private static integer m_levelSkillPoints = 2
 		private static integer m_maxLevel = 10000
 		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.

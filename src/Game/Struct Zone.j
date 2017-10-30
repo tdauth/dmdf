@@ -154,6 +154,12 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			return index
 		endmethod
 
+		/**
+		 * Checks whether it is allowed to travel to a zone with other units.
+		 * The units should be transfered to the zone's map just like the character unit.
+		 * \param zoneName The name of the zone for which the flag is returned.
+		 * \return Returns true if it is allowed. Otherwise, it returns false.
+		 */
 		public static method zoneAllowTravelingWithOtherUnits takes string zoneName returns boolean
 			local integer index = thistype.zoneNameIndex(zoneName)
 			if (index != -1) then
@@ -161,6 +167,8 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			debug else
 				debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
 			endif
+
+			return false
 		endmethod
 	endstruct
 

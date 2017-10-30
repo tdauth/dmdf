@@ -6,7 +6,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 	 * \todo At the moment many functions don't work because of the corrupted JassHelper implementation.
 	 * \sa containers
 	 */
-	//! textmacro A_NUMERIC_VECTOR takes STRUCTPREFIX, NAME, PARENTNAME, ELEMENTTYPE
+	//! textmacro A_NUMERIC_VECTOR takes STRUCTPREFIX, NAME, PARENTNAME, ELEMENTTYPE, NULLVALUE
 
 		$STRUCTPREFIX$ struct $NAME$ extends $PARENTNAME$
 			public static constant string parentName = "$PARENTNAME$"
@@ -16,7 +16,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 			 */
 			public method max takes nothing returns $ELEMENTTYPE$
 				local integer i = 0
-				local $ELEMENTTYPE$ result = 0
+				local $ELEMENTTYPE$ result = $NULLVALUE$
 				loop
 					exitwhen (i == this.size())
 					if (this[i] > result) then
@@ -34,7 +34,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 				local integer i
 				local $ELEMENTTYPE$ result
 				if (this.empty()) then
-					return 0
+					return $NULLVALUE$
 				endif
 				set result = this[0]
 				set i = 1
@@ -63,6 +63,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 			endmethod
 
 			/// \todo FIXME JassHelper bug.
+			/*
 			public method add takes $ELEMENTTYPE$ value returns nothing
 				local integer i = 0
 				debug call PrintMethodError("$NAME$", this, "add", "JassHelper bug!")
@@ -105,6 +106,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 					set i = i + 1
 				endloop
 			endmethod
+			*/
 
 			/**
 			 * Compares the sums of two vectors.
@@ -145,7 +147,7 @@ library AStructCoreGeneralNumericVector requires AStructCoreGeneralVector
 
 	//! endtextmacro
 
-	//! runtextmacro A_NUMERIC_VECTOR("", "AIntegerNumericVector", "AIntegerVector", "integer")
-	//! runtextmacro A_NUMERIC_VECTOR("", "ARealNumericVector", "ARealVector", "real")
+	//! runtextmacro A_NUMERIC_VECTOR("", "AIntegerNumericVector", "AIntegerVector", "integer", "0")
+	//! runtextmacro A_NUMERIC_VECTOR("", "ARealNumericVector", "ARealVector", "real", "0.0")
 
 endlibrary

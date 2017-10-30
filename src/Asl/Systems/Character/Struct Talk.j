@@ -37,7 +37,8 @@ library AStructSystemsCharacterTalk requires ALibraryCoreDebugMisc, AStructCoreG
 		public static constant string defaultTextExit = "Exit"
 		public static constant string defaultTextBack = "Back"
 		// static members
-		private static AIntegerList m_cinematicTalks = 0 /// \note allocated on request, not in \ref thistype.init() anymore!
+		/// \note allocated on request, not in \ref thistype.init() anymore!
+		private static AIntegerList m_cinematicTalks = 0
 		// dynamic members
 		private integer m_orderId
 		private real m_maxOrderDistance

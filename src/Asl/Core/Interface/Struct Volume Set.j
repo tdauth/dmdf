@@ -5,8 +5,10 @@ library AStructCoreInterfaceVolumeSet
 	 * \sa VolumeGroupSetVolume, VolumeGroupReset, VolumeGroupSetVolumeForPlayerBJ, SetCineModeVolumeGroupsImmediateBJ, SetSpeechVolumeGroupsImmediateBJ
 	 */
 	struct AVolumeSet
-		public static constant integer volumeGroups = 8 /// \todo vJass bug, SOUND_VOLUMEGROUP_FIRE + 1
-		private real array m_scale[8] /// \todo vJass bug, thistype.volumeGroups
+		/// \todo vJass bug, SOUND_VOLUMEGROUP_FIRE + 1
+		public static constant integer volumeGroups = 8
+		/// \todo vJass bug, thistype.volumeGroups
+		private real array m_scale[8]
 
 		public method apply takes nothing returns nothing
 			local integer i = 0

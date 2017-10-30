@@ -46,8 +46,8 @@ Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcr
 JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
 code from being compiled correctly.
 Read the following posts for further information:
-http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
-http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
+* http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
+* http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
 
 Options [forcemethodevaluate] and [noimplicitthis] are supported!
 

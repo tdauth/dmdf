@@ -37,8 +37,10 @@ library ALibraryCoreEnvironmentTimeOfDay requires ALibraryCoreStringConversion
 	endfunction
 
 	globals
-		constant integer ADailyMinutes = 1440 // 24 * 60
-		constant integer ADailySeconds = 86400 // 24 * 60 * 60
+		/// 24 * 60
+		constant integer ADailyMinutes = 1440
+		/// 24 * 60 * 60
+		constant integer ADailySeconds = 86400
 	endglobals
 
 	function GetTimeOfDayElapsedMinutesEx takes real timeOfDay returns integer

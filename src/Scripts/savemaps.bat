@@ -1,10 +1,10 @@
-SET CLIJASSHELPER="F:\Warcraft III\jasshelper\clijasshelper.exe"
+SET CLIJASSHELPER="F:\wc3tools\Jass NewGen Pack Official\jasshelper\clijasshelper.exe"
 SET PROJECT_DIR="F:\Projekte"
 SET COMMONJ="%PROJECT_DIR%\dmdf\src\Asl\common.j"
 SET BLIZZARDJ="%PROJECT_DIR%\dmdf\src\Asl\Blizzard.j"
 SET OPTIONS=""
 SET DIR="%PROJECT_DIR%\dmdf\src\Scripts"
-SET WORKING_DIR="F:\Warcraft III"
+SET WORKING_DIR="F:\wc3tools\Jass NewGen Pack Official\jasshelper"
 REM "--debug"
 
 REM Apparently the JassHelper cannot run parallel.

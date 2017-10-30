@@ -1,7 +1,8 @@
 library ALibraryCoreDebugMisc initializer init requires ALibraryCoreGeneralPlayer, AStructCoreGeneralHashTable, AStructCoreGeneralList
 
 	globals
-		boolean ADisplayPrint = true /// If this value is false nothing will be displayed on the screen when \ref Print() etc. is called.
+		/// If this value is false nothing will be displayed on the screen when \ref Print() etc. is called.
+		boolean ADisplayPrint = true
 	endglobals
 
 	/**
@@ -180,7 +181,7 @@ static if (DEBUG_MODE) then
 		/**
 		 * \copydoc PrintStructInstanceMessage
 		 */
-		public method print takes string message returns nothing //stub
+		public method print takes string message returns nothing
 			call PrintStructInstanceMessage($STRUCTNAME$, this, message)
 		endmethod
 
@@ -335,7 +336,7 @@ endif
 			debug call PrintFunctionError("ShowInterface", "Don't use 0.0 for fade duration when enabling flag since it will prevent unit portraits from working correctly.")
 		endif
 	endfunction
-	
+
 	function DebugTriggerSleepAction takes real time returns nothing
 		if (time <= 0.0) then
 			debug call PrintFunctionError("TriggerSleepAction", "Don't use 0.0. Minimum is around 0.02. Use 0-timers if you want to be more precise.")
