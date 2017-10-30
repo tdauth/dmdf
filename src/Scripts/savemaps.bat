@@ -14,7 +14,7 @@ call savemap.bat %CLIJASSHELPER% %COMMONJ% %BLIZZARDJ% %OPTIONS% %WORKING_DIR% "
 cd %DIR%
 call savemap.bat %CLIJASSHELPER% %COMMONJ% %BLIZZARDJ% %OPTIONS% %WORKING_DIR% "%PROJECT_DIR%\dmdf\maps\TheNorth.w3x" "%PROJECT_DIR%\dmdf\maps\TheNorth\war3map.j"
 cd %DIR%
-call savemap.bat %CLIJASSHELPER% %COMMONJ% %BLIZZARDJ% %OPTIONS% %WORKING_DIR% "%PROJECT_DIR%\dmdf\maps\Tutorial.w3x" "%PROJECT_DIR%\dmdf\maps\Tutorials\war3map.j"
+call savemap.bat %CLIJASSHELPER% %COMMONJ% %BLIZZARDJ% %OPTIONS% %WORKING_DIR% "%PROJECT_DIR%\dmdf\maps\Tutorial.w3x" "%PROJECT_DIR%\dmdf\maps\Tutorial\war3map.j"
 cd %DIR%
 call savemap.bat %CLIJASSHELPER% %COMMONJ% %BLIZZARDJ% %OPTIONS% %WORKING_DIR% "%PROJECT_DIR%\dmdf\maps\WorldMap.w3x" "%PROJECT_DIR%\dmdf\maps\WorldMap\war3map.j"
 cd %DIR%
