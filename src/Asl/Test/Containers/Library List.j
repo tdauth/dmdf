@@ -1,4 +1,4 @@
-library ALibraryTestContainersList requires ALibraryCoreDebugMisc, AStructCoreDebugBenchmark, AStructCoreGeneralList, AStructCoreGeneralMap, AStructCoreGeneralVector
+library ALibraryTestContainersList requires ALibraryCoreDebugMisc, AStructCoreDebugBenchmark, AStructCoreGeneralList, AStructCoreGeneralVector
 
 	globals
 		private constant integer insertions = 1000
@@ -22,36 +22,6 @@ static if (DEBUG_MODE) then
 		loop
 			exitwhen (list.size() == insertions)
 			call list.pushBack(generateValue())
-		endloop
-		call benchmark.stop()
-		return benchmark
-	endfunction
-
-	private function mapFindSpeedTest takes AIntegerMap map, integer value returns ABenchmark
-		local ABenchmark benchmark = ABenchmark.create("Map find speed test (key)")
-		call benchmark.start()
-		call map.find(value)
-		call benchmark.stop()
-		return benchmark
-	endfunction
-
-	private function mapFindValueSpeedTest takes AIntegerMap map, integer value returns ABenchmark
-		local ABenchmark benchmark = ABenchmark.create("Map find speed test (value)")
-		call benchmark.start()
-		call map.contains(value) // value is key
-		call benchmark.stop()
-		return benchmark
-	endfunction
-
-	private function mapInsertionsSpeedTest takes AIntegerMap map returns ABenchmark
-		local ABenchmark benchmark = ABenchmark.create("Map insertions speed test")
-		local integer i = 0
-		local integer value
-		call benchmark.start()
-		loop
-			exitwhen (map.size() == insertions)
-			set value = generateValue()
-			call map.insert(value, value)
 		endloop
 		call benchmark.stop()
 		return benchmark
@@ -91,16 +61,12 @@ endif
 	function AListDebug takes nothing returns nothing
 static if (DEBUG_MODE) then
 		local AIntegerList list = AIntegerList.create()
-		local AIntegerMap map = AIntegerMap.create()
 		local AIntegerVector vector = AIntegerVector.create()
 
 		call listInsertionsSpeedTest(list)
-		call mapInsertionsSpeedTest(map)
 		call vectorInsertionsSpeedTest(vector)
 
 		call listFindSpeedTest(list, 10)
-		call mapFindSpeedTest(map, 10)
-		call mapFindValueSpeedTest(map, 10)
 		call vectorFindSpeedTest(vector, 10)
 		call vectorFindValueSpeedTest(vector, 10)
 
@@ -117,7 +83,6 @@ static if (DEBUG_MODE) then
 		//! runtextmacro A_REVERSE_FOREACH_END()
 
 		call list.destroy()
-		call map.destroy()
 		call vector.destroy()
 endif
 	endfunction

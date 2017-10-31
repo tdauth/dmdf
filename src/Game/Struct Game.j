@@ -546,12 +546,10 @@ endif
 			call AGui.setShortcutAbility('y', 'A012')
 			call AGui.setShortcutAbility('z', 'A013')
 			call AWidget.init("Sound\\Interface\\MouseClick1.wav", null)
-			call ACheckBox.init0("", "") /// @todo set correct image file paths
-			call AVote.init(4.0, tre("%1% hat für \"%2%\" gestimmt (%3% Stimme(n)).", "%1% voted for \"%2%\" (%3% vote(s))."), tre("Abstimmung wurde mit dem Ergebnis \"%1%\" abgeschlossen (%2% Stimme(n)).", "Voting has been completed with the result \"%1%\" (%2% vote(s))."))
 			// character systems
 			// In the Bonus Campaign the ping rate for quests is 25.0 seconds.
 			call AAbstractQuest.init(25.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tre("%s", "%s"), tre("|cffc3dbff%s (Abgeschlossen)|r", "|cffc3dbff%s (Completed)|r"), tre("%s (|c00ff0000Fehlgeschlagen|r)", "%s (|c00ff0000Failed|r)"), tre("+%i Stufe(n)", "+%i level(s)"), tre("+%i Fähigkeitenpunkt(e)", "+%i skill point(s)"), tre("+%i Erfahrung", "+%i experience"), tre("+%i Stärke", "+%i strength"), tre("+%i Geschick", "+%i dexterity"), tre("+%i Wissen", "+%i lore"), tre("+%i Goldmünze(n)", "+%i gold coin(s)"), tre("+%i Holz", "+%i lumber"))
-			call ACharacter.init(true, true, true, false, false, true, true, true, DMDF_INFO_LOG)
+			call ACharacter.init(true, true, true, false, false, true, true, true)
 			call initSpeechSkip(AKeyEscape, 0.01)
 			call AUnitInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), tre("%1% angelegt.", "Equipped %1%"), tre("Rucksack ist voll.", "Backpack is full."), tre("%1% im Rucksack verstaut.", "%1% put into the bag."), tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved."), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."), tre("Vorherige Seite ist bereits voll.", "Previous page is already full."), tre("Nächste Seite ist bereits voll.", "Next page is already full."))
 			call AItemType.init(tre("Gegenstand benötigt eine höhere Stufe.", "Item requires a higher level."), tre("Gegenstand benötigt mehr Stärke.", "Item requires more strength."), tre("Gegenstand benötigt mehr Geschick.", "Items requires more dexterity."), tre("Gegenstand benötigt mehr Wissen.", "Item requires more lore."))
@@ -560,10 +558,8 @@ endif
 			call AVideo.init(tre("Spieler %s möchte das Video überspringen.", "Player %s wants to skip the video."), tre("Video wird übersprungen.", "Video has been skipped."))
 			// world systems
 			call ASpawnPoint.init()
-			// Die Macht des Feuers
+			// The Power of Fire
 			// game
-			// TODO use when fixed
-			//call CommandButton.init.evaluate()
 			set thistype.m_onDamageActions = AIntegerList.create()
 static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system

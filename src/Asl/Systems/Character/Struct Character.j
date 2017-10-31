@@ -18,7 +18,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 		private static boolean m_useViewSystem
 		private static boolean m_useRevivalSystem
 		private static boolean m_useInventorySystem
-		private static boolean m_useTalkLogSystem
 		// static members
 		private static thistype array m_playerCharacter[12] /// \todo [bj_MAX_PLAYERS] vjass bug
 		// dynamic members
@@ -36,7 +35,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 		private AView m_view
 		private ARevival m_revival
 		private ACharacterInventory m_inventory
-		private ATalkLog m_talkLog
 		private AIntegerVector m_spells
 
 		//! runtextmacro optional A_STRUCT_DEBUG("\"ACharacter\"")
@@ -149,10 +147,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 		 */
 		public method inventory takes nothing returns AUnitInventory
 			return this.m_inventory.unitInventory.evaluate()
-		endmethod
-
-		public method talkLog takes nothing returns ATalkLog
-			return this.m_talkLog
 		endmethod
 
 		/**
@@ -414,9 +408,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			if (thistype.m_useInventorySystem) then
 				call this.m_inventory.store.evaluate(cache, missionKey, "Inventory")
 			endif
-			if (thistype.m_useTalkLogSystem) then
-				call this.m_talkLog.store(cache, missionKey, "TalkLog")
-			endif
 		endmethod
 
 		/**
@@ -437,9 +428,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			endif
 			if (thistype.m_useInventorySystem) then
 				call this.m_inventory.restore.evaluate(cache, missionKey, "Inventory")
-			endif
-			if (thistype.m_useTalkLogSystem) then
-				call this.m_talkLog.restore(cache, missionKey, "TalkLog")
 			endif
 		endmethod
 
@@ -510,14 +498,8 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 				call this.m_revival.enable.evaluate()
 			endif
 			/*
-			inventory and talk log systems aren't movable systems!
-			if (thistype.m_useInventorySystem and this.m_inventory.enableAgain()) then
-				call this.m_inventory.enable()
-			endif
-			if (thistype.m_useTalkLogSystem and this.m_talkLog.enableAgain()) then
-				call this.m_talkLog.enable()
-			endif
-			*/
+			 * inventory and talk log systems aren't movable systems!
+			 */
 		endmethod
 
 		private method disableMovableSystems takes nothing returns nothing
@@ -528,14 +510,8 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 				call this.m_revival.disable.evaluate()
 			endif
 			/*
-			inventory and talk log systems aren't movable systems!
-			if (thistype.m_useInventorySystem and this.m_inventory.isEnabled()) then
-				call this.m_inventory.disable()
-			endif
-			if (thistype.m_useTalkLogSystem and this.m_talkLog.isEnabled()) then
-				call this.m_talkLog.disable()
-			endif
-			*/
+			 * inventory and talk log systems aren't movable systems!
+			 */
 		endmethod
 
 		private static method triggerConditionIsCharacter takes nothing returns boolean
@@ -583,9 +559,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			if (thistype.m_useInventorySystem) then
 				set this.m_inventory = ACharacterInventory.create.evaluate(this)
 			endif
-			if (thistype.m_useTalkLogSystem) then
-				set this.m_talkLog = ATalkLog.create.evaluate(this)
-			endif
 		endmethod
 
 		public static method create takes player whichPlayer, unit whichUnit returns thistype
@@ -600,7 +573,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			set this.m_isMovable = true
 			// members
 			set this.m_inventory = 0
-			set this.m_talkLog = 0
 			set this.m_spells = AIntegerVector.create()
 
 			if (thistype.m_destroyOnPlayerLeaves or thistype.m_shareOnPlayerLeaves) then
@@ -651,9 +623,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			if (thistype.m_useInventorySystem) then
 				call this.m_inventory.destroy()
 			endif
-			if (thistype.m_useTalkLogSystem) then
-				call this.m_talkLog.destroy()
-			endif
 		endmethod
 
 		// Automatic destruction when player leaves
@@ -695,13 +664,11 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 		 * \param useViewSystem Shows if the view system is used.
 		 * \param useRevivalSystem Shows if the revival system is used.
 		 * \param useInventorySystem Shows if the inventory system is used.
-		 * \param useTalkLogSystem Shows if the talk log system is used.
 		 * \sa AView
 		 * \sa ARevival
 		 * \sa ACharacterInventory
-		 * \sa ATalkLog
 		 */
-		public static method init takes boolean doAlwaysAddExperience, boolean removeUnitOnDestruction, boolean destroyOnPlayerLeaves, boolean shareOnPlayerLeaves, boolean destroyOnDeath, boolean useViewSystem, boolean useRevivalSystem, boolean useInventorySystem, boolean useTalkLogSystem returns nothing
+		public static method init takes boolean doAlwaysAddExperience, boolean removeUnitOnDestruction, boolean destroyOnPlayerLeaves, boolean shareOnPlayerLeaves, boolean destroyOnDeath, boolean useViewSystem, boolean useRevivalSystem, boolean useInventorySystem returns nothing
 			// static initialization members
 			set thistype.m_doAlwaysAddExperience = doAlwaysAddExperience
 			set thistype.m_removeUnitOnDestruction = removeUnitOnDestruction
@@ -711,7 +678,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			set thistype.m_useViewSystem = useViewSystem
 			set thistype.m_useRevivalSystem = useRevivalSystem
 			set thistype.m_useInventorySystem = useInventorySystem
-			set thistype.m_useTalkLogSystem = useTalkLogSystem
 
 			debug if (destroyOnPlayerLeaves and shareOnPlayerLeaves) then
 				debug call thistype.staticPrint("destroyOnPlayerLeaves and shareOnPlayerLeaves can not be set true at the same time.")
@@ -751,10 +717,6 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 
 		public static method useInventorySystem takes nothing returns boolean
 			return thistype.m_useInventorySystem
-		endmethod
-
-		public static method useTalkLogSystem takes nothing returns boolean
-			return thistype.m_useTalkLogSystem
 		endmethod
 
 		/**

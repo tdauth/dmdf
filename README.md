@@ -321,7 +321,6 @@ Init Settings
 ### Required Rects <a name="creating_a_new_map_required_rects"></a>
 Every map requires some specific rects for the systems of the modiciation:
 * gg_rct_main_window_credits
-* gg_rct_main_window_info_log
 * gg_rct_class_selection - At the center of this rect the class selection unit is placed.
 
 There is a list of color definitions for those various rect types which are used in maps:

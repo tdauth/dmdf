@@ -25,7 +25,11 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 	struct AClassSelection
 		// static members
 		private static thistype array m_playerClassSelection[12] /// \todo \ref bj_MAX_PLAYERS, JassHelper bug
-		private static integer m_stack //required for the start game action
+		/**
+		 * Required for the start game action.
+		 * When it becomes one and the final character class is chosen, the game starts.
+		 */
+		private static integer m_stack
 		// static dynamic members
 		private static timer m_selectionTimer
 		private static timerdialog m_selectionTimerDialog
@@ -360,16 +364,12 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 				set intelligenceText = RWArg(this.m_textIntelligence, this.currentClass().intPerLevel(), 0, 1)
 			endif
 
-			//call MultiboardClear(this.m_infoSheet) // clears not everything?!
 			if (this.m_infoSheet != null) then
-				debug call Print("Destroy old info sheet")
-				call MultiboardDisplay(this.m_infoSheet, false)
+				call ShowMultiboardForPlayer(this.m_user, this.m_infoSheet, false)
 				call DestroyMultiboard(this.m_infoSheet)
 				set this.m_infoSheet = null
 			endif
 			set this.m_infoSheet = CreateMultiboard()
-			call MultiboardDisplay(this.m_infoSheet, false) // TODO dont call this since during a repick they might see the characters scheme and there can be only one multiboard?
-			debug call Print("Create Info sheet")
 			call MultiboardSetItemsWidth(this.m_infoSheet, this.m_infoSheetWidth)
 			call MultiboardSetColumnCount(this.m_infoSheet, 1)
 
@@ -405,7 +405,6 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 			endif
 
 			if (this.currentClass().descriptionLines() > 0) then
-
 				set i = 0
 				loop
 					exitwhen(i == this.currentClass().descriptionLines())
@@ -418,7 +417,6 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 					set index = index + 1
 				endloop
 			endif
-			debug call Print("Show info sheet to player " + GetPlayerName(this.m_user) + " with ID " + I2S(GetHandleId(this.m_infoSheet)))
 			call ShowMultiboardForPlayer(this.m_user, this.m_infoSheet, true)
 		endmethod
 

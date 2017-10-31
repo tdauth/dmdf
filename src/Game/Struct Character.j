@@ -41,9 +41,6 @@ static if (DMDF_CREDITS) then
 endif
 		private Grimoire m_grimoire
 		private Tutorial m_tutorial
-static if (DMDF_INFO_LOG) then
-		private InfoLog m_infoLog
-endif
 		private Options m_options
 		private AIntegerVector m_classSpells /// Only \ref Spell instances not \ref ASpell instances!
 
@@ -209,14 +206,6 @@ endif
 
 		public method tutorial takes nothing returns Tutorial
 			return this.m_tutorial
-		endmethod
-
-		public method infoLog takes nothing returns InfoLog
-static if (DMDF_INFO_LOG) then
-			return this.m_infoLog
-else
-			return 0
-endif
 		endmethod
 
 		public method options takes nothing returns Options
@@ -702,9 +691,7 @@ static if (DMDF_CREDITS) then
 endif
 			set this.m_grimoire = Grimoire.create.evaluate(this)
 			set this.m_tutorial = Tutorial.create.evaluate(this)
-static if (DMDF_INFO_LOG) then
-			set this.m_infoLog = InfoLog.create.evaluate(this)
-endif
+
 			set this.m_options = 0
 			call this.refreshOptions()
 			set this.m_classSpells = AIntegerVector.create()
@@ -764,9 +751,7 @@ static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
 endif
 			call this.m_tutorial.destroy.evaluate()
-static if (DMDF_INFO_LOG) then
-			call this.m_infoLog.destroy.evaluate()
-endif
+
 			if (this.m_options != 0) then
 				call this.m_options.destroy.evaluate()
 			endif

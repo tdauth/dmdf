@@ -4,9 +4,6 @@
 //! import "Core/General/Struct Group.j"
 //! import "Core/General/Struct Hash Table.j"
 //! import "Core/General/Struct List.j"
-//! import "Core/General/Struct Map.j"
-//! import "Core/General/Struct Numeric Vector.j"
-//! import "Core/General/Struct Signal.j"
 //! import "Core/General/Struct Slk Table Entry.j"
 //! import "Core/General/Struct Stack.j"
 //! import "Core/General/Struct Vector.j"
@@ -94,9 +91,7 @@
  * At the moment these are:
  * <ul>
  * <li>\ref A_VECTOR </li>
- * <li>\ref A_NUMERIC_VECTOR </li>
  * <li>\ref A_LIST </li>
- * <li>\ref A_MAP </li>
  * </ul>
  * There are two different types of foreach loops.
  * The first one is much easier to use since you do not have declare any other variable than your iterated container.
@@ -158,5 +153,5 @@
 	endfunction
  * \endcode
  */
-library ACoreGeneral requires AInterfaceCoreGeneralContainer, AStructCoreGeneralAsl, AStructCoreGeneralForce, AStructCoreGeneralGroup, AStructCoreGeneralHashTable, AStructCoreGeneralList, AStructCoreGeneralMap, AStructCoreGeneralNumericVector, AStructCoreGeneralSignal, AStructCoreGeneralSlkTableEntry, AStructCoreGeneralStack, AStructCoreGeneralVector, ALibraryCoreCode, ALibraryCoreGeneralConversion, ALibraryCoreGeneralGame, ALibraryCoreGeneralItem, ALibraryCoreGeneralPlayer, ALibraryCoreGeneralTimer, ALibraryCoreGeneralUnit
+library ACoreGeneral requires AInterfaceCoreGeneralContainer, AStructCoreGeneralAsl, AStructCoreGeneralForce, AStructCoreGeneralGroup, AStructCoreGeneralHashTable, AStructCoreGeneralList, AStructCoreGeneralSlkTableEntry, AStructCoreGeneralStack, AStructCoreGeneralVector, ALibraryCoreCode, ALibraryCoreGeneralConversion, ALibraryCoreGeneralGame, ALibraryCoreGeneralItem, ALibraryCoreGeneralPlayer, ALibraryCoreGeneralTimer, ALibraryCoreGeneralUnit
 endlibrary

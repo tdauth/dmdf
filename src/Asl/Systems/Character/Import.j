@@ -15,7 +15,6 @@
 //! import "Systems/Character/Struct Shrine.j"
 //! import "Systems/Character/Struct Spell.j"
 //! import "Systems/Character/Struct Talk.j"
-//! import "Systems/Character/Struct Talk Log.j"
 //! import "Systems/Character/Struct View.j"
 //! import "Systems/Character/Struct Video.j"
 
@@ -24,5 +23,5 @@
  * For RPG maps and mods it often is necessary to create a typical RPG like environment with player characters.
  * This library allows such a functionality and allows you to enable systems optionally for a player character.
  */
-library ASystemsCharacter requires AStructSystemsCharacterCharactersScheme, AStructSystemsCharacterAbstractCharacterSystem, AStructSystemsCharacterAbstractQuest, AStructSystemsCharacterBuff, AStructSystemsCharacterCharacter, AStructSystemsCharacterClassSelection, AStructSystemsCharacterClass, AStructSystemsCharacterInfo, AStructSystemsCharacterInventory, AStructSystemsCharacterItemType, AStructSystemsCharacterQuest, AStructSystemsCharacterQuestItem, AStructSystemsCharacterRevival, AStructSystemsCharacterShrine, AStructSystemsCharacterSpell, AStructSystemsCharacterTalk, AStructSystemsCharacterTalkLog, AStructSystemsCharacterView, AStructSystemsCharacterVideo
+library ASystemsCharacter requires AStructSystemsCharacterCharactersScheme, AStructSystemsCharacterAbstractCharacterSystem, AStructSystemsCharacterAbstractQuest, AStructSystemsCharacterBuff, AStructSystemsCharacterCharacter, AStructSystemsCharacterClassSelection, AStructSystemsCharacterClass, AStructSystemsCharacterInfo, AStructSystemsCharacterInventory, AStructSystemsCharacterItemType, AStructSystemsCharacterQuest, AStructSystemsCharacterQuestItem, AStructSystemsCharacterRevival, AStructSystemsCharacterShrine, AStructSystemsCharacterSpell, AStructSystemsCharacterTalk, AStructSystemsCharacterView, AStructSystemsCharacterVideo
 endlibrary

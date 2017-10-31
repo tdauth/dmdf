@@ -77,34 +77,6 @@ Section "English Campaign" EnglishCampaign
 	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}en.w3n"
 SectionEnd
 
-Section "German Singleplayer Campaign" GermanSinglePlayerCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF${CAMPAIGN_VERSION}de"
-	File "${INPUT_DIR}\DH.w3x"
-	File "${INPUT_DIR}\TL.w3x"
-	File "${INPUT_DIR}\GA.w3x"
-	File "${INPUT_DIR}\GH.w3x"
-	File "${INPUT_DIR}\DS.w3x"
-	File "${INPUT_DIR}\HB.w3x"
-	File "${INPUT_DIR}\HU.w3x"
-	File "${INPUT_DIR}\TN.w3x"
-	File "${INPUT_DIR}\WM.w3x"
-	File "${INPUT_DIR}\CT.w3x"
-SectionEnd
-
-Section "English Singleplayer Campaign" EnglishSinglePlayerCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF${CAMPAIGN_VERSION}en"
-	File "${INPUT_DIR}\en\DH.w3x"
-	File "${INPUT_DIR}\en\TL.w3x"
-	File "${INPUT_DIR}\en\GA.w3x"
-	File "${INPUT_DIR}\en\GH.w3x"
-	File "${INPUT_DIR}\en\DS.w3x"
-	File "${INPUT_DIR}\en\HB.w3x"
-	File "${INPUT_DIR}\en\HU.w3x"
-	File "${INPUT_DIR}\en\TN.w3x"
-	File "${INPUT_DIR}\en\WM.w3x"
-	File "${INPUT_DIR}\en\CT.w3x"
-SectionEnd
-
 Section "German Dev Maps" GermanDevMaps
 	SetOutPath "$INSTDIR\The Power of Fire\Maps"
 	File "${INPUT_DIR_TPOF}\maps\Tutorial.w3x"
@@ -145,8 +117,6 @@ Section "Uninstall"
 	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
 	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
 	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
-	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09de"
-	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPoF09en"
 	 Delete "$INSTDIR\War3Mod.mpq"
 	 RMDir /r "$INSTDIR\The Power of Fire"
 	 RMDir /r "$INSTDIR\TPoF"

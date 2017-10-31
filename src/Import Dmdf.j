@@ -18,7 +18,6 @@ globals
 	constant real A_MAX_COLLISION_SIZE = 300
 	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
 	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
-	constant boolean DMDF_INFO_LOG = false
 	constant boolean DMDF_NPC_ROUTINES = true
 	constant boolean DMDF_VIOLENCE = true
 	constant boolean DMDF_CREDITS = true

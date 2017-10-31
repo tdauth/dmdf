@@ -1,4 +1,4 @@
-library AStructSystemsGuiMainWindow requires optional ALibraryCoreDebugMisc, AStructCoreGeneralHashTable, AStructCoreGeneralVector, ALibraryCoreInterfaceCamera, ALibraryCoreInterfaceCinematic, ALibraryCoreInterfaceTextTag, ALibraryCoreInterfaceMisc, ALibraryCoreEnvironmentSound, ALibraryCoreMathsRect, AStructSystemsGuiGui, AStructSystemsGuiStyle
+library AStructSystemsGuiMainWindow requires optional ALibraryCoreDebugMisc, AStructCoreGeneralHashTable, AStructCoreGeneralVector, ALibraryCoreInterfaceCamera, ALibraryCoreInterfaceCinematic, ALibraryCoreInterfaceTextTag, ALibraryCoreInterfaceMisc, ALibraryCoreEnvironmentSound, ALibraryCoreMathsRect, AStructSystemsGuiGui
 
 	/// \todo Should be a static function interface of \ref AMainWindow, vJass bug.
 	function interface AMainWindowOnShowCondition takes AMainWindow mainWindow returns boolean
@@ -28,7 +28,6 @@ library AStructSystemsGuiMainWindow requires optional ALibraryCoreDebugMisc, ASt
 		private integer m_shortcut
 		// construction members
 		private AGui m_gui
-		private AStyle m_style
 		private real m_x
 		private real m_y
 		private real m_sizeX
@@ -234,10 +233,6 @@ endif
 
 		public method gui takes nothing returns AGui
 			return this.m_gui
-		endmethod
-
-		public method style takes nothing returns AStyle
-			return this.m_style
 		endmethod
 
 		public method x takes nothing returns real
@@ -449,7 +444,7 @@ endif
 		 * \param x Top left edge x.
 		 * \param y Top left edge y.
 		 */
-		public static method create takes AGui gui, AStyle style, real x, real y, real sizeX, real sizeY returns thistype
+		public static method create takes AGui gui, real x, real y, real sizeX, real sizeY returns thistype
 			local thistype this = thistype.allocate()
 			// dynamic members
 			set this.m_cameraSetup = null
@@ -466,7 +461,6 @@ endif
 			set this.m_shortcut = -1
 			// construction members
 			set this.m_gui = gui
-			set this.m_style = style
 static if (DEBUG_MODE) then
 			if (not RectContainsCoords(GetPlayableMapRect(), x, y)) then
 				call this.print("X and y aren't contained by playable map rect.")
@@ -496,12 +490,12 @@ endif
 			return this
 		endmethod
 
-		public static method createByRectSize takes AGui gui, AStyle style, real x, real y, rect whichRect returns thistype
-			return thistype.create(gui, style, x, y, GetRectWidthBJ(whichRect), GetRectHeightBJ(whichRect))
+		public static method createByRectSize takes AGui gui, real x, real y, rect whichRect returns thistype
+			return thistype.create(gui, x, y, GetRectWidthBJ(whichRect), GetRectHeightBJ(whichRect))
 		endmethod
 
-		public static method createByRect takes AGui gui, AStyle style, rect whichRect returns thistype
-			return thistype.createByRectSize(gui, style, GetRectMinX(whichRect), GetRectMaxY(whichRect), whichRect)
+		public static method createByRect takes AGui gui, rect whichRect returns thistype
+			return thistype.createByRectSize(gui, GetRectMinX(whichRect), GetRectMaxY(whichRect), whichRect)
 		endmethod
 
 		public method onDestroy takes nothing returns nothing

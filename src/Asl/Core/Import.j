@@ -1,4 +1,3 @@
-//! import "Core/Ai/Import.j"
 static if (DEBUG_MODE) then
 //! import "Core/Debug/Import.j"
 endif
@@ -15,5 +14,5 @@ endif
  * \sa ASystems
  * \endif
  */
-library ACore requires ACoreAi, optional ACoreDebug, ACoreEnvironment, ACoreGeneral, ACoreInterface, ACoreMaths, ACoreString
+library ACore requires optional ACoreDebug, ACoreEnvironment, ACoreGeneral, ACoreInterface, ACoreMaths, ACoreString
 endlibrary

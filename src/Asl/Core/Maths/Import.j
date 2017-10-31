@@ -1,6 +1,3 @@
-//! import "Core/Maths/Struct Circle.j"
-//! import "Core/Maths/Struct Point.j"
-//! import "Core/Maths/Struct Vector 3.j"
 //! import "Core/Maths/Library Conversion.j"
 //! import "Core/Maths/Library Handle.j"
 //! import "Core/Maths/Library Item.j"
@@ -17,5 +14,5 @@
  * \return Returns a newly created rect.
  * \sa RectFromPointSize
  */
-library ACoreMaths requires AStructCoreMathsCircle, AStructCoreMathsPoint, AStructCoreMathsVector3, ALibraryCoreMathsConversion, ALibraryCoreMathsHandle, ALibraryCoreMathsItem, ALibraryCoreMathsIndex, ALibraryCoreMathsLocation, ALibraryCoreMathsPoint, ALibraryCoreMathsReal, ALibraryCoreMathsRect, ALibraryCoreMathsRegion, ALibraryCoreMathsUnit
+library ACoreMaths requires ALibraryCoreMathsConversion, ALibraryCoreMathsHandle, ALibraryCoreMathsItem, ALibraryCoreMathsIndex, ALibraryCoreMathsLocation, ALibraryCoreMathsPoint, ALibraryCoreMathsReal, ALibraryCoreMathsRect, ALibraryCoreMathsRegion, ALibraryCoreMathsUnit
 endlibrary

@@ -3,9 +3,6 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 	struct MainWindow extends AMainWindow
 		private Character m_character
 		private rect m_rect
-		private AWindow m_leftWindow
-		private AWindow m_centerWindow
-		private AWindow m_rightWindow
 
 		public method character takes nothing returns Character
 			return this.m_character
@@ -58,8 +55,8 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 			set whichPlayer = null
 		endmethod
 
-		public static method create takes Character character, AStyle style, rect whichRect returns thistype
-			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), style, whichRect)
+		public static method create takes Character character, rect whichRect returns thistype
+			local thistype this = thistype.createByRect(AGui.playerGui(character.player()), whichRect)
 			call this.setCameraSetup(gg_cam_main_window)
 			call this.setUseShortcuts(false)
 			call this.setUseSpecialShortcuts(true)
@@ -68,10 +65,6 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 			call this.setTooltipSoundPath("Sound\\Interface\\Hint.wav")
 			set this.m_character = character
 			set this.m_rect = whichRect
-			set this.m_leftWindow = AWindow.create(this, 0.0, 0.0, GetRectWidthBJ(whichRect) / 3.0 - 200.0, GetRectHeightBJ(whichRect))
-			/// @todo set background image
-			set this.m_centerWindow = AWindow.create(this, GetRectWidthBJ(whichRect) / 3.0, 0.0, 400.0, GetRectHeightBJ(whichRect))
-			set this.m_rightWindow = AWindow.create(this, GetRectWidthBJ(whichRect) / 3.0 + 200.0, 0.0, GetRectWidthBJ(whichRect) / 3.0 - 200.0, GetRectHeightBJ(whichRect))
 
 			return this
 		endmethod

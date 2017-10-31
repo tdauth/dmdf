@@ -363,10 +363,9 @@ library AStructSystemsCharacterInfo requires optional ALibraryCoreDebugMisc, ALi
 	 * \note Methods are often called in their own threads by using .execute automatically -> \ref TriggerSleepAction() problem. Therefore this is provieded as function not as method.
 	 * \sa initSpeechSkip()
 	 * \sa speech2()
-	 * \sa ATalkLog
 	 */
 	function speech takes AInfo info, ACharacter character, boolean toCharacter, string text, sound usedSound returns nothing
-		local texttag whichTextTag
+		local texttag whichTextTag = null
 		local real duration = 0.0
 		local player user = character.player()
 		local unit speaker = null
@@ -454,9 +453,6 @@ library AStructSystemsCharacterInfo requires optional ALibraryCoreDebugMisc, ALi
 
 		call VolumeGroupResetForPlayer(user)
 
-		if (character.talkLog() != 0) then
-			call character.talkLog().addSpeech(info, toCharacter, text, usedSound)
-		endif
 		set user = null
 		set speaker = null
 		set listener = null

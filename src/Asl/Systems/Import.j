@@ -5,7 +5,6 @@ static if (DEBUG_MODE) then
 endif
 //! import "Systems/Gui/Import.j"
 //! import "Systems/Inventory/Import.j"
-//! import "Systems/Melee/Import.j"
 //! import "Systems/World/Import.j"
 
 /**
@@ -13,5 +12,5 @@ endif
  * Each system covers a specific range like character treatment or graphical user interfaces.
  * \sa Asl, ACore
  */
-library ASystems requires ASystemsCharacter, optional ASystemsDebug, ASystemsBonusMod, ASystemsGui, ASystemsInventory, ASystemsMelee, ASystemsWorld
+library ASystems requires ASystemsCharacter, optional ASystemsDebug, ASystemsBonusMod, ASystemsGui, ASystemsInventory, ASystemsWorld
 endlibrary
