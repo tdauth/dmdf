@@ -1,4 +1,4 @@
-Test mit Luxi und David:
+Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
 * Wenn die anderen Spieler nicht direkt 2 und 3 sind, dann funktioniert das Zählen in Quest-Gebieten nicht (1/3 Charakteren egal ob schon Charaktere im Gebiet sind!). Hat MapSettings.maxPlayers() einfach 1 zurückgegeben oder waren playerCharacter() immer 0?!
 * Klassenauswahl: Multiboard verschwindet immer bei anderen Spielern, wenn ein Spieler zur nächsten Klasse wechselt.
 * Arena-Karte: Irgendein Zauberer-Spell kann nicht über Stufe 1 geskillt werden (Auto-Skilling erhöht nur bestimmte Zauber).
@@ -9,8 +9,9 @@ Test mit Luxi und David:
 * Orkanführer: Stimme tiefer machen, aber nicht langsam!
 * XP-Balken im Charakterschema zeigt falschen Wert an!
 * Bisherige Kartengröße Talras 6 MiBytes (unkomprimiert). Kartenskriptgröße unkomprimiert 11 MiBytes. 208 752 Zeilen Code (ohne Optimizer)!
-	* Drop all unused ASL systems.
-	* Make all Talk, SharedQuest and Video members static since there can only be one instance.
+* Bisherige optimierte Kartengröße Talras 3,735 MiBytes, Kartenskriptgröße optimiert 3,508 KiBytes. 116 364 Zeilen Code (mit Optimizer)!
+	* DONE: Drop all unused ASL systems.
+* Improve runtime performance: Make all Talk, SharedQuest and Video members static since there can only be one instance.
 
 Open TODO items:
 Handlung (optionale Verbesserungen):
