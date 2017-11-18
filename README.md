@@ -8,32 +8,33 @@ All source code is put under the GPLv3.
 # Table of contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
-3. [JassHelper Setup](#jasshelper_setup)
-4. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-5. [Advanced Script Library](#asl)
+3. [Windows Setup](#windows)
+4. [JassHelper Setup](#jasshelper_setup)
+5. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
+6. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
-6. [vJass](#vjass)
-7. [MPQ](#mpq)
-8. [Core Systems](#core_systems)
+7. [vJass](#vjass)
+8. [MPQ](#mpq)
+9. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Custom Item Types](#core_systems_custom_item_types)
     3. [Dungeons](#core_systems_dungeons)
     4. [Spawn Points](#core_systems_spawn_points)
     5. [Tree Transparency](#core_systems_tree_transparency)
     6. [Zones](#core_systems_zones)
-9. [Creating a new Map](#creating_a_new_map)
+10. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Map Data](#creating_a_new_map_map_data)
     4. [GUI Triggers](#creating_a_new_map_gui_triggers)
     5. [Required Rects](#creating_a_new_map_required_rects)
     6. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
-10. [Translation](#translation)
-11. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-12. [Release Process](#release_process)
-13. [Trigger Editor Integration](#trigger_editor_integration)
-14. [Credits](#credits)
+11. [Translation](#translation)
+12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+13. [Release Process](#release_process)
+14. [Trigger Editor Integration](#trigger_editor_integration)
+15. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -41,6 +42,15 @@ Since I have pushed the history of binary map and campaign files as well, the hi
 
 The model, texture and sound resources are not part of this repository.
 Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install all resources files.
+
+## Windows Setup <a name="windows"></a>
+The batch scripts from the folder `src/Scripts` work on volume `F:` (previously on volume `E:`) and expect the following folders:
+* `F:\wc3tools`
+    * `F:\wc3tools\5.0wc3mapoptimizer` contains the file `VXJWTSOPT.exe`
+    * `F:\wc3tools\Jass NewGen Pack Official` contains the JassNewGenPack 2 with the JassHelper.
+* `F:\Projekte\dmdf` contains the content of this repository.
+* `F:\Warcraft III` contains Warcraft III: The Frozen Throne.
+    * `F:\Warcraft III\Maps\DMDF\` is the target folder for generated optimized maps.
 
 ## JassHelper Setup <a name="jasshelper_setup"></a>
 JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
@@ -401,11 +411,7 @@ It can be used the following way to create a new trigger data file:
 wc3converter --merge TriggerDataNew.txt <path to original TriggerData.txt from War3Patch.mpq> gui/UI/TriggerData.txt
 ```
 
-Then import the file "TriggerDataNew.txt" as `UI\TriggerData.txt`.
-
-Import the file "gui_<language id>/UI/TriggerStrings.txt" as `UI\TriggerStrings.txt`.
-
-Import the file "gui_<language id>/UI/WorldEditStrings.txt" as `UI\WorldEditStrings.txt`.
+Then import the file `TriggerDataNew.txt` as `UI\TriggerData.txt`.
 
 ## Credits <a name="credits"></a>
 This modification has been created by Tamino Dauth.

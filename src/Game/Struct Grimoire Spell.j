@@ -7,6 +7,19 @@ library StructGameGrimoireSpell requires Asl, StructGameCharacter
 		private Grimoire m_grimoire
 		private integer m_grimoireAbility
 
+		/**
+		 * Reopens the grimoire by reopening the spell book ability of the grimoire.
+		 * This is necessary whenever it is closed by Warcraft III which happens for some actions.
+		 */
+		public method reopenGrimoire takes nothing returns nothing
+			// TODO if trigger player is not owner of the character!
+			// the trigger player is the player who issues the order/ability not necessarily the owner
+			// there fore only re open the grimoire if there is a trigger player
+			if (GetTriggerPlayer() != null) then
+				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
+			endif
+		endmethod
+
 		public method grimoire takes nothing returns Grimoire
 			return this.m_grimoire
 		endmethod

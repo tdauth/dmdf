@@ -197,14 +197,16 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		public method addGrimoireEntry takes integer abilityId, integer grimoireAbilityId returns nothing
 			local integer grimoireIndex = 0
 			local integer firstIndex = 0
-			local GrimoireSpellEntry entry = GrimoireSpellEntry.create.evaluate(Character(this.character()).grimoire(), abilityId, grimoireAbilityId, this)
+			local Character character = Character(this.character())
+			local Grimoire grimoire = character.grimoire()
+			local GrimoireSpellEntry entry = GrimoireSpellEntry.create.evaluate(grimoire, abilityId, grimoireAbilityId, this)
 
-			if (this.level() == this.grimoireEntries().size() and this.available() and Character(this.character()).grimoire().pageIsShown.evaluate()) then
+			if (this.level() == this.grimoireEntries().size() and this.available() and grimoire.pageIsShown.evaluate()) then
 				//debug call this.print("Page is shown")
 				// TODO calling spellIndex() is slow
-				set grimoireIndex = Character(this.character()).grimoire().spellIndex.evaluate(this)
+				set grimoireIndex = grimoire.spellIndex.evaluate(this)
 				//debug call this.print("Spell index " + I2S(grimoireIndex))
-				set firstIndex = Character(this.character()).grimoire().page.evaluate() * Grimoire.spellsPerPage
+				set firstIndex = grimoire.page.evaluate() * Grimoire.spellsPerPage
 				//debug call this.print("First index " + I2S(firstIndex))
 				//debug call this.print("Last index " + I2S(firstIndex + Grimoire.spellsPerPage))
 				// spell doesn't belong to grimoire or is not shown on current page
@@ -334,7 +336,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		public stub method setLevel takes integer level returns nothing
 			call super.setLevel(level)
 			set this.m_savedLevel = level
-			//debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
+			debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
 		endmethod
 
 		/**

@@ -3,15 +3,39 @@ Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
 * Klassenauswahl: Multiboard verschwindet immer bei anderen Spielern, wenn ein Spieler zur nächsten Klasse wechselt.
 * Arena-Karte: Irgendein Zauberer-Spell kann nicht über Stufe 1 geskillt werden (Auto-Skilling erhöht nur bestimmte Zauber).
 * RPG-Kamera wird für alle Spieler übernommen und zurückgesetzt.
-* Dagos Pilzequest kam bei einem Spieler nicht.
+* Dagos Pilzequest kam bei einem Spieler nicht (sicher, Dialog vllt. nicht ausgewählt?).
 * Skillen ging irgendwann nicht mehr (Zauberpunkte wurden verbraucht ohne die Stufe der Fähigkeit zu erhöhen).
-* Arena: Wissen heißt noch Intelligenz.
+* FIXED: Arena: Wissen heißt noch Intelligenz.
+* Arena: Evtl alle UI-Strings importieren (mit MPQ-Editor)?
 * Orkanführer: Stimme tiefer machen, aber nicht langsam!
 * XP-Balken im Charakterschema zeigt falschen Wert an!
 * Bisherige Kartengröße Talras 6 MiBytes (unkomprimiert). Kartenskriptgröße unkomprimiert 11 MiBytes. 208 752 Zeilen Code (ohne Optimizer)!
 * Bisherige optimierte Kartengröße Talras 3,735 MiBytes, Kartenskriptgröße optimiert 3,508 KiBytes. 116 364 Zeilen Code (mit Optimizer)!
 	* DONE: Drop all unused ASL systems.
 * Improve runtime performance: Make all Talk, SharedQuest and Video members static since there can only be one instance.
+
+Test mit Luxi:
+* Texttag für Verkauf (Inventarsystem) wird allen Spielern angezeigt anstatt nur dem Besitzer des verkaufenden Charakters: 10 + 5 = 15. Obwohl ShowFadingTextTagForPlayer() verwendet wird?
+* Wiederbelebungszeit reduzieren 15 Sekunden.
+* (Agihard und Sisgard): Talk-skip-Bug, wenn ein Spieler im gleichen Dialog skippt, dann wird auch beim anderen Spieler geskippt.
+Sisgards Sounds (Hälfte geht nicht):
+* Mein Meister war ein großer Zauberer: Sound kaputt, bricht ab.
+* Das erste Mal traf ich ihn auch kaputt.
+Vielleicht weil beide Spieler gleichzeitig mit ihr reden (skips). Wenn Spieler 1 skipped.
+Aghiard-Regelsounds um eins versetzt bei 3. kommt 2.
+* Arenagegner für jeden Kampf pro Spieler Anzahl merken und Gegner stärker machen.
+* Arenagegner sollten je nach Stärker mehr Gold geben.
+* Donnersound zu laut.
+* Gespräch zwischen Wieland und Einar, falscch herum, anderer NPC muss zuerst was sagen.
+* Alle Zauber im Zauberbuch können nur bis Stufe ein geskillt weren, Skill Points werden trotzem verbraucht.
+* Quest Gold für die Handelserlaubnis, Hinweis ins Quest-Log schreiben nachdem man mit Ferdinand darüber geredet hat.
+* Nachdem Barade leavt kommt "Barade ist nun Admin".
+* Lothar: Beleidigung, Quest sollte trotzdem annehmbar sein.
+* Teleporter geht nach laden nur zum ersten Schrein an der Burg.
+* Fog of War ausmachen.
+* Markwards Quest: "Zwei Tage sind vergangen": "Genügend Zeit ist vergangen -> die Pfeile sind fertig"
+* Dagos Pilzquest, reinschreiben wie viel Pilze man braucht.
+* Musik in Talras kam nicht. Zumindest das zweite Lied drinnen lassen?
 
 Open TODO items:
 Handlung (optionale Verbesserungen):

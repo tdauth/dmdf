@@ -297,20 +297,23 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Kontakt", "Contact"))
-			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de\nWebsite: http://wc3lib.org\nBlog: https://diemachtdesfeuers.wordpress.com/", "Email: barade.barade@web.de\nWebsite: http://wc3lib.org\nBlog: https://diemachtdesfeuers.wordpress.com/"))
+			call QuestSetDescription(whichQuest, tre("E-Mail: barade.barade@web.de\nWebsite: http://www.moddb.com/mods/warcraft-iii-the-power-of-fire\nBlog: https://diemachtdesfeuers.wordpress.com/", "Email: barade.barade@web.de\nWebsite: http://www.moddb.com/mods/warcraft-iii-the-power-of-fire\nBlog: https://diemachtdesfeuers.wordpress.com/"))
 			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPossession.blp")
 
 		endmethod
 
 		/**
 		 * Prints a hint message to all players which have the tip system enabled.
+		 * \param tip The tip message which is printed on the screen.
 		 */
 		public static method printTip takes string tip returns nothing
+			local Character character = 0
 			local integer i = 0
 			loop
 				exitwhen (i == MapSettings.maxPlayers())
-				if (Character(Character.playerCharacter(Player(i))).tutorial().isEnabled()) then
-					call Character(Character.playerCharacter(Player(i))).displayHint(tip)
+				set character = Character(Character.playerCharacter(Player(i)))
+				if (character.tutorial().isEnabled()) then
+					call character.displayHint(tip)
 				endif
 				set i = i + 1
 			endloop

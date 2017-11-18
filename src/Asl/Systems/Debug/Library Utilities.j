@@ -30,9 +30,7 @@
 * destructables - Shows all destructables.
 * debugstring - Runs string debug.
 * debugmultiboardbar - Runs multiboard bar debug.
-* debugsignal - Runs signal debug.
 * debuglist - Runs list debug.
-* debugmap - Runs map debug.
 * debugtd - Runs time of day debug.
 * debugtimer - Runs timer debugging hook function.
 * debugdesync - Runs desync test.
@@ -79,9 +77,7 @@ endif
 static if (DEBUG_MODE) then
 		call Print("debugstring")
 		call Print("debugmultiboardbar")
-		call Print("debugsignal")
 		call Print("debuglist")
-		call Print("debugmap")
 		call Print("debugtd")
 endif
 static if (DEBUG_MODE and A_DEBUG_NATIVES) then
@@ -487,16 +483,8 @@ static if (DEBUG_MODE) then
 		call AMultiboardBarDebug()
 	endfunction
 
-	private function signalDebug takes ACheat cheat returns nothing
-		call ASignalDebug()
-	endfunction
-
 	private function listDebug takes ACheat cheat returns nothing
 		call AListDebug()
-	endfunction
-
-	private function mapDebug takes ACheat cheat returns nothing
-		call AMapDebug()
 	endfunction
 
 	private function timeofdayDebug takes ACheat cheat returns nothing
@@ -574,9 +562,7 @@ endif
 static if (DEBUG_MODE) then
 		call ACheat.create("debugstring", true, stringDebug)
 		call ACheat.create("debugmultiboardbar", true, multiboardbarDebug)
-		call ACheat.create("debugsignal", true, signalDebug)
 		call ACheat.create("debuglist", true, listDebug)
-		call ACheat.create("debugmap", true, mapDebug)
 		call ACheat.create("debugtd", true, timeofdayDebug)
 endif
 

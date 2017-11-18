@@ -153,30 +153,17 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			local Spell spell
 			local integer level
 			local integer i = 0
-			//debug call Print("Readding spells with count: " + I2S(this.m_spells.size()))
 			loop
 				exitwhen (i == this.m_spells.size())
 				set spell = Spell(this.m_spells[i])
-
-				//debug call Print("Spell id: " + I2S(integer(spell)))
-
-				debug if (not table.hasInteger(0, spell.ability())) then
-				debug call Print("Missing ability: " + GetAbilityName(spell.ability()) + " when readding spells")
-				debug endif
-
 				set level = table.integer(0, spell.ability())
-
-				//debug call Print("Ability: " + GetAbilityName(spell.ability()) + " with restored level " + I2S(level))
-
 				// only add if it has been there before!
 				if (level > 0) then
 					if (this.m_favourites.contains(spell)) then
-						//debug call Print("Is a favorite spell")
 						call UnitRemoveAbility(this.character().unit(), spell.favouriteAbility())
 						call spell.add()
 						call spell.setLevel(level)
 					else
-						//debug call Print("Is not a favorite spell")
 						call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 						call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 						call spell.setLevel(level)
@@ -226,11 +213,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		 * \note Add all shown spells to m_uiGrimoireSpells!
 		 */
 		public method updateUi takes nothing returns nothing
-			local integer i
-			local integer index
+			local integer i = 0
+			local integer index = 0
 			local unit whichUnit = this.character().unit()
-
-			//debug call Print("Hiding spells with count in grimoire: " + I2S(this.m_uiGrimoireSpells.size()))
 			/*
 			 * Remove all old buttons before adding new ones.
 			 */
@@ -295,11 +280,9 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 					call this.m_uiGrimoireSpells.pushBack(this.m_spellDecrease)
 
 					if (this.m_favourites.contains(this.currentSpell())) then
-						debug call Print("Spell is part of favorites.")
 						call this.m_spellRemoveFromFavourites.show(whichUnit)
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellRemoveFromFavourites)
 					elseif (this.m_favourites.size() < thistype.maxFavourites) then
-						debug call Print("Spell is not part of favorites and favorites are not full.")
 						call this.m_spellAddToFavourites.show(whichUnit)
 						call this.m_uiGrimoireSpells.pushBack(this.m_spellAddToFavourites)
 					debug else
@@ -338,6 +321,8 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 
 		/**
 		 * The ability for the grimoire must have level 0 - 100 for displaying the number of available skill points.
+		 * \param skillPoints The exact number of skill points which are assigne to the grimoire.
+		 * \param updateUi If this parameter is true, the user interface is updated after setting the skill points. Otherwise, it stays the same as before. Updating the user interface might take some time.
 		 */
 		public method setSkillPoints takes integer skillPoints, boolean updateUi returns nothing
 			set this.m_skillPoints = skillPoints
@@ -347,7 +332,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 			 * This is necessary to show the skill points in the hero icon.
 			 */
 			call ModifyHeroSkillPoints(this.character().unit(), bj_MODIFYMETHOD_SET, skillPoints)
-			//debug call Print("Setting skill points to " + I2S(skillPoints))
 
 			/*
 			 * Update the User Interface. The selected skill might become skillable!
@@ -431,7 +415,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		endmethod
 
 		private method learnSpell takes Spell spell returns nothing
-			//debug call Print("Learning spell " + GetAbilityName(spell.ability()) + " with count of learned spells " + I2S(this.learnedSpells()))
 			call UnitAddAbility(this.character().unit(), spell.favouriteAbility())
 			call SetPlayerAbilityAvailable(this.character().player(), spell.favouriteAbility(), false)
 			call this.m_learnedSpells.pushBack(spell)
@@ -503,11 +486,12 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 		public method setSpellLevelWithoutConditions takes Spell spell, integer level, boolean updateUi returns boolean
 			local integer requiredSkillPoints = level - spell.level()
 
+			debug call this.print("Set spell level to " + I2S(level))
+
 			if (requiredSkillPoints == 0) then
+				debug call this.print("Requires no skill points!")
 				return true
 			endif
-
-			//debug call Print("Successfully skilling " + GetAbilityName(spell.ability()) + " to level " + I2S(level))
 
 			if (requiredSkillPoints < 0) then
 				call this.addSkillPoints(-1 * requiredSkillPoints, false)
@@ -524,8 +508,6 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 				call this.removeSkillPoints(requiredSkillPoints, false)
 
 				if (spell.level() == 0) then
-					//debug call Print("Learning spell: " + spell.name() + " having " + I2S(this.m_favourites.size()) + " favorite spells.")
-
 					if (this.m_favourites.size() < thistype.maxFavourites and not spell.isPassive()) then
 						call this.learnFavouriteSpell(spell)
 					else
@@ -533,6 +515,7 @@ library StructGameGrimoire requires Asl, StructGameCharacter, StructGameSpell, S
 					endif
 				endif
 
+				debug call this.print("Applying spell level")
 				call spell.setLevel(level)
 			endif
 
@@ -684,7 +667,6 @@ endif
 				exitwhen (i == integerVector.size())
 				// do not add spells twice
 				if (not this.m_spells.contains(Spell(integerVector[i]))) then
-					//debug call Print("Adding NEW spell " + GetAbilityName(Spell(integerVector[i]).ability()))
 					call this.addSpell(Spell(integerVector[i]), false)
 				endif
 				set i = i + 1
@@ -755,7 +737,6 @@ endif
 			loop
 				exitwhen (i == character.classSpells().size())
 				// do not add spells twice
-				//debug call Print("Adding NEW spell " + GetAbilityName(Spell(character.classSpells()[i]).ability()))
 				call spells.pushBack(Spell(character.classSpells()[i]))
 				if (Spell(character.classSpells()[i]).spellType() == Spell.spellTypeDefault) then
 					set basicSpell = Spell(character.classSpells()[i])
@@ -800,7 +781,6 @@ endif
 
 		public method removeClassSpells takes AClass class, boolean updateUi returns nothing
 			local integer i = 0
-			//debug call Print("Remove class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() == class) then
@@ -819,7 +799,6 @@ endif
 
 		public method removeAllClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
-			//debug call Print("Remove all class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != 0) then
@@ -834,7 +813,6 @@ endif
 
 		public method removeAllOtherClassSpells takes boolean updateUi returns nothing
 			local integer i = 0
-			//debug call Print("Remove all other class spells")
 			loop
 				exitwhen (i == this.m_spells.size())
 				if (Spell(this.m_spells[i]).class() != this.character().class()) then
@@ -853,13 +831,11 @@ endif
 		endmethod
 
 		public method setCurrentSpell takes Spell spell returns nothing
-			debug call this.print("Current spell is " + GetObjectName(spell.ability()))
 			set this.m_currentSpell = spell
 			call this.showSpell()
 		endmethod
 
 		public method increaseSpell takes nothing returns boolean
-			debug call this.print("Current spell is " + GetObjectName(this.currentSpell().ability()))
 			return this.setSpellLevel(this.currentSpell(), this.currentSpell().level() + 1, true)
 		endmethod
 
@@ -889,7 +865,6 @@ endif
 				debug call this.print("Warning: Wrong page value " + I2S(page) + ", maximum is " + I2S(this.pages() - 1))
 				return false
 			endif
-			//debug call this.print("Set page to " + I2S(page))
 			if (page == this.page()) then
 				return true
 			endif
@@ -900,7 +875,6 @@ endif
 		endmethod
 
 		public method increasePage takes nothing returns boolean
-			//debug call Print("We have " + I2S(this.pages()) + " with " + I2S(this.m_spells.size()) + " spells total")
 			if (this.page() + 1 >= this.pages()) then
 				return this.setPage(0)
 			else
@@ -926,7 +900,6 @@ endif
 
 		private static method triggerConditionLevel takes nothing returns boolean
 			local thistype this = thistype(DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
-			debug call Print("Level condition with unit " + GetUnitName(GetTriggerUnit()))
 			return GetTriggerUnit() == this.character().unit()
 		endmethod
 
@@ -1088,6 +1061,7 @@ endif
 
 		/**
 		 * Creates a new grimoire for character \p character.
+		 * \return Returns the newly created grimoire for the character.
 		 */
 		public static method create takes Character character returns thistype
 			local thistype this = thistype.allocate(character, thistype.abilityId, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, false)
@@ -1161,12 +1135,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().decreasePage()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1183,12 +1152,7 @@ endif
 		public stub method onCastAction takes nothing returns nothing
 			call this.grimoire().increasePage()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1206,12 +1170,7 @@ endif
 			debug call this.print("Set spell max")
 			call this.grimoire().setSpellLevel(this.grimoire().currentSpell(), IMinBJ(this.grimoire().currentSpell().getMaxLevel(), this.grimoire().currentSpell().level() + this.grimoire().skillPoints()), true)
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1229,12 +1188,7 @@ endif
 			debug call this.print("Unlearn spell")
 			call this.grimoire().setSpellLevelWithoutConditions(this.grimoire().currentSpell(), 0, true)
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1252,12 +1206,7 @@ endif
 			debug call this.print("Increasing spell")
 			call this.grimoire().increaseSpell()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1275,12 +1224,7 @@ endif
 			debug call this.print("Decreasing spell")
 			call this.grimoire().decreaseSpell()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1298,12 +1242,7 @@ endif
 			debug call this.print("Adding spell to favourites")
 			call this.grimoire().addSpellToFavourites()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1321,12 +1260,7 @@ endif
 			debug call this.print("Removing spell from favourites")
 			call this.grimoire().removeSpellFromFavourites()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1347,12 +1281,7 @@ endif
 			debug call this.print("Going back to grimoire")
 			call this.grimoire().showPage()
 
-			// TODO if trigger player is not owner of the character!
-			// the trigger player is the player who issues the order/ability not necessarily the owner
-			// there fore only re open the grimoire if there is a trigger player
-			if (GetTriggerPlayer() != null) then
-				call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-			endif
+			call this.reopenGrimoire()
 		endmethod
 
 		public static method create takes Grimoire grimoire returns thistype
@@ -1379,12 +1308,7 @@ endif
 			if (this.grimoire().pageIsShown()) then
 				call this.grimoire().setCurrentSpell(this.spell())
 
-				// TODO if trigger player is not owner of the character!
-				// the trigger player is the player who issues the order/ability not necessarily the owner
-				// there fore only re open the grimoire if there is a trigger player
-				if (GetTriggerPlayer() != null) then
-					call ForceUIKeyBJ(GetTriggerPlayer(), Grimoire.shortcut) // WORKAROUND: whenever an ability is being removed it closes grimoire
-				endif
+				call this.reopenGrimoire()
 			endif
 		endmethod
 

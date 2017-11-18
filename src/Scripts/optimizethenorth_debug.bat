@@ -1,2 +1,2 @@
-del "E:\Warcraft III Englisch\Maps\DMDF\TheNorth0.9.w3x"
-"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\TheNorth.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\TheNorth0.9.w3x" --checkscriptstuff --exit
+del "F:\Warcraft III Englisch\Maps\DMDF\TheNorth1.0.w3x"
+"F:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" --tweak "F:\Projekte\dmdf\src\Scripts\tweaks.vxtweak" "F:\Projekte\dmdf\maps\TheNorth.w3x" --do "F:\Warcraft III Englisch\Maps\DMDF\TheNorth1.0.w3x" --checkscriptstuff --exit

@@ -19,7 +19,7 @@ library StructGameMapSettings
 		private static player m_neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
 		private static boolean array m_playerGivesXP[16]
 		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
-		private static real m_revivalTime = 35.0
+		private static real m_revivalTime = 15.0
 		private static integer m_startLevel = 1
 		/// Includes the skill point for the default spell.
 		private static integer m_startSkillPoints = 1
