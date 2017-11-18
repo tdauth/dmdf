@@ -9,38 +9,41 @@ The original language of the modification is German but there are English transl
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
-3. [Windows Setup](#windows)
-4. [JassHelper Setup](#jasshelper_setup)
-5. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-6. [Advanced Script Library](#asl)
+3. [Formats](#formats)
+    1. [JASS](#formats_jass)
+    2. [vJass](#formats_vjass)
+    3. [MPQ](#formats_mpq)
+4. [Windows Setup](#windows)
+5. [JassHelper Setup](#jasshelper_setup)
+6. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
+7. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
-7. [vJass](#vjass)
-8. [MPQ](#mpq)
-9. [Core Systems](#core_systems)
+8. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Custom Item Types](#core_systems_custom_item_types)
     3. [Dungeons](#core_systems_dungeons)
     4. [Spawn Points](#core_systems_spawn_points)
     5. [Tree Transparency](#core_systems_tree_transparency)
     6. [Zones](#core_systems_zones)
-10. [Creating a new Map](#creating_a_new_map)
+9. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Map Data](#creating_a_new_map_map_data)
     4. [GUI Triggers](#creating_a_new_map_gui_triggers)
     5. [Required Rects](#creating_a_new_map_required_rects)
     6. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
-11. [Maps](#maps)
-12. [Translation](#translation)
-13. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-14. [Release Process](#release_process)
-15. [Trigger Editor Integration](#trigger_editor_integration)
-16. [Content](#content)
+10. [Maps](#maps)
+11. [Translation](#translation)
+12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+13. [Release Process](#release_process)
+14. [Trigger Editor Integration](#trigger_editor_integration)
+15. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
+16. [Bugs](#bugs)
 17. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
@@ -49,6 +52,35 @@ Since I have pushed the history of binary map and campaign files as well, the hi
 
 The model, texture and sound resources are not part of this repository.
 Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install all resources files.
+
+## Formats <a name="formats"></a>
+Warcraft III brings several custom file formats which have to be understood to modify the game properly.
+
+### JASS <a name="formats_jass"></a>
+[JASS](https://en.wikipedia.org/wiki/JASS) is the scripting language used by Warcraft III to define the logic of a game. Warcraft III contains the two files `common.j` and `common.ai` which declare native functions which can be used in JASS scripts.
+The script `Blizzard.j` contains JASS functions and variables which are used for Blizzard's own Warcraft III maps. They are based on the native functions.
+JASS is statically typed, event-driven and procedural.
+It allows defining functions and global variables.
+Types are only defined as native types.
+Objects which have to be deleted manually extend the type `agent` since patch 1.24b.
+
+### vJass <a name="formats_vjass"></a>
+[vJass](http://www.wc3c.net/vexorian/jasshelpermanual.html) is a scripting language based on Warcraft III's scripting language JASS.
+It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
+
+The first and probably most popular compiler is the [JassHelper](http://www.wc3c.net/showthread.php?t=88142).
+It has also been used for The Power of Fire.
+
+By now other approaches with a better syntax exist like Wurst which has not been there when the project was started. It is highly unlikely that the modification will change its core scripting language since too much code is based on it. Besides it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
+
+The size of the modification helped to find the limits of vJass and to make usage of nearly all features. I even wrote many posts on Wc3C.net to improve the language and to report bugs.
+
+### MPQ <a name="formats_mpq"></a>
+Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for custom data archives.
+Therefore, The Power of Fire provides a custom file called `War3Mod.mpq` with all required resources such as models, textures, icons and sound files.
+This file is automatically loaded by Warcraft III when put into its directory.
+It is also automatically loaded by the World Editor.
+There is several third-party libraries for accessing MPQ archives such as [StormLib](https://github.com/ladislav-zezula/StormLib) and [wc3lib](https://github.com/tdauth/wc3lib) (only reading).
 
 ## Windows Setup <a name="windows"></a>
 The batch scripts from the folder `src/Scripts` work on volume `F:` (previously on volume `E:`) and expect the following folders:
@@ -164,22 +196,6 @@ WARNING: Using % chars in the custom map script leads to unexpected results. You
 For using Bonus Mod you have to make an entry in the "jasshelper.conf" file for the object merger tool.
 It should always be named "ObjectMerger".
 You have to import file "src/ASL/Systems/BonusMod/Creation Bonus Mod.j" once to create all object editor data required by Bonus Mod code.
-
-## vJass <a name="vjass"></a>
-[vJass](http://www.wc3c.net/vexorian/jasshelpermanual.html) is a scripting language based on Warcraft III's scripting language JASS. It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
-
-The first and probably most popular compiler is the [JassHelper](http://www.wc3c.net/showthread.php?t=88142).
-It has also been used for The Power of Fire.
-
-By now other approaches with a better syntax exist like Wurst which has not been there when the project was started. It is highly unlikely that the modification will change its core scripting language since too much code is based on it. Besides it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
-
-The size of the modification helped to find the limits of vJass and to make usage of nearly all features. I even wrote many posts on Wc3C.net to improve the language and to report bugs.
-
-## MPQ <a name="mpq"></a>
-Warcraft III uses the format MPQ for custom data archives.
-Therefore, The Power of Fire provides a custom file called "War3Mod.mpq" with all required resources such as models, textures, icons and sound files.
-This file is automatically loaded by Warcraft III when put into its directory.
-It is also automatically loaded by the World Editor.
 
 ## Core Systems <a name="core_systems"></a>
 The code of the modification is based on the Advanced Script Library.
@@ -449,7 +465,7 @@ The class spells have been planned in a the German sheet [Zauber](doc/Planung/Sp
 ### Background Story <a name="content_background_story"></a>
 The whole background information about the fantasy world of The Power of Fire is stored in the directory [Hintergrunddefinition](./doc/Planung/Hintergrunddefinition).
 There is an unfinished German book called "The Master" which describes the story of Baradé and how he became part of the alliance of Demons, Orcs, Undead and Dark Elves.
-It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band%201%20-%20Der Meister.odt).
+It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band%201%20-%20Der%20Meister.odt).
 It describes some of the background story of this modification.
 
 The basic story of this modification is that the Dark Elves and Orcs invade the kingdom of the Humans.
@@ -463,6 +479,11 @@ Some characters of the background story are described in the following list:
 
 ### Voices <a name="content_voices"></a>
 The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
+
+## Bugs <a name="bugs></a>
+Report bugs as issues in this repository.
+Many bugs are listed in German in the file [TODO](./TODO) but opening an issue in the repository is preferred.
+Since there is no debugger for Warcraft III and multiplayer tests are not that easy to run, there might be still many undetected bugs in the modification and it is recommended to make as many different savegames as possible.
 
 ## Credits <a name="credits"></a>
 This modification has been created by Tamino Dauth.
