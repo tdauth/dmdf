@@ -16,7 +16,7 @@ Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
 
 Test mit Luxi:
 * Texttag für Verkauf (Inventarsystem) wird allen Spielern angezeigt anstatt nur dem Besitzer des verkaufenden Charakters: 10 + 5 = 15. Obwohl ShowFadingTextTagForPlayer() verwendet wird?
-* Wiederbelebungszeit reduzieren 15 Sekunden.
+* DONE: Wiederbelebungszeit reduzieren 15 Sekunden.
 * (Agihard und Sisgard): Talk-skip-Bug, wenn ein Spieler im gleichen Dialog skippt, dann wird auch beim anderen Spieler geskippt.
 Sisgards Sounds (Hälfte geht nicht):
 * Mein Meister war ein großer Zauberer: Sound kaputt, bricht ab.
