@@ -1,11 +1,12 @@
-The Power of Fire
+The Power of Fire <a name="introduction"></a>
 ======================
 
 The Power of Fire (German "Die Macht des Feuers") is a cooperative RPG multiplayer modification of the realtime strategy game Warcraft III: The Frozen Throne.
 It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign which allows traveling between multiple maps.
 All source code is put under the GPLv3.
+The original language of the modification is German but there are English translations.
 
-# Table of contents
+# Table of Contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
 3. [Windows Setup](#windows)
@@ -34,7 +35,12 @@ All source code is put under the GPLv3.
 12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
 13. [Release Process](#release_process)
 14. [Trigger Editor Integration](#trigger_editor_integration)
-15. [Credits](#credits)
+15. [Content](#content)
+    1. [Plot](#content_plot)
+    2. [Gameplay](#content_gameplay)
+    3. [Background Story](#content_background_story)
+    4. [Voices](#content_voices)
+16. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -224,7 +230,7 @@ Your map code folder should look like this:
 * `Spells` - directory for map-specific spell structs
 * `Map` - directory for default map structs
 * `Videos` - directory for map video structs
-* `Quests - directory for map quest structs
+* `Quests` - directory for map quest structs
 * `Talks` - directory for map talk structs
 * `Import.j` - file for map code library and import statements
 
@@ -330,7 +336,7 @@ Init Settings
 
 ### Required Rects <a name="creating_a_new_map_required_rects"></a>
 Every map requires some specific rects for the systems of the modiciation:
-* gg_rct_main_window_credits
+* gg_rct_main_window_credits - This is the area where the credits are shown.
 * gg_rct_class_selection - At the center of this rect the class selection unit is placed.
 
 There is a list of color definitions for those various rect types which are used in maps:
@@ -381,7 +387,8 @@ Since ImageMagick cannot handle BLP files. The icons have to be converted into P
 
 ## Release Process <a name="release_process"></a>
 To update the translations always add English translations to the file `maps/Talras/war3map_en.wts`.
-To update all translations automatically use wc3trans from the wc3lib project. The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything.
+To update all translations automatically use wc3trans from the [wc3lib](https://github.com/tdauth/wc3lib) project.
+The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything.
 
 On Windows the project is expected in the directory `F:/Projekte/dmdf`.
 On Windows the release process consists of the following steps:
@@ -413,10 +420,38 @@ wc3converter --merge TriggerDataNew.txt <path to original TriggerData.txt from W
 
 Then import the file `TriggerDataNew.txt` as `UI\TriggerData.txt`.
 
+## Content <a name="content"></a>
+The content of this modification consist of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
+
+### Plot <a name="content_plot"></a>
+The plot has been planned in several documents which are part of this repository.
+The directory [Spielinhalt](./doc/Planung/Spielinhalt) contains German planning documents of the plot.
+
+### Gameplay <a name="content_gameplay"></a>
+The class spells have been planned in a the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods).
+
+### Background Story <a name="content_background_story"></a>
+The whole background information about the fantasy world of The Power of Fire is stored in the directory [Hintergrunddefinition](./doc/Planung/Hintergrunddefinition).
+There is an unfinished German book called "The Master" which describes the story of Baradé and how he became part of the alliance of Demons, Orcs, Undead and Dark Elves.
+It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band 1 - Der Meister.odt).
+It describes some of the background story of this modification.
+
+The basic story of this modification is that the Dark Elves and Orcs invade the kingdom of the Humans.
+The Humans are allied to and controlled by the High Elves. Therefore, the king of the High Elves who is called Dararos, comes to help the Humans and to face his brother Baradé who is the leader of the Dark Elves.
+
+Some characters of the background story are described in the following list:
+* Deranor - King of the Undead.
+* Gardonar - Lord of the Demons.
+* Baradé - King of the Dark Elves and human brother of Dararos (their mother was a human).
+* Dararos - King of the High Elves and elvish brother of Baradé (their father was a High Elf).
+
+### Voices <a name="content_voices"></a>
+The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
+
 ## Credits <a name="credits"></a>
 This modification has been created by Tamino Dauth.
 There is many other people which contributed to the modification.
-They are listed in the file `src/Game/Credits.j`.
+They are listed in the file [Credits.j](./src/Game/Credits.j).
 The core team has been:
 * Oliver T. - 3D graphics.
 * Andreas B. - Much of the terrain of the maps Talras and Holzbruck, testing, design.
