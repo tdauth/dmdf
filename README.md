@@ -487,7 +487,7 @@ Some characters of the background story are described in the following list:
 ### Voices <a name="content_voices"></a>
 The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
 
-## Bugs <a name="bugs></a>
+## Bugs <a name="bugs"></a>
 Report bugs as issues in this repository.
 Many bugs are listed in German in the file [TODO](./TODO) but opening an issue in the repository is preferred.
 Since there is no debugger for Warcraft III and multiplayer tests are not that easy to run, there might be still many undetected bugs in the modification and it is recommended to make as many different savegames as possible.
