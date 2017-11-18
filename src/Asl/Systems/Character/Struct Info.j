@@ -445,6 +445,7 @@ library AStructSystemsCharacterInfo requires optional ALibraryCoreDebugMisc, ALi
 
 		// only clear data in this function if it has not already been cleared by the skip function
 		if (not playerHasSkipped[GetPlayerId(user)]) then
+			// TODO slow call
 			call playerSpeechData[GetPlayerId(character.player())].remove(playerSpeechData)
 			call playerSpeechData.destroy()
 		endif
@@ -477,19 +478,19 @@ library AStructSystemsCharacterInfo requires optional ALibraryCoreDebugMisc, ALi
 	endfunction
 
 	/**
+	 * Skips the current info for player \p whichPlayer. If none is shown, the call has no effect.
 	 * Sets the skip flag to true that the waiting is skipped in the \ref speech() function.
-	 * But clears all texttags and sounds immediately.
+	 * Clears all texttags and stops all sounds immediately for the player.
 	 */
 	function playerSkipsInfo takes player whichPlayer returns nothing
-		local AIntegerListIterator iterator = 0
+		local PlayerSpeechData speechData = 0
 		if (ACharacter.playerCharacter(whichPlayer).talk() != 0 and not playerHasSkipped[GetPlayerId(whichPlayer)]) then
-			set iterator = playerSpeechData[GetPlayerId(whichPlayer)].begin()
 			loop
-				exitwhen (not iterator.isValid())
-				call PlayerSpeechData(iterator.data()).destroy()
-				set iterator = playerSpeechData[GetPlayerId(whichPlayer)].erase(iterator)
+				exitwhen (playerSpeechData[GetPlayerId(whichPlayer)].empty())
+				set speechData = PlayerSpeechData(playerSpeechData[GetPlayerId(whichPlayer)].back())
+				call speechData.destroy()
+				call playerSpeechData[GetPlayerId(whichPlayer)].popBack()
 			endloop
-			call iterator.destroy()
 			set playerHasSkipped[GetPlayerId(whichPlayer)] = true
 		endif
 	endfunction
