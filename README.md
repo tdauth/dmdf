@@ -33,6 +33,7 @@ The original language of the modification is German but there are English transl
     4. [GUI Triggers](#creating_a_new_map_gui_triggers)
     5. [Required Rects](#creating_a_new_map_required_rects)
     6. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
+    7. [Saving the Map](#creating_a_new_map_saving_the_map)
 10. [Maps](#maps)
 11. [Translation](#translation)
 12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
@@ -389,6 +390,12 @@ Besides there are some naming conventions:
 ### Required Camera Setups <a name="creating_a_new_map_required_camera_setups"></a>
 * gg_cam_class_selection - This camera setup is used for the view of the class selection in the beginning of the game.
 * gg_cam_main_window - This camera setup is used for viewing the main windows of the custom GUI system.
+
+### Saving the Map <a name="creating_a_new_map_saving_the_map"></a>
+Usually, the map can be saved with the JassNewGenPack or SharpCraft World Editor Extended Bundle.
+If the map cannot be saved with a similar tool, scripts like `src/Scripts/savemaps.bat` or `src/Scripts/savemap_talras_debug.bat` can be used to save it.
+These scripts use exported map scripts for every map and call the JassHelper externally.
+Therefore, the map script which imports the code has to be exported before and must be specified in the script.
 
 ## Maps <a name="maps"></a>
 All maps are developed with their German version and share the same object data from the file [ObjectData.w3o](./maps/ObjectData.w3o) which is modified in and exported from the map Talras.
