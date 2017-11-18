@@ -378,12 +378,12 @@ Besides there are some naming conventions:
 All maps are developed with their German version and share the same object data from the file [ObjectData.w3o](./maps/ObjectData.w3o) which is modified in and exported from the map Talras.
 The modification has the following maps:
 * [Tutorial Map Dornheim](./maps/Tutorial.w3x) - The tutorial map is the start of the character's journey. It is the home village of the character and called Dornheim. The character has to leave the village to start his journey.
-* [Chapter 1: Talras](./maps/Karte 1 - Talras.w3x) - Talras is a castle near the border of the kingdom of the Humans. This map has been the first and only map of the modifiation for a long time. It contains most of the modification's content.
-* [Chapter 2: Gardonar](./maps/Karte 2 - Gardonar.w3x) - The journey continues in a palace of the Demon lord Gardonar who offers the character his alliance if the character completes his test successfully.
-* [Chapter 2.1: Gardonar's Hell](./maps/Karte 2.1 - Gardonars Unterwelt.w3x) - Gardonar's test is that the character fights the Demons of his hell which happens in this map.
-* [Chapter 2.2: Deranor's Death Swamp](./maps/Karte 5 - Deranor.w3x) - The characer has to fight Deranor's Undead creatures as well to complete the test.
-* [Chapter 3: Holzbruck](./maps/Karte 3 - Holzbruck.w3x) - Finally, after completing the test, the character arrives in the rich town Holzbruck which is besieged later in the game by the Demons, Dark Elves, Orcs and Undead. This map is quite unfinished at this time.
-* [Chapter 3.1: Holzbruck's Underworld](./maps/Karte 3.1 - Holzbrucks Unterwelt.w3x) - The character has the choice to fight for the town Holzbruck or against it. The player can travel to the underworld of Holzbruck and work for the other side. This map is quite unfinished at this time.
+* [Chapter 1: Talras](./maps/Karte%201%20-%20Talras.w3x) - Talras is a castle near the border of the kingdom of the Humans. This map has been the first and only map of the modifiation for a long time. It contains most of the modification's content.
+* [Chapter 2: Gardonar](./maps/Karte%202%20-%20Gardonar.w3x) - The journey continues in a palace of the Demon lord Gardonar who offers the character his alliance if the character completes his test successfully.
+* [Chapter 2.1: Gardonar's Hell](./maps/Karte 2.1 - Gardonars%20Unterwelt.w3x) - Gardonar's test is that the character fights the Demons of his hell which happens in this map.
+* [Chapter 2.2: Deranor's Death Swamp](./maps/Karte%205%20-%20Deranor.w3x) - The characer has to fight Deranor's Undead creatures as well to complete the test.
+* [Chapter 3: Holzbruck](./maps/Karte%203%20-%20Holzbruck.w3x) - Finally, after completing the test, the character arrives in the rich town Holzbruck which is besieged later in the game by the Demons, Dark Elves, Orcs and Undead. This map is quite unfinished at this time.
+* [Chapter 3.1: Holzbruck's Underworld](./maps/Karte%203.1%20-%20Holzbrucks%20Unterwelt.w3x) - The character has the choice to fight for the town Holzbruck or against it. The player can travel to the underworld of Holzbruck and work for the other side. This map is quite unfinished at this time.
 * [Chapter 4: The North](./maps/TheNorth.w3x) - Wigbhert's home is the cold north where he fights the Orcs and other creatures. This map is the only map which is implemented with GUI triggers only and not JASS or vJass code. This map is quite unfinished at this time.
 * [World Map](./maps/WorldMap.w3x) - This map is only used in the singleplayer campaign. The player can load it and select a destination map where he/she wants to travel to. It is similar to world maps in games like Skyrim which allow fast traveling.
 * [Arena](./maps/Arena.w3x) - A 12 players PvP map where everyone fights vs. everyone and can use the classes of the modification.
@@ -449,7 +449,7 @@ The class spells have been planned in a the German sheet [Zauber](doc/Planung/Sp
 ### Background Story <a name="content_background_story"></a>
 The whole background information about the fantasy world of The Power of Fire is stored in the directory [Hintergrunddefinition](./doc/Planung/Hintergrunddefinition).
 There is an unfinished German book called "The Master" which describes the story of Baradé and how he became part of the alliance of Demons, Orcs, Undead and Dark Elves.
-It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band 1 - Der Meister.odt).
+It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band%201%20-%20Der Meister.odt).
 It describes some of the background story of this modification.
 
 The basic story of this modification is that the Dark Elves and Orcs invade the kingdom of the Humans.
