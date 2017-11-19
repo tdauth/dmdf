@@ -1,7 +1,7 @@
 library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpell
 
 	/**
-	* @todo Use icon path and name etc. from ability with @param ABILITY_ID
+	* \todo Use icon path and name etc. from ability with \p ABILITY_ID
 	* w3a means ability.
 	* "Aspb" is the base ID of spell book
 	* "ANcl" is the base ID of channel

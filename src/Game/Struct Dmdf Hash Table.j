@@ -4,7 +4,7 @@ library StructGameDmdfHashTable requires Asl
 		/**
 		 * Unique handle attachment key.
 		 * These keys are only used globally with \ref DmdfHashTable.global(). Although they should never content with the keys used by \ref AHashTable.global() start with \ref A_HASHTABLE_KEY_MAX for safety.
-		 * @{
+		 * \{
 		 */
 		constant integer DMDF_HASHTABLE_KEY_TALK = A_HASHTABLE_KEY_MAX
 		constant integer DMDF_HASHTABLE_KEY_FELLOW = A_HASHTABLE_KEY_MAX + 1
@@ -24,7 +24,7 @@ library StructGameDmdfHashTable requires Asl
 		constant integer DMDF_HASHTABLE_KEY_SHOP = A_HASHTABLE_KEY_MAX + 15
 		constant integer DMDF_HASHTABLE_KEY_MAX = A_HASHTABLE_KEY_MAX + 16
 		/**
-		 * @}
+		 * \}
 		 */
 	endglobals
 
@@ -62,13 +62,13 @@ library StructGameDmdfHashTable requires Asl
 		 * Every hashtable parent key must be unique.
 		 * Although the keys should not content with the keys used by \ref AGlobalHashTable.global() start with \ref A_HASHTABLE_GLOBAL_KEY_MAX for safety.
 		 * These keys are only used globally with \ref DmdfGlobalHashTable.global().
-		 * @{
+		 * \{
 		 */
 		constant integer DMDF_HASHTABLE_GLOBAL_KEY_ANEYEFORANEYE_DAMAGE = A_HASHTABLE_GLOBAL_KEY_MAX
 		constant integer DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER = A_HASHTABLE_GLOBAL_KEY_MAX + 1
 		constant integer DMDF_HASHTABLE_GLOBAL_KEY_MAX = A_HASHTABLE_GLOBAL_KEY_MAX + 2
 		/**
-		 * @}
+		 * \}
 		 */
 	endglobals
 
