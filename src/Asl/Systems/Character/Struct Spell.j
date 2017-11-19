@@ -8,11 +8,6 @@ library AStructSystemsCharacterSpell requires optional ALibraryCoreDebugMisc, AS
 	private struct AUnitSpellCharacterAdapter extends AUnitSpell
 		private ASpell m_spell
 
-		public stub method setLevel takes unit whichUnit, integer level returns nothing
-			call super.setLevel(whichUnit, level)
-			call this.m_spell.setLevel.evaluate(level)
-		endmethod
-
 		/**
 		 * Called via .execute() when the hero ability is upgraded.
 		 */
@@ -99,26 +94,27 @@ library AStructSystemsCharacterSpell requires optional ALibraryCoreDebugMisc, AS
 		// methods
 
 		public stub method setLevel takes integer level returns nothing
+			call this.unitSpell().setLevel(this.character().unit(), level)
 		endmethod
 
 		public stub method store takes gamecache cache, string missionKey, string labelPrefix returns nothing
 			call super.store(cache, missionKey, labelPrefix)
-			call this.m_unitSpell.store(cache, missionKey, labelPrefix)
+			call this.unitSpell().store(cache, missionKey, labelPrefix)
 		endmethod
 
 		public stub method restore takes gamecache cache, string missionKey, string labelPrefix returns nothing
 			call super.restore(cache, missionKey, labelPrefix)
-			call this.m_unitSpell.restore(cache, missionKey, labelPrefix)
+			call this.unitSpell().restore(cache, missionKey, labelPrefix)
 		endmethod
 
 		public stub method enable takes nothing returns nothing
 			call super.enable()
-			call this.m_unitSpell.enable()
+			call this.unitSpell().enable()
 		endmethod
 
 		public stub method disable takes nothing returns nothing
 			call super.disable()
-			call this.m_unitSpell.disable()
+			call this.unitSpell().disable()
 		endmethod
 
 		/**
