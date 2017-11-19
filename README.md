@@ -26,6 +26,7 @@ The original language of the modification is German but there are English transl
     4. [Spawn Points](#core_systems_spawn_points)
     5. [Tree Transparency](#core_systems_tree_transparency)
     6. [Zones](#core_systems_zones)
+    7. [Map Transitions](#core_systems_map_transitions)
 9. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
@@ -210,7 +211,19 @@ The unit is also revived automatically when it dies.
 The struct `Fellow` allows the creation of fellows.
 
 ### Custom Item Types <a name="core_systems_custom_item_types"></a>
+All custom item types are created in the method `ItemTypes.init()` since they must be available in every map.
+
+To hide the icon of an item ability when the backpack is open, the ability of the item should be added to a spellbook ability with the same ID as the spellbook of the character unit.
+Then, the spellbook ability should be added to the item instead of the actual ability.
+Disable the spellbook ability for all players in the method `ItemTypes.onInit()`.
+The contained ability will still be enabled and when the backpack is enabled, the icon will be inside the spellbook of the character.
+This avoids hiding favorite spells of the character.
+
 To add range items like bows you have to create a custom item type.
+The range items are realized by using a different unit type for every character class which has a range attack type.
+When equipping a range item, the character's unit type is morphed into the other unit type with the help of passive hero transformation.
+The struct `RangeItemType` realizes the passive hero transformation.
+It should be used to creat custom range item types.
 
 To use the proper attack animations the IDs of the item types have to added to methods like
 `ItemTypes.itemTypeIdIsTwoHandedLance()` for example.
@@ -236,6 +249,12 @@ The modification allows traveling between maps in singleplayer like the Bonus Ca
 For every map of the campaign, there has to be a zone.
 A complete list of all zones is initialized by the methodd `Zone.initZones()`.
 The struct `Zone` can be use to create map exits at certain rects to specified maps.
+
+### Map Transitions <a name="core_systems_map_transitions"></a>
+Map transitions allow traveling between maps in the singleplayer campaign.
+The struct `MapChanger` provides several methods to store the characters and change to another map and restore the characters in the other map.
+It saves the current map as savegame and loads the savegame if the player changes back to the map.
+The characters are always stored and restored.
 
 ## Creating a new Map <a name="creating_a_new_map"></a>
 
@@ -460,7 +479,7 @@ wc3converter --merge TriggerDataNew.txt <path to original TriggerData.txt from W
 Then import the file `TriggerDataNew.txt` as `UI\TriggerData.txt`.
 
 ## Content <a name="content"></a>
-The content of this modification consist of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
+The content of this modification consists of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
 
 ### Plot <a name="content_plot"></a>
 The plot has been planned in several documents which are part of this repository.
