@@ -1379,12 +1379,18 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		 * Serializes the unit inventory into a gamecache.
 		 */
 		public stub method store takes gamecache cache, string missionKey, string labelPrefix returns nothing
+			local string equipmentLabel = ""
+			local string equipmentLabelExists = ""
 			local integer i = 0
 			loop
 				exitwhen (i == thistype.maxEquipmentTypes)
+				set equipmentLabel = labelPrefix + "EquipmentItemData" + I2S(i)
+				set equipmentLabelExists = equipmentLabel + "Exists"
 				if (this.m_equipmentItemData[i] != 0) then
-					call StoreBoolean(cache, missionKey, labelPrefix + "EquipmentItemData" + I2S(i) + "Exists", true)
-					call this.m_equipmentItemData[i].store(cache, missionKey, labelPrefix + "EquipmentItemData" + I2S(i))
+					call StoreBoolean(cache, missionKey, equipmentLabelExists, true)
+					call this.m_equipmentItemData[i].store(cache, missionKey, equipmentLabel)
+				else
+					call StoreBoolean(cache, missionKey, equipmentLabelExists, false)
 				endif
 				set i = i + 1
 			endloop
@@ -1400,9 +1406,13 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		endmethod
 
 		private method storeBackpackItem takes gamecache cache, string missionKey, string labelPrefix, integer i returns nothing
+			local string label = labelPrefix + "BackpackItemData" + I2S(i)
+			local string labelExists = label + "Exists"
 			if (this.m_backpackItemData[i] != 0) then
-				call StoreBoolean(cache, missionKey, labelPrefix + "BackpackItemData" + I2S(i) + "Exists", true)
-				call this.m_backpackItemData[i].store(cache, missionKey, labelPrefix + "BackpackItemData" + I2S(i))
+				call StoreBoolean(cache, missionKey, labelExists, true)
+				call this.m_backpackItemData[i].store(cache, missionKey, label)
+			else
+				call StoreBoolean(cache, missionKey, labelExists, false)
 			endif
 		endmethod
 
@@ -1411,6 +1421,8 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		 * \note Drop all items before.
 		 */
 		public stub method restore takes gamecache cache, string missionKey, string labelPrefix returns nothing
+			local string equipmentLabel = ""
+			local string equipmentLabelExists = ""
 			local integer i = 0
 			call this.disable()
 			set i = 0
@@ -1420,8 +1432,10 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 					call this.m_equipmentItemData[i].destroy()
 					set this.m_equipmentItemData[i] = 0
 				endif
-				if (HaveStoredBoolean(cache, missionKey, labelPrefix + "EquipmentItemData" + I2S(i) + "Exists")) then
-					set this.m_equipmentItemData[i] = AUnitInventoryItemData.createRestored(cache, missionKey, labelPrefix + "EquipmentItemData" + I2S(i))
+				set equipmentLabel = labelPrefix + "EquipmentItemData" + I2S(i)
+				set equipmentLabelExists = equipmentLabel + "Exists"
+				if (GetStoredBoolean(cache, missionKey, equipmentLabelExists)) then
+					set this.m_equipmentItemData[i] = AUnitInventoryItemData.createRestored(cache, missionKey, equipmentLabel)
 				endif
 				set i = i + 1
 			endloop
@@ -1438,12 +1452,14 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		endmethod
 
 		private method restoreBackpackItem takes gamecache cache, string missionKey, string labelPrefix, integer i returns nothing
+			local string label = labelPrefix + "BackpackItemData" + I2S(i)
+			local string labelExists = label + "Exists"
 			if (this.m_backpackItemData[i] != 0) then // clear old
 				call this.m_backpackItemData[i].destroy()
 				set this.m_backpackItemData[i] = 0
 			endif
-			if (HaveStoredBoolean(cache, missionKey, labelPrefix + "BackpackItemData" + I2S(i) + "Exists")) then
-				set this.m_backpackItemData[i] = AUnitInventoryItemData.createRestored(cache, missionKey, labelPrefix + "BackpackItemData" + I2S(i))
+			if (GetStoredBoolean(cache, missionKey, labelExists)) then
+				set this.m_backpackItemData[i] = AUnitInventoryItemData.createRestored(cache, missionKey, label)
 			endif
 		endmethod
 
