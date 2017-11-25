@@ -1,6 +1,7 @@
 library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother
 
 	struct TalkMother extends Talk
+		public static constant integer goldCoins = 50
 		private AInfo m_hi
 		private AInfo m_food
 		private AInfo m_back
@@ -22,7 +23,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			call speech(info, character, false, tre("Hallo Mutter!", "Hello Mother!"), null)
 			call speech(info, character, true, tre("Hallo, mein Sohn. Ich weiß du möchtest sobald wie möglich aufbrechen, doch kann ich dich noch um einen kleinen Gefallen bitten?", "Hello, my son. I know you want to start off as soon as possible but can I ask you for a small favor?"), null)
 			call speech(info, character, false, tre("Wenn es unbedingt sein muss.", "If it must be."), null)
-			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter? Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother? Could you bring me some goods from Hans? I'm busy at the moment."), null)
+			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter?! Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother?! Could you bring me some goods from Hans? I'm busy at the moment."), null)
 			call speech(info, character, false, tre("Na gut.", "Fine."), null)
 			call speech(info, character, true, tre("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel.", "Very good, here you have a few gold coins. Get three loaves of bread and four apples."), null)
 			call character.addGold(30)
@@ -37,7 +38,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 		endmethod
 
 		private static method infoConditionFood takes AInfo info, ACharacter character returns boolean
-			return QuestMother.characterQuest(character).questItem(QuestMother.questItemBring).isNew() and character.inventory().totalItemTypeCharges('I016') >= 3 and character.inventory().totalItemTypeCharges('I03O') >= 4
+			return QuestMother.characterQuest(character).questItem(QuestMother.questItemBring).isNew() and character.inventory().totalItemTypeCharges('I016') >= QuestMother.maxBread and character.inventory().totalItemTypeCharges('I03O') >= QuestMother.maxApples
 		endmethod
 
 		private static method infoActionFood takes AInfo info, Character character returns nothing
@@ -51,14 +52,14 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 			set i = 0
 			loop
-				exitwhen (i == 3)
+				exitwhen (i == QuestMother.maxBread)
 				call character.inventory().removeItemType('I016')
 				set i = i + 1
 			endloop
 
 			set i = 0
 			loop
-				exitwhen (i == 4)
+				exitwhen (i == QuestMother.maxApples)
 				call character.inventory().removeItemType('I03O')
 				set i = i + 1
 			endloop
@@ -88,14 +89,14 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 		endmethod
 
 		private static method infoConditionGold takes AInfo info, Character character returns boolean
-			return GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= 50
+			return GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) >= thistype.goldCoins
 		endmethod
 
 		private static method infoActionGold takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 
 			if (thistype.infoConditionGold(info, character)) then
-				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) - 50)
+				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) - thistype.goldCoins)
 				call speech(info, character, false, tre("Hier sind 50 Goldmünzen.", "Here you have 50 gold coins."), null)
 				call speech(info, character, true, tre("Das freut mich aber, mein Sohn. Ich bin stolz auf dich. Bald können wir unseren Gasthof ausbauen, zu einem stattlichen Gebäude.", "That pleases me, my son. I'm proud of you. Soon we will be able to expand our inn into an imposing building."), null)
 				// TODO some effect!
