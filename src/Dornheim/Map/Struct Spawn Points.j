@@ -37,12 +37,10 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02Y_0100, 1.0)
 			set index = thistype.m_chickens.addUnitWithType(gg_unit_n02X_0102, 1.0)
 
-			//set itemIndex = thistype.m_fireCreature.addNewItemType(index, 'I06X', 1.0)
-
 			set thistype.m_horses = VulnerableSpawnPoint.create()
-			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0121, 1.0)
-			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0122, 1.0)
-			set index = thistype.m_horses.addUnitWithType(gg_unit_h02K_0123, 1.0)
+			set index = thistype.m_horses.addUnitWithType(gg_unit_h03L_0129, 1.0)
+			set index = thistype.m_horses.addUnitWithType(gg_unit_h03L_0127, 1.0)
+			set index = thistype.m_horses.addUnitWithType(gg_unit_h03L_0128, 1.0)
 
 			set thistype.m_pigs = VulnerableSpawnPoint.create()
 			set index = thistype.m_pigs.addUnitWithType(gg_unit_n083_0116, 1.0)
