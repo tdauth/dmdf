@@ -2,6 +2,7 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 	struct TalkMother extends Talk
 		public static constant integer goldCoins = 50
+		private boolean array m_hasAlreadyAskedAfterTraveling[12] /// TODO use bj_MAX_PLAYERS
 		private AInfo m_hi
 		private AInfo m_food
 		private AInfo m_back
@@ -9,6 +10,23 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 
 		private AInfo m_gold
 		private AInfo m_goldBack
+
+		public method setHasAlreadyAskedAfterTravelingForAllPlayers takes boolean hasAlreadyAskedAfterTraveling returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set this.m_hasAlreadyAskedAfterTraveling[i] = hasAlreadyAskedAfterTraveling
+				set i = i + 1
+			endloop
+		endmethod
+
+		public method setHasAlreadyAskedAfterTraveling takes player whichPlayer, boolean hasAlreadyAskedAfterTraveling returns nothing
+			set this.m_hasAlreadyAskedAfterTraveling[GetPlayerId(whichPlayer)] = hasAlreadyAskedAfterTraveling
+		endmethod
+
+		public method hasAlreadyAskedAfterTraveling takes player whichPlayer returns boolean
+			return this.m_hasAlreadyAskedAfterTraveling[GetPlayerId(whichPlayer)]
+		endmethod
 
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(this.m_exit.index(), character)
@@ -74,11 +92,13 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 		endmethod
 
 		private static method infoConditionBack takes AInfo info, ACharacter character returns boolean
-			return MapData.traveled.evaluate()
+			local thistype this = thistype(info.talk())
+			return MapData.traveled.evaluate() and not this.hasAlreadyAskedAfterTraveling(character.player())
 		endmethod
 
 		private static method infoActionBack takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
+			call this.setHasAlreadyAskedAfterTraveling(character.player(), true)
 			call speech(info, character, false, tre("Da bin ich wieder.", "Here I am."), null)
 			call speech(info, character, true, tre("Mein Sohn! Den Göttern sei Dank, du bist gesund zurückgekehrt. Hier nimm diesen Kuchen, den ich für dich gebacken habe.", "My son! Thank the gods, you have returned safely. Here take this cake which I baked for you."), null)
 			// Apfelkuchen geben

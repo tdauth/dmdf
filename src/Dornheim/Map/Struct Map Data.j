@@ -133,6 +133,7 @@ endif
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 			set thistype.m_traveled = true
+			call TalkMother.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing
