@@ -8,6 +8,7 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		 * Called by .evaluate() whenever a unit is respawned or added for the first time.
 		 */
 		public stub method onSpawnUnit takes unit whichUnit, integer memberIndex returns nothing
+			call SetUnitOwner(whichUnit, Player(PLAYER_NEUTRAL_PASSIVE), true)
 			call SetUnitInvulnerable(whichUnit, false)
 		endmethod
 
