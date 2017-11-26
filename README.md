@@ -256,6 +256,10 @@ The struct `MapChanger` provides several methods to store the characters and cha
 It saves the current map as savegame and loads the savegame if the player changes back to the map.
 The characters are always stored and restored.
 
+It is automatically detected if the current game is a singleplayer campaign with the help of the method `Game.isCampaign()`.
+The method checks for the custom object `'h600'` with the name `"IsCampaign"`.
+It has to be created in the custom object data of the campaign and must not exist in the single player maps.
+
 ## Creating a new Map <a name="creating_a_new_map"></a>
 
 To create a new map for the modification, several things have to applied for the map to make it work with the modification.
