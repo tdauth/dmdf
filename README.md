@@ -482,6 +482,14 @@ wc3converter --merge TriggerDataNew.txt <path to original TriggerData.txt from W
 
 Then import the file `TriggerDataNew.txt` as `UI\TriggerData.txt`.
 
+The code file [TPoF.j](./src/TriggerData/TPoF.j) contains all JASS functions which are required for the custom trigger data.
+All new JASS functions should be added to this file.
+When the trigger editor functionality is used instead of vJass code, this file should be imported instead of `Import Dmdf.j`.
+Use the following statement:
+```
+//! import "TPoF.j"
+```
+
 ## Content <a name="content"></a>
 The content of this modification consists of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
 
