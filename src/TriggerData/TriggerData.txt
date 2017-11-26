@@ -478,6 +478,10 @@ SetMapSettingsStartSkillPoints=1,integer
 _SetMapSettingsStartSkillPoints_Defaults=1
 _SetMapSettingsStartSkillPoints_Category=TC_TPOF_MAP
 
+AddMapSettingsZoneRestorePosition=1,string,player,real,real,real
+_AddMapSettingsZoneRestorePosition_Defaults=ZoneTalras,Player01,_,_,_
+_AddMapSettingsZoneRestorePosition_Category=TC_TPOF_MAP
+
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras
 _ChangeMap_Category=TC_TPOF_MAP

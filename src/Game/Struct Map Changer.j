@@ -511,6 +511,9 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		public static method restoreCharactersSinglePlayer takes nothing returns nothing
 			local gamecache cache = null
 			local string zone = null
+			local real x = 0.0
+			local real y = 0.0
+			local real facing = 0.0
 			local integer i = 0
 			if (ReloadGameCachesFromDisk()) then
 				set cache = InitGameCache(thistype.gameCacheName)
@@ -526,8 +529,11 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				loop
 					exitwhen (i == MapSettings.maxPlayers())
 					if (GetPlayerSlotState(Player(i)) == PLAYER_SLOT_STATE_PLAYING) then
-						// TODO do not restore at (0 | 0). The region will be discovered!
-						call thistype.restoreCharacterSinglePlayer(cache, Player(i), 0.0, 0.0, 0.0)
+						// Do not restore at (0 | 0). The region will be discovered otherwise.
+						set x = MapSettings.zoneRestoreX(zone, Player(i))
+						set y = MapSettings.zoneRestoreY(zone, Player(i))
+						set facing = MapSettings.zoneRestoreFacing(zone, Player(i))
+						call thistype.restoreCharacterSinglePlayer(cache, Player(i), x, y, facing)
 						call MapData.onRestoreCharacter.evaluate(zone, Character(Character.playerCharacter(Player(i))))
 					endif
 					set i = i + 1

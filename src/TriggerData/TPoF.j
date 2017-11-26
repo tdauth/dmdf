@@ -235,6 +235,10 @@ function SetMapSettingsStartLevel takes integer startLevel returns nothing
 	call MapSettings.setStartLevel(startLevel)
 endfunction
 
+function AddZoneRestorePosition takes string zone, player whichPlayer, real x, real y, real facing returns nothing
+	call MapSettings.addZoneRestorePosition(zone, whichPlayer, x, y, facing)
+endfunction
+
 function ChangeMap takes string mapName returns nothing
 	 call MapChanger.changeMap(mapName)
 endfunction
