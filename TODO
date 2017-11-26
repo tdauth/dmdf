@@ -25,16 +25,15 @@ Vielleicht weil beide Spieler gleichzeitig mit ihr reden (skips). Wenn Spieler 1
 Aghiard-Regelsounds um eins versetzt bei 3. kommt 2.
 * Arenagegner für jeden Kampf pro Spieler Anzahl merken und Gegner stärker machen.
 * Arenagegner sollten je nach Stärker mehr Gold geben.
-* Donnersound zu laut.
+* FIXED: Donnersound zu laut.
 * Gespräch zwischen Wieland und Einar, falscch herum, anderer NPC muss zuerst was sagen.
 * Alle Zauber im Zauberbuch können nur bis Stufe ein geskillt weren, Skill Points werden trotzem verbraucht.
 * Quest Gold für die Handelserlaubnis, Hinweis ins Quest-Log schreiben nachdem man mit Ferdinand darüber geredet hat.
 * Nachdem Barade leavt kommt "Barade ist nun Admin".
 * Lothar: Beleidigung, Quest sollte trotzdem annehmbar sein.
 * Teleporter geht nach laden nur zum ersten Schrein an der Burg.
-* Fog of War ausmachen.
-* Markwards Quest: "Zwei Tage sind vergangen": "Genügend Zeit ist vergangen -> die Pfeile sind fertig"
-* Dagos Pilzquest, reinschreiben wie viel Pilze man braucht.
+* DONE: Markwards Quest: "Zwei Tage sind vergangen": "Genügend Zeit ist vergangen -> die Pfeile sind fertig"
+* DONE: Dagos Pilzquest, reinschreiben wie viel Pilze man braucht.
 * Musik in Talras kam nicht. Zumindest das zweite Lied drinnen lassen?
 
 Open TODO items:
