@@ -376,14 +376,12 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call RemoveUnit(oldUnit)
 
 				// Reset all grimoire spells to reskill them afterwards with the total skill points. Besides the spells have to be removed from the skilled spells in grimoire.
-				debug call Print("Clearing grimoire spells with count: " + I2S(character.grimoire().spells()))
 				call character.grimoire().clearLearnedSpells()
 				call character.grimoire().favourites().clear()
 				// Make sure that the grimoire spells (also not learned spells are cleared). They can only be removed by Grimoire.removeSpellByIndex() or simply by clearing them.
 				call character.grimoire().clearSpells()
 				// For showing a new page better clear the currently showed UI spells as well.
 				call character.grimoire().clearUiSpells()
-				debug call Print("New grimoire spells count: " + I2S(character.grimoire().spells()) + " favorite spells count: " + I2S(character.grimoire().favourites().size()) + " and learned spells count " + I2S(character.grimoire().learnedSpells()))
 				// Destroy all spells since the class might have been repicked! Include map specific spells etc. as well. Exclude Grimoire control spells as well as the grimoire spell itself.
 				call thistype.destroyAllNonGrimoireSpells.evaluate(character) // New OpLimit.
 				// don't clear all ASpell spells, otherwise Grimoire spells which inherit ASpell will be cleared completely.
@@ -400,10 +398,8 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 			call character.grimoire().setHeroLevel(GetHeroLevel(character.unit()))
 
 			// Create spells only when the class is set, otherwise the grimoire stays empty.
-			//debug call Print("Creating spells, character has " + I2S(character.spellCount()) + " spells")
 			// Creates spells which are required in the grimoire etc. and adds hero glow etc.
 			call ClassSelection.setupCharacterUnit.evaluate(character, character.class())
-			//debug call Print("After spell creation classes, character has " + I2S(character.spellCount()) + " spells")
 
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetStoredInteger(cache, missionKey, "Gold"))
 			call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_LUMBER, GetStoredInteger(cache, missionKey, "Lumber"))
@@ -420,7 +416,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 				call thistype.restoreGrimoireSpellIsInFavorites.evaluate(character, cache, missionKey, spell, "Grimoire" + I2S(spell.ability()) + "Favorites")
 				set i = i + 1
 			endloop
-			//debug call Print("After restoring spell levels. Total skill points: " + I2S(character.grimoire().totalSkillPoints()))
 
 			// make sure the GUI of the grimoire is correct
 			// updates the UI and makes sure the page is shown not the current spell
@@ -541,8 +536,6 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 
 				call thistype.clearMapTransition()
 
-				//debug call Print("From zone: " + zone)
-				//debug call Print("Current save game: " + thistype.m_currentSaveGame)
 				call MapData.onRestoreCharacters.evaluate(zone)
 				set cache = null
 			endif
