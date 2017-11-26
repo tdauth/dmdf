@@ -34,7 +34,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_motherTalksToGotlinde = NpcTalksRoutine.create(Routines.talk(), Npcs.mother(), 0.00, 17.00, gg_rct_waypoint_mother)
 			call thistype.m_motherTalksToGotlinde.setFacing(218.30)
 			call thistype.m_motherTalksToGotlinde.setPartner(Npcs.gotlinde())
-			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), null)
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), gg_snd_Mother01)
 			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), null)
 
 			set thistype.m_motherStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mother(), 17.00, 23.59, gg_rct_waypoint_mother)

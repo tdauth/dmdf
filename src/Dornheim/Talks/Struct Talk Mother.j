@@ -39,11 +39,11 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 		private static method infoActionHi takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hallo Mutter!", "Hello Mother!"), null)
-			call speech(info, character, true, tre("Hallo, mein Sohn. Ich weiß du möchtest sobald wie möglich aufbrechen, doch kann ich dich noch um einen kleinen Gefallen bitten?", "Hello, my son. I know you want to start off as soon as possible but can I ask you for a small favor?"), null)
+			call speech(info, character, true, tre("Hallo, mein Sohn. Ich weiß du möchtest sobald wie möglich aufbrechen, doch kann ich dich noch um einen kleinen Gefallen bitten?", "Hello, my son. I know you want to start off as soon as possible but can I ask you for a small favor?"), gg_snd_Mother02)
 			call speech(info, character, false, tre("Wenn es unbedingt sein muss.", "If it must be."), null)
-			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter?! Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother?! Could you bring me some goods from Hans? I'm busy at the moment."), null)
+			call speech(info, character, true, tre("Also, wie sprichst du denn mit deiner Mutter?! Könntest du mir noch einige Waren bei Hans besorgen? Ich habe gerade keine Zeit dafür.", "So, is that the way you talk to your mother?! Could you bring me some goods from Hans? I'm busy at the moment."), gg_snd_Mother03)
 			call speech(info, character, false, tre("Na gut.", "Fine."), null)
-			call speech(info, character, true, tre("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel.", "Very good, here you have a few gold coins. Get three loaves of bread and four apples."), null)
+			call speech(info, character, true, tre("Sehr gut, hier hast du ein paar Goldmünzen. Besorge mir drei Laibe Brot und vier Äpfel.", "Very good, here you have a few gold coins. Get three loaves of bread and four apples."), gg_snd_Mother04)
 			call character.addGold(30)
 
 			call QuestMother.characterQuest(character).questItem(QuestMother.questItemTalk).setState(QuestMother.stateCompleted)
@@ -63,10 +63,10 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			local thistype this = thistype(info.talk())
 			local integer i = 0
 			call speech(info, character, false, tre("Hier sind die Waren.", "There you have your goods."), null)
-			call speech(info, character, true, tre("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Gasthof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen.", "I thank you my son! After all, you're still reliable. Now I'll let you go, even if it breaks my heart. Take care of yourself and remember that our inn runs badly. I could use a little more gold coins."), null)
-			call speech(info, character, true, tre("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört.", "May the gods protect you and take good care of you! ... Oh, please be so kind and tell Gotlinde good-bye, as it is."), null)
+			call speech(info, character, true, tre("Ich danke dir mein Sohn! Immerhin bist du noch zuverlässig. Nun lasse ich dich schließlich gehen, auch wenn es mir das Herz bricht. Pass auf dich auf und denke daran, unser Gasthof läuft schlecht. Etwas mehr Goldmünzen könnte ich gut gebrauchen.", "I thank you my son! After all, you're still reliable. Now I'll let you go, even if it breaks my heart. Take care of yourself and remember that our inn runs badly. I could use a little more gold coins."), gg_snd_Mother05)
+			call speech(info, character, true, tre("Mögen die Götter dich beschützen und pass gut auf dich auf! ... Ach so, sei doch bitte so lieb und sag Gotlinde noch Lebwohl, so wie es sich gehört.", "May the gods protect you and take good care of you! ... Oh, please be so kind and tell Gotlinde good-bye, as it is."), gg_snd_Mother06)
 			call speech(info, character, false, tre("Mutter, ich ...", "Mother, I ..."), null)
-			call speech(info, character, true, tre("Nun mach schon. Ach und nimm diesen Brief mit dir mein Sohn. Er soll dich an deine arme Mutter erinnern.", "Come on. Oh and take this letter with you my son. It shall remind you of your poor mother."), null)
+			call speech(info, character, true, tre("Nun mach schon. Ach und nimm diesen Brief mit dir mein Sohn. Er soll dich an deine arme Mutter erinnern.", "Come on. Oh and take this letter with you my son. It shall remind you of your poor mother."), gg_snd_Mother07)
 
 			set i = 0
 			loop
@@ -100,10 +100,10 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			local thistype this = thistype(info.talk())
 			call this.setHasAlreadyAskedAfterTraveling(character.player(), true)
 			call speech(info, character, false, tre("Da bin ich wieder.", "Here I am."), null)
-			call speech(info, character, true, tre("Mein Sohn! Den Göttern sei Dank, du bist gesund zurückgekehrt. Hier nimm diesen Kuchen, den ich für dich gebacken habe.", "My son! Thank the gods, you have returned safely. Here take this cake which I baked for you."), null)
+			call speech(info, character, true, tre("Mein Sohn! Den Göttern sei Dank, du bist gesund zurückgekehrt. Hier nimm diesen Kuchen, den ich für dich gebacken habe.", "My son! Thank the gods, you have returned safely. Here take this cake which I baked for you."), gg_snd_Mother08)
 			// Apfelkuchen geben
 			call character.giveItem('I07F')
-			call speech(info, character, true, tre("Sprich, hast du zufällig ein paar Goldmünzen für unseren Gasthof mitgebracht?", "Say, did you bring a few gold coins for our inn?"), null)
+			call speech(info, character, true, tre("Sprich, hast du zufällig ein paar Goldmünzen für unseren Gasthof mitgebracht?", "Say, did you bring a few gold coins for our inn?"), gg_snd_Mother09)
 
 			call this.showRange(this.m_gold.index(), this.m_goldBack.index(), character)
 		endmethod
@@ -118,11 +118,11 @@ library StructMapTalksTalkMother requires Asl, StructMapMapNpcs, StructMapQuests
 			if (thistype.infoConditionGold(info, character)) then
 				call SetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(character.player(), PLAYER_STATE_RESOURCE_GOLD) - thistype.goldCoins)
 				call speech(info, character, false, tre("Hier sind 50 Goldmünzen.", "Here you have 50 gold coins."), null)
-				call speech(info, character, true, tre("Das freut mich aber, mein Sohn. Ich bin stolz auf dich. Bald können wir unseren Gasthof ausbauen, zu einem stattlichen Gebäude.", "That pleases me, my son. I'm proud of you. Soon we will be able to expand our inn into an imposing building."), null)
+				call speech(info, character, true, tre("Das freut mich aber, mein Sohn. Ich bin stolz auf dich. Bald können wir unseren Gasthof ausbauen, zu einem stattlichen Gebäude.", "That pleases me, my son. I'm proud of you. Soon we will be able to expand our inn into an imposing building."), gg_snd_Mother10)
 				// TODO some effect!
 			else
 				call speech(info, character, false, tre("Leider nicht.", "Unfortunately not."), null)
-				call speech(info, character, true, tre("Schade, sehr schade.", "Too bad, very sad."), null)
+				call speech(info, character, true, tre("Schade, sehr schade.", "Too bad, very sad."), gg_snd_Mother11)
 			endif
 
 			call this.showStartPage(character)
