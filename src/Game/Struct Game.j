@@ -486,6 +486,7 @@ endif
 		private static method onInit takes nothing returns nothing
 			local integer i = 0
 
+			call Zone.initZones.evaluate() // before map settings
 			/*
 			 * Initialize the MapSettings properties here.
 			 */
@@ -584,7 +585,6 @@ endif
 			call initSpells.evaluate() // after classes!
 			call Shop.init.evaluate() // before map data initialization!
 			call QuestArea.init.evaluate() // before map data initialization!
-			call Zone.initZones.evaluate() // before map data initialization!
 			// map
 			call MapData.init.evaluate()
 
