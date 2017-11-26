@@ -1,4 +1,4 @@
-library StructMapMapWeather requires Asl
+library StructMapMapWeather requires Asl, StructGameMapSettings
 
 	/**
 	 * \brief The map Talras has as only weather rain which appears from time to time.
