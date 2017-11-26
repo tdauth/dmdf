@@ -20,6 +20,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 			call MapSettings.setMapName("HB")
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0008)
+			call MapSettings.addZoneRestorePositionForAllPlayers("DS", GetRectCenterX(gg_rct_start_deranors_swamp), GetRectCenterY(gg_rct_start_deranors_swamp), 270.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("TN", GetRectCenterX(gg_rct_start_the_north), GetRectCenterY(gg_rct_start_the_north), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("TL", GetRectCenterX(gg_rct_start_talras), GetRectCenterY(gg_rct_start_talras), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("HU", GetRectCenterX(gg_rct_start_holzbrucks_underworld), GetRectCenterY(gg_rct_start_holzbrucks_underworld), 180.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -147,19 +151,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "DS") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_deranors_swamp))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_deranors_swamp))
-				call SetUnitFacing(character.unit(), 270.0)
-			elseif (zone == "TN") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_the_north))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_the_north))
-				call SetUnitFacing(character.unit(), 180.0)
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_talras))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_talras))
-				call SetUnitFacing(character.unit(), 180.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

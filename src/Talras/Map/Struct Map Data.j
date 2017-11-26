@@ -57,6 +57,10 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('h016', true)
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('h020', true)
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('u00C', true)
+
+			call MapSettings.addZoneRestorePositionForAllPlayers("GA", GetRectCenterX(gg_rct_start_gardonar), GetRectCenterY(gg_rct_start_gardonar), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start_holzbruck), GetRectCenterY(gg_rct_start_holzbruck), 270.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("DH", GetRectCenterX(gg_rct_start_dornheim), GetRectCenterY(gg_rct_start_dornheim), 90.0)
 		endmethod
 
 		private static method triggerConditionWelcomeTalras takes nothing returns boolean
@@ -460,20 +464,6 @@ endif
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "GA") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_gardonar))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_gardonar))
-				call SetUnitFacing(character.unit(), 180.0)
-			elseif (zone == "HB") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
-				call SetUnitFacing(character.unit(), 270.0)
-			// Dornheim
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_dornheim))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_dornheim))
-				call SetUnitFacing(character.unit(), 90.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

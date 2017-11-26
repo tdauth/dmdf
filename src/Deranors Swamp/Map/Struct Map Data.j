@@ -19,6 +19,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\War3XMainScreen.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0011)
 			call MapSettings.setNeutralPassivePlayer(Player(7))
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start_holzbruck), GetRectCenterY(gg_rct_start_holzbruck), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("GH", GetRectCenterX(gg_rct_start), GetRectCenterY(gg_rct_start), 0.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -147,15 +149,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "HB") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
-				call SetUnitFacing(character.unit(), 180.0)
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
-				call SetUnitFacing(character.unit(), 0.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

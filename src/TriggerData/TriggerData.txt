@@ -482,6 +482,10 @@ AddMapSettingsZoneRestorePosition=1,string,player,real,real,real
 _AddMapSettingsZoneRestorePosition_Defaults=ZoneTalras,Player01,_,_,_
 _AddMapSettingsZoneRestorePosition_Category=TC_TPOF_MAP
 
+AddMapSettingsZoneRestorePositionForAllPlayers=1,string,real,real,real
+_AddMapSettingsZoneRestorePositionForAllPlayers_Defaults=ZoneTalras,_,_,_
+_AddMapSettingsZoneRestorePositionForAllPlayers_Category=TC_TPOF_MAP
+
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras
 _ChangeMap_Category=TC_TPOF_MAP

@@ -17,6 +17,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 			call MapSettings.setMapName("HU")
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Luzifers Abschied.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0001)
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start), GetRectCenterY(gg_rct_start), 90.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -140,9 +141,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
-			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 
 		/// Required by \ref MapChanger.

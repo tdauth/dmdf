@@ -20,6 +20,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0009)
 			call MapSettings.setIsSeparateChapter(true)
+			call MapSettings.addZoneRestorePositionForAllPlayers("TL", GetRectCenterX(gg_rct_start_talras), GetRectCenterY(gg_rct_start_talras), 180.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -127,9 +128,6 @@ endif
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_talras))
-			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_talras))
-			call SetUnitFacing(character.unit(), 180.0)
 		endmethod
 
 		/// Required by \ref MapChanger.

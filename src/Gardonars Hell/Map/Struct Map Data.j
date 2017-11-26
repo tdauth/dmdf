@@ -18,6 +18,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call MapSettings.setMapName("GH")
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\War3XMainScreen.mp33")
 			call MapSettings.setGoldmine(gg_unit_n06E_0090)
+			call MapSettings.addZoneRestorePositionForAllPlayers("GA", GetRectCenterX(gg_rct_start), GetRectCenterY(gg_rct_start), 90.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("DS", GetRectCenterX(gg_rct_start_deranors_swamp), GetRectCenterY(gg_rct_start_deranors_swamp), 270.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -145,15 +147,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "GA") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
-				call SetUnitFacing(character.unit(), 90.0)
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_deranors_swamp))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_deranors_swamp))
-				call SetUnitFacing(character.unit(), 270.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

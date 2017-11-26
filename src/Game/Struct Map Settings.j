@@ -193,6 +193,15 @@ library StructGameMapSettings requires StructGameZoneRestorePosition
 			endif
 		endmethod
 
+		public static method addZoneRestorePositionForAllPlayers takes string zone, real x, real y, real facing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				call thistype.addZoneRestorePosition(zone, Player(i), x, y, facing)
+				set i = i + 1
+			endloop
+		endmethod
+
 		private static method loadZoneRestorePosition takes string zone, player whichPlayer returns integer
 			local integer zoneIndex = thistype.indexOfZone(zone)
 			if (zoneIndex == -1) then
