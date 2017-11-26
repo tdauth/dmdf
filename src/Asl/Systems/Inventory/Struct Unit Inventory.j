@@ -380,6 +380,18 @@ library AStructSystemsInventoryUnitInventory requires AStructCoreGeneralHashTabl
 		// dynamic members
 
 		/**
+		 * Replaces the current unit of the inventory by \p newUnit.
+		 * This does also change the owning player.
+		 * Note that it does not add the ability nor add any items to the unit.
+		 */
+		public method replaceUnit takes unit newUnit returns nothing
+			call AHashTable.global().removeHandleInteger(this.m_unit, A_HASHTABLE_KEY_INVENTORY)
+			set this.m_unit = newUnit
+			call AHashTable.global().setHandleInteger(newUnit, A_HASHTABLE_KEY_INVENTORY, this)
+			set this.m_player = GetOwningPlayer(newUnit)
+		endmethod
+
+		/**
 		 * Sets the item type of a placeholder item for equipment type \p equipmentType to \p itemTypeId.
 		 * If the item type ID is not 0 the placeholder item will be shown whenever there is no item equipped of that certain type instead of an empty slot.
 		 */

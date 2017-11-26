@@ -382,6 +382,9 @@ library AStructSystemsCharacterCharacter requires optional ALibraryCoreDebugMisc
 			call AHashTable.global().removeHandleInteger(oldUnit, A_HASHTABLE_KEY_CHARACTER)
 			set this.m_unit = newUnit
 			call AHashTable.global().setHandleInteger(newUnit, A_HASHTABLE_KEY_CHARACTER, this)
+			if (thistype.m_useInventorySystem) then
+				call this.m_inventory.replaceUnit.evaluate(newUnit)
+			endif
 			call this.onReplaceUnit.evaluate(oldUnit, newUnit)
 		endmethod
 

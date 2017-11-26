@@ -21,6 +21,10 @@ library AStructSystemsCharacterInventory requires AStructSystemsInventoryUnitInv
 			call this.m_unitInventory.disable()
 		endmethod
 
+		public method replaceUnit takes unit newUnit returns nothing
+			call this.m_unitInventory.replaceUnit(newUnit)
+		endmethod
+
 		public stub method store takes gamecache cache, string missionKey, string labelPrefix returns nothing
 			call super.store(cache, missionKey, labelPrefix)
 			call this.m_unitInventory.store(cache, missionKey, labelPrefix)
