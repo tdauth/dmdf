@@ -6,7 +6,7 @@ STRING 0
 
 STRING 1
 {
-Chapter 1: Talras 0.9
+Chapter 1: Talras 1.0
 }
 
 STRING 2
@@ -1054,25 +1054,25 @@ Ruins Wall 2 (Grassland)
 STRING 176
 // Doodads: D034 (Sack 1 (Grasland)), Name (Name (dnam))
 {
-Sack 1 (Grassland)
+Bag 1 (Grassland)
 }
 
 STRING 177
 // Doodads: D035 (Sack 2 (Grasland)), Name (Name (dnam))
 {
-Sack 2 (Grassland)
+Bag 2 (Grassland)
 }
 
 STRING 178
 // Doodads: D036 (Sack 3 (Grasland)), Name (Name (dnam))
 {
-Sack 3 (Grassland)
+Bag 3 (Grassland)
 }
 
 STRING 179
 // Doodads: D037 (Sack 4 (Grasland)), Name (Name (dnam))
 {
-Sack 4 (Grassland)
+Bag 4 (Grassland)
 }
 
 STRING 180
@@ -9180,7 +9180,7 @@ Erhöht den Schaden um <A1VP,DataA1> und die Stärke um <A1VR,DataC1>. Außerdem
 STRING 1533
 // Gegenstände: I05C (Nordischer Kriegshammer), Tip (Tooltipp - Einfach (utip))
 {
-Nordischen Kriegshammer kaufen
+Buy Nordic Warhammer
 }
 
 STRING 1534
@@ -17550,7 +17550,7 @@ STRING 3112
 STRING 3113
 // Fähigkeiten: A06F (Arkane List - Erlernen), Name (Name (anam))
 {
-Arkane List - Erlernen
+Arcane Trick - Learn
 }
 
 STRING 3116
@@ -18762,7 +18762,7 @@ Packpferd kaufen
 STRING 3339
 // Fähigkeiten: A06E (Arkane List - Erlernen), Name (Name (anam))
 {
-Arkane List - Erlernen
+Arcane Trick - Learn
 }
 
 STRING 3340
@@ -19074,7 +19074,7 @@ STRING 3391
 STRING 3392
 // Einheiten: n031 (Sack), Name (Name (unam))
 {
-Sack
+Bag
 }
 
 STRING 3393
@@ -19086,7 +19086,7 @@ STRING 3393
 STRING 3394
 // Einheiten: n032 (Sack), Name (Name (unam))
 {
-Sack
+Bag
 }
 
 STRING 3395
@@ -20088,7 +20088,7 @@ STRING 3634
 STRING 3635
 // Fähigkeiten: A015 (Rucksack öffnen), Ubertip (Tooltipp - Normal - Erweitert (aub1))
 {
-In the backpack additional items can be stored. It contains 32 different bags with four different slots each. Items of the same type will be stacked automatically.When an item with several charges is moved to or dropped on a slot in its current backpack bag only one charge will be moved or rather dropped. Items which are storedin the backpack can be dropped by placing them on the current slot. Equipped items can be moved to the backpack by this method.
+In the backpack additional items can be stored. It contains 30 different bags with four different slots each. Items of the same type will be stacked automatically. When an item with several charges is moved to or dropped on a slot in its current backpack bag only one charge will be moved or rather dropped. Items which are stored in the backpack can be dropped by placing them on the current slot. Equipped items can be moved to the backpack by this method.
 }
 
 STRING 3636
@@ -20454,7 +20454,7 @@ STRING 3703
 STRING 3704
 // Fähigkeiten: A10K (Arkane List - Stufe 1), Tip (Tooltipp - Normal (atp1))
 {
-Arkane List [|cffffcc00Stufe 1|r]
+Arcane Trick [|cffffcc00Level 1|r]
 }
 
 STRING 3705
@@ -42338,7 +42338,7 @@ STRING 11346
 STRING 11347
 // Fähigkeiten: A10K (Arkane List - Stufe 1), Name (Name (anam))
 {
-Arkane List - Stufe 1
+Arcane Trick - Level 1
 }
 
 STRING 11350
@@ -42350,7 +42350,7 @@ Parasite [|cffffcc00Level 2|r]
 STRING 11351
 // Fähigkeiten: A10L (Arkane List - Stufe 1), Name (Name (anam))
 {
-Arkane List - Stufe 1
+Arcane Trick - Level 1
 }
 
 STRING 11361
@@ -44263,7 +44263,7 @@ Scroll of the Collector
 STRING 12040
 // Gegenstände: I04N (Spruchrolle des Sammlers), Tip (Tooltipp - Einfach (utip))
 {
-Spruchrolle des Sammlers kaufen
+Buy Scroll of the Collector
 }
 
 STRING 12041
@@ -48721,7 +48721,7 @@ The warhammer of a Northman.
 STRING 13286
 // Gegenstände: I07M (Verfluchter Kriegshammer), Tip (Tooltipp - Einfach (utip))
 {
-Nordischen Kriegshammer kaufen
+Buy Nordic Warhammer
 }
 
 STRING 13287
@@ -49627,13 +49627,13 @@ STRING 13518
 STRING 13519
 // Gegenstände: I05E (Nordischer Kriegshelm), Name (Name (unam))
 {
-Nordischer Kriegshelm
+Nordic War Helmet
 }
 
 STRING 13520
 // Gegenstände: I05E (Nordischer Kriegshelm), Tip (Tooltipp - Einfach (utip))
 {
-Nordischen Kriegshelm kaufen
+Buy Nordic War Helmet
 }
 
 STRING 13521
@@ -49717,25 +49717,25 @@ Ritterhelm
 STRING 13534
 // Gegenstände: I05G (Buch der Magie), Name (Name (unam))
 {
-Buch der Magie
+Book of Magic
 }
 
 STRING 13535
 // Gegenstände: I05G (Buch der Magie), Description (Beschreibung (ides))
 {
-Ein Buch mit Anleitungen zum Herstellen von Spruchrollen.
+A book with instructions for making scrolls.
 }
 
 STRING 13536
 // Gegenstände: I05G (Buch der Magie), Tip (Tooltipp - Einfach (utip))
 {
-Buch der Magie kaufen
+Buy Book of Magic
 }
 
 STRING 13537
 // Gegenstände: I05G (Buch der Magie), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Buch mit Anleitungen zum Herstellen von Spruchrollen.
+A book with instructions for making scrolls.
 }
 
 STRING 13538
@@ -49891,13 +49891,13 @@ Barrikade
 STRING 13563
 // Gegenstände: I05J (Buch der Tränke), Name (Name (unam))
 {
-Buch der Tränke
+Book of Potions
 }
 
 STRING 13564
 // Gegenstände: I05J (Buch der Tränke), Description (Beschreibung (ides))
 {
-Ein Buch mit Anleitungen zum Herstellen von Tränken.
+A book with instructions for making potions.
 }
 
 STRING 13565
@@ -49909,7 +49909,7 @@ Aura der Autorität [|cffffcc00Stufe 1|r]
 STRING 13566
 // Gegenstände: I05J (Buch der Tränke), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Buch mit Anleitungen zum Herstellen von Tränken.
+A book with instructions for making potions.
 }
 
 STRING 13567
@@ -60865,25 +60865,25 @@ Erzeugt eine Illusion des Zaubernden.
 STRING 15455
 // Gegenstände: I05X (Buch der Schmiedekunst), Name (Name (unam))
 {
-Buch der Schmiedekunst
+Book of Blacksmithing
 }
 
 STRING 15456
 // Gegenstände: I05X (Buch der Schmiedekunst), Description (Beschreibung (ides))
 {
-Ein Buch mit Anleitungen zum Herstellen von Waffen, Rüstungen und Helmen.
+A book with instructions for making weapons, armours and helmets.
 }
 
 STRING 15457
 // Gegenstände: I05X (Buch der Schmiedekunst), Tip (Tooltipp - Einfach (utip))
 {
-Buch der Schmiedekunst kaufen
+Buy Book of Blacksmithing
 }
 
 STRING 15458
 // Gegenstände: I05X (Buch der Schmiedekunst), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein Buch mit Anleitungen zum Herstellen von Waffen, Rüstungen und Helmen.
+A book with instructions for making weapons, armours and helmets.
 }
 
 STRING 15459
@@ -69211,7 +69211,7 @@ Blessing [|cffffcc00Level 2|r]
 STRING 17390
 // Gegenstände: I016 (Brotlaib), Tip (Tooltipp - Einfach (utip))
 {
-|cffffcc00B|rrotlaib kaufen
+Buy Loaf (|cffffcc00B|r)
 }
 
 STRING 17391
@@ -71948,7 +71948,7 @@ Magische Schockwellen [|cffffcc00Stufe 1|r] (|cffffcc00O|r)
 STRING 17857
 // Fähigkeiten: A08Z (Arkane List), Tip (Tooltipp - Normal (atp1))
 {
-Arkane List [|cffffcc00Stufe 1|r] (|cffffcc00Q|r)
+Arcane Trick [|cffffcc00Level 1|r] (|cffffcc00Q|r)
 }
 
 STRING 17859
@@ -75116,13 +75116,13 @@ Buy Mana Herb
 STRING 19154
 // Gegenstände: I06U (Salatkopf), Description (Beschreibung (ides))
 {
-Erhöht die Geschwindigkeit.
+Increases the movement speed.
 }
 
 STRING 19155
 // Fähigkeiten: A1OX (Salatkopf), Name (Name (anam))
 {
-Salatkopf
+Head of Lettuce
 }
 
 STRING 19156
@@ -79346,19 +79346,19 @@ STRING 20052
 STRING 20053
 // Einheiten: h02Y (Reiterloses Pferd), Tip (Tooltipp - Einfach (utip))
 {
-Reiterloses Pferd kaufen
+Buy Riderless Horse
 }
 
 STRING 20054
 // Einheiten: h02Y (Reiterloses Pferd), Ubertip (Tooltipp - Erweitert (utub))
 {
-Ein reiterloses Pferd kann mit der Fähigkeit Pferd reiten geritten werden.
+A riderless horse can be ridden with the ability Ride Horse.
 }
 
 STRING 20055
 // Gegenstände: I074 (Sattel), Tip (Tooltipp - Einfach (utip))
 {
-Sattel kaufen
+Buy Saddle
 }
 
 STRING 20056
@@ -80006,7 +80006,7 @@ Laden-Pfeil
 STRING 20167
 // Fähigkeiten: A1UP (Laden-Pfeil), EditorSuffix (Editor-Suffix (ansf))
 {
-(Sattel)
+(Saddle)
 }
 
 STRING 20168
