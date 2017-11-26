@@ -37,6 +37,7 @@ library StructMapMapWeather requires Asl, StructGameMapSettings
 					if (GetLocalPlayer() == Player(i)) then
 						// only play thunder if view is in playable area where it rains
 						if (GetCameraTargetPositionX() <= GetRectMaxX(gg_rct_area_playable) and GetCameraTargetPositionX() >= GetRectMinX(gg_rct_area_playable) and GetCameraTargetPositionY() <= GetRectMaxY(gg_rct_area_playable) and GetCameraTargetPositionY() >= GetRectMinY(gg_rct_area_playable)) then
+							call SetSoundVolumeBJ(gg_snd_RollingThunder1, 50.0)
 							call StartSound(gg_snd_RollingThunder1)
 							call CinematicFadeBJ(bj_CINEFADETYPE_FADEOUTIN, 0.10, "ReplaceableTextures\\CameraMasks\\White_mask.blp", 100.0, 100.0, 100.0, 0)
 						endif
