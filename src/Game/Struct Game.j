@@ -238,13 +238,16 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 
 		/**
 		 * This method detects if the current game is a map in the singleplayer campaign.
-		 * \returns Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
+		 * \return Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
 		 */
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
 		endmethod
 
+		/**
+		 * \return Returns true if the characters should be restored from the gamecache in the beginning of the game. Otherwise, it returns false.
+		 */
 		public static method restoreCharacters takes nothing returns boolean
 			return thistype.m_restoreCharacters
 		endmethod
