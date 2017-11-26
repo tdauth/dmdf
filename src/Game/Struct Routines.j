@@ -1,4 +1,4 @@
-library StructGameRoutines requires Asl
+library StructGameRoutines requires Asl, StructGameMapSettings
 
 	struct NpcRoutineWithFacing extends AUnitRoutine
 		private real m_facing = 0.0

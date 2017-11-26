@@ -1,4 +1,4 @@
-library StructSpellsSpellReviveCreeps requires Asl, StructGameSpawnPoint
+library StructSpellsSpellReviveCreeps requires Asl, StructGameCharacter, StructGameSpawnPoint
 
 	struct SpellReviveCreeps
 		private static trigger m_castTrigger
