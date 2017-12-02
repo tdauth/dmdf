@@ -76,9 +76,6 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call UnitRemoveAbility(Npcs.wotan(), 'A1VC')
 			call UnitAddAbility(Npcs.wotan(), 'A19X')
 			call UnitAddAbility(Npcs.wotan(), 'Asud') // sell units
-			// TODO hotkeys won't work this way
-			call AddUnitToStock(Npcs.wotan(), 'n05E', 1, 1)
-			call AddUnitToStock(Npcs.wotan(), 'n077', 1, 1)
 			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdx", Npcs.wotan(), "origin")
 
 			call speech(info, character, true, tre("Ich werde die Kinder opfern und mit Hilfe ihrer Seelen den dunklen Fürsten der Dämonen herbeirufen!", "I will sacrifice my children and use their souls to summon the dark prince of demons!"), gg_snd_Wotan8)
