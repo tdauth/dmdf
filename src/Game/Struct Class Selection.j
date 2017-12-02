@@ -87,7 +87,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	 */
 	struct ClassSelection extends AClassSelection
 		public static constant integer spellsPerPage = 8
-		public static constant real infoDuration = 20.0
+		public static constant real infoDuration = 35.0
 		private trigger m_classChangeTrigger
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
@@ -639,6 +639,16 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call classSelection.show.evaluate()
 		endmethod
 
+		public static method showInfo takes nothing returns nothing
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus.", "Choose your character class first."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Click on the arrow key icons at the bottom right to change the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf das grüne Hakensymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Click on the green check icon at the bottom right to select the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Im Inventar befinden sich die Anfangsgegenstände der Klasse.", "- In the inventory are the start items of the class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- In der unteren Mitte sehen Sie die Startattribute der angezeigten Charakterklasse.", "- In the bottom middle you can see the start attributes of the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Rechts oben stehen die Attribute pro Stufe und eine Beschreibung der angezeigten Charakterklasse.", "- In the top right you can see the attributes per level and a description of the shown character class."), null)
+		endmethod
+
 		/**
 		 * Initializes and shows the class selection to all playing players even computer players.
 		 *
@@ -680,11 +690,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Then display informations about how to select the class as long as possible to keep players informed.
 			 */
 			call TriggerSleepAction(4.0)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus.", "Choose your character class first."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Press the arrow key icons at the bottom right to change the shown character class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Drücken Sie das Charaktersymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Press the character icon at the bottom right to select the shown character class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Im Inventar befinden sich die Anfangsgegenstände der Klasse.", "- In the inventory are the start items of the class."), null)
+			call thistype.showInfo()
 		endmethod
 
 		private static method triggerConditionRepick takes nothing returns boolean

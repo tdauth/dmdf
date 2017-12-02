@@ -210,9 +210,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_cleric.addDescriptionLine(tre("welche die Gabe der Heilung und des Schutzes erhalten haben. Diese nutzen sie,", "who got the gift of healing and protection. They use it"))
 			call thistype.m_cleric.addDescriptionLine(tre("um ihre Verbündeten genesen zu lassen, sie vor Schaden zu schützen", "to let their allies recover, to protect them from damage"))
 			call thistype.m_cleric.addDescriptionLine(tre("und sie von dunkler Magie zu befreien.", "and to free them from dark magic."))
-			call thistype.m_cleric.addDescriptionLine(tre("Ihre offensiven Fähigkeiten jedoch, sind stark eingeschränkt", "Their offensive abilities are largely limited"))
+			call thistype.m_cleric.addDescriptionLine(tre("Ihre offensiven Fähigkeiten sind jedoch stark eingeschränkt", "However, their offensive abilities are very limited"))
 			call thistype.m_cleric.addDescriptionLine(tre("und alleine sind sie häufig nicht in der Lage, mächtige Feinde", "and they are not capable of defeating"))
-			call thistype.m_cleric.addDescriptionLine(tre("zu bezwingen.", "powerful enemies alone."))
+			call thistype.m_cleric.addDescriptionLine(tre("zu bezwingen.", "powerful enemies on their own."))
 
 			set thistype.m_clericGrimoireEntries = AIntegerVector.create()
 			call thistype.m_clericGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMaertyrer.classSelectionAbilityId, SpellMaertyrer.classSelectionGrimoireAbilityId))
