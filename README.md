@@ -517,6 +517,7 @@ Some characters of the background story are described in the following list:
 
 ### Voices <a name="content_voices"></a>
 The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
+[This thread](http://www.hoer-talk.de/threads/rollenspiel-mod-sucht-sprecher.22379/) has been created for the search for German voice actors.
 
 ## Bugs <a name="bugs"></a>
 Report bugs as issues in this repository.
