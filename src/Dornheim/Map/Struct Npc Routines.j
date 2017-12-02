@@ -35,7 +35,7 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_motherTalksToGotlinde.setFacing(218.30)
 			call thistype.m_motherTalksToGotlinde.setPartner(Npcs.gotlinde())
 			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), gg_snd_Mother01)
-			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), null)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), gg_snd_Gotlinde3)
 
 			set thistype.m_motherStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mother(), 17.00, 23.59, gg_rct_waypoint_mother)
 			call thistype.m_motherStands.setFacing(305.64)
@@ -48,9 +48,9 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			set thistype.m_wotanPrays = NpcTalksRoutine.create(Routines.talk(), Npcs.wotan(), 8.0, 23.0, gg_rct_waypoint_wotan_island)
 			call thistype.m_wotanPrays.setFacing(262.95)
 			call thistype.m_wotanPrays.setPartner(null)
-			call thistype.m_wotanPrays.addSound(tre("Ich bin WOOOOOTAAAAAAN und herrsche über diese Insel!", "I am WOOOOOTAAAAAAN and reign over this island!"), null)
-			call thistype.m_wotanPrays.addSound(tre("Nennt mich einen Gott!", "Call me a god!"), null)
-			call thistype.m_wotanPrays.addSound(tre("Ich herrsche, ihr dient!", "I rule, you serve!"), null)
+			call thistype.m_wotanPrays.addSound(tre("Ich bin WOOOOOTAAAAAAN und herrsche über diese Insel!", "I am WOOOOOTAAAAAAN and reign over this island!"), gg_snd_Wotan13)
+			call thistype.m_wotanPrays.addSound(tre("Nennt mich einen Gott!", "Call me a god!"), gg_snd_Wotan14)
+			call thistype.m_wotanPrays.addSound(tre("Ich herrsche, ihr dient!", "I rule, you serve!"), gg_snd_Wotan15)
 
 			set thistype.m_wotanHouse = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.wotan(), 23.0, 4.0, gg_rct_waypoint_wotan_house)
 			call thistype.m_wotanPortal.setFacing(297.03)

@@ -47,9 +47,9 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 		private static method infoActionHi takes AInfo info, Character character returns nothing
 			local thistype this = thistype(info.talk())
 			call speech(info, character, false, tre("Hallo Gotlinde!", "Hello Gotlinde!"), null)
-			call speech(info, character, true, tre("Hallo, ich höre du brichst auf.", "Hello, I've heard you start off."), null)
+			call speech(info, character, true, tre("Hallo, ich höre du brichst auf.", "Hello, I've heard you start off."), gg_snd_Gotlinde1)
 			call speech(info, character, false, tre("Ja, ich wollte mich von dir verabschieden.", "Yes, I wanted to say goodbye to you."), null)
-			call speech(info, character, true, tre("Ach, das ist aber nett von dir. Pass auf, ich habe hier noch etwas für dich. Ich wünsche dir viel Glück auf deiner Reise und pass gut auf dich auf!", "Ah, that is nice of you. Look, I have something for you. I wish you good luck on your journey and take care of yourself!"), null)
+			call speech(info, character, true, tre("Ach, das ist aber nett von dir. Pass auf, ich habe hier noch etwas für dich. Ich wünsche dir viel Glück auf deiner Reise und pass gut auf dich auf!", "Ah, that is nice of you. Look, I have something for you. I wish you good luck on your journey and take care of yourself!"), gg_snd_Gotlinde2)
 			call speech(info, character, false, tre("Danke, das werde ich.", "Thank you, I will."), null)
 
 			call thistype.createClassItems(character)
