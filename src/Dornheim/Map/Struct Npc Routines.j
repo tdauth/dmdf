@@ -36,6 +36,19 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_motherTalksToGotlinde.setPartner(Npcs.gotlinde())
 			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), gg_snd_Mother01)
 			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), gg_snd_Gotlinde3)
+			/*
+			TODO add
+			Mutter: Was macht die Arbeit?
+			Gotlinde: Na ja, es könnte besser laufen.
+			Mutter: Komm doch rein, trinke etwas und ruh dich aus.
+			Gotlinde: Danke, aber später vielleicht.
+			Mutter: Wirst du ihn vermissen?
+			Gotlinde: (traurig) Ja, sehr sogar.
+			Mutter: Er ist eben schüchtern.
+			Gotlinde: (seufzt) Ich weiß ...
+			Mutter: Und was ist mit Ralph, der ist doch auch ein ganz netter Kerl.
+			Gotlinde: (entsetzt) Bei den Göttern! Ralph?! Der schafft ja noch nicht einmal die Gartenarbeit alleine.
+			*/
 
 			set thistype.m_motherStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mother(), 17.00, 23.59, gg_rct_waypoint_mother)
 			call thistype.m_motherStands.setFacing(305.64)

@@ -59,6 +59,12 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 			call this.showStartPage(character)
 		endmethod
 
+		/*
+		TODO add
+		Gotlinde: "Da bist du ja wieder! Ich habe so oft an dich gedacht .... Du auch an mich?"
+		Gotlinde: "Sag, hast du mir etwas mitgebracht von deiner Reise?"
+		*/
+
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.gotlinde(), thistype.startPageAction)
 			call this.setName(tre("Gotlinde", "Gotlinde"))

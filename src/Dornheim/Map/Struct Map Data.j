@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkRalph
 
 	struct MapData
 		private static boolean m_traveled = false
@@ -97,11 +97,15 @@ endif
 			call initMapSecundaryQuests()
 
 			call SuspendTimeOfDay(false)
-			call thistype.startAfterIntro.evaluate()
+			call thistype.startAfterIntro.execute()
 		endmethod
 
 		public static method startAfterIntro takes nothing returns nothing
-			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
+			local Character character = 0
+			local integer i = 0
+			call ACharacter.setAllMovable(false)
+			call ClearSelection()
+			call SelectUnit(Npcs.ralph(), true)
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
 
@@ -110,20 +114,23 @@ endif
 			call Game.applyHandicapToCreeps()
 
 			/*
-			 * Starts the tutorial:
-			 * - Select your character.
-			 * - Move to Ralph.
-			 * - Talk to Ralph and get a quest.
-			 * - Walk to your mother and talk to her.
-			 * - Collect herbals and sell them to get an item from the merchant.
-			 * - Get an item from the merchant.
-			 * - Give it to your mother.
-			 * - Talk to Gotlinde and level up.
-			 * - Skill some spell.
-			 * - Use the spell somewhere to kill a creep.
-			 * - The creep drops an equipment item, equip it.
+			 * Wait a delay. Otherwise, the talk starts immediately and the player doesn't get the start of it.
 			 */
-			 call Character.displayHintToAll(tre("Willkommen bei Die Macht des Feuers. Klicken Sie zunächst Ihren Charakter an und schicken Sie ihn zu Ralph.", "Welcome to The Power of Fire. First select your character and send him to Ralph."))
+			call TriggerSleepAction(6.0)
+			/*
+			 * Select Ralph, so the player can skip sentences.
+			 */
+			call ClearSelection()
+			call SelectUnit(Npcs.ralph(), true)
+			set i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set character = Character(Character.playerCharacter(Player(i)))
+				if (character != 0) then
+					call TalkRalph.talk().openForCharacter(character)
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		/// Required by \ref MapChanger.

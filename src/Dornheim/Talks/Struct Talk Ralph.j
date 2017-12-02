@@ -13,7 +13,9 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_hi_no
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(this.m_exit.index(), character)
+			if (not this.m_hi.show(character)) then
+				call this.showRange(this.m_howAreYou.index(), this.m_exit.index(), character)
+			endif
 		endmethod
 
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
@@ -148,7 +150,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call this.setName(tre("Ralph", "Ralph"))
 
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo Ralph!", "Hello Ralph!"))
+			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)
 			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tre("Und wie gehts dir so?", "So, how are you?"))
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tre("Kann ich dir noch irgendwie helfen?", "Can I help you?"))
 			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tre("Ich habe die Harke.", "I have the rake."))
