@@ -67,8 +67,13 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real characterFactor = 1.0
 		private static constant real alliedCharactersFactor = 1.0
 
+		// TODO still wrong formula? Look at the characters schema.
 		public static method maxExperienceFormula takes unit hero returns integer
 			return GetHeroLevelMaxXP(GetHeroLevel(hero))
+		endmethod
+
+		public static method unitTypeIdGivesXp takes integer unitTypeId returns boolean
+			return unitTypeId != 'n02C' and unitTypeId != 'n031' and unitTypeId != 'n032'
 		endmethod
 
 		/**
@@ -86,16 +91,15 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			//debug call Print("Alliance state to killing unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), killingUnit)) + ".")
 			// never give XP for buildings. for example boxes are buildings as well
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
-				// Warcraft 3 default XP formula
+				// Warcraft III default XP formula
 				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
-				//debug call Print("Result is " + R2S(result))
 				if (killingUnit == character.unit()) then
 					set result = result * thistype.characterFactor
 				elseif (ACharacter.isUnitCharacter(killingUnit)) then
 					set result = result * thistype.alliedCharactersFactor
 				elseif (GetOwningPlayer(killingUnit) == character.player()) then
 					set result = result * thistype.unitsFactor
-				else //if (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED) then
+				else
 					set result = result * thistype.alliedUnitsFactor
 				endif
 			endif
@@ -462,7 +466,7 @@ endif
 			/*
 			 * Characters get only experience if a creep is being killed.
 			 */
-			if (MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit()))) then
+			if (MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit())) and GameExperience.unitTypeIdGivesXp(GetUnitTypeId(GetTriggerUnit()))) then
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
 			endif

@@ -1,4 +1,4 @@
-library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoint
+library StructGameTutorial requires Asl, StructGameCharacter, StructGameGame, StructGameSpawnPoint
 
 	/**
 	 * \brief Provides some functionality which helps players to find their way through the game.
@@ -38,7 +38,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameSpawnPoi
 
 		private static method triggerConditionKill takes nothing returns boolean
 			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
-			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit()))
+			return GetKillingUnit() == this.character().unit() and this.isEnabled() and MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit())) and GameExperience.unitTypeIdGivesXp(GetUnitTypeId(GetTriggerUnit()))
 		endmethod
 
 		private static method triggerActionKill takes nothing returns nothing
