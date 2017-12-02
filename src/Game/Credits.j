@@ -57,6 +57,8 @@ call thistype.addContributor("Tania", tr("Mathilda"))
 call thistype.addContributor("Alex", tr("Fulco"))
 call thistype.addContributor("Alex", tr("Dararos"))
 call thistype.addContributor("Ani", tre("Mutter", "Mother"))
+call thistype.addContributor("Melianea", tr("Gotlinde"))
+call thistype.addContributor("Eric", tr("Wotan"))
 
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
