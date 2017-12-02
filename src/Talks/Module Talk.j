@@ -1,5 +1,10 @@
 library ModuleTalksTalk
 
+	/**
+	 * \brief Provides the singleton pattern for a talk struct.
+	 * Allows the initialization of the single instance with the method \ref initTalk().
+	 * Allows getting the single referene with the method \ref talk().
+	 */
 	module Talk
 		private static thistype m_talk
 
