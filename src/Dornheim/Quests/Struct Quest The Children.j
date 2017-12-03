@@ -8,6 +8,7 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
+			// TODO Add ability for the mission.
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
 			return super.enableUntil(thistype.questItemTalkToWotan)
 		endmethod
