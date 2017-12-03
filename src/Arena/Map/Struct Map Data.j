@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame
+library StructMapMapMapData requires Asl, StructGameGame, StructGameMapSettings, StructGameRoutines, StructGameShrine
 
 	struct MapData
 		public static constant integer maxScore = 25
@@ -36,9 +36,9 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method init takes nothing returns nothing
-			local quest whichQuest
-			local questitem questItem
-			local NpcTalksRoutine talkRoutine
+			local quest whichQuest = null
+			local questitem questItem = null
+			local NpcTalksRoutine talkRoutine = 0
 
 			// info
 			set whichQuest = CreateQuest()
