@@ -72,8 +72,12 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			return GetHeroLevelMaxXP(GetHeroLevel(hero))
 		endmethod
 
+		/**
+		 * \param unitTypeId The unit type ID of a killed unit.
+		 * \return Returns true if units with the unit type ID \p unitTypeId give experience. Otherwise, it returns false.
+		 */
 		public static method unitTypeIdGivesXp takes integer unitTypeId returns boolean
-			return unitTypeId != 'n02C' and unitTypeId != 'n031' and unitTypeId != 'n032'
+			return unitTypeId != 'n04B' and unitTypeId != 'n04C' and unitTypeId != 'n04D' and unitTypeId != 'n02C' and unitTypeId != 'n031' and unitTypeId != 'n032'
 		endmethod
 
 		/**
