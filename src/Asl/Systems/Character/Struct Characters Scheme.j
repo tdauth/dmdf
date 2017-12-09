@@ -1,255 +1,7 @@
 library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDebugMisc, AStructCoreInterfaceMultiboardBar, ALibraryCoreInterfaceMisc, ALibraryCoreInterfaceMultiboard, AStructSystemsCharacterCharacter, AStructCoreGeneralList
 
-	/**
-	 * \brief Stores the data of a single row for one specific player.
-	 */
-	private struct PlayerData
-		// construction members
-		private player m_player
-		private ACharactersScheme m_scheme
-		/**
-		 * Stores the row number starting with 0 for each player.
-		 * If a player has no row because he has no character it stores -1.
-		 */
-		private integer m_row
-		// members
-		private AMultiboardBar m_experienceBar
-		private AMultiboardBar m_hitPointsBar
-		private AMultiboardBar m_manaBar
-
-		/**
-		 * \return Returns the player of the row.
-		 */
-		public method player takes nothing returns player
-			return this.m_player
-		endmethod
-
-		public method scheme takes nothing returns ACharactersScheme
-			return this.m_scheme
-		endmethod
-
-		/**
-		 * \return Returns the row's index starting with 0.
-		 */
-		public method row takes nothing returns integer
-			return this.m_row
-		endmethod
-
-		// members
-
-		public method experienceBar takes nothing returns AMultiboardBar
-			return this.m_experienceBar
-		endmethod
-
-		public method hitPointsBar takes nothing returns AMultiboardBar
-			return this.m_hitPointsBar
-		endmethod
-
-		public method manaBar takes nothing returns AMultiboardBar
-			return this.m_manaBar
-		endmethod
-
-		// methods
-
-		/**
-		 * Refreshes the player row. If the character of the player is 0 it automatically destroys the row.
-		 * Otherwise it updates all columns of the row.
-		 */
-		public method refresh takes nothing returns nothing
-			local ACharacter character = ACharacter.playerCharacter(this.player())
-			local integer row = -1
-			local real firstColumnWidth = this.scheme().firstColumnWidth.evaluate()
-			local real goldColumWidth = this.scheme().goldColumWidth.evaluate()
-			local multiboarditem multiboardItem = null
-			local string columnString
-			if (character != 0) then
-				set row = this.row()
-				if (this.scheme().firstColumnExists.evaluate()) then
-					set multiboardItem = MultiboardGetItem(this.scheme().multiboard.evaluate(), row, 0)
-					set columnString = this.scheme().firstColumnString.evaluate(character)
-					call MultiboardSetItemValue(multiboardItem, columnString)
-					call MultiboardSetItemWidth(multiboardItem, firstColumnWidth)
-					call MultiboardReleaseItem(multiboardItem)
-					set multiboardItem = null
-				endif
-
-				if (IsUnitAliveBJ(character.unit())) then
-					if (this.scheme().experienceLength.evaluate() > 0) then
-						if (IsUnitType(character.unit(), UNIT_TYPE_HERO)) then
-							call this.m_experienceBar.setValue(GetHeroXP(character.unit()))
-							call this.m_experienceBar.setMaxValue(this.scheme().experienceFormula.evaluate().evaluate(character.unit()))
-							// renew OpLimit with .evaluate() since the method call is quite long.
-							call thistype.refreshBarWithNewOpLimit.evaluate(this.m_experienceBar)
-						endif
-					endif
-
-					if (this.scheme().hitPointsLength.evaluate() > 0) then
-						call this.m_hitPointsBar.setValue(GetUnitState(character.unit(), UNIT_STATE_LIFE))
-						call this.m_hitPointsBar.setMaxValue(GetUnitState(character.unit(), UNIT_STATE_MAX_LIFE))
-						// renew OpLimit with .evaluate() since the method call is quite long.
-						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_hitPointsBar)
-					endif
-
-					if (this.scheme().manaLength.evaluate() > 0) then
-						call this.m_manaBar.setValue(GetUnitState(character.unit(), UNIT_STATE_MANA))
-						call this.m_manaBar.setMaxValue(GetUnitState(character.unit(), UNIT_STATE_MAX_MANA))
-						// renew OpLimit with .evaluate() since the method call is quite long.
-						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_manaBar)
-					endif
-				else
-					if (this.scheme().hitPointsLength.evaluate() > 0) then
-						call this.m_hitPointsBar.setValue(0)
-						call this.m_hitPointsBar.setMaxValue(1)
-						// renew OpLimit with .evaluate() since the method call is quite long.
-						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_hitPointsBar)
-					endif
-
-					if (this.scheme().manaLength.evaluate() > 0) then
-						call this.m_manaBar.setValue(0)
-						call this.m_manaBar.setMaxValue(1)
-						// renew OpLimit with .evaluate() since the method call is quite long.
-						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_manaBar)
-					endif
-				endif
-
-				if (this.scheme().showGold.evaluate()) then
-					set multiboardItem = MultiboardGetItem(this.scheme().multiboard.evaluate(), row, this.scheme().goldColumn.evaluate())
-					set columnString = I2S(GetPlayerState(this.player(), PLAYER_STATE_RESOURCE_GOLD))
-					call MultiboardSetItemValue(multiboardItem, columnString)
-					call MultiboardSetItemWidth(multiboardItem, goldColumWidth)
-					call MultiboardReleaseItem(multiboardItem)
-					set multiboardItem = null
-				endif
-			elseif (this.row() != -1) then
-				call this.destroy()
-			endif
-		endmethod
-
-		private static method refreshBarWithNewOpLimit takes AMultiboardBar bar returns nothing
-			call bar.refresh()
-		endmethod
-
-		/**
-		 * Creates a new row for player \p whichPlayer in the multiboard of \p scheme at row \p row.
-		 * \return Returns the newly created row.
-		 */
-		public static method create takes player whichPlayer, ACharactersScheme scheme, integer row returns thistype
-			local thistype this = thistype.allocate()
-			local multiboarditem multiboardItem
-			local string columnString
-			local integer column
-			set this.m_player = whichPlayer
-			set this.m_scheme = scheme
-			set this.m_row = row
-			call MultiboardSetRowCount(scheme.multiboard.evaluate(), MultiboardGetRowCount(scheme.multiboard.evaluate()) + 1)
-
-			if (scheme.firstColumnExists.evaluate()) then
-				set multiboardItem = MultiboardGetItem(scheme.multiboard.evaluate(), row, 0)
-				call MultiboardSetItemStyle(multiboardItem, true, false)
-				call MultiboardReleaseItem(multiboardItem)
-				set multiboardItem = null
-			endif
-
-			if (scheme.experienceLength.evaluate() > 0) then
-				if (scheme.firstColumnExists.evaluate()) then
-					set column = 1
-				else
-					set column = 0
-				endif
-				// renew OpLimit with .evaluate() since the method call is quite long.
-				set this.m_experienceBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard.evaluate(), column, row, scheme.experienceLength.evaluate(), 0.0, true)
-			endif
-
-			if (scheme.hitPointsLength.evaluate() > 0) then
-				if (scheme.experienceLength.evaluate() > 0) then
-					set column = this.m_experienceBar.firstFreeField()
-				elseif (scheme.firstColumnExists.evaluate()) then
-					set column = 1
-				else
-					set column = 0
-				endif
-				// renew OpLimit with .evaluate() since the method call is quite long.
-				set this.m_hitPointsBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard.evaluate(), column, row, scheme.hitPointsLength.evaluate(), 0.0, true)
-			endif
-
-			if (scheme.manaLength.evaluate() > 0) then
-				if (scheme.hitPointsLength.evaluate() > 0) then
-					set column = this.m_hitPointsBar.firstFreeField()
-				elseif (scheme.experienceLength.evaluate() > 0) then
-					set column = this.m_experienceBar.firstFreeField()
-				elseif (scheme.firstColumnExists.evaluate()) then
-					set column = 1
-				else
-					set column = 0
-				endif
-				// renew OpLimit with .evaluate() since the method call is quite long.
-				set this.m_manaBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard.evaluate(), column, row, scheme.manaLength.evaluate(), 0.0, true)
-			endif
-
-			if (scheme.showGold.evaluate()) then
-				if (scheme.manaLength.evaluate() > 0) then
-					set column = this.m_manaBar.firstFreeField()
-				elseif (scheme.hitPointsLength.evaluate() > 0) then
-					set column = this.m_hitPointsBar.firstFreeField()
-				elseif (scheme.experienceLength.evaluate() > 0) then
-					set column = this.m_experienceBar.firstFreeField()
-				elseif (scheme.firstColumnExists.evaluate()) then
-					set column = 1
-				else
-					set column = 0
-				endif
-
-				set multiboardItem = MultiboardGetItem(scheme.multiboard.evaluate(), row, column)
-				call MultiboardSetItemStyle(multiboardItem, true, true)
-				call MultiboardSetItemIcon(multiboardItem, scheme.iconGold.evaluate())
-				call MultiboardSetItemValue(multiboardItem, "0")
-				call MultiboardReleaseItem(multiboardItem)
-				set multiboardItem = null
-			endif
-
-			return this
-		endmethod
-
-		private static method createBarWithNewOpLimit takes multiboard whichMultiboard, integer column, integer row, integer length, real refreshRate, boolean horizontal returns AMultiboardBar
-			return AMultiboardBar.create(whichMultiboard, column, row, length, refreshRate, horizontal)
-		endmethod
-
-		/**
-		 * Clears the player row and removes the instance from the player data of the corresponding scheme since it should not be refreshed anymore.
-		 */
-		public method onDestroy takes nothing returns nothing
-			local multiboarditem multiboardItem = null
-			if (this.scheme().firstColumnExists.evaluate()) then
-				set multiboardItem = MultiboardGetItem(this.scheme().multiboard.evaluate(), this.row(), 0)
-				call MultiboardSetItemValue(multiboardItem, this.scheme().textLeftGame.evaluate())
-				call MultiboardSetItemWidth(multiboardItem, this.scheme().firstColumnWidth.evaluate())
-				call MultiboardReleaseItem(multiboardItem)
-				set multiboardItem = null
-			endif
-
-			if (this.scheme().experienceLength.evaluate() > 0) then
-				call this.m_experienceBar.destroy()
-				set this.m_experienceBar = 0
-			endif
-
-			if (this.scheme().hitPointsLength.evaluate() > 0) then
-				call this.m_hitPointsBar.destroy()
-				set this.m_hitPointsBar = 0
-			endif
-
-			if (this.scheme().manaLength.evaluate() > 0) then
-				call this.m_manaBar.destroy()
-				set this.m_manaBar = 0
-			endif
-
-			call this.scheme().removeRow.evaluate(this)
-
-			set this.m_player = null
-		endmethod
-	endstruct
-
 	/// \todo Should be contained by \ref ACharactersScheme, vJass bug.
-	function interface ACharactersSchemeMaxExperience takes unit hero returns integer
+	function interface ACharactersSchemeExperienceFormula takes unit hero returns integer
 
 	/**
 	 * \brief A characters scheme uses one multiboard to display information about all playing characters which might be useful in cooperative multiplayer maps.
@@ -274,7 +26,8 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		private boolean m_showUnitName
 		private boolean m_showLevel
 		private integer m_experienceLength
-		private ACharactersSchemeMaxExperience m_experienceFormula
+		private ACharactersSchemeExperienceFormula m_currentExperienceFormula
+		private ACharactersSchemeExperienceFormula m_maxExperienceFormula
 		private integer m_hitPointsLength
 		private integer m_manaLength
 		private boolean m_showGold
@@ -290,7 +43,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		private multiboard m_multiboard
 		/**
 		 * Stores instances for every player which has been there when the scheme was created.
-		 * Stores instances of type \ref PlayerData which has to be destroyed on destruction.
+		 * Stores instances of type \ref ACharactersSchemaPlayerData which has to be destroyed on destruction.
 		 */
 		private AIntegerList m_playerData
 		/**
@@ -322,8 +75,12 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			return this.m_experienceLength
 		endmethod
 
-		public method experienceFormula takes nothing returns ACharactersSchemeMaxExperience
-			return this.m_experienceFormula
+		public method currentExperienceFormula takes nothing returns ACharactersSchemeExperienceFormula
+			return this.m_currentExperienceFormula
+		endmethod
+
+		public method maxExperienceFormula takes nothing returns ACharactersSchemeExperienceFormula
+			return this.m_maxExperienceFormula
 		endmethod
 
 		public method hitPointsLength takes nothing returns integer
@@ -385,14 +142,17 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		/**
 		 * \return Returns the corresponding player data of a character's player.
 		 * Time complexity: O(n)
+		 * TODO Slow performance!
 		 */
-		private method characterPlayerData takes ACharacter character returns PlayerData
-			local PlayerData result = 0
+		private method characterPlayerData takes ACharacter character returns ACharactersSchemaPlayerData
+			local ACharactersSchemaPlayerData result = 0
+			local ACharactersSchemaPlayerData currentPlayerData = 0
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				if (PlayerData(iterator.data()).player() == character.player()) then
-					set result = PlayerData(iterator.data())
+				set currentPlayerData = ACharactersSchemaPlayerData(iterator.data())
+				if (currentPlayerData.player.evaluate() == character.player()) then
+					set result = currentPlayerData
 					exitwhen (true)
 				endif
 				call iterator.next()
@@ -403,16 +163,16 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		endmethod
 
 		public method setExperienceBarValueIconForCharacter takes ACharacter character, integer length, string valueIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.experienceBar().setValueIcon(length, valueIcon)
+				call playerData.experienceBar.evaluate().setValueIcon(length, valueIcon)
 			endif
 		endmethod
 
 		public method setExperienceBarEmptyIconForCharacter takes ACharacter character, integer length, string emptyIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.experienceBar().setEmptyIcon(length, emptyIcon)
+				call playerData.experienceBar.evaluate().setEmptyIcon(length, emptyIcon)
 			endif
 		endmethod
 
@@ -420,7 +180,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).experienceBar(), length, valueIcon)
+				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).experienceBar.evaluate(), length, valueIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
@@ -430,23 +190,23 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).experienceBar(), length, emptyIcon)
+				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).experienceBar.evaluate(), length, emptyIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
 		endmethod
 
 		public method setHitPointsBarValueIconForCharacter takes ACharacter character, integer length, string valueIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.hitPointsBar().setValueIcon(length, valueIcon)
+				call playerData.hitPointsBar.evaluate().setValueIcon(length, valueIcon)
 			endif
 		endmethod
 
 		public method setHitPointsBarEmptyIconForCharacter takes ACharacter character, integer length, string emptyIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.hitPointsBar().setEmptyIcon(length, emptyIcon)
+				call playerData.hitPointsBar.evaluate().setEmptyIcon(length, emptyIcon)
 			endif
 		endmethod
 
@@ -454,7 +214,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).hitPointsBar(), length, valueIcon)
+				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).hitPointsBar.evaluate(), length, valueIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
@@ -464,23 +224,23 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).hitPointsBar(), length, emptyIcon)
+				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).hitPointsBar.evaluate(), length, emptyIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
 		endmethod
 
 		public method setManaBarValueIconForCharacter takes ACharacter character, integer length, string valueIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.manaBar().setValueIcon(length, valueIcon)
+				call playerData.manaBar.evaluate().setValueIcon(length, valueIcon)
 			endif
 		endmethod
 
 		public method setManaBarEmptyIconForCharacter takes ACharacter character, integer length, string emptyIcon returns nothing
-			local PlayerData playerData = this.characterPlayerData(character)
+			local ACharactersSchemaPlayerData playerData = this.characterPlayerData(character)
 			if (playerData != 0) then
-				call playerData.manaBar().setEmptyIcon(length, emptyIcon)
+				call playerData.manaBar.evaluate().setEmptyIcon(length, emptyIcon)
 			endif
 		endmethod
 
@@ -488,7 +248,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).manaBar(), length, valueIcon)
+				call thistype.setBarValueIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).manaBar.evaluate(), length, valueIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
@@ -498,7 +258,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(PlayerData(iterator.data()).manaBar(), length, emptyIcon)
+				call thistype.setBarEmptyIconForPlayerDataWithNewOpLimit.evaluate(ACharactersSchemaPlayerData(iterator.data()).manaBar.evaluate(), length, emptyIcon)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
@@ -513,21 +273,21 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		endmethod
 
 		public method setBarWidths takes real width returns nothing
+			local ACharactersSchemaPlayerData playerData = 0
 			local AIntegerListIterator iterator = this.m_playerData.begin()
 			loop
 				exitwhen (not iterator.isValid())
-				call PlayerData(iterator.data()).experienceBar().setAllWidths(width)
-				call PlayerData(iterator.data()).hitPointsBar().setAllWidths(width)
-				call PlayerData(iterator.data()).manaBar().setAllWidths(width)
+				set playerData = ACharactersSchemaPlayerData(iterator.data())
+				call playerData.experienceBar.evaluate().setAllWidths(width)
+				call playerData.hitPointsBar.evaluate().setAllWidths(width)
+				call playerData.manaBar.evaluate().setAllWidths(width)
 				call iterator.next()
 			endloop
 			call iterator.destroy()
 		endmethod
 
-		// internal methods
-
-		public method removeRow takes PlayerData row returns nothing
-			call this.m_playerData.remove(row)
+		public method removeRow takes ACharactersSchemaPlayerData row returns nothing
+			call this.m_playerData.remove.evaluate(row)
 		endmethod
 
 		public method firstColumnExists takes nothing returns boolean
@@ -558,14 +318,10 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			loop
 				exitwhen (not iterator.isValid())
 				// renew OpLimit with .evaluate() since the method call is quite long.
-				call thistype.refreshBarWithNewOpLimit.evaluate(PlayerData(iterator.data()))
+				call ACharactersSchemaPlayerData(iterator.data()).refresh.evaluate()
 				call iterator.next()
 			endloop
 			call iterator.destroy()
-		endmethod
-
-		private static method refreshBarWithNewOpLimit takes PlayerData playerData returns nothing
-			call playerData.refresh()
 		endmethod
 
 		private static method triggerActionRefresh takes nothing returns nothing
@@ -637,8 +393,8 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			endloop
 		endmethod
 
-		private static method createPlayerDataWithNewOpLimit takes player whichPlayer, thistype this, integer index returns PlayerData
-			return PlayerData.create(whichPlayer, this, index)
+		private static method createPlayerDataWithNewOpLimit takes player whichPlayer, thistype this, integer index returns ACharactersSchemaPlayerData
+			return ACharactersSchemaPlayerData.create.evaluate(whichPlayer, this, index)
 		endmethod
 
 		/**
@@ -650,7 +406,8 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		 * \param showUnitName If this value is true, the first column includes the character's unit's name.
 		 * \param showLevel If this value is true, the first column includes the character's level.
 		 * \param experienceLength The number of columns used for the XP bar.
-		 * \param experienceFormula Function which returns the maximum experience of a hero. For example a function which uses \ref GetHeroMaxXP().
+		 * \param currentExperienceFormula Function which returns the current experience of a hero's level.
+		 * \param maxExperienceFormula Function which returns the maximum experience of a hero's level.
 		 * \param hitPointsLength The number of columns used for the HP bar.
 		 * \param manaLength The number of columns used for the mana bar.
 		 * \param showGold If this value is true, a column is created at the end which shows the current gold of the player.
@@ -660,7 +417,7 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 		 * \param iconGold The icon for the symbol next to the gold value of a player.
 		 * \return Returns a newly created characters scheme.
 		 */
-		public static method create takes real refreshRate, boolean showPlayerName, boolean showUnitName, boolean showLevel, integer experienceLength, ACharactersSchemeMaxExperience experienceFormula, integer hitPointsLength, integer manaLength, boolean showGold, string textTitle, string textLevel, string textLeftGame, string iconGold returns thistype
+		public static method create takes real refreshRate, boolean showPlayerName, boolean showUnitName, boolean showLevel, integer experienceLength, ACharactersSchemeExperienceFormula currentExperienceFormula, ACharactersSchemeExperienceFormula maxExperienceFormula, integer hitPointsLength, integer manaLength, boolean showGold, string textTitle, string textLevel, string textLeftGame, string iconGold returns thistype
 			local thistype this = thistype.allocate()
 			// construction members
 			set this.m_refreshRate = refreshRate
@@ -671,7 +428,8 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			set this.m_showUnitName = showUnitName
 			set this.m_showLevel = showLevel
 			set this.m_experienceLength = experienceLength
-			set this.m_experienceFormula = experienceFormula
+			set this.m_currentExperienceFormula = currentExperienceFormula
+			set this.m_maxExperienceFormula = maxExperienceFormula
 			set this.m_hitPointsLength = hitPointsLength
 			set this.m_manaLength = manaLength
 			set this.m_showGold = showGold
@@ -704,11 +462,259 @@ library AStructSystemsCharacterCharactersScheme requires optional ALibraryCoreDe
 			loop
 				exitwhen (this.m_playerData.empty())
 				// the destructor already removes the player data from the list
-				call PlayerData(this.m_playerData.front()).destroy()
+				call ACharactersSchemaPlayerData(this.m_playerData.front()).destroy.evaluate()
 			endloop
 			call this.m_playerData.destroy()
 			call this.destroyRefreshTrigger()
 			call this.destroyMultiboard()
+		endmethod
+	endstruct
+
+	/**
+	 * \brief Stores the data of a single row for one specific player.
+	 */
+	struct ACharactersSchemaPlayerData
+		// construction members
+		private player m_player
+		private ACharactersScheme m_scheme
+		/**
+		 * Stores the row number starting with 0 for each player.
+		 * If a player has no row because he has no character it stores -1.
+		 */
+		private integer m_row
+		// members
+		private AMultiboardBar m_experienceBar
+		private AMultiboardBar m_hitPointsBar
+		private AMultiboardBar m_manaBar
+
+		/**
+		 * \return Returns the player of the row.
+		 */
+		public method player takes nothing returns player
+			return this.m_player
+		endmethod
+
+		public method scheme takes nothing returns ACharactersScheme
+			return this.m_scheme
+		endmethod
+
+		/**
+		 * \return Returns the row's index starting with 0.
+		 */
+		public method row takes nothing returns integer
+			return this.m_row
+		endmethod
+
+		// members
+
+		public method experienceBar takes nothing returns AMultiboardBar
+			return this.m_experienceBar
+		endmethod
+
+		public method hitPointsBar takes nothing returns AMultiboardBar
+			return this.m_hitPointsBar
+		endmethod
+
+		public method manaBar takes nothing returns AMultiboardBar
+			return this.m_manaBar
+		endmethod
+
+		// methods
+
+		/**
+		 * Refreshes the player row. If the character of the player is 0 it automatically destroys the row.
+		 * Otherwise it updates all columns of the row.
+		 */
+		public method refresh takes nothing returns nothing
+			local ACharacter character = ACharacter.playerCharacter(this.player())
+			local integer row = -1
+			local real firstColumnWidth = this.scheme().firstColumnWidth()
+			local real goldColumWidth = this.scheme().goldColumWidth()
+			local multiboarditem multiboardItem = null
+			local string columnString
+			if (character != 0) then
+				set row = this.row()
+				if (this.scheme().firstColumnExists()) then
+					set multiboardItem = MultiboardGetItem(this.scheme().multiboard(), row, 0)
+					set columnString = this.scheme().firstColumnString(character)
+					call MultiboardSetItemValue(multiboardItem, columnString)
+					call MultiboardSetItemWidth(multiboardItem, firstColumnWidth)
+					call MultiboardReleaseItem(multiboardItem)
+					set multiboardItem = null
+				endif
+
+				if (IsUnitAliveBJ(character.unit())) then
+					if (this.scheme().experienceLength() > 0) then
+						if (IsUnitType(character.unit(), UNIT_TYPE_HERO)) then
+							call this.m_experienceBar.setValue(this.scheme().currentExperienceFormula().evaluate(character.unit()))
+							call this.m_experienceBar.setMaxValue(this.scheme().maxExperienceFormula().evaluate(character.unit()))
+							// renew OpLimit with .evaluate() since the method call is quite long.
+							call thistype.refreshBarWithNewOpLimit.evaluate(this.m_experienceBar)
+						endif
+					endif
+
+					if (this.scheme().hitPointsLength() > 0) then
+						call this.m_hitPointsBar.setValue(GetUnitState(character.unit(), UNIT_STATE_LIFE))
+						call this.m_hitPointsBar.setMaxValue(GetUnitState(character.unit(), UNIT_STATE_MAX_LIFE))
+						// renew OpLimit with .evaluate() since the method call is quite long.
+						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_hitPointsBar)
+					endif
+
+					if (this.scheme().manaLength() > 0) then
+						call this.m_manaBar.setValue(GetUnitState(character.unit(), UNIT_STATE_MANA))
+						call this.m_manaBar.setMaxValue(GetUnitState(character.unit(), UNIT_STATE_MAX_MANA))
+						// renew OpLimit with .evaluate() since the method call is quite long.
+						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_manaBar)
+					endif
+				else
+					if (this.scheme().hitPointsLength() > 0) then
+						call this.m_hitPointsBar.setValue(0)
+						call this.m_hitPointsBar.setMaxValue(1)
+						// renew OpLimit with .evaluate() since the method call is quite long.
+						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_hitPointsBar)
+					endif
+
+					if (this.scheme().manaLength() > 0) then
+						call this.m_manaBar.setValue(0)
+						call this.m_manaBar.setMaxValue(1)
+						// renew OpLimit with .evaluate() since the method call is quite long.
+						call thistype.refreshBarWithNewOpLimit.evaluate(this.m_manaBar)
+					endif
+				endif
+
+				if (this.scheme().showGold()) then
+					set multiboardItem = MultiboardGetItem(this.scheme().multiboard(), row, this.scheme().goldColumn())
+					set columnString = I2S(GetPlayerState(this.player(), PLAYER_STATE_RESOURCE_GOLD))
+					call MultiboardSetItemValue(multiboardItem, columnString)
+					call MultiboardSetItemWidth(multiboardItem, goldColumWidth)
+					call MultiboardReleaseItem(multiboardItem)
+					set multiboardItem = null
+				endif
+			elseif (this.row() != -1) then
+				call this.destroy()
+			endif
+		endmethod
+
+		private static method refreshBarWithNewOpLimit takes AMultiboardBar bar returns nothing
+			call bar.refresh()
+		endmethod
+
+		/**
+		 * Creates a new row for player \p whichPlayer in the multiboard of \p scheme at row \p row.
+		 * \return Returns the newly created row.
+		 */
+		public static method create takes player whichPlayer, ACharactersScheme scheme, integer row returns thistype
+			local thistype this = thistype.allocate()
+			local multiboarditem multiboardItem
+			local string columnString
+			local integer column
+			set this.m_player = whichPlayer
+			set this.m_scheme = scheme
+			set this.m_row = row
+			call MultiboardSetRowCount(scheme.multiboard(), MultiboardGetRowCount(scheme.multiboard()) + 1)
+
+			if (scheme.firstColumnExists()) then
+				set multiboardItem = MultiboardGetItem(scheme.multiboard(), row, 0)
+				call MultiboardSetItemStyle(multiboardItem, true, false)
+				call MultiboardReleaseItem(multiboardItem)
+				set multiboardItem = null
+			endif
+
+			if (scheme.experienceLength() > 0) then
+				if (scheme.firstColumnExists()) then
+					set column = 1
+				else
+					set column = 0
+				endif
+				// renew OpLimit with .evaluate() since the method call is quite long.
+				set this.m_experienceBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard(), column, row, scheme.experienceLength(), 0.0, true)
+			endif
+
+			if (scheme.hitPointsLength() > 0) then
+				if (scheme.experienceLength() > 0) then
+					set column = this.m_experienceBar.firstFreeField()
+				elseif (scheme.firstColumnExists()) then
+					set column = 1
+				else
+					set column = 0
+				endif
+				// renew OpLimit with .evaluate() since the method call is quite long.
+				set this.m_hitPointsBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard(), column, row, scheme.hitPointsLength(), 0.0, true)
+			endif
+
+			if (scheme.manaLength() > 0) then
+				if (scheme.hitPointsLength() > 0) then
+					set column = this.m_hitPointsBar.firstFreeField()
+				elseif (scheme.experienceLength() > 0) then
+					set column = this.m_experienceBar.firstFreeField()
+				elseif (scheme.firstColumnExists()) then
+					set column = 1
+				else
+					set column = 0
+				endif
+				// renew OpLimit with .evaluate() since the method call is quite long.
+				set this.m_manaBar = thistype.createBarWithNewOpLimit.evaluate(scheme.multiboard(), column, row, scheme.manaLength(), 0.0, true)
+			endif
+
+			if (scheme.showGold()) then
+				if (scheme.manaLength() > 0) then
+					set column = this.m_manaBar.firstFreeField()
+				elseif (scheme.hitPointsLength() > 0) then
+					set column = this.m_hitPointsBar.firstFreeField()
+				elseif (scheme.experienceLength() > 0) then
+					set column = this.m_experienceBar.firstFreeField()
+				elseif (scheme.firstColumnExists()) then
+					set column = 1
+				else
+					set column = 0
+				endif
+
+				set multiboardItem = MultiboardGetItem(scheme.multiboard(), row, column)
+				call MultiboardSetItemStyle(multiboardItem, true, true)
+				call MultiboardSetItemIcon(multiboardItem, scheme.iconGold())
+				call MultiboardSetItemValue(multiboardItem, "0")
+				call MultiboardReleaseItem(multiboardItem)
+				set multiboardItem = null
+			endif
+
+			return this
+		endmethod
+
+		private static method createBarWithNewOpLimit takes multiboard whichMultiboard, integer column, integer row, integer length, real refreshRate, boolean horizontal returns AMultiboardBar
+			return AMultiboardBar.create(whichMultiboard, column, row, length, refreshRate, horizontal)
+		endmethod
+
+		/**
+		 * Clears the player row and removes the instance from the player data of the corresponding scheme since it should not be refreshed anymore.
+		 */
+		public method onDestroy takes nothing returns nothing
+			local multiboarditem multiboardItem = null
+			if (this.scheme().firstColumnExists()) then
+				set multiboardItem = MultiboardGetItem(this.scheme().multiboard(), this.row(), 0)
+				call MultiboardSetItemValue(multiboardItem, this.scheme().textLeftGame())
+				call MultiboardSetItemWidth(multiboardItem, this.scheme().firstColumnWidth())
+				call MultiboardReleaseItem(multiboardItem)
+				set multiboardItem = null
+			endif
+
+			if (this.scheme().experienceLength() > 0) then
+				call this.m_experienceBar.destroy()
+				set this.m_experienceBar = 0
+			endif
+
+			if (this.scheme().hitPointsLength() > 0) then
+				call this.m_hitPointsBar.destroy()
+				set this.m_hitPointsBar = 0
+			endif
+
+			if (this.scheme().manaLength() > 0) then
+				call this.m_manaBar.destroy()
+				set this.m_manaBar = 0
+			endif
+
+			call this.scheme().removeRow(this)
+
+			set this.m_player = null
 		endmethod
 	endstruct
 

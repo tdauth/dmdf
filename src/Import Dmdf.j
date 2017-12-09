@@ -21,6 +21,11 @@ globals
 	constant boolean DMDF_NPC_ROUTINES = true
 	constant boolean DMDF_VIOLENCE = true
 	constant boolean DMDF_CREDITS = true
+	/**
+	 * The update interval in seconds in which the characters schema is refreshed.
+	 * Note that it decreases the performance if this interval becomes smaller.
+	 */
+	constant real DMDF_CHARACTERS_SCHEMA_REFRESH_RATE = 2.0
 
 	// used by function GetTimeString()
 	constant string A_TEXT_TIME_VALUE = "0%1%" // GetLocalizedString(

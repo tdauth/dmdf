@@ -67,9 +67,14 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real characterFactor = 1.0
 		private static constant real alliedCharactersFactor = 1.0
 
-		// TODO still wrong formula? Look at the characters schema.
+		public static method currentExperieneFormula takes unit hero returns integer
+			local integer previousLevelXP = GetHeroLevelMaxXP(GetHeroLevel(hero) - 1)
+			return GetHeroXP(hero) - previousLevelXP
+		endmethod
+
 		public static method maxExperienceFormula takes unit hero returns integer
-			return GetHeroLevelMaxXP(GetHeroLevel(hero))
+			local integer previousLevelXP = GetHeroLevelMaxXP(GetHeroLevel(hero) - 1)
+			return GetHeroLevelMaxXP(GetHeroLevel(hero)) - previousLevelXP
 		endmethod
 
 		/**
@@ -675,44 +680,45 @@ endif
 		 * Creates the global scheme for a character overview which can be shown to every player.
 		 */
 		private static method initCharactersScheme takes nothing returns nothing
-			local integer i
-			set thistype.m_charactersScheme = ACharactersScheme.create(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			local integer i = 0
+			local integer maxMiddleIcons = 19
+			set thistype.m_charactersScheme = ACharactersScheme.create(DMDF_CHARACTERS_SCHEMA_REFRESH_RATE, true, true, true, 20, GameExperience.currentExperieneFormula, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call thistype.m_charactersScheme.setBarWidths(0.003)
 			call thistype.m_charactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
 			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setExperienceBarValueIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM8.tga")
 				call thistype.m_charactersScheme.setExperienceBarEmptyIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setExperienceBarValueIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
-			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
+			call thistype.m_charactersScheme.setExperienceBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
+			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
 
 			call thistype.m_charactersScheme.setHitPointsBarValueIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL2.tga")
 			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setHitPointsBarValueIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM2.tga")
 				call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setHitPointsBarValueIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
-			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
+			call thistype.m_charactersScheme.setHitPointsBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
+			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
 
 			call thistype.m_charactersScheme.setManaBarValueIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL8.tga")
 			call thistype.m_charactersScheme.setManaBarEmptyIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setManaBarValueIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM8.tga")
 				call thistype.m_charactersScheme.setManaBarEmptyIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
-			call thistype.m_charactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+			call thistype.m_charactersScheme.setManaBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
+			call thistype.m_charactersScheme.setManaBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
 			// initial refresh to fix widths
 			call thistype.m_charactersScheme.refresh()
 		endmethod
@@ -739,9 +745,6 @@ endif
 		 */
 		public static method start takes nothing returns nothing
 			local integer i = 0
-
-			// TEST the command button should always be moved relatively to the camera!
-			//call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
 
 			// use new OpLimit
 			call NewOpLimit(function thistype.initCharactersScheme)
