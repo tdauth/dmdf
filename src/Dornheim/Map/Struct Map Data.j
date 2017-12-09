@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkRalph
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkGotlinde, StructMapTalksTalkMother, StructMapTalksTalkRalph
 
 	struct MapData
 		private static boolean m_traveled = false
@@ -140,6 +140,7 @@ endif
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 			set thistype.m_traveled = true
+			call TalkGotlinde.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
 			call TalkMother.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
 		endmethod
 

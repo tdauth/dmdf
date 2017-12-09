@@ -1,8 +1,27 @@
 library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQuestsQuestMother
 
 	struct TalkGotlinde extends Talk
+		private boolean array m_hasAlreadyAskedAfterTraveling[12] /// TODO use bj_MAX_PLAYERS
 		private AInfo m_hi
+		private AInfo m_back
 		private AInfo m_exit
+
+		public method setHasAlreadyAskedAfterTravelingForAllPlayers takes boolean hasAlreadyAskedAfterTraveling returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set this.m_hasAlreadyAskedAfterTraveling[i] = hasAlreadyAskedAfterTraveling
+				set i = i + 1
+			endloop
+		endmethod
+
+		public method setHasAlreadyAskedAfterTraveling takes player whichPlayer, boolean hasAlreadyAskedAfterTraveling returns nothing
+			set this.m_hasAlreadyAskedAfterTraveling[GetPlayerId(whichPlayer)] = hasAlreadyAskedAfterTraveling
+		endmethod
+
+		public method hasAlreadyAskedAfterTraveling takes player whichPlayer returns boolean
+			return this.m_hasAlreadyAskedAfterTraveling[GetPlayerId(whichPlayer)]
+		endmethod
 
 		private method startPageAction takes ACharacter character returns nothing
 			call this.showUntil(this.m_exit.index(), character)
@@ -59,11 +78,21 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 			call this.showStartPage(character)
 		endmethod
 
-		/*
-		TODO add
-		Gotlinde: "Da bist du ja wieder! Ich habe so oft an dich gedacht .... Du auch an mich?"
-		Gotlinde: "Sag, hast du mir etwas mitgebracht von deiner Reise?"
-		*/
+		private static method infoConditionBack takes AInfo info, ACharacter character returns boolean
+			local thistype this = thistype(info.talk())
+			return MapData.traveled.evaluate() and not this.hasAlreadyAskedAfterTraveling(character.player())
+		endmethod
+
+		private static method infoActionBack takes AInfo info, Character character returns nothing
+			local thistype this = thistype(info.talk())
+			call this.setHasAlreadyAskedAfterTraveling(character.player(), true)
+			call speech(info, character, false,  tre("Ich bin zurück.", "I am back."), null)
+			call speech(info, character, true, tre("Da bist du ja wieder! Ich habe so oft an dich gedacht .... Du auch an mich?", "There you are again! I've thought of you so much ... you too of me?"), gg_snd_Gotlinde9)
+			call speech(info, character, true, tre("Sag, hast du mir etwas mitgebracht von deiner Reise?", "Tell me, did you bring me something from your journey?"), gg_snd_Gotlinde10)
+			// TODO let the player choose to give her something
+
+			call this.showStartPage(character)
+		endmethod
 
 		private static method create takes nothing returns thistype
 			local thistype this = thistype.allocate(Npcs.gotlinde(), thistype.startPageAction)
@@ -71,6 +100,7 @@ library StructMapTalksTalkGotlinde requires Asl, StructMapMapNpcs, StructMapQues
 
 			// start page
 			set this.m_hi = this.addInfo(false, false, thistype.infoConditionHi, thistype.infoActionHi, tre("Hallo Gotlinde!", "Hello Gotlinde!"))
+			set this.m_back = this.addInfo(true, false, thistype.infoConditionBack, thistype.infoActionBack, tre("Ich bin zurück.", "I am back."))
 			set this.m_exit = this.addExitButton()
 
 			return this

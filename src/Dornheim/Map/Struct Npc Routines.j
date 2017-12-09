@@ -36,19 +36,16 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_motherTalksToGotlinde.setPartner(Npcs.gotlinde())
 			call thistype.m_motherTalksToGotlinde.addSound(tre("Wie geht es dir?", "How are you?"), gg_snd_Mother01)
 			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Gut.", "I'm fine."), gg_snd_Gotlinde3)
-			/*
-			TODO add
-			Mutter: Was macht die Arbeit?
-			Gotlinde: Na ja, es könnte besser laufen.
-			Mutter: Komm doch rein, trinke etwas und ruh dich aus.
-			Gotlinde: Danke, aber später vielleicht.
-			Mutter: Wirst du ihn vermissen?
-			Gotlinde: (traurig) Ja, sehr sogar.
-			Mutter: Er ist eben schüchtern.
-			Gotlinde: (seufzt) Ich weiß ...
-			Mutter: Und was ist mit Ralph, der ist doch auch ein ganz netter Kerl.
-			Gotlinde: (entsetzt) Bei den Göttern! Ralph?! Der schafft ja noch nicht einmal die Gartenarbeit alleine.
-			*/
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Was macht die Arbeit?", "How is the work going?"), gg_snd_Mother12)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Na ja, es könnte besser laufen.", "Well, it could be going better."), gg_snd_Gotlinde4)
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Komm doch rein, trinke etwas und ruh dich aus.", "Come in, drink something and get some rest."), gg_snd_Mother13)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Danke, aber später vielleicht.", "Thank you, maybe later."), gg_snd_Gotlinde5)
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Wirst du ihn vermissen?", "Will you miss him?"), gg_snd_Mother14)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Ja, sehr sogar.", "Yes, very much."), gg_snd_Gotlinde6)
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Er ist eben schüchtern.", "He is just shy."), gg_snd_Mother15)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Ich weiß ...", "I know ..."), gg_snd_Gotlinde7)
+			call thistype.m_motherTalksToGotlinde.addSound(tre("Und was ist mit Ralph? Der ist doch auch ein ganz netter Kerl.", "He is just And what about Ralph? He's a nice guy, too."), gg_snd_Mother16)
+			call thistype.m_motherTalksToGotlinde.addSoundAnswer(tre("Bei den Göttern! Ralph?! Der schafft ja noch nicht einmal die Gartenarbeit alleine.", "By the goods! Ralph?! He does not even manage gardening alone."), gg_snd_Gotlinde8)
 
 			set thistype.m_motherStands = NpcRoutineWithFacing.create(Routines.moveTo(), Npcs.mother(), 17.00, 23.59, gg_rct_waypoint_mother)
 			call thistype.m_motherStands.setFacing(305.64)
