@@ -8,7 +8,7 @@ Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
 * FIXED: Arena: Wissen heißt noch Intelligenz.
 * Arena: Evtl alle UI-Strings importieren (mit MPQ-Editor)?
 * Orkanführer: Stimme tiefer machen, aber nicht langsamer!
-* XP-Balken im Charakterschema zeigt falschen Wert an!
+* FIXED: XP-Balken im Charakterschema zeigt falschen Wert an!
 * Bisherige Kartengröße Talras 6 MiBytes (unkomprimiert). Kartenskriptgröße unkomprimiert 11 MiBytes. 208 752 Zeilen Code (ohne Optimizer)!
 * Bisherige optimierte Kartengröße Talras 3,735 MiBytes, Kartenskriptgröße optimiert 3,508 KiBytes. 116 364 Zeilen Code (mit Optimizer)!
 	* DONE: Drop all unused ASL systems.
