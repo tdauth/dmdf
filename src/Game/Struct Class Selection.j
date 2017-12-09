@@ -211,21 +211,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			call UnitAddAbility(character.unit(), 'A13E')
 			call UnitMakeAbilityPermanent(character.unit(), true, 'A13E')
 
-			/*
-			 * Add spell book with command buttons.
-			 * Remove the command buttons first and readd them in a spell book.
-			 * This saves button icons which can be used for favorite spells instead.
-			 * Stop, Hold Position and Patrol are all connected with 'Amov'. They have no extra ability IDs.
-			 */
-			/*
-			call UnitRemoveAbility(character.unit(), 'Amov')
-			call UnitRemoveAbility(character.unit(), 'Aatk')
-			call UnitAddAbility(character.unit(), 'A1VO')
-			// Readd abilities, otherwise they won't be there anymore.
-			call UnitAddAbility(character.unit(), 'Amov')
-			call UnitAddAbility(character.unit(), 'Aatk')
-			*/
-
 			call character.revival().setTime(MapSettings.revivalTime())
 		endmethod
 
@@ -254,7 +239,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			elseif (class == Classes.necromancer()) then
 				call SpellAncestorPact.create(character)
 				call SpellConsume.create(character)
-				call SpellDamnation.create(character)
 				call SpellDarkServant.create(character)
 				call SpellDarkSpell.create(character)
 				call SpellDeathHerald.create(character)
@@ -265,8 +249,10 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellPlague.create(character)
 				call SpellParasite.create(character)
 				call SpellMasterOfNecromancy.create(character)
-				call SpellEpidemic.create(character)
 				call SpellDamnedGround.create(character)
+				// ultimates on page 2
+				call SpellEpidemic.create(character)
+				call SpellDamnation.create(character)
 			elseif (class == Classes.druid()) then
 				call SpellAwakeningOfTheForest.create(character)
 				call SpellCrowForm.create(character)
