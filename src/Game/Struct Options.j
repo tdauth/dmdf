@@ -158,7 +158,12 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 	struct OptionsEntryWorldMap extends CharacterOptionsSpell
 
 		private static method dialogButtonActionTravelToWorldMap takes ADialogButton dialogButton returns nothing
-			call MapChanger.changeMap.evaluate("WM")
+			local Character character = Character.playerCharacter(dialogButton.dialog().player())
+			if (character != 0 and ClassSelection.playerClassSelection(character.player()) == 0 and not AGui.playerGui(character.player()).isShown() and character.isMovable()) then
+				call MapChanger.changeMap.evaluate("WM")
+			else
+				call character.displayHint(tre("Der Charakter darf nicht beschäftigtt und keine spezielle Ansicht geöffnet sein, um zur Weltkarte zu reisen.", "The character must not be busy and no special view must be open when traveling to the world map."))
+			endif
 		endmethod
 
 		public stub method onCastAction takes nothing returns nothing
