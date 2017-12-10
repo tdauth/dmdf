@@ -626,7 +626,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		public static method showInfo takes nothing returns nothing
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus.", "Choose your character class first."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus:", "Choose your character class first:"), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Click on the arrow key icons at the bottom right to change the shown character class."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf das grüne Hakensymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Click on the green check icon at the bottom right to select the shown character class."), null)
 			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
