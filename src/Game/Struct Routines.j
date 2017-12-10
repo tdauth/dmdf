@@ -71,20 +71,60 @@ library StructGameRoutines requires Asl, StructGameMapSettings
 	endstruct
 
 	/**
+	 * \brief One single conversation between two NPCs or with the NPC himself/herself.
+	 */
+	private struct TalkConversation
+		private string m_text
+		private sound m_sound
+		/// Answer sounds are optional and can be used as answers of the talk partners.
+		private string m_answerText
+		private sound m_answerSound
+
+		public method text takes nothing returns string
+			return this.m_text
+		endmethod
+
+		public method sound takes nothing returns sound
+			return this.m_sound
+		endmethod
+
+		public method answerText takes nothing returns string
+			return this.m_answerText
+		endmethod
+
+		public method answerSound takes nothing returns sound
+			return this.m_answerSound
+		endmethod
+
+		public method setAnswer takes  string text, sound whichSound returns nothing
+			set this.m_answerText = text
+			set this.m_answerSound = whichSound
+		endmethod
+
+		public static method create takes string text, sound whichSound returns thistype
+			local thistype this = thistype.allocate()
+			set this.m_text = text
+			set this.m_sound = whichSound
+
+			return this
+		endmethod
+	endstruct
+
+	/**
 	 * \brief Basic routine type for talks between two NPCs.
 	 * The text is shown as floating texttag on the speaking unit and a corresponding sound is played.
 	 */
 	struct NpcTalksRoutine extends NpcRoutineWithOtherNpc
-		public static constant integer maxSounds = 4
 		private real m_range = 800.0
-		private sound array m_sounds[thistype.maxSounds]
-		private string array m_soundTexts[thistype.maxSounds]
-		private integer m_soundsCount = 0
-		/// Answer sounds are optional and can be used as answers of the talk partners.
-		private sound array m_answerSounds[thistype.maxSounds]
-		private string array m_answerSoundTexts[thistype.maxSounds]
-		private integer m_answerSoundsCount = 0
+		/**
+		 * Instances of \ref TalkConversation.
+		 */
+		private AIntegerVector m_conversations = 0
 
+		/**
+		 * The range defines how far the NPCs have to be away from each other at maximum that they talk with each other.
+		 * \{
+		 */
 		public method setRange takes real range returns nothing
 			set this.m_range = range
 		endmethod
@@ -92,47 +132,66 @@ library StructGameRoutines requires Asl, StructGameMapSettings
 		public method range takes nothing returns real
 			return this.m_range
 		endmethod
+		/**
+		 * \}
+		 */
 
 		public method soundsCount takes nothing returns integer
-			return this.m_soundsCount
-		endmethod
-
-		public method answerSoundsCount takes nothing returns integer
-			return this.m_answerSoundsCount
+			return this.m_conversations.size()
 		endmethod
 
 		public method addSound takes string text, sound whichSound returns nothing
-			if (this.soundsCount() >= thistype.maxSounds) then
-				return
-			endif
-			set this.m_sounds[this.soundsCount()] = whichSound
-			set this.m_soundTexts[this.soundsCount()] = text
-			set this.m_soundsCount = this.soundsCount() + 1
+			local TalkConversation conversation = TalkConversation.create(text, whichSound)
+			call this.m_conversations.pushBack(conversation)
 		endmethod
 
 		public method addSoundAnswer takes string text, sound whichSound returns nothing
-			if (this.answerSoundsCount() >= thistype.maxSounds) then
+			if (this.m_conversations.empty()) then
 				return
 			endif
-			set this.m_answerSounds[this.answerSoundsCount()] = whichSound
-			set this.m_answerSoundTexts[this.answerSoundsCount()] = text
-			set this.m_answerSoundsCount = this.answerSoundsCount() + 1
+			call TalkConversation(this.m_conversations.back()).setAnswer(text, whichSound)
+		endmethod
+
+		private method checkIndex takes integer index returns boolean
+			return index >= this.m_conversations.size() or index < 0
 		endmethod
 
 		public method text takes integer index returns string
-			return this.m_soundTexts[index]
+			if (this.checkIndex(index)) then
+				return ""
+			endif
+			return TalkConversation(this.m_conversations[index]).text()
 		endmethod
 
 		public method sound takes integer index returns sound
-			return this.m_sounds[index]
+			if (this.checkIndex(index)) then
+				return null
+			endif
+			return TalkConversation(this.m_conversations[index]).sound()
 		endmethod
 
 		public method answerText takes integer index returns string
-			return this.m_answerSoundTexts[index]
+			if (this.checkIndex(index)) then
+				return ""
+			endif
+			return TalkConversation(this.m_conversations[index]).answerText()
 		endmethod
 
 		public method answerSound takes integer index returns sound
-			return this.m_answerSounds[index]
+			if (this.checkIndex(index)) then
+				return null
+			endif
+			return TalkConversation(this.m_conversations[index]).answerSound()
+		endmethod
+
+		public static method create takes ARoutine routine, unit whichUnit, real startTimeOfDay, real endTimeOfDay, rect targetRect returns thistype
+			local thistype this = thistype.allocate(routine, whichUnit, startTimeOfDay, endTimeOfDay, targetRect)
+			set this.m_conversations = AIntegerVector.create()
+			return this
+		endmethod
+
+		public method onDestroy takes nothing returns nothing
+			call this.m_conversations.destroy()
 		endmethod
 	endstruct
 
@@ -163,7 +222,6 @@ library StructGameRoutines requires Asl, StructGameMapSettings
 		endmethod
 
 		private static method moveToTargetAction takes NpcRoutineWithFacing period returns nothing
-			//debug call Print("Unit " + GetUnitName(period.unit()) + " gets new facing in target.")
 			call IssueImmediateOrder(period.unit(), "stop")
 			call TriggerSleepAction(0.0) // sometimes the facing is not applied
 			call SetUnitFacing(period.unit(), period.facing())
@@ -256,7 +314,6 @@ library StructGameRoutines requires Asl, StructGameMapSettings
 				// NOTE don't check during this time (if sound is played) if partner is being paused in still in range, just talk to the end and continue if he/she is still range!
 				call TriggerSleepAction(GetSoundDurationBJ(whichSound))
 
-				//call StopSoundBJ(whichSound, false)
 				// TODO A set would be more efficient.
 				if (thistype.m_textTags.contains(whichTextTag)) then
 					call thistype.m_textTags.remove(whichTextTag)
@@ -275,24 +332,24 @@ library StructGameRoutines requires Asl, StructGameMapSettings
 			local integer index = 0
 
 			if ((period.partner() != null and GetDistanceBetweenUnitsWithoutZ(period.unit(), period.partner()) <= period.range() and not IsUnitPaused(period.partner())) or (period.partner() == null)) then
-				//debug call Print(GetUnitName(period.unit()) + " has in range " + GetUnitName(period.partner()) + " to talk.")
 				if (period.partner() != null) then
 					call SetUnitFacingToFaceUnit(period.unit(), period.partner())
 				else
 					call SetUnitFacing(period.unit(), period.facing())
 				endif
-				call QueueUnitAnimation(period.unit(), "Stand Talk")
 				set index = GetRandomInt(0, period.soundsCount() - 1)
 				if (period.soundsCount() > index) then
 					call thistype.unitTalks(period.unit(), period.partner(), period.sound(index), period.text(index))
 
+					call TriggerSleepAction(2.0) // don't start immediately with the answer
+
 					// talks can have answers by the other NPC
-					if (period.answerSoundsCount() > index) then
+					if (StringLength(period.answerText(index)) > 0) then
 						call thistype.unitTalks(period.partner(), period.unit(), period.answerSound(index), period.answerText(index))
 					endif
 				endif
 
-				call TriggerSleepAction(4.0) // set + 4 otherwise we have loop sounds all the time
+				call TriggerSleepAction(6.0) // set +6 otherwise we have loop sounds all the time
 			else
 				// set at least facing properly
 				call SetUnitFacing(period.unit(), period.facing())
