@@ -166,16 +166,35 @@ library StructGameOptions requires Asl, StructGameCharacter, StructGameTutorial
 			endif
 		endmethod
 
+		private static method thereIsAtLeastOneSaveGame takes nothing returns boolean
+			local AStringVector zoneNames = Zone.zoneNames.evaluate()
+			local string zoneName = ""
+			local integer i = 0
+			loop
+				exitwhen (i == zoneNames.size())
+				set zoneName = zoneNames[i]
+				if (MapChanger.zoneHasSaveGame.evaluate(zoneName)) then
+					return true
+				endif
+				set i = i + 1
+			endloop
+			return false
+		endmethod
+
 		public stub method onCastAction takes nothing returns nothing
 			local Character character = this.character()
 
 			if (MapSettings.mapName() != "WM") then
 				if (bj_isSinglePlayer and Game.isCampaign.evaluate()) then
-					call AGui.playerGui(Commands.adminPlayer()).dialog().clear()
-					call AGui.playerGui(Commands.adminPlayer()).dialog().setMessage(tre("Wirklich verreisen?", "Do you really want to travel?"))
-					call AGui.playerGui(Commands.adminPlayer()).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionTravelToWorldMap)
-					call AGui.playerGui(Commands.adminPlayer()).dialog().addSimpleDialogButtonIndex(tre("Nein", "No"))
-					call AGui.playerGui(Commands.adminPlayer()).dialog().show()
+					if (thistype.thereIsAtLeastOneSaveGame()) then
+						call AGui.playerGui(Commands.adminPlayer()).dialog().clear()
+						call AGui.playerGui(Commands.adminPlayer()).dialog().setMessage(tre("Wirklich verreisen?", "Do you really want to travel?"))
+						call AGui.playerGui(Commands.adminPlayer()).dialog().addDialogButtonIndex(tre("Ja", "Yes"), thistype.dialogButtonActionTravelToWorldMap)
+						call AGui.playerGui(Commands.adminPlayer()).dialog().addSimpleDialogButtonIndex(tre("Nein", "No"))
+						call AGui.playerGui(Commands.adminPlayer()).dialog().show()
+					else
+						call character.displayHint(tre("Sie müssen erst einen anderen Ort bereisen.", "You have to travel to another location first."))
+					endif
 				else
 					call character.displayHint(tre("Die Karte kann nur in der Einzelspieler-Kampagne gewechselt werden.", "The map can only be changed in the singleplayer campaign."))
 				endif
