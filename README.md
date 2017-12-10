@@ -100,6 +100,8 @@ Read the following posts for further information:
 * http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
 * http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
 
+The JassHelper binary is part of this repository in the directory [tools/JNGP/jasshelper](./tools/JNGP/jasshelper).
+
 Options [forcemethodevaluate] and [noimplicitthis] are supported!
 
 Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set:
