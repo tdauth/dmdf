@@ -1,3 +1,6 @@
+#!/bin/bash
+# Extracts the German war3map.wts files from all maps and generates the English war3map.wts files based on the English translation of the map Talras.
+
 # wc3lib
 cd "$WORKSPACE"
 echo "Workspace: $WORKSPACE"
