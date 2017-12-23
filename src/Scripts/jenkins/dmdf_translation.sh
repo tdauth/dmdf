@@ -1,3 +1,5 @@
+# wc3lib
+cd "$WORKSPACE"
 echo "Workspace: $WORKSPACE"
 
 if [ -d ./wc3lib ] ; then
