@@ -115,7 +115,7 @@ library StructMapVideosVideoTheDukeOfTalras requires Asl, StructGameGame
 			endif
 
 			call CameraSetupApplyForceDuration(gg_cam_the_duke_of_talras_2, true, 0.0)
-			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot.", "We need everyone we can find who is able to fight. A while agon some strange looking warriors came to Talras. They came from far away, from the north, with a long tail boat."), gg_snd_Markward30)
+			call TransmissionFromUnit(this.unitActor(this.m_actorMarkward), tre("Wir brauchen jeden Kampffähigen, den wir finden können. Vor einer Weile sind einige merkwürdig aussehende Krieger nach Talras gekommen. Sie kamen von weit her, aus dem Norden, mit einem Langboot.", "We need everyone we can find who is able to fight. A while ago some strange looking warriors came to Talras. They came from far away, from the north, with a long tail boat."), gg_snd_Markward30)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_Markward30))) then
 				return
