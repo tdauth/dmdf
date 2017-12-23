@@ -40,13 +40,14 @@ The original language of the modification is German but there are English transl
 12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
 13. [Release Process](#release_process)
 14. [Trigger Editor Integration](#trigger_editor_integration)
-15. [Content](#content)
+15. [Jenkins](#jenkins)
+16. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-16. [Bugs](#bugs)
-17. [Credits](#credits)
+17. [Bugs](#bugs)
+18. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -491,6 +492,10 @@ Use the following statement:
 ```
 //! import "TPoF.j"
 ```
+
+## Jenkins <a name="jenkins"></a>
+The modification provides several scripts to setup jobs in Jenkins.
+These scripts are located in the directory [src/Scripts/jenkins](./src/Scripts/jenkins).
 
 ## Content <a name="content"></a>
 The content of this modification consists of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
