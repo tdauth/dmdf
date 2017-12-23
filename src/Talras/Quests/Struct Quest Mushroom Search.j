@@ -24,7 +24,7 @@ library StructMapQuestsQuestMushroomSearch requires Asl, StructGameCharacter
 			call this.setReward(thistype.rewardExperience, 200)
 			call this.setReward(thistype.rewardGold, 30)
 			// item 0
-			set questItem = AQuestItem.create(this, tre("Sammle einige essbare Pilze für Dago.", "Collect some ediable mushrooms for Dago."))
+			set questItem = AQuestItem.create(this, tre(Format("Sammle %1% essbare Pilze für Dago.").i(thistype.requiredMushrooms).result(), Format("Collect %1% ediable mushrooms for Dago.").i(thistype.requiredMushrooms).result()))
 
 			return this
 		endmethod

@@ -30,7 +30,7 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 			local real damage = thistype.damageStartValue + thistype.damageLevelValue * this.level()
 			local real newDamage
 			loop
-				exitwhen (time <= 0.0 or ASpell.allyTargetLoopCondition(caster))
+				exitwhen (time <= 0.0 or AUnitSpell.allyTargetLoopCondition(caster))
 				call GroupEnumUnitsInRange(targets, GetUnitX(caster), GetUnitY(caster), thistype.radius, filter)
 				loop
 					exitwhen (IsUnitGroupEmptyBJ(targets))
@@ -65,7 +65,7 @@ library StructSpellsSpellInferno requires Asl, StructSpellsSpellElementalMageDam
 			call this.addGrimoireEntry('A0KH', 'A0KM')
 			call this.addGrimoireEntry('A0KI', 'A0KN')
 			call this.addGrimoireEntry('A0KJ', 'A0KO')
-			
+
 			return this
 		endmethod
 	endstruct

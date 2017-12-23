@@ -35,7 +35,7 @@ library StructMapQuestsQuestReinforcementForTalras requires Asl, StructGameChara
 
 		private static method timerFunction takes nothing returns nothing
 			local thistype this = AHashTable.global().handleInteger(GetExpiredTimer(), 0)
-			call this.displayUpdateMessage(tre("Zwei Tage sind vergangen.", "Two days have passed."))
+			call this.displayUpdateMessage(tre("Die Pfeile sind fertig.", "The arrows have been completed."))
 		endmethod
 
 

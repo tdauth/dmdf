@@ -8,10 +8,15 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 		public static constant integer abilityId = 'A066'
 		public static constant real distance = 1200.0
 
+		/**
+		 * Gets the nearest shrine from the positon of \p x | \p y which is unmasked to the player \p whichPlayer.
+		 * The shrine has to be at least in a distance of \ref thistype.distance. Otherwise no shrine is found.
+		 * \return Returns the nearest shrine of the given location which is unmasked to the player and within a distance of \ref thistype.distance. If none is found it returns 0.
+		 */
 		public static method getNearestShrine takes player whichPlayer, real x, real y returns Shrine
-			local integer i
+			local integer i = 0
 			local Shrine shrine = 0
-			local real dist
+			local real dist = 0.0
 			local Shrine result = 0
 			set i = 0
 			loop
@@ -61,7 +66,7 @@ library StructSpellsSpellScrollOfTheRealmOfTheDead requires Asl, StructGameShrin
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true)
 		endmethod
 	endstruct
 

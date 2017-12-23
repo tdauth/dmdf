@@ -147,7 +147,7 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			call this.createEnterTrigger()
 			call this.createLeaveTrigger()
 			loop
-				exitwhen (time <= 0.0 or ASpell.allyChannelLoopCondition(caster))
+				exitwhen (time <= 0.0 or AUnitSpell.allyChannelLoopCondition(caster))
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
 			endloop

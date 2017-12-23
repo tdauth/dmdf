@@ -1,2 +1,3 @@
-del "E:\Warcraft III Englisch\Maps\DMDF\TL.w3x"
-"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\TL.w3x" --checkscriptstuff --exit
+set OUTPUT_FILEPATH="C:\Users\tamino\Documents\Warcraft III\Maps\DMDF\TL.w3x"
+del %OUTPUT_FILEPATH%
+"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do %OUTPUT_FILEPATH% --checkscriptstuff --exit

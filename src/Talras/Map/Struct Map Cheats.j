@@ -50,7 +50,6 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 			debug call Print("loadtalras")
 			debug call Print(tre("Erzeugungs-Cheats:", "Spawn Cheats:"))
 			debug call Print("unitspawns")
-			debug call Print("testspawnpoint")
 			debug call Print("iron")
 		endmethod
 
@@ -968,10 +967,6 @@ library StructMapMapMapCheats requires Asl, Game, MapQuests, MapVideos, StructMa
 			call LoadGame("TPoF\\Campaign The Power of Fire shit\\Talras0.8.w3z", false)
 		endmethod
 
-		private static method onCheatActionTestSpawnPoint takes ACheat cheat returns nothing
-			call TestSpawnPoint.spawn()
-		endmethod
-
 		private static method onCheatActionIron takes ACheat cheat returns nothing
 			local item whichItem = CreateItem('I05Z', GetRectCenterX(gg_rct_character_0_start), GetRectCenterY(gg_rct_character_0_start))
 			call SetItemCharges(whichItem, 300)
@@ -1040,7 +1035,6 @@ static if (DEBUG_MODE) then
 			call ACheat.create("zoneholzbruck", true, thistype.onCheatActionZoneHolzbruck)
 			call ACheat.create("loadtalras", true, thistype.onCheatActionLoadTalras)
 			// test cheats
-			call ACheat.create("testspawnpoint", true, thistype.onCheatActionTestSpawnPoint)
 			call ACheat.create("iron", true, thistype.onCheatActionIron)
 			call ACheat.create("vectorremoval", true, thistype.onCheatActionVectorRemoval)
 			debug call Print("Before creating all cheats")

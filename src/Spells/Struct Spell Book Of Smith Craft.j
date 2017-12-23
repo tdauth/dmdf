@@ -1,6 +1,6 @@
-library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
+library StructSpellsSpellBookOfSmithCraft requires StructSpellsSpellBookCraftingSpell
 
-	struct SpellBookOfSmithCraftIron extends ASpell
+	struct SpellBookOfSmithCraftIron extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1BD'
 
 		private method condition takes nothing returns boolean
@@ -23,11 +23,11 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfSmithCraftAxe extends ASpell
+	struct SpellBookOfSmithCraftAxe extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1R2'
 		public static constant integer itemTypeId = 'I00Q'
 
@@ -52,11 +52,11 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfSmithCraftShortSword extends ASpell
+	struct SpellBookOfSmithCraftShortSword extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1BC'
 
 		private method condition takes nothing returns boolean
@@ -80,11 +80,11 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfSmithCraftLongSword extends ASpell
+	struct SpellBookOfSmithCraftLongSword extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1C2'
 
 		private method condition takes nothing returns boolean
@@ -110,11 +110,11 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfSmithIronHelmet extends ASpell
+	struct SpellBookOfSmithIronHelmet extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1R3'
 		public static constant integer itemTypeId = 'I02E'
 
@@ -140,11 +140,11 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfSmithCraftEinarsSword extends ASpell
+	struct SpellBookOfSmithCraftEinarsSword extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1R1'
 
 		private method condition takes nothing returns boolean
@@ -168,7 +168,7 @@ library StructSpellsSpellBookOfSmithCraft requires Asl, StructGameCharacter
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 
 		private static method onInit takes nothing returns nothing

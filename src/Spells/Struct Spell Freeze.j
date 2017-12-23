@@ -19,7 +19,7 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 			set filterUnit = null
 			return result
 		endmethod
-		
+
 		private method targets takes unit caster returns AGroup
 			local group targetGroup = CreateGroup()
 			local filterfunc filter = Filter(function thistype.filter)
@@ -45,22 +45,22 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 				call DestroyGroup(targetGroup)
 				set targetGroup = null
 			endif
-			
+
 			call DestroyFilter(filter)
 			set filter = null
-			
+
 			return targets
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local AGroup targets = this.targets(GetTriggerUnit())
 			local boolean result = not targets.units().isEmpty()
 			if (not result) then
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine Ziele in Reichweite.", "No targets in range."))
 			endif
-			
+
 			call targets.destroy()
-			
+
 			return result
 		endmethod
 
@@ -92,7 +92,7 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 					loop
 						exitwhen (i == targets.units().size())
 						set target = targets.units()[i]
-						if (ASpell.enemyTargetLoopCondition(target)) then
+						if (AUnitSpell.enemyTargetLoopCondition(target)) then
 							debug call Print("Destunning "  + GetUnitName(target))
 							call PauseUnit(target, false)
 							call targets.units().erase(i)
@@ -132,10 +132,10 @@ library StructSpellsSpellFreeze requires Asl, StructGameClasses, StructGameSpell
 			call this.addGrimoireEntry('A0UX', 'A0V2')
 			call this.addGrimoireEntry('A0UY', 'A0V3')
 			call this.addGrimoireEntry('A0UZ', 'A0V4')
-			
+
 			return this
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.whichSound = CreateSound("Abilities\\Spells\\Undead\\FreezingBreath\\FreezingBreathTarget1.wav", false, false, true, 12700, 12700, "")
 		endmethod

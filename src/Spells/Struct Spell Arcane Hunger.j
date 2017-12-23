@@ -94,7 +94,7 @@ library StructSpellsSpellArcaneHunger requires Asl, StructGameClasses, StructGam
 					loop
 						exitwhen (i == targets.units().size())
 						set target = targets.units()[i]
-						if (ASpell.enemyTargetLoopCondition(target)) then
+						if (AUnitSpell.enemyTargetLoopCondition(target)) then
 							call targets.units().erase(i)
 							call ADynamicLightning(dynamicLightnings[i]).destroy()
 							call dynamicLightnings.erase(i)

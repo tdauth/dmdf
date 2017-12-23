@@ -1,4 +1,4 @@
-library StructGameMapSettings
+library StructGameMapSettings requires StructGameZoneRestorePosition
 
 	/**
 	 * \brief All required map settings which have to be set before GameData.onInit() is called.
@@ -19,9 +19,10 @@ library StructGameMapSettings
 		private static player m_neutralPassivePlayer = Player(PLAYER_NEUTRAL_PASSIVE)
 		private static boolean array m_playerGivesXP[16]
 		/// The fixed time in seconds which it takes until a character is revived automatically after his death.
-		private static real m_revivalTime = 35.0
+		private static real m_revivalTime = 15.0
 		private static integer m_startLevel = 1
-		private static integer m_startSkillPoints = 1 /// Includes the skill point for the default spell.
+		/// Includes the skill point for the default spell.
+		private static integer m_startSkillPoints = 1
 		private static integer m_levelSkillPoints = 2
 		private static integer m_maxLevel = 10000
 		/// If this value is true there will always be a class selection in the beginning if the map is started for the first time. Otherwise characters will be loaded from the gamecache in campaign mode if available.
@@ -29,10 +30,20 @@ library StructGameMapSettings
 		private static unit m_goldmine
 		private static AGlobalHashTable m_excludedTeleportUnitTypeIds
 		private static boolean m_allowTravelingWithUnits = true
+		/**
+		 * One entry per \ref Zone.zones() and player of the current map.
+		 * Stores instances of the type \ref ZoneRestorePosition.
+		 */
+		private static hashtable m_zoneRestorePositions = null
 
+		/**
+		 * Initializes the default values for the map setttings.
+		 * This method has to be called before applying any custom map settings.
+		 */
 		public static method initDefaults takes nothing returns nothing
 			set thistype.m_excludedTeleportUnitTypeIds = AGlobalHashTable.create()
 			set thistype.m_playerGivesXP[GetPlayerId(Player(PLAYER_NEUTRAL_AGGRESSIVE))] = true
+			set thistype.m_zoneRestorePositions = InitHashtable()
 		endmethod
 
 		public static method setMapName takes string mapName returns nothing
@@ -169,6 +180,58 @@ library StructGameMapSettings
 			endif
 
 			return thistype.m_excludedTeleportUnitTypeIds.boolean(0, unitTypeId)
+		endmethod
+
+		private static method indexOfZone takes string zone returns integer
+			return Zone.zoneNameIndex.evaluate(zone)
+		endmethod
+
+		public static method addZoneRestorePosition takes string zone, player whichPlayer, real x, real y, real facing returns nothing
+			local integer zoneIndex = thistype.indexOfZone(zone)
+			if (zoneIndex != -1) then
+				call SaveInteger(thistype.m_zoneRestorePositions, zoneIndex, GetPlayerId(whichPlayer), ZoneRestorePosition.create(x, y, facing))
+			endif
+		endmethod
+
+		public static method addZoneRestorePositionForAllPlayers takes string zone, real x, real y, real facing returns nothing
+			local integer i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				call thistype.addZoneRestorePosition(zone, Player(i), x, y, facing)
+				set i = i + 1
+			endloop
+		endmethod
+
+		private static method loadZoneRestorePosition takes string zone, player whichPlayer returns integer
+			local integer zoneIndex = thistype.indexOfZone(zone)
+			if (zoneIndex == -1) then
+				return 0
+			endif
+			return ZoneRestorePosition(LoadInteger(thistype.m_zoneRestorePositions, zoneIndex, GetPlayerId(whichPlayer)))
+		endmethod
+
+		public static method zoneRestoreX takes string zone, player whichPlayer returns real
+			local ZoneRestorePosition zoneRestorePosition = thistype.loadZoneRestorePosition(zone, whichPlayer)
+			if (zoneRestorePosition == 0) then
+				return 0.0
+			endif
+			return zoneRestorePosition.x()
+		endmethod
+
+		public static method zoneRestoreY takes string zone, player whichPlayer returns real
+			local ZoneRestorePosition zoneRestorePosition = thistype.loadZoneRestorePosition(zone, whichPlayer)
+			if (zoneRestorePosition == 0) then
+				return 0.0
+			endif
+			return zoneRestorePosition.y()
+		endmethod
+
+		public static method zoneRestoreFacing takes string zone, player whichPlayer returns real
+			local ZoneRestorePosition zoneRestorePosition = thistype.loadZoneRestorePosition(zone, whichPlayer)
+			if (zoneRestorePosition == 0) then
+				return 0.0
+			endif
+			return zoneRestorePosition.facing()
 		endmethod
 	endstruct
 

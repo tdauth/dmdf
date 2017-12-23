@@ -13,7 +13,9 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 		private AInfo m_hi_no
 
 		private method startPageAction takes ACharacter character returns nothing
-			call this.showUntil(this.m_exit.index(), character)
+			if (not this.m_hi.show(character)) then
+				call this.showRange(this.m_howAreYou.index(), this.m_exit.index(), character)
+			endif
 		endmethod
 
 		private static method infoActionHi takes AInfo info, ACharacter character returns nothing
@@ -113,7 +115,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			call speech(info, character, false, tre("Wotan hat sich auf den Beutel gesetzt.", "Wotan has put himself on the bag."), null)
 			call speech(info, character, true, tre("Hervorragend. Du hast es wirklich drauf! Mann, ich hätte gerne sein Gesicht gesehen. Dieses arrogante Arschloch. Kumpel, ich werde dich echt vermissen!", "Outstanding. You really got it! Man, I would have liked to see his face. This arrogant asshole. Buddy, I'll really miss you!"), null)
-			call speech(info, character, false, tre("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!", "Here you have something to say goodbye. Goodbye and take care of yourself!"), null)
+			call speech(info, character, true, tre("Hier hast du noch was zum Abschied. Mach's gut und pass auf dich auf!", "Here you have something to say goodbye. Goodbye and take care of yourself!"), null)
 
 			call characterQuest.complete()
 
@@ -148,7 +150,7 @@ library StructMapTalksTalkRalph requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call this.setName(tre("Ralph", "Ralph"))
 
 			// start page
-			set this.m_hi = this.addInfo(false, false, 0, thistype.infoActionHi, tre("Hallo Ralph!", "Hello Ralph!"))
+			set this.m_hi = this.addInfo(false, true, 0, thistype.infoActionHi, null)
 			set this.m_howAreYou = this.addInfo(false, false, thistype.infoConditionHowAreYou, thistype.infoActionHowAreYou, tre("Und wie gehts dir so?", "So, how are you?"))
 			set this.m_help = this.addInfo(false, false, thistype.infoConditionHelp, thistype.infoActionHelp, tre("Kann ich dir noch irgendwie helfen?", "Can I help you?"))
 			set this.m_ruke = this.addInfo(false, false, thistype.infoConditionRuke, thistype.infoActionRuke, tre("Ich habe die Harke.", "I have the rake."))

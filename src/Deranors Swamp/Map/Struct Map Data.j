@@ -19,6 +19,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\War3XMainScreen.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0011)
 			call MapSettings.setNeutralPassivePlayer(Player(7))
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start_holzbruck), GetRectCenterY(gg_rct_start_holzbruck), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("GH", GetRectCenterX(gg_rct_start), GetRectCenterY(gg_rct_start), 0.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -46,8 +48,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemTypeId(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
@@ -68,8 +70,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 				// Haunted Staff
 				call character.giveItem('I03V')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
@@ -147,15 +149,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "HB") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
-				call SetUnitFacing(character.unit(), 180.0)
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
-				call SetUnitFacing(character.unit(), 0.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

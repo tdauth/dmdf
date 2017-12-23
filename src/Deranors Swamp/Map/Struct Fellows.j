@@ -1,4 +1,4 @@
-library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructMapMapShrines
+library StructMapMapFellows requires StructGameNpcFellows, StructMapMapNpcs, StructMapMapShrines
 
 	struct Fellows
 		private static Fellow m_wigberht
@@ -13,39 +13,9 @@ library StructMapMapFellows requires StructGameFellow, StructMapMapNpcs, StructM
 		endmethod
 
 		public static method init takes nothing returns nothing
-			set thistype.m_wigberht = Fellow.create(Npcs.wigberht(), 0)
-			call thistype.m_wigberht.setTalk(false)
-			call thistype.m_wigberht.setRevival(true)
-			call thistype.m_wigberht.setDescription(tre("Wigberht ist der Prinz der Nordmänner. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Ruf des Nordens', 'Unbeugsamkeit' und 'Rundumhieb'.", "Wigberht is the prince of the Norsemen. He is a strong melee fighter and has the abilities 'Call of the North', 'Rigidity' and 'All round blow'." ))
-			call thistype.m_wigberht.setRevivalTitle(tre("Wigberht", "Wigberht"))
-			call thistype.m_wigberht.setRevivalMessage(tre("Vorwärts!", "Forward!"))
-			call thistype.m_wigberht.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_wigberht.addAbility('A0N5')
-			call thistype.m_wigberht.addAbility('A05F')
-			call thistype.m_wigberht.addAbility('A05I')
-
-			set thistype.m_ricman = Fellow.create(Npcs.ricman(), 0)
-			call thistype.m_ricman.setTalk(false)
-			call thistype.m_ricman.setRevival(true)
-			call thistype.m_ricman.setDescription(tre("Ricman ist die rechte Hand von Wigberht. Er ist ein starker Nahkämpfer und besitzt die Fähigkeiten 'Loyalität', 'Sturmschlag' und 'Schildblock'.", "Ricman is the right hand of Wigberht. He is a strong melee fighter and has the abilities 'Loyalty', 'Storm bolt' and 'Shield Block'."))
-			call thistype.m_ricman.setRevivalTitle(tre("Ricman", "Ricman"))
-			call thistype.m_ricman.setRevivalMessage(tre("Ihr Hundesöhne, mich besiegt man nicht so leicht!", "You bastards, you do not defeat me that easy!"))
-			call thistype.m_ricman.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_ricman.addAbility('A19M')
-			call thistype.m_ricman.addAbility('A05G')
-			call thistype.m_ricman.addAbility('A05J')
-
-			// talk is created after the quest
-			set thistype.m_dragonSlayer = Fellow.create(Npcs.dragonSlayer(), 0)
-			call thistype.m_dragonSlayer.setTalk(false)
-			call thistype.m_dragonSlayer.setRevivalTitle(tre("Drachentöterin", "Dragon Slayer"))
-			call thistype.m_dragonSlayer.setRevivalMessage(tre("Für das Königreich der Hochelfen!", "For the kingdom of the high elves!"))
-			call thistype.m_dragonSlayer.setRevival(true)
-			call thistype.m_dragonSlayer.setRevivalSound(null) /// \todo FIXME
-			call thistype.m_dragonSlayer.addAbility('A18T')
-			call thistype.m_dragonSlayer.addAbility('A0PW')
-			call thistype.m_dragonSlayer.addAbility('A09P')
-			call thistype.m_dragonSlayer.addAbility('A1TO')
+			set thistype.m_wigberht = NpcFellows.createWigberht(Npcs.wigberht(), 0)
+			set thistype.m_ricman =  NpcFellows.createRicman(Npcs.ricman(), 0)
+			set thistype.m_dragonSlayer = NpcFellows.createDragonSlayer(Npcs.dragonSlayer(), 0)
 		endmethod
 
 		public static method wigberht takes nothing returns Fellow

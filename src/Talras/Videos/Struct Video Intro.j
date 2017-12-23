@@ -59,13 +59,15 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 			private integer m_actorHeimrich
 			private integer m_actorMarkward
 			*/
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\DarkAgents.mp3")
 		endmethod
 
 		public stub method onPlayAction takes nothing returns nothing
 			local player user = Player(PLAYER_NEUTRAL_PASSIVE)
 			local unit characterUnit = null
 			call FixVideoCamera(gg_cam_intro_orc)
-			call PlayThematicMusic("Music\\Intro.mp3")
+			//call PlayThematicMusic("Music\\Intro.mp3")
 			if (wait(0.50)) then
 				return
 			endif
@@ -151,7 +153,6 @@ library StructMapVideosVideoIntro requires Asl, StructGameGame
 		endmethod
 
 		public stub method onStopAction takes nothing returns nothing
-			call EndThematicMusic()
 			call Game.resetVideoSettings()
 
 			// now start the game

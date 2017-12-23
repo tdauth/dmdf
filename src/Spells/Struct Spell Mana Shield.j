@@ -9,8 +9,10 @@ library StructSpellsSpellManaShield requires Asl, StructGameClasses, StructGameS
 		public static constant integer classSelectionGrimoireAbilityId = 'A1MC'
 		public static constant integer maxLevel = 5
 		private static constant integer buffId = 'B00G'
-		private static constant real absorbedDamageManaCostStartValue = 6.0 /// Costs per damage point.
-		private static constant real absorbedDamageManaCostLevelValue = 1.0 /// Costs per damage point.
+		/// Costs per damage point.
+		private static constant real absorbedDamageManaCostStartValue = 6.0
+		/// Costs per damage point.
+		private static constant real absorbedDamageManaCostLevelValue = 1.0
 		private static constant real maxAbsorbedDamageLevelValue = 100.0
 		private ADamageRecorder m_damageRecorder
 		private real m_absorbedDamage

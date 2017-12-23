@@ -32,6 +32,8 @@ library StructMapVideosVideoRescueDago1 requires Asl, StructGameGame, StructMapM
 			call SetUnitFacingToFaceUnit(this.m_actorDago, this.actor())
 			call SetUnitFacingToFaceUnit(this.actor(), this.m_actorDago)
 
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\Comradeship.mp3")
+
 			call CameraSetupApplyForceDuration(gg_cam_rescue_dago_2, true, 0.0)
 		endmethod
 

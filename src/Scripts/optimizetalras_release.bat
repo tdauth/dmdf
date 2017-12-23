@@ -1,2 +1,3 @@
-del "E:\Warcraft III Englisch\Maps\DMDF\release\Talras0.8.w3x"
-"E:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" "E:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do "E:\Warcraft III Englisch\Maps\DMDF\release\Talras0.8.w3x" --checkscriptstuff --exit
+set OUTPUT_FILEPATH="C:\Users\tamino\Documents\Warcraft III\Maps\DMDF\Talras1.0.w3x"
+del %OUTPUT_FILEPATH%
+"F:\wc3tools\5.0wc3mapoptimizer\VXJWTSOPT.exe" --tweak "F:\Projekte\dmdf\src\Scripts\tweaks.vxtweak" "F:\Projekte\dmdf\maps\Karte 1 - Talras.w3x" --do %OUTPUT_FILEPATH% --checkscriptstuff --exit

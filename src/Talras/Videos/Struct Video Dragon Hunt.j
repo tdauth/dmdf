@@ -110,13 +110,13 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_4, true, 0.0)
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ich kam hierher, aus Tfjahn, dem Königreich der Hochelfen, um einen Drachen zu besiegen. Man sagte mir, in Mittilant, diesem Königreich, gäbe es davon noch wenige. Aber hier habe ich nur einfache Feldarbeiter und untotes Vieh gefunden.", "I came here from Tfjahn, the kingdom of the High Elves, to defat a dragon. They sold me in Mittilant, this kingdom, there were only few. But here I have found only simple field workers and undead beasts."), gg_snd_DragonSlayer4)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ich kam hierher, aus Tfjahn, dem Königreich der Hochelfen, um einen Drachen zu besiegen. Man sagte mir, in Mittilant, diesem Königreich, gäbe es davon noch wenige. Aber hier habe ich nur einfache Feldarbeiter und untotes Vieh gefunden.", "I came here from Tfjahn, the kingdom of the High Elves, to defat a dragon. They told me in Mittilant, this kingdom, there were only few. But here I have found only simple field workers and undead beasts."), gg_snd_DragonSlayer4)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayer4))) then
 				return
 			endif
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dem Wald dort hinten tummeln sich die Bestien dicht an dicht, aber keine Spur eines Drachen. Das beschäftigt mich schwer, denn ich habe seit Tagen kein Blut mehr gesehen.", "In the forest back there, the beasts frolicking densley packed but no trace of a dragon. This is on my mind heavily for I have seen no more blood for days."), gg_snd_DragonSlayer5)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("In dem Wald dort hinten tummeln sich die Bestien dicht an dicht, aber keine Spur eines Drachen. Das beschäftigt mich schwer, denn ich habe seit Tagen kein Blut mehr gesehen.", "In the forest back there, the beasts rejoicing densley packed but no trace of a dragon. This is on my mind heavily for I have seen no more blood for days."), gg_snd_DragonSlayer5)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayer5))) then
 				return
@@ -146,7 +146,7 @@ library StructMapVideosVideoDragonHunt requires Asl, StructGameGame
 
 			call CameraSetupApplyForceDuration(gg_cam_dragon_hunt_3, true, 0.0)
 
-			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ah! Jede Heldin braucht einen Barden, der ihre Taten an die einfachen Sterblichen weitergibt, denen das Heldentum nicht vergönnt ist. Du, du und deine Gefährten, ihr müsst mich begleiten und der Welt von meinen Taten berichten!", "Ah! Each hero needs a bard who passes on her actions to the mere mortals whom heroism is not granted. You, you and your fellows, you must come with me and tell the world of my deeds!"), gg_snd_DragonSlayer7)
+			call TransmissionFromUnit(this.m_actorDragonSlayer, tre("Ah! Jede Heldin braucht einen Barden, der ihre Taten an die einfachen Sterblichen weitergibt, denen das Heldentum nicht vergönnt ist. Du, du und deine Gefährten, ihr müsst mich begleiten und der Welt von meinen Taten berichten!", "Ah! Every hero needs a bard who passes on her actions to the mere mortals whom heroism is not granted. You, you and your fellows, you must come with me and tell the world of my deeds!"), gg_snd_DragonSlayer7)
 
 			if (wait(GetSimpleTransmissionDuration(gg_snd_DragonSlayer7))) then
 				return

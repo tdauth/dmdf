@@ -10,10 +10,11 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 	 */
 	struct QuestArea
 		// static members
+		private static constant integer maxAssemblyPointMarkers = 4
 		private static AIntegerVector m_questAreas
 		// members
 		private fogmodifier array m_assemblyPointFogModifier[12] /// \todo MapSettings.maxPlayers()
-		private destructable array m_assemblyPointMarker[4]
+		private destructable array m_assemblyPointMarker[4] /// \todo thistype.maxAssemblyPointMarkers
 		private rect m_rect
 		private trigger m_enterTrigger
 		// dynamic members
@@ -107,7 +108,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			endloop
 			set i = 0
 			loop
-				exitwhen (i == 4)
+				exitwhen (i == thistype.maxAssemblyPointMarkers)
 				call RemoveDestructable(this.m_assemblyPointMarker[i])
 				set this.m_assemblyPointMarker[i] = null
 				set i = i + 1
@@ -119,6 +120,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 			local ACharacter enteringCharacter = ACharacter.getCharacterByUnit(GetTriggerUnit())
 			local integer i = 0
 			local integer charactersCount = 0
+			local ACharacter playerCharacter = 0
 			debug call Print("Entering: " + GetUnitName(GetTriggerUnit()) + " character: " + I2S(enteringCharacter))
 			if (enteringCharacter != 0 and this.onCheck.evaluate()) then
 				set i = 0
@@ -129,7 +131,8 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 				set charactersCount = 1
 				loop
 					exitwhen (i == MapSettings.maxPlayers())
-					if (ACharacter.playerCharacter(Player(i)) != 0 and ACharacter.playerCharacter(Player(i)) != enteringCharacter and RectContainsUnit(this.m_rect, ACharacter.playerCharacter(Player(i)).unit()) and  ACharacter.playerCharacter(Player(i)).isMovable()) then
+					set playerCharacter = ACharacter.playerCharacter(Player(i))
+					if (playerCharacter != 0 and playerCharacter != enteringCharacter and RectContainsUnit(this.m_rect, playerCharacter.unit()) and playerCharacter.isMovable()) then
 						set charactersCount = charactersCount + 1
 					endif
 					set i = i + 1
@@ -163,7 +166,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		public stub method show takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == 4)
+				exitwhen (i == thistype.maxAssemblyPointMarkers)
 				call ShowDestructable(this.m_assemblyPointMarker[i], true)
 				set i = i + 1
 			endloop
@@ -172,7 +175,7 @@ library StructGameQuestArea requires Asl, StructGameCharacter, StructGameDmdfHas
 		public stub method hide takes nothing returns nothing
 			local integer i = 0
 			loop
-				exitwhen (i == 4)
+				exitwhen (i == thistype.maxAssemblyPointMarkers)
 				call ShowDestructable(this.m_assemblyPointMarker[i], false)
 				set i = i + 1
 			endloop

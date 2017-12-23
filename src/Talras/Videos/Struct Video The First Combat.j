@@ -167,6 +167,8 @@ library StructMapVideosVideoTheFirstCombat requires Asl, StructGameGame, StructM
 			call GroupAddUnit(this.m_secondActorGroup, this.unitActor(index))
 
 			call GroupPointOrder(this.m_firstActorGroup, "move", GetRectCenterX(gg_rct_video_the_first_combat_first_target), GetRectCenterY(gg_rct_video_the_first_combat_first_target))
+
+			call PlayThematicMusic("Sound\\Music\\mp3Music\\Tension.mp3")
 		endmethod
 
 		private static method groupFunctionSetHaldar takes nothing returns nothing

@@ -1,4 +1,4 @@
-library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructGameCharacter, StructMapMapNpcs, StructMapVideosVideoUpstream
+library StructMapQuestsQuestTheWayToHolzbruck requires Asl, StructGameCharacter, StructGameMissions, StructMapMapNpcs, StructMapVideosVideoUpstream
 
 	struct QuestAreaTheWayToHolzbruck extends QuestArea
 

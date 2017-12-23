@@ -1,6 +1,6 @@
-library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, StructGameSpell
+library StructSpellsSpellBookOfDemonology requires StructSpellsSpellBookCraftingSpell
 
-	struct SpellBookOfDemonologySacrificeChild extends ASpell
+	struct SpellBookOfDemonologySacrificeChild extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1V9'
 
 		private method condition takes nothing returns boolean
@@ -25,11 +25,11 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfDemonologySacrificeAnimal extends ASpell
+	struct SpellBookOfDemonologySacrificeAnimal extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1VA'
 
 		private method condition takes nothing returns boolean
@@ -54,11 +54,11 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfDemonologyConjuration extends ASpell
+	struct SpellBookOfDemonologyConjuration extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1VB'
 		private static constant real time = 60.0
 
@@ -88,7 +88,7 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
@@ -172,7 +172,7 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 	endstruct
 
-	struct SpellBookOfDemonologyBloodRitual extends ASpell
+	struct SpellBookOfDemonologyBloodRitual extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1VE'
 		public static constant real area = 300.0
 
@@ -216,11 +216,11 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 
-	struct SpellBookOfDemonologyLordOfDarkness extends ASpell
+	struct SpellBookOfDemonologyLordOfDarkness extends SpellBookCraftingSpell
 		public static constant integer abilityId = 'A1VD'
 		private static constant real time = 60.0
 
@@ -248,7 +248,7 @@ library StructSpellsSpellBookOfDemonology requires Asl, StructGameCharacter, Str
 		endmethod
 
 		public static method create takes Character character returns thistype
-			return thistype.allocate(character, thistype.abilityId, 0, thistype.condition, thistype.action, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, true, true)
+			return thistype.allocate(character, thistype.abilityId, thistype.condition, thistype.action)
 		endmethod
 	endstruct
 

@@ -43,7 +43,7 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			call MapSettings.setMapName("TL")
 			// Ascetic_-_06_-_Falling_into_Darkness.mp3
 			// ;Music\\mp3Music\\Pride_v002.mp3
-			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0487)
 			call MapSettings.setNeutralPassivePlayer(Player(7))
 			call MapSettings.setPlayerGivesXP(thistype.orcPlayer, true)
@@ -57,6 +57,10 @@ library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMa
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('h016', true)
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('h020', true)
 			call MapSettings.setUnitTypeIdExcludedFromTeleports('u00C', true)
+
+			call MapSettings.addZoneRestorePositionForAllPlayers("GA", GetRectCenterX(gg_rct_start_gardonar), GetRectCenterY(gg_rct_start_gardonar), 180.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start_holzbruck), GetRectCenterY(gg_rct_start_holzbruck), 270.0)
+			call MapSettings.addZoneRestorePositionForAllPlayers("DH", GetRectCenterX(gg_rct_start_dornheim), GetRectCenterY(gg_rct_start_dornheim), 90.0)
 		endmethod
 
 		private static method triggerConditionWelcomeTalras takes nothing returns boolean
@@ -275,14 +279,14 @@ endif
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			elseif (class == Classes.dragonSlayer()) then
 				// sword and morning star
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
 				call UnitAddItemToSlotById(whichUnit, 'I06I', 3)
 			elseif (class == Classes.druid()) then
 				// simple druid staff
 				call UnitAddItemToSlotById(whichUnit, 'I06J', 2)
 			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemTypeId(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
@@ -305,14 +309,14 @@ endif
 				call character.giveItem('I03V')
 			elseif (character.class() == Classes.dragonSlayer()) then
 				// sword and morning star
-				call character.giveItem(ItemTypes.shortword().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
 				call character.giveItem('I06I')
 			elseif (character.class() == Classes.druid()) then
 				// simple druid staff
 				call character.giveItem('I06J')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
@@ -460,20 +464,6 @@ endif
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			if (zone == "GA") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_gardonar))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_gardonar))
-				call SetUnitFacing(character.unit(), 180.0)
-			elseif (zone == "HB") then
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_holzbruck))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_holzbruck))
-				call SetUnitFacing(character.unit(), 270.0)
-			// Dornheim
-			else
-				call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_dornheim))
-				call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_dornheim))
-				call SetUnitFacing(character.unit(), 90.0)
-			endif
 		endmethod
 
 		/// Required by \ref MapChanger.

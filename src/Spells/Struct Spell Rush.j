@@ -21,7 +21,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 			debug call Print("Bonus: " + R2S(bonus))
 			call IssueTargetOrder(characterUnit, "attack", target)
 			loop
-				exitwhen (thistype.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
+				exitwhen (AUnitSpell.enemyTargetLoopCondition(target) or GetUnitCurrentOrder(characterUnit) != OrderId("attack"))
 				if (GetDistanceBetweenUnits(characterUnit, target, 0.0, 0.0) <= 300.0) then
 					debug call Print("Stop!")
 					call IssueImmediateOrder(characterUnit, "stop")
@@ -34,7 +34,7 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 					if (not IssueTargetOrder(this.dummy, "thunderbold", target)) then
 						debug call Print("Error on ordering thunderbold.")
 					endif
-					
+
 					call UnitDamageTargetBJ(characterUnit, target, this.level() * thistype.damageFactor, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL)
 					call ShowBashTextTagForPlayer(this.character().player(), GetWidgetX(target), GetWidgetY(target), R2I(this.level() * thistype.damageFactor))
 					call ResetUnitAnimation(characterUnit)
@@ -52,22 +52,22 @@ library StructSpellsSpellRush requires Asl, StructGameClasses, StructGameGame, S
 
 		public static method create takes ACharacter character returns thistype
 			local thistype this = thistype.createWithEvent(character, Classes.knight(), Spell.spellTypeNormal, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, 0, thistype.action, EVENT_PLAYER_UNIT_SPELL_EFFECT) // if the event channel is used, the cooldown and mana costs are ignored if UnitDamageTargetBJ() kills the target
-			
+
 			set this.dummy = CreateUnit(GetOwningPlayer(character.unit()), thistype.dummyUnitTypeId, GetUnitX(character.unit()), GetUnitY(character.unit()), 0.0)
 			call SetUnitInvulnerable(this.dummy, true)
 			call ShowUnit(this.dummy, false)
 			call UnitAddAbility(this.dummy, 'A01R')
-			
+
 			call this.addGrimoireEntry('A1NN', 'A1NO')
 			call this.addGrimoireEntry('A0XS', 'A0XX')
 			call this.addGrimoireEntry('A0XT', 'A0XY')
 			call this.addGrimoireEntry('A0XU', 'A0XZ')
 			call this.addGrimoireEntry('A0XV', 'A0Y0')
 			call this.addGrimoireEntry('A0XW', 'A0Y1')
-			
+
 			return this
 		endmethod
-		
+
 		public method onDestroy takes nothing returns nothing
 			call RemoveUnit(this.dummy)
 			set this.dummy = null

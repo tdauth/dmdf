@@ -4,7 +4,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 	private struct SpellFireMissileType extends AMissileType
 		private Character m_character
 		private unit m_targetUnit
-		
+
 		private static method burnTarget takes SpellFireMissile spell, unit caster, unit target returns nothing
 			local real damage = 0.0
 			local effect burnEffect = AddSpellEffectTargetById(SpellFireMissile.abilityId, EFFECT_TYPE_TARGET, target, "chest")
@@ -12,19 +12,19 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			loop
 				call TriggerSleepAction(1.0)
 				set time = time - 1.0
-				exitwhen (time <= 0.0 or ASpell.enemyTargetLoopCondition(target))
+				exitwhen (time <= 0.0 or AUnitSpell.enemyTargetLoopCondition(target))
 				set damage = SpellFireMissile.burnDamageStartValue + spell.level() * SpellFireMissile.burnDamageFactor
 				set damage = damage + spell.damageBonusFactor() * damage
 				call UnitDamageTargetBJ(caster, target, damage, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE)
 				call Spell.showDamageTextTag(target, damage)
 			endloop
-			
+
 			set caster = null
 			set target = null
 			call DestroyEffect(burnEffect)
 			set burnEffect = null
 		endmethod
-		
+
 		private static method damage takes AMissile missile returns nothing
 			local thistype this = thistype(missile.missileType())
 			local unit caster = this.m_character.unit()
@@ -41,30 +41,30 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			set caster = null
 			set target = null
 		endmethod
-	
+
 		private static method customOnDeathFunction takes AMissile missile returns nothing
 			local thistype this = thistype(missile.missileType())
 			if (not IsUnitDeadBJ(this.m_targetUnit)) then
 				call thistype.damage(missile)
 			endif
 		endmethod
-		
+
 		public static method create takes Character character, unit targetUnit returns thistype
 			local thistype this = thistype.allocate()
-			
+
 			set this.m_character = character
 			set this.m_targetUnit = targetUnit
-			
+
 			call this.setOwner(character.player())
 			call this.setUnitType('n00E')
 			call this.setSpeed(700.0)
 			call this.setTargetSeeking(true)
 			call this.setDestroyOnDeath(true)
 			call this.setOnDeathFunction(thistype.customOnDeathFunction)
-			
+
 			return this
 		endmethod
-		
+
 	endstruct
 
 	struct SpellFireMissile extends SpellElementalMageDamageSpell
@@ -100,7 +100,7 @@ library StructSpellsSpellFireMissile requires Asl, StructSpellsSpellElementalMag
 			call this.addGrimoireEntry('A0KR', 'A0KW')
 			call this.addGrimoireEntry('A0KS', 'A0KX')
 			call this.addGrimoireEntry('A0KT', 'A0KY')
-			
+
 			return this
 		endmethod
 	endstruct

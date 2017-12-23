@@ -46,7 +46,7 @@ library StructSpellsSpellSelflessness requires Asl, StructGameClasses, StructGam
 			call targetDamageRecorder.setOnDamageAction(thistype.onTargetDamageAction)
 			call DmdfGlobalHashTable.global().setInteger(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, targetDamageRecorder, this)
 			loop
-				exitwhen (counter == thistype.time or not ASpell.allyTargetLoopCondition(GetSpellTargetUnit()) or not ASpell.allyTargetLoopCondition(GetTriggerUnit()))
+				exitwhen (counter == thistype.time or not AUnitSpell.allyTargetLoopCondition(GetSpellTargetUnit()) or not AUnitSpell.allyTargetLoopCondition(GetTriggerUnit()))
 				call TriggerSleepAction(1.0)
 				set counter = counter + 1
 			endloop

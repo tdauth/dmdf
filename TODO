@@ -1,3 +1,41 @@
+Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
+* Wenn die anderen Spieler nicht direkt 2 und 3 sind, dann funktioniert das Zählen in Quest-Gebieten nicht (1/3 Charakteren egal ob schon Charaktere im Gebiet sind!). Hat MapSettings.maxPlayers() einfach 1 zurückgegeben oder waren playerCharacter() immer 0?!
+* Klassenauswahl: Multiboard verschwindet immer bei anderen Spielern, wenn ein Spieler zur nächsten Klasse wechselt.
+* Arena-Karte: Irgendein Zauberer-Spell kann nicht über Stufe 1 geskillt werden (Auto-Skilling erhöht nur bestimmte Zauber).
+* RPG-Kamera wird für alle Spieler übernommen und zurückgesetzt.
+* Dagos Pilzequest kam bei einem Spieler nicht (sicher, Dialog vllt. nicht ausgewählt?).
+* Skillen ging irgendwann nicht mehr (Zauberpunkte wurden verbraucht ohne die Stufe der Fähigkeit zu erhöhen).
+* FIXED: Arena: Wissen heißt noch Intelligenz.
+* Arena: Evtl alle UI-Strings importieren (mit MPQ-Editor)?
+* Orkanführer: Stimme tiefer machen, aber nicht langsamer!
+* FIXED: XP-Balken im Charakterschema zeigt falschen Wert an!
+* Bisherige Kartengröße Talras 6 MiBytes (unkomprimiert). Kartenskriptgröße unkomprimiert 11 MiBytes. 208 752 Zeilen Code (ohne Optimizer)!
+* Bisherige optimierte Kartengröße Talras 3,735 MiBytes, Kartenskriptgröße optimiert 3,508 KiBytes. 116 364 Zeilen Code (mit Optimizer)!
+	* DONE: Drop all unused ASL systems.
+* Improve runtime performance: Make all Talk, SharedQuest and Video members static since there can only be one instance.
+
+Test mit Luxi:
+* Texttag für Verkauf (Inventarsystem) wird allen Spielern angezeigt anstatt nur dem Besitzer des verkaufenden Charakters: 10 + 5 = 15. Obwohl ShowFadingTextTagForPlayer() verwendet wird?
+* DONE: Wiederbelebungszeit reduzieren 15 Sekunden.
+* (Agihard und Sisgard): Talk-skip-Bug, wenn ein Spieler im gleichen Dialog skippt, dann wird auch beim anderen Spieler geskippt.
+Sisgards Sounds (Hälfte geht nicht):
+* Mein Meister war ein großer Zauberer: Sound kaputt, bricht ab.
+* Das erste Mal traf ich ihn auch kaputt.
+Vielleicht weil beide Spieler gleichzeitig mit ihr reden (skips). Wenn Spieler 1 skipped.
+Aghiard-Regelsounds um eins versetzt bei 3. kommt 2.
+* Arenagegner für jeden Kampf pro Spieler Anzahl merken und Gegner stärker machen.
+* Arenagegner sollten je nach Stärker mehr Gold geben.
+* FIXED: Donnersound zu laut.
+* Gespräch zwischen Wieland und Einar, falscch herum, anderer NPC muss zuerst was sagen.
+* Alle Zauber im Zauberbuch können nur bis Stufe ein geskillt weren, Skill Points werden trotzem verbraucht.
+* Quest Gold für die Handelserlaubnis, Hinweis ins Quest-Log schreiben nachdem man mit Ferdinand darüber geredet hat.
+* Nachdem Barade leavt kommt "Barade ist nun Admin".
+* Lothar: Beleidigung, Quest sollte trotzdem annehmbar sein.
+* Teleporter geht nach laden nur zum ersten Schrein an der Burg.
+* DONE: Markwards Quest: "Zwei Tage sind vergangen": "Genügend Zeit ist vergangen -> die Pfeile sind fertig"
+* DONE: Dagos Pilzquest, reinschreiben wie viel Pilze man braucht.
+* Musik in Talras kam nicht. Zumindest das zweite Lied drinnen lassen?
+
 Open TODO items:
 Handlung (optionale Verbesserungen):
 * Tellborn und Fulco Quest mit Riesen einbauen. Einen Riesen einfangen mit Spruchrolle?
@@ -20,6 +58,31 @@ Handlung (optionale Verbesserungen):
 * Außerdem taucht ein Anführer der Orks auf, der Vater des Ork-Anführers, den Wigberht bereits getötet hat und erzählt, dass Wigberht seinen Vater niemals wieder lebend sieht. Mit Hilfe von Ricman wird er getötet und verrät kurz vor seinem Tod, dass Wigberhts Vater noch am Leben ist.
 
 Zeugs:
+* DONE: Doomed needs range attack for air units.
+* Video: A New Aliance: Place actors of Ferdinand and Osman. Otherwise Osman might block the duke.
+* Decrease the XP gained from killing creeps. Leveling in singleplayer is too fast. Maybe only in 0.8. In 0.9 It should be 10 % like in the Bonus Campaign and the XP from wc3 is used. Watch the Let's Play of 0.8: https://www.youtube.com/watch?v=vCeUAUiXB8E&index=6&list=PLM18cnYYRV5OQRQFKEPbDKecc1qGdEYgW
+* FIXED (0.9): Change sound of the Orc Leader in Talras like Deranors sound (deeper).
+* Talras daily routines of NPCs seem not to start after traveling there for the first time until a video sequence has been played? Not sure?
+* Increase the costs of the long bow and reduce its damaga ability's damage.
+* Replace the main menu frozen frames by demonic interface ones.
+* Waiting for sound gg_snd_OrcLeader1 does not work. Export the sound again.
+* Use new music! In the Let's Play he turned the music of. Ministrel Guild is annoying as hell. http://www.freesound.org/ https://www.jamendo.com/?language=en
+* Play music during all video sequences. If no custom music is available, use wc3s music!
+* Add a marching sound to the video where the Northman march: http://www.freesound.org/people/Yap_Audio_Production/sounds/218998/
+* Intro music: http://www.freesound.org/people/Tristan_Lohengrin/sounds/319781/
+* Market sound: http://www.freesound.org/people/Metzik/sounds/371222/
+* Sound when the High Elves arrive: http://www.freesound.org/people/CGEffex/sounds/99961/
+* Character Management: Fix the size of the GUI and the placement as well as the discovered area.
+* FIXED: Before traveling to the World map show a dialog and ask for confirmation.
+* DONE: Dornheim: Change the loading background.
+* FIXED: "Teach me the witch song." of Mathilda does not show the start page again.
+* Refreshing the options after map transition removes dungeon and quest buttons?
+* DONE: World Map: Ask for user confirmation before traveling to another map.
+* World Map: When reenabling the models or images seem corrupted. Prevent enabling twice.
+* World Map: Make selection models for trackables bigger.
+* World Map: When traveling from Talras to World Map, Talras is disabled?
+* World Map: Pan the camera in the beginning to the zone from which the characters came.
+* war3mapSkin.txt is apparently optimized by the optimizer and therefore "Inventory is full" is still shown in English maps. But since the interface is changed correctly, the values must be integrated?
 * The map in the singleplayer campaign is not detected as campaign (object data). Besides the map paths "TL.w3x" etc. have to be used to make the zones work. Therefore addd the maps directly to the root path in the MPQ archive TPoF.mpq.
 * src/Scripts/devinstaller.nsi: Install the translation files or different language versions of the maps.
 * FIXED in TPOF only: wc3lib compression bug Shot into the Heart ACfd:DataA, ACfd:DataB, ACfd:DataC
@@ -27,11 +90,14 @@ Zeugs:
 * FIXED in TPOF only: wc3lib compression bug: Lauern ANwk:DataA, ANwk:DataB, ANwk:DataC (BUT NOT ANwk:DataD)
 * Show the campaign under "Campaign" not "Custom Campaigns". Change the file "UI/CampaignStrings_exp.txt" for this. Added files from war3x.mpq, maybe check the latest War3Patch.mpq? Do the files from the map folder work as campaign or should they be added to the MPQ archive?
 * Specify another credits map in the game: "UI/MiscUI.txt" entry "CreditsFile_V1".
-* (0|0) is discovered in the beginning in Talras. Game options?
+* Finish Credits map: Show credits all the time, remove class selection, update custom interface and gameplay constants.
+* (0|0) is discovered in the beginning in Talras. Game options? restoreCharacterSinglePlayer(cache, Player(i), 0.0, 0.0, 0.0) is called and game options are created there.
 * One spell of the Ranger is missing!
 * Concentration is cast all the time (although 100% life and 10 seconds timer!).
 * FIXED (Dungeon icon overwrites the one used): Learn Stab has the wrong icon.
 * Wieland's store has no effect.
+* The map names have to be translated separately (shown in wc3). They are not part of the war3map.wts.
+* Map Gardonar: Is missing custom user interface strings (Missions, Information etc.).
 * String "Arkaner Schutz [|cffffcc00Stufe 2|r]" is very often in war3map.wts of Talras. wc3trans error? Wrong translation? Replace by "(Spell Book Ability - Druid)".
 * Teleportation (Elemental Mage): Wrong German tooltip (Aklingzeit).
 * Mephisto: Add talk abilities as sold units. They are added but apparently hero transformation removes them. Besides he is not invulnerable after the transformation!
@@ -42,9 +108,6 @@ Zeugs:
 * Wotan's quest: Add to the description where the scepter is (inventory) and where the children are.
 * DONE: Tanka: Add item types for learning stuff.
 * The North: Repick creates items again.
-* Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
-* Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list?
-* Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
 * Verzauberter Schädel eines Dämon: Keine Zauberbuchfähigkeit.
 * Knochenbogen: Keine Zauberbuchfähigkeit.
 * Necromancy: Zaubertooltip kaputt (nicht im Zauberbuch).
@@ -392,6 +455,11 @@ Repick Issues:
 * If all favorites are used in the grimoire there must be a switch with favorites button in the grimoire. Otherwise non spell can be removed!
 * Zone Transition: If you save a game for the first time and you copy all save games to the new folder, how do you know if the save games are not from older games which have never been saved? In this case you copy invalid save games for other zones. Only the current save game is guranteed to be valid. You need a temporary folder which has to be copied and deleted afterwards.
 * When selling an item and selecting the shop immediately afterwards, not the whole inventory is cleared. The sold item remains in the inventory and is dropped when the character is selected again. This allows doubeling items! 0 timer critical section? -> refreshRucksackItem() only update charges if shop is != null, otherwise the item is hidden.
+* FIXED (by placing it directly to the active shrine): Critical: Game Options are not unpaused on loading a map for the second time. They seem to be hidden but not unpaused although the character is. Character.replaceUnit() or Character.refreshOptions()?
+* FIXED (store in a list which chapters have been visited already): Critical: Starting a new game and changing the map for the first time (after saving the game under a name which already existed) changes to an existing savegame. Maybe just store the existing zones in a list? The Bonus Campaign does it the same way. It stores all save games in a list and transfers them to every map.
+* Game Options are not hidden or moved to the character's position on restoring after map change. The hero can be seen on the minimap? Only in the beginning directly after loading?
+* The temporary save games folder was not deleted. So the transition to Talras did not work (savegame was not working). Dornheim should actually delete this file in the beginning which did not happen. After deleting the temporary folder manually, it worked again. The folder should also be removed automatically when a game is loaded by the user but a loaded game uses a different save game path anyway.
+* When the user saves the game, the temporary folder should be removed afterwards!
 
 Zone Transition:
 * FIXED: Skill points are not restored.

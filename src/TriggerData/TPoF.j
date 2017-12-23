@@ -14,32 +14,7 @@
  * Using triggers instead of function pointers is a bit more complicated. Since the GUI trigger does not simply allow handling with function references it is much easier to simply use a whole trigger as a function pointer. To use a trigger as function pointer a unique hash table has to be used such as \ref TalkStartActionsHashTable and the trigger has to be stored using a passed function argument (passed to the function of the function pointer) as parent key. Then a predefined function which matches the function interface has to be set as function pointer. When the function of the pointer is called it uses the parameter which was used as parent key again to restore the stored trigger and calls the trigger instead of doing anything else. Thus a trigger is called in the end which has been specified by the user. Any trigger parameters have to be attached as well like it is done for event handling using \ref DmdfHashTable.global() and the called trigger.
  */
 
-/**
- * Predefinition simplifies the usage of the systems.
- * These are the default values for the ASL and the modification TPoF.
- */
-globals
-	constant boolean A_SYSTEMS = true
-	constant boolean A_DEBUG_HANDLES = false
-	constant boolean A_DEBUG_NATIVES = false
-	constant real A_MAX_COLLISION_SIZE = 300
-	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
-	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
-	constant boolean DMDF_INFO_LOG = true
-	constant boolean DMDF_NPC_ROUTINES = true
-	constant boolean DMDF_VIOLENCE = true
-	constant boolean DMDF_CREDITS = true
-
-	// used by function GetTimeString()
-	constant string A_TEXT_TIME_VALUE = "0%1%" // GetLocalizedString(
-	constant string A_TEXT_TIME_PAIR = "%1%:%2%" // GetLocalizedString(
-	// used by ADialog
-	constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%" // GetLocalizedString(
-endglobals
-
-//! import "Import Asl.j"
 //! import "Import Dmdf.j"
-//! import "Systems/Debug/Text en.j"
 
 /**
  * \brief All functions for the trigger data of The Power of Fire. Wrappers have to be used since the vJass syntax is not allowed for TriggerData.
@@ -208,7 +183,7 @@ function GetTriggerZoneName takes nothing returns string
 	return DmdfHashTable.global().handleStr(GetTriggeringTrigger(), TRIGGERDATA_KEY_ZONENAME)
 endfunction
 
-function GetTriggerInventory takes nothing returns AInventory
+function GetTriggerInventory takes nothing returns AUnitInventory
 	return DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), TRIGGERDATA_KEY_INVENTORY)
 endfunction
 
@@ -258,6 +233,14 @@ endfunction
 
 function SetMapSettingsStartLevel takes integer startLevel returns nothing
 	call MapSettings.setStartLevel(startLevel)
+endfunction
+
+function AddMapSettingsZoneRestorePosition takes string zone, player whichPlayer, real x, real y, real facing returns nothing
+	call MapSettings.addZoneRestorePosition(zone, whichPlayer, x, y, facing)
+endfunction
+
+function AddMapSettingsZoneRestorePositionForAllPlayers takes string zone, real x, real y, real facing returns nothing
+	call MapSettings.addZoneRestorePositionForAllPlayers(zone, x, y, facing)
 endfunction
 
 function ChangeMap takes string mapName returns nothing
@@ -445,7 +428,7 @@ function CharacterClass takes Character character returns AClass
 	return character.class()
 endfunction
 
-function CharacterInventory takes Character character returns AInventory
+function CharacterInventory takes Character character returns AUnitInventory
 	return character.inventory()
 endfunction
 
@@ -459,35 +442,35 @@ endfunction
 
 // Inventory API
 
-function InventoryEquipmentItemType takes AInventory inventory, integer equipmentType returns integer
-	local AInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
+function InventoryEquipmentItemType takes AUnitInventory inventory, integer equipmentType returns integer
+	local AUnitInventoryItemData itemData = inventory.equipmentItemData(equipmentType)
 	if (itemData != 0) then
 		return itemData.itemTypeId()
 	endif
 	return 0
 endfunction
 
-function InventoryRucksackItemType takes AInventory inventory, integer index returns integer
-	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+function InventoryRucksackItemType takes AUnitInventory inventory, integer index returns integer
+	local AUnitInventoryItemData itemData = inventory.backpackItemData(index)
 	if (itemData != 0) then
 		return itemData.itemTypeId()
 	endif
 	return 0
 endfunction
 
-function InventoryRucksackItemCharges takes AInventory inventory, integer index returns integer
-	local AInventoryItemData itemData = inventory.rucksackItemData(index)
+function InventoryRucksackItemCharges takes AUnitInventory inventory, integer index returns integer
+	local AUnitInventoryItemData itemData = inventory.backpackItemData(index)
 	if (itemData != 0) then
 		return itemData.charges()
 	endif
 	return 0
 endfunction
 
-function InventoryHasItemType takes AInventory inventory, integer itemCode returns boolean
+function InventoryHasItemType takes AUnitInventory inventory, integer itemCode returns boolean
 	return inventory.hasItemType(itemCode)
 endfunction
 
-function InventoryTotalItemTypeCharges takes AInventory inventory, integer itemCode returns integer
+function InventoryTotalItemTypeCharges takes AUnitInventory inventory, integer itemCode returns integer
 	return inventory.totalItemTypeCharges(itemCode)
 endfunction
 
@@ -935,12 +918,12 @@ struct MapData
 	public static method onStart takes nothing returns nothing
 	endmethod
 
-	private static method onEquipItem takes AInventory inventory, integer index, boolean firstTime returns nothing
+	private static method onEquipItem takes ACharacterInventory inventory, integer index, boolean firstTime returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnEquipItemTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
-			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory.unitInventory())
 			call DmdfHashTable.global().setHandleInteger(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnEquipItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
 			call ConditionalTriggerExecute(characterOnEquipItemTriggers[i])
@@ -948,12 +931,12 @@ struct MapData
 		endloop
 	endmethod
 
-	private static method onAddItemToRucksack takes AInventory inventory, integer index, boolean firstTime returns nothing
+	private static method onAddItemToRucksack takes ACharacterInventory inventory, integer index, boolean firstTime returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == characterOnAddRucksackItemTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_CHARACTER, inventory.character())
-			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory)
+			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_INVENTORY, inventory.unitInventory())
 			call DmdfHashTable.global().setHandleInteger(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMINDEX, index)
 			call DmdfHashTable.global().setHandleBoolean(characterOnAddRucksackItemTriggers[i], TRIGGERDATA_KEY_ITEMFIRSTTIME, firstTime)
 			call ConditionalTriggerExecute(characterOnAddRucksackItemTriggers[i])
@@ -966,7 +949,7 @@ struct MapData
 		local integer i = 0
 		// Do this on the character creation ONCE!
 		call character.inventory().addOnEquipFunction(thistype.onEquipItem)
-		call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksack)
+		call character.inventory().addOnAddToBackpackFunction(thistype.onAddItemToRucksack)
 		loop
 			exitwhen (i == mapSelectClassTriggers.size())
 			call DmdfHashTable.global().setHandleInteger(mapSelectClassTriggers[i], TRIGGERDATA_KEY_CHARACTER, character)

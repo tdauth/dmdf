@@ -1,7 +1,7 @@
 library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpell
 
 	/**
-	* @todo Use icon path and name etc. from ability with @param ABILITY_ID
+	* \todo Use icon path and name etc. from ability with \p ABILITY_ID
 	* w3a means ability.
 	* "Aspb" is the base ID of spell book
 	* "ANcl" is the base ID of channel
@@ -195,16 +195,18 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		 * \sa thistype#grimoireEntries()
 		 */
 		public method addGrimoireEntry takes integer abilityId, integer grimoireAbilityId returns nothing
-			local integer grimoireIndex
-			local integer firstIndex
-			local GrimoireSpellEntry entry = GrimoireSpellEntry.create.evaluate(Character(this.character()).grimoire(), abilityId, grimoireAbilityId, this)
+			local integer grimoireIndex = 0
+			local integer firstIndex = 0
+			local Character character = Character(this.character())
+			local Grimoire grimoire = character.grimoire()
+			local GrimoireSpellEntry entry = GrimoireSpellEntry.create.evaluate(grimoire, abilityId, grimoireAbilityId, this)
 
-			if (this.level() == this.grimoireEntries().size() and this.available() and Character(this.character()).grimoire().pageIsShown.evaluate()) then
+			if (this.level() == this.grimoireEntries().size() and this.available() and grimoire.pageIsShown.evaluate()) then
 				//debug call this.print("Page is shown")
 				// TODO calling spellIndex() is slow
-				set grimoireIndex = Character(this.character()).grimoire().spellIndex.evaluate(this)
+				set grimoireIndex = grimoire.spellIndex.evaluate(this)
 				//debug call this.print("Spell index " + I2S(grimoireIndex))
-				set firstIndex = Character(this.character()).grimoire().page.evaluate() * Grimoire.spellsPerPage
+				set firstIndex = grimoire.page.evaluate() * Grimoire.spellsPerPage
 				//debug call this.print("First index " + I2S(firstIndex))
 				//debug call this.print("Last index " + I2S(firstIndex + Grimoire.spellsPerPage))
 				// spell doesn't belong to grimoire or is not shown on current page
@@ -334,7 +336,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		public stub method setLevel takes integer level returns nothing
 			call super.setLevel(level)
 			set this.m_savedLevel = level
-			//debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
+			debug call Print("Set saved level to " + I2S(level) + " of spell " + GetAbilityName(this.ability()))
 		endmethod
 
 		/**
@@ -380,8 +382,8 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 			return GrimoireSpellEntry(this.grimoireEntries()[this.level()]).isShown(this.character().unit())
 		endmethod
 
-		public static method createEx takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent, boolean useUpgradeTrigger, boolean useChannelTrigger, boolean useCastTrigger returns thistype
-			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent, useUpgradeTrigger, useChannelTrigger, useCastTrigger)
+		public static method createEx takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, AUnitSpellUpgradeAction upgradeAction, AUnitSpellCastCondition castCondition, AUnitSpellCastAction castAction, playerunitevent unitEvent, boolean useUpgradeTrigger, boolean useCastTrigger returns thistype
+			local thistype this = thistype.allocate(character, abilityId, upgradeAction, castCondition, castAction, unitEvent, useUpgradeTrigger, useCastTrigger)
 			set this.m_savedLevel = 0
 			set this.m_favouriteAbility = favouriteAbility
 			set this.m_maxLevel = maxLevel
@@ -397,12 +399,12 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 			return this
 		endmethod
 
-		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction, playerunitevent unitEvent returns thistype
+		public static method createWithEvent takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, AUnitSpellUpgradeAction upgradeAction, AUnitSpellCastCondition castCondition, AUnitSpellCastAction castAction, playerunitevent unitEvent returns thistype
 			/*
 			 * Since no hero skills are used, always set useUpgradeTrigger to false. This saves one trigger creation.
 			 * This struct uses onLearn() instead.
 			 */
-			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, unitEvent, false, true, true)
+			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, upgradeAction, castCondition, castAction, unitEvent, false, true)
 		endmethod
 
 		/**
@@ -410,7 +412,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		 * It won't create any triggers and never call the event methods.
 		 */
 		public static method createWithoutTriggers takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility returns thistype
-			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, false, false)
+			return thistype.createEx(character, class, spellType, maxLevel, abilityId, favouriteAbility, 0, 0, 0, EVENT_PLAYER_UNIT_SPELL_CHANNEL, false, false)
 		endmethod
 
 		/**
@@ -418,7 +420,7 @@ library StructGameSpell requires Asl, StructGameCharacter, StructGameGrimoireSpe
 		 * \param character The character who can use the spell.
 		 * \param class The class to which the spell does belong.
 		 */
-		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, ASpellUpgradeAction upgradeAction, ASpellCastCondition castCondition, ASpellCastAction castAction returns thistype
+		public static method create takes Character character, AClass class, integer spellType, integer maxLevel, integer abilityId, integer favouriteAbility, AUnitSpellUpgradeAction upgradeAction, AUnitSpellCastCondition castCondition, AUnitSpellCastAction castAction returns thistype
 			/*
 			 * Make sure that GetSpellTargetX() and other event data works properly.
 			 * EVENT_UNIT_SPELL_ENDCAST would NOT work and is reserved for grimoire entries.

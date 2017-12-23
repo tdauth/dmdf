@@ -147,7 +147,7 @@ library StructSpellsSpellMagicalShockWaves requires Asl, StructGameClasses, Stru
 					set iterator = buffs.begin()
 					loop
 						exitwhen (not iterator.isValid())
-						if (ASpell.enemyTargetLoopCondition(Buff(iterator.data()).target())) then
+						if (AUnitSpell.enemyTargetLoopCondition(Buff(iterator.data()).target())) then
 							debug call Print("Target dropped out: " + GetUnitName(Buff(iterator.data()).target()))
 							call Buff(iterator.data()).destroy()
 							set iterator = buffs.erase(iterator)

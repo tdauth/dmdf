@@ -56,6 +56,9 @@ call thistype.addContributor("Feluxus", tr("Agihard"))
 call thistype.addContributor("Tania", tr("Mathilda"))
 call thistype.addContributor("Alex", tr("Fulco"))
 call thistype.addContributor("Alex", tr("Dararos"))
+call thistype.addContributor("Ani", tre("Mutter", "Mother"))
+call thistype.addContributor("Melianea", tr("Gotlinde"))
+call thistype.addContributor("Eric", tr("Wotan"))
 
 call thistype.addTitle(tre("Weitere Unterstützung", "Further Support"))
 call thistype.addContributor("WaterKnight", tre("Tests", "Tests"))
@@ -63,23 +66,9 @@ call thistype.addContributor("Frotty", tre("Modelle und Tests", "Models and Test
 call thistype.addContributor("Clemens Weichard", tre("Eigenes Let's Play", "Custom Let's Play"))
 
 call thistype.addTitle(tre("Musik", "Music"))
-call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Pippin the Hunchback")
-call thistype.addContributor("Kevin MacLeod (incompetech.com)", "Minstrel Guild")
+call thistype.addContributor("Kevin MacLeod (incompetech.com)", "PippinTheHunchback")
 call thistype.addContributor("Freesound.org - swamp_at_dusk.wav", "MeffyElli")
-// TODO add main menu music
-
-/*
-http://www.incompetech.com/music/royalty-free/mp3-royaltyfree/Pippin%20the%20Hunchback.mp3
-Pippin the Hunchback Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/
-*/
-
-/*
-Minstrel Guild Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 3.0 License
-http://creativecommons.org/licenses/by/3.0/
-*/
+call thistype.addContributor("Karlheinz Stockhausen", "Luzifers Abschied")
 
 // tools and systems
 call thistype.addTitle(tre("Werkzeuge und Systeme", "Tools and Systems"))
@@ -88,8 +77,6 @@ call thistype.addContributor("PitzerMike", tre("JassNewGenPack", "JassNewGenPack
 call thistype.addContributor("Pipedream", tre("Grimoire", "Grimoire"))
 call thistype.addContributor("SFilip", tre("TESH", "TESH"))
 call thistype.addContributor("Opossum", tre("3rd-Person-Kamerasystem", "3rd person camera system"))
-// NOTE not used anymore
-//call thistype.addContributor("Anitarf", tre("Pfeiltastensteuerung", "Arrow key system"))
 
 // forums
 call thistype.addTitle(tre("Websites, Foren und Chats", "Websites, Forums and Chats"))
@@ -102,6 +89,7 @@ call thistype.addTitle(tre("Modelle", "Models"))
 call thistype.addContributor("Kitabatake", "Hell Campaign Screen: https://www.hiveworkshop.com/threads/hell-campaign-screen.121022/#resource-26801")
 call thistype.addContributor("Talavaj", "HybrisFactory - Multiple packages of realtexture models and textures: http://www.hiveworkshop.com/threads/hybrisfactory-terraining-and-mapping-resources.238310/")
 call thistype.addContributor("Sellenisko", "Vrykul Race Pack: http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/")
+call thistype.addContributor("JoySoy", "The Mage: https://www.hiveworkshop.com/threads/the-mage.293180/")
 
 call thistype.addTitle(tre("Icons", "Icons"))
 call thistype.addContributor("olofmoleman", "BTNDeer.blp")

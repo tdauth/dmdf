@@ -67,8 +67,22 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		private static constant real characterFactor = 1.0
 		private static constant real alliedCharactersFactor = 1.0
 
+		public static method currentExperieneFormula takes unit hero returns integer
+			local integer previousLevelXP = GetHeroLevelMaxXP(GetHeroLevel(hero) - 1)
+			return GetHeroXP(hero) - previousLevelXP
+		endmethod
+
 		public static method maxExperienceFormula takes unit hero returns integer
-			return GetHeroLevelMaxXP(GetHeroLevel(hero))
+			local integer previousLevelXP = GetHeroLevelMaxXP(GetHeroLevel(hero) - 1)
+			return GetHeroLevelMaxXP(GetHeroLevel(hero)) - previousLevelXP
+		endmethod
+
+		/**
+		 * \param unitTypeId The unit type ID of a killed unit.
+		 * \return Returns true if units with the unit type ID \p unitTypeId give experience. Otherwise, it returns false.
+		 */
+		public static method unitTypeIdGivesXp takes integer unitTypeId returns boolean
+			return unitTypeId != 'n04B' and unitTypeId != 'n04C' and unitTypeId != 'n04D' and unitTypeId != 'n02C' and unitTypeId != 'n031' and unitTypeId != 'n032'
 		endmethod
 
 		/**
@@ -86,16 +100,15 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			//debug call Print("Alliance state to killing unit: " + I2S(GetUnitAllianceStateToUnit(character.unit(), killingUnit)) + ".")
 			// never give XP for buildings. for example boxes are buildings as well
 			if (GetUnitAllianceStateToUnit(character.unit(), whichUnit) == bj_ALLIANCE_UNALLIED and (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED or character.player() == GetOwningPlayer(killingUnit)) and ((thistype.range > 0.0 and GetDistanceBetweenUnitsWithZ(character.unit(), whichUnit) <= thistype.range) or thistype.range <= 0.0) and not IsUnitType(whichUnit, UNIT_TYPE_STRUCTURE)) then
-				// Warcraft 3 default XP formula
+				// Warcraft III default XP formula
 				set result = I2R(GetUnitXP(whichUnit)) * thistype.xpHandicap
-				//debug call Print("Result is " + R2S(result))
 				if (killingUnit == character.unit()) then
 					set result = result * thistype.characterFactor
 				elseif (ACharacter.isUnitCharacter(killingUnit)) then
 					set result = result * thistype.alliedCharactersFactor
 				elseif (GetOwningPlayer(killingUnit) == character.player()) then
 					set result = result * thistype.unitsFactor
-				else //if (GetUnitAllianceStateToUnit(character.unit(), killingUnit) == bj_ALLIANCE_ALLIED) then
+				else
 					set result = result * thistype.alliedUnitsFactor
 				endif
 			endif
@@ -198,7 +211,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 	 */
 	struct Game
 		/// The version of the current release of the modification.
-		public static constant string gameVersion = "0.9"
+		public static constant string gameVersion = "1.0"
 
 		/**
 		 * The polling interval in seconds when waiting for a video.
@@ -238,13 +251,16 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 
 		/**
 		 * This method detects if the current game is a map in the singleplayer campaign.
-		 * \returns Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
+		 * \return Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
 		 */
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
 			return GetObjectName('h600') == "IsCampaign"
 		endmethod
 
+		/**
+		 * \return Returns true if the characters should be restored from the gamecache in the beginning of the game. Otherwise, it returns false.
+		 */
 		public static method restoreCharacters takes nothing returns boolean
 			return thistype.m_restoreCharacters
 		endmethod
@@ -459,7 +475,7 @@ endif
 			/*
 			 * Characters get only experience if a creep is being killed.
 			 */
-			if (MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit()))) then
+			if (MapSettings.playerGivesXP(GetOwningPlayer(GetTriggerUnit())) and GameExperience.unitTypeIdGivesXp(GetUnitTypeId(GetTriggerUnit()))) then
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
 			endif
@@ -483,6 +499,7 @@ endif
 		private static method onInit takes nothing returns nothing
 			local integer i = 0
 
+			call Zone.initZones.evaluate() // before map settings
 			/*
 			 * Initialize the MapSettings properties here.
 			 */
@@ -546,23 +563,20 @@ endif
 			call AGui.setShortcutAbility('y', 'A012')
 			call AGui.setShortcutAbility('z', 'A013')
 			call AWidget.init("Sound\\Interface\\MouseClick1.wav", null)
-			call ACheckBox.init0("", "") /// @todo set correct image file paths
-			call AVote.init(4.0, tre("%1% hat für \"%2%\" gestimmt (%3% Stimme(n)).", "%1% voted for \"%2%\" (%3% vote(s))."), tre("Abstimmung wurde mit dem Ergebnis \"%1%\" abgeschlossen (%2% Stimme(n)).", "Voting has been completed with the result \"%1%\" (%2% vote(s))."))
 			// character systems
 			// In the Bonus Campaign the ping rate for quests is 25.0 seconds.
 			call AAbstractQuest.init(25.0, "Sound\\Interface\\QuestNew.wav", "Sound\\Interface\\QuestCompleted.wav", "Sound\\Interface\\QuestFailed.wav", tre("%s", "%s"), tre("|cffc3dbff%s (Abgeschlossen)|r", "|cffc3dbff%s (Completed)|r"), tre("%s (|c00ff0000Fehlgeschlagen|r)", "%s (|c00ff0000Failed|r)"), tre("+%i Stufe(n)", "+%i level(s)"), tre("+%i Fähigkeitenpunkt(e)", "+%i skill point(s)"), tre("+%i Erfahrung", "+%i experience"), tre("+%i Stärke", "+%i strength"), tre("+%i Geschick", "+%i dexterity"), tre("+%i Wissen", "+%i lore"), tre("+%i Goldmünze(n)", "+%i gold coin(s)"), tre("+%i Holz", "+%i lumber"))
-			call ACharacter.init(true, true, true, false, false, true, true, true, DMDF_INFO_LOG)
+			call ACharacter.init(true, true, true, false, false, true, true, true)
 			call initSpeechSkip(AKeyEscape, 0.01)
-			call AInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), tre("%1% angelegt.", "Equipped %1%"), tre("Rucksack ist voll.", "Backpack is full."), tre("%1% im Rucksack verstaut.", "%1% put into the bag."), tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved."), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."), tre("Vorherige Seite ist bereits voll.", "Previous page is already full."), tre("Nächste Seite ist bereits voll.", "Next page is already full."))
-			call AItemType.init(tre("Gegenstand benötigt eine höhere Stufe.", "Item requires a higher level."), tre("Gegenstand benötigt mehr Stärke.", "Item requires more strength."), tre("Gegenstand benötigt mehr Geschick.", "Items requires more dexterity."), tre("Gegenstand benötigt mehr Wissen.", "Item requires more lore."), tre("Gegenstand benötigt eine andere Charakterklasse.", "Item requires another character class."))
+			call AUnitInventory.init('I001', 'I000', 'A015', false, tre("Ausrüstungsfach wird bereits von einem anderen Gegenstand belegt.", "Equipment slot is already used by another item."), tre("%1% angelegt.", "Equipped %1%"), tre("Rucksack ist voll.", "Backpack is full."), tre("%1% im Rucksack verstaut.", "%1% put into the bag."), tre("Gegenstand konnte nicht verschoben werden.", "Item cannot be moved."), tre("Die Seitengegenstände können nicht abgelegt werden.", "The page items cannot be dropped."), tre("Die Seitengegenstände können nicht verschoben werden.", "The page items cannot be moved."), tre("Der Gegendstand gehört einem anderen Spieler.", "This item belongs to another player."), tre("Vorherige Seite ist bereits voll.", "Previous page is already full."), tre("Nächste Seite ist bereits voll.", "Next page is already full."))
+			call AItemType.init(tre("Gegenstand benötigt eine höhere Stufe.", "Item requires a higher level."), tre("Gegenstand benötigt mehr Stärke.", "Item requires more strength."), tre("Gegenstand benötigt mehr Geschick.", "Items requires more dexterity."), tre("Gegenstand benötigt mehr Wissen.", "Item requires more lore."))
+			call ACharacterItemType.initCharacterItemType(tre("Gegenstand benötigt eine andere Charakterklasse.", "Item requires another character class."))
 			call AQuest.init0(true, true, "Sound\\Interface\\QuestLog.wav", tre("|c00ffcc00NEUER AUFTRAG|r", "|c00ffcc00NEW QUEST|r"), tre("|c00ffcc00AUFTRAG ABGESCHLOSSEN|r", "|c00ffcc00QUEST COMPLETED|r"), tre("|c00ffcc00AUFTRAG FEHLGESCHLAGEN|r", "|c00ffcc00QUEST FAILED|r"), tre("|c00ffcc00AUFTRAGS-AKTUALISIERUNG|r", "|c00ffcc00QUEST UPDATE|r"), tre("- %s", "- %s"))
 			call AVideo.init(tre("Spieler %s möchte das Video überspringen.", "Player %s wants to skip the video."), tre("Video wird übersprungen.", "Video has been skipped."))
 			// world systems
 			call ASpawnPoint.init()
-			// Die Macht des Feuers
+			// The Power of Fire
 			// game
-			// TODO use when fixed
-			//call CommandButton.init.evaluate()
 			set thistype.m_onDamageActions = AIntegerList.create()
 static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system
@@ -584,7 +598,6 @@ endif
 			call initSpells.evaluate() // after classes!
 			call Shop.init.evaluate() // before map data initialization!
 			call QuestArea.init.evaluate() // before map data initialization!
-			call Zone.initZones.evaluate() // before map data initialization!
 			// map
 			call MapData.init.evaluate()
 
@@ -667,44 +680,45 @@ endif
 		 * Creates the global scheme for a character overview which can be shown to every player.
 		 */
 		private static method initCharactersScheme takes nothing returns nothing
-			local integer i
-			set thistype.m_charactersScheme = ACharactersScheme.create(1.0, true, true, true, 20, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+			local integer i = 0
+			local integer maxMiddleIcons = 19
+			set thistype.m_charactersScheme = ACharactersScheme.create(DMDF_CHARACTERS_SCHEMA_REFRESH_RATE, true, true, true, 20, GameExperience.currentExperieneFormula, GameExperience.maxExperienceFormula, 20, 20, true, tre("Charaktere", "Characters"), tre("Stufe", "Level"), tre("Hat das Spiel verlassen.", "Has left the game."), "ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
 			call thistype.m_charactersScheme.setBarWidths(0.003)
 			call thistype.m_charactersScheme.setExperienceBarValueIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL8.tga")
 			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(0, "Icons\\Interface\\Bars\\Experience\\ExperienceL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setExperienceBarValueIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM8.tga")
 				call thistype.m_charactersScheme.setExperienceBarEmptyIcon(i, "Icons\\Interface\\Bars\\Experience\\ExperienceM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setExperienceBarValueIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
-			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(19, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
+			call thistype.m_charactersScheme.setExperienceBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Experience\\ExperienceR8.tga")
+			call thistype.m_charactersScheme.setExperienceBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Experience\\ExperienceR0.tga")
 
 			call thistype.m_charactersScheme.setHitPointsBarValueIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL2.tga")
 			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(0, "Icons\\Interface\\Bars\\Chunk\\ChunkL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setHitPointsBarValueIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM2.tga")
 				call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(i, "Icons\\Interface\\Bars\\Chunk\\ChunkM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setHitPointsBarValueIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
-			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(19, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
+			call thistype.m_charactersScheme.setHitPointsBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Chunk\\ChunkR2.tga")
+			call thistype.m_charactersScheme.setHitPointsBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Chunk\\ChunkR0.tga")
 
 			call thistype.m_charactersScheme.setManaBarValueIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL8.tga")
 			call thistype.m_charactersScheme.setManaBarEmptyIcon(0, "Icons\\Interface\\Bars\\Mana\\ManaL0.tga")
 			set i = 1
 			loop
-				exitwhen (i == 19)
+				exitwhen (i == maxMiddleIcons)
 				call thistype.m_charactersScheme.setManaBarValueIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM8.tga")
 				call thistype.m_charactersScheme.setManaBarEmptyIcon(i, "Icons\\Interface\\Bars\\Mana\\ManaM0.tga")
 				set i = i + 1
 			endloop
-			call thistype.m_charactersScheme.setManaBarValueIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
-			call thistype.m_charactersScheme.setManaBarEmptyIcon(19, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
+			call thistype.m_charactersScheme.setManaBarValueIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Mana\\ManaR8.tga")
+			call thistype.m_charactersScheme.setManaBarEmptyIcon(maxMiddleIcons, "Icons\\Interface\\Bars\\Mana\\ManaR0.tga")
 			// initial refresh to fix widths
 			call thistype.m_charactersScheme.refresh()
 		endmethod
@@ -731,9 +745,6 @@ endif
 		 */
 		public static method start takes nothing returns nothing
 			local integer i = 0
-
-			// TEST the command button should always be moved relatively to the camera!
-			//call CommandButton.create(Player(0), 'B010', 'h00B', 0.0, 0.0)
 
 			// use new OpLimit
 			call NewOpLimit(function thistype.initCharactersScheme)
@@ -1041,6 +1052,7 @@ endif
 				call thistype.m_actorOrderAnimations.destroy()
 				set thistype.m_actorOrderAnimations = 0
 			endif
+			call EndThematicMusic()
 			call VolumeGroupResetBJ()
 			call ResumeMusic()
 			call MapData.resetVideoSettings.evaluate()

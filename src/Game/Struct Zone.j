@@ -131,23 +131,31 @@ library StructGameZone requires Asl, StructGameCharacter, StructGameQuestArea, S
 			call thistype.m_zoneAllowTravelingWithOtherUnits.pushBack(true)
 		endmethod
 
-		public static method zoneNames takes nothing returns AIntegerVector
+		public static method zoneNames takes nothing returns AStringVector
 			return thistype.m_zoneNames
 		endmethod
 
+		/**
+		 * \param zoneName The name of the zone for which the index is returned.
+		 * \return Returns the index of the zone name \p zoneName in the list of zone names. If the zone name was not found it returns -1.
+		 */
+		public static method zoneNameIndex takes string zoneName returns integer
+			return thistype.zoneNames().find(zoneName) // TODO slow
+		endmethod
+
+		/**
+		 * Checks whether it is allowed to travel to a zone with other units.
+		 * The units should be transfered to the zone's map just like the character unit.
+		 * \param zoneName The name of the zone for which the flag is returned.
+		 * \return Returns true if it is allowed. Otherwise, it returns false.
+		 */
 		public static method zoneAllowTravelingWithOtherUnits takes string zoneName returns boolean
-			local integer i = 0
-			loop
-				exitwhen (i == thistype.m_zoneNames.size())
-				if (thistype.m_zoneNames[i] == zoneName) then
-					if (thistype.m_zoneAllowTravelingWithOtherUnits.size() > i) then
-						return thistype.m_zoneAllowTravelingWithOtherUnits[i]
-					debug else
-						debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
-					endif
-				endif
-				set i = i + 1
-			endloop
+			local integer index = thistype.zoneNameIndex(zoneName)
+			if (index != -1) then
+				return thistype.m_zoneAllowTravelingWithOtherUnits[index]
+			debug else
+				debug call Print("Missing Allow Traveling With Other Units Entry for Zone: " + zoneName)
+			endif
 
 			return false
 		endmethod

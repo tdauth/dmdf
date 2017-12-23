@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests
+library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkGotlinde, StructMapTalksTalkMother, StructMapTalksTalkRalph
 
 	struct MapData
 		private static boolean m_traveled = false
@@ -17,9 +17,10 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 		/// Required by \ref Game.
 		public static method initSettings takes nothing returns nothing
 			call MapSettings.setMapName("DH")
-			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Pippin the Hunchback.mp3;Sound\\Music\\mp3Music\\Minstrel Guild.mp3")
+			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0009)
 			call MapSettings.setIsSeparateChapter(true)
+			call MapSettings.addZoneRestorePositionForAllPlayers("TL", GetRectCenterX(gg_rct_start_talras), GetRectCenterY(gg_rct_start_talras), 180.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -96,43 +97,51 @@ endif
 			call initMapSecundaryQuests()
 
 			call SuspendTimeOfDay(false)
-			call thistype.startAfterIntro.evaluate()
+			call thistype.startAfterIntro.execute()
 		endmethod
 
 		public static method startAfterIntro takes nothing returns nothing
-			call ACharacter.setAllMovable(true) // set movable since they weren't before after class selection (before video)
+			local Character character = 0
+			local integer i = 0
+			call ACharacter.setAllMovable(false)
+			call ClearSelection()
+			call SelectUnit(Npcs.ralph(), true)
 			call ACharacter.panCameraSmartToAll()
 			call ACharacter.enableShrineForAll(Shrines.startShrine(), false)
+
+			call NewOpLimit(function AUnitRoutine.manualStartAll) // necessary since at the beginning time of day events might not have be called
 
 			call Game.applyHandicapToCreeps()
 
 			/*
-			 * Starts the tutorial:
-			 * - Select your character.
-			 * - Move to Ralph.
-			 * - Talk to Ralph and get a quest.
-			 * - Walk to your mother and talk to her.
-			 * - Collect herbals and sell them to get an item from the merchant.
-			 * - Get an item from the merchant.
-			 * - Give it to your mother.
-			 * - Talk to Gotlinde and level up.
-			 * - Skill some spell.
-			 * - Use the spell somewhere to kill a creep.
-			 * - The creep drops an equipment item, equip it.
+			 * Wait a delay. Otherwise, the talk starts immediately and the player doesn't get the start of it.
 			 */
-			 call Character.displayHintToAll(tre("Willkommen bei Die Macht des Feuers. Klicken Sie zunächst Ihren Charakter an und schicken Sie ihn zu Ralph.", "Welcome to The Power of Fire. First select your character and send him to Ralph."))
+			call TriggerSleepAction(6.0)
+			/*
+			 * Select Ralph, so the player can skip sentences.
+			 */
+			call ClearSelection()
+			call SelectUnit(Npcs.ralph(), true)
+			set i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set character = Character(Character.playerCharacter(Player(i)))
+				if (character != 0) then
+					call TalkRalph.talk().openForCharacter(character)
+				endif
+				set i = i + 1
+			endloop
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start_talras))
-			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start_talras))
-			call SetUnitFacing(character.unit(), 180.0)
 		endmethod
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacters takes string zone returns nothing
 			set thistype.m_traveled = true
+			call TalkGotlinde.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
+			call TalkMother.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
 		endmethod
 
 		public static method initVideoSettings takes nothing returns nothing

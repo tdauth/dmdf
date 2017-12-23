@@ -5,20 +5,22 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemGoods = 1
 		public static constant integer questItemBring = 2
 		public static constant integer questItemGotlinde = 3
+		public static constant integer maxBread = 3
+		public static constant integer maxApples = 4
 		private trigger m_hintTriggerHans
 
-		private static method onAddItemToRucksackFood takes AInventory inventory, integer index, boolean firstTime returns nothing
-			local thistype this = thistype.characterQuest.evaluate(inventory.character())
-			local integer count0 = 0
-			local integer count1 = 0
+		private static method onAddItemToBackpackFood takes AUnitInventory inventory, integer index, boolean firstTime returns nothing
+			local thistype this = thistype.characterQuest.evaluate(ACharacterInventory(inventory).character())
+			local integer breadCount = 0
+			local integer applesCount = 0
 			if (this.questItem(thistype.questItemGoods).isNew()) then
-				if (firstTime and inventory.rucksackItemData(index) != 0 and (inventory.rucksackItemData(index).itemTypeId() == 'I016' or inventory.rucksackItemData(index).itemTypeId() == 'I03O')) then
-					set count0 = this.character().inventory().totalItemTypeCharges('I016')
-					set count1 = this.character().inventory().totalItemTypeCharges('I03O')
+				if (firstTime and inventory.backpackItemData(index) != 0 and (inventory.backpackItemData(index).itemTypeId() == 'I016' or inventory.backpackItemData(index).itemTypeId() == 'I03O')) then
+					set breadCount = this.character().inventory().totalItemTypeCharges('I016')
+					set applesCount = this.character().inventory().totalItemTypeCharges('I03O')
 
-					call this.displayUpdateMessage(Format(tre("%1% von %2% Brotlaiben. %3% von %4% Äpfeln.", "%1% of %2% loafs of bread. %3% of %4% of apples.")).i(count0).i(3).i(count1).i(4).result())
+					call this.displayUpdateMessage(Format(tre("%1% von %2% Brotlaiben. %3% von %4% Äpfeln.", "%1% of %2% loafs of bread. %3% of %4% of apples.")).i(breadCount).i(thistype.maxBread).i(applesCount).i(thistype.maxApples).result())
 
-					if (count0 >= 3 and count1 >= 4) then
+					if (breadCount >= thistype.maxBread and applesCount >= thistype.maxApples) then
 						call this.questItem(thistype.questItemGoods).setState(thistype.stateCompleted)
 					endif
 				endif
@@ -27,10 +29,10 @@ library StructMapQuestsQuestMother requires Asl, Game, StructMapMapNpcs
 
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
-			//call character.giveQuestItem(thistype.itemTypeId)
+			// TODO add mission ability
 			//call character.options().missions().addMission('A1R8', 'A1RK', this)
 
-			call character.inventory().addOnAddToRucksackFunction(thistype.onAddItemToRucksackFood)
+			call character.inventory().addOnAddToBackpackFunction(thistype.onAddItemToBackpackFood)
 
 			return super.enableUntil(thistype.questItemTalk)
 		endmethod

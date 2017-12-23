@@ -2,13 +2,17 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 
 	/**
 	 * \brief Fellows are hero unit NPCs which can be shared with one or all character owners.
-	 * Provides a hero revival timer and disables routine and talk (talk is optional).
-	 * Besides it shares control with a single player or all players.
+	 * <ul>
+	 * <li>Provides a hero revival timer and disables routine and talk (talk is optional).</li>
+	 * <li>Besides it shares control with a single player or all players.</li>
+	 * <li>Every fellow has an inventory provided by \ref AUnitInventory which allows him/her to at least carry items around and use potions etc.</li>
+	 * </ul>
 	 * Fellow data is directly assigned to its corresponding unit and can therefore be got by static methods which do only require a unit parameter (\ref Fellow#getByUnit).
 	 * When fellows are added to any fellowship their owner is changed to \ref MapSettings.alliedPlayer().
 	 * \note Use \ref setDisableSellings() to remove sell ability while fellow is in fellowship. This is oftenly necessary to make all unit abilities of the fellow usable for any controlling user.
 	 * \todo If talks are still enabled it should only be available for shared players!
 	 * \note Fellow units must be heroes for proper revival.
+	 * \note When a fellow is reset all of his items are dropped for all players.
 	 */
 	struct Fellow
 		// static initialization members
@@ -41,6 +45,7 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		private AIntegerVector m_sellingsAbilities
 		private boolean m_trades
 		private boolean m_isShared
+		private AUnitInventory m_inventory
 
 		//! runtextmacro A_STRUCT_DEBUG("\"Fellow\"")
 
@@ -194,6 +199,14 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (this.hasRevival()) then
 				call EnableTrigger(this.m_revivalTrigger)
 			endif
+
+			// Make sure that the fellow has an inventory ability.
+			call UnitAddAbility(this.unit(), 'AInv')
+			call UnitMakeAbilityPermanent(this.unit(), true, 'AInv')
+
+			call this.m_inventory.enable()
+			call this.m_inventory.enableOnlyBackpack(true)
+
 			if (thistype.m_infoMessageJoin != null) then
 				if (character == 0) then
 					call Character.displayMessageToAll(Character.messageTypeInfo, Format(thistype.m_infoMessageJoin).s(this.revivalTitle()).result())
@@ -264,6 +277,10 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 		 */
 		public method reset takes nothing returns nothing
 			local integer i
+			if (not this.isShared()) then
+				debug call Print("Fellow is not shared.")
+				return
+			endif
 			if (this.hasRevival()) then
 				call DisableTrigger(this.m_revivalTrigger)
 			endif
@@ -271,6 +288,15 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			if (IsUnitDeadBJ(this.m_unit)) then
 				call this.reviveAtActiveShrine(false)
 			endif
+
+			/*
+			 * Make sure the fellow cannot carry items forever and they become unreachable for the players.
+			 */
+			call this.m_inventory.dropAllBackpack(GetUnitX(this.m_unit), GetUnitY(this.m_unit), false)
+			call this.m_inventory.disable()
+
+			// Make sure that you cannot give a fellow items afterwards.
+			call UnitRemoveAbility(this.unit(), 'AInv')
 
 			call SetUnitOwner(this.m_unit, MapSettings.neutralPassivePlayer(), true)
 			call SetUnitInvulnerable(this.m_unit, true)
@@ -499,6 +525,8 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 			call DmdfHashTable.global().setHandleInteger(this.m_unit, DMDF_HASHTABLE_KEY_FELLOW, this)
 			set this.m_trades = false
 			set this.m_isShared = false
+			set this.m_inventory = AUnitInventory.create(this.m_unit)
+			call UnitRemoveAbility(this.unit(), 'A015') // rucksack only
 
 			call thistype.m_fellows.pushBack(this)
 
@@ -520,6 +548,9 @@ library StructGameFellow requires Asl, StructGameCharacter, StructGameDmdfHashTa
 				call DestroyTimerDialog(this.m_revivalTimerDialog)
 				set this.m_revivalTimerDialog = null
 			endif
+
+			call this.m_inventory.destroy()
+
 			call DmdfHashTable.global().removeHandleInteger(this.m_unit, DMDF_HASHTABLE_KEY_FELLOW)
 			call thistype.m_fellows.remove(this)
 		endmethod

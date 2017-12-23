@@ -58,9 +58,6 @@ library StructGameTalk requires Asl, StructGameFellow
 			call DmdfHashTable.global().setHandleInteger(whichTimer, 0, this)
 			call DmdfHashTable.global().setHandleUnit(whichTimer, 1, GetSoldUnit())
 
-			debug call Print("Trigger unit: " + GetUnitName(GetTriggerUnit()))
-			debug call Print("Selling unit: " + GetUnitName(GetSellingUnit()))
-			debug call Print("Buying unit " + GetUnitName(GetBuyingUnit()))
 			call SetUnitInvulnerable(GetSoldUnit(), true)
 			call ShowUnit(GetSoldUnit(), false)
 			call PauseUnit(GetSoldUnit(), true)
@@ -125,7 +122,7 @@ library StructGameTalk requires Asl, StructGameFellow
 			call UnitAddAbility(whichUnit, 'A19X')
 			call UnitAddAbility(whichUnit, 'Asud') // sell units
 
-			// removing units from stock does not work
+			// TODO removing units from stock does not work
 			//call RemoveUnitFromStock(whichUnit, 'n05E') // remove from units which do already sell it
 			// dont add units in code to stock since hotkeys won't work
 			//call AddUnitToStock(whichUnit, 'n05E', 1, 1)

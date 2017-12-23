@@ -32392,7 +32392,7 @@ STRING 7194
 
 STRING 7195
 {
-Spielleiter
+Game Host
 }
 
 STRING 7196
@@ -60075,7 +60075,7 @@ Umgibt das Gebäude mit Stacheln, die feindliche Nahkampf-Angreifer verletzen. V
 
 STRING 15147
 {
-Wahnsinnige
+Madmen
 }
 
 STRING 15148

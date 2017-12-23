@@ -56,7 +56,7 @@ AMissile=0,1,1,"Missile",integer
 
 Character=0,1,1,"Player Character",integer
 AClass=0,1,1,"Character Class",integer
-AInventory=0,1,1,"Character Inventory",integer
+AUnitInventory=0,1,1,"Character Inventory",integer
 
 Talk=0,1,1,"Talk",integer
 Fellow=0,1,1,"Fellow",integer
@@ -477,6 +477,14 @@ _SetMapSettingsStartLevel_Category=TC_TPOF_MAP
 SetMapSettingsStartSkillPoints=1,integer
 _SetMapSettingsStartSkillPoints_Defaults=1
 _SetMapSettingsStartSkillPoints_Category=TC_TPOF_MAP
+
+AddMapSettingsZoneRestorePosition=1,string,player,real,real,real
+_AddMapSettingsZoneRestorePosition_Defaults=ZoneTalras,Player01,_,_,_
+_AddMapSettingsZoneRestorePosition_Category=TC_TPOF_MAP
+
+AddMapSettingsZoneRestorePositionForAllPlayers=1,string,real,real,real
+_AddMapSettingsZoneRestorePositionForAllPlayers_Defaults=ZoneTalras,_,_,_
+_AddMapSettingsZoneRestorePositionForAllPlayers_Category=TC_TPOF_MAP
 
 ChangeMap=1,string
 _ChangeMap_Defaults=ZoneTalras

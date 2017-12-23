@@ -17,6 +17,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 			call MapSettings.setMapName("HU")
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\Luzifers Abschied.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0001)
+			call MapSettings.addZoneRestorePositionForAllPlayers("HB", GetRectCenterX(gg_rct_start), GetRectCenterY(gg_rct_start), 90.0)
 		endmethod
 
 		/// Required by \ref Game.
@@ -39,8 +40,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 				// Haunted Staff
 				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
 			else
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemType(), 2)
-				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemType(), 3)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.shortword().itemTypeId(), 2)
+				call UnitAddItemToSlotById(whichUnit, ItemTypes.lightWoodenShield().itemTypeId(), 3)
 			endif
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
 			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
@@ -61,8 +62,8 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 				// Haunted Staff
 				call character.giveItem('I03V')
 			else
-				call character.giveItem(ItemTypes.shortword().itemType())
-				call character.giveItem(ItemTypes.lightWoodenShield().itemType())
+				call character.giveItem(ItemTypes.shortword().itemTypeId())
+				call character.giveItem(ItemTypes.lightWoodenShield().itemTypeId())
 			endif
 
 			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
@@ -140,9 +141,6 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines
 
 		/// Required by \ref MapChanger.
 		public static method onRestoreCharacter takes string zone, Character character returns nothing
-			call SetUnitX(character.unit(), GetRectCenterX(gg_rct_start))
-			call SetUnitY(character.unit(), GetRectCenterY(gg_rct_start))
-			call SetUnitFacing(character.unit(), 90.0)
 		endmethod
 
 		/// Required by \ref MapChanger.

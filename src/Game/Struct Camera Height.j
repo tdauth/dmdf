@@ -1,4 +1,5 @@
 library StructGameCameraHeight requires Asl, StructGameCharacter
+
 	/**
 	 * \brief Adjusts the camera height add registered rects to a Z value.
 	 * Every rect can be registred using \ref addRect() with a certain height value.
