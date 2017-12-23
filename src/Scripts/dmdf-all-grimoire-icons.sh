@@ -17,5 +17,5 @@ if [ ! -d "$OUTPUT_DIR" ] ; then
 fi
 
 for icon in ${icons[@]}; do
-	bash ./dmdf-grimoire-icon "$REPLACEABLETEXUTERS_DIR/BTN$icon" "$OUTPUT_DIR"
+	bash ./dmdf-grimoire-icon.sh "$REPLACEABLETEXUTERS_DIR/BTN$icon" "$OUTPUT_DIR"
 done
