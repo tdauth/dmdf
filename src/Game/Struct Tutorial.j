@@ -214,7 +214,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameGame, St
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Rucksack", "Backpack"))
 			call QuestSetDescription(whichQuest, tre("Mit der Rucksackfähigkeit kann der Rucksack geöffnet werden. Es werden vier Gegenstände pro Tasche angezeigt. Die angezeigte Tasche kann gewechselt werden, indem man auf einen der beiden Taschengegenstände klickt.", "With the backpack ability the backpack can be open. Four items per bag will be shown. The shown bag can be changed by clicking on one of the two bag items."))
-			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNPackBeast.blp")
+			call QuestSetIconPath(whichQuest, "ReplaceableTextures\\CommandButtons\\BTNINV_Misc_Bag_07.blp")
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("RM auf Gegenstand und LM auf denselben Gegenstand rüstet den Gegenstand aus.", "RM on item and LM on the same item equips the item."))
 			set questItem = QuestCreateItem(whichQuest)
