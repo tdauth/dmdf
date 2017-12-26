@@ -235,7 +235,7 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameGame, St
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Die magische Rune der Wiederbelebungsschreine ermöglicht den Teleport zu einem erkundeten Schrein.", "The Magical Rune of the Revival Shrines allows teleporting to a discovered shrine."))
 			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Der magische Stein der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit verbündeten Einheiten.", "The Magical Stone of the Ancestors allows teleporting to a discovered shrine together with allied units."))
+			call QuestItemSetDescription(questItem, tre("Der magische Stein der Ahnen ermöglicht den Teleport zu einem erkundeten Schrein mit Verbündeten.", "The Magical Stone of the Ancestors allows teleporting to a discovered shrine together with allies."))
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Gespräche mit Personen", "Conversations with Persons"))
