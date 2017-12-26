@@ -233,36 +233,43 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1ER', 'A1EZ')
 		endif
 
-		call SpellBookOfDemonologySacrificeChild.create(character)
-		call SpellBookOfDemonologySacrificeAnimal.create(character)
-		call SpellBookOfDemonologyConjuration.create(character)
-		call SpellBookOfDemonologyBloodRitual.create(character)
-		call SpellBookOfDemonologyLordOfDarkness.create(character)
-		call SpellBookOfHuntingPullFangs.create(character)
-		call SpellBookOfHuntingPullFurs.create(character)
-		call SpellBookOfHuntingPullBones.create(character)
-		call SpellBookOfMagicScrollOfHex.create(character)
-		call SpellBookOfMagicScrollOfNecromancy.create(character)
-		call SpellBookOfMagicScrollOfHealing.create(character)
-		call SpellBookOfMagicScrollOfMana.create(character)
-		call SpellBookOfMagicScrollOfAncestors.create(character)
-		call SpellBookOfMagicScrollOfCollector.create(character)
-		call SpellBookOfMagicScrollOfWay.create(character)
-		call SpellBookOfPotionsHealPotion.create(character)
-		call SpellBookOfPotionsManaPotion.create(character)
-		call SpellBookOfPotionsPoison.create(character)
-		call SpellBookOfPotionsBigHealPotion.create(character)
-		call SpellBookOfPotionsBigManaPotion.create(character)
-		call SpellBookOfSmithCraftIron.create(character)
-		call SpellBookOfSmithCraftAxe.create(character)
-		call SpellBookOfSmithCraftShortSword.create(character)
-		call SpellBookOfSmithCraftLongSword.create(character)
-		call SpellBookOfSmithIronHelmet.create(character)
-		call SpellBookOfSmithCraftEinarsSword.create(character) // Quest spell
+		call NewOpLimitSpellInitializer.initCharacterBookSpellsWithNewOpLimit.evaluate(character)
 		call SpellScrollOfAncestors.create(character)
 		call SpellScrollOfCollector.create(character)
 		call SpellScrollOfTheRealmOfTheDead.create(character)
 		call SpellWitchSong.create(character)
 	endfunction
+
+	struct NewOpLimitSpellInitializer
+
+		public static method initCharacterBookSpellsWithNewOpLimit takes Character character returns nothing
+			call SpellBookOfDemonologySacrificeChild.create(character)
+			call SpellBookOfDemonologySacrificeAnimal.create(character)
+			call SpellBookOfDemonologyConjuration.create(character)
+			call SpellBookOfDemonologyBloodRitual.create(character)
+			call SpellBookOfDemonologyLordOfDarkness.create(character)
+			call SpellBookOfHuntingPullFangs.create(character)
+			call SpellBookOfHuntingPullFurs.create(character)
+			call SpellBookOfHuntingPullBones.create(character)
+			call SpellBookOfMagicScrollOfHex.create(character)
+			call SpellBookOfMagicScrollOfNecromancy.create(character)
+			call SpellBookOfMagicScrollOfHealing.create(character)
+			call SpellBookOfMagicScrollOfMana.create(character)
+			call SpellBookOfMagicScrollOfAncestors.create(character)
+			call SpellBookOfMagicScrollOfCollector.create(character)
+			call SpellBookOfMagicScrollOfWay.create(character)
+			call SpellBookOfPotionsHealPotion.create(character)
+			call SpellBookOfPotionsManaPotion.create(character)
+			call SpellBookOfPotionsPoison.create(character)
+			call SpellBookOfPotionsBigHealPotion.create(character)
+			call SpellBookOfPotionsBigManaPotion.create(character)
+			call SpellBookOfSmithCraftIron.create(character)
+			call SpellBookOfSmithCraftAxe.create(character)
+			call SpellBookOfSmithCraftShortSword.create(character)
+			call SpellBookOfSmithCraftLongSword.create(character)
+			call SpellBookOfSmithIronHelmet.create(character)
+			call SpellBookOfSmithCraftEinarsSword.create(character) // Quest spell
+		endmethod
+	endstruct
 
 endlibrary
