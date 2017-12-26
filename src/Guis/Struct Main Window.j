@@ -3,6 +3,7 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 	struct MainWindow extends AMainWindow
 		private Character m_character
 		private rect m_rect
+		private boolean m_wasShownBefore
 
 		public method character takes nothing returns Character
 			return this.m_character
@@ -41,6 +42,10 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 			call this.gui().setOnPressShortcutAction(AGui.shortcutEscape, thistype.onHideActionHide, this)
 			debug call Print("Rect Width: " + R2S(GetRectWidthBJ(this.rect())) + " Expected: 1280.0")
 			debug call Print("Rect Height: " + R2S(GetRectHeightBJ(this.rect())) + " Expected: 960.0")
+			if (not this.m_wasShownBefore) then
+				set this.m_wasShownBefore = true
+				call character.displayHint(tre("Drücken Sie Escape um diese Ansicht zu verlassen.", "Press Escape to leave this view."))
+			endif
 			set whichPlayer = null
 		endmethod
 
@@ -65,6 +70,7 @@ library StructGuisMainWindow requires Asl, StructGameDungeon
 			call this.setTooltipSoundPath("Sound\\Interface\\Hint.wav")
 			set this.m_character = character
 			set this.m_rect = whichRect
+			set this.m_wasShownBefore = false
 
 			return this
 		endmethod
