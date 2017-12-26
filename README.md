@@ -27,6 +27,7 @@ The original language of the modification is German but there are English transl
     5. [Tree Transparency](#core_systems_tree_transparency)
     6. [Zones](#core_systems_zones)
     7. [Map Transitions](#core_systems_map_transitions)
+    8. [Buildings/Bases](#core_systems_buildings)
 9. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
@@ -40,13 +41,14 @@ The original language of the modification is German but there are English transl
 12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
 13. [Release Process](#release_process)
 14. [Trigger Editor Integration](#trigger_editor_integration)
-15. [Content](#content)
+15. [Jenkins](#jenkins)
+16. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-16. [Bugs](#bugs)
-17. [Credits](#credits)
+17. [Bugs](#bugs)
+18. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -262,6 +264,16 @@ It is automatically detected if the current game is a singleplayer campaign with
 The method checks for the custom object `'h600'` with the name `"IsCampaign"`.
 It has to be created in the custom object data of the campaign and must not exist in the single player maps.
 
+### Buildings/Bases <a name="core_systems_buildings"></a>
+Every player is allowed to have one single base per map when the player's character has reached level 30.
+For builing a base the player must buy the item of his class building and construct the building on somewhere on the map.
+The building allows to use several spells, recruit women and to be improved by researches.
+It does also allow to build transporting horses which can collect gold from a market on the map.
+Therefore, every map should have a market.
+The amount of gold the horses collect from a market depends on the distance they have to move to it.
+The system is implemented in the file [Struct Buildings.j](./src/Game/Struct%20Buildings.j).
+It assures that when a building is destroyed the player can construct a new one.
+
 ## Creating a new Map <a name="creating_a_new_map"></a>
 
 To create a new map for the modification, several things have to applied for the map to make it work with the modification.
@@ -446,7 +458,7 @@ Besides the file for the user interface has to be replaced.
 
 ## Generating Level Icons for the Grimoire <a name="generating_level_icons_for_the_grimoire"></a>
 The grimoire icons require an icon with every level from 0 to 6. There is an ability per level for the grimoire since changing the icon of an ability cannot be done dynamically.
-The script `Scripts/dmdf-all-grimoire-icons` creates all those icons using ImageMagick.
+The script `Scripts/dmdf-all-grimoire-.sh` creates all those icons using ImageMagick.
 Since ImageMagick cannot handle BLP files. The icons have to be converted into PNG or TGA files.
 
 ## Release Process <a name="release_process"></a>
@@ -491,6 +503,10 @@ Use the following statement:
 ```
 //! import "TPoF.j"
 ```
+
+## Jenkins <a name="jenkins"></a>
+The modification provides several scripts to setup jobs in Jenkins.
+These scripts are located in the directory [src/Scripts/jenkins](./src/Scripts/jenkins).
 
 ## Content <a name="content"></a>
 The content of this modification consists of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.

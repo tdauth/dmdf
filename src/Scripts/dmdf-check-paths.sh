@@ -1,3 +1,3 @@
 #!/bin/bash
-source dmdf-init
+source ./dmdf-init.sh
 checkPaths
