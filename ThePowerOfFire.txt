@@ -1,0 +1,15 @@
+Run Warcraft III: The Frozen Throne to play the modification.
+After the game has been started, go to "Singleplayer" - "Custom Campaigns" and play either the English or the German campaign.
+For multiplayer games choose one of the maps in the folder "The Power of Fire".
+The folder "en" contains the English maps.
+The folder "de" contains the German maps.
+
+To disable the modification, just uninstall it or remove the file "War3Mod.mpq" from the directory of Warcraft III: The Frozen Throne.
+The uninstaller is in the same directory.
+Uninstalling the modification won't remove your savegames.
+
+Please report all problems at:
+https://github.com/tdauth/dmdf/issues
+
+Visit the following website for the latest releases of the modification:
+http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads

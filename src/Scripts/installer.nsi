@@ -21,6 +21,17 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
+
+Function MyFinishRun
+ExecShell "" "$instdir\Frozen Throne.exe"
+FunctionEnd
+
+!define MUI_FINISHPAGE_RUN
+!define MUI_FINISHPAGE_RUN_FUNCTION MyFinishRun
+!define MUI_FINISHPAGE_SHOWREADME "$instdir\ThePowerOfFire.txt"
+!define MUI_FINISHPAGE_LINK "Modification website"
+!define MUI_FINISHPAGE_LINK_LOCATION "http://www.moddb.com/mods/warcraft-iii-the-power-of-fire"
+
 !insertmacro MUI_PAGE_FINISH
 
 !insertmacro MUI_UNPAGE_WELCOME
@@ -34,6 +45,7 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_ARCHIVE}"
+	File "${INPUT_DIR_TPOF}\ThePowerOfFire.txt"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
