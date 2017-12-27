@@ -239,16 +239,13 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_wielandTalks.setPartner(Npcs.einar())
 			call thistype.m_wielandTalks.setFacing(203.95)
 			call thistype.m_wielandTalks.addSound(tre("Wie viele Waffen brauchst du denn?", "How many weapons do you need?"), gg_snd_Wieland38)
-			call thistype.m_wielandTalks.addSound(tre("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen.", "Considering this paying I could close my forge just now."), gg_snd_Wieland39)
-			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
-			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
-
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Mehr als du schmieden kannst!", "More than you can forge!"), gg_snd_Einar_28)
+			call thistype.m_wielandTalks.addSound(tre("Bei der Bezahlung kann ich meine Schmiede auch gleich schließen.", "Considering this paying I could close my forge just now."), gg_snd_Wieland39)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Ich gebe dir 30 Goldmünzen pro Klinge.", "I give you 30 gold coins per blade."), gg_snd_Einar_25)
+			call thistype.m_wielandTalks.addSound(tre("Einar, du verdammter Hundesohn!", "Einar, you goddamn bastard!"), gg_snd_Wieland40)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Geschäft ist Geschäft.", "Business is business."),  gg_snd_Einar_26)
+			call thistype.m_wielandTalks.addSound(tre("Hör mir auf mit den Orks!", "Stop with those Orcs!"), gg_snd_Wieland41)
 			call thistype.m_wielandTalks.addSoundAnswer(tre("Bald kommen die Orks. Sei froh wenn du genügend Klingen geschmiedet hast.", "Soon the Orcs will come. Be glad if you have forged enough blades."), gg_snd_Einar_27)
-
-			//set thistype.m_wielandDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.wieland(), 14.00, bj_TOD_DUSK, gg_rct_waypoint_wieland_2)
 
 			// Mathilda
 			set thistype.m_mathildaTalksAtBarn = NpcTalksRoutine.create(Routines.moveTo(), Npcs.mathilda(), bj_TOD_DUSK, bj_TOD_DAWN, gg_rct_waypoint_mathilda_1)
@@ -287,8 +284,6 @@ library StructMapMapNpcRoutines requires StructGameDmdfHashTable, StructGameRout
 			call thistype.m_einarSells.setFacing(35.83)
 			set thistype.m_einarTalks = NpcTalksRoutine.create(Routines.talk(), Npcs.einar(), 13.00, bj_TOD_DUSK, gg_rct_waypoint_einar_1) // talk to Wieland
 			call thistype.m_einarTalks.setPartner(Npcs.wieland())
-			// don't add any sounds here, the answers are already stored in m_wielandTalks!
-			//set thistype.m_einarDrinks = NpcRoutineWithFacing.create(Routines.drink(), Npcs.einar(), 14.00, bj_TOD_DUSK, gg_rct_waypoint_einar_2) // drinks with Wieland in tavern
 
 			// Manfred
 			set thistype.m_manfredCutsWood = NpcRoutineWithFacing.create(Routines.splitWood(), Npcs.manfred(), bj_TOD_DUSK, 12.0, gg_rct_waypoint_manfred_2)

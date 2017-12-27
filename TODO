@@ -2,7 +2,7 @@ Multiplayer-Test 2017-10-31 Tamino, Luxi und David:
 * Wenn die anderen Spieler nicht direkt 2 und 3 sind, dann funktioniert das Zählen in Quest-Gebieten nicht (1/3 Charakteren egal ob schon Charaktere im Gebiet sind!). Hat MapSettings.maxPlayers() einfach 1 zurückgegeben oder waren playerCharacter() immer 0?!
 * Klassenauswahl: Multiboard verschwindet immer bei anderen Spielern, wenn ein Spieler zur nächsten Klasse wechselt.
 * Arena-Karte: Irgendein Zauberer-Spell kann nicht über Stufe 1 geskillt werden (Auto-Skilling erhöht nur bestimmte Zauber).
-* RPG-Kamera wird für alle Spieler übernommen und zurückgesetzt.
+* RPG-Kamera wird für alle Spieler übernommen und zurückgesetzt (Spieloptionen).
 * Dagos Pilzequest kam bei einem Spieler nicht (sicher, Dialog vllt. nicht ausgewählt?).
 * Skillen ging irgendwann nicht mehr (Zauberpunkte wurden verbraucht ohne die Stufe der Fähigkeit zu erhöhen).
 * FIXED: Arena: Wissen heißt noch Intelligenz.
@@ -26,8 +26,8 @@ Aghiard-Regelsounds um eins versetzt bei 3. kommt 2.
 * Arenagegner für jeden Kampf pro Spieler Anzahl merken und Gegner stärker machen.
 * Arenagegner sollten je nach Stärker mehr Gold geben.
 * FIXED: Donnersound zu laut.
-* Gespräch zwischen Wieland und Einar, falscch herum, anderer NPC muss zuerst was sagen.
-* Alle Zauber im Zauberbuch können nur bis Stufe ein geskillt weren, Skill Points werden trotzem verbraucht.
+* Gespräch zwischen Wieland und Einar, falsch herum, anderer NPC muss zuerst was sagen.
+* FIXED: Alle Zauber im Zauberbuch können nur bis Stufe eins geskillt weren, Skill Points werden trotzem verbraucht.
 * Quest Gold für die Handelserlaubnis, Hinweis ins Quest-Log schreiben nachdem man mit Ferdinand darüber geredet hat.
 * Nachdem Barade leavt kommt "Barade ist nun Admin".
 * Lothar: Beleidigung, Quest sollte trotzdem annehmbar sein.
