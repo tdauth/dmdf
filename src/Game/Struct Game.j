@@ -970,7 +970,7 @@ endif
 				set thistype.m_actorOrderAnimations = OrderAnimations.create(Character(ACharacter.getFirstCharacter()), video.actor())
 			endif
 			call StopMusic(false)
-			call MapData.initVideoSettings.evaluate()
+			call MapData.onInitVideoSettings.evaluate()
 		endmethod
 
 		private static method filterHiddenItem takes nothing returns boolean
@@ -1055,7 +1055,7 @@ endif
 			call EndThematicMusic()
 			call VolumeGroupResetBJ()
 			call ResumeMusic()
-			call MapData.resetVideoSettings.evaluate()
+			call MapData.onResetVideoSettings.evaluate()
 		endmethod
 
 		public static method addUnitMoveSpeed takes unit whichUnit, real value returns real

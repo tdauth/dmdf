@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame
+library StructMapMapMapData requires Asl, Game
 
 	private struct ZoneData
 		/**
@@ -229,20 +229,16 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call TimerStart(thistype.m_cameraTimer, thistype.refreshInterval, true, function thistype.timerRefreshCamera)
 		endmethod
 
-		/**
-		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
-		 */
-		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+		/// Required by \ref ClassSelection.
+		public static method onCreateClassSelectionItems takes AClass class, unit whichUnit returns nothing
 		endmethod
 
-		/**
-		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
-		 */
-		public static method createClassItems takes Character character returns nothing
+		/// Required by \ref ClassSelection.
+		public static method onCreateClassItems takes Character character returns nothing
 		endmethod
 
 		/// Required by \ref Game.
-		public static method initMapSpells takes ACharacter character returns nothing
+		public static method onInitMapSpells takes ACharacter character returns nothing
 		endmethod
 
 		/// Required by \ref Game.
@@ -312,10 +308,10 @@ library StructMapMapMapData requires Asl, StructGameGame
 			endif
 		endmethod
 
-		public static method initVideoSettings takes nothing returns nothing
+		public static method onInitVideoSettings takes nothing returns nothing
 		endmethod
 
-		public static method resetVideoSettings takes nothing returns nothing
+		public static method onResetVideoSettings takes nothing returns nothing
 		endmethod
 	endstruct
 

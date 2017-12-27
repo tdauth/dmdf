@@ -1,4 +1,4 @@
-library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkGotlinde, StructMapTalksTalkMother, StructMapTalksTalkRalph
+library StructMapMapMapData requires Asl, Game, StructMapMapShrines, StructMapMapDungeons, StructMapMapFellows, StructMapMapNpcRoutines, MapQuests, StructMapTalksTalkGotlinde, StructMapTalksTalkMother, StructMapTalksTalkRalph
 
 	struct MapData
 		private static boolean m_traveled = false
@@ -20,6 +20,7 @@ library StructMapMapMapData requires Asl, StructGameGame, StructMapMapShrines, S
 			call MapSettings.setMapMusic("Sound\\Music\\mp3Music\\PippinTheHunchback.mp3")
 			call MapSettings.setGoldmine(gg_unit_n06E_0009)
 			call MapSettings.setIsSeparateChapter(true)
+			call MapSettings.addZoneRestorePositionForAllPlayers("WM", GetRectCenterX(gg_rct_start_talras), GetRectCenterY(gg_rct_start_talras), 180.0)
 			call MapSettings.addZoneRestorePositionForAllPlayers("TL", GetRectCenterX(gg_rct_start_talras), GetRectCenterY(gg_rct_start_talras), 180.0)
 		endmethod
 
@@ -46,20 +47,16 @@ endif
 			call Game.addDefaultDoodadsOcclusion()
 		endmethod
 
-		/**
-		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
-		 */
-		public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+		/// Required by \ref ClassSelection.
+		public static method onCreateClassSelectionItems takes AClass class, unit whichUnit returns nothing
 		endmethod
 
-		/**
-		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
-		 */
-		public static method createClassItems takes Character character returns nothing
+		/// Required by \ref ClassSelection.
+		public static method onCreateClassItems takes Character character returns nothing
 		endmethod
 
 		/// Required by \ref Game.
-		public static method initMapSpells takes ACharacter character returns nothing
+		public static method onInitMapSpells takes ACharacter character returns nothing
 		endmethod
 
 		/// Required by \ref Game.
@@ -144,10 +141,10 @@ endif
 			call TalkMother.talk().setHasAlreadyAskedAfterTravelingForAllPlayers(false)
 		endmethod
 
-		public static method initVideoSettings takes nothing returns nothing
+		public static method onInitVideoSettings takes nothing returns nothing
 		endmethod
 
-		public static method resetVideoSettings takes nothing returns nothing
+		public static method onResetVideoSettings takes nothing returns nothing
 		endmethod
 
 		public static method traveled takes nothing returns boolean

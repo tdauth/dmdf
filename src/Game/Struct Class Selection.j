@@ -144,7 +144,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * Otherwise it could be used to create more and more items.
 			 */
 			if (not thistype.m_gameStarted) then
-				call MapData.createClassItems.evaluate(character)
+				call MapData.onCreateClassItems.evaluate(character)
 			endif
 
 			call character.setMovable(false)
@@ -381,7 +381,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		private static method initMapSpellsWithNewOpLimit takes Character character returns nothing
-			call MapData.initMapSpells.evaluate(character)
+			call MapData.onInitMapSpells.evaluate(character)
 		endmethod
 
 		public stub method onCharacterCreation takes AClassSelection classSelection, unit whichUnit returns ACharacter
@@ -413,7 +413,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * This helps to inform the player about start items since he can see them but not use them.
 			 * The inventory ability should not allow to drop any of the items nor to use them.
 			 */
-			call MapData.createClassSelectionItems.evaluate(this.currentClass(), whichUnit)
+			call MapData.onCreateClassSelectionItems.evaluate(this.currentClass(), whichUnit)
 
 			/*
 			 * Apply the abilities of equipment items since they show effects like attached weapons.

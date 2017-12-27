@@ -301,6 +301,9 @@ The maps have to be saved with the help of the JassHelper which generates a JASS
 Every map has to provide a struct called MapData with several methods and static constants which are used by the Game backend of the modification to run all required systems.
 ```
 struct MapData
+	/**
+	 * Make the constructor and destructor private since the struct is static.
+	 */
 	private static method create takes nothing returns thistype
 		return 0
 	endmethod
@@ -322,11 +325,17 @@ struct MapData
 	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 	 * Required by \ref ClassSelection.
 	 */
-	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+	public static method onCreateClassSelectionItems takes AClass class, unit whichUnit returns nothing
+		call Classes.createDefaultClassSelectionItems(class, whichUnit)
+	endmethod
+
+	/// Required by \ref ClassSelection.
+	public static method onCreateClassItems takes Character character returns nothing
+		call Classes.createDefaultClassItems(character)
 	endmethod
 
 	/// Required by \ref Game.
-	public static method initMapSpells takes ACharacter character returns nothing
+	public static method onInitMapSpells takes ACharacter character returns nothing
 		call initMapCharacterSpells.evaluate(character)
 	endmethod
 
@@ -352,14 +361,16 @@ struct MapData
 
 	/**
 	 * Required by \ref Game. Called by .evaluate()
+	 * It is called when a video sequence is started.
 	 */
-	public static method initVideoSettings takes nothing returns nothing
+	public static method onInitVideoSettings takes nothing returns nothing
 	endmethod
 
 	/**
 	 * Required by \ref Game. Called by .evaluate()
+	 * It is called when a video sequence is stopped.
 	 */
-	public static method resetVideoSettings takes nothing returns nothing
+	public static method onResetVideoSettings takes nothing returns nothing
 	endmethod
 endstruct
 ```

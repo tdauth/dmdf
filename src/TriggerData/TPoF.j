@@ -886,7 +886,7 @@ struct MapData
 	/**
 	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 	 */
-	public static method createClassSelectionItems takes AClass class, unit whichUnit returns nothing
+	public static method onCreateClassSelectionItems takes AClass class, unit whichUnit returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == mapCreateClassSelectionItemsTriggers.size())
@@ -900,7 +900,7 @@ struct MapData
 	 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
 	 * This is not done on repicks or when restoring a character instead.
 	 */
-	public static method createClassItems takes Character character returns nothing
+	public static method onCreateClassItems takes Character character returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == mapCreateClassItemsTriggers.size())
@@ -911,7 +911,7 @@ struct MapData
 	endmethod
 
 	/// Required by \ref Game.
-	public static method initMapSpells takes ACharacter character returns nothing
+	public static method onInitMapSpells takes ACharacter character returns nothing
 	endmethod
 
 	/// Required by \ref Game.
@@ -1006,7 +1006,7 @@ struct MapData
 		endloop
 	endmethod
 
-	public static method initVideoSettings takes nothing returns nothing
+	public static method onInitVideoSettings takes nothing returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == mapInitVideoSettingsTriggers.size())
@@ -1015,7 +1015,7 @@ struct MapData
 		endloop
 	endmethod
 
-	public static method resetVideoSettings takes nothing returns nothing
+	public static method onResetVideoSettings takes nothing returns nothing
 		local integer i = 0
 		loop
 			exitwhen (i == mapResetVideoSettingsTriggers.size())

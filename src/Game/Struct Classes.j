@@ -714,6 +714,57 @@ library StructGameClasses requires Asl, StructGameCharacter
 			endif
 			return Classes.classMeleeAbilityId(character.class())
 		endmethod
+
+		/**
+		 * Creates the starting items for the inventory of \p whichUnit depending on \p class .
+		 */
+		public static method createDefaultClassSelectionItems takes AClass class, unit whichUnit returns nothing
+			if (class == Classes.ranger()) then
+				// Hunting Bow
+				call UnitAddItemToSlotById(whichUnit, 'I020', 2)
+			elseif (class == Classes.cleric() or class == Classes.necromancer() or class == Classes.elementalMage() or class == Classes.wizard()) then
+				// Haunted Staff
+				call UnitAddItemToSlotById(whichUnit, 'I03V', 2)
+			else
+				call UnitAddItemToSlotById(whichUnit, 'I01Y', 2)
+				call UnitAddItemToSlotById(whichUnit, 'I00N', 3)
+			endif
+			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
+			call UnitAddItemToSlotById(whichUnit, 'I01N', 0)
+			call UnitAddItemToSlotById(whichUnit, 'I061', 1)
+
+			call UnitAddItemToSlotById(whichUnit, 'I00A', 4)
+			call UnitAddItemToSlotById(whichUnit, 'I00D', 5)
+		endmethod
+
+		/**
+		 * Creates the starting items for the \p character depending on the character's class.
+		 */
+		public static method createDefaultClassItems takes Character character returns nothing
+			local integer i = 0
+			if (character.class() == Classes.ranger()) then
+				// Hunting Bow
+				call character.giveItem('I020')
+			elseif (character.class() == Classes.cleric() or character.class() == Classes.necromancer() or character.class() == Classes.elementalMage() or character.class() == Classes.wizard()) then
+				// Haunted Staff
+				call character.giveItem('I03V')
+			else
+				call character.giveItem('I01Y')
+				call character.giveItem('I00N')
+			endif
+
+			// scroll of death to teleport from the beginning, otherwise characters must walk long ways
+			call character.giveItem('I01N')
+			call character.giveQuestItem('I061')
+
+			set i = 0
+			loop
+				exitwhen (i == 10)
+				call character.giveItem('I00A')
+				call character.giveItem('I00D')
+				set i = i + 1
+			endloop
+		endmethod
 	endstruct
 
 endlibrary
