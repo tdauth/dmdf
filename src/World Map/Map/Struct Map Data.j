@@ -7,10 +7,12 @@ library StructMapMapMapData requires Asl, StructGameGame
 		private static AIntegerVector m_zoneData
 		private static Zone m_currentZone = 0
 		private Zone m_zone
+		private rect m_fogOfWarRect
+		private fogmodifier array m_fogModifierVisible[12] // TODO bj_MAX_PLAYERS
+		private fogmodifier array m_fogModifierInvisible[12] // TODO bj_MAX_PLAYERS
 		private trackable m_trackable
 		private trigger m_clickTrigger
 		private trigger m_trackTrigger
-		private image m_image
 		private texttag m_textTag
 		private boolean m_isEnabled
 
@@ -27,27 +29,41 @@ library StructMapMapMapData requires Asl, StructGameGame
 		endmethod
 
 		public method enable takes nothing returns nothing
+			local integer i = 0
 			if (this.isEnabled()) then
 				return
 			endif
 			call this.m_zone.enable()
 			call EnableTrigger(this.m_clickTrigger)
 			call EnableTrigger(this.m_trackTrigger)
-			call ShowImage(this.m_image, true)
 			call SetTextTagVisibility(this.m_textTag, true)
 			set this.m_isEnabled = true
+			set i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				call FogModifierStop(this.m_fogModifierInvisible[i])
+				call FogModifierStart(this.m_fogModifierVisible[i])
+				set i = i + 1
+			endloop
 		endmethod
 
 		public method disable takes nothing returns nothing
+			local integer i = 0
 			if (not this.isEnabled()) then
 				return
 			endif
 			call this.m_zone.disable()
 			call DisableTrigger(this.m_clickTrigger)
 			call DisableTrigger(this.m_trackTrigger)
-			call ShowImage(this.m_image, false)
 			call SetTextTagVisibility(this.m_textTag, false)
 			set this.m_isEnabled = false
+			set i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				call FogModifierStop(this.m_fogModifierVisible[i])
+				call FogModifierStart(this.m_fogModifierInvisible[i])
+				set i = i + 1
+			endloop
 		endmethod
 
 		private static method dialogButtonActionTravelToCurrentZone takes ADialogButton dialogButton returns nothing
@@ -87,15 +103,24 @@ library StructMapMapMapData requires Asl, StructGameGame
 			endloop
 		endmethod
 
-		public static method create takes Zone zone, string imageFile, string name, string description returns thistype
+		public static method create takes Zone zone, rect fogOfWarRect, string name, string description returns thistype
 			// TODO use a big invisible trackable with a big collision box
 			// Box1000x1000.mdx
 			local thistype this = thistype.allocate()
+			local integer i = 0
 			set this.m_zone = zone
+			set this.m_fogOfWarRect = fogOfWarRect
+			set i = 0
+			loop
+				exitwhen (i == MapSettings.maxPlayers())
+				set this.m_fogModifierVisible[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_VISIBLE, this.m_fogOfWarRect, true, true)
+				set this.m_fogModifierInvisible[i] = CreateFogModifierRect(Player(i), FOG_OF_WAR_MASKED, this.m_fogOfWarRect, true, true)
+				call FogModifierStart(this.m_fogModifierInvisible[i])
+				set i = i + 1
+			endloop
 			set this.m_trackable = CreateTrackableZ("units\\nightelf\\Wisp\\Wisp.mdx", GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 100.0, 0.0)
 			set this.m_clickTrigger = CreateTrigger()
 			set this.m_trackTrigger = CreateTrigger()
-			set this.m_image = CreateImageEx(imageFile, GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 150.0, 200.0, 200.0)
 			set this.m_textTag = CreateTextTag()
 			call SetTextTagPos(this.m_textTag, GetRectCenterX(zone.rect()), GetRectCenterY(zone.rect()), 100.0)
 			call SetTextTagTextBJ(this.m_textTag, name, 18.0)
@@ -108,8 +133,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 			call TriggerAddAction(this.m_trackTrigger, function thistype.triggerActionTrack)
 			call DmdfHashTable.global().setHandleInteger(this.m_trackTrigger, 0, zone)
 			call DmdfHashTable.global().setHandleStr(this.m_trackTrigger, 1, description)
-			call ShowImage(this.m_image, true)
-			//call ShowUnit(zone.iconUnit(), false)
 			set this.m_isEnabled = true
 
 			call thistype.m_zoneData.pushBack(this)
@@ -192,31 +215,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method init takes nothing returns nothing
 			// player should look like neutral passive
 			call SetPlayerColor(MapSettings.neutralPassivePlayer(), ConvertPlayerColor(PLAYER_NEUTRAL_PASSIVE))
-			call SetMapFlag(MAP_FOG_HIDE_TERRAIN, false)
-			call SetMapFlag(MAP_FOG_MAP_EXPLORED, true)
-			call SetMapFlag(MAP_FOG_ALWAYS_VISIBLE, true)
 
 			set thistype.m_zoneDornheim = Zone.create("DH", gg_rct_zone_dornheim)
-			call ZoneData.create(thistype.m_zoneDornheim, "", tre("Dornheim", "Dornheim"), tre("Dornheim ist ein kleines Dorf im Königreich der Menschen.", "Dornheim is a small village in the kingdom of the humans."))
 			set thistype.m_zoneTalras = Zone.create("TL", gg_rct_zone_talras)
-			call ZoneData.create(thistype.m_zoneTalras, "", tre("Talras", "Talras"), tre("Talras ist eine Burg im Grenzland des Königreichs der Menschen.", "Talras is a castle in the borderland of the kingdom of the humans."))
 			set thistype.m_zoneGardonar = Zone.create("GA", gg_rct_zone_gardonar)
-			call ZoneData.create(thistype.m_zoneGardonar, "Gardonar.tga", tre("Gardonar", "Gardonar"), tre("Gardonar ist der Fürst der Dämonen.", "Gardonar is the prince of demons."))
 			set thistype.m_zoneGardonarsHell = Zone.create("GH", gg_rct_zone_gardonars_hell)
-			call ZoneData.create(thistype.m_zoneGardonarsHell, "Gardonar.tga", tre("Gardonars Hölle", "Gardonar's Hell"), tre("Gardonars Hölle ist voll von Dämonen.", "Gardonar's hell is full of demons."))
 			set thistype.m_zoneDeranorsSwamp = Zone.create("DS", gg_rct_zone_deranors_swamp)
-			call ZoneData.create(thistype.m_zoneDeranorsSwamp, "", tre("Deranors Todessumpf", "Deranor's Death Swamp"), tre("Deranor der Schreckliche herrscht über die Untoten in seinem Sumpf.", "Deranor the Terrible reigns over the undead in his swamp."))
 			set thistype.m_zoneHolzbruck = Zone.create("HB", gg_rct_zone_holzbruck)
-			call ZoneData.create(thistype.m_zoneHolzbruck, "", tre("Holzbruck", "Holzbruck"), tre("Holzbruck ist eine reiche Handelsstadt im Königreich der Menschen.", "Holzbruck is a rich trading city in the kingdom of humans."))
 			set thistype.m_zoneHolzbrucksUnderworld = Zone.create("HU", gg_rct_zone_holzbrucks_underworld)
-			call ZoneData.create(thistype.m_zoneHolzbrucksUnderworld, "Gardonar.tga", tre("Holzbrucks Unterwelt", "Holzbruck's Underworld"), tre("In der Unterwelt von Holzbruck sammeln sich mächtige Kreaturen.", "In the underworld of Holzbruck, powerful creatures gather."))
 			set thistype.m_zoneTheNorth = Zone.create("TN", gg_rct_zone_the_north)
-			call ZoneData.create(thistype.m_zoneTheNorth, "", tre("Der Norden", "The North"), tre("Im eisigen Norden leben die Nordmänner und Orks, die sich gegenseitig bekämpfen.", "In the icy north live the Northmen and Orcs fighting each other."))
 
 			set thistype.m_cameraTimer = CreateTimer()
 			call TimerStart(thistype.m_cameraTimer, thistype.refreshInterval, true, function thistype.timerRefreshCamera)
-
-			//call Game.addDefaultDoodadsOcclusion()
 		endmethod
 
 		/**
@@ -239,6 +249,18 @@ library StructMapMapMapData requires Asl, StructGameGame
 		public static method onStart takes nothing returns nothing
 			call SuspendTimeOfDay(true)
 			call SetTimeOfDay(12.0)
+
+			/*
+			 * Create after start and not in map initialization because it shows fog modifiers etc.
+			 */
+			call ZoneData.create(thistype.m_zoneDornheim, gg_rct_zone_dornheim_fog_area, tre("Dornheim", "Dornheim"), tre("Dornheim ist ein kleines Dorf im Königreich der Menschen.", "Dornheim is a small village in the kingdom of the humans."))
+			call ZoneData.create(thistype.m_zoneTalras, gg_rct_zone_talras_fog_area, tre("Talras", "Talras"), tre("Talras ist eine Burg im Grenzland des Königreichs der Menschen.", "Talras is a castle in the borderland of the kingdom of the humans."))
+			call ZoneData.create(thistype.m_zoneGardonar, gg_rct_zone_gardonar_fog_area, tre("Gardonar", "Gardonar"), tre("Gardonar ist der Fürst der Dämonen.", "Gardonar is the prince of demons."))
+			call ZoneData.create(thistype.m_zoneGardonarsHell, gg_rct_zone_gardonars_hell_fog_area, tre("Gardonars Hölle", "Gardonar's Hell"), tre("Gardonars Hölle ist voll von Dämonen.", "Gardonar's hell is full of demons."))
+			call ZoneData.create(thistype.m_zoneDeranorsSwamp, gg_rct_zone_deranors_swamp_fog_area, tre("Deranors Todessumpf", "Deranor's Death Swamp"), tre("Deranor der Schreckliche herrscht über die Untoten in seinem Sumpf.", "Deranor the Terrible reigns over the undead in his swamp."))
+			call ZoneData.create(thistype.m_zoneHolzbruck, gg_rct_zone_holzbruck_fog_area, tre("Holzbruck", "Holzbruck"), tre("Holzbruck ist eine reiche Handelsstadt im Königreich der Menschen.", "Holzbruck is a rich trading city in the kingdom of humans."))
+			call ZoneData.create(thistype.m_zoneHolzbrucksUnderworld, gg_rct_zone_holzbrucks_underworld_fog_area, tre("Holzbrucks Unterwelt", "Holzbruck's Underworld"), tre("In der Unterwelt von Holzbruck sammeln sich mächtige Kreaturen.", "In the underworld of Holzbruck, powerful creatures gather."))
+			call ZoneData.create(thistype.m_zoneTheNorth, gg_rct_zone_the_north_fog_area, tre("Der Norden", "The North"), tre("Im eisigen Norden leben die Nordmänner und Orks, die sich gegenseitig bekämpfen.", "In the icy north live the Northmen and Orcs fighting each other."))
 		endmethod
 
 		/// Required by \ref ClassSelection.
@@ -264,8 +286,6 @@ library StructMapMapMapData requires Asl, StructGameGame
 
 		/// Required by \ref Game.
 		public static method start takes nothing returns nothing
-			call FogMaskEnable(false)
-			call FogEnable(false) // show the whole world map
 			call CameraHeight.pause()
 			call thistype.hideCharacters()
 			call thistype.updateZones()

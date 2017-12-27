@@ -517,6 +517,10 @@ The directory [Spielinhalt](./doc/Planung/Spielinhalt) contains German planning 
 
 ### Gameplay <a name="content_gameplay"></a>
 The class spells have been planned in a the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods).
+The sheet contains a list of all IDs which is important for the abilities which are based on the channel ability.
+All IDs must be different for one class.
+Otherwise, it might be the case that one spell casts another spell instead.
+The sheet does also contain a list of all hotkeys for all spells which must also be different from each other.
 
 ### Background Story <a name="content_background_story"></a>
 The whole background information about the fantasy world of The Power of Fire is stored in the directory [Hintergrunddefinition](./doc/Planung/Hintergrunddefinition).
