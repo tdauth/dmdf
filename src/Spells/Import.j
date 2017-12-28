@@ -233,11 +233,13 @@ library Spells requires StructSpellsDamageProtector, StructSpellsSpellAbatement,
 			call SpellWingsOfDeranorsGuard.create(character, 'A1EM', 'A1ER', 'A1EZ')
 		endif
 
-		call NewOpLimitSpellInitializer.initCharacterBookSpellsWithNewOpLimit.evaluate(character)
 		call SpellScrollOfAncestors.create(character)
 		call SpellScrollOfCollector.create(character)
 		call SpellScrollOfTheRealmOfTheDead.create(character)
 		call SpellWitchSong.create(character)
+
+		// TODO there might be a problem with initializing the books successfully???
+		call NewOpLimitSpellInitializer.initCharacterBookSpellsWithNewOpLimit.evaluate(character)
 	endfunction
 
 	struct NewOpLimitSpellInitializer
