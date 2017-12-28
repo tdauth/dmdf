@@ -264,6 +264,13 @@ It is automatically detected if the current game is a singleplayer campaign with
 The method checks for the custom object `'h600'` with the name `"IsCampaign"`.
 It has to be created in the custom object data of the campaign and must not exist in the single player maps.
 
+It is important to mention some restrictions on campaign and savegame names in Warcraft III:
+* No underscores in campaign names.
+* Shorter file names for savegames.
+* Probably no dots in savegames or campaign names.
+
+Otherwise, the map transitions won't work.
+
 ### Buildings/Bases <a name="core_systems_buildings"></a>
 Every player is allowed to have one single base per map when the player's character has reached level 30.
 For builing a base the player must buy the item of his class building and construct the building on somewhere on the map.

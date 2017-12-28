@@ -514,9 +514,9 @@ Gegenstands-Icon-Fehler:
 Annoying for version 0.9 (obere Einträge aus Let's Play-Test):
 * FIXED: MapChanger: Does not save if a spell is NOT in favorites?
 * MapChanger: Options cannot be selected. But only in the map which is started via map transition for the first time. PauseUnit() by the intro video in Talras? Happens only sometimes.
-* Two Hand Sword of Cold and Two Hand Sword shoul have the right attack animations.
+* Two Hand Sword of Cold and Two Hand Sword should have the right attack animations.
 * Fix tooltip for Two Hand Sword of Cold.
-* Fix tooltip of Necromancy (unit values).
+* FIXED: Fix tooltip of Necromancy (unit values).
 * FIXED: Professions info add Book of Hunting.
 * FIXED: Limit of skeletons does still not work (necromancer). Why does not work? Whenever a skeleton dies the counter is decremented. Whenever one unit is summoned it is incremented. Are more skeletons summoned at once?! It has been removed AFTER being killed! It has to be removed before. Besides use AUnitList instead and add the new unit always to the back so that the longest living skeleton will be removed first and popFront() has a better performance.
 * FIXED: Add info for options.
