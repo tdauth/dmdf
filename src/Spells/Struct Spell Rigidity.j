@@ -1,7 +1,6 @@
 /// Knight
 library StructSpellsSpellRigidity requires Asl, StructGameClasses, StructGameSpell
 
-	// TODO increase healing effects
 	struct SpellRigidity extends Spell
 		public static constant integer abilityId = 'A0JZ'
 		public static constant integer favouriteAbilityId = 'A0K0'

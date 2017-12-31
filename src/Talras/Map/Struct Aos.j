@@ -482,23 +482,14 @@ library StructMapMapAos requires Asl, StructGameCharacter, StructMapMapDungeons,
 
 		/// All player units can score (for example summoned units).
 		private static method triggerConditionScore takes nothing returns boolean
-			local unit triggerUnit = GetTriggerUnit()
-			local unit killingUnit = GetKillingUnit()
-			local player triggerOwner = GetOwningPlayer(triggerUnit)
-			local player killingOwner = GetOwningPlayer(killingUnit)
-			local boolean result  = true
-			if (not thistype.teamContainsCharacter(ACharacter.playerCharacter(killingOwner))) then
-				set result = false
-			elseif (thistype.m_playerHasJoinedHaldar[GetPlayerId(killingOwner)] and triggerOwner != thistype.m_baldarsUser) then
-				set result = false
-			elseif (thistype.m_playerHasJoinedBaldar[GetPlayerId(killingOwner)] and triggerOwner != thistype.m_haldarsUser) then
-				set result = false
+			if (not thistype.teamContainsCharacter(ACharacter.playerCharacter(GetOwningPlayer(GetKillingUnit())))) then
+				return false
+			elseif (thistype.m_playerHasJoinedHaldar[GetPlayerId(GetOwningPlayer(GetKillingUnit()))] and GetOwningPlayer(GetTriggerUnit()) != thistype.m_baldarsUser) then
+				return false
+			elseif (thistype.m_playerHasJoinedBaldar[GetPlayerId(GetOwningPlayer(GetKillingUnit()))] and GetOwningPlayer(GetTriggerUnit()) != thistype.m_haldarsUser) then
+				return false
 			endif
-			set triggerUnit = null
-			set killingUnit = null
-			set triggerOwner = null
-			set killingOwner = null
-			return result
+			return true
 		endmethod
 
 		private static method triggerActionScore takes nothing returns nothing

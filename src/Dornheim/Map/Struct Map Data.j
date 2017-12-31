@@ -49,10 +49,12 @@ endif
 
 		/// Required by \ref ClassSelection.
 		public static method onCreateClassSelectionItems takes AClass class, unit whichUnit returns nothing
+			call Classes.createDefaultClassSelectionItems(class, whichUnit)
 		endmethod
 
 		/// Required by \ref ClassSelection.
 		public static method onCreateClassItems takes Character character returns nothing
+			// The class items will be given to the character by Gotlinde later in the game.
 		endmethod
 
 		/// Required by \ref Game.

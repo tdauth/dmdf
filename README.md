@@ -159,15 +159,12 @@ These tools allow the usage of vJass and disable the Doodad limit of the World E
 
 ## Advanced Script Library <a name="asl"></a>
 The Advanced Script Library (short ASL) is the core of this modification.
-Its code can be found in the ddirectory `src/ASL`.
+Its code can be found in the directory `src/ASL`.
 It has formerly been a separate repository but is now merged into this repository.
 
 ### Code Integration <a name="asl_code_integration"></a>
-Use file `src/ASL/Import Asl.j` to import all required scripts.
-Usually you have to change the lookup folder entry in the "jasshelper.conf" file of your JassHelper
-program before.
-The JassHelper has to lookup folder "src" in this directory. If configured correctly you're able to
-write a simple statement like `//! import "Import Asl.j` into your own code or map script.
+Use the file `src/ASL/Import Asl.j` to import all required code from the ASL.
+This is done automatically when the file `src/Import Dmdf.j` is imported.
 
 The following list shows you which global constants have to be specified in your custom code that ASL works properly:
 ```
@@ -181,27 +178,27 @@ globals
 	// used by function GetTimeString()
 	constant string A_TEXT_TIME_VALUE = "0%1%"
 	constant string A_TEXT_TIME_PAIR = "%1%:%2%"
-	// used by ATalk
-	constant string A_TEXT_EXIT = "Exit"
-	constant string A_TEXT_BACK = "Back"
-	constant string A_TEXT_TARGET_TALKS_ALREADY = "Target is already talking."
 	// used by ADialog
 	constant string A_TEXT_DIALOG_BUTTON = "[%1%] %2%" // first one is the button short cut (integer), second one is the button text (string)
 endglobals
 ```
+These globals are defined in the file `src/Import Dmdf.j` with the values for the modification.
 
-If you're using debug mode and ASL's debug utilities (ASystemsDebug) you'll have to defined lots of cheat strings.
-For default English strings you can import a pre-defined file using:
+If you are using debug mode and ASL's debug utilities (`ASystemsDebug`) you will have to define a lot of cheat strings.
+For default English strings you can import a pre-defined file using the following statement:
+```
 //! import "Systems/Debug/Text en.j"
+```
+This is also automatically done in the file `src/Import Dmdf.j`.
 
-WARNING: Apparently, GetLocalizedString() in constant strings crashes the game in map selection!
+**WARNING:** Apparently, GetLocalizedString() in constant strings crashes the game in map selection!
 
-WARNING: Using % chars in the custom map script leads to unexpected results. You should define the globals somewhere else if possible.
+**WARNING:** Using % chars in the custom map script in the trigger editor leads to unexpected results. You should define the globals somewhere else if possible!
 
 ### BonusMod Support <a name="asl_bonus_mod_support"></a>
 For using Bonus Mod you have to make an entry in the "jasshelper.conf" file for the object merger tool.
 It should always be named "ObjectMerger".
-You have to import file "src/ASL/Systems/BonusMod/Creation Bonus Mod.j" once to create all object editor data required by Bonus Mod code.
+You have to import file `src/ASL/Systems/BonusMod/Creation Bonus Mod.j` once to create all object editor data required by Bonus Mod code.
 
 ## Core Systems <a name="core_systems"></a>
 The code of the modification is based on the Advanced Script Library.

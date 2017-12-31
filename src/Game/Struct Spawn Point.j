@@ -148,4 +148,19 @@ library StructGameSpawnPoint requires Asl, LibraryGameLanguage
 		endmethod
 	endstruct
 
+
+	/**
+	 * \brief Makes sure that invulnerable animals beceome vulnerable.
+	 */
+	struct VulnerableSpawnPoint extends SpawnPoint
+		/**
+		 * Called by .evaluate() whenever a unit is respawned or added for the first time.
+		 */
+		public stub method onSpawnUnit takes unit whichUnit, integer memberIndex returns nothing
+			call SetUnitOwner(whichUnit, Player(PLAYER_NEUTRAL_PASSIVE), true)
+			call SetUnitInvulnerable(whichUnit, false)
+		endmethod
+
+	endstruct
+
 endlibrary

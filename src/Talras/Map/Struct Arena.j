@@ -641,7 +641,8 @@ library StructMapMapArena requires Asl, StructGameClasses, StructGameGame, Struc
 		endmethod
 
 		/**
-		 * @todo Fix unit types.
+		 * TODO Fix unit types.
+		 * TODO Use abilities with levels depending on the character's level to increase the strength of the enemy.
 		 * h00D is level 6 enemy.
 		 */
 		public static method getRandomEnemy takes ACharacter character returns unit

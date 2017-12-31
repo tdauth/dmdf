@@ -251,8 +251,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellMasterOfNecromancy.create(character)
 				call SpellDamnedGround.create(character)
 				// ultimates on page 2
-				call SpellEpidemic.create(character)
 				call SpellDamnation.create(character)
+				call SpellEpidemic.create(character)
 			elseif (class == Classes.druid()) then
 				call SpellAwakeningOfTheForest.create(character)
 				call SpellCrowForm.create(character)
@@ -267,15 +267,14 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellForestWoodFists.create(character)
 				call SpellTendrils.create(character)
 				call SpellWrathOfTheForest.create(character)
+				// ultimates on page 2
 				call SpellForestCastle.create(character)
 				call SpellAlpha.create(character)
 			elseif (class == Classes.knight()) then
 				call SpellBlock.create(character)
 				call SpellConcentration.create(character)
-				call SpellLivingWill.create(character)
 				call SpellPowerOfShrines.create(character)
 				call SpellResolution.create(character)
-				call SpellRigidity.create(character)
 				call SpellRush.create(character)
 				call SpellSelflessness.create(character)
 				call SpellStab.create(character)
@@ -285,10 +284,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellAuraOfIronSkin.create(character)
 				call SpellConquest.create(character)
 				call SpellDefend.create(character)
+				// ultimates on page 2
+				call SpellLivingWill.create(character)
+				call SpellRigidity.create(character)
 			elseif (class == Classes.dragonSlayer()) then
 				call SpellBeastHunter.create(character)
 				call SpellDaunt.create(character)
-				call SpellFuriousBloodthirstiness.create(character)
 				call SpellRaid.create(character)
 				call SpellSlash.create(character)
 				call SpellSupremacy.create(character)
@@ -297,10 +298,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellRob.create(character)
 				call SpellMercilessness.create(character)
 				call SpellRage.create(character)
-				call SpellThrillOfVictory.create(character)
 				call SpellReserves.create(character)
 				call SpellAnEyeForAnEye.create(character)
 				call SpellJumpAttackDragonSlayer.create(character)
+				// ultimates on page 2
+				call SpellThrillOfVictory.create(character)
+				call SpellFuriousBloodthirstiness.create(character)
 			elseif (class == Classes.ranger()) then
 				call SpellAgility.create(character)
 				call SpellEagleEye.create(character)
@@ -312,15 +315,15 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellPoisonedArrows.create(character)
 				call SpellBurningArrows.create(character)
 				call SpellFrozenArrows.create(character)
-				call SpellMultiShot.create(character)
 				call SpellTrap.create(character)
 				call SpellKennels.create(character)
+				// ultimates on page 2
 				call SpellLeprechaun.create(character)
+				call SpellMultiShot.create(character)
 			elseif (class == Classes.elementalMage()) then
 				call SpellBlaze.create(character)
 				call SpellElementalCreatures.create(character)
 				call SpellEarthPrison.create(character)
-				call SpellElementalForce.create(character)
 				call SpellEmblaze.create(character)
 				call SpellFireMissile.create(character)
 				call SpellFreeze.create(character)
@@ -329,17 +332,17 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellLightning.create(character)
 				call SpellMastery.create(character)
 				call SpellRageOfElements.create(character)
-				call SpellPureEnergy.create(character)
 				call SpellTeleportation.create(character)
 				call SpellUndermine.create(character)
+				// ultimates on page 2
+				call SpellElementalForce.create(character)
+				call SpellPureEnergy.create(character)
 			elseif (class == Classes.wizard()) then
-				call SpellAbsorbation.create(character)
 				call SpellArcaneHunger.create(character)
 				call SpellArcaneProtection.create(character)
 				call SpellArcaneRuse.create(character)
 				call SpellArcaneTime.create(character)
 				call SpellBan.create(character)
-				call SpellControlledTimeFlow.create(character)
 				call SpellCurb.create(character)
 				call SpellFeedBack.create(character)
 				call SpellMagicalShockWaves.create(character)
@@ -348,6 +351,9 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 				call SpellManaStream.create(character)
 				call SpellMultiply.create(character)
 				call SpellTransfer.create(character)
+				// ultimates on page 2
+				call SpellAbsorbation.create(character)
+				call SpellControlledTimeFlow.create(character)
 			endif
 
 			// for all classes
@@ -478,7 +484,6 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			local thistype this = AClassSelection.playerClassSelection(dialogButton.dialog().player())
 			local player whichPlayer = this.player()
 			local boolean repick = ACharacter.playerCharacter(whichPlayer) != 0
-			// repick!!!
 			if (repick) then
 				// store all data of the current character which will be reused
 				set thistype.m_repickData[GetPlayerId(whichPlayer)] = RepickData.create(whichPlayer)
@@ -564,6 +569,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 		public static method create takes player user, camerasetup cameraSetup, boolean hideUserInterface, real x, real y, real facing, real refreshRate, real rotationAngle, string strengthIconPath, string agilityIconPath, string intelligenceIconPath, string textTitle, string textStrength, string textAgility, string textIntelligence returns thistype
 			local thistype this = thistype.allocate(user, cameraSetup, hideUserInterface, x, y, facing, refreshRate, rotationAngle, strengthIconPath, agilityIconPath, intelligenceIconPath, textTitle, textStrength, textAgility, textIntelligence)
+			call this.setInfoSheetWidth(0.40)
 
 			set this.m_classChangeTrigger = CreateTrigger()
 			call TriggerRegisterPlayerUnitEvent(this.m_classChangeTrigger, user, EVENT_PLAYER_UNIT_SPELL_CHANNEL, null)

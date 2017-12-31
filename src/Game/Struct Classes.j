@@ -255,7 +255,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 			set thistype.m_necromancerGrimoireEntries = AIntegerVector.create()
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAncestorPact.classSelectionAbilityId, SpellAncestorPact.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConsume.classSelectionAbilityId, SpellConsume.classSelectionGrimoireAbilityId))
-			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDamnation.classSelectionAbilityId, SpellDamnation.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDarkServant.classSelectionAbilityId, SpellDarkServant.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDarkSpell.classSelectionAbilityId, SpellDarkSpell.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDeathHerald.classSelectionAbilityId, SpellDeathHerald.classSelectionGrimoireAbilityId))
@@ -266,8 +265,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPlague.classSelectionAbilityId, SpellPlague.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellParasite.classSelectionAbilityId, SpellParasite.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMasterOfNecromancy.classSelectionAbilityId, SpellMasterOfNecromancy.classSelectionGrimoireAbilityId))
-			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEpidemic.classSelectionAbilityId, SpellEpidemic.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDamnedGround.classSelectionAbilityId, SpellDamnedGround.classSelectionGrimoireAbilityId))
+
+			// ultimates on page 2
+			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDamnation.classSelectionAbilityId, SpellDamnation.classSelectionGrimoireAbilityId))
+			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEpidemic.classSelectionAbilityId, SpellEpidemic.classSelectionGrimoireAbilityId))
 
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_necromancerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
@@ -320,10 +322,8 @@ library StructGameClasses requires Asl, StructGameCharacter
 			set thistype.m_knightGrimoireEntries = AIntegerVector.create()
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlock.classSelectionAbilityId, SpellBlock.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConcentration.classSelectionAbilityId, SpellConcentration.classSelectionGrimoireAbilityId))
-			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLivingWill.classSelectionAbilityId, SpellLivingWill.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPowerOfShrines.classSelectionAbilityId, SpellPowerOfShrines.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellResolution.classSelectionAbilityId, SpellResolution.classSelectionGrimoireAbilityId))
-			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRigidity.classSelectionAbilityId, SpellRigidity.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRush.classSelectionAbilityId, SpellRush.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellSelflessness.classSelectionAbilityId, SpellSelflessness.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellStab.classSelectionAbilityId, SpellStab.classSelectionGrimoireAbilityId))
@@ -333,6 +333,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAuraOfIronSkin.classSelectionAbilityId, SpellAuraOfIronSkin.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellConquest.classSelectionAbilityId, SpellConquest.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDefend.classSelectionAbilityId, SpellDefend.classSelectionGrimoireAbilityId))
+			// ultimates on page 2
+			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLivingWill.classSelectionAbilityId, SpellLivingWill.classSelectionGrimoireAbilityId))
+			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRigidity.classSelectionAbilityId, SpellRigidity.classSelectionGrimoireAbilityId))
 
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_knightGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
@@ -353,7 +356,6 @@ library StructGameClasses requires Asl, StructGameCharacter
 			set thistype.m_dragonSlayerGrimoireEntries = AIntegerVector.create()
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBeastHunter.classSelectionAbilityId, SpellBeastHunter.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellDaunt.classSelectionAbilityId, SpellDaunt.classSelectionGrimoireAbilityId))
-			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFuriousBloodthirstiness.classSelectionAbilityId, SpellFuriousBloodthirstiness.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellSlash.classSelectionAbilityId, SpellSlash.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellSupremacy.classSelectionAbilityId, SpellSupremacy.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellWeakPoint.classSelectionAbilityId, SpellWeakPoint.classSelectionGrimoireAbilityId))
@@ -362,10 +364,12 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRob.classSelectionAbilityId, SpellRob.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMercilessness.classSelectionAbilityId, SpellMercilessness.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRage.classSelectionAbilityId, SpellRage.classSelectionGrimoireAbilityId))
-			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellThrillOfVictory.classSelectionAbilityId, SpellThrillOfVictory.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellReserves.classSelectionAbilityId, SpellReserves.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAnEyeForAnEye.classSelectionAbilityId, SpellAnEyeForAnEye.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellJumpAttackDragonSlayer.classSelectionAbilityId, SpellJumpAttackDragonSlayer.classSelectionGrimoireAbilityId))
+			// ultimates on page 2
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellThrillOfVictory.classSelectionAbilityId, SpellThrillOfVictory.classSelectionGrimoireAbilityId))
+			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFuriousBloodthirstiness.classSelectionAbilityId, SpellFuriousBloodthirstiness.classSelectionGrimoireAbilityId))
 
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_dragonSlayerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
@@ -393,10 +397,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPoisonedArrows.classSelectionAbilityId, SpellPoisonedArrows.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBurningArrows.classSelectionAbilityId, SpellBurningArrows.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFrozenArrows.classSelectionAbilityId, SpellFrozenArrows.classSelectionGrimoireAbilityId))
-			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiShot.classSelectionAbilityId, SpellMultiShot.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTrap.classSelectionAbilityId, SpellTrap.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellKennels.classSelectionAbilityId, SpellKennels.classSelectionGrimoireAbilityId))
+			// ultimates on page 2
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLeprechaun.classSelectionAbilityId, SpellLeprechaun.classSelectionGrimoireAbilityId))
+			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiShot.classSelectionAbilityId, SpellMultiShot.classSelectionGrimoireAbilityId))
 
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_rangerGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
@@ -417,20 +422,19 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBlaze.classSelectionAbilityId, SpellBlaze.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalCreatures.classSelectionAbilityId, SpellElementalCreatures.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEarthPrison.classSelectionAbilityId, SpellEarthPrison.classSelectionGrimoireAbilityId))
-			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalForce.classSelectionAbilityId, SpellElementalForce.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellEmblaze.classSelectionAbilityId, SpellEmblaze.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFireMissile.classSelectionAbilityId, SpellFireMissile.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFreeze.classSelectionAbilityId, SpellFreeze.classSelectionGrimoireAbilityId))
-			// remove one spell for elemental creatures
-			//call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellGlisteningLight.classSelectionAbilityId, SpellGlisteningLight.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellIceMissile.classSelectionAbilityId, SpellIceMissile.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellInferno.classSelectionAbilityId, SpellInferno.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellLightning.classSelectionAbilityId, SpellLightning.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMastery.classSelectionAbilityId, SpellMastery.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRageOfElements.classSelectionAbilityId, SpellRageOfElements.classSelectionGrimoireAbilityId))
-			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPureEnergy.classSelectionAbilityId, SpellPureEnergy.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTeleportation.classSelectionAbilityId, SpellTeleportation.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellUndermine.classSelectionAbilityId, SpellUndermine.classSelectionGrimoireAbilityId))
+			// ultimates on page 2
+			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellElementalForce.classSelectionAbilityId, SpellElementalForce.classSelectionGrimoireAbilityId))
+			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellPureEnergy.classSelectionAbilityId, SpellPureEnergy.classSelectionGrimoireAbilityId))
 
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_elementalMageGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))
@@ -448,13 +452,11 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizard.addDescriptionLine(tre("ohne selbst verletzt zu werden.", "without being hurt himself."))
 
 			set thistype.m_wizardGrimoireEntries = AIntegerVector.create()
-			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbsorbation.classSelectionAbilityId, SpellAbsorbation.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellArcaneHunger.classSelectionAbilityId, SpellArcaneHunger.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellArcaneProtection.classSelectionAbilityId, SpellArcaneProtection.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellArcaneRuse.classSelectionAbilityId, SpellArcaneRuse.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellArcaneTime.classSelectionAbilityId, SpellArcaneTime.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellBan.classSelectionAbilityId, SpellBan.classSelectionGrimoireAbilityId))
-			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellControlledTimeFlow.classSelectionAbilityId, SpellControlledTimeFlow.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellCurb.classSelectionAbilityId, SpellCurb.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellFeedBack.classSelectionAbilityId, SpellFeedBack.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMagicalShockWaves.classSelectionAbilityId, SpellMagicalShockWaves.classSelectionGrimoireAbilityId))
@@ -463,6 +465,9 @@ library StructGameClasses requires Asl, StructGameCharacter
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellManaStream.classSelectionAbilityId, SpellManaStream.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellMultiply.classSelectionAbilityId, SpellMultiply.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellTransfer.classSelectionAbilityId, SpellTransfer.classSelectionGrimoireAbilityId))
+			// ultimates on page 2
+			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAbsorbation.classSelectionAbilityId, SpellAbsorbation.classSelectionGrimoireAbilityId))
+			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellControlledTimeFlow.classSelectionAbilityId, SpellControlledTimeFlow.classSelectionGrimoireAbilityId))
 
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellAttributeBonus.classSelectionAbilityId, SpellAttributeBonus.classSelectionGrimoireAbilityId))
 			call thistype.m_wizardGrimoireEntries.pushBack(ClassGrimoireEntry.create(SpellRideHorse.classSelectionAbilityId, SpellRideHorse.classSelectionGrimoireAbilityId))

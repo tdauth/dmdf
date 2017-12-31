@@ -475,7 +475,7 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 		endmethod
 
 		private static method triggerActionRefresh takes nothing returns nothing
-			local thistype this = AHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			local thistype this = thistype(AHashTable.global().handleInteger(GetTriggeringTrigger(), 0))
 			debug if (this.m_cameraSetup != null) then
 				call CameraSetupApplyForPlayer(true, this.m_cameraSetup, this.m_user, 0.0)
 				call CameraSetupApplyForPlayer(true, this.m_cameraSetup, this.m_user, this.m_refreshRate)
@@ -689,32 +689,21 @@ library AStructSystemsCharacterClassSelection requires optional ALibraryCoreDebu
 			// construction members
 			set this.m_user = null
 			// members
-			debug call Print("onDestroy 1")
 			call this.m_classes.destroy()
-			debug call Print("onDestroy 2")
 			set this.m_classes = 0
 			// static members
 			set thistype.m_playerClassSelection[GetPlayerId(user)] = 0
 			set user = null
 			set thistype.m_stack = thistype.m_stack - 1
 
-			debug call Print("onDestroy 3")
 			call this.destroyLeaveTrigger()
-			debug call Print("onDestroy 4")
 			call this.destroyRefreshTrigger()
-			debug call Print("onDestroy 5")
 			call this.destroyChangePreviousTrigger()
-			debug call Print("onDestroy 6")
 			call this.destroyChangeNextTrigger()
-			debug call Print("onDestroy 7")
 			call this.destroySelectTrigger()
-			debug call Print("onDestroy 8")
 			call this.destroyInfoSheet()
-			debug call Print("onDestroy 9")
 			call this.destroyMoveTrigger()
-			debug call Print("onDestroy 10")
 			call this.removeClassUnit()
-			debug call Print("onDestroy 11")
 		endmethod
 
 		private static method timerFunctionAutoSelectClasses takes nothing returns nothing

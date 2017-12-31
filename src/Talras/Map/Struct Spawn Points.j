@@ -137,6 +137,13 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 		private static SpawnPoint m_bearLeftGate0
 		private static SpawnPoint m_wolvesLeftGate0
 
+		// animals
+		private static VulnerableSpawnPoint m_ducks
+		private static VulnerableSpawnPoint m_cows
+		private static VulnerableSpawnPoint m_chickens
+		private static VulnerableSpawnPoint m_sheeps
+		private static VulnerableSpawnPoint m_rats
+
 		private static method create takes nothing returns thistype
 			return 0
 		endmethod
@@ -1152,6 +1159,65 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call ItemSpawnPoint.createFromItemWithType(gg_item_I03O_0678, 1.0)
 		endmethod
 
+		private static method initDornheimExit takes nothing returns nothing
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06T_0698, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06R_0699, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06R_0701, 1.0)
+			call ItemSpawnPoint.createFromItemWithType(gg_item_I06Q_0700, 1.0)
+		endmethod
+
+		private static method initAnimals takes nothing returns nothing
+			// Ducks
+			set thistype.m_ducks = VulnerableSpawnPoint.create()
+			call thistype.m_ducks.addUnitWithType(gg_unit_n02N_0406, 1.0)
+			call thistype.m_ducks.addUnitWithType(gg_unit_n02N_0405, 1.0)
+			// Cows
+			set thistype.m_cows = VulnerableSpawnPoint.create()
+			call thistype.m_cows.addUnitWithType(gg_unit_n08B_0691, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n08C_0685, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0014, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n08B_0689, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0017, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n08B_0691, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0063, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n08C_0686, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0022, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0120, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n08B_0687, 1.0)
+			call thistype.m_cows.addUnitWithType(gg_unit_n000_0020, 1.0)
+			// Chickens
+			set thistype.m_chickens = VulnerableSpawnPoint.create()
+			call thistype.m_chickens.addUnitWithType(gg_unit_n02X_0039, 1.0)
+			call thistype.m_chickens.addUnitWithType(gg_unit_n02X_0030, 1.0)
+			call thistype.m_chickens.addUnitWithType(gg_unit_n02X_0015, 1.0)
+			call thistype.m_chickens.addUnitWithType(gg_unit_n02Y_0111, 1.0)
+			// Sheeps
+			set thistype.m_sheeps = VulnerableSpawnPoint.create()
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0049, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0055, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0051, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0042, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0048, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0043, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0047, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0053, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0054, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0052, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0050, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0045, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0046, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0056, 1.0)
+			call thistype.m_sheeps.addUnitWithType(gg_unit_n01K_0057, 1.0)
+			// Rats
+			set thistype.m_rats = VulnerableSpawnPoint.create()
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0627, 1.0)
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0628, 1.0)
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0623, 1.0)
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0625, 1.0)
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0624, 1.0)
+			call thistype.m_rats.addUnitWithType(gg_unit_n06R_0626, 1.0)
+		endmethod
+
 		public static method init takes nothing returns nothing
 			/**
 			 * Start with new OpLimit since it takes many many operations.
@@ -1167,6 +1233,8 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			call NewOpLimit(function thistype.initStartItems)
 			call NewOpLimit(function thistype.initKunosItems)
 			call NewOpLimit(function thistype.initFarmSouthItems)
+			call NewOpLimit(function thistype.initDornheimExit)
+			call NewOpLimit(function thistype.initAnimals)
 		endmethod
 
 		public static method spawn takes nothing returns nothing
