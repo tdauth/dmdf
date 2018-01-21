@@ -1,7 +1,5 @@
-/// Ranger
 library StructSpellsSpellMultiShot requires Asl, StructGameClasses, StructGameSpell
 
-	/// Mehrfachschuss - Sperrfeuer - Der Waldläufer feuert X Pfeile gleichzeitig ab. 1 Minute Abklingzeit.
 	struct SpellMultiShot extends Spell
 		public static constant integer abilityId = 'A182'
 		public static constant integer favouriteAbilityId = 'A17R'

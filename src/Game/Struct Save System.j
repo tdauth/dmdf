@@ -216,7 +216,7 @@ library StructSaveSystem requires Asl, StructGameCharacter, StructGameClassSelec
 		private static method triggerActionSave takes nothing returns nothing
 			local string saveCode = thistype.encodePlayerCharacter(GetTriggerPlayer())
 			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 999999.0, saveCode)
-			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 999999.0, tre("Die Datei \"logs\\TPoF.txt\" in Ihrem Warcraft-III-Verzeichnis enthält den Save-Code.", "The file \"logs\\TPoF.txt\" in your Warcraft III directory contains the save code."))
+			call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 999999.0, tre("Die Datei \"Documents\\Warcraft III\\CustomMapData\\TPoF.txt\" in Ihrem Windows-Benutzer-Verzeichnis enthält den Save-Code.", "The file \"Documents\\Warcraft III\\CustomMapData\\TPoF.txt\" in your Windows user directory contains the save code."))
 
 			// log into file
 			call PreloadGenClear()

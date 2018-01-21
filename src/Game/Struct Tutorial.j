@@ -105,8 +105,6 @@ library StructGameTutorial requires Asl, StructGameCharacter, StructGameGame, St
 			call QuestItemSetDescription(questItem, tre("Das Untermenü \"Dungeons\" erlaubt die Kameraansicht eines Dungeons.", "The submenu \"Dungeons\" allows you to view a dungeon."))
 			set questItem = QuestCreateItem(whichQuest)
 			call QuestItemSetDescription(questItem, tre("Das Untermenü \"Kamera\" erlaubt das Ändern der Kameraansicht.", "The submenu \"Camera\" allows changing the camera view."))
-			set questItem = QuestCreateItem(whichQuest)
-			call QuestItemSetDescription(questItem, tre("Das Untermenü \"Optionen\" erlaubt die Einstellung von Spieloptionen.", "The submenu \"Options\" allows the setting of game options."))
 
 			set whichQuest = CreateQuest()
 			call QuestSetTitle(whichQuest, tre("Chat-Befehle", "Chat Commands"))

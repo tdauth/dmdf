@@ -139,6 +139,7 @@ library StructMapTalksTalkDago requires Asl, StructMapQuestsQuestBurnTheBearsDow
 
 				if (not finished) then
 					call speech(info, character, true, tre("Sehr gut, danke. Ich brauche aber noch mehr essbare Pilze.", "Very good thank you. But I still need more edible mushrooms."), gg_snd_Dago25)
+					call QuestMushroomSearch.characterQuest(character).displayMushrooms()
 				endif
 			// (Pilze sind nicht essbar)
 			else

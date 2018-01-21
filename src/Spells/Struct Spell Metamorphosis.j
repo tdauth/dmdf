@@ -1,4 +1,3 @@
-/// Metamorphosis
 library StructSpellsSpellMetamorphosis requires Asl, StructGameCharacter, StructGameGrimoire
 
 	/**

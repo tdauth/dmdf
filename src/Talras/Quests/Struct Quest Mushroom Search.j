@@ -9,6 +9,10 @@ library StructMapQuestsQuestMushroomSearch requires Asl, StructGameCharacter
 			return this.m_mushrooms == thistype.requiredMushrooms
 		endmethod
 
+		public method displayMushrooms takes nothing returns nothing
+			call this.displayUpdateMessage(Format(trpe("%1%/%2% Pilz", "%1%/%2% Pilze", "%1%/%2% Mushroom", "%1%/%2% Mushrooms", this.m_mushrooms)).i(this.m_mushrooms).i(thistype.requiredMushrooms).result())
+		endmethod
+
 		public stub method enable takes nothing returns boolean
 			return super.enable()
 		endmethod

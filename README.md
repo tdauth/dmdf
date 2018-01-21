@@ -28,6 +28,10 @@ The original language of the modification is German but there are English transl
     6. [Zones](#core_systems_zones)
     7. [Map Transitions](#core_systems_map_transitions)
     8. [Buildings/Bases](#core_systems_buildings)
+    9. [Classes](#core_systems_classes)
+    10. [Class Selection](#core_systems_class_selection)
+    11. [Characters](#core_systems_characters)
+    12. [Spells](#core_systems_spells)
 9. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
@@ -277,6 +281,71 @@ Therefore, every map should have a market.
 The amount of gold the horses collect from a market depends on the distance they have to move to it.
 The system is implemented in the file [Struct Buildings.j](./src/Game/Struct%20Buildings.j).
 It assures that when a building is destroyed the player can construct a new one.
+
+
+### Classes <a name="core_systems_classes"></a>
+The modification provides several different classes.
+Each character can have exactly one class.
+The class defines the start attributes and attributes per level of the character.
+It does also define which spells can be learned by the character.
+Some items can only be equipped by specific classes.
+The class does also affect dialogues with NPCs.
+The class can be changed after its initial selection with the `-repick` command.
+The following classes are provided by the modification:
+* Cleric
+* Necromancer
+* Druid
+* Knight
+* Dragon Slayer
+* Ranger
+* Elemental Mage
+* Wizard
+
+The struct [Classes](./src/Game/Struct%20Classes.j) provides static methods for accessing all these classes.
+To support all other systems (like the equipment system) there has to be several hero unit types per class:
+* Melee combat
+* Range combat
+* Melee combat on a sheep
+* Range combat on a sheep
+* Melee combat on a horse
+* Range combat on a horse
+
+The unit types (except for the horse) have to use the Villager255 model from Hive which provides all required animations.
+Every class has its own spells.
+However, some spells are shared between all classes:
+* Attribute Bonus
+* Ride a Horse
+
+### Class Selection <a name="core_systems_class_selection"></a>
+The class selection allows the players to choose a class in the beginning of the game and when repicking their class.
+It shows a description, the attributes per level, the start attributes, start items and spells for every class.
+In multiplayer games, the time to choose a class is limited since some players might be afk.
+It does also recognize players who leave.
+The game starts only when the timer triggers or when all players have chosen their class.
+When the timer triggers, the currently shown class is chosen for players who have not chosen their class yet.
+For computer-controlled players, the class is choosen randomly.
+The struct [ClassSelection](./src/Game/Struct%20Class%20Selection.j) provides the implementation of the class selection.
+It extends the ASL struct [AClassSelection](./src/ASL/Systems/Character/Struct%20Class%20Selection.j) and adds features such as change buttons and the spellbook.
+
+### Characters <a name="core_systems_characters"></a>
+Each player of the six players can control one character.
+The character gets experience by killing enemies and solving quests.
+For every level the character gets two skill points and attribute points depending on his class.
+He can learn new spells using the skill points.
+When the character dies, he will be revived automatically at his currently enabled revival shrine.
+
+### Spells <a name="core_systems_spells></a>
+The character can skill spells via the [Grimoire](./src/Game/Struct%20Grimoire.j).
+It contains all learnable spells of his class.
+It is necessary since hero abilities are limited to six in Warcraft III: The Frozen Throne.
+The character can use four favorite spells and has a sub menu for the remaining learned spells.
+This allows him to use up to 15 different spells at the same time.
+There is one basic spell which is learned in the beginning and has only one level.
+Besides, there is two ultimate spells: One at level 12 and one at level 25.
+Both have only one level.
+All other class spells have five different levels.
+All spells which can be used in every map are stored in the directory [Spells](./src/Spells/).
+Note that it does also contain unit spells which are not for characters only.
 
 ## Creating a new Map <a name="creating_a_new_map"></a>
 

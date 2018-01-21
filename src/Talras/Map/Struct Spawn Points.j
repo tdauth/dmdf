@@ -590,11 +590,18 @@ library StructMapMapSpawnPoints requires Asl, StructGameItemTypes, StructGameSpa
 			// make boxes a separate spawn point, otherwise boxes might be left over
 			set thistype.m_medusaBoxes = SpawnPoint.create()
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0281, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I00A', 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I00D', 1.0)
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0280, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I00S', 1.0)
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n02C_0282, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I070', 1.0)
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n032_0268, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I071', 1.0)
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n031_0279, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I047', 1.0)
 			set index = thistype.m_medusaBoxes.addUnitWithType(gg_unit_n032_0278, 1.0)
+			call thistype.m_medusaBoxes.addNewItemType(index, 'I00F', 1.0)
 
 			// units
 			set thistype.m_deathVault = SpawnPoint.create()
