@@ -16,10 +16,11 @@ The original language of the modification is German but there are English transl
 4. [Windows Setup](#windows)
 5. [JassHelper Setup](#jasshelper_setup)
 6. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-7. [Advanced Script Library](#asl)
+7. [Source Code](#source_code)
+8. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
-8. [Core Systems](#core_systems)
+9. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Custom Item Types](#core_systems_custom_item_types)
     3. [Dungeons](#core_systems_dungeons)
@@ -32,7 +33,7 @@ The original language of the modification is German but there are English transl
     10. [Class Selection](#core_systems_class_selection)
     11. [Characters](#core_systems_characters)
     12. [Spells](#core_systems_spells)
-9. [Creating a new Map](#creating_a_new_map)
+10. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Map Data](#creating_a_new_map_map_data)
@@ -40,19 +41,19 @@ The original language of the modification is German but there are English transl
     5. [Required Rects](#creating_a_new_map_required_rects)
     6. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
     7. [Saving the Map](#creating_a_new_map_saving_the_map)
-10. [Maps](#maps)
-11. [Translation](#translation)
-12. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-13. [Release Process](#release_process)
-14. [Trigger Editor Integration](#trigger_editor_integration)
-15. [Jenkins](#jenkins)
-16. [Content](#content)
+11. [Maps](#maps)
+12. [Translation](#translation)
+13. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+14. [Release Process](#release_process)
+15. [Trigger Editor Integration](#trigger_editor_integration)
+16. [Jenkins](#jenkins)
+17. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-17. [Bugs](#bugs)
-18. [Credits](#credits)
+18. [Bugs](#bugs)
+19. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -66,7 +67,8 @@ Warcraft III brings several custom file formats which have to be understood to m
 
 ### JASS <a name="formats_jass"></a>
 [JASS](https://en.wikipedia.org/wiki/JASS) is the scripting language used by Warcraft III to define the logic of a game. Warcraft III contains the two files `common.j` and `common.ai` which declare native functions which can be used in JASS scripts.
-The script `Blizzard.j` contains JASS functions and variables which are used for Blizzard's own Warcraft III maps. They are based on the native functions.
+The script `Blizzard.j` contains JASS functions and variables which are used for Blizzard's own Warcraft III maps.
+They are based on the native functions.
 JASS is statically typed, event-driven and procedural.
 It allows defining functions and global variables.
 Types are only defined as native types.
@@ -79,9 +81,12 @@ It adds new features like object oriented programming to the scripting language 
 The first and probably most popular compiler is the [JassHelper](http://www.wc3c.net/showthread.php?t=88142).
 It has also been used for The Power of Fire.
 
-By now other approaches with a better syntax exist like Wurst which has not been there when the project was started. It is highly unlikely that the modification will change its core scripting language since too much code is based on it. Besides it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
+By now other approaches with a better syntax exist like [WurstScript](https://wurstlang.org/) which has not been there when the project was started.
+It is highly unlikely that the modification will change its core scripting language since too much code is based on it.
+Besides, it has been tested with a specific version of the JassHelper, so there would be a risk of losing functionality or even missing features in the new scripting language.
 
-The size of the modification helped to find the limits of vJass and to make usage of nearly all features. I even wrote many posts on Wc3C.net to improve the language and to report bugs.
+The size of the modification helped to find the limits of vJass and to make usage of nearly all features.
+I even wrote many posts on Wc3C.net to improve the language and to report bugs.
 
 ### MPQ <a name="formats_mpq"></a>
 Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for custom data archives.
@@ -160,6 +165,52 @@ It has to be used instead of pjass since there is a memory exhausted bug in "pja
 ## JassNewGenPack or SharpCraft World Editor Extended Bundle <a name="jass_new_gen_pack"></a>
 Use either the [JassNewGenPack](https://www.hiveworkshop.com/threads/jass-newgen-pack-official.290525/) or the [SharpCraft World Editor Extended Bundle](https://www.hiveworkshop.com/threads/sharpcraft-world-editor-extended-bundle.292127) to create and modify maps of the modification.
 These tools allow the usage of vJass and disable the Doodad limit of the World Editor.
+
+## Source Code <a name="source_code"></a>
+All source code of this project is placed in the directory [src](./src).
+The source code formatting follows a custom style guide:
+* Structs are separated into files called "Struct <struct name>.j". The file contains a vJass library which requires all dependencies of the struct.
+* Every directory contains a file called "Import.j" which imports all other code files of the directory. It does also contain a library which requires all libraries of the other files.
+* Libraries are separated into files called "Library <library name>.j". The file contains a vJass library which requires all dependencies of the library.
+* Identifiers use camel case.
+* Struct member names start with lower case and a prefix: `m_myMember`.
+* Use `thistype` whenever it is possible instead of the struct's name.
+* Use always explicit type castings from integers to struct types etc. although it might not be necessary.
+* Use `this.` explicitly to refer struct members.
+* Make all struct members private and add getters and setters.
+* Document all code with [vjassdoc](https://github.com/tdauth/vjassdoc) comments. It is basically the [Doxygen](http://www.stack.nl/~dimitri/doxygen/) syntax using the `\` character and not the `@` character.
+
+Example code for the definition of a struct:
+```
+library StructMyTestStruct requires Asl, StructMyOtherTestStruct
+
+	/**
+	 * \brief This is my brief description.
+	 * This is my detailed description.
+	 * \todo This has to be done.
+	 */
+	struct TestStruct
+		private MyOtherTestStruct m_myMember
+
+		public method setMyMember takes MyOtherTestStruct myMember returns MyOtherTestStruct
+			set this.m_myMember = myMember
+		endmethod
+
+		public method myMember takes nothing returns MyOtherTestStruct
+			return this.m_myMember
+		endmethod
+
+		public static method create takes nothing returns thistype
+			local thistype this = thistype.allocate()
+			return this
+		endmethod
+	endstruct
+endlibrary
+```
+
+At the moment vjassdoc is very limited and generates basic HTML files for the API documentation.
+It has to be improved to support more Doxygen keywords.
+TODO Add a script for Jenkins to this repository which generates the API documentation for The Power of Fire.
 
 ## Advanced Script Library <a name="asl"></a>
 The Advanced Script Library (short ASL) is the core of this modification.
@@ -334,7 +385,7 @@ For every level the character gets two skill points and attribute points dependi
 He can learn new spells using the skill points.
 When the character dies, he will be revived automatically at his currently enabled revival shrine.
 
-### Spells <a name="core_systems_spells></a>
+### Spells <a name="core_systems_spells"></a>
 The character can skill spells via the [Grimoire](./src/Game/Struct%20Grimoire.j).
 It contains all learnable spells of his class.
 It is necessary since hero abilities are limited to six in Warcraft III: The Frozen Throne.
