@@ -22,17 +22,18 @@ The original language of the modification is German but there are English transl
     2. [Bonus Mod Support](#asl_bonus_mod_support)
 9. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
-    2. [Custom Item Types](#core_systems_custom_item_types)
-    3. [Dungeons](#core_systems_dungeons)
-    4. [Spawn Points](#core_systems_spawn_points)
-    5. [Tree Transparency](#core_systems_tree_transparency)
-    6. [Zones](#core_systems_zones)
-    7. [Map Transitions](#core_systems_map_transitions)
-    8. [Buildings/Bases](#core_systems_buildings)
-    9. [Classes](#core_systems_classes)
-    10. [Class Selection](#core_systems_class_selection)
-    11. [Characters](#core_systems_characters)
-    12. [Spells](#core_systems_spells)
+    2. [Inventory](#core_systems_inventory)
+    3. [Custom Item Types](#core_systems_custom_item_types)
+    4. [Dungeons](#core_systems_dungeons)
+    5. [Spawn Points](#core_systems_spawn_points)
+    6. [Tree Transparency](#core_systems_tree_transparency)
+    7. [Zones](#core_systems_zones)
+    8. [Map Transitions](#core_systems_map_transitions)
+    9. [Buildings/Bases](#core_systems_buildings)
+    10. [Classes](#core_systems_classes)
+    11. [Class Selection](#core_systems_class_selection)
+    12. [Characters](#core_systems_characters)
+    13. [Spells](#core_systems_spells)
 10. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
@@ -266,9 +267,20 @@ The core systems are mostly placed in the folder `src/Game`.
 An NPC fellow is a Warcraft III hero unit which can be shared with one or all players.
 This means that the players can control the unit for some time.
 The unit is also revived automatically when it dies.
-The struct `Fellow` allows the creation of fellows.
+The struct [Fellow](./src/Game/Struct%20Fellow.j) allows the creation of fellows.
+Fellows have backpacks only which allow them to carry several items
+
+### Inventory <a name="core_systems_inventory"></a>
+The ASL provides the struct [AUnitInventory](./src/Asl/Systems/Inventory/Struct%20Unit%20Inventory.j).
+It allows a hero with the inventory ability to carry more than six different items in a backpack.
+It does also allow heroes to six different items equipped at the same time while carrying other items in the backpack.
+Items in the backpack are not equipped but can be used (like potions).
+Each equipable item must have certain equipment type.
+Create different [AItemType](./src/Asl/Systems/Inventory/Struct%2Item%20Type.j) instances To support different item types from the object data and to specify their equipment type.
+The Power of Fire extends this struct with custom types.
 
 ### Custom Item Types <a name="core_systems_custom_item_types"></a>
+The struct [ItemTypes](./src/Game/Struct%20Item%20Types.j) stores all different custom item types globally.
 All custom item types are created in the method `ItemTypes.init()` since they must be available in every map.
 
 To hide the icon of an item ability when the backpack is open, the ability of the item should be added to a spellbook ability with the same ID as the spellbook of the character unit.
