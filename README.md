@@ -51,8 +51,10 @@ The original language of the modification is German but there are English transl
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-17. [Bugs](#bugs)
-18. [Credits](#credits)
+17. [Blog](#blog)
+18. [YouTube Channel](#youtube_channel)
+19. [Bugs](#bugs)
+20. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -346,6 +348,14 @@ Both have only one level.
 All other class spells have five different levels.
 All spells which can be used in every map are stored in the directory [Spells](./src/Spells/).
 Note that it does also contain unit spells which are not for characters only.
+Many custom spells are based on the channel ability of Warcraft III (`ANcl`).
+They have to use different base order IDs.
+Otherwise, when a spell is cast which uses the same base order ID as another one, only one of them can be cast.
+The following table shows important information of different spells:
+| Spell Name    | Class          | Type          | ID            | Base Order ID      | Description        |
+| ------------- | -------------  | ------------- | ------------- | ------------------ | ------------------ |
+| Earth Prison  | Elemental Mage | Standard      | 'A01H'        | `ancestralspirit`  | Basic stun spell.  |
+TODO Complete the table based on the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods) and all current object data.
 
 ## Creating a new Map <a name="creating_a_new_map"></a>
 
@@ -624,6 +634,12 @@ Some characters of the background story are described in the following list:
 ### Voices <a name="content_voices"></a>
 The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
 [This thread](http://www.hoer-talk.de/threads/rollenspiel-mod-sucht-sprecher.22379/) has been created for the search for German voice actors.
+
+## Blog <a name="blog"></a>
+Visit the [Blog](https://diemachtdesfeuers.wordpress.com/) on WordPress for more information.
+
+## YouTube Channel <a name="youtube_channel"></a>
+Visit the [YouTube Channel](https://www.youtube.com/channel/UCzGcsuPfRVqdaE87JYCK5zw) to watch videos about the modification.
 
 ## Bugs <a name="bugs"></a>
 Report bugs as issues in this repository.
