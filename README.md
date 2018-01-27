@@ -403,9 +403,11 @@ Many custom spells are based on the channel ability of Warcraft III (`ANcl`).
 They have to use different base order IDs.
 Otherwise, when a spell is cast which uses the same base order ID as another one, only one of them can be cast.
 The following table shows important information of different spells:
+
 | Spell Name    | Class          | Type          | ID            | Base Order ID      | Description        |
 | ------------- | -------------  | ------------- | ------------- | ------------------ | ------------------ |
 | Earth Prison  | Elemental Mage | Standard      | 'A01H'        | `ancestralspirit`  | Basic stun spell.  |
+
 TODO Complete the table based on the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods) and all current object data.
 
 ## Creating a new Map <a name="creating_a_new_map"></a>
