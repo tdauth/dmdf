@@ -1,7 +1,7 @@
 /// Wizard
 library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 
-	/// Der Zauberer erzeugt eine Kuppel und verringert den von ihm und seinen Verbündeten erlittenen magischen Schaden 15 Sekunden lang um X %.
+	/// Der Zauberer erzeugt eine Kuppel und verringert den von ihm und seinen Verbündeten innerhalb dieser Kuppel erlittenen Schaden 15 Sekunden lang um X %.
 	struct SpellCurb extends Spell
 		public static constant integer abilityId = 'A03B'
 		public static constant integer favouriteAbilityId = 'A03F'
@@ -18,7 +18,6 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		private trigger m_enterTrigger
 		private trigger m_leaveTrigger
 
-		/// @todo Check if it is magical damage (check units damage type)
 		private static method onDamageAction takes ADamageRecorder damageRecorder returns nothing
 			local thistype spell = thistype(DmdfGlobalHashTable.global().integer(DMDF_HASHTABLE_GLOBAL_KEY_DAMAGERECORDER, damageRecorder))
 			local real reducedDamage = GetEventDamage() * spell.level() * thistype.damageLevelValue
@@ -53,24 +52,13 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		private static method triggerConditionIsAllied takes nothing returns boolean
-			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
-			local unit caster = this.character().unit()
-			local unit triggerUnit = GetTriggerUnit()
-			local boolean result = GetUnitAllianceStateToUnit(caster, triggerUnit) == bj_ALLIANCE_ALLIED
-			set triggeringTrigger = null
-			set caster = null
-			set triggerUnit = null
-			return result
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			return GetUnitAllianceStateToUnit(this.character().unit(),  GetTriggerUnit()) == bj_ALLIANCE_ALLIED
 		endmethod
 
 		private static method triggerActionEnter takes nothing returns nothing
-			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
-			local unit triggerUnit = GetTriggerUnit()
-			call this.addUnit(triggerUnit)
-			set triggeringTrigger = null
-			set triggerUnit = null
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			call this.addUnit(GetTriggerUnit())
 		endmethod
 
 		private method createEnterTrigger takes nothing returns nothing
@@ -82,12 +70,8 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 		endmethod
 
 		private static method triggerActionLeave takes nothing returns nothing
-			local trigger triggeringTrigger = GetTriggeringTrigger()
-			local thistype this = DmdfHashTable.global().handleInteger(triggeringTrigger, 0)
-			local unit triggerUnit = GetTriggerUnit()
-			call this.removeUnit(triggerUnit)
-			set triggeringTrigger = null
-			set triggerUnit = null
+			local thistype this = DmdfHashTable.global().handleInteger(GetTriggeringTrigger(), 0)
+			call this.removeUnit(GetTriggerUnit())
 		endmethod
 
 		private method createLeaveTrigger takes nothing returns nothing
@@ -112,12 +96,12 @@ library StructSpellsSpellCurb requires Asl, StructGameClasses, StructGameSpell
 			local unit caster = this.character().unit()
 			local real time = thistype.time
 			local effect casterEffect = AddSpellEffectTargetById(thistype.abilityId, EFFECT_TYPE_CASTER, caster, "chest")
-			local real i
-			local real j
-			local integer k
-			local AGroup unitGroup
-			local location center
-			local rect whichRect
+			local real i = 0.0
+			local real j = 0.0
+			local integer k = 0
+			local AGroup unitGroup = 0
+			local location center = null
+			local rect whichRect = null
 			debug call Print("Casting spell Curb.")
 			if (this.m_units == 0) then
 				debug call Print("Creating unit and damage recorder vector.")
