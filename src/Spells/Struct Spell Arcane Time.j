@@ -2,7 +2,13 @@
 library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameSpell
 
 	/**
-	 * Entfernt nach X Sekunden alle negativen Zauberverstärker eines Verbündeten oder alle positiven Zauberverstärker eines Gegners. Setzt die Dauer beschworener Verbündeter auf Y Sekunden oder beschworener Gegner auf Z Sekunden. Die Abklingzeit nimmt mit der Stufe ab.
+	 * This spell has the following effects on units in its target area:
+	 * <ul>
+	 * <li>Increases the duration of summoned allies or allied illusions.</li>
+	 * <li>Removes negative buffs after a certain time from allied units.</li>
+	 * <li>Sets the duration of summoned opponents or hostile illusions to a specific value.</li>
+	 * <li>Removes positive buffs after a certain time from hostile units.</li>
+	 * </ul>
 	 * \note Is an area effect now with a group of targets. Otherwise the spell is too weak.
 	 */
 	struct SpellArcaneTime extends Spell
@@ -14,16 +20,23 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 		public static constant integer negativeBuffAbilityId = 'A1IW'
 		public static constant integer maxLevel = 5
 		private static constant real radius = 300.0
-		private static constant real summonedTimeStartValue = 40.0
-		private static constant real summonedTimeLevelValue = 10.0
+		private static constant real summonedTimeStartValue = 5.0
+		private static constant real summonedTimeLevelValue = 5.0
 		private static constant real summonedRemovalTimeStartValue = 25.0
 		private static constant real summonedRemovalTimeLevelValue = -5.0
 		private static constant real illusionTimeStartValue = 0.0
 		private static constant real illusionTimeLevelValue = 5.0
 		private static constant real illusionRemovalTimeStartValue = 10.0
 		private static constant real illusionRemovalTimeLevelValue = -2.0
+		/**
+		 * Time values for buff removals.
+		 * \{
+		 */
 		private static constant real timeStartValue = 30.0
 		private static constant real timeLevelValue = -5.0
+		/**
+		 * \}
+		 */
 		private static sound whichSound
 
 		private static method filter takes nothing returns boolean
@@ -176,6 +189,9 @@ library StructSpellsSpellArcaneTime requires Asl, StructGameClasses, StructGameS
 							set time = thistype.illusionTimeStartValue + (thistype.illusionTimeLevelValue * this.level())
 							call this.pauseTimedLifeFor.execute(time, target)
 						endif
+					/*
+					 * The target unit has negative or positive buffs.
+					 */
 					else
 						debug call Print("Arcane Time: Start of buff spell!")
 						set time = thistype.timeStartValue + (thistype.timeLevelValue * this.level())
