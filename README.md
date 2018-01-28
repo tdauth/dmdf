@@ -37,11 +37,12 @@ The original language of the modification is German but there are English transl
 10. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
-    3. [Map Data](#creating_a_new_map_map_data)
-    4. [GUI Triggers](#creating_a_new_map_gui_triggers)
-    5. [Required Rects](#creating_a_new_map_required_rects)
-    6. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
-    7. [Saving the Map](#creating_a_new_map_saving_the_map)
+    3. [Import Object Data](#creating_a_new_map_importing_object_data)
+    4. [Map Data](#creating_a_new_map_map_data)
+    5. [GUI Triggers](#creating_a_new_map_gui_triggers)
+    6. [Required Rects](#creating_a_new_map_required_rects)
+    7. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
+    8. [Saving the Map](#creating_a_new_map_saving_the_map)
 11. [Maps](#maps)
 12. [Translation](#translation)
 13. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
@@ -444,6 +445,11 @@ Simply add the following code snippet to the custom map script:
 //! import "Import Dmdf.j"
 ```
 The maps have to be saved with the help of the JassHelper which generates a JASS map script based on the vJass code.
+
+### Import Object Data <a name="creating_a_new_map_importing_object_data"></a>
+Import the object data from the latest version of the map [Chapter 1: Talras](./maps/Karte%201%20-%20Talras.w3x).
+It should be contained by the file [ObjectData.w3o](./maps/ObjectData.w3o).
+You can change all Doodads as you like but the other object data should be the same in all maps.
 
 ### MapData <a name="creating_a_new_map_map_data"></a>
 Every map has to provide a struct called MapData with several methods and static constants which are used by the Game backend of the modification to run all required systems.
