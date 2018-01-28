@@ -20,18 +20,18 @@ library LibraryGameLanguage requires Asl
 		if (GetLanguage() == "German") then
 			return german
 		endif
-		
+
 		return english
 	endfunction
-	
+
 	/**
 	 * The plural string version for German and English.
 	 */
-	function trpe takes string german0, string german1, string english0, string english1, integer counter returns string
+	function trpe takes string germanSingularSource, string germanPluralSource, string englishSingularSource, string englishPluralSource, integer counter returns string
 		if (GetLanguage() == "German") then
-			return trp(german0, german1, counter)
+			return trp(germanSingularSource, germanPluralSource, counter)
 		endif
-		
-		return trp(english0, english1, counter)
+
+		return trp(englishSingularSource, englishPluralSource, counter)
 	endfunction
 endlibrary

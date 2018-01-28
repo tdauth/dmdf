@@ -166,7 +166,7 @@ library ALibraryCoreStringConversion requires AStructCoreStringFormat, ALibraryC
 	function sc takes string source returns integer
 		return GetLocalizedHotkey(source)
 	endfunction
-	
+
 	/**
 	 * This is a list of supported languages:
 	 * <ul>
@@ -174,6 +174,7 @@ library ALibraryCoreStringConversion requires AStructCoreStringFormat, ALibraryC
 	 * <li>English (fallback language if no other language is recognized)</li>
 	 * </ul>
 	 * \return Returns the local language of the current player.
+	 * \todo Support more languages (all translations of Warcraft III).
 	 */
 	function GetLanguage takes nothing returns string
 		if (GetObjectName('hfoo') == "Soldat") then

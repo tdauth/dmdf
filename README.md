@@ -609,11 +609,30 @@ The modification has the following maps:
 * [Credits](./maps/Credits.w3x) - This map can be loaded in singleplayer to see all credits. It is similar to the credits maps of Reign of Chaos and Frozen Throne.
 
 ## Translation <a name="translation"></a>
-To translate all maps as well as the campaign into different languages, one has to extract the war3map.wts files (before optimizing them out). After extracting the files, the entries have to be replaced by strings in another language. A copy of the unoptimized map must be created. Then the modified war3map.wts files have to be readded to the copies of the maps. If the maps are optimized afterwards (both, the one for the original language and the translated), they will differ and on online games won't be considered the same map only translated but the string entries will be optimized and the loading will become faster.
+To translate all maps as well as the campaign into different languages, one has to extract the `war3map.wts` files (before optimizing them out).
+After extracting the files, the entries have to be replaced by strings in another language.
+A copy of the unoptimized map must be created.
+Then the modified `war3map.wts` files have to be readded to the copies of the maps.
+If the maps are optimized afterwards (both, the one for the original language and the translated), they will differ and on online games won't be considered the same map only translated but the string entries will be optimized and the loading will become faster.
 
-The campaign file has to be copied and uses the translated maps. Besides the information etc. has to be translated.
+The campaign file has to be copied and uses the translated maps.
+Besides, the information etc. has to be translated.
 
-Besides the file for the user interface has to be replaced.
+The file for the user interface `war3mapSkin.txt` must also be replaced.
+
+The translation in the source code is done by the functions from the file [Library Language.j](./src/Game/Library%20Language.j).
+The function `tre()` allows defining a German text and its English translation:
+```
+local string myText = tre("Hallo.", "Hello.")
+```
+The function ``trep()` allows the same but different strings for the plural version depending on a counter:
+```
+local integer counter = 10
+local string myText = Format(trpe("%1% Wolf.", "%1% Wölfe.", "%1% wolf.", "%1% wolves.", counter)).i(counter).result()
+```
+If other languages than English and German should be supported, new versions of those two functions have to be added.
+They depend on the function ``GetLanguage()` which returns the current language of the Warcraft III version of the local player.
+Note that this may differ between the players since they might play versions with different languages.
 
 ## Generating Level Icons for the Grimoire <a name="generating_level_icons_for_the_grimoire"></a>
 The grimoire icons require an icon with every level from 0 to 6. There is an ability per level for the grimoire since changing the icon of an ability cannot be done dynamically.
