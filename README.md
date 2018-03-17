@@ -9,18 +9,25 @@ The original language of the modification is German but there are English transl
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
-3. [Formats](#formats)
+3. [Dependencies](#dependencies)
+4. [Formats](#formats)
     1. [JASS](#formats_jass)
     2. [vJass](#formats_vjass)
-    3. [MPQ](#formats_mpq)
-4. [Windows Setup](#windows)
-5. [JassHelper Setup](#jasshelper_setup)
-6. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-7. [Source Code](#source_code)
-8. [Advanced Script Library](#asl)
+    3. [Wurst](#formats_wurst)
+    4. [MPQ](#formats_mpq)
+5. [Windows Setup](#windows)
+6. [JassHelper Setup](#jasshelper_setup)
+7. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
+8. [Source Code](#source_code)
+    1. [Code Style](#source_code_code_style)
+    2. [Testing](#source_code_testing)
+9. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
-9. [Core Systems](#core_systems)
+    3. [Containers](#asl_containers)
+    4. [Wrappers](#asl_wrappers)
+    5. [Strings](#asl_strings)
+10. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Inventory](#core_systems_inventory)
     3. [Custom Item Types](#core_systems_custom_item_types)
@@ -34,7 +41,8 @@ The original language of the modification is German but there are English transl
     11. [Class Selection](#core_systems_class_selection)
     12. [Characters](#core_systems_characters)
     13. [Spells](#core_systems_spells)
-10. [Creating a new Map](#creating_a_new_map)
+    14. [Quests](#core_systems_quests)
+11. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Import Object Data](#creating_a_new_map_importing_object_data)
@@ -43,21 +51,21 @@ The original language of the modification is German but there are English transl
     6. [Required Rects](#creating_a_new_map_required_rects)
     7. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
     8. [Saving the Map](#creating_a_new_map_saving_the_map)
-11. [Maps](#maps)
-12. [Translation](#translation)
-13. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-14. [Release Process](#release_process)
-15. [Trigger Editor Integration](#trigger_editor_integration)
-16. [Jenkins](#jenkins)
-17. [Content](#content)
+12. [Maps](#maps)
+13. [Translation](#translation)
+14. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+15. [Release Process](#release_process)
+16. [Trigger Editor Integration](#trigger_editor_integration)
+17. [Jenkins](#jenkins)
+18. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-18. [Blog](#blog)
-19. [YouTube Channel](#youtube_channel)
-20. [Bugs](#bugs)
-21. [Credits](#credits)
+19. [Blog](#blog)
+20. [YouTube Channel](#youtube_channel)
+21. [Bugs](#bugs)
+22. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
@@ -65,6 +73,14 @@ Since I have pushed the history of binary map and campaign files as well, the hi
 
 The model, texture and sound resources are not part of this repository.
 Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install all resources files.
+
+## Dependencies <a name="dependencies"></a>
+These are the development dependencies of this modification:
+* Warcraft III: The Frozen Throne.
+* JassHelper 0.A.2.A
+* wc3mapoptimizer
+* Batch environment
+* wc3lib: For updating trigger data, trigger strings and map translations.
 
 ## Formats <a name="formats"></a>
 Warcraft III brings several custom file formats which have to be understood to modify the game properly.
@@ -91,6 +107,12 @@ Besides, it has been tested with a specific version of the JassHelper, so there 
 
 The size of the modification helped to find the limits of vJass and to make usage of nearly all features.
 I even wrote many posts on Wc3C.net to improve the language and to report bugs.
+
+### Wurst <a name="formats_wurst"></a>
+[Wurst](https://wurstlang.org) is another scripting language for Warcraft III.
+It was created after vJass.
+Therefore, this modification is not based on it.
+Currently, it would be too much work to convert all vJass code into Wurst although Wurst has some nice features which are missing from vJass.
 
 ### MPQ <a name="formats_mpq"></a>
 Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for custom data archives.
@@ -172,6 +194,9 @@ These tools allow the usage of vJass and disable the Doodad limit of the World E
 
 ## Source Code <a name="source_code"></a>
 All source code of this project is placed in the directory [src](./src).
+
+
+### Code Style <a name="source_code_code_style"></a>
 The source code formatting follows a custom style guide:
 * Structs are separated into files called "Struct <struct name>.j". The file contains a vJass library which requires all dependencies of the struct.
 * Every directory contains a file called "Import.j" which imports all other code files of the directory. It does also contain a library which requires all libraries of the other files.
@@ -216,6 +241,29 @@ At the moment vjassdoc is very limited and generates basic HTML files for the AP
 It has to be improved to support more Doxygen keywords.
 TODO Add a script for Jenkins to this repository which generates the API documentation for The Power of Fire.
 
+### Testing <a name="source_code_testing"></a>
+Currently, there is no debugger for JASS. Patch 1.29 will bring debugging events and logging functionality which will help to find serious bugs.
+There is some unit tests in the directory [Test](./src/Asl/Test) for the ASL.
+Much more tests need to be added in the future.
+The tests can be run with the following chat commands when the map has been saved with the debug mode of vJass:
+* `debugstring`- Runs string debug.
+* `debugmultiboardbar` - Runs multiboard bar debug.
+* `debuglist` - Runs list debug.
+* `debugtd` - Runs time of day debug.
+* `debugtimer` - Runs timer debugging hook function.
+* `debugdesync` - Runs desync test.
+* `debugbonusmod` - Runs Bonus Mod test.
+* `debugbash` - Tests ShowBashTextTagForPlayer().
+* `debugimage` - Tests CreateImageForPlayer().
+* `debugnatives` - Test if option A_DEBUG_NATIVES does work.
+
+A new cheat command has to be added for each new unit test to the file [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j).
+
+TODO Add unit tests for the modification itself.
+
+Cheats help manual testing when the map is saved in the debug mode of vJass.
+The library [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j) and the struct [GameCheats](./src/Game/Struct%2Game%20Cheats.j) provide many custom cheat commands for testing the maps.
+
 ## Advanced Script Library <a name="asl"></a>
 The Advanced Script Library (short ASL) is the core of this modification.
 Its code can be found in the directory `src/ASL`.
@@ -228,7 +276,6 @@ This is done automatically when the file `src/Import Dmdf.j` is imported.
 The following list shows you which global constants have to be specified in your custom code that ASL works properly:
 ```
 globals
-	constant boolean A_SYSTEMS = true
 	constant boolean A_DEBUG_HANDLES = false // not usable yet!
 	constant boolean A_DEBUG_NATIVES = false
 	constant real A_MAX_COLLISION_SIZE = 500.0 // used by function GetUnitCollisionSize
@@ -258,6 +305,42 @@ This is also automatically done in the file `src/Import Dmdf.j`.
 For using Bonus Mod you have to make an entry in the "jasshelper.conf" file for the object merger tool.
 It should always be named "ObjectMerger".
 You have to import file `src/ASL/Systems/BonusMod/Creation Bonus Mod.j` once to create all object editor data required by Bonus Mod code.
+
+### Containers <a name="asl_containers"></a>
+The ASL provides container types similar to programming languages like Java and C++ for storing a number of elements.
+Textmacros are used to provide them in a generic way.
+These are the available container text macros:
+* [A_VECTOR](./src/Asl/Core/General/Struct%20Vector.j) - Provides a random acess container for a number of elements. Appending and accessing elements if fast. Removing and inserting elements is slow.
+* [A_LIST](./src/Asl/Core/General/Struct%20List.j) - A double linked list container for a number of elements. Removing and inserting elements is fast. Accessing elements is slow.
+
+The ASL provides default text macro instances which generate structs which can be used for containers:
+* AIntegerVector
+* AStringVector
+* ABooleanVector
+* ARealVector
+* AHandleVector
+* ATriggerVector
+* etc.
+
+* AIntegerList
+* AStringList
+* ABooleanList
+* ARealList
+* AHandleList
+* etc.
+
+Note that the number of instances is limited to a fixed size.
+Iterators can be used to access the elements of containers.
+For example, the type `AIntegerList` provides the struct `AIntegerListIterator` which is returned by the method `begin`.
+This is inspired by the standard library containers of C++.
+
+### Wrappers <a name="asl_wrappers"></a>
+The ASL provides wrapper types for native JASS types which provide more methods and allow them to be used easier:
+* [AGroup](./src/Asl/Core/General/Struct%20Group.j) - Simplifies the access to the type `group` which stores a unit group. Allows accessing the units more easily.
+* [AForce](./src/Asl/Core/General/Struct%20Force.j) - Simplifies the access to the type `force` which stores a player force.
+
+### Strings <a name="asl_strings"></a>
+The ASL provides additional structs and functions for handling strings and formatting them in its library `ACoreString`.
 
 ## Core Systems <a name="core_systems"></a>
 The code of the modification is based on the Advanced Script Library.
@@ -397,8 +480,9 @@ It extends the ASL struct [AClassSelection](./src/ASL/Systems/Character/Struct%2
 Each player of the six players can control one character.
 The character gets experience by killing enemies and solving quests.
 For every level the character gets two skill points and attribute points depending on his class.
-He can learn new spells using the skill points.
+The character can learn new spells using the skill points.
 When the character dies, he will be revived automatically at his currently enabled revival shrine.
+The struct [Character](./src/Game/Struct%20Character.j) provides all functionality for a character.
 
 ### Spells <a name="core_systems_spells"></a>
 The character can skill spells via the [Grimoire](./src/Game/Struct%20Grimoire.j).
@@ -422,6 +506,15 @@ The following table shows important information of different spells:
 | Earth Prison  | Elemental Mage | Standard      | 'A01H'        | `ancestralspirit`  | Basic stun spell.  |
 
 TODO Complete the table based on the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods) and all current object data.
+
+### Quests <a name="core_systems_quests"></a>
+There is two different types of quests in this modification:
+* Shared Quests - Must be solved together by all players.
+* Character Quests - Can be solved once by each player.
+
+The struct [AQuest](./src/ASL/Systems/Character/Struct%20Quest.j) can be used to implement quests.
+Derive a new struct from it to create your custom quest.
+Then implement either the module [CharacterQuest](./src/Quests/Module%20Character%20Quest.j) or [SharedQuest](./src/Quests/Module%20Quest.j) at the end of the struct to define the quest type.
 
 ## Creating a new Map <a name="creating_a_new_map"></a>
 
@@ -648,23 +741,30 @@ Since ImageMagick cannot handle BLP files. The icons have to be converted into P
 ## Release Process <a name="release_process"></a>
 To update the translations always add English translations to the file `maps/Talras/war3map_en.wts`.
 To update all translations automatically use wc3trans from the [wc3lib](https://github.com/tdauth/wc3lib) project.
-The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything.
+The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything to automatically update the translations of all maps.
 
 On Windows the project is expected in the directory `F:/Projekte/dmdf`.
 On Windows the release process consists of the following steps:
-* Create the archive War3Mod.mpq from the directory `archive` in the project folder.
-* Export the latest object data from the map `maps/Karte 1 - Talras.w3x` and import it into all other maps (if they use custom Doodads, only import the other parts).
+* Create the English archive War3Mod.mpq into the directory `mpq\en` in the project folder. It consists of the content of the folders `archive` and `archive_en` from the project folder.  This step could be automated by an MPQ tool in the future.
+* Create the German archive War3Mod.mpq into the directory `mpq\de` in the project folder. It consists of the content of the folders `archive` and `archive_de` from the project folder.  This step could be automated by an MPQ tool in the future.
+* Export the latest object data from the map `maps/Karte 1 - Talras.w3x` and import it into all other maps (if they use custom Doodads, only import the other parts). This step could be automated by an MPQ tool in the future.
+* Extract all unmodified map scripts from all maps in the folder `maps` into their corresponding map script folders like the file `maps/Talras/war3map.j`. This step could be automated by an MPQ tool in the future.
 * Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully. Warning: The script uses the exported map scripts of all maps. If they are outdated (files like `maps/Talras/war3map.j`), they have to be extracted from the maps after saving them without the JassHelper enabled.
 * Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
-* Open the prepared English maps (for example in `maps/releases/Arena/Arena<version>.w3x`) with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory. This could be automated by an MPQ tool in the future.
+* Open the prepared English maps (for example in `maps/releases/Arena/Arena<version>.w3x`) with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory. This step could be automated by an MPQ tool in the future.
 * After having done this for ALL maps run the script `src/Scripts/makeenglishreleasemaps.bat` which creates the English optimized release maps.
-* Open the German campaign `TPoF10de.w3n` and replace all chapters by the maps from `maps/releases` (for example `TL.w3x`) and save it.
-* Open the English campaign `TPoF10en.w3n` and replace all chapters by the maps from `maps/releases/en` (for example `TL.w3x`) and save it.
-* Execute the NSIS script `src/Scripts/installer.nsi` to create the installer. It includes the development files.
+* Import the latest campaign object data ([ObjectDataCampaign.w3o](./maps/ObjectDataCampaign.w3o)) into all optimized campaign release maps in the folder `maps/releases` (for example `TL.w3x`) and save it. It contains one minor difference for detecting the singleplayer campaign mode during the game. TODO is this even possible after optimizing the maps already???
+* Execute the NSIS script `src/Scripts/installer_en.nsi` to create the English installer. It includes the development files.
+* Execute the NSIS script `src/Scripts/installer_de.nsi` to create the German installer. It includes the development files.
 
-Each map can be optimized using some standard routines. First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore. This can happen when a hero ability is change to a unit ability but some hero only fields are still changed. This optimization reduces the number of strings which have to be translated or optimized later.
+Each map can be optimized using some standard routines.
+First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore.
+This can happen when a hero ability is change to a unit ability but some hero only fields are still changed.
+This optimization reduces the number of strings which have to be translated or optimized later.
 
-Besides all object data fields which are for the World Editor only can be optimized. These are usually editor only suffixes. The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
+Besides, all object data fields which are for the World Editor only can be optimized.
+These are usually editor only suffixes.
+The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
 
 ## Trigger Editor Integration <a name="trigger_editor_integration"></a>
 Trigger editor integration means that the trigger editor of the World Editor can be used instead of vJass code.

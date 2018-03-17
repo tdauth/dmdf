@@ -255,7 +255,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		 */
 		public static method isCampaign takes nothing returns boolean
 			// this custom object should only exist in the campaign not in the usual maps
-			return GetObjectName('h600') == "IsCampaign"
+			return GetObjectName('h03V') == "IsCampaign"
 		endmethod
 
 		/**

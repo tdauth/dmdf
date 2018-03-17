@@ -10,9 +10,7 @@ endif
 /**
  * ASL core covers all core functions, structures and interfaces such as \ref containers, player-only functions, maths stuff, string treatment and debugging functions and structures and \ref wrappers, for instance.
  * \sa Asl
- * \if A_SYSTEMS
  * \sa ASystems
- * \endif
  */
 library ACore requires optional ACoreDebug, ACoreEnvironment, ACoreGeneral, ACoreInterface, ACoreMaths, ACoreString
 endlibrary

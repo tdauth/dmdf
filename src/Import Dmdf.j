@@ -12,7 +12,6 @@
  * These are the default values for the ASL and the modification TPoF.
  */
 globals
-	constant boolean A_SYSTEMS = true
 	constant boolean A_DEBUG_HANDLES = false
 	constant boolean A_DEBUG_NATIVES = false
 	constant real A_MAX_COLLISION_SIZE = 300

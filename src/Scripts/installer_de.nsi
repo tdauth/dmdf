@@ -5,18 +5,18 @@ Unicode true
 !define PROJECTS_DIR "F:\Projekte\"
 !define INPUT_DIR_TPOF "F:\Projekte\dmdf\"
 !define INPUT_DIR "F:\Projekte\dmdf\maps\releases"
-!define INPUT_ARCHIVE "F:\Projekte\dmdf\War3Mod.mpq"
+!define INPUT_ARCHIVE "F:\Projekte\dmdf\mpq\de\War3Mod.mpq"
 !define OUTPUT_WARCRAFT_DOCUMENTS_DIR "Warcraft III"
 !define VERSION "1.0"
 !define CAMPAIGN_VERSION "10"
 
 Name "The Power of Fire"
-OutFile "F:\Projekte\dmdf\releases\ThePowerOfFire${VERSION}.exe"
+OutFile "F:\Projekte\dmdf\releases\ThePowerOfFireGerman${VERSION}.exe"
 InstallDir "$PROGRAMFILES\Warcraft III"
 
 !define MUI_ABORTWARNING
 
-!define MUI_DIRECTORYPAGE_TEXT_DESTINATION "Warcraft III directory"
+!define MUI_DIRECTORYPAGE_TEXT_DESTINATION "Warcraft-III-Verzeichnis"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_DIRECTORY
@@ -28,8 +28,8 @@ FunctionEnd
 
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION MyFinishRun
-!define MUI_FINISHPAGE_SHOWREADME "$instdir\ThePowerOfFire.txt"
-!define MUI_FINISHPAGE_LINK "Modification website"
+!define MUI_FINISHPAGE_SHOWREADME "$instdir\ThePowerOfFireGerman.txt"
+!define MUI_FINISHPAGE_LINK "Modifikations-Website"
 !define MUI_FINISHPAGE_LINK_LOCATION "http://www.moddb.com/mods/warcraft-iii-the-power-of-fire"
 
 !insertmacro MUI_PAGE_FINISH
@@ -39,33 +39,17 @@ FunctionEnd
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_UNPAGE_FINISH
 
-!insertmacro MUI_LANGUAGE "English" ;first language is the default language
 !insertmacro MUI_LANGUAGE "German"
 
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_ARCHIVE}"
-	File "${INPUT_DIR_TPOF}\ThePowerOfFire.txt"
+	File "${INPUT_DIR_TPOF}\ThePowerOfFireGerman.txt"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
-Section "English Maps" EnglishMaps
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\en"
-	File "${INPUT_DIR}\en\Dornheim${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Talras${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Gardonar${VERSION}.w3x"
-	File "${INPUT_DIR}\en\GardonarsHell${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Deranor${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Holzbruck${VERSION}.w3x"
-	File "${INPUT_DIR}\en\HolzbrucksUnderworld${VERSION}.w3x"
-	File "${INPUT_DIR}\en\TheNorth${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Arena${VERSION}.w3x"
-	File "${INPUT_DIR}\en\WorldMap${VERSION}.w3x"
-	File "${INPUT_DIR}\en\Credits${VERSION}.w3x"
-SectionEnd
-
 Section "German Maps" GermanMaps
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire\de"
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
 	File "${INPUT_DIR}\de\Dornheim${VERSION}.w3x"
 	File "${INPUT_DIR}\de\Talras${VERSION}.w3x"
 	File "${INPUT_DIR}\de\Gardonar${VERSION}.w3x"
@@ -79,14 +63,17 @@ Section "German Maps" GermanMaps
 	File "${INPUT_DIR}\de\Credits${VERSION}.w3x"
 SectionEnd
 
-Section "German Campaign" GermanCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
-	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}de.w3n"
-SectionEnd
-
-Section "English Campaign" EnglishCampaign
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns"
-	File "${INPUT_DIR}\TPoF${CAMPAIGN_VERSION}en.w3n"
+Section "German Campaign Maps" GermanCampaignMaps
+	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPOF\Campaign${CAMPAIGN_VERSION}"
+	File "${INPUT_DIR}\DH.w3x"
+	File "${INPUT_DIR}\TL.w3x"
+	File "${INPUT_DIR}\GA.w3x"
+	File "${INPUT_DIR}\GH.w3x"
+	File "${INPUT_DIR}\DS.w3x"
+	File "${INPUT_DIR}\HB.w3x"
+	File "${INPUT_DIR}\HU.w3x"
+	File "${INPUT_DIR}\TN.w3x"
+	File "${INPUT_DIR}\WM.w3x"
 SectionEnd
 
 Section "German Dev Maps" GermanDevMaps
@@ -126,20 +113,20 @@ Section "Documentation" Documentation
 SectionEnd
 
 Section "Uninstall"
-	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}de.w3n"
-	 Delete "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Campaigns\TPoF{CAMPAIGN_VERSION}en.w3n"
-	 RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
-	 Delete "$INSTDIR\War3Mod.mpq"
-	 RMDir /r "$INSTDIR\The Power of Fire"
-	 RMDir /r "$INSTDIR\TPoF"
-	 Delete "$INSTDIR\The Power of Fire.lnk"
-	 Delete "$DESKTOP\The Power of Fire.lnk"
+	RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
+	RMDir /r  "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPOF"
+	Delete "$INSTDIR\War3Mod.mpq"
+	Delete "$INSTDIR\ThePowerOfFireGerman.txt"
+	RMDir /r "$INSTDIR\The Power of Fire"
+	RMDir /r "$INSTDIR\TPoF"
+	Delete "$INSTDIR\The Power of Fire.lnk"
+	Delete "$DESKTOP\The Power of Fire.lnk"
 SectionEnd
 
 Function .onInit
 	Var /GLOBAL InstallPath
 	ReadRegStr $InstallPath HKCU "Software\Blizzard Entertainment\Warcraft III" InstallPathX
-	DetailPrint "Warcraft install path: $InstallPath"
+	DetailPrint "Warcraft-Installationspfad: $InstallPath"
 	StrCmp $InstallPath "" continue setInstallDirToRegStr
 	setInstallDirToRegStr:
 		StrCpy $InstDir $InstallPath

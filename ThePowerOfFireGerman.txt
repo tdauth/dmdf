@@ -1,0 +1,13 @@
+Führen Sie Warcraft III: The Frozen Throne aus, um die Modifikation zu spielen.
+Gehen Sie zu "Einzelspieler" - "Kampagne" und spielen Sie die Einzelspieler-Kampagne nachdem das Spiel gestartet wurde.
+Wählen Sie eine der Karten im Verzeichnis "The Power of Fire" aus um Mehrspielerspiele zu spielen.
+
+Deinstallieren Sie die modification oder entfernen Sie die Datei "War3Mod.mpq" aus dem Verzeichnis von Warcraft III: The Frozen Throne, um die Modifikation zu deaktivieren.
+Das Deinstallationsprogramm befindet sich im Warcraft III: The Frozen Throne-Verzeichnis.
+Die Deinstallation entfernt nicht Ihre Speicherstände.
+
+Bitte melden Sie alle Probleme unter:
+https://github.com/tdauth/dmdf/issues
+
+Besuchen Sie die folgende Website für die neuesten Veröffentlichungen der Modifikation:
+http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads
