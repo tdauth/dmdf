@@ -1,0 +1,17 @@
+addons:
+  apt:
+    sources:
+      - boost-latest
+      - george-edison55-precise-backports
+    packages:
+      - gcc
+      - cmake-data
+      - cmake
+      - valgrind
+      - libboost-all-dev
+      - libbz2-dev
+      - gettext
+
+script:
+     - cd src/Scripts/jenkins
+     - bash ./dmdf_translation.sh

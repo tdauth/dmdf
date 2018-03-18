@@ -9,9 +9,13 @@ if [ -d ./wc3lib ] ; then
 	rm -rf ./wc3lib
 fi
 
-mkdir ./wc3lib
+git clone https://github.com/tdauth/wc3lib.git
 cd ./wc3lib
-rpm2cpio ../pkg/wc3lib-0.1.0-Linux.rpm | cpio -idmv
+mkdir ./build
+cd ./build
+cmake ..
+make
+cpack .
 
 # Extract all map files:
 cd "$WORKSPACE"
