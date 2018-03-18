@@ -9,25 +9,26 @@ The original language of the modification is German but there are English transl
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
-3. [Dependencies](#dependencies)
-4. [Formats](#formats)
+3. [Installation](#installation)
+4. [Dependencies](#dependencies)
+5. [Formats](#formats)
     1. [JASS](#formats_jass)
     2. [vJass](#formats_vjass)
     3. [Wurst](#formats_wurst)
     4. [MPQ](#formats_mpq)
-5. [Windows Setup](#windows)
-6. [JassHelper Setup](#jasshelper_setup)
-7. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-8. [Source Code](#source_code)
+6. [Windows Setup](#windows)
+7. [JassHelper Setup](#jasshelper_setup)
+8. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
+9. [Source Code](#source_code)
     1. [Code Style](#source_code_code_style)
     2. [Testing](#source_code_testing)
-9. [Advanced Script Library](#asl)
+10. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
     3. [Containers](#asl_containers)
     4. [Wrappers](#asl_wrappers)
     5. [Strings](#asl_strings)
-10. [Core Systems](#core_systems)
+11. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Inventory](#core_systems_inventory)
     3. [Custom Item Types](#core_systems_custom_item_types)
@@ -42,7 +43,7 @@ The original language of the modification is German but there are English transl
     12. [Characters](#core_systems_characters)
     13. [Spells](#core_systems_spells)
     14. [Quests](#core_systems_quests)
-11. [Creating a new Map](#creating_a_new_map)
+12. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Import Object Data](#creating_a_new_map_importing_object_data)
@@ -51,28 +52,34 @@ The original language of the modification is German but there are English transl
     6. [Required Rects](#creating_a_new_map_required_rects)
     7. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
     8. [Saving the Map](#creating_a_new_map_saving_the_map)
-12. [Maps](#maps)
-13. [Translation](#translation)
-14. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-15. [Release Process](#release_process)
-16. [Trigger Editor Integration](#trigger_editor_integration)
-17. [Jenkins](#jenkins)
-18. [Content](#content)
+13. [Maps](#maps)
+14. [Translation](#translation)
+15. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+16. [Release Process](#release_process)
+17. [Trigger Editor Integration](#trigger_editor_integration)
+18. [Jenkins](#jenkins)
+19. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-19. [Blog](#blog)
-20. [YouTube Channel](#youtube_channel)
-21. [Bugs](#bugs)
-22. [Credits](#credits)
+20. [Blog](#blog)
+21. [YouTube Channel](#youtube_channel)
+22. [Bugs](#bugs)
+23. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
 Since I have pushed the history of binary map and campaign files as well, the history became quite big.
 
 The model, texture and sound resources are not part of this repository.
-Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install all resources files.
+
+All releases are tagged in the repository: [GIT releases](https://github.com/tdauth/dmdf/releases).
+Previous releases required versions with the same tags from the now deprecated repository: [asl](https://github.com/tdauth/asl).
+
+## Installation <a name="installation"></a>
+Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install the actual release of this modification.
+The latest setups contain the development files, too.
 
 ## Dependencies <a name="dependencies"></a>
 These are the development dependencies of this modification:
@@ -221,10 +228,17 @@ library StructMyTestStruct requires Asl, StructMyOtherTestStruct
 	struct TestStruct
 		private MyOtherTestStruct m_myMember
 
-		public method setMyMember takes MyOtherTestStruct myMember returns MyOtherTestStruct
+		/**
+		 * This method sets my member to the value of \p myMember.
+		 * \param myMember The value to be set.
+		 */
+		public method setMyMember takes MyOtherTestStruct myMember returns nothing
 			set this.m_myMember = myMember
 		endmethod
 
+		/**
+		 * \return Returns the value of the struct attribute.
+		 */
 		public method myMember takes nothing returns MyOtherTestStruct
 			return this.m_myMember
 		endmethod
@@ -239,7 +253,6 @@ endlibrary
 
 At the moment vjassdoc is very limited and generates basic HTML files for the API documentation.
 It has to be improved to support more Doxygen keywords.
-TODO Add a script for Jenkins to this repository which generates the API documentation for The Power of Fire.
 
 ### Testing <a name="source_code_testing"></a>
 Currently, there is no debugger for JASS. Patch 1.29 will bring debugging events and logging functionality which will help to find serious bugs.
@@ -259,19 +272,17 @@ The tests can be run with the following chat commands when the map has been save
 
 A new cheat command has to be added for each new unit test to the file [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j).
 
-TODO Add unit tests for the modification itself.
-
 Cheats help manual testing when the map is saved in the debug mode of vJass.
-The library [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j) and the struct [GameCheats](./src/Game/Struct%2Game%20Cheats.j) provide many custom cheat commands for testing the maps.
+The library [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j) and the struct [GameCheats](./src/Game/Struct%20Game%20Cheats.j) provide many custom cheat commands for testing the maps.
 
 ## Advanced Script Library <a name="asl"></a>
 The Advanced Script Library (short ASL) is the core of this modification.
-Its code can be found in the directory `src/ASL`.
+Its code can be found in the directory [src/ASL](./src/Asl).
 It has formerly been a separate repository but is now merged into this repository.
 
 ### Code Integration <a name="asl_code_integration"></a>
-Use the file `src/ASL/Import Asl.j` to import all required code from the ASL.
-This is done automatically when the file `src/Import Dmdf.j` is imported.
+Use the file [src/ASL/Import Asl.j](./src/Asl/Import%20Asl.j) to import all required code from the ASL.
+This is done automatically when the file [src/Import Dmdf.j](./src/Import%20Dmdf.j) is imported.
 
 The following list shows you which global constants have to be specified in your custom code that ASL works properly:
 ```
