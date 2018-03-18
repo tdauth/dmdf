@@ -63,19 +63,6 @@ Section "German Maps" GermanMaps
 	File "${INPUT_DIR}\de\Credits${VERSION}.w3x"
 SectionEnd
 
-Section "German Campaign Maps" GermanCampaignMaps
-	SetOutPath "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPOF\Campaign${CAMPAIGN_VERSION}"
-	File "${INPUT_DIR}\DH.w3x"
-	File "${INPUT_DIR}\TL.w3x"
-	File "${INPUT_DIR}\GA.w3x"
-	File "${INPUT_DIR}\GH.w3x"
-	File "${INPUT_DIR}\DS.w3x"
-	File "${INPUT_DIR}\HB.w3x"
-	File "${INPUT_DIR}\HU.w3x"
-	File "${INPUT_DIR}\TN.w3x"
-	File "${INPUT_DIR}\WM.w3x"
-SectionEnd
-
 Section "German Dev Maps" GermanDevMaps
 	SetOutPath "$INSTDIR\The Power of Fire\Maps"
 	File "${INPUT_DIR_TPOF}\maps\Tutorial.w3x"
@@ -114,7 +101,6 @@ SectionEnd
 
 Section "Uninstall"
 	RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
-	RMDir /r  "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\TPOF"
 	Delete "$INSTDIR\War3Mod.mpq"
 	Delete "$INSTDIR\ThePowerOfFireGerman.txt"
 	RMDir /r "$INSTDIR\The Power of Fire"
