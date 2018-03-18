@@ -5,12 +5,12 @@
 // below.  The order of these values is significant, as that is the
 // order in which they will appear on the campaign selection screen.
 
-CampaignList=ThePowerOfFire"
+CampaignList="","","","","ThePowerOfFire"
 
 // The sections below make up the campaign data for each specific
 // campaign.  Each mission entry is made up of 3 comma-separated
 // strings.  In order they are: Header, Mission Name, Map Filename.
-// You can have up to 128 missions in a given campaign, but putting 
+// You can have up to 128 missions in a given campaign, but putting
 // more than 15 will make a scrollbar appear to see the rest.
 //
 // Each campaign section can also have three cinematics associated
@@ -24,13 +24,13 @@ CampaignList=ThePowerOfFire"
 // You can specify which model to use for the background, using the
 // "Background" key.  The value specified must be an entry in the
 // war3skins.txt file. Realize that this value is processed using the
-// expansion naming convention (i.e. V0, V1, etc).  You should also set 
+// expansion naming convention (i.e. V0, V1, etc).  You should also set
 // the fog parameters using the "BackgroundFogXXX" keys.
 //
 // The racial cursor for the campaign can be set using the "Cursor"
-// key.  The values are as follows: Human = 0, Orc = 1, Undead = 2, 
+// key.  The values are as follows: Human = 0, Orc = 1, Undead = 2,
 // Night Elf = 3.
-//      
+//
 // Finally, you can set which ambient sound to play on this screen using
 // the "AmbientSound" key.  The value specified must be an entry in
 // the AmbienceSounds.slk file.
@@ -39,14 +39,14 @@ CampaignList=ThePowerOfFire"
 Header="The Power of Fire"
 Name="Singleplayer Campaign"
 DefaultOpen=1
-Background="NightElfBackdrop"
+Background="GlueSpriteLayerBackground_V1"
 BackgroundFogStyle=0
 BackgroundFogColor=255,102,77,77
 BackgroundFogDensity=0.5
 BackgroundFogStart=0
 BackgroundFogEnd=1700
 Cursor=0
-AmbientSound="ExpansionNightElfGlueScreenLoop"
+AmbientSound=""
 IntroCinematic=""
 OpenCinematic=""
 EndCinematic=""
