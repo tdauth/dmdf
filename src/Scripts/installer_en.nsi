@@ -44,7 +44,7 @@ FunctionEnd
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
 	File "${INPUT_ARCHIVE}"
-	File "${INPUT_DIR_TPOF}\ThePowerOfFire.txt"
+	File "${INPUT_DIR_TPOF}\ThePowerOfFireEnglish.txt"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
 SectionEnd
 
