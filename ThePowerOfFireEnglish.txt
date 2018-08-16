@@ -2,7 +2,7 @@ Run Warcraft III: The Frozen Throne to play the modification.
 Go to "Singleplayer" - "Campaigns" and play the singleplayer campaign after the game has been started.
 Choose one of the maps in the folder "The Power of Fire" for multiplayer games.
 
-Uninstall the modification or remove the file "War3Mod.mpq" from the directory of Warcraft III: The Frozen Throne to disable the modification.
+Uninstall the modification or remove the folder "War3Mod.mpq" from the directory of Warcraft III: The Frozen Throne to disable the modification.
 The uninstaller is in the Warcraft III: The Frozen Throne directory.
 Uninstalling the modification won't remove your savegames.
 
@@ -11,3 +11,6 @@ https://github.com/tdauth/dmdf/issues
 
 Visit the following website for the latest releases of the modification:
 http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads
+
+The following blog provides further information about the modification:
+https://diemachtdesfeuers.wordpress.com/

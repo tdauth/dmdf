@@ -122,11 +122,13 @@ Therefore, this modification is not based on it.
 Currently, it would be too much work to convert all vJass code into Wurst although Wurst has some nice features which are missing from vJass.
 
 ### MPQ <a name="formats_mpq"></a>
-Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for custom data archives.
-Therefore, The Power of Fire provides a custom file called `War3Mod.mpq` with all required resources such as models, textures, icons and sound files.
-This file is automatically loaded by Warcraft III when put into its directory.
-It is also automatically loaded by the World Editor.
+Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for data archives.
 There is several third-party libraries for accessing MPQ archives such as [StormLib](https://github.com/ladislav-zezula/StormLib) and [wc3lib](https://github.com/tdauth/wc3lib) (only reading).
+
+The Power of Fire provides a custom directory called `War3Mod.mpq` in the Warcraft III installation directory with all required resources such as models, textures, icons and sound files.
+This directory has previously been an MPQ archive but has been changed to a directory with patch 1.30.
+The data from this directory is automatically loaded by Warcraft III.
+It is also automatically loaded by the World Editor.
 
 ## Windows Setup <a name="windows"></a>
 The batch scripts from the folder `src/Scripts` work on volume `F:` (previously on volume `E:`) and expect the following folders:
@@ -636,7 +638,7 @@ endstruct
 ### GUI Triggers <a name="creating_a_new_map_gui_triggers"></a>
 Instead of importing the code manually and providing a MapData struct, GUI triggers in the World Editor's trigger editor can be used.
 TheNorth.w3x is one existing map which follows this approach rather than using vJass code.
-The War3Mod.mpq file has to exist in the Warcraft III directory to use the GUI trigger API provided by The Power of Fire.
+The War3Mod.mpq directory has to exist in the Warcraft III directory to use the GUI trigger API provided by The Power of Fire.
 When the World Editor is started it show new trigger functions in the trigger editor for the modification.
 To use them the following code has to be used in the custom map script:
 ```
@@ -756,15 +758,13 @@ The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything to auto
 
 On Windows the project is expected in the directory `F:/Projekte/dmdf`.
 On Windows the release process consists of the following steps:
-* Create the English archive War3Mod.mpq into the directory `mpq\en` in the project folder. It consists of the content of the folders `archive` and `archive_en` from the project folder.  This step could be automated by an MPQ tool in the future.
-* Create the German archive War3Mod.mpq into the directory `mpq\de` in the project folder. It consists of the content of the folders `archive` and `archive_de` from the project folder.  This step could be automated by an MPQ tool in the future.
 * Export the latest object data from the map `maps/Karte 1 - Talras.w3x` and import it into all other maps (if they use custom Doodads, only import the other parts). This step could be automated by an MPQ tool in the future.
 * Extract all unmodified map scripts from all maps in the folder `maps` into their corresponding map script folders like the file `maps/Talras/war3map.j`. This step could be automated by an MPQ tool in the future.
 * Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully. Warning: The script uses the exported map scripts of all maps. If they are outdated (files like `maps/Talras/war3map.j`), they have to be extracted from the maps after saving them without the JassHelper enabled.
 * Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
 * Open the prepared English maps (for example in `maps/releases/Arena/Arena<version>.w3x`) with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory. This step could be automated by an MPQ tool in the future.
 * After having done this for ALL maps run the script `src/Scripts/makeenglishreleasemaps.bat` which creates the English optimized release maps.
-* Import the latest campaign object data ([ObjectDataCampaign.w3o](./maps/ObjectDataCampaign.w3o)) into all optimized campaign release maps in the folder `maps/releases` (for example `TL.w3x`) and save it. It contains one minor difference for detecting the singleplayer campaign mode during the game. TODO is this even possible after optimizing the maps already???
+* Import the latest unit data ([war3map.w3u](./maps/war3map.w3u)) from the campaign object data ([ObjectDataCampaign.w3o](./maps/ObjectDataCampaign.w3o)) into all optimized campaign release maps in the folders `archive_en/Maps/TPoF/Campaign%CAMPAIGN_VERSION%` and `archive_de/Maps/TPoF/Campaign%CAMPAIGN_VERSION%` (for example `TL.w3x`) with the help of an MPQ editor. It contains one minor difference for detecting the singleplayer campaign mode during the game. TODO is this even possible after optimizing the maps already, do the strings still work???
 * Execute the NSIS script `src/Scripts/installer_en.nsi` to create the English installer. It includes the development files.
 * Execute the NSIS script `src/Scripts/installer_de.nsi` to create the German installer. It includes the development files.
 
@@ -781,7 +781,7 @@ The number of modifications (size of the object data) and string entries will be
 Trigger editor integration means that the trigger editor of the World Editor can be used instead of vJass code.
 GUI triggers make it easier for non-programmers to define some logic of the game.
 To provide the trigger editor integration, the two files `TriggerData.txt` and `TriggerStrings.txt` have to be generated.
-The files `src/TriggerData/TriggerData.txt` and `src/TriggerData/TriggerStrings.txt` are automatically merged by the program wc3converter to generate the files `UI/TriggerData.txt` and `UI/TriggerStrings.txt` in the MPQ archive War3Mod.mpq.
+The files `src/TriggerData/TriggerData.txt` and `src/TriggerData/TriggerStrings.txt` are automatically merged by the program wc3converter to generate the files `UI/TriggerData.txt` and `UI/TriggerStrings.txt` in the directory `War3Mod.mpq`.
 
 The tool wc3converter is provided by the project [wc3lib](https://github.com/tdauth/wc3lib).
 It can be used the following way to create a new trigger data file:

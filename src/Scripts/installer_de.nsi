@@ -5,7 +5,8 @@ Unicode true
 !define PROJECTS_DIR "F:\Projekte\"
 !define INPUT_DIR_TPOF "F:\Projekte\dmdf\"
 !define INPUT_DIR "F:\Projekte\dmdf\maps\releases"
-!define INPUT_ARCHIVE "F:\Projekte\dmdf\mpq\de\War3Mod.mpq"
+!define INPUT_ARCHIVE_DIR "F:\Projekte\dmdf\archive\"
+!define INPUT_ARCHIVE_DIR_LANG "F:\Projekte\dmdf\archive_de\"
 !define OUTPUT_WARCRAFT_DOCUMENTS_DIR "Warcraft III"
 !define VERSION "1.0"
 !define CAMPAIGN_VERSION "10"
@@ -23,7 +24,7 @@ InstallDir "$PROGRAMFILES\Warcraft III"
 !insertmacro MUI_PAGE_INSTFILES
 
 Function MyFinishRun
-ExecShell "" "$instdir\Frozen Throne.exe"
+ExecShell "" "$instdir\Warcraft III.exe"
 FunctionEnd
 
 !define MUI_FINISHPAGE_RUN
@@ -43,9 +44,14 @@ FunctionEnd
 
 Section "Application" Application
 	SetOutPath "$INSTDIR\"
-	File "${INPUT_ARCHIVE}"
 	File "${INPUT_DIR_TPOF}\ThePowerOfFireGerman.txt"
 	WriteUninstaller "$INSTDIR\UninstallThePowerOfFire.exe"
+SectionEnd
+
+Section "Application Data" ApplicationData
+	SetOutPath "$INSTDIR\War3Mod.mpq\"
+	File /r "${INPUT_ARCHIVE_DIR}"
+	File /r "${INPUT_ARCHIVE_DIR_LANG}"
 SectionEnd
 
 Section "German Maps" GermanMaps
@@ -101,7 +107,7 @@ SectionEnd
 
 Section "Uninstall"
 	RMDir /r "$DOCUMENTS\${OUTPUT_WARCRAFT_DOCUMENTS_DIR}\Maps\The Power of Fire"
-	Delete "$INSTDIR\War3Mod.mpq"
+	RMDir /r "$INSTDIR\War3Mod.mpq"
 	Delete "$INSTDIR\ThePowerOfFireGerman.txt"
 	RMDir /r "$INSTDIR\The Power of Fire"
 	RMDir /r "$INSTDIR\TPoF"
@@ -124,7 +130,7 @@ FunctionEnd
 
 # Make sure Warcraft III is installed in the target directory
 Function .onVerifyInstDir
-	IfFileExists $INSTDIR\war3x.mpq good
+	IfFileExists "$INSTDIR\Warcraft III.exe" good
 		Abort
 	good:
 FunctionEnd
