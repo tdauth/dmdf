@@ -13,7 +13,7 @@ call thistype.addContributor("Johanna W.", tre("Tests", "Tests"))
 // maps
 call thistype.addTitle(tre("Karten", "Maps"))
 call thistype.addContributor("Andreas B. (Deranor)", tre("Talras, Holzbruck", "Talras, Holzbruck"))
-call thistype.addContributor("Tamino Dauth (Baradé)", tre("Talras (Teile), Gardonar, Holzbrucks Unterwelt", "Talras (parts), Gardonar, Holzbruck's Underworld"))
+call thistype.addContributor("Tamino Dauth (Baradé)", tre("Talras (Teile), Gardonar, Holzbrucks Unterwelt, Der Norden", "Talras (parts), Gardonar, Holzbruck's Underworld, The North"))
 call thistype.addContributor("Heinvers", tre("Gardonars Hölle, Deranors Sumpf", "Gardonar's Hell, Deranor's Swamp"))
 call thistype.addContributor("PrinceYaser", tre("Dornheim", "Dornheim"))
 
@@ -85,8 +85,10 @@ call thistype.addContributor("inWarcraft.de IRC Chat", "http://webchat.quakenet.
 call thistype.addContributor("hiveworkshop.com", tre("Unzählige Ressourcen, Fragen und die Projektvorstellung", "Countless resources, questions and the project presentation"))
 
 // files
+// TODO Complete the list with all authors:
 call thistype.addTitle(tre("Modelle", "Models"))
 call thistype.addContributor("Kitabatake", "Hell Campaign Screen: https://www.hiveworkshop.com/threads/hell-campaign-screen.121022/#resource-26801")
+call thistype.addContributor("Graber", "Villager 255 Animations: https://www.hiveworkshop.com/threads/villager-255-animations.192204/")
 call thistype.addContributor("Talavaj", "HybrisFactory - Multiple packages of realtexture models and textures: http://www.hiveworkshop.com/threads/hybrisfactory-terraining-and-mapping-resources.238310/")
 call thistype.addContributor("Sellenisko", "Vrykul Race Pack: http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/")
 call thistype.addContributor("JoySoy", "The Mage: https://www.hiveworkshop.com/threads/the-mage.293180/")
@@ -101,6 +103,7 @@ call thistype.addContributor("TDR", "BTNSchattenefreet.blp")
 call thistype.addContributor("dickxunder", "BTNZauberin.blp")
 call thistype.addContributor("Norinrad", "BTNZwergenkrieger.blp")
 call thistype.addContributor("Elenai", "BTNBotschafterin.blp, BTNKoeniglicherKleriker.blp")
-call thistype.addContributor("???", "BTNAttentaeter.tga") // TODO get name
 call thistype.addContributor("Michael Peppers", "BTNGeistlicheSchwertkaempferin.blp")
-// TODO finish
+
+call thistype.addTitle(tre("Benutzeroberfläche", "User Interface"))
+call thistype.addContributor("unwirklich", "Demon UI: http://www.wc3c.net/showthread.php?t=93713")
