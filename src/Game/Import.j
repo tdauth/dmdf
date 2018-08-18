@@ -20,9 +20,7 @@
 //! import "Game/Struct Options.j"
 //! import "Game/Struct Order Animations.j"
 //! import "Game/Struct Quest Area.j"
-static if (DMDF_NPC_ROUTINES) then
 //! import "Game/Struct Routines.j"
-endif
 //! import "Game/Struct Save System.j"
 //! import "Game/Struct Shop.j"
 //! import "Game/Struct Shrine.j"

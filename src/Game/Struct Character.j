@@ -36,9 +36,7 @@ library StructGameCharacter requires Asl, StructGameDmdfHashTable, StructGameDun
 		 */
 		private AIntegerVector m_onCraftItemFunctions
 		// members
-static if (DMDF_CREDITS) then
 		private Credits m_credits
-endif
 		private Grimoire m_grimoire
 		private Tutorial m_tutorial
 		private Options m_options
@@ -193,11 +191,7 @@ endif
 		// members
 
 		public method credits takes nothing returns Credits
-static if (DMDF_CREDITS) then
 			return this.m_credits
-else
-			return 0
-endif
 		endmethod
 
 		public method grimoire takes nothing returns Grimoire
@@ -686,9 +680,7 @@ endif
 			set this.m_showWorker = true
 			set this.m_onCraftItemFunctions = AIntegerVector.create()
 			// members
-static if (DMDF_CREDITS) then
 			set this.m_credits = Credits.create.evaluate(this)
-endif
 			set this.m_grimoire = Grimoire.create.evaluate(this)
 			set this.m_tutorial = Tutorial.create.evaluate(this)
 
@@ -747,9 +739,7 @@ endif
 		public method onDestroy takes nothing returns nothing
 			call this.m_onCraftItemFunctions.destroy()
 
-static if (DMDF_CREDITS) then
 			call this.m_grimoire.destroy.evaluate()
-endif
 			call this.m_tutorial.destroy.evaluate()
 
 			if (this.m_options != 0) then

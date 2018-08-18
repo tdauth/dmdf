@@ -20,7 +20,6 @@ mkdir ./build
 cd ./build
 cmake .. -DEDITOR=0 -DUSE_KIOSLAVE=0 -DUSE_QBLP=0 -DUSE_OGREBLP=0 -DUSE_MIME=0 -DCMAKE_BUILD_TYPE=Release
 make
-cpack .
 
 # Extract all map files:
 cd "$WORKSPACE"

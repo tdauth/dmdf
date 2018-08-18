@@ -17,9 +17,6 @@ globals
 	constant real A_MAX_COLLISION_SIZE = 300
 	constant integer A_MAX_COLLISION_SIZE_ITERATIONS = 10
 	constant integer A_SPELL_RESISTANCE_CREEP_LEVEL = 6
-	constant boolean DMDF_NPC_ROUTINES = true
-	constant boolean DMDF_VIOLENCE = true
-	constant boolean DMDF_CREDITS = true
 	/**
 	 * The update interval in seconds in which the characters schema is refreshed.
 	 * Note that it decreases the performance if this interval becomes smaller.

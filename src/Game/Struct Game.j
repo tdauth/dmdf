@@ -395,9 +395,8 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		/**
 		 * The violence system enables blood effects on killing units.
 		 * \ref randomBigBloodEffectPath() is used when the killed unit takes a lot of damage at once.
-		 * The damage handler \ref onDamageActionViolence() creates blood effects but only if \ref DMDF_VIOLENCE is set to true.
+		 * The damage handler \ref onDamageActionViolence() creates blood effects.
 		 */
-static if (DMDF_VIOLENCE) then
 		private static constant method bloodEffectPathDeath takes integer index returns string
 			if (index == 0) then
 				return "Models\\Effects\\BloodExplosion.mdx"
@@ -470,7 +469,7 @@ static if (DMDF_VIOLENCE) then
 			/// \todo play sound
 			//call PlaySoundFileOnUnit(thistype.randomViolenceSoundPath(), GetTriggerUnit())
 		endmethod
-endif
+
 		private static method triggerActionKill takes nothing returns nothing
 			/*
 			 * Characters get only experience if a creep is being killed.
@@ -479,13 +478,13 @@ endif
 				call GameExperience.distributeUnitExperience(GetTriggerUnit(), GetKillingUnit())
 				call GameBounty.distributeUnitBounty(GetTriggerUnit(), GetKillingUnit())
 			endif
-static if (DMDF_VIOLENCE) then
+
 			// violence
 			if (not IsUnitType(GetTriggerUnit(), UNIT_TYPE_MECHANICAL) and not IsUnitType(GetTriggerUnit(), UNIT_TYPE_UNDEAD)) then
 				call DestroyEffect(AddSpecialEffectTarget(thistype.randomDeathBloodEffectPath(), GetTriggerUnit(), "origin"))
 			endif
 			/// \todo Sound
-endif
+
 		endmethod
 
 		/// @todo What's about AOS players?
@@ -578,9 +577,7 @@ endif
 			// The Power of Fire
 			// game
 			set thistype.m_onDamageActions = AIntegerList.create()
-static if (DMDF_VIOLENCE) then
 			call thistype.registerOnDamageActionOnce(thistype.onDamageActionViolence) // blood/violence system
-endif
 			call thistype.createKillTrigger()
 			// game guis
 			call Fellow.init.evaluate(tre("%1% hat sich Ihrer Gruppe angeschlossen.", "%1% has joined your group."), null, tre("%1% hat Ihre Gruppe verlassen.", "%1% has left your group"), null, tre("%1% ist gefallen und wird in %2% Sekunden wiederbelebt.", "%1% has fallen and will be revived in %2% seconds."), null)
@@ -592,9 +589,7 @@ endif
 			// game types
 			call Classes.init()
 			call ItemTypes.init() // after classes!
-static if (DMDF_NPC_ROUTINES) then
 			call Routines.init()
-endif
 			call initSpells.evaluate() // after classes!
 			call Shop.init.evaluate() // before map data initialization!
 			call QuestArea.init.evaluate() // before map data initialization!
