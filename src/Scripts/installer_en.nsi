@@ -91,7 +91,7 @@ Section "Object Data" ObjectData
 SectionEnd
 
 Section "JNGP" JNGP
-	SetOutPath "$INSTDIR\The Power of Fire\JNGP"
+	SetOutPath "$INSTDIR\The Power of Fire"
 	File /r "${INPUT_DIR_TPOF}\tools\"
 SectionEnd
 
