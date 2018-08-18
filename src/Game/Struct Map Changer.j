@@ -17,7 +17,7 @@ library StructGameMapChanger requires Asl, StructGameCharacter, StructGameDmdfHa
 		/// The name of the gamecache which is used for storing all character data.
 		public static constant string gameCacheName = "TPoF.w3v"
 		/// In a custom campaign no subfolder is used for maps.
-		public static constant string mapFolder = "Maps\\TPOF\\de\\Campaign10"
+		public static constant string mapFolder = "Maps\\TPOF\\Campaign10"
 		/// All map change save games will be saved into this folder.
 		public static constant string zonesFolder = "TPoF"
 		/// All zone save games come to this folder which do not belong to a savegame name. This folder has to be cleared whenever the game ends or is started newly. Since the ending event cannot be captured the temporary folder is cleared whenever a new campaign is started from the first chapter.

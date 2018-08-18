@@ -1,7 +1,9 @@
 #!/bin/bash
 # Extracts the German war3map.wts files from all maps and generates the English war3map.wts files based on the English translation of the map Talras.
 
-WORKSPACE="./dmdf"
+set -e
+
+WORKSPACE="../../../"
 
 # wc3lib
 cd "$WORKSPACE"
@@ -21,7 +23,6 @@ cpack .
 
 # Extract all map files:
 cd "$WORKSPACE"
-tar --extract --file=dmdf.tar "maps"
 
 mkdir -p "$WORKSPACE/Talras"
 mkdir -p "$WORKSPACE/Arena"

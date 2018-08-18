@@ -167,6 +167,12 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 
 			// Is no repick which means it is the first class selection in the beginning of the game.
 			if (not thistype.m_gameStarted) then
+
+				// Clear the class selection information
+				if (this.player() == GetLocalPlayer()) then
+					call ClearTextMessages()
+				endif
+
 				if (not last) then
 					debug call Print("Do not start the game")
 					call character.displayMessage(ACharacter.messageTypeInfo, tre("Warten Sie bis alle anderen Spieler ihre Klasse gewählt haben.", "Wait until all other players have choosen their class."))
