@@ -132,9 +132,6 @@ It is also automatically loaded by the World Editor.
 
 ## Windows Setup <a name="windows"></a>
 The batch scripts from the folder `src/Scripts` work on volume `F:` (previously on volume `E:`) and expect the following folders:
-* `F:\wc3tools`
-    * `F:\wc3tools\5.0wc3mapoptimizer` contains the file `VXJWTSOPT.exe`
-    * `F:\wc3tools\Jass NewGen Pack Official` contains the JassNewGenPack 2 with the JassHelper.
 * `F:\Projekte\dmdf` contains the content of this repository.
 * `F:\Warcraft III` contains Warcraft III: The Frozen Throne.
     * `F:\Warcraft III\Maps\DMDF\` is the target folder for generated optimized maps.
