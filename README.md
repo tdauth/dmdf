@@ -150,51 +150,9 @@ The JassHelper binary is part of this repository in the directory [tools/JNGP/ja
 
 Options [forcemethodevaluate] and [noimplicitthis] are supported!
 
-Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set:
-```
-[lookupfolders]
-// Just type the folders where //! import would look for if relative paths where used, include the final \
-// embed them in quotes
-// example: "c:\"
-// The order causes priority:
-"C:\\YourDirectory\\dmdf\\src"
+Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set: [jasshelper.conf](./tools/JNGP/jasshelper/jasshelper.conf).
 
-[externaltools]
-// this is for //! external NAME args the syntax is "NAME","executable path"
-// example:
-//"OBJMERGE","c:\kool.exe"
-
-//*
-//* grimextension pack by pitzermike:
-//*
-"FileImporter","grimext\FileImporter.exe"
-"ObjectMerger","grimext\ObjectMerger.exe"
-"PathMapper","grimext\PathMapper.exe"
-"TileSetter","gimext\TileSetter.exe"
-"ConstantMerger","grimext\ConstantMerger.exe"
-"TriggerMerger","grimext\TriggerMerger.exe"
-"FileExporter","grimext\\FileExporter.exe"
-"PatchGenerator","grimext\\PatchGenerator.exe"
-
-[wewarlock]
-//put the path to WEWarlock between quotes
-//Ex: "C:\WeWarlock-0.7.0\WarlockCompiler.exe"
-
-[jasscompiler]
-//this is to specify what compiler to use, normally pjass.exe,
-// though you may also want to use JassParserCLI.exe ...
-"JassParserCLI.exe"
-// The next line specifies the jass syntax checker's arguments:
-"--report-leaks --pjass $COMMONJ $BLIZZARDJ $WAR3MAPJ"
-// i.e. You can change it to "$COMMONJ +rb $BLIZZARDJ -rb $WAR3MAPJ"
-// in case of a recent  PJass version ...
-
-[forcemethodevaluate]
-[noimplicitthis]
-```
-
-Download the [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
-It has to be installed into the subdirectory "jasshelper" of the Warcraft III directory.
+It uses [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
 It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (http://www.wc3c.net/showpost.php?p=1115263&postcount=154).
 
 ## JassNewGenPack or SharpCraft World Editor Extended Bundle <a name="jass_new_gen_pack"></a>

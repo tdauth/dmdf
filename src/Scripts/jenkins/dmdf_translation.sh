@@ -3,7 +3,8 @@
 
 set -e
 
-WORKSPACE="../../../"
+cd ../../../
+WORKSPACE=$(pwd)
 
 # wc3lib
 cd "$WORKSPACE"
