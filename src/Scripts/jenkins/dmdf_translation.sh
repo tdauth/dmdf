@@ -26,7 +26,7 @@ cd "$WORKSPACE"
 
 mkdir -p "$WORKSPACE/Talras"
 mkdir -p "$WORKSPACE/Arena"
-mkdir -p "$WORKSPACE/Tutorial"
+mkdir -p "$WORKSPACE/Dornheim"
 mkdir -p "$WORKSPACE/Gardonar"
 mkdir -p "$WORKSPACE/GardonarsHell"
 mkdir -p "$WORKSPACE/Holzbruck"
@@ -50,11 +50,11 @@ cp -f "./Arena/war3map.wts" "$WORKSPACE/Arena/war3map_de.wts"
 cp -f "./Arena/war3map.wts" "$WORKSPACE/Arena/war3map_en.wts" # Use a new clean translation
 #cp -f "./war3map_en.wts" "$WORKSPACE/Arena/war3map_en.wts"
 
-# Tutorial
-cd "$WORKSPACE/maps/Tutorial"
+# Dornheim
+cd "$WORKSPACE/maps/Dornheim"
 "$MPQ_PATH" -x -f "war3map.wts" "../Tutorial.w3x"
-cp -f "./Tutorial/war3map.wts" "$WORKSPACE/Tutorial/war3map_de.wts"
-cp -f "./Tutorial/war3map.wts" "$WORKSPACE/Tutorial/war3map_en.wts" # TODO add an initial English translation!
+cp -f "./Dornheim/war3map.wts" "$WORKSPACE/Dornheim/war3map_de.wts"
+cp -f "./Dornheim/war3map.wts" "$WORKSPACE/Dornheim/war3map_en.wts" # TODO add an initial English translation!
 
 # Gardonar
 cd "$WORKSPACE/maps/Gardonar"

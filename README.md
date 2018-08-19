@@ -682,6 +682,7 @@ A copy of the unoptimized map must be created.
 Then the modified `war3map.wts` files have to be readded to the copies of the maps.
 If the maps are optimized afterwards (both, the one for the original language and the translated), they will differ and on online games won't be considered the same map only translated but the string entries will be optimized and the loading will become faster.
 The file for the user interface `war3mapSkin.txt` must also be replaced.
+The automated generation of the map string files is described in the section [Release Process](#release_process).
 
 The modification provides two different installation setups for the following languages:
 * German
@@ -705,13 +706,13 @@ Note that this may differ between the players since they might play versions wit
 
 ## Generating Level Icons for the Grimoire <a name="generating_level_icons_for_the_grimoire"></a>
 The grimoire icons require an icon with every level from 0 to 6. There is an ability per level for the grimoire since changing the icon of an ability cannot be done dynamically.
-The script `Scripts/dmdf-all-grimoire-.sh` creates all those icons using ImageMagick.
+The script [dmdf_generate_icons.sh](./src/Scripts/jenkins/dmdf_generate_icons.sh) creates all those icons using ImageMagick.
 Since ImageMagick cannot handle BLP files. The icons have to be converted into PNG or TGA files.
 
 ## Release Process <a name="release_process"></a>
-To update the translations always add English translations to the file `maps/Talras/war3map_en.wts`.
+To update the translations always add English translations to the file [war3map_en.wts](./maps/Talras/war3map_en.wts).
 To update all translations automatically use wc3trans from the [wc3lib](https://github.com/tdauth/wc3lib) project.
-The script `src/Scripts/jenkins/dmdf_translation.sh` contains everything to automatically update the translations of all maps.
+The script [dmdf_translation.sh](./src/Scripts/jenkins/dmdf_translation.sh) contains everything to automatically update the translations of all maps.
 
 On Windows the project is expected in the directory `F:/Projekte/dmdf`.
 On Windows the release process consists of the following steps:
@@ -736,10 +737,14 @@ These are usually editor only suffixes.
 The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
 
 ## Trigger Editor Integration <a name="trigger_editor_integration"></a>
-Trigger editor integration means that the trigger editor of the World Editor can be used instead of vJass code.
+Trigger editor integration means that the trigger editor of the World Editor can be used instead of vJass code to create triggers with functions which are only provided by this modification.
 GUI triggers make it easier for non-programmers to define some logic of the game.
+This modification provides a number of custom trigger functions to create quests, modify the characters, provide creep spawns etc.
+It is easier for people who do not know JASS or vJass and want to create maps for the modification.
 To provide the trigger editor integration, the two files `TriggerData.txt` and `TriggerStrings.txt` have to be generated.
-The files `src/TriggerData/TriggerData.txt` and `src/TriggerData/TriggerStrings.txt` are automatically merged by the program wc3converter to generate the files `UI/TriggerData.txt` and `UI/TriggerStrings.txt` in the directory `War3Mod.mpq`.
+The files [TriggerData.txt](./src/TriggerData/TriggerData.txt) and [TriggerStrings.txt](./src/TriggerData/TriggerStrings.txt) are automatically merged by the program wc3converter to generate the new files [TriggerData.txt](./archive/UI/TriggerData.txt) and [TriggerStrings.txt](./archive/UI/TriggerStrings.txt) which are placed into the directory `War3Mod.mpq` for the modification.
+These generated files will be used by the World Editor when the modification is installed.
+They contain the additional trigger data for this modification.
 
 The tool wc3converter is provided by the project [wc3lib](https://github.com/tdauth/wc3lib).
 It can be used the following way to create a new trigger data file:
@@ -756,6 +761,9 @@ Use the following statement:
 ```
 //! import "TPoF.j"
 ```
+
+The map "The North" was the first map which has been created with GUI triggers only.
+It can be used as reference implementation.
 
 ## Jenkins <a name="jenkins"></a>
 The modification provides several scripts to setup jobs in Jenkins.
