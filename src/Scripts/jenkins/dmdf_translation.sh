@@ -53,8 +53,8 @@ cp -f "./Arena/war3map.wts" "$WORKSPACE/Arena/war3map_en.wts" # Use a new clean 
 # Dornheim
 cd "$WORKSPACE/maps/Dornheim"
 "$MPQ_PATH" -x -f "war3map.wts" "../Tutorial.w3x"
-cp -f "./Dornheim/war3map.wts" "$WORKSPACE/Dornheim/war3map_de.wts"
-cp -f "./Dornheim/war3map.wts" "$WORKSPACE/Dornheim/war3map_en.wts" # TODO add an initial English translation!
+cp -f "./Tutorial/war3map.wts" "$WORKSPACE/Dornheim/war3map_de.wts"
+cp -f "./Tutorial/war3map.wts" "$WORKSPACE/Dornheim/war3map_en.wts" # TODO add an initial English translation!
 
 # Gardonar
 cd "$WORKSPACE/maps/Gardonar"

@@ -689,6 +689,8 @@ The modification provides two different installation setups for the following la
 * English
 
 They each do only contain the maps in the corresponding language.
+The map Talras is used for translating most German map strings into English and to provide an English war3map.wts file.
+This file is used for the other maps to automatically generate English translations for the same strings.
 
 The translation in the source code is done by the functions from the file [Library Language.j](./src/Game/Library%20Language.j).
 The function `tre()` allows defining a German text and its English translation:
