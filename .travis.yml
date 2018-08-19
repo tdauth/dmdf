@@ -14,4 +14,4 @@ addons:
 
 script:
      - cd src/Scripts/jenkins
-     - bash ./dmdf_translation.sh
+     - bash -x ./dmdf_translation.sh
