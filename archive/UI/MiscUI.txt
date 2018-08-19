@@ -16,7 +16,7 @@ Profanity=
 
 // credits file
 CreditsFile_V0="maps\campaign\warcraftiiicredits.w3m"
-CreditsFile_V1="Maps\TPoF09de\CT.w3x"
+CreditsFile_V1="Maps\TPoF\Campaign10\CT.w3x"
 
 // quicksave filename
 QuickSaveFile=QuickSave

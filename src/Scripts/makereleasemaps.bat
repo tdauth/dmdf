@@ -6,7 +6,7 @@ SET VERSION=1.0
 SET CAMPAIGN_VERSION=10
 
 start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Arena" "Arena"
-start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Credits" "Credits"
+start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Credits" "Credits" "CT"
 start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Karte 5 - Deranor" "Deranor" "DS"
 start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Tutorial" "Dornheim" "DH"
 start makereleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Karte 2 - Gardonar" "Gardonar" "GA"

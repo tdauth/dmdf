@@ -4,7 +4,7 @@ SET VERSION=1.0
 SET CAMPAIGN_VERSION=10
 
 start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Arena"
-start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Credits"
+start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Credits" "CT"
 start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Deranor" "DS"
 start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Dornheim" "DH"
 start makeenglishreleasemap.bat "%VERSION%" "%CAMPAIGN_VERSION%" "Gardonar" "GA"
