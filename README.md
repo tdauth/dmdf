@@ -663,7 +663,7 @@ Therefore, the map script which imports the code has to be exported before and m
 ## Maps <a name="maps"></a>
 All maps are developed with their German version and share the same object data from the file [ObjectData.w3o](./maps/ObjectData.w3o) which is modified in and exported from the map Talras.
 The modification has the following maps:
-* [Tutorial Map Dornheim](./maps/Tutorial.w3x) - The tutorial map is the start of the character's journey. It is the home village of the character and called Dornheim. The character has to leave the village to start his journey.
+* [Tutorial: Dornheim](./maps/Tutorial.w3x) - The tutorial map is the start of the character's journey. It is the home village of the character and called Dornheim. The character has to leave the village to start his journey.
 * [Chapter 1: Talras](./maps/Karte%201%20-%20Talras.w3x) - Talras is a castle near the border of the kingdom of the Humans. This map has been the first and only map of the modifiation for a long time. It contains most of the modification's content.
 * [Chapter 2: Gardonar](./maps/Karte%202%20-%20Gardonar.w3x) - The journey continues in a palace of the Demon lord Gardonar who offers the character his alliance if the character completes his test successfully.
 * [Chapter 2.1: Gardonar's Hell](./maps/Karte%202.1%20-%20Gardonars%20Unterwelt.w3x) - Gardonar's test is that the character fights the Demons of his hell which happens in this map.
@@ -676,16 +676,18 @@ The modification has the following maps:
 * [Credits](./maps/Credits.w3x) - This map can be loaded in singleplayer to see all credits. It is similar to the credits maps of Reign of Chaos and Frozen Throne.
 
 ## Translation <a name="translation"></a>
-To translate all maps as well as the campaign into different languages, one has to extract the `war3map.wts` files (before optimizing them out).
+To translate all maps into different languages, one has to extract the `war3map.wts` files (before optimizing them out).
 After extracting the files, the entries have to be replaced by strings in another language.
 A copy of the unoptimized map must be created.
 Then the modified `war3map.wts` files have to be readded to the copies of the maps.
 If the maps are optimized afterwards (both, the one for the original language and the translated), they will differ and on online games won't be considered the same map only translated but the string entries will be optimized and the loading will become faster.
-
-The campaign file has to be copied and uses the translated maps.
-Besides, the information etc. has to be translated.
-
 The file for the user interface `war3mapSkin.txt` must also be replaced.
+
+The modification provides two different installation setups for the following languages:
+* German
+* English
+
+They each do only contain the maps in the corresponding language.
 
 The translation in the source code is done by the functions from the file [Library Language.j](./src/Game/Library%20Language.j).
 The function `tre()` allows defining a German text and its English translation:
