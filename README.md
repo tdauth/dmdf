@@ -90,6 +90,7 @@ These are the development dependencies of this modification:
 * wc3mapoptimizer
 * Batch environment
 * wc3lib: For updating trigger data, trigger strings and map translations.
+* vjassdoc: For generating an HTML API documentation.
 
 ## Formats <a name="formats"></a>
 Warcraft III brings several custom file formats which have to be understood to modify the game properly.

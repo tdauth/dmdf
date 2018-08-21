@@ -15,6 +15,7 @@ addons:
 script:
      - cd src/Scripts/jenkins
      - bash -x ./dmdf_translation.sh
+     - bash -x ./dmdf_generate_api_doc.sh
 
 deploy:
     provider: releases
