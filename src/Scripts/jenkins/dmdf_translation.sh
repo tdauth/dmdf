@@ -110,6 +110,11 @@ cd "$WORKSPACE"
 # Now generate new English translated files.
 WC3_TRANS_PATH="$WORKSPACE/wc3lib/build/src/app/wc3trans"
 
+if [ ! -e "$WC3_TRANS_PATH" ] ; then
+    echo "Missing file \"$WC3_TRANS_PATH\"!"
+    exit 1
+fi
+
 # Check the original source:
 "$WC3_TRANS_PATH" --update --suggest "$WORKSPACE/Talras/war3map_de.wts" "$WORKSPACE/maps/Talras/war3map_en.wts" "$WORKSPACE/maps/Talras/war3map_en.wts" "$WORKSPACE/Talras/war3map_en.wts" &> "$WORKSPACE/Talras/log.txt"
 
