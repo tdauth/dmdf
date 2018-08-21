@@ -111,7 +111,7 @@ cd "$WORKSPACE"
 WC3_TRANS_PATH="$WORKSPACE/wc3lib/build/src/app/wc3trans"
 
 # Check the original source:
-"$WC3_TRANS_PATH" --update --suggest "$WORKSPACE/Talras/war3map_de.wts" ./maps/Talras/war3map_en.wts ./maps/Talras/war3map_en.wts "$WORKSPACE/Talras/war3map_en.wts" &> "$WORKSPACE/Talras/log.txt"
+"$WC3_TRANS_PATH" --update --suggest "$WORKSPACE/Talras/war3map_de.wts" "$WORKSPACE/maps/Talras/war3map_en.wts" "$WORKSPACE/maps/Talras/war3map_en.wts" "$WORKSPACE/Talras/war3map_en.wts" &> "$WORKSPACE/Talras/log.txt"
 
 # Now update the other files by the original source:
 

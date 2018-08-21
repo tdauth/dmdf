@@ -6,6 +6,8 @@ It alters the game to a roleplay game which can either be played in multiplayer 
 All source code is put under the GPLv3.
 The original language of the modification is German but there are English translations.
 
+[![Build Status](https://travis-ci.org/tdauth/dmdf.svg?branch=master)](https://travis-ci.org/tdauth/dmdf)
+
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
@@ -155,10 +157,11 @@ It has to be used instead of pjass since there is a memory exhausted bug in "pja
 ## JassNewGenPack or SharpCraft World Editor Extended Bundle <a name="jass_new_gen_pack"></a>
 Use either the [JassNewGenPack](https://www.hiveworkshop.com/threads/jass-newgen-pack-official.290525/) or the [SharpCraft World Editor Extended Bundle](https://www.hiveworkshop.com/threads/sharpcraft-world-editor-extended-bundle.292127) to create and modify maps of the modification.
 These tools allow the usage of vJass and disable the Doodad limit of the World Editor.
+Both features are provided by the standard World Editor since patch 1.30.
+Therefore, you can also use the standard World Editor instead.
 
 ## Source Code <a name="source_code"></a>
 All source code of this project is placed in the directory [src](./src).
-
 
 ### Code Style <a name="source_code_code_style"></a>
 The source code formatting follows a custom style guide:
