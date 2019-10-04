@@ -1,36 +1,43 @@
 The Power of Fire <a name="introduction"></a>
 ======================
 
-The Power of Fire (German "Die Macht des Feuers") is a cooperative RPG multiplayer modification of the realtime strategy game Warcraft III: The Frozen Throne.
-It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign which allows traveling between multiple maps.
+The Power of Fire (German "Die Macht des Feuers") is a singleplayer role-playing game campaign for the realtime strategy game Warcraft III: The Frozen Throne.
+It was heavily inspired by popular standalone games like Gothic II.
+The player can travel between multiple maps like in Warcraft's Bonus Campaign.
 All source code is put under the GPLv3.
 The original language of the modification is German but there are English translations.
 
-[![Build Status](https://travis-ci.org/tdauth/dmdf.svg?branch=master)](https://travis-ci.org/tdauth/dmdf)
+# Multiplayer Support
+
+Initially, this campaign was distributed as multiplayer modification.
+However, multiplayer support has been dropped due to the complicated installation setup of the modification.
+Besides, traveling between maps is not supported in multiplayer.
+The source code should still support multiplayer, so theoretically the maps can distributed as standalone maps for multiplayer.
 
 # Table of Contents
+
 1. [Introduction](#introduction)
 2. [Repository and Resources](#repository_and_resources)
-3. [Installation](#installation)
-4. [Dependencies](#dependencies)
+3. [Installation (Players)](#installation_players)
+4. [Installation (Developers)](#installation_developers)
+    1. [JassHelper Setup](#installation_developers_jasshelper_setup)
+    2. [World Editor Setup](#installation_developers_world_editor_setup)
 5. [Formats](#formats)
     1. [JASS](#formats_jass)
     2. [vJass](#formats_vjass)
     3. [Wurst](#formats_wurst)
     4. [MPQ](#formats_mpq)
-6. [Windows Setup](#windows)
-7. [JassHelper Setup](#jasshelper_setup)
-8. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
-9. [Source Code](#source_code)
+6. [JassNewGenPack or SharpCraft World Editor Extended Bundle](#jass_new_gen_pack)
+7. [Source Code](#source_code)
     1. [Code Style](#source_code_code_style)
     2. [Testing](#source_code_testing)
-10. [Advanced Script Library](#asl)
+8. [Advanced Script Library](#asl)
     1. [Code Integration](#asl_code_integration)
     2. [Bonus Mod Support](#asl_bonus_mod_support)
     3. [Containers](#asl_containers)
     4. [Wrappers](#asl_wrappers)
     5. [Strings](#asl_strings)
-11. [Core Systems](#core_systems)
+9. [Core Systems](#core_systems)
     1. [Fellows](#core_systems_fellows)
     2. [Inventory](#core_systems_inventory)
     3. [Custom Item Types](#core_systems_custom_item_types)
@@ -45,7 +52,7 @@ The original language of the modification is German but there are English transl
     12. [Characters](#core_systems_characters)
     13. [Spells](#core_systems_spells)
     14. [Quests](#core_systems_quests)
-12. [Creating a new Map](#creating_a_new_map)
+10. [Creating a new Map](#creating_a_new_map)
     1. [Directory Structure](#creating_a_new_map_directory_structure)
     2. [Importing Code](#creating_a_new_map_importing_code)
     3. [Import Object Data](#creating_a_new_map_importing_object_data)
@@ -54,23 +61,22 @@ The original language of the modification is German but there are English transl
     6. [Required Rects](#creating_a_new_map_required_rects)
     7. [Required Camera Setups](#creating_a_new_map_required_camera_setups)
     8. [Saving the Map](#creating_a_new_map_saving_the_map)
-13. [Maps](#maps)
-14. [Translation](#translation)
-15. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
-16. [Release Process](#release_process)
-17. [Trigger Editor Integration](#trigger_editor_integration)
-18. [Jenkins](#jenkins)
-19. [Content](#content)
+11. [Maps](#maps)
+12. [Translation](#translation)
+13. [Generating Level Icons for the Grimoire](#generating_level_icons_for_the_grimoire)
+14. [Trigger Editor Integration](#trigger_editor_integration)
+15. [Content](#content)
     1. [Plot](#content_plot)
     2. [Gameplay](#content_gameplay)
     3. [Background Story](#content_background_story)
     4. [Voices](#content_voices)
-20. [Blog](#blog)
-21. [YouTube Channel](#youtube_channel)
-22. [Bugs](#bugs)
-23. [Credits](#credits)
+16. [Blog](#blog)
+17. [YouTube Channel](#youtube_channel)
+18. [Bugs](#bugs)
+19. [Credits](#credits)
 
 ## Repository and Resources <a name="repository_and_resources"></a>
+
 If cloning the repository takes too long, you can make a shallow clone or reduce the clone depth and not clone the whole history.
 Since I have pushed the history of binary map and campaign files as well, the history became quite big.
 
@@ -79,23 +85,46 @@ The model, texture and sound resources are not part of this repository.
 All releases are tagged in the repository: [GIT releases](https://github.com/tdauth/dmdf/releases).
 Previous releases required versions with the same tags from the now deprecated repository: [asl](https://github.com/tdauth/asl).
 
-## Installation <a name="installation"></a>
-Download the installation setup from the [ModDB](http://www.moddb.com/mods/warcraft-iii-the-power-of-fire/downloads) to install the actual release of this modification.
-The latest setups contain the development files, too.
+## Installation (Players) <a name="installation_players"></a>
 
-## Dependencies <a name="dependencies"></a>
-These are the development dependencies of this modification:
-* Warcraft III: The Frozen Throne.
-* JassHelper 0.A.2.A
-* wc3mapoptimizer
-* Batch environment
-* wc3lib: For updating trigger data, trigger strings and map translations.
-* vjassdoc: For generating an HTML API documentation.
+Download the [custom campaign from HiveWorkshop]() and copy it into your directory `C:\Users\USERNAME\Documents\Warcraft III\Campaigns`.
+Start Warcraft III: The Frozen Throne, go to `Singleplayer -> Custom Campaign` and select `The Power of Fire`.
+
+## Installation (Developers) <a name="installation_developers"></a>
+
+### JassHelper Setup <a name="installation_developers_jasshelper_setup"></a>
+
+JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
+code from being compiled correctly.
+Read the following posts for further information:
+
+* http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
+* http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
+
+The JassHelper binary is part of this repository in the directory [tools/JNGP/jasshelper](./tools/JNGP/jasshelper).
+
+Options [forcemethodevaluate] and [noimplicitthis] are supported!
+
+Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set: [jasshelper.conf](./tools/JNGP/jasshelper/jasshelper.conf).
+
+It uses [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
+It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (<http://www.wc3c.net/showpost.php?p=1115263&postcount=154>).
+
+### World Editor Setup <a name="installation_developers_world_editor_setup"></a>
+
+Download [WC3 Mod Manager](https://www.hiveworkshop.com/threads/wc3-mod-manager-v1-1-1.308948/) or a similar tool to enable "Allow Local Files" (or with a registry editor `HKEY_CURRENT_USER` -> `Software`-> `Blizzard Entertainment`-> `Warcraft III` -> `Allow Local Files`) when starting the World Editor.
+Copy the files from `archive/` into your Warcraft III directory (e. g. into `C:\Program Files\Warcraft III`).
+Start the World Editor with "Allow Local Files" enabled.
+It should load the custom trigger data, resources, terrain data etc.
+You should see a modified World Editor logo when starting it.
+Open the custom campaign [TPoF.w3n]() and start modifying the maps.
 
 ## Formats <a name="formats"></a>
+
 Warcraft III brings several custom file formats which have to be understood to modify the game properly.
 
 ### JASS <a name="formats_jass"></a>
+
 [JASS](https://en.wikipedia.org/wiki/JASS) is the scripting language used by Warcraft III to define the logic of a game. Warcraft III contains the two files `common.j` and `common.ai` which declare native functions which can be used in JASS scripts.
 The script `Blizzard.j` contains JASS functions and variables which are used for Blizzard's own Warcraft III maps.
 They are based on the native functions.
@@ -105,6 +134,7 @@ Types are only defined as native types.
 Objects which have to be deleted manually extend the type `agent` since patch 1.24b.
 
 ### vJass <a name="formats_vjass"></a>
+
 [vJass](http://www.wc3c.net/vexorian/jasshelpermanual.html) is a scripting language based on Warcraft III's scripting language JASS.
 It adds new features like object oriented programming to the scripting language and is implemented by several compilers which translate the vJass code into JASS code.
 
@@ -119,12 +149,14 @@ The size of the modification helped to find the limits of vJass and to make usag
 I even wrote many posts on Wc3C.net to improve the language and to report bugs.
 
 ### Wurst <a name="formats_wurst"></a>
+
 [Wurst](https://wurstlang.org) is another scripting language for Warcraft III.
 It was created after vJass.
 Therefore, this modification is not based on it.
 Currently, it would be too much work to convert all vJass code into Wurst although Wurst has some nice features which are missing from vJass.
 
 ### MPQ <a name="formats_mpq"></a>
+
 Warcraft III uses the format [MPQ](https://en.wikipedia.org/wiki/MPQ) for data archives.
 There is several third-party libraries for accessing MPQ archives such as [StormLib](https://github.com/ladislav-zezula/StormLib) and [wc3lib](https://github.com/tdauth/wc3lib) (only reading).
 
@@ -133,38 +165,19 @@ This directory has previously been an MPQ archive but has been changed to a dire
 The data from this directory is automatically loaded by Warcraft III.
 It is also automatically loaded by the World Editor.
 
-## Windows Setup <a name="windows"></a>
-The batch scripts from the folder `src/Scripts` work on volume `F:` (previously on volume `E:`) and expect the following folders:
-* `F:\Projekte\dmdf` contains the content of this repository.
-* `F:\Warcraft III` contains Warcraft III: The Frozen Throne.
-    * `F:\Warcraft III\Maps\DMDF\` is the target folder for generated optimized maps.
-
-## JassHelper Setup <a name="jasshelper_setup"></a>
-JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
-code from being compiled correctly.
-Read the following posts for further information:
-* http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
-* http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
-
-The JassHelper binary is part of this repository in the directory [tools/JNGP/jasshelper](./tools/JNGP/jasshelper).
-
-Options [forcemethodevaluate] and [noimplicitthis] are supported!
-
-Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set: [jasshelper.conf](./tools/JNGP/jasshelper/jasshelper.conf).
-
-It uses [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
-It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (http://www.wc3c.net/showpost.php?p=1115263&postcount=154).
-
 ## JassNewGenPack or SharpCraft World Editor Extended Bundle <a name="jass_new_gen_pack"></a>
+
 Use either the [JassNewGenPack](https://www.hiveworkshop.com/threads/jass-newgen-pack-official.290525/) or the [SharpCraft World Editor Extended Bundle](https://www.hiveworkshop.com/threads/sharpcraft-world-editor-extended-bundle.292127) to create and modify maps of the modification.
 These tools allow the usage of vJass and disable the Doodad limit of the World Editor.
 Both features are provided by the standard World Editor since patch 1.30.
 Therefore, you can also use the standard World Editor instead.
 
 ## Source Code <a name="source_code"></a>
+
 All source code of this project is placed in the directory [src](./src).
 
 ### Code Style <a name="source_code_code_style"></a>
+
 The source code formatting follows a custom style guide:
 * Structs are separated into files called "Struct <struct name>.j". The file contains a vJass library which requires all dependencies of the struct.
 * Every directory contains a file called "Import.j" which imports all other code files of the directory. It does also contain a library which requires all libraries of the other files.
@@ -216,6 +229,7 @@ At the moment vjassdoc is very limited and generates basic HTML files for the AP
 It has to be improved to support more Doxygen keywords.
 
 ### Testing <a name="source_code_testing"></a>
+
 Currently, there is no debugger for JASS. Patch 1.29 will bring debugging events and logging functionality which will help to find serious bugs.
 There is some unit tests in the directory [Test](./src/Asl/Test) for the ASL.
 Much more tests need to be added in the future.
@@ -237,11 +251,13 @@ Cheats help manual testing when the map is saved in the debug mode of vJass.
 The library [Library Utilities.j](./src/Asl/Systems/Debug/Library%20Utilities.j) and the struct [GameCheats](./src/Game/Struct%20Game%20Cheats.j) provide many custom cheat commands for testing the maps.
 
 ## Advanced Script Library <a name="asl"></a>
+
 The Advanced Script Library (short ASL) is the core of this modification.
 Its code can be found in the directory [src/ASL](./src/Asl).
 It has formerly been a separate repository but is now merged into this repository.
 
 ### Code Integration <a name="asl_code_integration"></a>
+
 Use the file [src/ASL/Import Asl.j](./src/Asl/Import%20Asl.j) to import all required code from the ASL.
 This is done automatically when the file [src/Import Dmdf.j](./src/Import%20Dmdf.j) is imported.
 
@@ -274,18 +290,22 @@ This is also automatically done in the file `src/Import Dmdf.j`.
 **WARNING:** Using % chars in the custom map script in the trigger editor leads to unexpected results. You should define the globals somewhere else if possible!
 
 ### BonusMod Support <a name="asl_bonus_mod_support"></a>
+
 For using Bonus Mod you have to make an entry in the "jasshelper.conf" file for the object merger tool.
 It should always be named "ObjectMerger".
 You have to import file `src/ASL/Systems/BonusMod/Creation Bonus Mod.j` once to create all object editor data required by Bonus Mod code.
 
 ### Containers <a name="asl_containers"></a>
+
 The ASL provides container types similar to programming languages like Java and C++ for storing a number of elements.
 Textmacros are used to provide them in a generic way.
 These are the available container text macros:
+
 * [A_VECTOR](./src/Asl/Core/General/Struct%20Vector.j) - Provides a random acess container for a number of elements. Appending and accessing elements if fast. Removing and inserting elements is slow.
 * [A_LIST](./src/Asl/Core/General/Struct%20List.j) - A double linked list container for a number of elements. Removing and inserting elements is fast. Accessing elements is slow.
 
 The ASL provides default text macro instances which generate structs which can be used for containers:
+
 * AIntegerVector
 * AStringVector
 * ABooleanVector
@@ -307,19 +327,23 @@ For example, the type `AIntegerList` provides the struct `AIntegerListIterator` 
 This is inspired by the standard library containers of C++.
 
 ### Wrappers <a name="asl_wrappers"></a>
+
 The ASL provides wrapper types for native JASS types which provide more methods and allow them to be used easier:
 * [AGroup](./src/Asl/Core/General/Struct%20Group.j) - Simplifies the access to the type `group` which stores a unit group. Allows accessing the units more easily.
 * [AForce](./src/Asl/Core/General/Struct%20Force.j) - Simplifies the access to the type `force` which stores a player force.
 
 ### Strings <a name="asl_strings"></a>
+
 The ASL provides additional structs and functions for handling strings and formatting them in its library `ACoreString`.
 
 ## Core Systems <a name="core_systems"></a>
+
 The code of the modification is based on the Advanced Script Library.
 It provides some basic systems which are used in every map of the modification.
 The core systems are mostly placed in the folder `src/Game`.
 
 ### Fellows <a name="core_systems_fellows"></a>
+
 An NPC fellow is a Warcraft III hero unit which can be shared with one or all players.
 This means that the players can control the unit for some time.
 The unit is also revived automatically when it dies.
@@ -327,6 +351,7 @@ The struct [Fellow](./src/Game/Struct%20Fellow.j) allows the creation of fellows
 Fellows have backpacks only which allow them to carry several items
 
 ### Inventory <a name="core_systems_inventory"></a>
+
 The ASL provides the struct [AUnitInventory](./src/Asl/Systems/Inventory/Struct%20Unit%20Inventory.j).
 It allows a hero with the inventory ability to carry more than six different items in a backpack.
 It does also allow heroes to six different items equipped at the same time while carrying other items in the backpack.
@@ -336,6 +361,7 @@ Create different [AItemType](./src/Asl/Systems/Inventory/Struct%2Item%20Type.j) 
 The Power of Fire extends this struct with custom types.
 
 ### Custom Item Types <a name="core_systems_custom_item_types"></a>
+
 The struct [ItemTypes](./src/Game/Struct%20Item%20Types.j) stores all different custom item types globally.
 All custom item types are created in the method `ItemTypes.init()` since they must be available in every map.
 
@@ -355,11 +381,13 @@ To use the proper attack animations the IDs of the item types have to added to m
 `ItemTypes.itemTypeIdIsTwoHandedLance()` for example.
 
 ### Dungeons <a name="core_systems_dungeons"></a>
+
 Some maps have areas which are use for interiors or dungeons which are separated from the actual playble map.
 The struct `Dungeon` allows to specify such ares in form of rects and optionally fixed camera setups.
 The player gets the sense of entering a separated area when the character enters a dungeon.
 
 ### Spawn Points <a name="core_systems_spawn_points"></a>
+
 The Power of Fire allows you to respawn creeps and items on the map after being killd or picked up.
 This should improve the gameplay experience since after clearing a map returning to this map would be less interesting without any new creeps or items to collect.
 Besides, the player would get a disadvantage since he cannot level his character nor collect valuable stuff.
@@ -367,16 +395,19 @@ Besides, the player would get a disadvantage since he cannot level his character
 Usually the spawn points are created during the map initialization using existing units and items already placed on the map.
 
 ### Tree Transparency <a name="core_systems_tree_transparency"></a>
+
 Since the modification uses bigger trees than Warcraft III (for immersion), it is necessary to make them transparent if the player looks at them or the character walks nearby.
 The struct `TreeTransparency` handles this automatic transparency management for every player.
 
 ### Zones <a name="core_systems_zones"></a>
+
 The modification allows traveling between maps in singleplayer like the Bonus Campaign of Warcraft III: The Frozen Throne.
 For every map of the campaign, there has to be a zone.
 A complete list of all zones is initialized by the methodd `Zone.initZones()`.
 The struct `Zone` can be use to create map exits at certain rects to specified maps.
 
 ### Map Transitions <a name="core_systems_map_transitions"></a>
+
 Map transitions allow traveling between maps in the singleplayer campaign.
 The struct `MapChanger` provides several methods to store the characters and change to another map and restore the characters in the other map.
 It saves the current map as savegame and loads the savegame if the player changes back to the map.
@@ -387,6 +418,7 @@ The method checks for the custom object `'h600'` with the name `"IsCampaign"`.
 It has to be created in the custom object data of the campaign and must not exist in the single player maps.
 
 It is important to mention some restrictions on campaign and savegame names in Warcraft III:
+
 * No underscores in campaign names.
 * Shorter file names for savegames.
 * Probably no dots in savegames or campaign names.
@@ -394,6 +426,7 @@ It is important to mention some restrictions on campaign and savegame names in W
 Otherwise, the map transitions won't work.
 
 ### Buildings/Bases <a name="core_systems_buildings"></a>
+
 Every player is allowed to have one single base per map when the player's character has reached level 30.
 For builing a base the player must buy the item of his class building and construct the building on somewhere on the map.
 The building allows to use several spells, recruit women and to be improved by researches.
@@ -405,6 +438,7 @@ It assures that when a building is destroyed the player can construct a new one.
 
 
 ### Classes <a name="core_systems_classes"></a>
+
 The modification provides several different classes.
 Each character can have exactly one class.
 The class defines the start attributes and attributes per level of the character.
@@ -413,6 +447,7 @@ Some items can only be equipped by specific classes.
 The class does also affect dialogues with NPCs.
 The class can be changed after its initial selection with the `-repick` command.
 The following classes are provided by the modification:
+
 * Cleric
 * Necromancer
 * Druid
@@ -424,6 +459,7 @@ The following classes are provided by the modification:
 
 The struct [Classes](./src/Game/Struct%20Classes.j) provides static methods for accessing all these classes.
 To support all other systems (like the equipment system) there has to be several hero unit types per class:
+
 * Melee combat
 * Range combat
 * Melee combat on a sheep
@@ -438,6 +474,7 @@ However, some spells are shared between all classes:
 * Ride a Horse
 
 ### Class Selection <a name="core_systems_class_selection"></a>
+
 The class selection allows the players to choose a class in the beginning of the game and when repicking their class.
 It shows a description, the attributes per level, the start attributes, start items and spells for every class.
 In multiplayer games, the time to choose a class is limited since some players might be afk.
@@ -449,6 +486,7 @@ The struct [ClassSelection](./src/Game/Struct%20Class%20Selection.j) provides th
 It extends the ASL struct [AClassSelection](./src/ASL/Systems/Character/Struct%20Class%20Selection.j) and adds features such as change buttons and the spellbook.
 
 ### Characters <a name="core_systems_characters"></a>
+
 Each player of the six players can control one character.
 The character gets experience by killing enemies and solving quests.
 For every level the character gets two skill points and attribute points depending on his class.
@@ -457,6 +495,7 @@ When the character dies, he will be revived automatically at his currently enabl
 The struct [Character](./src/Game/Struct%20Character.j) provides all functionality for a character.
 
 ### Spells <a name="core_systems_spells"></a>
+
 The character can skill spells via the [Grimoire](./src/Game/Struct%20Grimoire.j).
 It contains all learnable spells of his class.
 It is necessary since hero abilities are limited to six in Warcraft III: The Frozen Throne.
@@ -480,6 +519,7 @@ The following table shows important information of different spells:
 TODO Complete the table based on the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods) and all current object data.
 
 ### Quests <a name="core_systems_quests"></a>
+
 There is two different types of quests in this modification:
 * Shared Quests - Must be solved together by all players.
 * Character Quests - Can be solved once by each player.
@@ -493,6 +533,7 @@ Then implement either the module [CharacterQuest](./src/Quests/Module%20Characte
 To create a new map for the modification, several things have to applied for the map to make it work with the modification.
 
 ### Directory Structure <a name="creating_a_new_map_directory_structure"></a>
+
 It's highly recommended by me that you divide your map code into several files which are placed
 in various directories.
 Your map code folder should look like this:
@@ -504,6 +545,7 @@ Your map code folder should look like this:
 * `Import.j` - file for map code library and import statements
 
 ### Import Code <a name="creating_a_new_map_importing_code"></a>
+
 Every map has to import the vJass systems of the modification.
 Simply add the following code snippet to the custom map script:
 ```
@@ -512,11 +554,13 @@ Simply add the following code snippet to the custom map script:
 The maps have to be saved with the help of the JassHelper which generates a JASS map script based on the vJass code.
 
 ### Import Object Data <a name="creating_a_new_map_importing_object_data"></a>
+
 Import the object data from the latest version of the map [Chapter 1: Talras](./maps/Karte%201%20-%20Talras.w3x).
 It should be contained by the file [ObjectData.w3o](./maps/ObjectData.w3o).
 You can change all Doodads as you like but the other object data should be the same in all maps.
 
 ### MapData <a name="creating_a_new_map_map_data"></a>
+
 Every map has to provide a struct called MapData with several methods and static constants which are used by the Game backend of the modification to run all required systems.
 ```
 struct MapData
@@ -595,6 +639,7 @@ endstruct
 ```
 
 ### GUI Triggers <a name="creating_a_new_map_gui_triggers"></a>
+
 Instead of importing the code manually and providing a MapData struct, GUI triggers in the World Editor's trigger editor can be used.
 TheNorth.w3x is one existing map which follows this approach rather than using vJass code.
 The War3Mod.mpq directory has to exist in the Warcraft III directory to use the GUI trigger API provided by The Power of Fire.
@@ -620,6 +665,7 @@ Init Settings
 ```
 
 ### Required Rects <a name="creating_a_new_map_required_rects"></a>
+
 Every map requires some specific rects for the systems of the modiciation:
 * gg_rct_main_window_credits - This is the area where the credits are shown.
 * gg_rct_class_selection - At the center of this rect the class selection unit is placed.
@@ -655,16 +701,19 @@ Besides there are some naming conventions:
 * default map rects - "<rect name>"
 
 ### Required Camera Setups <a name="creating_a_new_map_required_camera_setups"></a>
+
 * gg_cam_class_selection - This camera setup is used for the view of the class selection in the beginning of the game.
 * gg_cam_main_window - This camera setup is used for viewing the main windows of the custom GUI system.
 
 ### Saving the Map <a name="creating_a_new_map_saving_the_map"></a>
+
 Usually, the map can be saved with the JassNewGenPack or SharpCraft World Editor Extended Bundle.
 If the map cannot be saved with a similar tool, scripts like `src/Scripts/savemaps.bat` or `src/Scripts/savemap_talras_debug.bat` can be used to save it.
 These scripts use exported map scripts for every map and call the JassHelper externally.
 Therefore, the map script which imports the code has to be exported before and must be specified in the script.
 
 ## Maps <a name="maps"></a>
+
 All maps are developed with their German version and share the same object data from the file [ObjectData.w3o](./maps/ObjectData.w3o) which is modified in and exported from the map Talras.
 The modification has the following maps:
 * [Tutorial: Dornheim](./maps/Tutorial.w3x) - The tutorial map is the start of the character's journey. It is the home village of the character and called Dornheim. The character has to leave the village to start his journey.
@@ -680,6 +729,7 @@ The modification has the following maps:
 * [Credits](./maps/Credits.w3x) - This map can be loaded in singleplayer to see all credits. It is similar to the credits maps of Reign of Chaos and Frozen Throne.
 
 ## Translation <a name="translation"></a>
+
 To translate all maps into different languages, one has to extract the `war3map.wts` files (before optimizing them out).
 After extracting the files, the entries have to be replaced by strings in another language.
 A copy of the unoptimized map must be created.
@@ -711,38 +761,13 @@ They depend on the function ``GetLanguage()` which returns the current language 
 Note that this may differ between the players since they might play versions with different languages.
 
 ## Generating Level Icons for the Grimoire <a name="generating_level_icons_for_the_grimoire"></a>
+
 The grimoire icons require an icon with every level from 0 to 6. There is an ability per level for the grimoire since changing the icon of an ability cannot be done dynamically.
 The script [dmdf_generate_icons.sh](./src/Scripts/jenkins/dmdf_generate_icons.sh) creates all those icons using ImageMagick.
 Since ImageMagick cannot handle BLP files. The icons have to be converted into PNG or TGA files.
 
-## Release Process <a name="release_process"></a>
-To update the translations always add English translations to the file [war3map_en.wts](./maps/Talras/war3map_en.wts).
-To update all translations automatically use wc3trans from the [wc3lib](https://github.com/tdauth/wc3lib) project.
-The script [dmdf_translation.sh](./src/Scripts/jenkins/dmdf_translation.sh) contains everything to automatically update the translations of all maps.
-
-On Windows the project is expected in the directory `F:/Projekte/dmdf`.
-On Windows the release process consists of the following steps:
-* Export the latest object data from the map `maps/Karte 1 - Talras.w3x` and import it into all other maps (if they use custom Doodads, only import the other parts). This step could be automated by an MPQ tool in the future. The tool does also have to support correct object data importing.
-* Extract all unmodified map scripts from all maps in the folder `maps` into their corresponding map script folders like the file `maps/Talras/war3map.j`. This step could be automated by an MPQ tool in the future.
-* Save ALL maps with the latest object data and code version. Use `src/Scripts/savemaps.bat` to save the maps automatically. Make sure that the script saves the maps without the "--debug" option for a release. Make sure that no syntax errors are shown anymore and it is saved successfully. Warning: The script uses the exported map scripts of all maps. If they are outdated (files like `maps/Talras/war3map.j`), they have to be extracted from the maps after saving them without the JassHelper enabled.
-* Run the script `src/Scripts/makereleasemaps.bat`. This script creates all German release versions of the maps and prepares the English ones.
-* Open the prepared English maps (for example in `maps/releases/Arena/Arena<version>.w3x`) with an MPQ editor and replace the file war3map.wts in the archive by the file from the same directory. This step could be automated by an MPQ tool in the future.
-* After having done this for ALL maps run the script `src/Scripts/makeenglishreleasemaps.bat` which creates the English optimized release maps.
-* Update and import the latest German unit campaign data ([war3map.w3u](./maps/CampaignObjectData/de/war3map.w3u)) from the campaign object data into all optimized campaign release maps in the folder `archive_de/Maps/TPoF/Campaign%CAMPAIGN_VERSION%` (for example `TL.w3x`) with the help of an MPQ editor. It contains one minor difference for detecting the singleplayer campaign mode during the game. The file should be updated to the latest unit data from the German map Talras. This step could be automated by an MPQ tool in the future.
-* Update and import the latest English unit campaign data ([war3map.w3u](./maps/CampaignObjectData/en/war3map.w3u)) from the campaign object data into all optimized campaign release maps in the folder `archive_en/Maps/TPoF/Campaign%CAMPAIGN_VERSION%` (for example `TL.w3x`) with the help of an MPQ editor. It contains one minor difference for detecting the singleplayer campaign mode during the game. The file should be updated to the latest unit data from the English map Talras. This step could be automated by an MPQ tool in the future.
-* Execute the NSIS script `src/Scripts/installer_en.nsi` to create the English installer. It includes the development files. The installer is created into the folder `releases`.
-* Execute the NSIS script `src/Scripts/installer_de.nsi` to create the German installer. It includes the development files. The installer is created into the folder `releases`.
-
-Each map can be optimized using some standard routines.
-First of all the wc3lib can be used (wc3object) to drop all object data modifications which are not required anymore.
-This can happen when a hero ability is change to a unit ability but some hero only fields are still changed.
-This optimization reduces the number of strings which have to be translated or optimized later.
-
-Besides, all object data fields which are for the World Editor only can be optimized.
-These are usually editor only suffixes.
-The number of modifications (size of the object data) and string entries will be reduced by this which should improve the loading speed of the map.
-
 ## Trigger Editor Integration <a name="trigger_editor_integration"></a>
+
 Trigger editor integration means that the trigger editor of the World Editor can be used instead of vJass code to create triggers with functions which are only provided by this modification.
 GUI triggers make it easier for non-programmers to define some logic of the game.
 This modification provides a number of custom trigger functions to create quests, modify the characters, provide creep spawns etc.
@@ -771,18 +796,17 @@ Use the following statement:
 The map "The North" was the first map which has been created with GUI triggers only.
 It can be used as reference implementation.
 
-## Jenkins <a name="jenkins"></a>
-The modification provides several scripts to setup jobs in Jenkins.
-These scripts are located in the directory [src/Scripts/jenkins](./src/Scripts/jenkins).
-
 ## Content <a name="content"></a>
+
 The content of this modification consists of items, creatures, spells, classes, story, quests, dialogues, NPCs etc.
 
 ### Plot <a name="content_plot"></a>
+
 The plot has been planned in several documents which are part of this repository.
 The directory [Spielinhalt](./doc/Planung/Spielinhalt) contains German planning documents of the plot.
 
 ### Gameplay <a name="content_gameplay"></a>
+
 The class spells have been planned in a the German sheet [Zauber](doc/Planung/Spielinhalt/Klassen/Zauber.ods).
 The sheet contains a list of all IDs which is important for the abilities which are based on the channel ability.
 All IDs must be different for one class.
@@ -790,6 +814,7 @@ Otherwise, it might be the case that one spell casts another spell instead.
 The sheet does also contain a list of all hotkeys for all spells which must also be different from each other.
 
 ### Background Story <a name="content_background_story"></a>
+
 The whole background information about the fantasy world of The Power of Fire is stored in the directory [Hintergrunddefinition](./doc/Planung/Hintergrunddefinition).
 There is an unfinished German book called "The Master" which describes the story of Baradé and how he became part of the alliance of Demons, Orcs, Undead and Dark Elves.
 It is stored in the file [Band 1 - Der Meister.odt](./doc/Planung/Hintergrunddefinition/Mythen/Bücher/Band%201%20-%20Der%20Meister.odt).
@@ -799,31 +824,38 @@ The basic story of this modification is that the Dark Elves and Orcs invade the 
 The Humans are allied to and controlled by the High Elves. Therefore, the king of the High Elves who is called Dararos, comes to help the Humans and to face his brother Baradé who is the leader of the Dark Elves.
 
 Some characters of the background story are described in the following list:
+
 * Deranor - King of the Undead.
 * Gardonar - Lord of the Demons.
 * Baradé - King of the Dark Elves and human brother of Dararos (their mother was a human).
 * Dararos - King of the High Elves and elvish brother of Baradé (their father was a High Elf).
 
 ### Voices <a name="content_voices"></a>
+
 The German voices of the NPCs have been recorded by people from the website [hoer-talk.de](http://www.hoer-talk.de/).
 [This thread](http://www.hoer-talk.de/threads/rollenspiel-mod-sucht-sprecher.22379/) has been created for the search for German voice actors.
 
 ## Blog <a name="blog"></a>
+
 Visit the [Blog](https://diemachtdesfeuers.wordpress.com/) on WordPress for more information.
 
 ## YouTube Channel <a name="youtube_channel"></a>
+
 Visit the [YouTube Channel](https://www.youtube.com/channel/UCzGcsuPfRVqdaE87JYCK5zw) to watch videos about the modification.
 
 ## Bugs <a name="bugs"></a>
+
 Report bugs as issues in this repository.
 Many bugs are listed in German in the file [TODO](./TODO) but opening an issue in the repository is preferred.
 Since there is no debugger for Warcraft III and multiplayer tests are not that easy to run, there might be still many undetected bugs in the modification and it is recommended to make as many different savegames as possible.
 
 ## Credits <a name="credits"></a>
+
 This modification has been created by Tamino Dauth.
 There is many other people which contributed to the modification.
 They are listed in the file [Credits.j](./src/Game/Credits.j).
 The core team has been:
+
 * Oliver T. - 3D graphics.
 * Andreas B. - Much of the terrain of the maps Talras and Holzbruck, testing, design.
 * Johanna W. - Testing.
