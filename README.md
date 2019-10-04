@@ -3,9 +3,10 @@ The Power of Fire <a name="introduction"></a>
 
 The Power of Fire (German "Die Macht des Feuers") is a singleplayer role-playing game campaign for the realtime strategy game Warcraft III: The Frozen Throne.
 It was heavily inspired by popular standalone games like Gothic II.
-The player can travel between multiple maps like in Warcraft's Bonus Campaign.
-All source code is put under the GPLv3.
-The original language of the modification is German but there are English translations.
+The player can travel between multiple maps like in Warcraft III's Bonus Campaign.
+All source code is written in the scripting language vJass and put under the GPLv3.
+The campaign has been translated from German into English.
+However, the sound recordings are still German.
 
 # Multiplayer Support
 
