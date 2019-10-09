@@ -153,7 +153,8 @@ library ALibrarySystemsBonusModBonusMod requires AStructCoreGeneralHashTable, op
 	function AUnitSetBonus takes unit whichUnit, integer bonusType, integer amount returns boolean
 		local integer x
 		local integer i
-		local integer bit = 0 /// \todo test for JassParser
+		/// \todo test for JassParser
+		local integer bit = 0
 		local boolean negative
 		local boolean hadNoManaBefore
 		debug if (whichUnit == null or CheckType(bonusType) or CheckAmount(bonusType, amount)) then

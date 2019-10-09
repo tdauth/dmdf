@@ -8,7 +8,8 @@ library StructSpellsSpellManaStream requires Asl, StructGameClasses, StructGameS
 		public static constant integer classSelectionAbilityId = 'A1MD'
 		public static constant integer classSelectionGrimoireAbilityId = 'A1ME'
 		public static constant integer maxLevel = 5
-		private static constant integer buffId = 0 /// @todo FIXME
+		/// @todo FIXME
+		private static constant integer buffId = 0
 		private static constant real time = 5.0
 		private static constant real loopDamageStartValue = 10.0
 		private static constant real loopDamageLevelValue = 5.0

@@ -95,21 +95,24 @@ Start Warcraft III: The Frozen Throne, go to `Singleplayer -> Custom Campaign` a
 
 ### JassHelper Setup <a name="installation_developers_jasshelper_setup"></a>
 
+Configure the JassHelper in the directory `C:\Program Files\Warcraft III\x86_64\JassHelper`.
+
 JassHelper 0.A.2.A is required since there is an unknown bug in higher version (0.A.2.B) which prevents
 code from being compiled correctly.
 Read the following posts for further information:
 
-* http://www.wc3c.net/showpost.php?p=1132707&postcount=3630
-* http://www.wc3c.net/showpost.php?p=1132728&postcount=3632
+* <http://www.wc3c.net/showpost.php?p=1132707&postcount=3630>: `public static constant string website = "https://gitorious.org/advanced-script-library"` URLs inside strings are invalid.
+* <http://www.wc3c.net/showpost.php?p=1132728&postcount=3632>: `public static constant string defaultOrderErrorMessage = A_TEXT_TARGET_TALKS_ALREADY ///` API doc comments in the same line as code are invalid.
 
 The JassHelper binary is part of this repository in the directory [tools/JNGP/jasshelper](./tools/JNGP/jasshelper).
 
 Options [forcemethodevaluate] and [noimplicitthis] are supported!
 
-Edit "jasshelper.conf" in your Warcraft III directory which comes from the JassNewGenPack and set: [jasshelper.conf](./tools/JNGP/jasshelper/jasshelper.conf).
+Edit "jasshelper.conf" and set: [jasshelper.conf](./tools/JNGP/jasshelper/jasshelper.conf).
+Adapt the lookup folder, so JassHelper finds the `src` directory of the modification.
 
-It uses [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235).
-It has to be used instead of pjass since there is a memory exhausted bug in "pjass" (<http://www.wc3c.net/showpost.php?p=1115263&postcount=154>).
+Our JassHelper configuration uses [JassParserCLI](http://www.wc3c.net/showthread.php?t=105235) instead of pjass.
+It has to be used since there is a [memory exhausted bug](http://www.wc3c.net/showpost.php?p=1115263&postcount=154) in pjass.
 
 ### World Editor Setup <a name="installation_developers_world_editor_setup"></a>
 
@@ -118,7 +121,7 @@ Copy the files from `archive/` into your Warcraft III directory (e. g. into `C:\
 Start the World Editor with "Allow Local Files" enabled.
 It should load the custom trigger data, resources, terrain data etc.
 You should see a modified World Editor logo when starting it.
-Open the custom campaign [TPoF.w3n]() and start modifying the maps.
+Open the custom campaign [TPoF.w3n](./TPoF10en.w3n) and start modifying the maps.
 
 ## Formats <a name="formats"></a>
 
