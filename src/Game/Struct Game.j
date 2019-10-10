@@ -254,8 +254,8 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 		 * \return Returns true if the current game is in the campaign. Otherwise if it's a normal map (for example in multiplayer) it returns false.
 		 */
 		public static method isCampaign takes nothing returns boolean
-			// this custom object should only exist in the campaign not in the usual maps
-			return GetObjectName('h600') == "IsCampaign"
+			// Currently we do only support a single player campaign.
+			return true
 		endmethod
 
 		/**
