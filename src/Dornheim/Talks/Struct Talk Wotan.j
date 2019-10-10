@@ -76,11 +76,12 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 			call UnitRemoveAbility(Npcs.wotan(), 'A1VC')
 			call UnitAddAbility(Npcs.wotan(), 'A19X')
 			call UnitAddAbility(Npcs.wotan(), 'Asud') // sell units
+			call SetUnitInvulnerable(Npcs.wotan(), true)
 			set whichEffect = AddSpecialEffectTarget("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeDamageTarget.mdx", Npcs.wotan(), "origin")
 
 			call speech(info, character, true, tre("Ich werde die Kinder opfern und mit Hilfe ihrer Seelen den dunklen Fürsten der Dämonen herbeirufen!", "I will sacrifice my children and use their souls to summon the dark prince of demons!"), gg_snd_Wotan8)
-			call speech(info, character, false, tre("Welche Kinder?", "What children?"), null)
-			call speech(info, character, false, tre("Geh nun und lass mich allein. Der Untergang ist nahe!", "Now go and leave me alone. The downfall is near!"), gg_snd_Wotan9)
+			call speech(info, character, false, tre("Welche Kinder?", "Which children?"), null)
+			call speech(info, character, true, tre("Geh nun und lass mich allein. Der Untergang ist nahe!", "Now go and leave me alone. The downfall is near!"), gg_snd_Wotan9)
 
 			call characterQuest.questItem(QuestTheChildren.questItemTalkToWotan).setState(QuestTheChildren.stateCompleted)
 			call characterQuest.questItem(QuestTheChildren.questItemSacrifice).setState(QuestTheChildren.stateNew)
@@ -125,7 +126,7 @@ library StructMapTalksTalkWotan requires Asl, StructMapMapNpcs, StructMapQuestsQ
 
 			call speech(info, character, false, tre("Ich habe die Kinder geopfert.", "I have sacrified the children."), null)
 			call speech(info, character, true, tre("Gut gemacht. Du bist nun ebenfalls ein Diener der Hölle. Ich überreiche dir diese Belohnung.", "Well done. You are now also a servant of hell. I'll give you this reward."), gg_snd_Wotan11)
-			call speech(info, character, false, tre("Nimm dich in Acht vor jenen, die uns nicht verstehen. Sonst werden sie dich jagen und verbrennen!", "Beware of those who do not understand us. Otherwise, they will hunt you and burn you!"), gg_snd_Wotan12)
+			call speech(info, character, true, tre("Nimm dich in Acht vor jenen, die uns nicht verstehen. Sonst werden sie dich jagen und verbrennen!", "Beware of those who do not understand us. Otherwise, they will hunt you and burn you!"), gg_snd_Wotan12)
 			call character.giveItem('I07C')
 			call character.giveItem('I07C')
 			call character.giveItem('I07C')

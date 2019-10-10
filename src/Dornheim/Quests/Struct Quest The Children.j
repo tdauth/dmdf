@@ -5,6 +5,7 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 		public static constant integer questItemTalkToWotan = 1
 		public static constant integer questItemSacrifice = 2
 		public static constant integer questItemRescue = 3
+		public static constant integer questItemTalkAgainToWotan = 4
 
 		public stub method enable takes nothing returns boolean
 			local Character character = Character(this.character())
@@ -67,6 +68,7 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 			call targets.units().forEach(thistype.forEachKill)
 			call targets.destroy()
 			call this.questItem(thistype.questItemRescue).setState(thistype.stateFailed)
+			call this.questItem(thistype.questItemTalkAgainToWotan).setState(thistype.stateNew)
 			call this.displayState()
 		endmethod
 
@@ -101,6 +103,7 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 				set i = i + 1
 			endloop
 			call this.questItem(thistype.questItemSacrifice).setState(thistype.stateFailed)
+			call this.questItem(thistype.questItemTalkAgainToWotan).setState(thistype.stateNew)
 			call this.displayState()
 			call TriggerSleepAction(4.0)
 			set i = 0
@@ -155,6 +158,12 @@ library StructMapQuestsQuestTheChildren requires Asl, Game, StructMapMapNpcs
 			call questItem.setPingRect(gg_rct_quest_the_children_children)
 			call questItem.setPingColour(100.0, 100.0, 100.0)
 			call questItem.setReward(thistype.rewardExperience, 10)
+			
+			// item questItemTalkAgainToWotan
+			set questItem = AQuestItem.create(this, tre("Sprich mit Wotan über deine Tat.", "Talk to Wotan about your act."))
+			call questItem.setPing(true)
+			call questItem.setPingUnit(Npcs.wotan())
+			call questItem.setPingColour(100.0, 100.0, 100.0)
 
 			call questItem.setStateEvent(thistype.stateCompleted, thistype.stateEventRescue)
 			call questItem.setStateCondition(thistype.stateCompleted, thistype.stateConditionRescue)
