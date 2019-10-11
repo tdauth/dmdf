@@ -638,13 +638,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 		endmethod
 
 		public static method showInfo takes nothing returns nothing
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Wählen Sie zunächst Ihre Charakterklasse aus:", "Choose your character class first:"), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf die Pfeilsymbole rechts unten, um die angezeigte Charakterklasse zu wechseln.", "- Click on the arrow key icons at the bottom right to change the shown character class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Klicken Sie auf das grüne Hakensymbol rechts unten, um die angezeigte Charakterklasse auszuwählen.", "- Click on the green check icon at the bottom right to select the shown character class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Auf dem Zauberbuchsymbol rechts unten, können die Klassenzauber betrachtet werden.", "- At the grimoire icon at the bottom right the class spells can be viewed."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Im Inventar befinden sich die Anfangsgegenstände der Klasse.", "- In the inventory are the start items of the class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- In der unteren Mitte sehen Sie die Startattribute der angezeigten Charakterklasse.", "- In the bottom middle you can see the start attributes of the shown character class."), null)
-			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("- Rechts oben stehen die Attribute pro Stufe und eine Beschreibung der angezeigten Charakterklasse.", "- In the top right you can see the attributes per level and a description of the shown character class."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Verwenden Sie die Buttons rechts unten, um die Klasse Ihres Charakters für das Spiel zu bestimmen.", "Use the buttons at the right bottom to choose the class of your character for the game."), null)
+			call thistype.displayMessageToAllPlayingUsers(thistype.infoDuration, tre("Auf dem Zauberbuchsymbol können Sie die Zauber der Klasse anzeigen lassen.", "You can view the spells of the class on the grimoire symbol."), null)
 		endmethod
 
 		/**
