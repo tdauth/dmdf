@@ -11,7 +11,7 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 		private static constant real damageBonusFactor = 0.30
 		private static constant real time = 10.0
 		private static sound whichSound
-		
+
 		/**
 		 * Collects all elemental damage spells and returns them as newly allocated vector.
 		 */
@@ -25,10 +25,10 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 				endif
 				set i = i + 1
 			endloop
-			
+
 			return spells
 		endmethod
-		
+
 		private method condition takes nothing returns boolean
 			local boolean result = true
 			local AIntegerVector spells = this.spells()
@@ -36,9 +36,9 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 				call this.character().displayMessage(ACharacter.messageTypeError, tre("Keine Elementarmagierzauber erlernt!", "No elemental spells learned!"))
 				set result = false
 			endif
-			
+
 			call spells.destroy()
-			
+
 			return result
 		endmethod
 
@@ -58,20 +58,18 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			loop
 				exitwhen (i == spells.size())
 				call SpellElementalMageDamageSpell(spells[i]).addDamageBonusFactor(thistype.damageBonusFactor)
-				call this.character().displayMessage(ACharacter.messageTypeInfo, StringArg(tre("\"%s\" wurde verstärkt!", "\"%s\" was strengthened!"), GetObjectName(Spell(spells[i]).ability())))
 				set i = i + 1
 			endloop
 			call TriggerSleepAction(thistype.time)
 			set i = 0
 			loop
 				exitwhen (i == spells.size())
-				call this.character().displayMessage(ACharacter.messageTypeInfo, StringArg(tre("\"%s\" hat seine Verstärkung verloren!", "\"%s\" has lost its strengthening!"), GetObjectName(SpellElementalMageDamageSpell(spells[i]).ability())))
 				call SpellElementalMageDamageSpell(spells[i]).removeDamageBonusFactor(thistype.damageBonusFactor)
 				set i = i + 1
 			endloop
 			set caster = null
 			call spells.destroy()
-			
+
 			call DestroyEffect(fireEffect)
 			set fireEffect = null
 			call DestroyEffect(frostEffect)
@@ -86,10 +84,10 @@ library StructSpellsSpellRageOfElements requires Asl, StructGameClasses, StructG
 			local thistype this = thistype.allocate(character, Classes.elementalMage(), Spell.spellTypeDefault, thistype.maxLevel, thistype.abilityId, thistype.favouriteAbilityId, 0, thistype.condition, thistype.action)
 			call this.addGrimoireEntry('A1N3', 'A1N4')
 			call this.addGrimoireEntry('A0ZM', 'A0ZN')
-			
+
 			return this
 		endmethod
-		
+
 		private static method onInit takes nothing returns nothing
 			set thistype.whichSound = CreateSound("Abilities\\Spells\\Other\\StormEarthFire\\PandarenUltimate.wav", false, false, true, 12700, 12700, "")
 		endmethod
