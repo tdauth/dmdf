@@ -88,6 +88,8 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 	struct ClassSelection extends AClassSelection
 		public static constant integer spellsPerPage = 8
 		public static constant real infoDuration = 60.0
+		// Wait 15 minutes in multiplayer until remaining classes are chosen automatically.
+		public static constant real timerDuration = 900.0
 		private trigger m_classChangeTrigger
 		private integer m_page = 0
 		private trigger m_spellPagesTrigger
@@ -676,7 +678,7 @@ library StructGameClassSelection requires Asl, StructGameClasses, StructGameChar
 			 * The timer has to be long enough in multiplayer to allow all players to read the spells of all classes.
 			 */
 			if (not bj_isSinglePlayer) then
-				call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), 900.0)
+				call ClassSelection.startTimer(tre("Klassenauswahl:", "Class selection:"), thistype.timerDuration)
 			endif
 
 			/*
