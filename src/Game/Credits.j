@@ -92,6 +92,7 @@ call thistype.addContributor("Graber", "Villager 255 Animations: https://www.hiv
 call thistype.addContributor("Talavaj", "HybrisFactory - Multiple packages of realtexture models and textures: http://www.hiveworkshop.com/threads/hybrisfactory-terraining-and-mapping-resources.238310/")
 call thistype.addContributor("Sellenisko", "Vrykul Race Pack: http://www.hiveworkshop.com/threads/vrykul-race-pack.241083/")
 call thistype.addContributor("JoySoy", "The Mage: https://www.hiveworkshop.com/threads/the-mage.293180/")
+call thistype.addContributor("Manoo", "https://www.hiveworkshop.com/threads/rpg-barrel.220143/")
 
 call thistype.addTitle(tre("Icons", "Icons"))
 call thistype.addContributor("olofmoleman", "BTNDeer.blp")
