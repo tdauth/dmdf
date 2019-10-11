@@ -354,7 +354,7 @@ library StructGameGame requires Asl, StructGameCameraHeight, StructGameCharacter
 			call SetPlayerHandicap(Player(PLAYER_NEUTRAL_AGGRESSIVE), handicap)
 
 			if (not Game.restoreCharacters()) then
-				if (missingPlayers > 0) then
+				if (missingPlayers > 0 and not Game.isCampaign()) then
 					call Character.displayDifficultyToAll(Format(tre("Da Sie das Spiel ohne %1% Spieler beginnen, erhalten die Gegner ein Handicap von %2% %. Zudem erhält Ihr Charakter sowohl mehr Erfahrungspunkte als auch mehr Goldmünzen beim Töten von Gegnern.", "Since you are starting the game without %1% players the enemies get a handicap of %2% %. Besides your character gains more experience as well as more gold coins from killing enemies.")).s(trpe("einen weiteren", Format("%1% weitere").i(missingPlayers).result(), "one more", Format("%1% more").i(missingPlayers).result(), missingPlayers)).rw(handicap * 100.0, 0, 0).result())
 				elseif (handicap > 1.0 or handicap < 1.0) then
 					call Character.displayDifficultyToAll(Format(tre("Aufgrund der eingestellten Schwierigkeit starten die Unholde mit einem Handicap von %1%.", "Because of the set difficulty the creeps start with a handicap of %1%.")).rw(handicap * 100.0, 0, 0).result())
