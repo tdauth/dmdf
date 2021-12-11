@@ -1,6 +1,8 @@
 The Power of Fire <a name="introduction"></a>
 ======================
 
+**Unmaintained Repository:** Since Warcraft III: Reforged does not support custom campaigns anymore and no total conversions of the game, this project has been reduced to one single player map Talras which is maintained in [this](https://github.com/tdauth/tpof-talras) repository. Please download this new map and open issues in the new repository not here! This repository exists only as an archive.
+
 The Power of Fire (German "Die Macht des Feuers") is a cooperative RPG multiplayer modification of the realtime strategy game Warcraft III: The Frozen Throne.
 It alters the game to a roleplay game which can either be played in multiplayer or in a singleplayer campaign which allows traveling between multiple maps.
 All source code is put under the GPLv3.
